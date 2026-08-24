@@ -1,0 +1,39 @@
+.eyde-home-link {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 1000;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(23, 63, 50, 0.28);
+  border-radius: 50%;
+  color: #173f32;
+  background: rgba(247, 244, 235, 0.88);
+  box-shadow: 0 1px 4px rgba(23, 63, 50, 0.12);
+  font-family: system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0.78;
+  transition: opacity 120ms ease, background-color 120ms ease;
+}
+
+.eyde-home-link:hover,
+.eyde-home-link:focus-visible {
+  color: #173f32;
+  background: #f7f4eb;
+  opacity: 1;
+}
+
+.eyde-home-link:focus-visible {
+  outline: 2px solid #2f6f55;
+  outline-offset: 2px;
+}
+
+@media print {
+  .eyde-home-link {
+    display: none;
+  }
+}
