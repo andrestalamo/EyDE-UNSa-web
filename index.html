@@ -26,11 +26,26 @@
       font-size: clamp(2rem, 5vw, 3.25rem);
       line-height: 1.1;
     }
+    .site-heading {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .site-heading img {
+      width: clamp(60px, 10vw, 78px);
+      height: auto;
+      display: block;
+    }
     p {
       margin: 0 0 2.5rem;
       color: #52645d;
       font-size: 1.1rem;
       line-height: 1.5;
+    }
+    .site-heading p {
+      margin: 0;
     }
     nav {
       display: grid;
@@ -50,12 +65,25 @@
       border-color: #2f6f55;
       background: #eef4f0;
     }
+    @media (max-width: 520px) {
+      .site-heading {
+        gap: 0.85rem;
+      }
+      .site-heading img {
+        width: 52px;
+      }
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>Estadística y Diseño Experimental - UNSa</h1>
-    <p>Ingeniería Agronómica · Facultad de Ciencias Naturales · Universidad Nacional de Salta</p>
+    <header class="site-heading">
+      <img src="assets/logo_unsa.jpeg" alt="Logo de la Universidad Nacional de Salta">
+      <div>
+        <h1>Estadística y Diseño Experimental - UNSa</h1>
+        <p>Ingeniería Agronómica · Facultad de Ciencias Naturales · Universidad Nacional de Salta</p>
+      </div>
+    </header>
     <nav aria-label="Clases disponibles">
       <a href="clases/clase-01/">Clase 01 — Estadística descriptiva</a>
       <a href="clases/clase-02/">Clase 02 — Probabilidad</a>
