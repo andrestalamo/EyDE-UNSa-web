@@ -57,6 +57,27 @@
       display: grid;
       gap: 0.8rem;
     }
+    .navigation-hint {
+      display: flex;
+      gap: 0.65rem;
+      align-items: center;
+      margin: 1.25rem 0 0;
+      color: #687871;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .navigation-hint-icon {
+      display: inline-grid;
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      place-items: center;
+      border: 1px solid rgba(23, 63, 50, 0.28);
+      border-radius: 50%;
+      color: #173f32;
+      font-size: 14px;
+      line-height: 1;
+    }
     a {
       padding: 1rem 1.15rem;
       border: 1px solid #c8d2cd;
@@ -96,6 +117,10 @@
       <a href="clases/clase-02/">Clase 02 — Probabilidad</a>
       <a href="clases/clase-03/">Clase 03 — Distribuciones de probabilidad</a>
     </nav>
+    <p class="navigation-hint">
+      <span class="navigation-hint-icon" aria-hidden="true">⌂</span>
+      <span>Para volver: dentro de cada clase, usá el botón de inicio de la esquina superior izquierda.</span>
+    </p>
   </main>
 </body>
 </html>
