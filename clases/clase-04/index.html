@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="Clase_02_Probabilidad_2026.css">
   <link rel="stylesheet" href="Clase_03_Distribuciones_Probabilidad_2026.css">
   <link rel="stylesheet" href="Clase_04_Distribuciones_Muestrales_2026.css">
+  <link rel="stylesheet" href="../../assets/home-navigation.css">
   <link href="Clase_04_Distribuciones_Muestrales_2026_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Clase_04_Distribuciones_Muestrales_2026_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Clase_04_Distribuciones_Muestrales_2026_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -129,16 +130,6 @@
       margin-right: 0; 
     }
   </style>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["TeX"],
-      webFont: "TeX"
-    }
-  });
-  </script>
-<link rel="stylesheet" href="../../assets/home-navigation.css">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -393,7 +384,7 @@ Al considerar todos los pares posibles con reposición: <span class="math inline
 <section id="el-error-estándar-mide-la-variación-entre-estimaciones" class="slide level2 center">
 <h2>El error estándar mide la variación entre estimaciones</h2>
 <div class="definition-large">
-<p>El <strong>error estándar</strong> es la desviación estándar de la distribución muestral de un estimador.</p>
+<p>El <strong>error estándar</strong> es la desviación estándar de la distribución muestral de un estimador. Para el caso de la media muestral:</p>
 </div>
 <div class="standard-error-notation fragment">
  <div><small>si conocemos \(\sigma\)</small><strong>\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt n}\)</strong></div>
@@ -412,8 +403,44 @@ Al considerar todos los pares posibles con reposición: <span class="math inline
 <span class="math display">\[\sigma_{\bar{X}}=\frac{\sigma}{\sqrt n}\]</span>
 </div>
 <div class="ee-visual">
- <div class="fragment"><span class="cause">mayor \(\sigma\)</span><span class="curve wide"></span><strong>más ancha</strong></div>
- <div class="fragment"><span class="cause">mayor \(n\)</span><span class="curve narrow"></span><strong>más estrecha</strong></div>
+ <div class="ee-case fragment">
+  <span class="cause">mayor \(\sigma\)</span>
+  <svg class="normal-comparison" viewbox="0 0 460 130" role="img" aria-label="Distribución de medias más ancha y baja">
+   <line class="normal-axis" x1="12" y1="112" x2="448" y2="112"></line><line class="normal-center" x1="230" y1="18" x2="230" y2="112"></line>
+   <path class="normal-reference" d="M72 112 C142 112 168 102 188 69 C201 48 213 31 230 31 C247 31 259 48 272 69 C292 102 318 112 388 112"></path>
+   <path class="normal-focus" d="M28 112 C85 111 126 102 160 82 C188 65 207 56 230 56 C253 56 272 65 300 82 C334 102 375 111 432 112"></path>
+  </svg>
+  <strong>más ancha</strong><span class="ee-summary">\(\sigma\uparrow\Rightarrow\sigma_{\bar{X}}\uparrow\)</span>
+ </div>
+ <div class="ee-case fragment">
+  <span class="cause">mayor \(n\)</span>
+  <svg class="normal-comparison" viewbox="0 0 460 130" role="img" aria-label="Distribución de medias más estrecha y alta">
+   <line class="normal-axis" x1="12" y1="112" x2="448" y2="112"></line><line class="normal-center" x1="230" y1="18" x2="230" y2="112"></line>
+   <path class="normal-reference" d="M28 112 C85 111 126 102 160 82 C188 65 207 56 230 56 C253 56 272 65 300 82 C334 102 375 111 432 112"></path>
+   <path class="normal-focus" d="M116 112 C168 112 188 100 202 63 C211 38 219 20 230 20 C241 20 249 38 258 63 C272 100 292 112 344 112"></path>
+  </svg>
+  <strong>más estrecha</strong><span class="ee-summary">\(n\uparrow\Rightarrow\sigma_{\bar{X}}\downarrow\)</span>
+ </div>
+</div>
+</section>
+<section id="las-medias-varían-menos-que-los-datos-individuales" class="slide level2 center">
+<h2>Las medias varían menos que los datos individuales</h2>
+<div class="averaging-variability fragment">
+ <div class="curve-key"><span><b>Variable original: \(X\)</b> · dispersión \(\sigma\)</span><span><b>Media muestral: \(\bar{X}\)</b> · dispersión \(\sigma_{\bar{X}}=\sigma/\sqrt n\)</span></div>
+ <svg viewbox="0 0 720 190" role="img" aria-label="La distribución de la variable original es más ancha que la distribución muestral de la media">
+  <line class="normal-axis" x1="18" y1="160" x2="702" y2="160"></line><line class="normal-center" x1="360" y1="16" x2="360" y2="166"></line>
+  <path class="individual-curve" d="M30 160 C120 159 205 143 270 103 C310 78 335 67 360 67 C385 67 410 78 450 103 C515 143 600 159 690 160"></path>
+  <path class="mean-curve" d="M215 160 C280 160 307 137 326 77 C339 36 348 15 360 15 C372 15 381 36 394 77 C413 137 440 160 505 160"></path>
+ </svg>
+</div>
+<div class="averaging-formulas fragment">
+<p><span class="math display">\[\operatorname{Var}(\bar{X})=\operatorname{Var}\left(\frac{X_1+\cdots+X_n}{n}\right)=\frac{\sigma^2}{n}\]</span> <span class="math display">\[\sigma_{\bar{X}}=\sqrt{\operatorname{Var}(\bar{X})}=\frac{\sigma}{\sqrt n}&lt;\sigma\quad(n&gt;1)\]</span></p>
+</div>
+<div class="idea center fragment">
+<p><strong>Promediar reduce la variabilidad.</strong></p>
+</div>
+<div class="averaging-transition fragment">
+<strong>Al aumentar (n) ocurren dos cosas distintas:</strong> disminuye la dispersión de las medias y su distribución tiende a hacerse Normal.
 </div>
 </section>
 <section id="muestras-más-grandes-producen-medias-más-estables" class="slide level2 interactive-slide center">
@@ -451,8 +478,8 @@ Compará <span class="math inline">\(n=5,\ 10,\ 30\)</span> y <span class="math 
  <div class="sampling-panels"><div><strong>Datos individuales</strong><svg class="population-svg" viewbox="0 0 1100 175"></svg></div><div><strong>Medias con \(n=2\)</strong><svg class="means-svg" viewbox="0 0 1100 205"></svg></div></div>
 </div>
 </section>
-<section id="al-aumentar-n-las-medias-se-vuelven-más-normales" class="slide level2 interactive-slide center">
-<h2>Al aumentar n, las medias se vuelven más normales</h2>
+<section id="al-aumentar-n-la-distribución-de-las-medias-se-vuelve-más-normal" class="slide level2 interactive-slide center">
+<h2>Al aumentar n, la distribución de las medias se vuelve más normal</h2>
 <div class="tcl-comparison">
  <div><b>\(n=2\)</b><svg data-n="2" viewbox="0 0 1100 150" preserveaspectratio="none"></svg></div>
  <div class="fragment"><b>\(n=5\)</b><svg data-n="5" viewbox="0 0 1100 150" preserveaspectratio="none"></svg></div>
@@ -469,16 +496,19 @@ La población no cambió: cambia la distribución de <span class="math inline">\
 <div class="definition-large small">
 <p>Si tomamos muestras aleatorias suficientemente grandes de una población con media <span class="math inline">\(\mu\)</span> y varianza finita, la distribución muestral de <span class="math inline">\(\bar{X}\)</span> tiende a una distribución Normal.</p>
 </div>
-<div class="formula-stack center">
+<div class="tcl-components">
 <div class="fragment">
-<span class="math display">\[\bar{X}\approx N\left(\mu,\frac{\sigma^2}{n}\right)\]</span>
+<p><small>FORMA</small><strong><span class="math inline">\(\bar{X}\)</span> tiende a ser Normal</strong><span>Este es el aporte central del TCL.</span></p>
 </div>
 <div class="fragment">
-<span class="math display">\[\sigma_{\bar{X}}=\frac{\sigma}{\sqrt n}\]</span>
+<p><small>CENTRO</small><strong><span class="math inline">\(E(\bar{X})=\mu\)</span></strong><span>Las medias se centran en la media poblacional.</span></p>
+</div>
+<div class="fragment">
+<p><small>DISPERSIÓN</small><strong><span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt n}\)</span></strong><span>Proviene de las propiedades de la media de variables independientes, no del TCL.</span></p>
 </div>
 </div>
 <div class="pregunta center fragment">
-<p>¿Muestras aleatorias suficientemente grandes?</p>
+<p>¿Qué significa muestras suficientemente grandes?</p>
 </div>
 </section>
 <section id="entonces-con-n-30-siempre-alcanza" class="slide level2 center">
@@ -534,7 +564,9 @@ No hay un número mágico.
 <section id="volvamos-al-maíz" class="slide level2 center">
 <h2>Volvamos al maíz</h2>
 <div class="maize-return">
-<p><span><span class="math inline">\(n=25\)</span></span><span><span class="math inline">\(\bar{x}=7{,}3\text{ t/ha}\)</span></span><span><span class="math inline">\(\mu=?\)</span></span></p>
+ <span>\(n=25\)</span>
+ <span>\(\bar{x}=7{,}3\text{ t/ha}\)</span>
+ <span>\(\mu=?\)</span>
 </div>
 <div class="small center fragment">
 <p>Observamos una sola muestra y obtuvimos <span class="math inline">\(\bar{x}=7{,}3\text{ t/ha}\)</span>. Pero queremos aprender sobre la media de toda la población, <span class="math inline">\(\mu\)</span>.</p>
