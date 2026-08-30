@@ -1,0 +1,1885 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Estadística y Diseño Experimental",
+    "section": "",
+    "text": "Ingeniería Agronómica Facultad de Ciencias Naturales Universidad Nacional de Salta\n\nMateriales docentes de la asignatura Estadística y Diseño Experimental.\n\n\n\n\nPresentaciones y recursos de las clases teóricas de la asignatura.\nIr a Clases →"
+  },
+  {
+    "objectID": "index.html#materiales-de-clase",
+    "href": "index.html#materiales-de-clase",
+    "title": "Estadística y Diseño Experimental",
+    "section": "",
+    "text": "Presentaciones y recursos de las clases teóricas de la asignatura.\nIr a Clases →"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
+    "href": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
+    "title": "Estimación de parámetros",
+    "section": "La pregunta define la población",
+    "text": "La pregunta define la población\n\n¿Cuál fue el rendimiento promedio de los lotes sembrados con la variedad A por los productores de una cooperativa del Valle de Lerma durante la campaña 2025/26?\n\n\nLa pregunta define la población de referencia."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
+    "href": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
+    "title": "Estimación de parámetros",
+    "section": "¿Cuál es la población?",
+    "text": "¿Cuál es la población?\n\n \n POBLACIÓNTodos los lotes que cumplen las condiciones de la pregunta\\(N=5000\\)Las unidades existen y, en principio, podrían identificarse.\n\n\nEn este caso tenemos una población real."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
+    "href": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
+    "title": "Estimación de parámetros",
+    "section": "¿Y si midiéramos todos?",
+    "text": "¿Y si midiéramos todos?\n\nCENSO\nMedir los 5.000 lotes\nConoceríamos la media poblacional \\(\\mu\\) y la desviación estándar poblacional \\(\\sigma\\).\n\n\nSi conocemos toda la población, no necesitamos inferir esos parámetros."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
+    "href": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
+    "title": "Estimación de parámetros",
+    "section": "Pero generalmente no medimos todos",
+    "text": "Pero generalmente no medimos todos\n\n POBLACIÓN\\(N=5000\\)lotes\n \\(\\longrightarrow\\)muestreo aleatorio\n MUESTRA\\(n=25\\)lotes observados\n\n\n¿Qué podemos aprender sobre toda la población observando sólo esos 25 lotes?"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#población-y-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#población-y-muestra",
+    "title": "Estimación de parámetros",
+    "section": "Población y muestra",
+    "text": "Población y muestra\n\nPOBLACIÓN\n\ntodas las unidades\nparámetros\n\\(\\mu,\\ \\sigma,\\ \\pi\\)\ngeneralmente desconocidos\n\n\nMUESTRA\n\nalgunas unidades observadas\nestadísticos\n\\(\\bar x,\\ s,\\ p\\)\ncalculados con los datos\n\n\n\n\nLos estadísticos se usan para aprender sobre los parámetros."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
+    "href": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
+    "title": "Estimación de parámetros",
+    "section": "Parámetro y estadístico no son lo mismo",
+    "text": "Parámetro y estadístico no son lo mismo\n\nmedia poblacional\\(\\mu = ?\\)\\(\\ne\\)media de esta muestra\\(\\bar x=7{,}3\\text{ t/ha}\\)\n\n\n¿Entonces \\(\\mu=7{,}3\\text{ t/ha}\\)?\n\n\nNo necesariamente. 7,3 es lo observado en esta muestra."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual",
+    "href": "clases/05_estimacion_parametros/index.html#estimación-puntual",
+    "title": "Estimación de parámetros",
+    "section": "Estimación puntual",
+    "text": "Estimación puntual\n\nUsamos un estadístico calculado en la muestra para estimar un parámetro desconocido.\n\n\n\\(\\bar X\\) estima a \\(\\mu\\)\\(\\bar x=7{,}3\\text{ t/ha}\\)estimación puntual observada de \\(\\mu\\)\n\n\nNuestra estimación puntual del rendimiento medio poblacional es 7,3 t/ha."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
+    "href": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
+    "title": "Estimación de parámetros",
+    "section": "Otros parámetros, otros estimadores",
+    "text": "Otros parámetros, otros estimadores\n\n PARÁMETROESTIMADORESTIMACIÓN OBSERVADA\n \\(\\mu\\)\\(\\bar X\\)\\(\\bar x=7{,}3\\)\n \\(\\sigma\\)\\(S\\)\\(s=1{,}5\\)\n \\(\\sigma^2\\)\\(S^2\\)\\(s^2\\)\n \\(\\pi\\)\\(\\widehat{\\pi}\\)\\(p\\)"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
+    "href": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
+    "title": "Estimación de parámetros",
+    "section": "¿Podemos confiar en 7,3?",
+    "text": "¿Podemos confiar en 7,3?\n\n\\(7{,}3\\text{ t/ha}\\)\n\n\nSi tomáramos otra muestra de 25 lotes, ¿obtendríamos exactamente 7,3?\n\n\nNo. Esto es justamente lo que vimos en Distribuciones Muestrales."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#recordemos-la-clase-04",
+    "href": "clases/05_estimacion_parametros/index.html#recordemos-la-clase-04",
+    "title": "Estimación de parámetros",
+    "section": "Recordemos la Clase 04",
+    "text": "Recordemos la Clase 04\n\n Las medias cambiande muestra en muestra\n \\(E(\\bar X)=\\mu\\)se centran en el parámetro\n \\(EE(\\bar X)=\\dfrac{\\sigma}{\\sqrt n}\\)si \\(\\sigma\\) es desconocida:EE estimado de \\(\\bar X\\) = \\(s/\\sqrt n\\)"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra",
+    "title": "Estimación de parámetros",
+    "section": "En nuestra muestra",
+    "text": "En nuestra muestra\n\n\\(n=25\\)\\(\\bar x=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\n\n\\[\\text{EE estimado de }\\bar X=\\frac{s}{\\sqrt n}=\\frac{1{,}5}{\\sqrt{25}}=0{,}30\\text{ t/ha}\\]\n\nEl error estándar no describe la variabilidad entre lotes. Describe la precisión con la que estimamos la media."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#un-número-solo-se-queda-corto",
+    "href": "clases/05_estimacion_parametros/index.html#un-número-solo-se-queda-corto",
+    "title": "Estimación de parámetros",
+    "section": "Un número solo se queda corto",
+    "text": "Un número solo se queda corto\n\n\\(7{,}3\\text{ t/ha}\\)\n\n\nSabemos que otra muestra habría dado otro valor. ¿Cómo comunicamos esa incertidumbre?\n\n\nIntervalo de confianza"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
+    "href": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
+    "title": "Estimación de parámetros",
+    "section": "De un punto a un intervalo",
+    "text": "De un punto a un intervalo\n\n ESTIMACIÓN PUNTUALun valor\n \\(\\longrightarrow\\)\n ESTIMACIÓN POR INTERVALOun rango plausible\n\n\nEn lugar de informar solamente un valor, construimos un rango de valores plausibles para el parámetro."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
+    "href": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
+    "title": "Estimación de parámetros",
+    "section": "¿Cómo construimos ese intervalo?",
+    "text": "¿Cómo construimos ese intervalo?\n\nestimación \\(\\ \\pm\\ \\) multiplicador \\(\\ \\times\\ \\) error estándar\n\n\nCuanto mayor sea la incertidumbre, más ancho deberá ser el intervalo."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#normal-o-t",
+    "href": "clases/05_estimacion_parametros/index.html#normal-o-t",
+    "title": "Estimación de parámetros",
+    "section": "¿Normal o t?",
+    "text": "¿Normal o t?\n\n \\(\\sigma\\) conocidausamos Normal\n \\(\\sigma\\) estimada con \\(s\\)usamos t si se cumplen sus supuestos\n muestras grandest se aproxima a Normal\n\n\nNuestro caso: \\(n=25\\), \\(\\sigma\\) desconocida y rendimiento aproximadamente Normal en la población \\(\\longrightarrow\\) usamos \\(t\\) con \\(24\\) gl"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#ic-del-95",
+    "href": "clases/05_estimacion_parametros/index.html#ic-del-95",
+    "title": "Estimación de parámetros",
+    "section": "IC del 95%",
+    "text": "IC del 95%\n\n\\(t^*_{24}\\approx2{,}064\\)\n\n\\[IC_{95\\%}=\\bar x\\pm t^*\\times \\text{EE estimado de }\\bar X\\]\n\n\\(IC_{95\\%}=7{,}3\\pm2{,}064\\times0{,}30\\)"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#el-resultado",
+    "href": "clases/05_estimacion_parametros/index.html#el-resultado",
+    "title": "Estimación de parámetros",
+    "section": "El resultado",
+    "text": "El resultado\n\nMARGEN DE ERROR\\(7{,}3\\pm0{,}62\\)\\(IC_{95\\%}\\approx[6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n6,687,37,92\n\n¿Qué significa realmente este 95%?"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
+    "href": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
+    "title": "Estimación de parámetros",
+    "section": "Una interpretación tentadora",
+    "text": "Una interpretación tentadora\n\n“Hay un 95% de probabilidad de que \\(\\mu\\) esté entre 6,68 y 7,92.”\n\n\n¿Correcto?\n\n\nNo, en la interpretación frecuentista clásica."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
+    "href": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
+    "title": "Estimación de parámetros",
+    "section": "Volvamos a muchas muestras",
+    "text": "Volvamos a muchas muestras\n\n\nLa línea vertical marca el verdadero valor de \\(\\mu\\); algunos intervalos no lo contienen."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
+    "href": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
+    "title": "Estimación de parámetros",
+    "section": "¿Qué significa entonces el 95%?",
+    "text": "¿Qué significa entonces el 95%?\n\nSi repitiéramos muchas veces el muestreo y construyéramos el intervalo de la misma manera, aproximadamente el 95% de esos intervalos contendría al verdadero parámetro.\n\n\nLa confianza pertenece al procedimiento, no a un parámetro que cambia de lugar."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
+    "title": "Estimación de parámetros",
+    "section": "¿Qué podemos decir con nuestra muestra?",
+    "text": "¿Qué podemos decir con nuestra muestra?\n\nEstimamos que el rendimiento medio poblacional es 7,3 t/ha, con un \\(IC_{95\\%}\\) de 6,68 a 7,92 t/ha.\n\n\nLa estimación y su incertidumbre se informan juntas."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#intervalo-ancho-vs.-estrecho",
+    "href": "clases/05_estimacion_parametros/index.html#intervalo-ancho-vs.-estrecho",
+    "title": "Estimación de parámetros",
+    "section": "Intervalo ancho vs. estrecho",
+    "text": "Intervalo ancho vs. estrecho\n\n intervalo ancho\n intervalo estrecho\n\n\n¿Cuál es más preciso?\n\n\nEl más estrecho."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
+    "href": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
+    "title": "Estimación de parámetros",
+    "section": "¿De qué depende la amplitud?",
+    "text": "¿De qué depende la amplitud?\n\n \\(s\\)variabilidadmás variación \\(\\longrightarrow\\) más ancho\n \\(n\\)tamaño muestralmás datos \\(\\longrightarrow\\) más estrecho\n \\(1-\\alpha\\)nivel de confianzamás confianza \\(\\longrightarrow\\) más ancho"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#si-aumenta-n",
+    "href": "clases/05_estimacion_parametros/index.html#si-aumenta-n",
+    "title": "Estimación de parámetros",
+    "section": "Si aumenta \\(n\\)",
+    "text": "Si aumenta \\(n\\)\n\n \\(n=25\\)\\(EE=0{,}30\\)\n \\(n=100\\)\\(EE=0{,}15\\)\n\n\nMás información \\(\\longrightarrow\\) menor incertidumbre."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#si-aumenta-la-variabilidad",
+    "href": "clases/05_estimacion_parametros/index.html#si-aumenta-la-variabilidad",
+    "title": "Estimación de parámetros",
+    "section": "Si aumenta la variabilidad",
+    "text": "Si aumenta la variabilidad\n\n menor \\(s\\)lotes más homogéneos\n mayor \\(s\\)lotes más heterogéneos\n\n\nCuando los lotes son más variables entre sí, la media se estima con menor precisión."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#si-queremos-más-confianza",
+    "href": "clases/05_estimacion_parametros/index.html#si-queremos-más-confianza",
+    "title": "Estimación de parámetros",
+    "section": "Si queremos más confianza",
+    "text": "Si queremos más confianza\n\n\nMayor confianza exige un intervalo más amplio."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
+    "href": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
+    "title": "Estimación de parámetros",
+    "section": "Hasta ahora usamos una población real",
+    "text": "Hasta ahora usamos una población real\n\n POBLACIÓN REAL O FINITA\n Todos los lotes de la cooperativa sembrados con variedad A durante 2025/26\n existenpueden identificarseen principio pueden censarse"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
+    "href": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
+    "title": "Estimación de parámetros",
+    "section": "Pero pensemos otra pregunta",
+    "text": "Pero pensemos otra pregunta\n\n¿Cuál es el rendimiento medio que podemos esperar de la variedad A bajo condiciones productivas del Valle de Lerma?\n\n\n¿Dónde están todas las unidades que forman esa población?"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
+    "href": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
+    "title": "Estimación de parámetros",
+    "section": "Población conceptual o virtual",
+    "text": "Población conceptual o virtual\n\nConjunto de resultados que podrían obtenerse al cultivar repetidamente esa variedad bajo las condiciones a las que queremos generalizar.\n\n\nPoblación conceptual (también llamada virtual o hipotética)\n\n\nNo siempre inferimos hacia un conjunto físico y enumerado de unidades."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
+    "href": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
+    "title": "Estimación de parámetros",
+    "section": "La pregunta vuelve a ser fundamental",
+    "text": "La pregunta vuelve a ser fundamental\n\n\nPREGUNTA A\n¿Cuál fue el rendimiento de los lotes de esta cooperativa en 2025/26?\n\\(\\longrightarrow\\) población real\n\n\nPREGUNTA B\n¿Qué rendimiento podemos esperar de esta variedad bajo determinadas condiciones del Valle de Lerma?\n\\(\\longrightarrow\\) población conceptual\n\n\n\nLa pregunta define la población a la que pretendemos generalizar."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
+    "href": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
+    "title": "Estimación de parámetros",
+    "section": "Del dato a la población",
+    "text": "Del dato a la población\n\n PREGUNTA\\(\\longrightarrow\\)POBLACIÓN\\(\\longrightarrow\\)MUESTRA\\(\\longrightarrow\\)ESTADÍSTICO\\(\\longrightarrow\\)ESTIMACIÓN\\(\\longrightarrow\\)INCERTIDUMBRE"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
+    "href": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
+    "title": "Estimación de parámetros",
+    "section": "Lo importante de hoy",
+    "text": "Lo importante de hoy\n\n\nUn estadístico muestral permite estimar un parámetro poblacional.\nEl error estándar expresa la precisión de la estimación.\nUn intervalo de confianza comunica estimación + incertidumbre.\nNingún procedimiento estadístico permite generalizar más allá de la población que el diseño y el muestreo permiten representar."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
+    "href": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
+    "title": "Estimación de parámetros",
+    "section": "Puente a la próxima clase",
+    "text": "Puente a la próxima clase\n\n\nHASTA AHORA\n¿Cuánto vale aproximadamente un parámetro?\n\n\nLUEGO\n¿Los datos son compatibles con un valor determinado del parámetro o con diferencias entre poblaciones?\n\n\n\nPruebas de hipótesis"
+  },
+  {
+    "objectID": "clases/index.html",
+    "href": "clases/index.html",
+    "title": "Clases",
+    "section": "",
+    "text": "Materiales de las clases teóricas de Estadística y Diseño Experimental.\n\n Clase 01 Estadística descriptiva \n Clase 02 Probabilidad \n Clase 03 Distribuciones de probabilidad \n Clase 04 Distribuciones muestrales \n Clase 05 Estimación de parámetros"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-descripción-fue-el-primer-paso",
+    "href": "clases/02_probabilidad/index.html#la-descripción-fue-el-primer-paso",
+    "title": "Probabilidad",
+    "section": "La descripción fue el primer paso",
+    "text": "La descripción fue el primer paso\nRecolectamos datos para responder preguntas.\nAprendimos a organizar, visualizar y resumir lo observado.\n\nPero si volvemos a observar el sistema, ¿obtendremos exactamente lo mismo?\n\n\nInvestigar también implica aprender a razonar bajo incertidumbre."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#una-nueva-semilla-abre-una-pregunta",
+    "href": "clases/02_probabilidad/index.html#una-nueva-semilla-abre-una-pregunta",
+    "title": "Probabilidad",
+    "section": "Una nueva semilla abre una pregunta",
+    "text": "Una nueva semilla abre una pregunta\n✓✓✓✓✓✓✓✓✓✓✓✓✓✓××××××\n\n  ✓14 germinaron\n  ×6 no germinaron\n\n\nSi tomo una nueva semilla del lote, ¿va a germinar?\n\n\nNo podemos saberlo con certeza. Sí podemos preguntar qué tan probable es."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#lo-observado-nos-da-una-primera-pista",
+    "href": "clases/02_probabilidad/index.html#lo-observado-nos-da-una-primera-pista",
+    "title": "Probabilidad",
+    "section": "Lo observado nos da una primera pista",
+    "text": "Lo observado nos da una primera pista\n\n\\[\\frac{14}{20}=0{,}70\\]\n\nEn nuestra muestra, la frecuencia relativa de germinación fue 0,70.\n\n¿Será también 0,70 si probamos otras semillas?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#al-principio-la-frecuencia-relativa-fluctúa-mucho",
+    "href": "clases/02_probabilidad/index.html#al-principio-la-frecuencia-relativa-fluctúa-mucho",
+    "title": "Probabilidad",
+    "section": "Al principio, la frecuencia relativa fluctúa mucho",
+    "text": "Al principio, la frecuencia relativa fluctúa mucho\n\nSimulamos semillas una detrás de otra, independientes, cada una con \\(P(\\text{germinar})=0{,}70\\). Después de cada semilla recalculamos la proporción acumulada que germinó.\n\n\n\nEn un lote real, la probabilidad verdadera es desconocida."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#con-muchas-repeticiones-se-estabiliza",
+    "href": "clases/02_probabilidad/index.html#con-muchas-repeticiones-se-estabiliza",
+    "title": "Probabilidad",
+    "section": "Con muchas repeticiones, se estabiliza",
+    "text": "Con muchas repeticiones, se estabiliza"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-probabilidad-describe-un-patrón-de-largo-plazo",
+    "href": "clases/02_probabilidad/index.html#la-probabilidad-describe-un-patrón-de-largo-plazo",
+    "title": "Probabilidad",
+    "section": "La probabilidad describe un patrón de largo plazo",
+    "text": "La probabilidad describe un patrón de largo plazo\nEn una larga secuencia de repeticiones, la frecuencia relativa de un resultado tiende a estabilizarse.\n\n\\[P(\\text{germina})=0{,}70\\]\n\n\nNo significa que entre las próximas 10 semillas germinarán necesariamente 7."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#si-los-resultados-son-equiprobables-podemos-contar",
+    "href": "clases/02_probabilidad/index.html#si-los-resultados-son-equiprobables-podemos-contar",
+    "title": "Probabilidad",
+    "section": "Si los resultados son equiprobables, podemos contar",
+    "text": "Si los resultados son equiprobables, podemos contar\n\n\\[P(A)=\\frac{\\text{número de casos favorables}}{\\text{número de casos posibles}}\\]\n\n\n\n\nDado ideal: \\(P(\\text{par})=3/6=0{,}50\\)\n\n\nMoneda ideal: \\(P(\\text{cara})=1/2=0{,}50\\)\n\n\n\nUrna: 2 semillas rojas entre 5 igualmente seleccionables: \\(P(\\text{roja})=2/5\\).\n\n\n\nEsta es la definición clásica y requiere resultados elementales igualmente probables. La germinación biológica no se resuelve suponiendo equiprobabilidad: puede estimarse con frecuencias observadas."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#sabemos-los-resultados-posibles-no-cuál-ocurrirá",
+    "href": "clases/02_probabilidad/index.html#sabemos-los-resultados-posibles-no-cuál-ocurrirá",
+    "title": "Probabilidad",
+    "section": "Sabemos los resultados posibles, no cuál ocurrirá",
+    "text": "Sabemos los resultados posibles, no cuál ocurrirá\nTomamos al azar una semilla y registramos si germina.\n\n¿Sabemos qué resultado obtendremos? No.\n¿Sabemos cuáles son los resultados posibles? Sí.\n\n\nUn experimento aleatorio tiene resultados posibles conocidos, pero su resultado particular es incierto."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#el-espacio-muestral-reúne-las-posibilidades",
+    "href": "clases/02_probabilidad/index.html#el-espacio-muestral-reúne-las-posibilidades",
+    "title": "Probabilidad",
+    "section": "El espacio muestral reúne las posibilidades",
+    "text": "El espacio muestral reúne las posibilidades\nPara una semilla:\n\n\\[S=\\{G,N\\}\\]\n\n\n\nGgermina\n\n\nNno germina\n\n\n\nEl espacio muestral es el conjunto de todos los resultados posibles."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#un-evento-agrupa-resultados-con-una-condición-común",
+    "href": "clases/02_probabilidad/index.html#un-evento-agrupa-resultados-con-una-condición-común",
+    "title": "Probabilidad",
+    "section": "Un evento agrupa resultados con una condición común",
+    "text": "Un evento agrupa resultados con una condición común\nPara dos semillas:\n\\[S=\\{GG,GN,NG,NN\\}\\]\n\n\nA: germina al menos una\n\\[A=\\{GG,GN,NG\\}\\]\n\nB: germinan las dos\n\\[B=\\{GG\\}\\]\n\n\nUn evento es un conjunto de resultados que cumplen una condición. Siempre: \\(0\\leq P(A)\\leq1\\)."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-misma-historia-continúa-con-dos-características",
+    "href": "clases/02_probabilidad/index.html#la-misma-historia-continúa-con-dos-características",
+    "title": "Probabilidad",
+    "section": "La misma historia continúa con dos características",
+    "text": "La misma historia continúa con dos características\nEn 100 semillas registramos si germinaron y si presentaron hongos."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#los-totales-marginales-dan-probabilidades-de-una-sola-variable",
+    "href": "clases/02_probabilidad/index.html#los-totales-marginales-dan-probabilidades-de-una-sola-variable",
+    "title": "Probabilidad",
+    "section": "Los totales marginales dan probabilidades de una sola variable",
+    "text": "Los totales marginales dan probabilidades de una sola variable\n\n\n\n\n\n\n\n\n\n\n\n\\[P(\\text{germina})=\\frac{60}{100}=0{,}60\\]\n\n\n\n\n\n\n\n\n\n\n\n\\[P(\\text{hongos})=\\frac{50}{100}=0{,}50\\]"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#germina-y-tiene-hongos-selecciona-una-celda",
+    "href": "clases/02_probabilidad/index.html#germina-y-tiene-hongos-selecciona-una-celda",
+    "title": "Probabilidad",
+    "section": "“Germina y tiene hongos” selecciona una celda",
+    "text": "“Germina y tiene hongos” selecciona una celda\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[P(\\text{germina y hongos})=\\frac{20}{100}\\] \\[=0{,}20\\]\n\n\nLa probabilidad conjunta considera ambas características entre todas las semillas."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#saber-que-hay-hongos-puede-cambiar-el-resultado",
+    "href": "clases/02_probabilidad/index.html#saber-que-hay-hongos-puede-cambiar-el-resultado",
+    "title": "Probabilidad",
+    "section": "Saber que hay hongos puede cambiar el resultado",
+    "text": "Saber que hay hongos puede cambiar el resultado\n\nEntre las semillas con hongos, ¿qué proporción germinó?\n\n\n\nAhora el conjunto de referencia son 50 semillas: 20 germinaron y 30 no."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#condicionar-significa-cambiar-el-denominador",
+    "href": "clases/02_probabilidad/index.html#condicionar-significa-cambiar-el-denominador",
+    "title": "Probabilidad",
+    "section": "Condicionar significa cambiar el denominador",
+    "text": "Condicionar significa cambiar el denominador\n\n\\[P(\\text{germina}\\mid\\text{hongos})=\\frac{20}{50}=0{,}40\\]\n\n\n“Entre las semillas con hongos, 40% germinó”.\n\n\nLa barra vertical se lee “dado que”."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#después-del-significado-podemos-abreviar",
+    "href": "clases/02_probabilidad/index.html#después-del-significado-podemos-abreviar",
+    "title": "Probabilidad",
+    "section": "Después del significado, podemos abreviar",
+    "text": "Después del significado, podemos abreviar\nDefinimos:\n\n\nA = presenta hongos\n\n\nB = germina\n\n\n\n\n\\(P(A)=P(\\text{hongos})\\)\\(P(B)=P(\\text{germina})\\)\n\n\n\\(P(A\\cap B)=P(\\text{hongos y germina})\\)\\(P(B\\mid A)=P(\\text{germina}\\mid\\text{hongos})\\)"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#conjunta-y-condicional-obedecen-lógicas-distintas",
+    "href": "clases/02_probabilidad/index.html#conjunta-y-condicional-obedecen-lógicas-distintas",
+    "title": "Probabilidad",
+    "section": "Conjunta y condicional obedecen lógicas distintas",
+    "text": "Conjunta y condicional obedecen lógicas distintas\n\n\nConjunta\n\\[P(A\\cap B)=\\frac{20}{100}=0{,}20\\]\n“Hongos y germinación” entre todas.\n\n\\(P(A\\cap B)=P(B\\cap A)\\): “A y B” equivale a “B y A”.\n\n\nCondicional\n\\[P(B\\mid A)=\\frac{20}{50}=0{,}40\\]\nGerminación entre las que tienen hongos.\n\nEn general, \\(P(A\\mid B)\\neq P(B\\mid A)\\)."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#invertir-la-condición-cambia-el-denominador",
+    "href": "clases/02_probabilidad/index.html#invertir-la-condición-cambia-el-denominador",
+    "title": "Probabilidad",
+    "section": "Invertir la condición cambia el denominador",
+    "text": "Invertir la condición cambia el denominador\nEntre las semillas que germinaron, ¿qué proporción tenía hongos?\n\n\\[P(\\text{hongos}\\mid\\text{germina})=\\frac{20}{60}=0{,}333\\]\n\n\n\n\\(P(B\\mid A)=0{,}40\\)\n\n\n\\(P(A\\mid B)=0{,}333\\)"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#independencia-pregunta-si-a-aporta-información-sobre-b",
+    "href": "clases/02_probabilidad/index.html#independencia-pregunta-si-a-aporta-información-sobre-b",
+    "title": "Probabilidad",
+    "section": "Independencia pregunta si A aporta información sobre B",
+    "text": "Independencia pregunta si A aporta información sobre B\n\n\nSin saber si hay hongos\\(P(germina)=0{,}60\\)\n\n\nSabiendo que hay hongos\\(P(germina\\mid hongos)=0{,}40\\)\n\n\n\nSi \\(P(germina\\mid hongos)=P(germina)\\), saber A no cambia la probabilidad de B: son independientes.\n\n\nAquí son diferentes. Hongos y germinación no parecen independientes; están asociados. Esto no demuestra causalidad."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-regla-general-reconstruye-la-probabilidad-conjunta",
+    "href": "clases/02_probabilidad/index.html#la-regla-general-reconstruye-la-probabilidad-conjunta",
+    "title": "Probabilidad",
+    "section": "La regla general reconstruye la probabilidad conjunta",
+    "text": "La regla general reconstruye la probabilidad conjunta\nRegla multiplicativa general\n\n\\[P(A\\cap B)=P(A)P(B\\mid A)\\]\n\n\\[=0{,}50\\times0{,}40=0{,}20\\]\n\nPrimero restringimos a A; dentro de A preguntamos por B."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-independencia-produce-un-caso-especial",
+    "href": "clases/02_probabilidad/index.html#la-independencia-produce-un-caso-especial",
+    "title": "Probabilidad",
+    "section": "La independencia produce un caso especial",
+    "text": "La independencia produce un caso especial\nSi A y B son independientes, \\(P(B\\mid A)=P(B)\\).\nRegla multiplicativa especial\n\n\\[P(A\\cap B)=P(A)P(B)\\]\n\n\\[=0{,}50\\times0{,}60=0{,}30\\]\n\nLa regla especial surge de la general sólo bajo independencia. Aquí esperaría 0,30, pero observamos 0,20."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#dos-comparaciones-evalúan-la-misma-independencia",
+    "href": "clases/02_probabilidad/index.html#dos-comparaciones-evalúan-la-misma-independencia",
+    "title": "Probabilidad",
+    "section": "Dos comparaciones evalúan la misma independencia",
+    "text": "Dos comparaciones evalúan la misma independencia\n\n\nCondicional vs. marginal\n\\[P(B\\mid A)\\stackrel{?}{=}P(B)\\]\n\\[0{,}40\\neq0{,}60\\]\n\nConjunta observada vs. conjunta suponiendo independencia\n\\[P(A\\cap B)\\stackrel{?}{=}P(A)P(B)\\]\n\\[0{,}20\\neq0{,}30\\]\n\n\nEn ambos casos, si las probabilidades coinciden, quiere decir que la ocurrencia de A no modifica la de B, o sea que A y B son independientes."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#mini-actividad-tratamiento-y-estado-fitosanitario",
+    "href": "clases/02_probabilidad/index.html#mini-actividad-tratamiento-y-estado-fitosanitario",
+    "title": "Probabilidad",
+    "section": "Mini actividad: tratamiento y estado fitosanitario",
+    "text": "Mini actividad: tratamiento y estado fitosanitario\n\n\n\n\nEnferma\nSana\nTotal\n\n\n\n\nCon tratamiento\n10\n40\n50\n\n\nSin tratamiento\n20\n30\n50\n\n\nTotal\n30\n70\n100\n\n\n\n\n¿Cuánto vale \\(P(ConTrat\\cap Enferma)\\)?\n\n¿Cuánto vale \\(P(Enerma\\mid ConTrat)\\)?\n\n¿Cuánto vale \\(P(Enferma)\\)?\n\n¿El hecho de estar enferma parece independiente del tratamiento?\nHagamos una tablas de frecuencias relativas para interpretar\n\n\n\\(P(Enferma\\mid ConTrat)=0{,}20\\) \\(\\neq\\) \\(P(Enferma)=0{,}30\\). No parecen independientes.\n\n\nLa tabla muestra asociación; sin conocer el diseño, no permite afirmar que el tratamiento causó la diferencia."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#primero-interpretemos-el-lenguaje",
+    "href": "clases/02_probabilidad/index.html#primero-interpretemos-el-lenguaje",
+    "title": "Probabilidad",
+    "section": "Primero interpretemos el lenguaje",
+    "text": "Primero interpretemos el lenguaje\n\n\n\nLa pregunta dice…\nBuscamos…\nNotación\n\n\n\n\nA o B\nunión\n\\(P(A\\cup B)\\)\n\n\nA y B\nintersección\n\\(P(A\\cap B)\\)\n\n\nA dado B\ncondicional\n\\(P(A\\mid B)\\)\n\n\nno A\ncomplemento\n\\(P(\\overline{A})\\)\n\n\n\n\nPrimero interpretar la pregunta. Después elegir la regla."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#al-sumar-a-y-b-la-intersección-aparece-dos-veces",
+    "href": "clases/02_probabilidad/index.html#al-sumar-a-y-b-la-intersección-aparece-dos-veces",
+    "title": "Probabilidad",
+    "section": "Al sumar A y B, la intersección aparece dos veces",
+    "text": "Al sumar A y B, la intersección aparece dos veces\n\n\n\n  A\n  B\n  A ∩ B\n\n\nRegla aditiva general\n\\[P(A\\cup B)=\\] \\[P(A)+P(B)-P(A\\cap B)\\]\n\n\\[=0{,}50+0{,}60-0{,}20\\] \\[=0{,}90\\]\n\n\n\nRestamos la intersección porque al sumar A y B la contamos dos veces."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-regla-aditiva-tiene-un-caso-especial",
+    "href": "clases/02_probabilidad/index.html#la-regla-aditiva-tiene-un-caso-especial",
+    "title": "Probabilidad",
+    "section": "La regla aditiva tiene un caso especial",
+    "text": "La regla aditiva tiene un caso especial\n\n\\[P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\]\n\n\nAl seleccionar una semilla, puede provenir del proveedor A o del proveedor B. Una misma semilla no puede provenir simultáneamente de ambos.\n\n\nAeventos mutuamente excluyentesB\n\n\n\\[P(A\\cap B)=0\\]\n\n\n\\[P(A\\cup B)=P(A)+P(B)-0=P(A)+P(B)\\]\n\n\nEl complemento es otro caso excluyente: si \\(B\\) = germina, \\(\\overline{B}\\) = no germina y \\(P(\\overline{B})=1-0{,}60=0{,}40\\)."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#hagamos-una-pausa",
+    "href": "clases/02_probabilidad/index.html#hagamos-una-pausa",
+    "title": "Probabilidad",
+    "section": "Hagamos una pausa",
+    "text": "Hagamos una pausa\n\nVamos a hacer una pequeña investigación con nosotros mismos para responder una pregunta.\n\n\nPrimero planteamos la pregunta. Después vemos qué datos necesitamos."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#nuestra-pregunta",
+    "href": "clases/02_probabilidad/index.html#nuestra-pregunta",
+    "title": "Probabilidad",
+    "section": "Nuestra pregunta",
+    "text": "Nuestra pregunta\n\nEntre los estudiantes presentes hoy en la clase de EyDE, ¿cómo varía el uso del celular (usó / no usó) durante el viaje a clase según si vinieron en transporte público o en otro medio?\n\n\n\n¿Cuál es la variable de clasificación?\n\n\n¿Cuál es la variable de respuesta?\n\n\n¿Cuál es la unidad estadística?\n\n\n¿Cuál es la población de interés?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#cómo-hacemos-para-responderla",
+    "href": "clases/02_probabilidad/index.html#cómo-hacemos-para-responderla",
+    "title": "Probabilidad",
+    "section": "¿Cómo hacemos para responderla?",
+    "text": "¿Cómo hacemos para responderla?\n\n¿Cómo podemos responder nuestra pregunta?\n\n\nNecesitamos datos.\n\n\nLos vamos a obtener ahora, levantando la mano.\n\n\n\nMedio de transportepúblico / otro\n\n\nUso del celular durante el viajesí / no"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#ya-tenemos-los-datos.-qué-calcularían",
+    "href": "clases/02_probabilidad/index.html#ya-tenemos-los-datos.-qué-calcularían",
+    "title": "Probabilidad",
+    "section": "Ya tenemos los datos. ¿Qué calcularían?",
+    "text": "Ya tenemos los datos. ¿Qué calcularían?\n\n¿Qué cálculo harían con la tabla para responder nuestra pregunta original?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#con-la-misma-tabla-practiquemos",
+    "href": "clases/02_probabilidad/index.html#con-la-misma-tabla-practiquemos",
+    "title": "Probabilidad",
+    "section": "Con la misma tabla, practiquemos",
+    "text": "Con la misma tabla, practiquemos\n\n\n\\[P(C)=?\\] ¿Usó el celular durante el viaje?\n\n\n\\[P(T)=?\\] ¿Vino en transporte público?\n\n\n\\[P(C\\cap T)=?\\] ¿Usó el celular y vino en transporte público?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#con-la-misma-tabla-sigamos-practicando",
+    "href": "clases/02_probabilidad/index.html#con-la-misma-tabla-sigamos-practicando",
+    "title": "Probabilidad",
+    "section": "Con la misma tabla, sigamos practicando",
+    "text": "Con la misma tabla, sigamos practicando\n\n\n\\[P(C\\mid T)=?\\] Entre quienes vinieron en transporte público, ¿usó el celular?\n\n\n\\[P(T\\mid C)=?\\] Entre quienes usaron el celular, ¿vino en transporte público?\n\n\n\\[P(C\\cup T)=?\\] ¿Usó el celular o vino en transporte público?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#plan-b-nuestra-pregunta",
+    "href": "clases/02_probabilidad/index.html#plan-b-nuestra-pregunta",
+    "title": "Probabilidad",
+    "section": "Plan B: nuestra pregunta",
+    "text": "Plan B: nuestra pregunta\n\n\nEntre los estudiantes presentes hoy en la clase de EyDE, ¿cómo varía el haber desayunado (sí o no) antes de venir según si se levantaron antes de las 6:30 o después de las 6:30?\n\n\n\n¿Cuál es la variable de clasificación?\n\n\n¿Cuál es la variable de respuesta?\n\n\n¿Cuál es la unidad estadística?\n\n\n¿Cuál es la población de interés?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#plan-b-cómo-hacemos-para-responderla",
+    "href": "clases/02_probabilidad/index.html#plan-b-cómo-hacemos-para-responderla",
+    "title": "Probabilidad",
+    "section": "Plan B: ¿cómo hacemos para responderla?",
+    "text": "Plan B: ¿cómo hacemos para responderla?\n\nObtenemos los datos levantando la mano.\n\n\n\nHora de levantarseantes de las 6:30 / después de las 6:30\n\n\nDesayuno antes de venirsí / no"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#ya-tenemos-los-datos.-qué-calcularían-1",
+    "href": "clases/02_probabilidad/index.html#ya-tenemos-los-datos.-qué-calcularían-1",
+    "title": "Probabilidad",
+    "section": "Ya tenemos los datos. ¿Qué calcularían?",
+    "text": "Ya tenemos los datos. ¿Qué calcularían?\n\n¿Qué cálculo harían con la tabla para responder nuestra pregunta original?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#plan-b-con-la-misma-tabla-practiquemos",
+    "href": "clases/02_probabilidad/index.html#plan-b-con-la-misma-tabla-practiquemos",
+    "title": "Probabilidad",
+    "section": "Plan B: con la misma tabla, practiquemos",
+    "text": "Plan B: con la misma tabla, practiquemos\n\n\\(D\\): desayunó · \\(L\\): se levantó antes de las 6:30\n\n\n\n\\[P(D)=?\\] ¿Desayunó antes de venir?\n\n\n\\[P(L)=?\\] ¿Se levantó antes de las 6:30?\n\n\n\\[P(D\\cap L)=?\\] ¿Desayunó y se levantó antes de las 6:30?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#plan-b-sigamos-practicando",
+    "href": "clases/02_probabilidad/index.html#plan-b-sigamos-practicando",
+    "title": "Probabilidad",
+    "section": "Plan B: sigamos practicando",
+    "text": "Plan B: sigamos practicando\n\n\\(D\\): desayunó · \\(L\\): se levantó antes de las 6:30\n\n\n\n\\[P(D\\mid L)=?\\] Entre quienes se levantaron antes de las 6:30, ¿desayunó?\n\n\n\\[P(L\\mid D)=?\\] Entre quienes desayunaron, ¿se levantó antes de las 6:30?\n\n\n\\[P(D\\cup L)=?\\] ¿Desayunó o se levantó antes de las 6:30?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#a-veces-observamos-un-resultado-y-queremos-inferir-qué-lo-produjo",
+    "href": "clases/02_probabilidad/index.html#a-veces-observamos-un-resultado-y-queremos-inferir-qué-lo-produjo",
+    "title": "Probabilidad",
+    "section": "A veces observamos un resultado y queremos inferir qué lo produjo",
+    "text": "A veces observamos un resultado y queremos inferir qué lo produjo\n\nHasta ahora preguntamos cosas como:\n\n\n\\[P(\\text{resultado}\\mid\\text{causa})\\]\n\n\nSi conocemos una causa, ¿qué probabilidad hay de observar cierto resultado?\n\n\nPero en la práctica muchas veces observamos primero un resultado y preguntamos:\n\n\n\\[P(\\text{causa}\\mid\\text{resultado})\\]\n\n\n¿Qué tan probable es cada causa después de observarlo?\n\n\n\nInvertir el condicionamiento cambia la pregunta."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#observamos-manchas-cuál-es-la-causa",
+    "href": "clases/02_probabilidad/index.html#observamos-manchas-cuál-es-la-causa",
+    "title": "Probabilidad",
+    "section": "Observamos manchas: ¿cuál es la causa?",
+    "text": "Observamos manchas: ¿cuál es la causa?\n\nUn ingeniero agrónomo revisa una plantación de tomate y observa hojas con manchas. En este ejemplo simplificado consideraremos dos posibles causas.\n\n\n\n\\(T\\): tizón · 30 % de los casos\n\\[P(T)=0{,}30\\qquad P(M\\mid T)=0{,}80\\]\nSi hay tizón, el 80 % presenta manchas.\n\n\n\\(H\\): estrés hídrico · 70 % de los casos\n\\[P(H)=0{,}70\\qquad P(M\\mid H)=0{,}20\\]\nSi hay estrés hídrico, el 20 % presenta manchas.\n\n\n\n\\(M\\): presencia de manchas foliares.\n\n\nSi observamos manchas, ¿cuál es la probabilidad de que la causa sea tizón?   \\(P(T\\mid M)= ?\\)"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-condición-cambia-el-significado-de-la-pregunta",
+    "href": "clases/02_probabilidad/index.html#la-condición-cambia-el-significado-de-la-pregunta",
+    "title": "Probabilidad",
+    "section": "La condición cambia el significado de la pregunta",
+    "text": "La condición cambia el significado de la pregunta\n\n\n\n\\[P(M\\mid T)=0{,}80\\]\n\nSi hay tizón, ¿qué probabilidad hay de manchas?\n\n\n≠\n\n\n\n\\[P(T\\mid M)= ?\\]\n\nSi observamos manchas, ¿qué probabilidad hay de tizón?\n\n\n\nEn general, \\(P(M\\mid T)\\neq P(T\\mid M)\\)."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#imaginemos-100-casos-con-estas-probabilidades",
+    "href": "clases/02_probabilidad/index.html#imaginemos-100-casos-con-estas-probabilidades",
+    "title": "Probabilidad",
+    "section": "Imaginemos 100 casos con estas probabilidades",
+    "text": "Imaginemos 100 casos con estas probabilidades\n\nLa pregunta sigue siendo: \\(P(T\\mid M)= ?\\)\n\n\n Tizón · 30 casos esperados24con manchas6sin manchas\n Estrés hídrico · 70 casos esperados14con manchas56sin manchas\n\n\n\n\\(30\\times0{,}80=24\\) con manchas\\(30\\times0{,}20=6\\) sin manchas\n\n\n\\(70\\times0{,}20=14\\) con manchas\\(70\\times0{,}80=56\\) sin manchas"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#la-probabilidad-total-construye-el-denominador",
+    "href": "clases/02_probabilidad/index.html#la-probabilidad-total-construye-el-denominador",
+    "title": "Probabilidad",
+    "section": "La probabilidad total construye el denominador",
+    "text": "La probabilidad total construye el denominador\n\nHay dos caminos mutuamente excluyentes para observar manchas: \\(T\\rightarrow M\\) o \\(H\\rightarrow M\\).\n\n\n\n\\(T\\cap M\\)\\(P(T)P(M\\mid T)\\)\\(=(0{,}30)(0{,}80)=0{,}24\\)\n\n\n+\n\n\n\\(H\\cap M\\)\\(P(H)P(M\\mid H)\\)\\(=(0{,}70)(0{,}20)=0{,}14\\)\n\n\n\n\\[P(M)=0{,}24+0{,}14=0{,}38\\]\n\n\nEn los 100 casos imaginarios, esto es \\(38/100=0{,}38\\)."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#al-observar-manchas-cambia-el-conjunto-de-referencia",
+    "href": "clases/02_probabilidad/index.html#al-observar-manchas-cambia-el-conjunto-de-referencia",
+    "title": "Probabilidad",
+    "section": "Al observar manchas, cambia el conjunto de referencia",
+    "text": "Al observar manchas, cambia el conjunto de referencia\n\nPartimos de los 100 casos. La pregunta es \\(P(T\\mid M)= ?\\)\n\n\n Tizón · 3024con manchas6sin manchas\n Estrés hídrico · 7014con manchas56sin manchas\n\n\nAtenuamos los 6 y los 56 casos sin manchas. Quedan \\(24+14=38\\) casos con manchas.\n\n\n\\[P(T\\mid M)=\\frac{24}{38}\\approx0{,}632\\]\n\n\nAhora nuestro conjunto de referencia son sólo los casos con manchas."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#bayes-actualiza-la-probabilidad-después-de-observar-evidencia",
+    "href": "clases/02_probabilidad/index.html#bayes-actualiza-la-probabilidad-después-de-observar-evidencia",
+    "title": "Probabilidad",
+    "section": "Bayes actualiza la probabilidad después de observar evidencia",
+    "text": "Bayes actualiza la probabilidad después de observar evidencia\n\n\nAntes de observar la planta\n\n\\[P(T)=0{,}30\\]\n\n\n\n→ observamos manchas \\(M\\) →\n\n\nDespués de observarlas\n\n\\[P(T\\mid M)\\approx0{,}632\\]\n\n\n\n\n30 %→63,2 %\n\n\nLa evidencia cambia qué tan probable consideramos cada causa."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#construimos-el-numerador-y-el-denominador",
+    "href": "clases/02_probabilidad/index.html#construimos-el-numerador-y-el-denominador",
+    "title": "Probabilidad",
+    "section": "Construimos el numerador y el denominador",
+    "text": "Construimos el numerador y el denominador\n\nQueremos calcular: \\(P(T\\mid M)= ?\\)\n\n\nNumerador: tizón y manchas\nPor la regla multiplicativa:\n\\[P(T\\cap M)=P(T)P(M\\mid T)\\]\n\n\n\\[P(T\\cap M)=(0{,}30)(0{,}80)=0{,}24\\]\nEl 24 % de todos los casos corresponde a plantas con tizón y manchas: \\(24/100=0{,}24\\).\n\n\nDenominador: todos los casos con manchas\n\\[P(M)=0{,}38\\]\nEntre todos los casos, el 38 % presenta manchas."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#del-razonamiento-a-la-fórmula-de-bayes",
+    "href": "clases/02_probabilidad/index.html#del-razonamiento-a-la-fórmula-de-bayes",
+    "title": "Probabilidad",
+    "section": "Del razonamiento a la fórmula de Bayes",
+    "text": "Del razonamiento a la fórmula de Bayes\n\n\\[P(T\\mid M)=\\frac{\\text{tizón y manchas}}{\\text{todos los casos con manchas}}\\]\n\n\nPor la definición de probabilidad condicional:\n\n\\[P(T\\mid M)=\\frac{P(T\\cap M)}{P(M)}\\]\n\n\n\n\n\\[P(T\\mid M)=\\frac{0{,}24}{0{,}38}\\approx0{,}632\\]\n\n\nEntre los casos con manchas, aproximadamente el 63,2 % corresponde a tizón.\n\n\n\nSustituimos \\(P(T\\cap M)=P(T)P(M\\mid T)\\):\n\\[P(T\\mid M)=\\frac{P(T)P(M\\mid T)}{P(M)}\\]\n\n\n\nTeorema de BayesCombina la definición condicional con la regla multiplicativa.\n\n\nEn general: \\(\\displaystyle P(A\\mid B)=\\frac{P(A)P(B\\mid A)}{P(B)}\\)"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#bayes-permite-razonar-desde-la-evidencia-hacia-una-causa",
+    "href": "clases/02_probabilidad/index.html#bayes-permite-razonar-desde-la-evidencia-hacia-una-causa",
+    "title": "Probabilidad",
+    "section": "Bayes permite razonar desde la evidencia hacia una causa",
+    "text": "Bayes permite razonar desde la evidencia hacia una causa\n\n\n\\[P(T)=0{,}30\\]\n\n↓\n\nobservamos manchas\n\n↓\n\n\\[P(T\\mid M)=0{,}632\\]\n\n\n\nBayes actualiza la probabilidad de una causa después de observar evidencia.\n\n\n\\[P(\\text{causa}\\mid\\text{evidencia})\\]"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#una-semilla-no-es-lo-mismo-que-diez",
+    "href": "clases/02_probabilidad/index.html#una-semilla-no-es-lo-mismo-que-diez",
+    "title": "Probabilidad",
+    "section": "Una semilla no es lo mismo que diez",
+    "text": "Una semilla no es lo mismo que diez\nSabemos:\n\\[P(\\text{germina})=0{,}70\\]\nAhora plantamos 10 semillas.\n\n¿Cuántas van a germinar?\n\n\n\\[0,1,2,\\ldots,10\\]\n\n\nConocemos los valores posibles, pero no cuál ocurrirá en una tanda particular."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#cada-tanda-puede-dar-un-resultado-distinto",
+    "href": "clases/02_probabilidad/index.html#cada-tanda-puede-dar-un-resultado-distinto",
+    "title": "Probabilidad",
+    "section": "Cada tanda puede dar un resultado distinto",
+    "text": "Cada tanda puede dar un resultado distinto\nTanda 1 → 6 germinadas\n✓✓✓✓✓✓××××\nTanda 2 → 7 germinadas\n✓✓✓✓✓✓✓×××\nTanda 3 → 7 germinadas\n✓✓×✓✓×✓✓×✓\n\n\nLa cantidad germinada cambia de una repetición a otra."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#diez-mil-tandas-revelan-un-patrón",
+    "href": "clases/02_probabilidad/index.html#diez-mil-tandas-revelan-un-patrón",
+    "title": "Probabilidad",
+    "section": "Diez mil tandas revelan un patrón",
+    "text": "Diez mil tandas revelan un patrón\n\n\n¿Todos los resultados son igualmente probables?"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#cada-valor-posible-tiene-una-probabilidad",
+    "href": "clases/02_probabilidad/index.html#cada-valor-posible-tiene-una-probabilidad",
+    "title": "Probabilidad",
+    "section": "Cada valor posible tiene una probabilidad",
+    "text": "Cada valor posible tiene una probabilidad\nDefinimos informalmente:\n\n\\(X\\) = número de semillas germinadas entre 10\n\nEntonces podemos asociar una probabilidad a cada valor:\n\\[P(X=0),\\ P(X=1),\\ \\ldots,\\ P(X=10)\\]\n\nEl conjunto de valores posibles y sus probabilidades describe una distribución de resultados.\n\n\nLa próxima clase formalizaremos esta idea mediante variables aleatorias y distribuciones de probabilidad."
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#podemos-conocer-el-patrón-sin-repetir-10.000-veces",
+    "href": "clases/02_probabilidad/index.html#podemos-conocer-el-patrón-sin-repetir-10.000-veces",
+    "title": "Probabilidad",
+    "section": "¿Podemos conocer el patrón sin repetir 10.000 veces?",
+    "text": "¿Podemos conocer el patrón sin repetir 10.000 veces?\n\n\nSí: podemos usar un modelo probabilístico.\n\n\nPróxima clase: Distribuciones de probabilidad teóricas"
+  },
+  {
+    "objectID": "clases/02_probabilidad/index.html#el-recorrido-de-esta-clase-de-probabilidades",
+    "href": "clases/02_probabilidad/index.html#el-recorrido-de-esta-clase-de-probabilidades",
+    "title": "Probabilidad",
+    "section": "El recorrido de esta clase de Probabilidades",
+    "text": "El recorrido de esta clase de Probabilidades\n\n  Datos→\n  Frecuencias relativas→\n  Incertidumbre→\n  Probabilidad→\n  Dos eventos→\n  Conjunta y condicional→\n  Independencia→\n  Muchas repeticiones→\n  Distribución de resultados\n\n\nLa probabilidad no elimina la incertidumbre: nos da un lenguaje para cuantificarla y razonar con ella."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#dónde-habíamos-quedado",
+    "href": "clases/03_distribuciones/index.html#dónde-habíamos-quedado",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Dónde habíamos quedado?",
+    "text": "¿Dónde habíamos quedado?\nSi cada semilla germina con probabilidad 0,70 y tomamos 10 semillas:\n\n\\(X\\) = número de semillas germinadas entre 10\n\n\n¿Podemos saber cuánto valdrá \\(X\\)?\n\n\nNo exactamente. Pero podemos saber qué valores son más probables."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#cada-tanda-puede-dar-un-resultado-diferente",
+    "href": "clases/03_distribuciones/index.html#cada-tanda-puede-dar-un-resultado-diferente",
+    "title": "Distribuciones de probabilidad",
+    "section": "Cada tanda puede dar un resultado diferente",
+    "text": "Cada tanda puede dar un resultado diferente\nTanda 1 → X = 6\n✓✓✓✓✓✓××××\nTanda 2 → X = 7\n✓✓✓✓✓✓✓×××\nTanda 3 → X = 8\n✓✓✓✓✓✓✓✓××\n\n\nEl valor de \\(X\\) cambia de una repetición a otra."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#x-es-una-variable-aleatoria",
+    "href": "clases/03_distribuciones/index.html#x-es-una-variable-aleatoria",
+    "title": "Distribuciones de probabilidad",
+    "section": "X es una variable aleatoria",
+    "text": "X es una variable aleatoria\nUna variable aleatoria asigna un valor numérico al resultado de un experimento aleatorio.\n\n\\[X=\\text{número de semillas germinadas entre 10}\\] \\[X\\in\\{0,1,2,\\ldots,10\\}\\]"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#repetir-revela-un-patrón",
+    "href": "clases/03_distribuciones/index.html#repetir-revela-un-patrón",
+    "title": "Distribuciones de probabilidad",
+    "section": "Repetir revela un patrón",
+    "text": "Repetir revela un patrón\n\n\nNo predecimos una tanda particular, pero aparece un patrón estable."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-distribución-asocia-valores-y-probabilidades",
+    "href": "clases/03_distribuciones/index.html#una-distribución-asocia-valores-y-probabilidades",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una distribución asocia valores y probabilidades",
+    "text": "Una distribución asocia valores y probabilidades\nUna distribución de probabilidad indica qué valores puede tomar una variable aleatoria y qué probabilidad tiene cada uno."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#distintos-procesos-requieren-distintos-modelos",
+    "href": "clases/03_distribuciones/index.html#distintos-procesos-requieren-distintos-modelos",
+    "title": "Distribuciones de probabilidad",
+    "section": "Distintos procesos requieren distintos modelos",
+    "text": "Distintos procesos requieren distintos modelos\n\n DiscretasBernoulliBinomialPoissonHipergeométrica\n ContinuasNormalt de StudentChi-cuadradoF\n\n\n\nEn esta claseBernoulli, Binomial, Poisson, Hipergeométrica y Normal.\n\n\nMás adelantet, Chi-cuadrado y F aparecerán en Inferencia."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-misma-distribución-puede-tener-formas-diferentes",
+    "href": "clases/03_distribuciones/index.html#una-misma-distribución-puede-tener-formas-diferentes",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una misma distribución puede tener formas diferentes",
+    "text": "Una misma distribución puede tener formas diferentes\nLos parámetros determinan las características concretas de la distribución y permiten calcular sus probabilidades.\n\n\n\\[Binomial(n,p)\\]\n\nCambiar \\(n\\) o \\(p\\) cambia la distribución.\n\n\n\n\\[N(\\mu,\\sigma^2)\\]\n\nCambiar \\(\\mu\\) o \\(\\sigma\\) cambia la distribución."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#en-una-variable-discreta-cada-valor-tiene-probabilidad",
+    "href": "clases/03_distribuciones/index.html#en-una-variable-discreta-cada-valor-tiene-probabilidad",
+    "title": "Distribuciones de probabilidad",
+    "section": "En una variable discreta, cada valor tiene probabilidad",
+    "text": "En una variable discreta, cada valor tiene probabilidad\n\n\\[f(x)=P(X=x)\\]\n\n\n\n\n\n\n\\(x\\)\n\\(P(X=x)\\)\n\n\n\n\n5\n0,103\n\n\n6\n0,200\n\n\n7\n0,267\n\n\n8\n0,233"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#las-barras-separadas-representan-valores-individuales",
+    "href": "clases/03_distribuciones/index.html#las-barras-separadas-representan-valores-individuales",
+    "title": "Distribuciones de probabilidad",
+    "section": "Las barras separadas representan valores individuales",
+    "text": "Las barras separadas representan valores individuales\n\n\n\\(f(x)\\ge0\\)\\(\\displaystyle\\sum_x f(x)=1\\)"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-semilla-puesta-a-germinar-es-un-ensayo-bernoulli",
+    "href": "clases/03_distribuciones/index.html#una-semilla-puesta-a-germinar-es-un-ensayo-bernoulli",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una semilla puesta a germinar es un ensayo Bernoulli",
+    "text": "Una semilla puesta a germinar es un ensayo Bernoulli\n\n GGerminaéxito → \\(Y=1\\)\\(P(Y=1)=p\\)\n NNo germinafracaso → \\(Y=0\\)\\(P(Y=0)=1-p\\)\n\n\n\\[Y\\sim Bernoulli(p)\\]"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#si-repetimos-el-ensayo-y-contamos-éxitos",
+    "href": "clases/03_distribuciones/index.html#si-repetimos-el-ensayo-y-contamos-éxitos",
+    "title": "Distribuciones de probabilidad",
+    "section": "Si repetimos el ensayo y contamos éxitos:",
+    "text": "Si repetimos el ensayo y contamos éxitos:\n\n\\[X=Y_1+Y_2+\\cdots+Y_n\\]\n\nSi los ensayos son independientes y tienen la misma probabilidad \\(p\\):\n\n\\[X\\sim Binomial(n,p)\\]"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#nuestro-ejemplo-principal-sigue-siendo-de-10-semillas",
+    "href": "clases/03_distribuciones/index.html#nuestro-ejemplo-principal-sigue-siendo-de-10-semillas",
+    "title": "Distribuciones de probabilidad",
+    "section": "Nuestro ejemplo principal sigue siendo de 10 semillas",
+    "text": "Nuestro ejemplo principal sigue siendo de 10 semillas\n\n\\[n=10,\\qquad p=0{,}70\\]\n\n\nEn este problema llamamos éxito a que una semilla germine.\n\n\n\\[X=\\text{número de semillas germinadas entre 10}\\]\n\n\nnúmero fijo de ensayos (n);\ndos resultados por ensayo: éxito y fracaso;\nmisma probabilidad de éxito (p);\nensayos independientes;\n\\(X\\) cuenta los éxitos en \\(n\\) ensayos independientes."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#simplifiquemos-a-3-semillas-para-entender-la-fórmula",
+    "href": "clases/03_distribuciones/index.html#simplifiquemos-a-3-semillas-para-entender-la-fórmula",
+    "title": "Distribuciones de probabilidad",
+    "section": "Simplifiquemos a 3 semillas para entender la fórmula",
+    "text": "Simplifiquemos a 3 semillas para entender la fórmula\nPara esta construcción solamente: \\(n=3\\), \\(p=0{,}70\\).\n\n¿Cuál es la probabilidad de que germinen exactamente 2 de las 3 semillas? \\[P(X=2)=?\\]\n\nPosible resultado 1:GGN\nPosible resultado 2:GNG\nPosible resultado 3:NGG\n\nEstas son todas las combinaciones posibles con 2 germinadas entre 3 semillas."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#primero-calculamos-una-secuencia",
+    "href": "clases/03_distribuciones/index.html#primero-calculamos-una-secuencia",
+    "title": "Distribuciones de probabilidad",
+    "section": "Primero calculamos una secuencia",
+    "text": "Primero calculamos una secuencia\n\nSeguimos respondiendo: \\(P(X=2)=?\\)\n\nRecuperamos la regla multiplicativa especial\npara eventos independientes:\n\n\\[P(GGN)\\] \\[=P(G)\\cdot P(G)\\cdot P(N)\\] \\[=(0{,}70)(0{,}70)(0{,}30)\\] \\[=(0{,}70)^2(0{,}30)^1\\]"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#después-contamos-cuántas-secuencias-sirven",
+    "href": "clases/03_distribuciones/index.html#después-contamos-cuántas-secuencias-sirven",
+    "title": "Distribuciones de probabilidad",
+    "section": "Después contamos cuántas secuencias sirven",
+    "text": "Después contamos cuántas secuencias sirven\n\nLa pregunta sigue siendo: \\(P(X=2)=?\\)\n\n\\(GGN\\), \\(GNG\\) y \\(NGG\\) son mutuamente excluyentes.\n\n\\[P(X=2)=3(0{,}70)^2(0{,}30)^1\\] \\[3={3\\choose2}\\]"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-fórmula-resume-el-mismo-razonamiento-generalizado",
+    "href": "clases/03_distribuciones/index.html#la-fórmula-resume-el-mismo-razonamiento-generalizado",
+    "title": "Distribuciones de probabilidad",
+    "section": "La fórmula resume el mismo razonamiento, generalizado",
+    "text": "La fórmula resume el mismo razonamiento, generalizado\n\n\\[P(X=x)={n\\choose x}p^x(1-p)^{n-x}\\]\n\n\n\n\\(p^x\\)los \\(x\\) éxitos\n\n\n\\((1-p)^{n-x}\\)los fracasos\n\n\n\\({n\\choose x}\\)formas de ubicar éxitos\n\n\n\n\\({n\\choose x}=\\dfrac{n!}{x!(n-x)!}\\)   —   no desarrollamos combinatoria."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#volvemos-a-las-10-semillas",
+    "href": "clases/03_distribuciones/index.html#volvemos-a-las-10-semillas",
+    "title": "Distribuciones de probabilidad",
+    "section": "Volvemos a las 10 semillas",
+    "text": "Volvemos a las 10 semillas\n\n\\[X=\\text{número de semillas germinadas entre 10}\\]\n\n\n\\[X\\sim Binomial(10;0{,}70)\\]"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-tabla-contiene-la-distribución-completa",
+    "href": "clases/03_distribuciones/index.html#la-tabla-contiene-la-distribución-completa",
+    "title": "Distribuciones de probabilidad",
+    "section": "La tabla contiene la distribución completa",
+    "text": "La tabla contiene la distribución completa\n\n\n\n\n\nx\n\n\nP(X=x)\n\n\n\n\n\n\n0\n\n\n0,0000\n\n\n\n\n1\n\n\n0,0001\n\n\n\n\n2\n\n\n0,0014\n\n\n\n\n3\n\n\n0,0090\n\n\n\n\n4\n\n\n0,0368\n\n\n\n\n5\n\n\n0,1029\n\n\n\n\n6\n\n\n0,2001\n\n\n\n\n7\n\n\n0,2668\n\n\n\n\n8\n\n\n0,2335\n\n\n\n\n9\n\n\n0,1211\n\n\n\n\n10\n\n\n0,0282\n\n\n\n\n\n\nLa suma de las 11 probabilidades es \\(\\displaystyle\\sum_xP(X=x)=1\\)."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#tabla-y-gráfico-contienen-la-misma-información",
+    "href": "clases/03_distribuciones/index.html#tabla-y-gráfico-contienen-la-misma-información",
+    "title": "Distribuciones de probabilidad",
+    "section": "Tabla y gráfico contienen la misma información",
+    "text": "Tabla y gráfico contienen la misma información\n\n\nTablaCada fila asocia \\(x\\) con \\(P(X=x)\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\nSon dos representaciones de la misma función de probabilidad."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-probabilidad-puntual-es-una-barra",
+    "href": "clases/03_distribuciones/index.html#una-probabilidad-puntual-es-una-barra",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una probabilidad puntual es una barra",
+    "text": "Una probabilidad puntual es una barra\n\n¿Cuál es la probabilidad de que si pongo a germinar 10 semillas germinen 7?\n\n\n\n\\(f(7)=P(X=7)=\\) 0,267"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#qué-probabilidad-hay-de-que-germinen-7-o-menos",
+    "href": "clases/03_distribuciones/index.html#qué-probabilidad-hay-de-que-germinen-7-o-menos",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Qué probabilidad hay de que germinen 7 o menos?",
+    "text": "¿Qué probabilidad hay de que germinen 7 o menos?\n\n¿Como máximo 7?   \\(P(X\\le7)\\)\n\n\n\npbinom(7, size = 10, prob = 0.70) = 0,617"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#qué-probabilidad-hay-de-que-germinen-7-o-más",
+    "href": "clases/03_distribuciones/index.html#qué-probabilidad-hay-de-que-germinen-7-o-más",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Qué probabilidad hay de que germinen 7 o más?",
+    "text": "¿Qué probabilidad hay de que germinen 7 o más?\n\n¿Al menos 7?   \\(P(X\\ge7)\\)\n\n\n\n1 - pbinom(6, size = 10, prob = 0.70) = 0,650"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#en-una-discreta-no-es-lo-mismo-que-le",
+    "href": "clases/03_distribuciones/index.html#en-una-discreta-no-es-lo-mismo-que-le",
+    "title": "Distribuciones de probabilidad",
+    "section": "En una discreta, \\(<\\) no es lo mismo que \\(\\le\\)",
+    "text": "En una discreta, \\(&lt;\\) no es lo mismo que \\(\\le\\)\n\n\n\\(X&lt;6 = X\\le5\\)\n\n\n“Menos de 6”, “como máximo 5” y “hasta 5 inclusive” expresan \\(P(X&lt;6)=P(X\\le5)\\)."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#incluir-una-barra-puede-cambiar-la-probabilidad",
+    "href": "clases/03_distribuciones/index.html#incluir-una-barra-puede-cambiar-la-probabilidad",
+    "title": "Distribuciones de probabilidad",
+    "section": "Incluir una barra puede cambiar la probabilidad",
+    "text": "Incluir una barra puede cambiar la probabilidad\n\n\\[P(X&lt;6)=P(X\\le5)\\neq P(X\\le6)\\]\n\n\nCada valor individual de una variable discreta puede tener probabilidad positiva."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#entre-5-y-8-germinadas",
+    "href": "clases/03_distribuciones/index.html#entre-5-y-8-germinadas",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Entre 5 y 8 germinadas?",
+    "text": "¿Entre 5 y 8 germinadas?\n\n\\[P(5\\le X\\le8)\\]\n\n\n\n\\(P(X\\le8)-P(X\\le4)=\\) 0,803"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-distribución-binomial-tiene-centro-y-dispersión",
+    "href": "clases/03_distribuciones/index.html#la-distribución-binomial-tiene-centro-y-dispersión",
+    "title": "Distribuciones de probabilidad",
+    "section": "La distribución Binomial tiene centro y dispersión",
+    "text": "La distribución Binomial tiene centro y dispersión\n\n\n\nValor esperado\n\n\n\\(E(X)=np=7\\)\n\n\n\n\nVarianza\n\n\n\\(Var(X)=np(1-p)=2{,}1\\)\n\n\n\n\nDesvío estándar\n\n\n\\(SD(X)=\\sqrt{np(1-p)}\\approx1{,}45\\)\n\n\n\n\nEl valor esperado es la media de \\(X\\) si repitiéramos muchísimas veces el mismo experimento.\n\n\nSi repitiéramos muchas tandas de 10 semillas, el número medio de germinadas tendería a 7 por tanda.\n\n\nEsto no significa que en cada tanda germinen exactamente 7."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#qué-hacen-n-y-p-con-la-distribución",
+    "href": "clases/03_distribuciones/index.html#qué-hacen-n-y-p-con-la-distribución",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Qué hacen n y p con la distribución?",
+    "text": "¿Qué hacen n y p con la distribución?\n\n n 10p 0,70\n E(X) = 7,00DE(X) = 1,45"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#cambiamos-un-parámetro-y-cambia-la-distribución",
+    "href": "clases/03_distribuciones/index.html#cambiamos-un-parámetro-y-cambia-la-distribución",
+    "title": "Distribuciones de probabilidad",
+    "section": "Cambiamos un parámetro y cambia la distribución",
+    "text": "Cambiamos un parámetro y cambia la distribución"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#características-de-la-distribución-binomial",
+    "href": "clases/03_distribuciones/index.html#características-de-la-distribución-binomial",
+    "title": "Distribuciones de probabilidad",
+    "section": "Características de la distribución Binomial",
+    "text": "Características de la distribución Binomial\n¿Variable?Número de éxitos en \\(n\\) ensayos independientes.Modelo\\(X\\sim Binomial(n,p)\\)Parámetros y valores\\(n,\\ p\\)\\(X=0,1,\\ldots,n\\)Condiciones\\(n\\) fijo · dos resultados · \\(p\\) constante · independenciaMedia\\(E(X)=np\\)Varianza y DE\\(Var(X)=np(1-p)\\)\\(SD(X)=\\sqrt{np(1-p)}\\)"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#no-todo-conteo-es-binomial",
+    "href": "clases/03_distribuciones/index.html#no-todo-conteo-es-binomial",
+    "title": "Distribuciones de probabilidad",
+    "section": "No todo conteo es Binomial",
+    "text": "No todo conteo es Binomial\n\n¿Cuántas plantas de una maleza encontramos en una parcela de 1 m²?\n\n\nno hay un número fijo previo de ensayos;\nno observamos una secuencia natural de éxito/fracaso;\ncontamos ocurrencias dentro de una unidad definida.\n\n\nEste proceso no es naturalmente Binomial."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-distribución-poisson-modela-ocurrencias-por-unidad",
+    "href": "clases/03_distribuciones/index.html#la-distribución-poisson-modela-ocurrencias-por-unidad",
+    "title": "Distribuciones de probabilidad",
+    "section": "La distribución Poisson modela ocurrencias por unidad",
+    "text": "La distribución Poisson modela ocurrencias por unidad\n\n\\[X=\\text{número de ocurrencias (conteo) en una unidad determinada}\\]\n\n\n\\[X\\sim Poisson(\\lambda)\\]\n\n\n\\[P(X=x)=\\frac{e^{-\\lambda}\\lambda^x}{x!},\\qquad x=0,1,2,\\ldots\\]\n\n\n\\(\\lambda\\) representa el número medio de ocurrencias en la unidad considerada."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-unidad-de-observación-forma-parte-del-modelo",
+    "href": "clases/03_distribuciones/index.html#la-unidad-de-observación-forma-parte-del-modelo",
+    "title": "Distribuciones de probabilidad",
+    "section": "La unidad de observación forma parte del modelo",
+    "text": "La unidad de observación forma parte del modelo\n\n\n1 m²4 plantas en promedio\\(\\lambda=4\\)\n\n\n→\n\n\n3 m²12 plantas en promedio\\(\\lambda=12\\)\n\n\n\nLa tasa se multiplica por la superficie si suponemos que permanece constante por m²."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#características-de-la-distribución-poisson",
+    "href": "clases/03_distribuciones/index.html#características-de-la-distribución-poisson",
+    "title": "Distribuciones de probabilidad",
+    "section": "Características de la distribución Poisson",
+    "text": "Características de la distribución Poisson\n¿Variable?Ocurrencias en una unidad de espacio, tiempo o superficie.Modelo\\(X\\sim Poisson(\\lambda)\\)Parámetro y valores\\(\\lambda\\)\\(X=0,1,2,\\ldots\\)SupuestosOcurrencias independientes y tasa homogénea.Media\\(E(X)=\\lambda\\)Varianza\\(Var(X)=\\lambda\\)"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#y-si-contamos-éxitos-pero-los-ensayos-no-son-independientes",
+    "href": "clases/03_distribuciones/index.html#y-si-contamos-éxitos-pero-los-ensayos-no-son-independientes",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Y si contamos éxitos, pero los ensayos no son independientes?",
+    "text": "¿Y si contamos éxitos, pero los ensayos no son independientes?\nEn la Binomial:\n\ncontamos éxitos en un número fijo de ensayos;\ncada ensayo tiene la misma probabilidad \\(p\\);\nsuponemos independencia entre los ensayos.\n\n\nPero hay situaciones en las que el resultado de un ensayo modifica la probabilidad del siguiente."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-población-finita-cambia-durante-el-muestreo",
+    "href": "clases/03_distribuciones/index.html#una-población-finita-cambia-durante-el-muestreo",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una población finita cambia durante el muestreo",
+    "text": "Una población finita cambia durante el muestreo\n\nPoblación finita: \\(N=20\\) semillas · 8 viables · 12 no viables\n\n\n\\[P(\\text{viable})=\\frac{8}{20}\\]\n\n\nExtraemos una semilla sin reposición.\n\n\n\nSi la primera fue viablequedan 7 viables + 12 no viables = 19\\[P(\\text{viable en la segunda})=\\frac{7}{19}\\]\n\n\nSi la primera no fue viablequedan 8 viables + 11 no viables = 19\\[P(\\text{viable en la segunda})=\\frac{8}{19}\\]\n\n\n\nLa probabilidad del siguiente resultado depende de lo que ocurrió antes. Las extracciones no son independientes."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-distribución-hipergeométrica-modela-este-proceso",
+    "href": "clases/03_distribuciones/index.html#la-distribución-hipergeométrica-modela-este-proceso",
+    "title": "Distribuciones de probabilidad",
+    "section": "La distribución Hipergeométrica modela este proceso",
+    "text": "La distribución Hipergeométrica modela este proceso\n\n\\[X=\\text{número de semillas viables en una muestra de }n\\]\ntomada sin reposición de una población finita.\n\n\n\\[X\\sim Hipergeométrica(N,K,n)\\]\n\n\n\n\\(N\\): tamaño de la población;\n\\(K\\): número de éxitos en la población;\n\\(n\\): tamaño de la muestra.\n\n\n\nLa idea principal es reconocer el proceso: población finita y muestreo sin reposición."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#dónde-puede-aparecer-esta-distribución",
+    "href": "clases/03_distribuciones/index.html#dónde-puede-aparecer-esta-distribución",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Dónde puede aparecer esta distribución?",
+    "text": "¿Dónde puede aparecer esta distribución?\n\n\nSemillas dañadas en un loteTomamos una muestra sin reposición de un lote finito y contamos cuántas están dañadas.\n\n\nFrutos dañados en una caja o loteSeleccionamos varios frutos para inspección sin devolverlos y contamos los dañados.\n\n\nPlantas infectadas en un conjunto finitoMuestreamos sin reposición un conjunto conocido y contamos las plantas infectadas.\n\n\n\nLa Hipergeométrica aparece naturalmente cuando muestreamos una población finita sin reposición.\n\n\nCuando \\(N\\) es muy grande comparado con \\(n\\), aunque se muestree sin reposición, la distribución hipergeométrica se aproxima a la binomial."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#características-de-la-distribución-hipergeométrica",
+    "href": "clases/03_distribuciones/index.html#características-de-la-distribución-hipergeométrica",
+    "title": "Distribuciones de probabilidad",
+    "section": "Características de la distribución Hipergeométrica",
+    "text": "Características de la distribución Hipergeométrica\nHipergeométrica¿Variable?Número de éxitos en una muestra de tamaño \\(n\\) tomada sin reposición de una población finita.Parámetros\\(N,\\quad K,\\quad n\\)Más...Población finita · número de éxitos poblacionales fijado · muestreo sin reposición · extracciones dependientes · la probabilidad de éxito cambia durante el muestreo."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#entonces-por-qué-nuestro-ejemplo-de-germinación-sí-era-binomial",
+    "href": "clases/03_distribuciones/index.html#entonces-por-qué-nuestro-ejemplo-de-germinación-sí-era-binomial",
+    "title": "Distribuciones de probabilidad",
+    "section": "Entonces, ¿por qué nuestro ejemplo de germinación sí era Binomial?",
+    "text": "Entonces, ¿por qué nuestro ejemplo de germinación sí era Binomial?\nCuando ponemos 10 semillas a germinar, no estamos extrayendo sucesivamente de una población finita con un número fijo conocido de semillas viables.\n\nconsideramos la germinación de cada semilla como un ensayo Bernoulli con la misma probabilidad \\(p\\) de germinar;\nsuponemos que el resultado de una semilla no modifica la probabilidad de germinación de las demás.\n\n\nLa independencia es un supuesto del proceso de germinación.\n\n\nLa reposición es una forma de obtener independencia en ciertos esquemas de muestreo, pero no es un requisito literal de todo proceso Binomial."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#tres-conteos-tres-procesos-tres-distribuciones-discretas",
+    "href": "clases/03_distribuciones/index.html#tres-conteos-tres-procesos-tres-distribuciones-discretas",
+    "title": "Distribuciones de probabilidad",
+    "section": "Tres conteos, tres procesos, tres distribuciones discretas",
+    "text": "Tres conteos, tres procesos, tres distribuciones discretas\nBinomialÉxitos en \\(n\\) ensayos independientes.\\(n,p\\)PoissonOcurrencias por unidad.\\(\\lambda\\)HipergeométricaÉxitos en una muestra sin reposición de una población finita.\\(N,K,n\\)\n\nNo elegimos por el aspecto de los datos solamente: pensamos qué proceso generó la variable."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#hasta-ahora-modelamos-variables-discretas",
+    "href": "clases/03_distribuciones/index.html#hasta-ahora-modelamos-variables-discretas",
+    "title": "Distribuciones de probabilidad",
+    "section": "Hasta ahora modelamos variables discretas",
+    "text": "Hasta ahora modelamos variables discretas\n\n\nConteos\n\nsemillas germinadas;\nplantas enfermas;\nmalezas por parcela;\npulgones por hoja.\n\n\\[X=0,1,2,3,\\ldots\\]\n\nMediciones continuas\n\nrendimiento;\naltura;\npeso;\nmateria orgánica.\n\n\\[X\\in\\mathbb{R}\\]\n\n\n¿Cómo asignamos probabilidades si entre dos valores existen infinitos valores intermedios?"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#probabilidad-discreta-y-densidad-continua-no-son-lo-mismo",
+    "href": "clases/03_distribuciones/index.html#probabilidad-discreta-y-densidad-continua-no-son-lo-mismo",
+    "title": "Distribuciones de probabilidad",
+    "section": "Probabilidad discreta y densidad continua no son lo mismo",
+    "text": "Probabilidad discreta y densidad continua no son lo mismo\n\n\nDiscreta\\[f(x)=P(X=x)\\]\n\nUna barra puede tener probabilidad positiva.\n\n\n\nContinua\\[f(x)\\neq P(X=x)\\]\n\n\\(f(x)\\) es una densidad.\n\n\n\n\n\\[P(a&lt;X&lt;b)=\\int_a^b f(x)\\,dx\\]"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#en-una-continua-la-probabilidad-es-un-área",
+    "href": "clases/03_distribuciones/index.html#en-una-continua-la-probabilidad-es-un-área",
+    "title": "Distribuciones de probabilidad",
+    "section": "En una continua, la probabilidad es un área",
+    "text": "En una continua, la probabilidad es un área\n\n\n\\(f(x)\\ge0\\)\\(\\displaystyle\\int_{-\\infty}^{+\\infty}f(x)\\,dx=1\\)\n\n\nLa altura de la curva no es una probabilidad."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#qué-ocurre-alrededor-de-exactamente-7-tha",
+    "href": "clases/03_distribuciones/index.html#qué-ocurre-alrededor-de-exactamente-7-tha",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Qué ocurre alrededor de exactamente 7 t/ha?",
+    "text": "¿Qué ocurre alrededor de exactamente 7 t/ha?"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#un-punto-no-encierra-área",
+    "href": "clases/03_distribuciones/index.html#un-punto-no-encierra-área",
+    "title": "Distribuciones de probabilidad",
+    "section": "Un punto no encierra área",
+    "text": "Un punto no encierra área\nAl estrechar el intervalo, su ancho y su área tienden a cero.\n\n\\[P(X=7)=0\\]\n\n\nNo significa que sea imposible registrar 7 t/ha. En un modelo continuo ideal, un valor puntual no encierra área."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#y-le-vuelven-a-comportarse-distinto",
+    "href": "clases/03_distribuciones/index.html#y-le-vuelven-a-comportarse-distinto",
+    "title": "Distribuciones de probabilidad",
+    "section": "\\(<\\) y \\(\\le\\) vuelven a comportarse distinto",
+    "text": "\\(&lt;\\) y \\(\\le\\) vuelven a comportarse distinto\n\n\nDiscreta\\[P(X&lt;6)\\neq P(X\\le6)\\]porque \\(P(X=6)\\) puede ser positiva.\n\n\nContinua\\[P(X&lt;6)=P(X\\le6)\\]porque \\(P(X=6)=0\\)."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-normal-es-un-modelo-continuo-central",
+    "href": "clases/03_distribuciones/index.html#la-normal-es-un-modelo-continuo-central",
+    "title": "Distribuciones de probabilidad",
+    "section": "La Normal es un modelo continuo central",
+    "text": "La Normal es un modelo continuo central\nPara el rendimiento de una parcela:\n\n\\[X\\sim N(\\mu,\\sigma^2)\\]\n\n\n\nEn \\(N(\\mu,\\sigma^2)\\), el segundo parámetro escrito es la varianza."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-función-matemática-determina-la-curva",
+    "href": "clases/03_distribuciones/index.html#una-función-matemática-determina-la-curva",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una función matemática determina la curva",
+    "text": "Una función matemática determina la curva\n\n\\[f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left[-\\frac12\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right]\\]\n\n\nNo necesitamos memorizar esta fórmula.\n\n\n\\(P(a&lt;X&lt;b)=\\displaystyle\\int_a^b f(x)\\,dx\\).\n\n\nNo vamos a resolver estas integrales a mano."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-normal-es-simétrica-alrededor-de-mu",
+    "href": "clases/03_distribuciones/index.html#la-normal-es-simétrica-alrededor-de-mu",
+    "title": "Distribuciones de probabilidad",
+    "section": "La Normal es simétrica alrededor de \\(\\mu\\)",
+    "text": "La Normal es simétrica alrededor de \\(\\mu\\)\n\n\nMedia = mediana = moda."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#sigma-mide-la-dispersión-alrededor-de-la-media",
+    "href": "clases/03_distribuciones/index.html#sigma-mide-la-dispersión-alrededor-de-la-media",
+    "title": "Distribuciones de probabilidad",
+    "section": "\\(\\sigma\\) mide la dispersión alrededor de la media",
+    "text": "\\(\\sigma\\) mide la dispersión alrededor de la media\n\n\n\nvalores posibles entre \\(-\\infty\\) y \\(+\\infty\\);\nárea total igual a 1;\n\\(\\mu\\) determina el centro;\n\\(\\sigma\\) determina la dispersión.\n\n\nLos puntos de inflexión se encuentran en:\n\\[\\mu-\\sigma,\\qquad\\mu+\\sigma\\]\n\nPor eso podemos expresar distancias respecto de la media en unidades de \\(\\sigma\\)."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#regla-6895997",
+    "href": "clases/03_distribuciones/index.html#regla-6895997",
+    "title": "Distribuciones de probabilidad",
+    "section": "Regla 68–95–99,7",
+    "text": "Regla 68–95–99,7"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#cómo-influyen-mu-y-sigma-en-la-forma-de-la-distribución",
+    "href": "clases/03_distribuciones/index.html#cómo-influyen-mu-y-sigma-en-la-forma-de-la-distribución",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Cómo influyen \\(\\mu\\) y \\(\\sigma\\) en la forma de la distribución?",
+    "text": "¿Cómo influyen \\(\\mu\\) y \\(\\sigma\\) en la forma de la distribución?\nμ 7,0σ 1,0"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#cada-parámetro-modifica-un-aspecto-diferente",
+    "href": "clases/03_distribuciones/index.html#cada-parámetro-modifica-un-aspecto-diferente",
+    "title": "Distribuciones de probabilidad",
+    "section": "Cada parámetro modifica un aspecto diferente",
+    "text": "Cada parámetro modifica un aspecto diferente\n\n\nUna \\(\\sigma\\) mayor distribuye la misma área total sobre un rango más amplio."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#otra-forma-de-calcular-probabilidades-estandarizar",
+    "href": "clases/03_distribuciones/index.html#otra-forma-de-calcular-probabilidades-estandarizar",
+    "title": "Distribuciones de probabilidad",
+    "section": "Otra forma de calcular probabilidades: estandarizar",
+    "text": "Otra forma de calcular probabilidades: estandarizar\nEstandarizar transforma un valor de \\(X\\) en su distancia a la media expresada en unidades de desviación estándar.\n\n\\[Z=\\frac{X-\\mu}{\\sigma}\\]\n\n\n\\[Z\\sim N(0,1)\\]\n\n\n\n\\(z=1\\)una desviación estándar por encima de la media.\n\n\n\\(z=-2\\)dos desviaciones estándar por debajo de la media."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#estandarizar-cambia-la-escala-no-la-posición-relativa",
+    "href": "clases/03_distribuciones/index.html#estandarizar-cambia-la-escala-no-la-posición-relativa",
+    "title": "Distribuciones de probabilidad",
+    "section": "Estandarizar cambia la escala, no la posición relativa",
+    "text": "Estandarizar cambia la escala, no la posición relativa\n\n\n\\(X=8 \\Rightarrow Z=(8-7)/1=1\\). El área a la derecha es la misma."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-tabla-alcanza-para-todas-las-normales",
+    "href": "clases/03_distribuciones/index.html#una-tabla-alcanza-para-todas-las-normales",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una tabla alcanza para todas las Normales",
+    "text": "Una tabla alcanza para todas las Normales\nComo cualquier Normal puede transformarse en \\(N(0,1)\\), una única tabla permite resolver probabilidades para toda la familia.\n\nLa tabla histórica de EyDE informa cola derecha para \\(z\\ge0\\): \\[P(Z\\ge z)\\]\n\n\nOtras tablas usan otra convención. Siempre debemos leer el encabezado."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#leemos-la-tabla-como-una-región",
+    "href": "clases/03_distribuciones/index.html#leemos-la-tabla-como-una-región",
+    "title": "Distribuciones de probabilidad",
+    "section": "Leemos la tabla como una región",
+    "text": "Leemos la tabla como una región\n\nz0,000,010,020,031,00,15870,15630,15390,1515"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#primero-identificamos-el-área-que-buscamos",
+    "href": "clases/03_distribuciones/index.html#primero-identificamos-el-área-que-buscamos",
+    "title": "Distribuciones de probabilidad",
+    "section": "Primero identificamos el área que buscamos",
+    "text": "Primero identificamos el área que buscamos\nLa altura de plantas de maíz de dos semanas se modela como \\(X\\sim N(12,1^2)\\).\n\n¿Cuál es la probabilidad de que una planta mida más de 13 cm?"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#estandarizamos-consultamos-e-interpretamos",
+    "href": "clases/03_distribuciones/index.html#estandarizamos-consultamos-e-interpretamos",
+    "title": "Distribuciones de probabilidad",
+    "section": "Estandarizamos, consultamos e interpretamos",
+    "text": "Estandarizamos, consultamos e interpretamos\n\n\\[Z=\\frac{13-12}{1}=1\\]\n\n\n\\[P(X&gt;13)=P(Z&gt;1)=0{,}1587\\]\n\n\nSi seleccionamos una planta al azar de esta población, la probabilidad de que mida más de 13 cm es aproximadamente 0,159.\n\n\nEn R: pnorm(13, mean = 12, sd = 1, lower.tail = FALSE)"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#en-la-práctica-usamos-herramientas-reproducibles",
+    "href": "clases/03_distribuciones/index.html#en-la-práctica-usamos-herramientas-reproducibles",
+    "title": "Distribuciones de probabilidad",
+    "section": "En la práctica usamos herramientas reproducibles",
+    "text": "En la práctica usamos herramientas reproducibles\nBinomialdbinom(7, size = 10, prob = 0.70)pbinom(7, size = 10, prob = 0.70)Poissondpois(3, lambda = 4)ppois(3, lambda = 4)Normalpnorm(6, mean = 7, sd = 1)\n\nd... da masa puntual en discretas, pero dnorm() da densidad, no \\(P(X=x)\\); p... da probabilidad acumulada."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#tabla-r-e-infostat-calculan-el-planteo-sigue-siendo-nuestro",
+    "href": "clases/03_distribuciones/index.html#tabla-r-e-infostat-calculan-el-planteo-sigue-siendo-nuestro",
+    "title": "Distribuciones de probabilidad",
+    "section": "Tabla, R e InfoStat calculan; el planteo sigue siendo nuestro",
+    "text": "Tabla, R e InfoStat calculan; el planteo sigue siendo nuestro\n\n\nTabla ZDa sentido a la estandarización y puede usarse en parciales.\n\n\nRCálculo reproducible con funciones d... y p....\n\n\nInfoStatEstadísticas → Probabilidades y cuantiles.\n\n\nPregunta¿qué queremos saber?→Modelodistribución y parámetros→Regiónparte cuya probabilidad buscamos→Cálculotabla, R o InfoStat→Interpretaciónrespuesta en contexto\n\nUna IA puede ayudar a plantear o interpretar; verificamos el resultado con una herramienta estadística reproducible."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#probabilidades-con-una-normal-usando-r",
+    "href": "clases/03_distribuciones/index.html#probabilidades-con-una-normal-usando-r",
+    "title": "Distribuciones de probabilidad",
+    "section": "Probabilidades con una Normal usando R",
+    "text": "Probabilidades con una Normal usando R\nSupongamos que el rendimiento (t/ha) sigue esta distribución: \\(X\\sim N(7,1^2)\\).\nSi elijo una parcela al azar, ¿cuál es la probabilidad que tenga un rendimiento menor a 6 tn/ha? En probabilidades, P(X&lt;6) = ?\n\n\npnorm(6, mean = 7, sd = 1) = 0,159\n\n\n\\(P(6&lt;X&lt;8)\\): pnorm(8,7,1) - pnorm(6,7,1) = 0,683"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-normal-no-es-la-única-distribución-continua",
+    "href": "clases/03_distribuciones/index.html#la-normal-no-es-la-única-distribución-continua",
+    "title": "Distribuciones de probabilidad",
+    "section": "La Normal no es la única distribución continua",
+    "text": "La Normal no es la única distribución continua\n\n\n\nt de Studentsimétrica, similar a Normal, con colas más pesadas; 1 parámetro: grados de libertad (n-1).\n\n\nChi-cuadradopositiva y asimétrica hacia la derecha; 1 parámetro: grados de libertad.\n\n\nFpositiva y asimétrica, con forma diferente; 2 parámetros: dos grados de libertad.\n\n\n\nAparecerán más adelante cuando hagamos Inferencia Estadística."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#una-distribución-es-un-modelo",
+    "href": "clases/03_distribuciones/index.html#una-distribución-es-un-modelo",
+    "title": "Distribuciones de probabilidad",
+    "section": "Una distribución es un modelo",
+    "text": "Una distribución es un modelo\n\nno todo conteo es Binomial;\nno todo conteo es Poisson;\nun muestreo finito sin reposición puede llevar a una Hipergeométrica;\nno toda variable continua es Normal.\n\n\nElegimos una distribución porque representa razonablemente el proceso y cumple determinados supuestos, no porque “el gráfico se parece”."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#qué-proceso-modela-cada-distribución",
+    "href": "clases/03_distribuciones/index.html#qué-proceso-modela-cada-distribución",
+    "title": "Distribuciones de probabilidad",
+    "section": "¿Qué proceso modela cada distribución?",
+    "text": "¿Qué proceso modela cada distribución?\nBernoulliVariable 0/1pBinomialÉxitos en n ensayos independientesn, pPoissonOcurrencias por unidadλHipergeométricaÉxitos en n ensayos no independientes (sin reposición)N, K, nNormalVariable continuaμ, σ\n\n¿Cuál representa el proceso que generó nuestra variable?"
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#en-la-realidad-los-parámetros-suelen-ser-desconocidos",
+    "href": "clases/03_distribuciones/index.html#en-la-realidad-los-parámetros-suelen-ser-desconocidos",
+    "title": "Distribuciones de probabilidad",
+    "section": "En la realidad, los parámetros suelen ser desconocidos",
+    "text": "En la realidad, los parámetros suelen ser desconocidos\nPoblaciónπ   μ   σparámetros↓tomamos una muestraMuestrap̂   x̄   sestadísticos\n\nUsamos estadísticos muestrales para estimar parámetros poblacionales.\n\n\nPara conocer exactamente un parámetro necesitaríamos observar toda la población relevante; con una muestra existe incertidumbre."
+  },
+  {
+    "objectID": "clases/03_distribuciones/index.html#la-próxima-pregunta-es-sobre-incertidumbre",
+    "href": "clases/03_distribuciones/index.html#la-próxima-pregunta-es-sobre-incertidumbre",
+    "title": "Distribuciones de probabilidad",
+    "section": "La próxima pregunta es sobre incertidumbre",
+    "text": "La próxima pregunta es sobre incertidumbre\n\n¿Cuánta incertidumbre tenemos cuando usamos una muestra para aprender sobre una población?\n\n\nEse es el puente hacia la Inferencia Estadística."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#bienvenidas-y-bienvenidos",
+    "href": "clases/01_descriptiva/index.html#bienvenidas-y-bienvenidos",
+    "title": "Estadística descriptiva",
+    "section": "Bienvenidas y bienvenidos",
+    "text": "Bienvenidas y bienvenidos\n\n¿Qué significa que estén estudiando en la Facultad de Ciencias Naturales?\n\n\nSe están formando, entre otras cosas, para hacer ciencia:\n\ninvestigar, producir evidencia y tomar decisiones fundamentadas."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#investigar-comienza-con-una-pregunta",
+    "href": "clases/01_descriptiva/index.html#investigar-comienza-con-una-pregunta",
+    "title": "Estadística descriptiva",
+    "section": "Investigar comienza con una pregunta",
+    "text": "Investigar comienza con una pregunta\nInvestigar no es ni más ni menos que:\n\nplantearnos una pregunta;\ndiseñar un estudio que produzca datos adecuados;\nusar esos datos para intentar responderla.\nconcluir y aplicar"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-método-hipotético-deductivo",
+    "href": "clases/01_descriptiva/index.html#el-método-hipotético-deductivo",
+    "title": "Estadística descriptiva",
+    "section": "El método hipotético-deductivo",
+    "text": "El método hipotético-deductivo\n\n\n  \n    Teoría o paradigma\n    ↔\n    Observaciones\n    →\n    Hipótesis científica\n    →\n    Predicción\n  \n\n  ↓\n\n  \n    \n      Diseño conceptual\n      ámbito · escala · factores · variables\n    \n    ←\n    Hipótesis estadísticas\n    ←\n    Diseño cuantitativo\n    ←\n    Toma de datos\n  \n\n  ↓\n\n  \n    Análisis\n    →\n    ¿Se apoya la predicción?\n    →\n    Revisar hipótesis\n    →\n    Revisar teoría\n  \n\n\n\nEn la práctica, investigar no siempre sigue una línea recta: revisamos ideas y volvemos a preguntar.\n\n\nEn muchas áreas de la ciencia, no seguimos a rajatabla este método, y tampoco el foco de interés en nuestras investigaciones es la teoría, sino más bien la aplicación al terreno."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-método-científico-contado-con-memes",
+    "href": "clases/01_descriptiva/index.html#el-método-científico-contado-con-memes",
+    "title": "Estadística descriptiva",
+    "section": "El método científico, contado con memes",
+    "text": "El método científico, contado con memes\n\n\nUsar la imagen como puente informal. Señalar que simplifica el proceso, pero conserva la lógica de observación, problema, hipótesis, estudio, análisis y revisión."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#apliquemos-esta-lógica-a-una-pregunta-agronómica",
+    "href": "clases/01_descriptiva/index.html#apliquemos-esta-lógica-a-una-pregunta-agronómica",
+    "title": "Estadística descriptiva",
+    "section": "Apliquemos esta lógica a una pregunta agronómica",
+    "text": "Apliquemos esta lógica a una pregunta agronómica\n\n\n¿Qué variedad de maíz me conviene sembrar en mi campo?\n\n\n¿Cómo intentarían responderla?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#un-primer-intento",
+    "href": "clases/01_descriptiva/index.html#un-primer-intento",
+    "title": "Estadística descriptiva",
+    "section": "Un primer intento",
+    "text": "Un primer intento\n\n\nPARCELA 1\nA\n6,4 t/ha\n\n\nPARCELA 2\nB\n7,1 t/ha\n\n\n\n¿Ya podemos recomendar B?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#las-parcelas-son-exactamente-iguales",
+    "href": "clases/01_descriptiva/index.html#las-parcelas-son-exactamente-iguales",
+    "title": "Estadística descriptiva",
+    "section": "¿Las parcelas son exactamente iguales?",
+    "text": "¿Las parcelas son exactamente iguales?\n\nsuelo\ndisponibilidad de agua\npendiente\nmalezas y plagas\nhistoria de manejo\n\n\nLa diferencia observada podría deberse a la variedad… o a otras diferencias entre parcelas."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#necesitamos-más-de-una-parcela",
+    "href": "clases/01_descriptiva/index.html#necesitamos-más-de-una-parcela",
+    "title": "Estadística descriptiva",
+    "section": "Necesitamos más de una parcela",
+    "text": "Necesitamos más de una parcela\n\nVarias observaciones nos permiten ver cómo cambian los resultados parcela a parcela.\n\n¿Dónde colocarían A y B dentro del campo? Punto muy importante, que veremos más adelante…\n\n\nSi el estudio fue mal planteado, nos costará separar el efecto de la variedad de las demás diferencias entre parcelas.\n\n\nAnticipar replicación y asignación de tratamientos sin formalizarlas. Aclarar que estos principios se estudiarán más adelante en Diseño Experimental."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#los-datos-tienen-una-historia",
+    "href": "clases/01_descriptiva/index.html#los-datos-tienen-una-historia",
+    "title": "Estadística descriptiva",
+    "section": "Los datos tienen una historia",
+    "text": "Los datos tienen una historia\n\nPREGUNTA↓DISEÑO↓DATOS↓DESCRIPCIÓN↓INFERENCIA↓CONCLUSIÓN / DECISIÓN"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#hoy-nos-detenemos-aquí",
+    "href": "clases/01_descriptiva/index.html#hoy-nos-detenemos-aquí",
+    "title": "Estadística descriptiva",
+    "section": "Hoy nos detenemos aquí",
+    "text": "Hoy nos detenemos aquí\n\nDe los datos a una descripción útil\n\n\nSin olvidar cómo fueron obtenidos."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#después-del-estudio-obtenemos-una-matriz",
+    "href": "clases/01_descriptiva/index.html#después-del-estudio-obtenemos-una-matriz",
+    "title": "Estadística descriptiva",
+    "section": "Después del estudio, obtenemos una matriz",
+    "text": "Después del estudio, obtenemos una matriz\n\n\n\n\n\nparcela\n\n\nvariedad\n\n\nrendimiento_t_ha\n\n\ncategoria_rendimiento\n\n\ndano\n\n\nnumero_plantas\n\n\nmateria_organica\n\n\n\n\n\n\nP01\n\n\nA\n\n\n6,5\n\n\nmedio\n\n\nmedio\n\n\n70\n\n\n2,9\n\n\n\n\nP02\n\n\nA\n\n\n6,1\n\n\nbajo\n\n\nbajo\n\n\n71\n\n\n2,6\n\n\n\n\nP03\n\n\nB\n\n\n5,4\n\n\nbajo\n\n\nalto\n\n\n67\n\n\n2,1\n\n\n\n\nP04\n\n\nB\n\n\n6,4\n\n\nmedio\n\n\nmedio\n\n\n66\n\n\n2,7\n\n\n\n\nP05\n\n\nA\n\n\n6,7\n\n\nmedio\n\n\nbajo\n\n\n76\n\n\n3,3\n\n\n\n\nP06\n\n\nA\n\n\n6,4\n\n\nmedio\n\n\nmedio\n\n\n66\n\n\n2,6\n\n\n\n\nP07\n\n\nB\n\n\n6,2\n\n\nbajo\n\n\nbajo\n\n\n67\n\n\n2,5\n\n\n\n\nP08\n\n\nA\n\n\n6,3\n\n\nmedio\n\n\nmedio\n\n\n73\n\n\n3,5\n\n\n\n\n\nOcho de las 24 parcelas del estudio simulado."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#una-observación-tres-ideas",
+    "href": "clases/01_descriptiva/index.html#una-observación-tres-ideas",
+    "title": "Estadística descriptiva",
+    "section": "Una observación, tres ideas",
+    "text": "Una observación, tres ideas\n\nP04\nB\nRendimiento: 6,4 t/ha\n\n\nUnidad estadística / caso: ¿sobre qué registramos información?\nVariable: ¿qué característica registramos en la unidad?\nDato: ¿qué valor tomó esa variable en la unidad?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-valor-no-es-la-variable",
+    "href": "clases/01_descriptiva/index.html#el-valor-no-es-la-variable",
+    "title": "Estadística descriptiva",
+    "section": "El valor no es la variable",
+    "text": "El valor no es la variable\n\n\n\n\nVariable\nCategorías / valores\nDato en esta parcela\n\n\n\n\nvariedad\nA / B\nB\n\n\nrendimiento\nvalores numéricos (t/ha)\n6,40 t/ha\n\n\ndaño\nbajo / medio / alto\nmedio\n\n\ncategoría de rendimiento\nbajo / medio / alto\nalto"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#la-matriz-organiza-la-observación",
+    "href": "clases/01_descriptiva/index.html#la-matriz-organiza-la-observación",
+    "title": "Estadística descriptiva",
+    "section": "La matriz organiza la observación",
+    "text": "La matriz organiza la observación\n\n\nLas filas son parcelas · Las columnas son variables · Las celdas son datos\n\n\n\n\n\nParcela ↓\nVariedad\nRendimiento (t/ha)\nDaño\n\n\n\n\nP01\nA\n6,5\nmedio\n\n\nP02\nA\n6,1\nbajo\n\n\nP03\nB\n5,4\nalto\n\n\n\n\nLeemos una fila para conocer una parcela; leemos una columna para estudiar una variable."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#no-todas-las-variables-son-iguales",
+    "href": "clases/01_descriptiva/index.html#no-todas-las-variables-son-iguales",
+    "title": "Estadística descriptiva",
+    "section": "No todas las variables son iguales",
+    "text": "No todas las variables son iguales\n\n\n\n\n\nCATEGÓRICAS\nCUANTITATIVAS\n\n\n\n\nNominal variedad\nDiscreta número de plantas\n\n\nOrdinal daño\nContinua rendimiento · materia orgánica\n\n\n\n\n\nEl tipo indica qué operaciones y representaciones tienen sentido."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#un-número-puede-ser-solo-un-nombre",
+    "href": "clases/01_descriptiva/index.html#un-número-puede-ser-solo-un-nombre",
+    "title": "Estadística descriptiva",
+    "section": "Un número puede ser solo un nombre",
+    "text": "Un número puede ser solo un nombre\n\nSi las parcelas fueran 1, 2, 3, …\n\n¿Tendría sentido calcular la el promedio de esos números?\n\n\nNo. Un identificador distingue casos; no mide una cantidad."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#dos-preguntas-distintas",
+    "href": "clases/01_descriptiva/index.html#dos-preguntas-distintas",
+    "title": "Estadística descriptiva",
+    "section": "Dos preguntas distintas",
+    "text": "Dos preguntas distintas\n\n\n¿Qué tipo de variable es?\nCategórica o cuantitativa\n\n\n¿Qué papel cumple?\nClasificación, variable de respuesta u otra información relevante"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#volvamos-a-la-pregunta",
+    "href": "clases/01_descriptiva/index.html#volvamos-a-la-pregunta",
+    "title": "Estadística descriptiva",
+    "section": "Volvamos a la pregunta",
+    "text": "Volvamos a la pregunta\n\n¿Qué variedad de maíz me conviene sembrar en mi campo?\n\nConviene significa…\n\nmayor rendimiento?\nmayor rentabilidad?\nmayor estabilidad?\nmenor daño o enfermedad?\nmejor respuesta ante sequía?\n\n\nLa pregunta determina qué variable/s necesitamos medir."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#hagamos-la-pregunta-medible",
+    "href": "clases/01_descriptiva/index.html#hagamos-la-pregunta-medible",
+    "title": "Estadística descriptiva",
+    "section": "Hagamos la pregunta medible",
+    "text": "Hagamos la pregunta medible\n\n\n¿Cuál de las variedades A y B presenta mayor rendimiento bajo las condiciones de nuestro estudio?\n\n\nTodavía no afirmaremos qué ocurrirá en general, más allá de nuestras pocas parcelas."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#tenemos-datos.-ya-tenemos-información",
+    "href": "clases/01_descriptiva/index.html#tenemos-datos.-ya-tenemos-información",
+    "title": "Estadística descriptiva",
+    "section": "Tenemos datos. ¿Ya tenemos información?",
+    "text": "Tenemos datos. ¿Ya tenemos información?\n\nNecesitamos organizarlos, visualizarlos y resumirlos"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#tres-herramientas-complementarias",
+    "href": "clases/01_descriptiva/index.html#tres-herramientas-complementarias",
+    "title": "Estadística descriptiva",
+    "section": "Tres herramientas complementarias",
+    "text": "Tres herramientas complementarias\n\n\n\n\n\nTABLAS\nGRÁFICOS\nMEDIDAS DESCRIPTIVAS\n\n\n\n\norganizar\nvisualizar\nresumir\n\n\n\n\n\nLa elección depende del tipo de variable y de la pregunta."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#primero-miremos-la-matriz",
+    "href": "clases/01_descriptiva/index.html#primero-miremos-la-matriz",
+    "title": "Estadística descriptiva",
+    "section": "Primero, miremos la matriz",
+    "text": "Primero, miremos la matriz\n\n\n\n\n\nparcela\n\n\nvariedad\n\n\nrendimiento_t_ha\n\n\ncategoria_rendimiento\n\n\ndano\n\n\nnumero_plantas\n\n\nmateria_organica\n\n\n\n\n\n\nP01\n\n\nA\n\n\n6,5\n\n\nmedio\n\n\nmedio\n\n\n70\n\n\n2,9\n\n\n\n\nP02\n\n\nA\n\n\n6,1\n\n\nbajo\n\n\nbajo\n\n\n71\n\n\n2,6\n\n\n\n\nP03\n\n\nB\n\n\n5,4\n\n\nbajo\n\n\nalto\n\n\n67\n\n\n2,1\n\n\n\n\nP04\n\n\nB\n\n\n6,4\n\n\nmedio\n\n\nmedio\n\n\n66\n\n\n2,7\n\n\n\n\nP05\n\n\nA\n\n\n6,7\n\n\nmedio\n\n\nbajo\n\n\n76\n\n\n3,3\n\n\n\n\nP06\n\n\nA\n\n\n6,4\n\n\nmedio\n\n\nmedio\n\n\n66\n\n\n2,6\n\n\n\n\n\n¿Qué variable queremos mirar y qué pregunta queremos responder?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#cómo-resumimos-el-nivel-de-daño",
+    "href": "clases/01_descriptiva/index.html#cómo-resumimos-el-nivel-de-daño",
+    "title": "Estadística descriptiva",
+    "section": "¿Cómo resumimos el nivel de daño?",
+    "text": "¿Cómo resumimos el nivel de daño?\n\n\n\n\n\n\nDaño\n\n\nConteo\n\n\nProporción\n\n\nPorcentaje\n\n\n\n\n\n\nbajo\n\n\n8\n\n\n0,33\n\n\n33 %\n\n\n\n\nmedio\n\n\n10\n\n\n0,42\n\n\n42 %\n\n\n\n\nalto\n\n\n6\n\n\n0,25\n\n\n25 %\n\n\n\n\nTotal\n\n\n24\n\n\n1,00\n\n\n100 %\n\n\n\n\n\n\nEn la jerga estadística: conteo = frecuencia absoluta · proporción = frecuencia relativa."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#las-barras-conservan-el-orden",
+    "href": "clases/01_descriptiva/index.html#las-barras-conservan-el-orden",
+    "title": "Estadística descriptiva",
+    "section": "Las barras conservan el orden",
+    "text": "Las barras conservan el orden"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-rendimiento-categorizado-cambia-con-el-daño",
+    "href": "clases/01_descriptiva/index.html#el-rendimiento-categorizado-cambia-con-el-daño",
+    "title": "Estadística descriptiva",
+    "section": "¿El rendimiento categorizado cambia con el daño?",
+    "text": "¿El rendimiento categorizado cambia con el daño?\n\nFILAS: nivel de daño · COLUMNAS: categoría de rendimiento\n\n\n\n\n\n\n\n\nRend. bajo\n\n\nRend. medio\n\n\nRend. alto\n\n\nTotal\n\n\n\n\n\n\ndaño_bajo\n\n\n3\n\n\n3\n\n\n2\n\n\n8\n\n\n\n\ndaño_medio\n\n\n5\n\n\n5\n\n\n0\n\n\n10\n\n\n\n\ndaño_alto\n\n\n4\n\n\n2\n\n\n0\n\n\n6\n\n\n\n\nTotal\n\n\n12\n\n\n10\n\n\n2\n\n\n24\n\n\n\n\n\n\nPrimero: frecuencias absolutas. Cada celda contiene un número de parcelas."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#proporciones-dentro-de-cada-nivel-de-daño",
+    "href": "clases/01_descriptiva/index.html#proporciones-dentro-de-cada-nivel-de-daño",
+    "title": "Estadística descriptiva",
+    "section": "Proporciones dentro de cada nivel de daño",
+    "text": "Proporciones dentro de cada nivel de daño\n\nFrecuencias relativas por fila: cada celda es una parte del total de su fila.\n\n\n\n\n\n\n\n\nRend. bajo\n\n\nRend. medio\n\n\nRend. alto\n\n\nTotal\n\n\n\n\n\n\ndaño_bajo\n\n\n0,375\n\n\n0,375\n\n\n0,25\n\n\n1\n\n\n\n\ndaño_medio\n\n\n0,500\n\n\n0,500\n\n\n0,00\n\n\n1\n\n\n\n\ndaño_alto\n\n\n0,667\n\n\n0,333\n\n\n0,00\n\n\n1\n\n\n\n\n\n\nEl denominador es el total de parcelas de ese nivel de daño: cada fila suma 1.\n\n\nTambién podrían calcularse frecuencias relativas por columnas o respecto del gran total. La elección depende de qué comparación queremos hacer."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#las-mismas-proporciones-expresadas-como-porcentajes",
+    "href": "clases/01_descriptiva/index.html#las-mismas-proporciones-expresadas-como-porcentajes",
+    "title": "Estadística descriptiva",
+    "section": "Las mismas proporciones, expresadas como porcentajes",
+    "text": "Las mismas proporciones, expresadas como porcentajes\n\nFILAS: nivel de daño · COLUMNAS: categoría de rendimiento\n\n\n\n\n\n\n\n\nRend. bajo\n\n\nRend. medio\n\n\nRend. alto\n\n\nTotal\n\n\n\n\n\n\ndaño_bajo\n\n\n37,5%\n\n\n37,5%\n\n\n25,0%\n\n\n100,0%\n\n\n\n\ndaño_medio\n\n\n50,0%\n\n\n50,0%\n\n\n0,0%\n\n\n100,0%\n\n\n\n\ndaño_alto\n\n\n66,7%\n\n\n33,3%\n\n\n0,0%\n\n\n100,0%\n\n\n\n\n\n\nEl denominador es el total de parcelas de ese nivel de daño. Por eso, cada fila suma 100%."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#las-proporciones-también-pueden-verse-como-barras",
+    "href": "clases/01_descriptiva/index.html#las-proporciones-también-pueden-verse-como-barras",
+    "title": "Estadística descriptiva",
+    "section": "Las proporciones también pueden verse como barras",
+    "text": "Las proporciones también pueden verse como barras\n\n\nDentro de cada nivel de daño, los segmentos representan las categorías de rendimiento y suman 100 %."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#rendimiento-muchos-valores-difíciles-de-visualizar",
+    "href": "clases/01_descriptiva/index.html#rendimiento-muchos-valores-difíciles-de-visualizar",
+    "title": "Estadística descriptiva",
+    "section": "Rendimiento: muchos valores, difíciles de visualizar",
+    "text": "Rendimiento: muchos valores, difíciles de visualizar\n\n6,5  |  6,1  |  5,4  |  6,4  |  6,7  |  6,4  |  6,2  |  6,3  |  6,6  |  6,9  |  6,0  |  5,3  |  5,6  |  5,7  |  6,4  |  5,7  |  8,0  |  5,7  |  7,6  |  6,6  |  6,2  |  6,7  |  4,9  |  5,5\n\n¿Cómo se distribuyen los rendimientos? (por ahora, no distinguimos las variedades)"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#ordenar-deja-ver-mejor-el-recorrido",
+    "href": "clases/01_descriptiva/index.html#ordenar-deja-ver-mejor-el-recorrido",
+    "title": "Estadística descriptiva",
+    "section": "Ordenar deja ver mejor el recorrido",
+    "text": "Ordenar deja ver mejor el recorrido\n\n4,9  |  5,3  |  5,4  |  5,5  |  5,6  |  5,7  |  5,7  |  5,7  |  6,0  |  6,1  |  6,2  |  6,2  |  6,3  |  6,4  |  6,4  |  6,4  |  6,5  |  6,6  |  6,6  |  6,7  |  6,7  |  6,9  |  7,6  |  8,0\n\n\nPodemos saber cuánto rindió la parcela con menor rendimiento, y también con mayor rendimiento…\n\n\n\nPero todavía cuesta ver dónde se acumulan o concentran la mayoría de los valores de rendimiento."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#agrupemos-valores-próximos",
+    "href": "clases/01_descriptiva/index.html#agrupemos-valores-próximos",
+    "title": "Estadística descriptiva",
+    "section": "Agrupemos valores próximos",
+    "text": "Agrupemos valores próximos\n\n\n\n\n\nIntervalo\n\n\nFrecuencia\n\n\n\n\n\n\n[4,5; 5,0)\n\n\n1\n\n\n\n\n[5,0; 5,5)\n\n\n2\n\n\n\n\n[5,5; 6,0)\n\n\n5\n\n\n\n\n[6,0; 6,5)\n\n\n8\n\n\n\n\n[6,5; 7,0)\n\n\n6\n\n\n\n\n[7,0; 7,5)\n\n\n0\n\n\n\n\n[7,5; 8,0)\n\n\n1\n\n\n\n\n[8,0; 8,5)\n\n\n1\n\n\n\n\n\nIncluimos el límite izquierdo y excluimos el derecho. Por ejemplo, 5,5 entra en [5,5; 6,0)."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#frecuencia-por-intervalo-un-histograma",
+    "href": "clases/01_descriptiva/index.html#frecuencia-por-intervalo-un-histograma",
+    "title": "Estadística descriptiva",
+    "section": "Frecuencia por intervalo: un histograma",
+    "text": "Frecuencia por intervalo: un histograma"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#también-podemos-acumular-las-frecuencias",
+    "href": "clases/01_descriptiva/index.html#también-podemos-acumular-las-frecuencias",
+    "title": "Estadística descriptiva",
+    "section": "También podemos acumular las frecuencias",
+    "text": "También podemos acumular las frecuencias\n\n\n\n\n\nIntervalo\n\n\nConteo (FA)\n\n\nProporción (FR)\n\n\nConteo acumulado (FAA)\n\n\nProporción acumulada (FRA)\n\n\n\n\n\n\n[4,5; 5,0)\n\n\n1\n\n\n0,04\n\n\n1\n\n\n0,04\n\n\n\n\n[5,0; 5,5)\n\n\n2\n\n\n0,08\n\n\n3\n\n\n0,12\n\n\n\n\n[5,5; 6,0)\n\n\n5\n\n\n0,21\n\n\n8\n\n\n0,33\n\n\n\n\n[6,0; 6,5)\n\n\n8\n\n\n0,33\n\n\n16\n\n\n0,67\n\n\n\n\n[6,5; 7,0)\n\n\n6\n\n\n0,25\n\n\n22\n\n\n0,92\n\n\n\n\n[7,0; 7,5)\n\n\n0\n\n\n0,00\n\n\n22\n\n\n0,92\n\n\n\n\n[7,5; 8,0)\n\n\n1\n\n\n0,04\n\n\n23\n\n\n0,96\n\n\n\n\n[8,0; 8,5)\n\n\n1\n\n\n0,04\n\n\n24\n\n\n1,00\n\n\n\n\n\nAcumular = ir sumando hasta ese intervalo.\n\n\nHasta [5,5; 6,0): 1 + 2 + 5 = 8 parcelas → 8/24 = 0,33\nPor lo tanto, el 33% de las parcelas tuvo un rendimiento menor que 6,0 t/ha.\n\n\nFA = frecuencia absoluta · FR = frecuencia relativa · FAA = frecuencia absoluta acumulada · FRA = frecuencia relativa acumulada"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#una-distribución-cuenta-una-historia",
+    "href": "clases/01_descriptiva/index.html#una-distribución-cuenta-una-historia",
+    "title": "Estadística descriptiva",
+    "section": "Una distribución cuenta una historia",
+    "text": "Una distribución cuenta una historia\nPermite mirar:\n\ntendencia central\ndispersión\nforma\nvalores inusuales"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#ojo-barras-e-histograma-no-son-lo-mismo",
+    "href": "clases/01_descriptiva/index.html#ojo-barras-e-histograma-no-son-lo-mismo",
+    "title": "Estadística descriptiva",
+    "section": "Ojo: Barras e histograma no son lo mismo",
+    "text": "Ojo: Barras e histograma no son lo mismo\n\n\n\nGráfico de barras\nHistograma\n\n\n\n\nCategorías separadas\nIntervalos contiguos\n\n\nEl eje identifica categorías\nEl eje representa una cantidad\n\n\nPuede respetar un orden conceptual\nConserva el orden numérico"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#cómo-se-distribuye-el-rendimiento-por-variedad",
+    "href": "clases/01_descriptiva/index.html#cómo-se-distribuye-el-rendimiento-por-variedad",
+    "title": "Estadística descriptiva",
+    "section": "¿Cómo se distribuye el rendimiento por variedad?",
+    "text": "¿Cómo se distribuye el rendimiento por variedad?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#gráfico-de-cajas-boxplot-los-mismos-datos-resumidos",
+    "href": "clases/01_descriptiva/index.html#gráfico-de-cajas-boxplot-los-mismos-datos-resumidos",
+    "title": "Estadística descriptiva",
+    "section": "Gráfico de cajas (boxplot): los mismos datos, resumidos",
+    "text": "Gráfico de cajas (boxplot): los mismos datos, resumidos\n\n\nVolveremos a este gráfico después de conocer la mediana y los cuartiles."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#otra-síntesis-media-una-medida-de-dispersión",
+    "href": "clases/01_descriptiva/index.html#otra-síntesis-media-una-medida-de-dispersión",
+    "title": "Estadística descriptiva",
+    "section": "Otra síntesis: media + una medida de dispersión",
+    "text": "Otra síntesis: media + una medida de dispersión\n\n\nLas barras de error pueden representar cosas diferentes. Siempre debemos indicar qué representan.\n\n\nPor ejemplo: DE, EE o IC."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#la-materia-orgánica-se-relaciona-con-el-rendimiento",
+    "href": "clases/01_descriptiva/index.html#la-materia-orgánica-se-relaciona-con-el-rendimiento",
+    "title": "Estadística descriptiva",
+    "section": "¿La materia orgánica se relaciona con el rendimiento?",
+    "text": "¿La materia orgánica se relaciona con el rendimiento?\nEn la matriz, materia orgánica y rendimiento son variables cuantitativas.\n\nAhora no nos interesa distinguir las variedades.\n\n\n¿Cómo podemos ver si ambas variables cambian juntas en cada parcela?\n\n\nCada parcela aporta un par: (materia orgánica, rendimiento)."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#un-punto-por-parcela-revela-la-relación",
+    "href": "clases/01_descriptiva/index.html#un-punto-por-parcela-revela-la-relación",
+    "title": "Estadística descriptiva",
+    "section": "Un punto por parcela revela la relación",
+    "text": "Un punto por parcela revela la relación\n\n\nUna asociación observada no demuestra por sí sola causalidad."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#orientación-no-receta",
+    "href": "clases/01_descriptiva/index.html#orientación-no-receta",
+    "title": "Estadística descriptiva",
+    "section": "Orientación, no receta",
+    "text": "Orientación, no receta\n\n\n\n\n\n\n\n\nVariables\nHerramientas que pueden ayudar\n\n\n\n\n1 categórica\nfrecuencias, proporciones, barras\n\n\n2 categóricas\ntabla de contingencia\n\n\n1 cuantitativa\ndistribución, histograma\n\n\ncuantitativa + categórica\npuntos por grupo, gráfico de cajas, media + dispersión\n\n\n2 cuantitativas\ndiagrama de dispersión\n\n\n\n\n\nEl gráfico depende de las variables y de la pregunta que queremos responder."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#cómo-resumimos-cuantitativamente-lo-que-vemos",
+    "href": "clases/01_descriptiva/index.html#cómo-resumimos-cuantitativamente-lo-que-vemos",
+    "title": "Estadística descriptiva",
+    "section": "¿Cómo resumimos cuantitativamente lo que vemos?",
+    "text": "¿Cómo resumimos cuantitativamente lo que vemos?\n\nSi pudieran describir los 24 rendimientos con un solo valor, ¿cuál elegirían?\n\n\nReducir datos implica elegir qué información conservar. Una respuesta posible es la media."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#la-media-busca-un-punto-de-equilibrio",
+    "href": "clases/01_descriptiva/index.html#la-media-busca-un-punto-de-equilibrio",
+    "title": "Estadística descriptiva",
+    "section": "La media busca un punto de equilibrio",
+    "text": "La media busca un punto de equilibrio\nSumamos los valores y repartimos el total en partes iguales.\n\n\\[\\bar{x}=\\frac{\\sum_{i=1}^{n}x_i}{n}\\]\n\n\nMedia = 6,22 t/ha"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#otra-opción-la-parcela-del-medio",
+    "href": "clases/01_descriptiva/index.html#otra-opción-la-parcela-del-medio",
+    "title": "Estadística descriptiva",
+    "section": "Otra opción: ¿la parcela del medio?",
+    "text": "Otra opción: ¿la parcela del medio?\nLa mediana busca la posición central\n\n\nOrdenar los datos.\nEncontrar la posición central.\nDejar la mitad de las observaciones a cada lado.\n\n\nLa mediana es el percentil 50.\n\n\nMediana = 6,25 t/ha"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#primero-un-caso-sin-valores-extremos",
+    "href": "clases/01_descriptiva/index.html#primero-un-caso-sin-valores-extremos",
+    "title": "Estadística descriptiva",
+    "section": "Primero, un caso sin valores extremos",
+    "text": "Primero, un caso sin valores extremos"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#ahora-un-caso-real-apareció-un-palo-borracho",
+    "href": "clases/01_descriptiva/index.html#ahora-un-caso-real-apareció-un-palo-borracho",
+    "title": "Estadística descriptiva",
+    "section": "Ahora, un caso real: apareció un palo borracho",
+    "text": "Ahora, un caso real: apareció un palo borracho"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#media-o-mediana",
+    "href": "clases/01_descriptiva/index.html#media-o-mediana",
+    "title": "Estadística descriptiva",
+    "section": "¿Media o mediana?",
+    "text": "¿Media o mediana?\n\n¿Cuál describe mejor la tendencia central del DAP de estos árboles?\n\n\nLa mediana sigue siendo 20 cm, mientras que la media pasó de 20 cm a 38,9 cm.\n\n\nLa media es sensible a valores extremos en un lado de la distrubución; la mediana es mucho más resistente a ellos."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#media-y-mediana-responden-de-manera-distinta",
+    "href": "clases/01_descriptiva/index.html#media-y-mediana-responden-de-manera-distinta",
+    "title": "Estadística descriptiva",
+    "section": "Media y mediana responden de manera distinta",
+    "text": "Media y mediana responden de manera distinta\n\nLa media usa todos los valores y es sensible a valores raros o atípicos en un extremo de la distribución.\nLa mediana depende del orden y es más resistente.\nLa forma de la distribución ayuda a decidir qué resumen es útil."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#la-moda-es-el-valor-más-frecuente",
+    "href": "clases/01_descriptiva/index.html#la-moda-es-el-valor-más-frecuente",
+    "title": "Estadística descriptiva",
+    "section": "La moda es el valor más frecuente",
+    "text": "La moda es el valor más frecuente\nPuede ser útil, especialmente en variables categóricas.\n\nPuede haber una moda, varias o ninguna claramente dominante."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#tres-medidas-de-tendencia-central",
+    "href": "clases/01_descriptiva/index.html#tres-medidas-de-tendencia-central",
+    "title": "Estadística descriptiva",
+    "section": "Tres medidas de tendencia central",
+    "text": "Tres medidas de tendencia central\n\n\n\n\nMEDIA\nMEDIANA\nMODA\n\n\n\n\nequilibrio de los valores\nposición central\nvalor más frecuente\n\n\n\n\n\nLas tres son medidas de tendencia central: intentan resumir dónde tienden a concentrarse los datos."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#los-cuartiles-dividen-los-datos-ordenados",
+    "href": "clases/01_descriptiva/index.html#los-cuartiles-dividen-los-datos-ordenados",
+    "title": "Estadística descriptiva",
+    "section": "Los cuartiles dividen los datos ordenados",
+    "text": "Los cuartiles dividen los datos ordenados"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#ahora-podemos-leer-el-gráfico-de-cajas",
+    "href": "clases/01_descriptiva/index.html#ahora-podemos-leer-el-gráfico-de-cajas",
+    "title": "Estadística descriptiva",
+    "section": "Ahora podemos leer el gráfico de cajas",
+    "text": "Ahora podemos leer el gráfico de cajas\n\n\nIQR = Q3 − Q1: el ancho de la mitad central de los datos.\n\n\nSi preguntan por los bigotes: en este boxplot se extienden hasta los valores más extremos dentro de 1,5 × IQR desde la caja. No desarrollar todavía la definición técnica de valores atípicos."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-boxplot-también-sugiere-la-forma-de-la-distribución",
+    "href": "clases/01_descriptiva/index.html#el-boxplot-también-sugiere-la-forma-de-la-distribución",
+    "title": "Estadística descriptiva",
+    "section": "El boxplot también sugiere la forma de la distribución",
+    "text": "El boxplot también sugiere la forma de la distribución\n\n\nLa posición de la mediana, el largo relativo de ambos lados y los puntos ayudan a reconocer asimetrías."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#misma-media-pero",
+    "href": "clases/01_descriptiva/index.html#misma-media-pero",
+    "title": "Estadística descriptiva",
+    "section": "Misma media, pero…",
+    "text": "Misma media, pero…\n\n\nTienen la misma media, pero ¿son series equivalentes? ¿En qué se diferencian?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-rango-usa-los-dos-extremos",
+    "href": "clases/01_descriptiva/index.html#el-rango-usa-los-dos-extremos",
+    "title": "Estadística descriptiva",
+    "section": "El rango usa los dos extremos",
+    "text": "El rango usa los dos extremos\n\n\nEs fácil de interpretar, pero ignora todas las observaciones intermedias."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-iqr-mira-la-mitad-central",
+    "href": "clases/01_descriptiva/index.html#el-iqr-mira-la-mitad-central",
+    "title": "Estadística descriptiva",
+    "section": "El IQR mira la mitad central",
+    "text": "El IQR mira la mitad central\n\n\nEl IQR es la longitud de la caja del gráfico de cajas."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#las-distancias-respecto-de-la-media-tienen-signo",
+    "href": "clases/01_descriptiva/index.html#las-distancias-respecto-de-la-media-tienen-signo",
+    "title": "Estadística descriptiva",
+    "section": "Las distancias respecto de la media tienen signo",
+    "text": "Las distancias respecto de la media tienen signo\nPara \\(x=\\{2,4,6\\}\\), la media es 4.\n\n\nLas desviaciones con signo suman 0: se cancelan."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#cómo-evitamos-que-se-cancelen",
+    "href": "clases/01_descriptiva/index.html#cómo-evitamos-que-se-cancelen",
+    "title": "Estadística descriptiva",
+    "section": "¿Cómo evitamos que se cancelen?",
+    "text": "¿Cómo evitamos que se cancelen?\n\n¿Qué operación permitiría que las desviaciones negativas no cancelen a las positivas?\n\n\nElevarlas al cuadrado: así todas contribuyen con valores positivos."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#así-construimos-otra-medida-de-dispersión-o-variabilidad",
+    "href": "clases/01_descriptiva/index.html#así-construimos-otra-medida-de-dispersión-o-variabilidad",
+    "title": "Estadística descriptiva",
+    "section": "Así construimos otra medida de dispersión o variabilidad",
+    "text": "Así construimos otra medida de dispersión o variabilidad\n\nCalculamos cada desviación respecto de la media.\nElevamos cada desviación al cuadrado.\nSumamos los cuadrados.\nSumamos las desviaciones cuadráticas.\n\n\nSi una serie tiene más datos, tendrá más términos en la suma. Para expresar una variabilidad promedio, necesitamos dividir esa suma por una cantidad relacionada con el número de observaciones.\n\n\nEn la varianza muestral dividimos por \\(n-1\\):\n\\[s^2=\\frac{\\sum_{i=1}^{n}(x_i-\\bar{x})^2}{n-1}\\]\n\n\nSu unidad queda al cuadrado.\n\n\nSi preguntan “¿por qué se divide por n−1?”: porque estamos usando una muestra para estimar la variabilidad de una población. La razón formal se verá más adelante."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#la-varianza-deja-un-problema-la-unidad-al-cuadrado",
+    "href": "clases/01_descriptiva/index.html#la-varianza-deja-un-problema-la-unidad-al-cuadrado",
+    "title": "Estadística descriptiva",
+    "section": "La varianza deja un problema: la unidad al cuadrado",
+    "text": "La varianza deja un problema: la unidad al cuadrado\nSi el rendimiento está en t/ha, la varianza queda en \\((\\text{t/ha})^2\\).\n\n¿Qué operación nos permite volver a la unidad original?\n\n\n\\[s=\\sqrt{s^2}\\]\n\n\nEsta es la desviación estándar: vuelve a expresarse en t/ha.\n\n\n\nA: 0,54 t/ha\n\n\nB: 0,72 t/ha"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-cv-expresa-variabilidad-relativa",
+    "href": "clases/01_descriptiva/index.html#el-cv-expresa-variabilidad-relativa",
+    "title": "Estadística descriptiva",
+    "section": "El CV expresa variabilidad relativa",
+    "text": "El CV expresa variabilidad relativa\n\\[CV=\\frac{s}{\\bar{x}}\\times 100\\]\n\n\nA: 9,1%\n\n\nB: 11,0%\n\n\n\nEl CV expresa la desviación estándar en relación con la media, en porcentaje.\n\n\n¿Qué significaría un CV de 50 %, de 100 % o de 200 %?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#todas-describen-cuánto-varían-los-datos",
+    "href": "clases/01_descriptiva/index.html#todas-describen-cuánto-varían-los-datos",
+    "title": "Estadística descriptiva",
+    "section": "Todas describen cuánto varían los datos",
+    "text": "Todas describen cuánto varían los datos\n\nRango, IQR, varianza, desviación estándar y CV son medidas de dispersión o variabilidad.\n\n\nEl CV es relativo a la media. Las demás expresan variabilidad absoluta."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#tendencia-central-y-dispersión-deben-conversar",
+    "href": "clases/01_descriptiva/index.html#tendencia-central-y-dispersión-deben-conversar",
+    "title": "Estadística descriptiva",
+    "section": "Tendencia central y dispersión deben conversar",
+    "text": "Tendencia central y dispersión deben conversar\n\n\n\n\n\n\n\n\nMEDIA + DE\nMEDIANA + IQR\n\n\n\n\nPromedio y variación alrededor de él\nResumen resistente de la tendencia central y de la mitad central\n\n\n\n\n\nSon elecciones razonadas, no una regla automática."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#qué-aprendimos-de-nuestros-datos",
+    "href": "clases/01_descriptiva/index.html#qué-aprendimos-de-nuestros-datos",
+    "title": "Estadística descriptiva",
+    "section": "¿Qué aprendimos de nuestros datos?",
+    "text": "¿Qué aprendimos de nuestros datos?\n\nVolvamos a la decisión agronómica"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#la-pregunta-inicial-otra-vez",
+    "href": "clases/01_descriptiva/index.html#la-pregunta-inicial-otra-vez",
+    "title": "Estadística descriptiva",
+    "section": "La pregunta inicial, otra vez",
+    "text": "La pregunta inicial, otra vez\n\n¿Qué variedad de maíz me conviene sembrar en mi campo?\n\nAhora preguntaríamos:\n\n¿qué significa “conviene”?\n¿qué variables medimos?\n¿cómo obtuvimos los datos?\n¿cuántas unidades observamos?\n¿cómo se distribuyen y cuánto varían?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#primero-miremos-cada-parcela",
+    "href": "clases/01_descriptiva/index.html#primero-miremos-cada-parcela",
+    "title": "Estadística descriptiva",
+    "section": "Primero miremos cada parcela",
+    "text": "Primero miremos cada parcela\n\n\n¿Qué pueden decir de estas variedades mirando los datos?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#otra-mirada-la-distribución-de-cada-variedad",
+    "href": "clases/01_descriptiva/index.html#otra-mirada-la-distribución-de-cada-variedad",
+    "title": "Estadística descriptiva",
+    "section": "Otra mirada: la distribución de cada variedad",
+    "text": "Otra mirada: la distribución de cada variedad\n\n\nLas marcas sobre el eje representan las parcelas observadas."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#después-de-mirar-calculamos-medidas-de-resumen",
+    "href": "clases/01_descriptiva/index.html#después-de-mirar-calculamos-medidas-de-resumen",
+    "title": "Estadística descriptiva",
+    "section": "Después de mirar, calculamos medidas de resumen",
+    "text": "Después de mirar, calculamos medidas de resumen\n\n\n\n\nVariedad\n\n\nn\n\n\nMedia (t/ha)\n\n\nDE (t/ha)\n\n\nMediana (t/ha)\n\n\nIQR (t/ha)\n\n\n\n\n\n\nA\n\n\n12\n\n\n5,89\n\n\n0,54\n\n\n5,85\n\n\n0,75\n\n\n\n\nB\n\n\n12\n\n\n6,56\n\n\n0,72\n\n\n6,50\n\n\n0,55\n\n\n\n\n\nPrimero mirar; después elegir un resumen que conserve la información relevante."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#puntos-caja-media-y-desviación-estándar",
+    "href": "clases/01_descriptiva/index.html#puntos-caja-media-y-desviación-estándar",
+    "title": "Estadística descriptiva",
+    "section": "Puntos, caja, media y desviación estándar",
+    "text": "Puntos, caja, media y desviación estándar\n\n\nCaja: mediana y cuartiles · rombo y barra negra: media ± DE · puntos: parcelas"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#cómo-escribimos-la-interpretación",
+    "href": "clases/01_descriptiva/index.html#cómo-escribimos-la-interpretación",
+    "title": "Estadística descriptiva",
+    "section": "¿Cómo escribimos la interpretación?",
+    "text": "¿Cómo escribimos la interpretación?\n\n1. ¿Qué tal así?\n\n“La variedad B rindió más que la A.”\n\n¿Es suficiente?\n\n\n2. ¿Y ahora?\n\n“A rindió en promedio 5,89 y B 6,56 t/ha.”\n\nMejor, pero…: informa la tendencia central, pero oculta la variabilidad.\n\n\n3. Una descripción más completa\n\nCon 12 parcelas por variedad, la variedad A tuvo un rendimiento promedio de 5,89 t/ha (DE = 0,54), mientras que la variedad B tuvo un rendimiento promedio de 6,56 t/ha (DE = 0,72).\n\n\n\nUna medida de tendencia central debería acompañarse de una medida de dispersión."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#todavía-nos-faltan-herramientas-para-llegar-a-una-conclusión-completa",
+    "href": "clases/01_descriptiva/index.html#todavía-nos-faltan-herramientas-para-llegar-a-una-conclusión-completa",
+    "title": "Estadística descriptiva",
+    "section": "Todavía nos faltan herramientas para llegar a una conclusión completa",
+    "text": "Todavía nos faltan herramientas para llegar a una conclusión completa\n\nDESCRIBIR NO ES INFERIR\n\n\nEn nuestros datos, B presentó mayor rendimiento promedio.\n\n\nSi 6,56 es mayor que 5,89, ¿por qué todavía no podemos afirmar que B rinde más en general?\n\n\nPorque solo describimos estas 12 parcelas por variedad, bajo estas condiciones. Generalizar más allá de estos datos requiere otra herramienta: la inferencia estadística (además de un diseño adecuado)."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-diseño-vuelve-a-ser-central",
+    "href": "clases/01_descriptiva/index.html#el-diseño-vuelve-a-ser-central",
+    "title": "Estadística descriptiva",
+    "section": "El diseño vuelve a ser central",
+    "text": "El diseño vuelve a ser central\n\n¿Qué pasaría si todas las parcelas A estuvieran de un lado del campo y todas las B del otro?\n\n\nUn análisis sofisticado no puede corregir un diseño incapaz de responder la pregunta."
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#una-diferencia-espacial-puede-confundirse-con-la-variedad",
+    "href": "clases/01_descriptiva/index.html#una-diferencia-espacial-puede-confundirse-con-la-variedad",
+    "title": "Estadística descriptiva",
+    "section": "Una diferencia espacial puede confundirse con la variedad",
+    "text": "Una diferencia espacial puede confundirse con la variedad\n\n\nSi A rinde distinto, ¿se debe a la variedad o a su cercanía a la acequia?"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#el-camino-completo",
+    "href": "clases/01_descriptiva/index.html#el-camino-completo",
+    "title": "Estadística descriptiva",
+    "section": "El camino completo",
+    "text": "El camino completo\n\nPREGUNTA↓DISEÑO↓DATOS↓DESCRIPCIÓN↓INFERENCIA↓CONCLUSIÓN / DECISIÓN"
+  },
+  {
+    "objectID": "clases/01_descriptiva/index.html#para-llevarse-de-esta-clase",
+    "href": "clases/01_descriptiva/index.html#para-llevarse-de-esta-clase",
+    "title": "Estadística descriptiva",
+    "section": "Para llevarse de esta clase",
+    "text": "Para llevarse de esta clase\n\nPrimero preguntamos.\nDespués obtenemos datos adecuados.\nAntes de analizarlos, los miramos.\nResumir implica elegir qué información conservar.\n\n\nUna decisión confiable empieza mucho antes del cálculo."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#la-pregunta-define-la-población-de-referencia",
+    "href": "clases/04_distribuciones_muestrales/index.html#la-pregunta-define-la-población-de-referencia",
+    "title": "Distribuciones muestrales",
+    "section": "La pregunta define la población de referencia",
+    "text": "La pregunta define la población de referencia\n\n PREGUNTA¿Cómo varía el rendimiento (y cuál es el rendimiento promedio) de esta variedad de maíz en una finca de 10 mil parcelas?\n →\n POBLACIÓN DE REFERENCIATodas las parcelas sobre las que queremos aprender\n\n\n¿Podemos medir todas las parcelas de esa población?\n\n\nMedir todas las unidades sería realizar un censo. Como suele ser costoso, inaccesible o impracticable, seleccionamos una muestra."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#dónde-estábamos",
+    "href": "clases/04_distribuciones_muestrales/index.html#dónde-estábamos",
+    "title": "Distribuciones muestrales",
+    "section": "¿Dónde estábamos?",
+    "text": "¿Dónde estábamos?\nDISEÑAR→DESCRIBIR→COMPARAR→INFERIR\n\nHasta ahora aprendimos a describir los datos que tenemos y a calcular probabilidades. Ahora queremos aprender sobre algo que no observamos completamente."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#queremos-conocer-una-población-grande",
+    "href": "clases/04_distribuciones_muestrales/index.html#queremos-conocer-una-población-grande",
+    "title": "Distribuciones muestrales",
+    "section": "Queremos conocer una población grande",
+    "text": "Queremos conocer una población grande\n\n 10.000 parcelasLa población completa queda fuera de nuestro alcance.\n En lugar de un censo↓tomamos una muestra aleatoria de \\(n=25\\) parcelas\n\n\n¿Qué información de la población podremos recuperar a partir de esa muestra?"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#de-la-población-obtenemos-una-muestra",
+    "href": "clases/04_distribuciones_muestrales/index.html#de-la-población-obtenemos-una-muestra",
+    "title": "Distribuciones muestrales",
+    "section": "De la población obtenemos una muestra",
+    "text": "De la población obtenemos una muestra\n\n 10.000 parcelas\\(\\mu=?\\)\n selección aleatoria→\n \\(n=25\\)\n calculamos→\n media muestral\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\n\n\n¿Qué nos permite decir 7,3 t/ha acerca de \\(\\mu\\)?"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#parámetros-y-estadísticos-viven-en-lugares-diferentes",
+    "href": "clases/04_distribuciones_muestrales/index.html#parámetros-y-estadísticos-viven-en-lugares-diferentes",
+    "title": "Distribuciones muestrales",
+    "section": "Parámetros y estadísticos viven en lugares diferentes",
+    "text": "Parámetros y estadísticos viven en lugares diferentes\n\n POBLACIÓNparámetros desconocidosMUESTRAestimadores calculados\n media poblacional\\(\\mu\\)⟶media muestral\\(\\bar{x}\\)\n desvío poblacional\\(\\sigma\\)⟶desvío muestral\\(s\\)\n proporción poblacional\\(\\pi\\)⟶proporción muestral\\(p\\)\n\n\nUsamos un valor calculado en una muestra para estimar una característica desconocida de la población."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#pero-qué-pasaría-con-otra-muestra",
+    "href": "clases/04_distribuciones_muestrales/index.html#pero-qué-pasaría-con-otra-muestra",
+    "title": "Distribuciones muestrales",
+    "section": "Pero… ¿qué pasaría con otra muestra?",
+    "text": "Pero… ¿qué pasaría con otra muestra?\n\\(\\bar{x}=7{,}3\\)\\(\\bar{x}=7{,}0\\)\\(\\bar{x}=7{,}5\\)\\(\\bar{x}=7{,}2\\)\n\nTodas provienen de muestras aleatorias de \\(n=25\\) parcelas, ¡de la misma población!.\n\n\nSi todavía no tomamos la muestra, ¿qué valor obtendremos para \\(\\bar{x}\\)?\n\n\nNo lo sabemos: depende de qué muestra resulte seleccionada."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#el-muestreo-introduce-variabilidad",
+    "href": "clases/04_distribuciones_muestrales/index.html#el-muestreo-introduce-variabilidad",
+    "title": "Distribuciones muestrales",
+    "section": "El muestreo introduce variabilidad",
+    "text": "El muestreo introduce variabilidad\n\nDistintas muestras de la misma población producen distintas estimaciones.\n\n\nLa variabilidad muestral no es un error de cálculo: es una consecuencia natural de observar sólo una parte de la población."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#imaginemos-repetir-el-estudio-muchas-veces",
+    "href": "clases/04_distribuciones_muestrales/index.html#imaginemos-repetir-el-estudio-muchas-veces",
+    "title": "Distribuciones muestrales",
+    "section": "Imaginemos repetir el estudio muchas veces",
+    "text": "Imaginemos repetir el estudio muchas veces\n\n 1Elegimos 25 parcelas→\n 2Calculamos \\(\\bar{x}\\)→\n 3Marcamos la media sobre un eje\n\n7,07,37,57,27,4\n\nLa colección de medias revela un nuevo patrón."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#construyamos-la-distribución-de-medias",
+    "href": "clases/04_distribuciones_muestrales/index.html#construyamos-la-distribución-de-medias",
+    "title": "Distribuciones muestrales",
+    "section": "Construyamos la distribución de medias",
+    "text": "Construyamos la distribución de medias\n\n \n  Forma Aproximadamente NormalMuy asimétricaBimodal\n  n 25\n  Tomar una muestraRepetir 100Repetir 1000Reiniciar\n \n \n Población y muestra actualTodavía no tomamos una muestraMedias muestrales acumuladas"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#los-estadísticos-también-varían-entre-muestras",
+    "href": "clases/04_distribuciones_muestrales/index.html#los-estadísticos-también-varían-entre-muestras",
+    "title": "Distribuciones muestrales",
+    "section": "Los estadísticos también varían entre muestras",
+    "text": "Los estadísticos también varían entre muestras\n\n MUESTRA ALEATORIAcambian los individuos\n →\n ESTADÍSTICO ALEATORIO\\(\\bar{X}\\)puede tomar distintos valores\n\n\nAntes de observar la muestra no sabemos qué valor tendrá el estadístico. Por eso, \\(\\bar{X}\\) es también una variable aleatoria."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#apareció-una-nueva-distribución",
+    "href": "clases/04_distribuciones_muestrales/index.html#apareció-una-nueva-distribución",
+    "title": "Distribuciones muestrales",
+    "section": "Apareció una nueva distribución",
+    "text": "Apareció una nueva distribución\nDatos individuales\\(X\\)rendimiento de cada parcela≠Medias muestrales\\(\\bar{X}\\)una media por cada muestra\n\n¿Son la misma distribución?\n\n\nLa segunda es la distribución muestral de la media."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#una-distribución-muestral-describe-un-estadístico",
+    "href": "clases/04_distribuciones_muestrales/index.html#una-distribución-muestral-describe-un-estadístico",
+    "title": "Distribuciones muestrales",
+    "section": "Una distribución muestral describe un estadístico",
+    "text": "Una distribución muestral describe un estadístico\n\nUna distribución muestral es la distribución de los valores que puede tomar un estadístico (\\(\\bar{X}\\), \\(p\\), \\(\\Delta\\bar{X}\\), \\(\\Delta p\\), …) al obtener muestras aleatorias repetidas del mismo tamaño de una población.\n\n\nHoy nos concentraremos principalmente en \\(\\bar{X}\\)."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#no-confundamos-tres-distribuciones-diferentes",
+    "href": "clases/04_distribuciones_muestrales/index.html#no-confundamos-tres-distribuciones-diferentes",
+    "title": "Distribuciones muestrales",
+    "section": "No confundamos tres distribuciones diferentes",
+    "text": "No confundamos tres distribuciones diferentes\nPoblación\\(X\\)todos los valores posibles de la variableUna muestra observada\\(x_1,x_2,\\ldots,x_n\\)los datos que obtuvimosDistribución muestral\\(\\bar{X}\\)los valores que puede tomar la media entre muestras posibles\n\nUna muestra es un conjunto de datos; una distribución muestral describe cómo cambia un estadístico entre muestras."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#usemos-una-población-diminuta-para-ver-todo",
+    "href": "clases/04_distribuciones_muestrales/index.html#usemos-una-población-diminuta-para-ver-todo",
+    "title": "Distribuciones muestrales",
+    "section": "Usemos una población diminuta para ver todo",
+    "text": "Usemos una población diminuta para ver todo\n\n 158 cm\n 159 cm\n 160 cm\n 161 cm\n\n\n\\[\\mu=159{,}5\\text{ cm}\\]\n\n\nComo la población es diminuta, podemos enumerar todas las muestras posibles."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#tomamos-muestras-de-tamaño-2-con-reposición",
+    "href": "clases/04_distribuciones_muestrales/index.html#tomamos-muestras-de-tamaño-2-con-reposición",
+    "title": "Distribuciones muestrales",
+    "section": "Tomamos muestras de tamaño 2 con reposición",
+    "text": "Tomamos muestras de tamaño 2 con reposición\n\n POBLACIÓN158159160161\\(\\mu=159{,}5\\text{ cm}\\)\n extraemos 2 plantasy devolvemos cada una→\n MUESTRA, \\(n=2\\)158+160\n calculamos→\n MEDIA DE LA MUESTRA\\(\\bar{x}=159\\text{ cm}\\)\n\n\nAl considerar todos los pares posibles con reposición: \\(4\\times4=16\\) muestras."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#las-16-muestras-producen-siete-medias-posibles",
+    "href": "clases/04_distribuciones_muestrales/index.html#las-16-muestras-producen-siete-medias-posibles",
+    "title": "Distribuciones muestrales",
+    "section": "Las 16 muestras producen siete medias posibles",
+    "text": "Las 16 muestras producen siete medias posibles\n\n 1.ª ↓ / 2.ª →158159160161\n 158158158,5159159,5\n 159158,5159159,5160\n 160159159,5160160,5\n 161159,5160160,5161\n\nCada celda muestra la media \\(\\bar{x}\\) del par correspondiente."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#las-medias-posibles-forman-una-distribución",
+    "href": "clases/04_distribuciones_muestrales/index.html#las-medias-posibles-forman-una-distribución",
+    "title": "Distribuciones muestrales",
+    "section": "Las medias posibles forman una distribución",
+    "text": "Las medias posibles forman una distribución"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#la-distribución-está-centrada-correctamente",
+    "href": "clases/04_distribuciones_muestrales/index.html#la-distribución-está-centrada-correctamente",
+    "title": "Distribuciones muestrales",
+    "section": "La distribución está centrada correctamente",
+    "text": "La distribución está centrada correctamente\n\n\n\\(\\mu=159{,}5\\)\n\n\n\\(E(\\bar{X})=159{,}5\\)\n\n\n\\(\\boxed{E(\\bar{X})=\\mu}\\)\n\n\n\nLa media muestral varía entre muestras, pero su distribución está centrada en la media poblacional."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#no-alcanza-con-saber-dónde-está-centrada",
+    "href": "clases/04_distribuciones_muestrales/index.html#no-alcanza-con-saber-dónde-está-centrada",
+    "title": "Distribuciones muestrales",
+    "section": "No alcanza con saber dónde está centrada",
+    "text": "No alcanza con saber dónde está centrada\n\n\n¿Con cuál esperaríamos estimaciones más precisas?"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#el-error-estándar-mide-la-variación-entre-estimaciones",
+    "href": "clases/04_distribuciones_muestrales/index.html#el-error-estándar-mide-la-variación-entre-estimaciones",
+    "title": "Distribuciones muestrales",
+    "section": "El error estándar mide la variación entre estimaciones",
+    "text": "El error estándar mide la variación entre estimaciones\n\nEl error estándar es la desviación estándar de la distribución muestral de un estimador. Para el caso de la media muestral:\n\n\n si conocemos \\(\\sigma\\)\\(\\sigma_{\\bar{X}}=\\dfrac{\\sigma}{\\sqrt n}\\)\n si estimamos \\(\\sigma\\) mediante \\(S\\)\\(S_{\\bar{x}}=\\dfrac{S}{\\sqrt n}\\)\n\n\n\\(S_{\\bar{x}}\\) es el error estándar estimado de la media. Expresa cuánto tienden a variar las medias muestrales entre muestras.\n\n\nNo garantiza cuánto se aleja una estimación particular del verdadero parámetro."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#dos-componentes-controlan-el-error-estándar",
+    "href": "clases/04_distribuciones_muestrales/index.html#dos-componentes-controlan-el-error-estándar",
+    "title": "Distribuciones muestrales",
+    "section": "Dos componentes controlan el error estándar",
+    "text": "Dos componentes controlan el error estándar\n\n\\[\\sigma_{\\bar{X}}=\\frac{\\sigma}{\\sqrt n}\\]\n\n\n \n  mayor \\(\\sigma\\)\n  \n   \n   \n   \n  \n  más ancha\\(\\sigma\\uparrow\\Rightarrow\\sigma_{\\bar{X}}\\uparrow\\)\n \n \n  mayor \\(n\\)\n  \n   \n   \n   \n  \n  más estrecha\\(n\\uparrow\\Rightarrow\\sigma_{\\bar{X}}\\downarrow\\)"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#las-medias-varían-menos-que-los-datos-individuales",
+    "href": "clases/04_distribuciones_muestrales/index.html#las-medias-varían-menos-que-los-datos-individuales",
+    "title": "Distribuciones muestrales",
+    "section": "Las medias varían menos que los datos individuales",
+    "text": "Las medias varían menos que los datos individuales\n\n Variable original: \\(X\\) · dispersión \\(\\sigma\\)Media muestral: \\(\\bar{X}\\) · dispersión \\(\\sigma_{\\bar{X}}=\\sigma/\\sqrt n\\)\n \n  \n  \n  \n \n\n\n\\[\\operatorname{Var}(\\bar{X})=\\operatorname{Var}\\left(\\frac{X_1+\\cdots+X_n}{n}\\right)=\\frac{\\sigma^2}{n}\\] \\[\\sigma_{\\bar{X}}=\\sqrt{\\operatorname{Var}(\\bar{X})}=\\frac{\\sigma}{\\sqrt n}&lt;\\sigma\\quad(n&gt;1)\\]\n\n\nPromediar reduce la variabilidad.\n\n\nAl aumentar (n) ocurren dos cosas distintas: disminuye la dispersión de las medias y su distribución tiende a hacerse Normal."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#muestras-más-grandes-producen-medias-más-estables",
+    "href": "clases/04_distribuciones_muestrales/index.html#muestras-más-grandes-producen-medias-más-estables",
+    "title": "Distribuciones muestrales",
+    "section": "Muestras más grandes producen medias más estables",
+    "text": "Muestras más grandes producen medias más estables\n\n \n Misma población · elegí el tamaño de muestra\n Distribución de \\(\\bar{X}\\)\n\n\nCompará \\(n=5,\\ 10,\\ 30\\) y \\(100\\) manteniendo la misma población."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#una-población-más-variable-transmite-más-incertidumbre",
+    "href": "clases/04_distribuciones_muestrales/index.html#una-población-más-variable-transmite-más-incertidumbre",
+    "title": "Distribuciones muestrales",
+    "section": "Una población más variable transmite más incertidumbre",
+    "text": "Una población más variable transmite más incertidumbre\n\n\nCon el mismo \\(n\\), una población más variable produce una distribución muestral más ancha."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#hasta-ahora-usamos-una-población-linda",
+    "href": "clases/04_distribuciones_muestrales/index.html#hasta-ahora-usamos-una-población-linda",
+    "title": "Distribuciones muestrales",
+    "section": "Hasta ahora usamos una población “linda”",
+    "text": "Hasta ahora usamos una población “linda”\n\n \n Población muy asimétrica¿Qué forma tendrá la distribución de \\(\\bar{X}\\)?Tomaremos muchas muestras del mismo tamaño.\n\n\nSi los datos individuales no son normales, ¿qué pasa con las medias muestrales?"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#con-muestras-pequeñas-la-asimetría-todavía-se-nota",
+    "href": "clases/04_distribuciones_muestrales/index.html#con-muestras-pequeñas-la-asimetría-todavía-se-nota",
+    "title": "Distribuciones muestrales",
+    "section": "Con muestras pequeñas, la asimetría todavía se nota",
+    "text": "Con muestras pequeñas, la asimetría todavía se nota\n\n \n Datos individualesMedias con \\(n=2\\)"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#al-aumentar-n-la-distribución-de-las-medias-se-vuelve-más-normal",
+    "href": "clases/04_distribuciones_muestrales/index.html#al-aumentar-n-la-distribución-de-las-medias-se-vuelve-más-normal",
+    "title": "Distribuciones muestrales",
+    "section": "Al aumentar n, la distribución de las medias se vuelve más normal",
+    "text": "Al aumentar n, la distribución de las medias se vuelve más normal\n\n \\(n=2\\)\n \\(n=5\\)\n \\(n=10\\)\n \\(n=30\\)\n \\(n=100\\)\n\n\nLa población no cambió: cambia la distribución de \\(\\bar{X}\\)."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#el-teorema-central-del-límite-explica-el-patrón",
+    "href": "clases/04_distribuciones_muestrales/index.html#el-teorema-central-del-límite-explica-el-patrón",
+    "title": "Distribuciones muestrales",
+    "section": "El Teorema Central del Límite explica el patrón",
+    "text": "El Teorema Central del Límite explica el patrón\n\nSi tomamos muestras aleatorias suficientemente grandes de una población con media \\(\\mu\\) y varianza finita, la distribución muestral de \\(\\bar{X}\\) tiende a una distribución Normal.\n\n\n\nFORMA\\(\\bar{X}\\) tiende a ser NormalEste es el aporte central del TCL.\n\n\nCENTRO\\(E(\\bar{X})=\\mu\\)Las medias se centran en la media poblacional.\n\n\nDISPERSIÓN\\(\\sigma_{\\bar{X}}=\\dfrac{\\sigma}{\\sqrt n}\\)Proviene de las propiedades de la media de variables independientes, no del TCL.\n\n\n\n¿Qué significa muestras suficientemente grandes?"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#entonces-con-n-30-siempre-alcanza",
+    "href": "clases/04_distribuciones_muestrales/index.html#entonces-con-n-30-siempre-alcanza",
+    "title": "Distribuciones muestrales",
+    "section": "¿Entonces con n = 30 siempre alcanza?",
+    "text": "¿Entonces con n = 30 siempre alcanza?\n\nNo hay un número mágico.\n\n\nsi la población ya es aproximadamente Normal, puede funcionar con \\(n\\) pequeño;\nsi es moderadamente asimétrica, puede requerir más;\nsi es muy asimétrica o tiene colas importantes, puede requerir bastante más.\n\n\nHistóricamente se difundió \\(n\\approx30\\) como una regla práctica para considerar una muestra “grande”, pero el tamaño necesario depende de la forma de la población.\n\n\n\\(n=30\\) es una regla práctica tradicional, no es una regla de oro."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#lo-sorprendente-del-teorema-central-del-límite",
+    "href": "clases/04_distribuciones_muestrales/index.html#lo-sorprendente-del-teorema-central-del-límite",
+    "title": "Distribuciones muestrales",
+    "section": "Lo sorprendente del Teorema Central del Límite",
+    "text": "Lo sorprendente del Teorema Central del Límite\nLos datos individuales no necesitan tener distribución Normal↓La distribución de sus medias puede aproximarse a una Normal"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#y-si-la-muestra-es-pequeña-y-sigma-es-desconocida",
+    "href": "clases/04_distribuciones_muestrales/index.html#y-si-la-muestra-es-pequeña-y-sigma-es-desconocida",
+    "title": "Distribuciones muestrales",
+    "section": "¿Y si la muestra es pequeña y \\(\\sigma\\) es desconocida?",
+    "text": "¿Y si la muestra es pequeña y \\(\\sigma\\) es desconocida?\n\nSi la población original es Normal, \\(\\sigma^2\\) es desconocida y \\(n\\) es pequeño, sustituimos \\(\\sigma\\) por \\(S\\) y usamos la distribución t de Student.\n\n\n ESTANDARIZAMOS CON EL ERROR ESTÁNDAR ESTIMADO\\(t=\\dfrac{\\bar{X}-\\mu}{S/\\sqrt n}\\)\n DISTRIBUCIÓN RESULTANTE\\(t\\sim t_{n-1}\\)\\(n-1\\) grados de libertad\n\n\n\nLa t es similar a la Normal, pero tiene colas más pesadas.\nRefleja la incertidumbre adicional de estimar \\(\\sigma\\) mediante \\(S\\).\nAl aumentar los grados de libertad, la t se aproxima a la Normal."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#qué-distribución-usamos-para-la-media",
+    "href": "clases/04_distribuciones_muestrales/index.html#qué-distribución-usamos-para-la-media",
+    "title": "Distribuciones muestrales",
+    "section": "¿Qué distribución usamos para la media?",
+    "text": "¿Qué distribución usamos para la media?\n\n Población Normal\\(\\sigma\\) conocida\\(\\bar{X}\\) es Normal para cualquier \\(n\\)centro \\(\\mu\\) · error estándar \\(\\sigma/\\sqrt n\\)\n Población Normal\\(\\sigma\\) desconocida\\(\\dfrac{\\bar{X}-\\mu}{S/\\sqrt n}\\sim t_{n-1}\\)especialmente importante con muestras pequeñas\n Población no Normal\\(n\\) suficientemente grande\\(\\bar{X}\\) es aproximadamente Normalcentro cercano a \\(\\mu\\) · error estimado \\(S/\\sqrt n\\)\n Población no Normal\\(n\\) pequeñoNo asumir Normalidad automáticamentela calidad de la aproximación depende de la población\n\n\nLa distribución t corresponde a la cantidad estandarizada, no directamente a \\(\\bar{X}\\)."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#volvamos-al-maíz",
+    "href": "clases/04_distribuciones_muestrales/index.html#volvamos-al-maíz",
+    "title": "Distribuciones muestrales",
+    "section": "Volvamos al maíz",
+    "text": "Volvamos al maíz\n\n \\(n=25\\)\n \\(\\bar{x}=7{,}3\\text{ t/ha}\\)\n \\(\\mu=?\\)\n\n\nObservamos una sola muestra y obtuvimos \\(\\bar{x}=7{,}3\\text{ t/ha}\\). Pero queremos aprender sobre la media de toda la población, \\(\\mu\\).\n\n\nComo conocemos cómo se comporta \\(\\bar{X}\\) entre muestras, podemos preguntarnos:\n\n\n¿Qué tan compatible es nuestro resultado con distintos valores posibles de \\(\\mu\\)?"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#la-misma-lógica-se-aplica-a-muchos-estadísticos",
+    "href": "clases/04_distribuciones_muestrales/index.html#la-misma-lógica-se-aplica-a-muchos-estadísticos",
+    "title": "Distribuciones muestrales",
+    "section": "La misma lógica se aplica a muchos estadísticos",
+    "text": "La misma lógica se aplica a muchos estadísticos\n\n\\(\\bar{X}\\)\\(p\\)\\(\\bar{X}_1-\\bar{X}_2\\)\\(p_1-p_2\\)\n\n\nCada estimador tiene una distribución muestral que describe cómo varía entre muestras."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#distintos-estimadores-distintas-distribuciones-muestrales",
+    "href": "clases/04_distribuciones_muestrales/index.html#distintos-estimadores-distintas-distribuciones-muestrales",
+    "title": "Distribuciones muestrales",
+    "section": "Distintos estimadores, distintas distribuciones muestrales",
+    "text": "Distintos estimadores, distintas distribuciones muestrales\n\n MEDIAestimador \\(\\bar{X}\\)parámetro \\(\\mu\\)\n PROPORCIÓNestimador \\(p\\)parámetro \\(\\pi\\)\n DIFERENCIA DE MEDIASestimador \\(\\bar{X}_1-\\bar{X}_2\\)parámetro \\(\\mu_1-\\mu_2\\)\n DIFERENCIA DE PROPORCIONESestimador \\(p_1-p_2\\)parámetro \\(\\pi_1-\\pi_2\\)\n\n\nCada estimador tiene su propia distribución muestral y su propio error estándar.\n\n\nPor ejemplo, \\(S_{\\bar{x}}\\) para la media y \\(S_p\\) para la proporción."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#de-la-población-a-la-inferencia",
+    "href": "clases/04_distribuciones_muestrales/index.html#de-la-población-a-la-inferencia",
+    "title": "Distribuciones muestrales",
+    "section": "De la población a la inferencia",
+    "text": "De la población a la inferencia\nPOBLACIÓN\\(\\mu\\)↓muestreo aleatorioMUESTRA\\(\\bar{x}\\)↓muestras repetidasDISTRIBUCIÓN MUESTRAL\\(E(\\bar{X})=\\mu\\)\\(\\sigma_{\\bar{X}}=\\sigma/\\sqrt n\\)↓INFERENCIA"
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#tres-ideas-para-llevarse",
+    "href": "clases/04_distribuciones_muestrales/index.html#tres-ideas-para-llevarse",
+    "title": "Distribuciones muestrales",
+    "section": "Tres ideas para llevarse",
+    "text": "Tres ideas para llevarse\n\n\nUna estimación cambia de muestra a muestra.\nEsa variabilidad puede describirse mediante una distribución muestral.\nCuanto menor es el error estándar, más precisa es la estimación.\n\n\n\nEl Teorema Central del Límite explica por qué la distribución Normal aparece una y otra vez en inferencia."
+  },
+  {
+    "objectID": "clases/04_distribuciones_muestrales/index.html#la-próxima-pregunta",
+    "href": "clases/04_distribuciones_muestrales/index.html#la-próxima-pregunta",
+    "title": "Distribuciones muestrales",
+    "section": "La próxima pregunta",
+    "text": "La próxima pregunta\n\nTenemos una media muestral y conocemos cuánto puede variar entre muestras.\n\n\n¿Cómo usamos eso para decir qué valores son plausibles para la media poblacional?\n\n\nPróxima clase: Inferencia estadística"
+  }
+]

@@ -1,0 +1,6 @@
+.seed-row { display:grid; grid-template-columns:repeat(10,1fr); gap:12px; width:760px; }
+.seed { width:66px; height:66px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-sizing:border-box; font-size:1.45em; font-weight:850; line-height:1; }
+.seed.germina { background:#d7a928; border:4px solid #173c2b; color:#173c2b; }
+.seed.no-germina { background:#e2e0d8; border:4px dashed #8a5a3b; color:#8a5a3b; }
+.tanda { display:grid; grid-template-columns:190px 1fr; align-items:center; gap:20px; margin:.28em auto; width:980px; }
+.tanda-label { color:#173c2b; font-weight:750; text-align:right; }

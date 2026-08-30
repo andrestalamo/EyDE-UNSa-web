@@ -1,0 +1,8 @@
+.tiny { font-size: .60em; }
+
+.field-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:7px; padding:.35em; border:2px solid rgba(45,106,79,.28); transform:perspective(400px) rotateX(8deg); }
+.field-grid span { display:block; aspect-ratio:1.5; background:#92b77c; border-bottom:4px solid #2d6a4f; }
+.takeaway-large { width:86%; margin:.7em auto; text-align:center; color:#173c2b; font-size:1.28em; line-height:1.28; }
+.definition-large { width:88%; margin:.8em auto; padding:.65em .8em; border-left:9px solid #d7a928; background:rgba(215,169,40,.08); font-size:.9em; line-height:1.35; }
+.field-grid.compact { width:84%; grid-template-columns:repeat(12,1fr); gap:4px; padding:.18em; transform:none; }
+.takeaway-list { width:84%; margin:.5em auto; }
