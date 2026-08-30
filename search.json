@@ -16,231 +16,231 @@
   {
     "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
     "href": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "La pregunta define la población",
     "text": "La pregunta define la población\n\n¿Cuál fue el rendimiento promedio de los lotes sembrados con la variedad A por los productores de una cooperativa del Valle de Lerma durante la campaña 2025/26?\n\n\nLa pregunta define la población de referencia."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
     "href": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿Cuál es la población?",
     "text": "¿Cuál es la población?\n\n \n POBLACIÓNTodos los lotes que cumplen las condiciones de la pregunta\\(N=5000\\)Las unidades existen y, en principio, podrían identificarse.\n\n\nEn este caso tenemos una población real."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
     "href": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿Y si midiéramos todos?",
     "text": "¿Y si midiéramos todos?\n\nCENSO\nMedir los 5.000 lotes\nConoceríamos la media poblacional \\(\\mu\\) y la desviación estándar poblacional \\(\\sigma\\).\n\n\nSi conocemos toda la población, no necesitamos inferir esos parámetros."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
     "href": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Pero generalmente no medimos todos",
     "text": "Pero generalmente no medimos todos\n\n POBLACIÓN\\(N=5000\\)lotes\n \\(\\longrightarrow\\)muestreo aleatorio\n MUESTRA\\(n=25\\)lotes observados\n\n\n¿Qué podemos aprender sobre toda la población observando sólo esos 25 lotes?"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#población-y-muestra",
     "href": "clases/05_estimacion_parametros/index.html#población-y-muestra",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Población y muestra",
     "text": "Población y muestra\n\nPOBLACIÓN\n\ntodas las unidades\nparámetros\n\\(\\mu,\\ \\sigma,\\ \\pi\\)\ngeneralmente desconocidos\n\n\nMUESTRA\n\nalgunas unidades observadas\nestadísticos\n\\(\\bar x,\\ s,\\ p\\)\ncalculados con los datos\n\n\n\n\nLos estadísticos se usan para aprender sobre los parámetros."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
     "href": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Parámetro y estadístico no son lo mismo",
     "text": "Parámetro y estadístico no son lo mismo\n\nmedia poblacional\\(\\mu = ?\\)\\(\\ne\\)media de esta muestra\\(\\bar x=7{,}3\\text{ t/ha}\\)\n\n\n¿Entonces \\(\\mu=7{,}3\\text{ t/ha}\\)?\n\n\nNo necesariamente. 7,3 es lo observado en esta muestra."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual",
     "href": "clases/05_estimacion_parametros/index.html#estimación-puntual",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Estimación puntual",
     "text": "Estimación puntual\n\nUsamos un estadístico calculado en la muestra para estimar un parámetro desconocido.\n\n\n\\(\\bar X\\) estima a \\(\\mu\\)\\(\\bar x=7{,}3\\text{ t/ha}\\)estimación puntual observada de \\(\\mu\\)\n\n\nNuestra estimación puntual del rendimiento medio poblacional es 7,3 t/ha."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
     "href": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Otros parámetros, otros estimadores",
     "text": "Otros parámetros, otros estimadores\n\n PARÁMETROESTIMADORESTIMACIÓN OBSERVADA\n \\(\\mu\\)\\(\\bar X\\)\\(\\bar x=7{,}3\\)\n \\(\\sigma\\)\\(S\\)\\(s=1{,}5\\)\n \\(\\sigma^2\\)\\(S^2\\)\\(s^2\\)\n \\(\\pi\\)\\(\\widehat{\\pi}\\)\\(p\\)"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
     "href": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿Podemos confiar en 7,3?",
     "text": "¿Podemos confiar en 7,3?\n\n\\(7{,}3\\text{ t/ha}\\)\n\n\nSi tomáramos otra muestra de 25 lotes, ¿obtendríamos exactamente 7,3?\n\n\nNo. Esto es justamente lo que vimos en Distribuciones Muestrales."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#recordemos-la-clase-04",
     "href": "clases/05_estimacion_parametros/index.html#recordemos-la-clase-04",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Recordemos la Clase 04",
     "text": "Recordemos la Clase 04\n\n Las medias cambiande muestra en muestra\n \\(E(\\bar X)=\\mu\\)se centran en el parámetro\n \\(EE(\\bar X)=\\dfrac{\\sigma}{\\sqrt n}\\)si \\(\\sigma\\) es desconocida:EE estimado de \\(\\bar X\\) = \\(s/\\sqrt n\\)"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra",
     "href": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "En nuestra muestra",
     "text": "En nuestra muestra\n\n\\(n=25\\)\\(\\bar x=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\n\n\\[\\text{EE estimado de }\\bar X=\\frac{s}{\\sqrt n}=\\frac{1{,}5}{\\sqrt{25}}=0{,}30\\text{ t/ha}\\]\n\nEl error estándar no describe la variabilidad entre lotes. Describe la precisión con la que estimamos la media."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#un-número-solo-se-queda-corto",
     "href": "clases/05_estimacion_parametros/index.html#un-número-solo-se-queda-corto",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Un número solo se queda corto",
     "text": "Un número solo se queda corto\n\n\\(7{,}3\\text{ t/ha}\\)\n\n\nSabemos que otra muestra habría dado otro valor. ¿Cómo comunicamos esa incertidumbre?\n\n\nIntervalo de confianza"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
     "href": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "De un punto a un intervalo",
     "text": "De un punto a un intervalo\n\n ESTIMACIÓN PUNTUALun valor\n \\(\\longrightarrow\\)\n ESTIMACIÓN POR INTERVALOun rango plausible\n\n\nEn lugar de informar solamente un valor, construimos un rango de valores plausibles para el parámetro."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
     "href": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿Cómo construimos ese intervalo?",
     "text": "¿Cómo construimos ese intervalo?\n\nestimación \\(\\ \\pm\\ \\) multiplicador \\(\\ \\times\\ \\) error estándar\n\n\nCuanto mayor sea la incertidumbre, más ancho deberá ser el intervalo."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#normal-o-t",
     "href": "clases/05_estimacion_parametros/index.html#normal-o-t",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿Normal o t?",
     "text": "¿Normal o t?\n\n \\(\\sigma\\) conocidausamos Normal\n \\(\\sigma\\) estimada con \\(s\\)usamos t si se cumplen sus supuestos\n muestras grandest se aproxima a Normal\n\n\nNuestro caso: \\(n=25\\), \\(\\sigma\\) desconocida y rendimiento aproximadamente Normal en la población \\(\\longrightarrow\\) usamos \\(t\\) con \\(24\\) gl"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#ic-del-95",
     "href": "clases/05_estimacion_parametros/index.html#ic-del-95",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "IC del 95%",
     "text": "IC del 95%\n\n\\(t^*_{24}\\approx2{,}064\\)\n\n\\[IC_{95\\%}=\\bar x\\pm t^*\\times \\text{EE estimado de }\\bar X\\]\n\n\\(IC_{95\\%}=7{,}3\\pm2{,}064\\times0{,}30\\)"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#el-resultado",
     "href": "clases/05_estimacion_parametros/index.html#el-resultado",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "El resultado",
     "text": "El resultado\n\nMARGEN DE ERROR\\(7{,}3\\pm0{,}62\\)\\(IC_{95\\%}\\approx[6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n6,687,37,92\n\n¿Qué significa realmente este 95%?"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
     "href": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Una interpretación tentadora",
     "text": "Una interpretación tentadora\n\n“Hay un 95% de probabilidad de que \\(\\mu\\) esté entre 6,68 y 7,92.”\n\n\n¿Correcto?\n\n\nNo, en la interpretación frecuentista clásica."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
     "href": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Volvamos a muchas muestras",
     "text": "Volvamos a muchas muestras\n\n\nLa línea vertical marca el verdadero valor de \\(\\mu\\); algunos intervalos no lo contienen."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
     "href": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿Qué significa entonces el 95%?",
     "text": "¿Qué significa entonces el 95%?\n\nSi repitiéramos muchas veces el muestreo y construyéramos el intervalo de la misma manera, aproximadamente el 95% de esos intervalos contendría al verdadero parámetro.\n\n\nLa confianza pertenece al procedimiento, no a un parámetro que cambia de lugar."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
     "href": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿Qué podemos decir con nuestra muestra?",
     "text": "¿Qué podemos decir con nuestra muestra?\n\nEstimamos que el rendimiento medio poblacional es 7,3 t/ha, con un \\(IC_{95\\%}\\) de 6,68 a 7,92 t/ha.\n\n\nLa estimación y su incertidumbre se informan juntas."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#intervalo-ancho-vs.-estrecho",
     "href": "clases/05_estimacion_parametros/index.html#intervalo-ancho-vs.-estrecho",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Intervalo ancho vs. estrecho",
     "text": "Intervalo ancho vs. estrecho\n\n intervalo ancho\n intervalo estrecho\n\n\n¿Cuál es más preciso?\n\n\nEl más estrecho."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
     "href": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "¿De qué depende la amplitud?",
     "text": "¿De qué depende la amplitud?\n\n \\(s\\)variabilidadmás variación \\(\\longrightarrow\\) más ancho\n \\(n\\)tamaño muestralmás datos \\(\\longrightarrow\\) más estrecho\n \\(1-\\alpha\\)nivel de confianzamás confianza \\(\\longrightarrow\\) más ancho"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#si-aumenta-n",
     "href": "clases/05_estimacion_parametros/index.html#si-aumenta-n",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Si aumenta \\(n\\)",
     "text": "Si aumenta \\(n\\)\n\n \\(n=25\\)\\(EE=0{,}30\\)\n \\(n=100\\)\\(EE=0{,}15\\)\n\n\nMás información \\(\\longrightarrow\\) menor incertidumbre."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#si-aumenta-la-variabilidad",
     "href": "clases/05_estimacion_parametros/index.html#si-aumenta-la-variabilidad",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Si aumenta la variabilidad",
     "text": "Si aumenta la variabilidad\n\n menor \\(s\\)lotes más homogéneos\n mayor \\(s\\)lotes más heterogéneos\n\n\nCuando los lotes son más variables entre sí, la media se estima con menor precisión."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#si-queremos-más-confianza",
     "href": "clases/05_estimacion_parametros/index.html#si-queremos-más-confianza",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Si queremos más confianza",
     "text": "Si queremos más confianza\n\n\nMayor confianza exige un intervalo más amplio."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
     "href": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Hasta ahora usamos una población real",
     "text": "Hasta ahora usamos una población real\n\n POBLACIÓN REAL O FINITA\n Todos los lotes de la cooperativa sembrados con variedad A durante 2025/26\n existenpueden identificarseen principio pueden censarse"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
     "href": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Pero pensemos otra pregunta",
     "text": "Pero pensemos otra pregunta\n\n¿Cuál es el rendimiento medio que podemos esperar de la variedad A bajo condiciones productivas del Valle de Lerma?\n\n\n¿Dónde están todas las unidades que forman esa población?"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
     "href": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Población conceptual o virtual",
     "text": "Población conceptual o virtual\n\nConjunto de resultados que podrían obtenerse al cultivar repetidamente esa variedad bajo las condiciones a las que queremos generalizar.\n\n\nPoblación conceptual (también llamada virtual o hipotética)\n\n\nNo siempre inferimos hacia un conjunto físico y enumerado de unidades."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
     "href": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "La pregunta vuelve a ser fundamental",
     "text": "La pregunta vuelve a ser fundamental\n\n\nPREGUNTA A\n¿Cuál fue el rendimiento de los lotes de esta cooperativa en 2025/26?\n\\(\\longrightarrow\\) población real\n\n\nPREGUNTA B\n¿Qué rendimiento podemos esperar de esta variedad bajo determinadas condiciones del Valle de Lerma?\n\\(\\longrightarrow\\) población conceptual\n\n\n\nLa pregunta define la población a la que pretendemos generalizar."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
     "href": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Del dato a la población",
     "text": "Del dato a la población\n\n PREGUNTA\\(\\longrightarrow\\)POBLACIÓN\\(\\longrightarrow\\)MUESTRA\\(\\longrightarrow\\)ESTADÍSTICO\\(\\longrightarrow\\)ESTIMACIÓN\\(\\longrightarrow\\)INCERTIDUMBRE"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
     "href": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Lo importante de hoy",
     "text": "Lo importante de hoy\n\n\nUn estadístico muestral permite estimar un parámetro poblacional.\nEl error estándar expresa la precisión de la estimación.\nUn intervalo de confianza comunica estimación + incertidumbre.\nNingún procedimiento estadístico permite generalizar más allá de la población que el diseño y el muestreo permiten representar."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
     "href": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
-    "title": "Estimación de parámetros",
+    "title": "Inferencia estadística",
     "section": "Puente a la próxima clase",
     "text": "Puente a la próxima clase\n\n\nHASTA AHORA\n¿Cuánto vale aproximadamente un parámetro?\n\n\nLUEGO\n¿Los datos son compatibles con un valor determinado del parámetro o con diferencias entre poblaciones?\n\n\n\nPruebas de hipótesis"
   },
