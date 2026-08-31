@@ -18,7 +18,7 @@
     "href": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
     "title": "Inferencia estadística",
     "section": "La pregunta define la población",
-    "text": "La pregunta define la población\n\n¿Cuál fue el rendimiento promedio de los lotes sembrados con la variedad A por los productores de una cooperativa del Valle de Lerma durante la campaña 2025/26?\n\n\nLa pregunta define la población de referencia."
+    "text": "La pregunta define la población\n\n¿Cuál fue el rendimiento promedio de los lotes sembrados con la variedad A por los productores de una cooperativa del Valle de Lerma durante la campaña 2025/26?\n\n\nLa pregunta define la población de referencia.\n\n\nSi cambian las unidadesel lugaro el períodopuede cambiar la población sobre la que queremos inferir."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
@@ -46,28 +46,28 @@
     "href": "clases/05_estimacion_parametros/index.html#población-y-muestra",
     "title": "Inferencia estadística",
     "section": "Población y muestra",
-    "text": "Población y muestra\n\nPOBLACIÓN\n\ntodas las unidades\nparámetros\n\\(\\mu,\\ \\sigma,\\ \\pi\\)\ngeneralmente desconocidos\n\n\nMUESTRA\n\nalgunas unidades observadas\nestadísticos\n\\(\\bar x,\\ s,\\ p\\)\ncalculados con los datos\n\n\n\n\nLos estadísticos se usan para aprender sobre los parámetros."
+    "text": "Población y muestra\n\n POBLACIÓNtodas las unidadesparámetros\\(\\mu,\\ \\sigma,\\ \\pi\\)generalmente desconocidos\n MUESTRAalgunas unidades observadasestadísticos\\(\\bar{x},\\ s,\\ p\\)calculados con los datos\n\n\npoblación ↔︎ muestraparámetros ↔︎ estadísticos\\(\\mu\\leftrightarrow\\bar{x}\\)\\(\\sigma\\leftrightarrow s\\)\\(\\pi\\leftrightarrow p\\)\n\n\nLos estadísticos se usan para aprender sobre los parámetros."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
     "href": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
     "title": "Inferencia estadística",
     "section": "Parámetro y estadístico no son lo mismo",
-    "text": "Parámetro y estadístico no son lo mismo\n\nmedia poblacional\\(\\mu = ?\\)\\(\\ne\\)media de esta muestra\\(\\bar x=7{,}3\\text{ t/ha}\\)\n\n\n¿Entonces \\(\\mu=7{,}3\\text{ t/ha}\\)?\n\n\nNo necesariamente. 7,3 es lo observado en esta muestra."
+    "text": "Parámetro y estadístico no son lo mismo\n\ndescribe la población\\(\\mu=?\\)\\(\\ne\\)se calcula en la muestra\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\n\n\n¿Entonces \\(\\mu=7{,}3\\text{ t/ha}\\)?\n\n\nNo necesariamente. Usamos lo observado en la muestra para aprender sobre la población."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual",
     "href": "clases/05_estimacion_parametros/index.html#estimación-puntual",
     "title": "Inferencia estadística",
     "section": "Estimación puntual",
-    "text": "Estimación puntual\n\nUsamos un estadístico calculado en la muestra para estimar un parámetro desconocido.\n\n\n\\(\\bar X\\) estima a \\(\\mu\\)\\(\\bar x=7{,}3\\text{ t/ha}\\)estimación puntual observada de \\(\\mu\\)\n\n\nNuestra estimación puntual del rendimiento medio poblacional es 7,3 t/ha."
+    "text": "Estimación puntual\n\nUsamos un estadístico calculado en la muestra para estimar un parámetro desconocido.\n\n\n\\(\\bar{x}\\) estima a \\(\\mu\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)el valor calculado en esta muestra es la estimación puntual de \\(\\mu\\)\n\n\nNuestra estimación puntual del rendimiento medio poblacional es 7,3 t/ha."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
     "href": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
     "title": "Inferencia estadística",
     "section": "Otros parámetros, otros estimadores",
-    "text": "Otros parámetros, otros estimadores\n\n PARÁMETROESTIMADORESTIMACIÓN OBSERVADA\n \\(\\mu\\)\\(\\bar X\\)\\(\\bar x=7{,}3\\)\n \\(\\sigma\\)\\(S\\)\\(s=1{,}5\\)\n \\(\\sigma^2\\)\\(S^2\\)\\(s^2\\)\n \\(\\pi\\)\\(\\widehat{\\pi}\\)\\(p\\)"
+    "text": "Otros parámetros, otros estimadores\n\n PARÁMETROESTADÍSTICO QUE LO ESTIMA\n \\(\\mu\\)\\(\\bar{x}\\)\n \\(\\sigma\\)\\(s\\)\n \\(\\sigma^2\\)\\(s^2\\)\n \\(\\pi\\)\\(p\\)\n \\(\\Delta\\mu=\\mu_1-\\mu_2\\)\\(\\bar{x}_1-\\bar{x}_2\\)\n \\(\\Delta\\pi=\\pi_1-\\pi_2\\)\\(p_1-p_2\\)\n\n\nEl estimador es la regla; la estimación es el valor obtenido al aplicarla a una muestra."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
@@ -81,14 +81,14 @@
     "href": "clases/05_estimacion_parametros/index.html#recordemos-la-clase-04",
     "title": "Inferencia estadística",
     "section": "Recordemos la Clase 04",
-    "text": "Recordemos la Clase 04\n\n Las medias cambiande muestra en muestra\n \\(E(\\bar X)=\\mu\\)se centran en el parámetro\n \\(EE(\\bar X)=\\dfrac{\\sigma}{\\sqrt n}\\)si \\(\\sigma\\) es desconocida:EE estimado de \\(\\bar X\\) = \\(s/\\sqrt n\\)"
+    "text": "Recordemos la Clase 04\n\n POBLACIÓN\\(\\mu\\)parámetro desconocido\n →muestreo repetido\n MUCHAS MUESTRAS\\(\\bar{x}_1,\\bar{x}_2,\\ldots\\)las medias cambian\n →\n DISTRIBUCIÓN MUESTRAL\\(E(\\bar{x})=\\mu\\)\\(S_{\\bar{x}}=s/\\sqrt{n}\\)\n\n\nLa distribución del estadístico conecta la muestra con el parámetro."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra",
     "href": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra",
     "title": "Inferencia estadística",
     "section": "En nuestra muestra",
-    "text": "En nuestra muestra\n\n\\(n=25\\)\\(\\bar x=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\n\n\\[\\text{EE estimado de }\\bar X=\\frac{s}{\\sqrt n}=\\frac{1{,}5}{\\sqrt{25}}=0{,}30\\text{ t/ha}\\]\n\nEl error estándar no describe la variabilidad entre lotes. Describe la precisión con la que estimamos la media."
+    "text": "En nuestra muestra\n\n\\(n=25\\)\\(\\bar x=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\n\n\\[S_{\\bar{x}}=\\frac{s}{\\sqrt{n}}=\\frac{1{,}5}{\\sqrt{25}}=0{,}30\\text{ t/ha}\\]\n\n\nMENOR \\(S_{\\bar{x}}\\)\nmayor precisión de \\(\\bar{x}\\) como estimación de \\(\\mu\\)\n\n\nMAYOR \\(S_{\\bar{x}}\\)\nmenor precisión de \\(\\bar{x}\\) como estimación de \\(\\mu\\)\n\n\n\nEl error estándar mide la precisión de la estimación puntual; no describe la variabilidad entre lotes."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#un-número-solo-se-queda-corto",
@@ -109,21 +109,21 @@
     "href": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
     "title": "Inferencia estadística",
     "section": "¿Cómo construimos ese intervalo?",
-    "text": "¿Cómo construimos ese intervalo?\n\nestimación \\(\\ \\pm\\ \\) multiplicador \\(\\ \\times\\ \\) error estándar\n\n\nCuanto mayor sea la incertidumbre, más ancho deberá ser el intervalo."
+    "text": "¿Cómo construimos ese intervalo?\n\nClase 04distribución de medias muestrales→Clase 05cuantificamos la incertidumbre\n\n\n \n  Distribución muestral de la media\n  Curva centrada en mu, con 95 por ciento central y 2,5 por ciento en cada cola.\n  \n  \n  \n  \n  \n  \n  2,5%95% central2,5%\n \n \\(\\mu-k^*S_{\\bar{x}}\\)\\(\\mu\\)\\(\\mu+k^*S_{\\bar{x}}\\)\n\n\nSi repitiéramos el muestreo, el 95% central de las medias quedaría delimitado por valores críticos medidos en unidades de error estándar."
   },
   {
-    "objectID": "clases/05_estimacion_parametros/index.html#normal-o-t",
-    "href": "clases/05_estimacion_parametros/index.html#normal-o-t",
+    "objectID": "clases/05_estimacion_parametros/index.html#si-barx-es-aproximadamente-normal-por-qué-usamos-t",
+    "href": "clases/05_estimacion_parametros/index.html#si-barx-es-aproximadamente-normal-por-qué-usamos-t",
     "title": "Inferencia estadística",
-    "section": "¿Normal o t?",
-    "text": "¿Normal o t?\n\n \\(\\sigma\\) conocidausamos Normal\n \\(\\sigma\\) estimada con \\(s\\)usamos t si se cumplen sus supuestos\n muestras grandest se aproxima a Normal\n\n\nNuestro caso: \\(n=25\\), \\(\\sigma\\) desconocida y rendimiento aproximadamente Normal en la población \\(\\longrightarrow\\) usamos \\(t\\) con \\(24\\) gl"
+    "section": "Si \\(\\bar{x}\\) es aproximadamente Normal, ¿por qué usamos t?",
+    "text": "Si \\(\\bar{x}\\) es aproximadamente Normal, ¿por qué usamos t?\n\nLa distribución muestral de \\(\\bar{x}\\) es Normal si la población es Normal y aproximadamente Normal para \\(n\\) suficientemente grande por el TCL.\n\n\n\nSI CONOCIÉRAMOS \\(\\sigma\\)\nUsamos \\(\\sigma/\\sqrt n\\) y comparamos el estadístico estandarizado con la Normal estándar, z.\n\n\nCOMO \\(\\sigma\\) SUELE SER DESCONOCIDA\nLa estimamos con \\(s\\); esa incertidumbre adicional lleva a una t de Student.\n\n\n\n\nCuanto menor es \\(n\\): menos grados de libertad, colas más pesadas y mayor diferencia respecto de Normal.\n\n\nAl aumentar \\(n\\): aumentan los grados de libertad y t se aproxima a Normal.\n\n\n\nNo usamos las reglas “\\(n&gt;30\\) → Normal” ni “\\(n&lt;30\\) → t”. t corresponde al estadístico estandarizado, no a \\(\\bar{x}\\)."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#ic-del-95",
     "href": "clases/05_estimacion_parametros/index.html#ic-del-95",
     "title": "Inferencia estadística",
     "section": "IC del 95%",
-    "text": "IC del 95%\n\n\\(t^*_{24}\\approx2{,}064\\)\n\n\\[IC_{95\\%}=\\bar x\\pm t^*\\times \\text{EE estimado de }\\bar X\\]\n\n\\(IC_{95\\%}=7{,}3\\pm2{,}064\\times0{,}30\\)"
+    "text": "IC del 95%\n\n \n  Distribución t y valores críticos\n  Región central del 95 por ciento entre menos t estrella y más t estrella, con alfa sobre dos en cada cola.\n  \n  \n  \n  \n  \n  \n  α/2 = 0,02595%α/2 = 0,025\n \n \\(-t^*\\)margen = \\(t^*S_{\\bar{x}}\\)\\(+t^*\\)\n\n\\[IC_{95\\%}:\\quad \\bar{x}\\pm t^*S_{\\bar{x}},\\qquad S_{\\bar{x}}=\\frac{s}{\\sqrt{n}}\\]\n\n\\(t^*_{24}\\approx2{,}064\\) · \\(IC_{95\\%}=7{,}3\\pm2{,}064\\times0{,}30\\)"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#el-resultado",
@@ -144,7 +144,7 @@
     "href": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
     "title": "Inferencia estadística",
     "section": "Volvamos a muchas muestras",
-    "text": "Volvamos a muchas muestras\n\n\nLa línea vertical marca el verdadero valor de \\(\\mu\\); algunos intervalos no lo contienen."
+    "text": "Volvamos a muchas muestras\n\n Generar 30 muestraspoblación: \\(\\mu=7{,}25\\), \\(\\sigma=1{,}5\\)cada muestra: \\(n=25\\)\n \n — cobertura en esta tanda— cobertura acumulada contiene \\(\\mu\\)  no contiene \\(\\mu\\)\n\n\nCada clic repite el procedimiento completo. La línea vertical marca el verdadero valor de \\(\\mu\\)."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
@@ -158,42 +158,42 @@
     "href": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
     "title": "Inferencia estadística",
     "section": "¿Qué podemos decir con nuestra muestra?",
-    "text": "¿Qué podemos decir con nuestra muestra?\n\nEstimamos que el rendimiento medio poblacional es 7,3 t/ha, con un \\(IC_{95\\%}\\) de 6,68 a 7,92 t/ha.\n\n\nLa estimación y su incertidumbre se informan juntas."
+    "text": "¿Qué podemos decir con nuestra muestra?\n\nCon un 95% de confianza, estimamos que el rendimiento promedio de todos los lotes de la cooperativa sembrados con la variedad A en el Valle de Lerma durante la campaña 2025/26 se encuentra entre 6,68 y 7,92 t/ha; la estimación puntual es 7,3 t/ha.\n\n\nLa estimación y su incertidumbre se informan juntas."
   },
   {
-    "objectID": "clases/05_estimacion_parametros/index.html#intervalo-ancho-vs.-estrecho",
-    "href": "clases/05_estimacion_parametros/index.html#intervalo-ancho-vs.-estrecho",
+    "objectID": "clases/05_estimacion_parametros/index.html#precisión-intervalo-ancho-vs.-estrecho",
+    "href": "clases/05_estimacion_parametros/index.html#precisión-intervalo-ancho-vs.-estrecho",
     "title": "Inferencia estadística",
-    "section": "Intervalo ancho vs. estrecho",
-    "text": "Intervalo ancho vs. estrecho\n\n intervalo ancho\n intervalo estrecho\n\n\n¿Cuál es más preciso?\n\n\nEl más estrecho."
+    "section": "Precisión: intervalo ancho vs. estrecho",
+    "text": "Precisión: intervalo ancho vs. estrecho\n\n intervalo ancho\n intervalo estrecho\n\n\n¿Cuál es más preciso?\n\n\nMás estrecho → más preciso.Precisión no significa automáticamente que el intervalo sea más correcto."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
     "href": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
     "title": "Inferencia estadística",
     "section": "¿De qué depende la amplitud?",
-    "text": "¿De qué depende la amplitud?\n\n \\(s\\)variabilidadmás variación \\(\\longrightarrow\\) más ancho\n \\(n\\)tamaño muestralmás datos \\(\\longrightarrow\\) más estrecho\n \\(1-\\alpha\\)nivel de confianzamás confianza \\(\\longrightarrow\\) más ancho"
+    "text": "¿De qué depende la amplitud?\n\nMargen de error (o error de estimación)\n\\[ME=t^*S_{\\bar{x}},\\qquad S_{\\bar{x}}=\\frac{s}{\\sqrt{n}}\\]\n\n\n\nMÁS VARIABILIDAD · \\(\\uparrow s\\)\n\\(\\uparrow S_{\\bar{x}}\\) → mayor error de estimación → IC más ancho\nmenor precisión\n\n\nMAYOR TAMAÑO MUESTRAL · \\(\\uparrow n\\)\n\\(\\downarrow S_{\\bar{x}}\\) → menor error de estimación → IC más estrecho\nmayor precisión\n\n\nMAYOR NIVEL DE CONFIANZA\nmayor valor crítico → mayor error de estimación → IC más ancho\nmenor precisión"
   },
   {
-    "objectID": "clases/05_estimacion_parametros/index.html#si-aumenta-n",
-    "href": "clases/05_estimacion_parametros/index.html#si-aumenta-n",
+    "objectID": "clases/05_estimacion_parametros/index.html#exploremos-la-precisión",
+    "href": "clases/05_estimacion_parametros/index.html#exploremos-la-precisión",
     "title": "Inferencia estadística",
-    "section": "Si aumenta \\(n\\)",
-    "text": "Si aumenta \\(n\\)\n\n \\(n=25\\)\\(EE=0{,}30\\)\n \\(n=100\\)\\(EE=0{,}15\\)\n\n\nMás información \\(\\longrightarrow\\) menor incertidumbre."
+    "section": "Exploremos la precisión",
+    "text": "Exploremos la precisión\n\n\ntamaño muestral n\n\n25\n\n variabilidad s (t/ha)\n\n1,5\n\n nivel de confianza90%95%99%\n\n\n\nerror estándar \\(S_{\\bar{x}}\\)\n0,300\n\n\nvalor crítico \\(t^*\\)\n2,064\n\n\nerror de estimación\n0,619\n\n\namplitud\n1,238\n\n\nmedia muestral fija: 7,3 t/haIC 95%: [6,68; 7,92]\n\nIntervalo más estrecho → mayor precisión"
   },
   {
-    "objectID": "clases/05_estimacion_parametros/index.html#si-aumenta-la-variabilidad",
-    "href": "clases/05_estimacion_parametros/index.html#si-aumenta-la-variabilidad",
+    "objectID": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
+    "href": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
     "title": "Inferencia estadística",
-    "section": "Si aumenta la variabilidad",
-    "text": "Si aumenta la variabilidad\n\n menor \\(s\\)lotes más homogéneos\n mayor \\(s\\)lotes más heterogéneos\n\n\nCuando los lotes son más variables entre sí, la media se estima con menor precisión."
+    "section": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?",
+    "text": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?\n\n\nSi aumenta \\(n\\)\n\\(S_{\\bar{x}}=s/\\sqrt n\\) disminuye, el intervalo se estrecha y la estimación gana precisión.\n\n\nSi aumenta \\(s\\)\n\\(S_{\\bar{x}}\\) aumenta, el intervalo se ensancha y la estimación pierde precisión.\n\n\n\nEl tamaño muestral aporta información; la heterogeneidad entre lotes introduce incertidumbre."
   },
   {
-    "objectID": "clases/05_estimacion_parametros/index.html#si-queremos-más-confianza",
-    "href": "clases/05_estimacion_parametros/index.html#si-queremos-más-confianza",
+    "objectID": "clases/05_estimacion_parametros/index.html#confianza-y-precisión-un-compromiso",
+    "href": "clases/05_estimacion_parametros/index.html#confianza-y-precisión-un-compromiso",
     "title": "Inferencia estadística",
-    "section": "Si queremos más confianza",
-    "text": "Si queremos más confianza\n\n\nMayor confianza exige un intervalo más amplio."
+    "section": "Confianza y precisión: un compromiso",
+    "text": "Confianza y precisión: un compromiso\n\nMAYOR CONFIANZAmayor valor crítico→intervalo más anchomenor precisión\n\n\nPara mantener más confianza necesitamos abarcar más valores posibles. No es una falla: es el costo de exigir mayor cobertura al procedimiento."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
@@ -207,7 +207,7 @@
     "href": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
     "title": "Inferencia estadística",
     "section": "Pero pensemos otra pregunta",
-    "text": "Pero pensemos otra pregunta\n\n¿Cuál es el rendimiento medio que podemos esperar de la variedad A bajo condiciones productivas del Valle de Lerma?\n\n\n¿Dónde están todas las unidades que forman esa población?"
+    "text": "Pero pensemos otra pregunta\n\n¿Cuál es el rendimiento promedio de la variedad A en lotes comerciales del Valle de Lerma manejados con las prácticas habituales de la zona?\n\n\n¿Dónde están todas las unidades que forman esa población?"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
@@ -221,7 +221,77 @@
     "href": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
     "title": "Inferencia estadística",
     "section": "La pregunta vuelve a ser fundamental",
-    "text": "La pregunta vuelve a ser fundamental\n\n\nPREGUNTA A\n¿Cuál fue el rendimiento de los lotes de esta cooperativa en 2025/26?\n\\(\\longrightarrow\\) población real\n\n\nPREGUNTA B\n¿Qué rendimiento podemos esperar de esta variedad bajo determinadas condiciones del Valle de Lerma?\n\\(\\longrightarrow\\) población conceptual\n\n\n\nLa pregunta define la población a la que pretendemos generalizar."
+    "text": "La pregunta vuelve a ser fundamental\n\n\nPREGUNTA A\n¿Cuál fue el rendimiento de los lotes de esta cooperativa en 2025/26?\n\\(\\longrightarrow\\) población real\n\n\nPREGUNTA B\n¿Cuál es el rendimiento promedio de la variedad A en lotes comerciales del Valle de Lerma manejados con las prácticas habituales de la zona?\n\\(\\longrightarrow\\) población conceptual\n\n\n\nLa pregunta define la población a la que pretendemos generalizar."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#otra-pregunta-otro-parámetro",
+    "href": "clases/05_estimacion_parametros/index.html#otra-pregunta-otro-parámetro",
+    "title": "Inferencia estadística",
+    "section": "Otra pregunta, otro parámetro",
+    "text": "Otra pregunta, otro parámetro\n\n¿Qué proporción de las semillas de un lote grande de maíz destinado a la siembra es viable?\n\n\n\nPOBLACIÓNtodas las semillas del lote\n\n\nUNIDADcada semilla\n\n\nVARIABLEviabilidad: sí / no\n\n\nPARÁMETRO\\(\\pi\\)proporción verdadera y desconocida"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
+    "title": "Inferencia estadística",
+    "section": "Tomamos una muestra",
+    "text": "Tomamos una muestra\n\n 123viables\n 23no viables\n\n\\[n=146,\\qquad x=123,\\qquad p=\\frac{x}{n}=\\frac{123}{146}=0{,}8425\\approx84{,}25\\%\\]"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual-de-pi",
+    "href": "clases/05_estimacion_parametros/index.html#estimación-puntual-de-pi",
+    "title": "Inferencia estadística",
+    "section": "Estimación puntual de \\(\\pi\\)",
+    "text": "Estimación puntual de \\(\\pi\\)\n\n\nPARÁMETRO POBLACIONAL\\(\\pi=?\\)proporción de todas las semillas del lote que son viables\n\n←\n\nESTADÍSTICO MUESTRAL\\(p=0{,}8425\\)proporción viable observada en la muestra de 146 semillas\n\n\n\nUsamos \\(p\\) para estimar \\(\\pi\\). En esta muestra, la estimación puntual es 0,8425, o aproximadamente 84,25%."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#pero-otra-muestra-daría-otro-p",
+    "href": "clases/05_estimacion_parametros/index.html#pero-otra-muestra-daría-otro-p",
+    "title": "Inferencia estadística",
+    "section": "Pero otra muestra daría otro \\(p\\)",
+    "text": "Pero otra muestra daría otro \\(p\\)\n\nMUESTRA 1119 viables\\(p_1=0{,}815\\)MUESTRA 2126 viables\\(p_2=0{,}863\\)MUESTRA 3121 viables\\(p_3=0{,}829\\)···MUESTRA \\(k\\)124 viables\\(p_k=0{,}849\\)\n\n\nMuchas muestras producen muchos valores de \\(p\\): juntos forman la distribución muestral de \\(p\\)."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-la-distribución-de-p-al-intervalo",
+    "href": "clases/05_estimacion_parametros/index.html#de-la-distribución-de-p-al-intervalo",
+    "title": "Inferencia estadística",
+    "section": "De la distribución de \\(p\\) al intervalo",
+    "text": "De la distribución de \\(p\\) al intervalo\n\n \n  Distribución muestral de p\n  Distribución aproximadamente Normal centrada en pi, con 95 por ciento central y 2,5 por ciento en cada cola.\n  \n  \n  \n  \n  \n  \n  2,5%95% central2,5%\n \n \\(\\pi-z^*S_p\\)\\(\\pi\\)\\(\\pi+z^*S_p\\)\n\n\ndistribución aproximadamente Normal\\(z^*=1{,}96\\)\\(S_p\\) mide la variación de \\(p\\) entre muestras\n\n\nUsamos esa variación para construir un intervalo alrededor del \\(p\\) observado."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#intervalo-de-confianza-para-pi",
+    "href": "clases/05_estimacion_parametros/index.html#intervalo-de-confianza-para-pi",
+    "title": "Inferencia estadística",
+    "section": "Intervalo de confianza para \\(\\pi\\)",
+    "text": "Intervalo de confianza para \\(\\pi\\)\n\\[S_p=\\sqrt{\\frac{p(1-p)}{n}}=\\sqrt{\\frac{0{,}8425(1-0{,}8425)}{146}}=0{,}03015\\]\n\\[IC_{95\\%}:\\quad p\\pm z^*S_p=0{,}8425\\pm1{,}96\\times0{,}03015\\]\n\nMARGEN DE ERROR\\(0{,}0591\\)\\(IC_{95\\%}\\approx[0{,}7834\\ ;\\ 0{,}9016]\\)aproximadamente 78,34% a 90,16%"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#es-razonable-la-aproximación-normal",
+    "href": "clases/05_estimacion_parametros/index.html#es-razonable-la-aproximación-normal",
+    "title": "Inferencia estadística",
+    "section": "¿Es razonable la aproximación Normal?",
+    "text": "¿Es razonable la aproximación Normal?\n\n\nVARIABLE ORIGINALviable / no viable\n\n→\n\nMUESTRAS REPETIDASmuchos valores de \\(p\\)\n\n→\n\nSI \\(n\\) ES SUFICIENTEforma aproximadamente Normal\n\n\n\n\nSEMILLAS VIABLES\\(np=123\\)\n\n\nSEMILLAS NO VIABLES\\(n(1-p)=23\\)\n\n\n\nLa aproximación funciona mejor cuando hay suficientes observaciones en ambas categorías. Para este curso usamos \\(np\\ge10\\) y \\(n(1-p)\\ge10\\) como regla práctica, no como una ley exacta."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#cómo-lo-interpretamos",
+    "href": "clases/05_estimacion_parametros/index.html#cómo-lo-interpretamos",
+    "title": "Inferencia estadística",
+    "section": "¿Cómo lo interpretamos?",
+    "text": "¿Cómo lo interpretamos?\n\nCon un 95% de confianza, estimamos que entre aproximadamente 78,34% y 90,16% de todas las semillas del lote de maíz destinado a la siembra son viables.\n\n\nSi repitiéramos muchas veces el muestreo y construyéramos los intervalos de la misma manera, aproximadamente el 95% contendría la verdadera proporción \\(\\pi\\)."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#la-misma-lógica-distinto-parámetro",
+    "href": "clases/05_estimacion_parametros/index.html#la-misma-lógica-distinto-parámetro",
+    "title": "Inferencia estadística",
+    "section": "La misma lógica, distinto parámetro",
+    "text": "La misma lógica, distinto parámetro\n\n\nMEDIA\\(\\mu\\leftarrow\\bar{x}\\)\\(S_{\\bar{x}}=s/\\sqrt{n}\\)\\(\\bar{x}\\pm t^*S_{\\bar{x}}\\)\n\n\nPROPORCIÓN\\(\\pi\\leftarrow p\\)\\(S_p=\\sqrt{p(1-p)/n}\\)\\(p\\pm z^*S_p\\)\n\n\n\nCambia el parámetro y cambia la distribución del estadístico; la lógica de la inferencia es la misma."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#no-sólo-podemos-estimar-mu-y-pi",
+    "href": "clases/05_estimacion_parametros/index.html#no-sólo-podemos-estimar-mu-y-pi",
+    "title": "Inferencia estadística",
+    "section": "No sólo podemos estimar \\(\\mu\\) y \\(\\pi\\)",
+    "text": "No sólo podemos estimar \\(\\mu\\) y \\(\\pi\\)\n\n\n\n\n\n\n\n\n\nParámetro\n¿Qué representa?\nEstadístico que lo estima\n\n\n\n\n\\(\\mu\\)\nMedia poblacional\n\\(\\bar{x}\\)\n\n\n\\(\\pi\\)\nProporción poblacional\n\\(p\\)\n\n\n\\(\\sigma\\)\nDesvío estándar poblacional\n\\(s\\)\n\n\n\\(\\sigma^2\\)\nVarianza poblacional\n\\(s^2\\)\n\n\n\\(\\Delta\\mu=\\mu_1-\\mu_2\\)\nDiferencia entre dos medias poblacionales\n\\(\\bar{x}_1-\\bar{x}_2\\)\n\n\n\\(\\Delta\\pi=\\pi_1-\\pi_2\\)\nDiferencia entre dos proporciones poblacionales\n\\(p_1-p_2\\)"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
@@ -1684,28 +1754,28 @@
     "href": "clases/04_distribuciones_muestrales/index.html#los-estadísticos-también-varían-entre-muestras",
     "title": "Distribuciones muestrales",
     "section": "Los estadísticos también varían entre muestras",
-    "text": "Los estadísticos también varían entre muestras\n\n MUESTRA ALEATORIAcambian los individuos\n →\n ESTADÍSTICO ALEATORIO\\(\\bar{X}\\)puede tomar distintos valores\n\n\nAntes de observar la muestra no sabemos qué valor tendrá el estadístico. Por eso, \\(\\bar{X}\\) es también una variable aleatoria."
+    "text": "Los estadísticos también varían entre muestras\n\n MUESTRA ALEATORIAcambian los individuos\n →\n ESTADÍSTICO ALEATORIO\\(\\bar{x}\\)puede tomar distintos valores\n\n\nAntes de observar la muestra no sabemos qué valor tendrá el estadístico. Por eso, \\(\\bar{x}\\) es también una variable aleatoria."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#apareció-una-nueva-distribución",
     "href": "clases/04_distribuciones_muestrales/index.html#apareció-una-nueva-distribución",
     "title": "Distribuciones muestrales",
     "section": "Apareció una nueva distribución",
-    "text": "Apareció una nueva distribución\nDatos individuales\\(X\\)rendimiento de cada parcela≠Medias muestrales\\(\\bar{X}\\)una media por cada muestra\n\n¿Son la misma distribución?\n\n\nLa segunda es la distribución muestral de la media."
+    "text": "Apareció una nueva distribución\nDatos individuales\\(X\\)rendimiento de cada parcela≠Medias muestrales\\(\\bar{x}\\)una media por cada muestra\n\n¿Son la misma distribución?\n\n\nLa segunda es la distribución muestral de la media."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#una-distribución-muestral-describe-un-estadístico",
     "href": "clases/04_distribuciones_muestrales/index.html#una-distribución-muestral-describe-un-estadístico",
     "title": "Distribuciones muestrales",
     "section": "Una distribución muestral describe un estadístico",
-    "text": "Una distribución muestral describe un estadístico\n\nUna distribución muestral es la distribución de los valores que puede tomar un estadístico (\\(\\bar{X}\\), \\(p\\), \\(\\Delta\\bar{X}\\), \\(\\Delta p\\), …) al obtener muestras aleatorias repetidas del mismo tamaño de una población.\n\n\nHoy nos concentraremos principalmente en \\(\\bar{X}\\)."
+    "text": "Una distribución muestral describe un estadístico\n\nUna distribución muestral es la distribución de los valores que puede tomar un estadístico (\\(\\bar{x}\\), \\(p\\), \\(\\Delta\\bar{x}\\), \\(\\Delta p\\), …) al obtener muestras aleatorias repetidas del mismo tamaño de una población.\n\n\nHoy nos concentraremos principalmente en \\(\\bar{x}\\)."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#no-confundamos-tres-distribuciones-diferentes",
     "href": "clases/04_distribuciones_muestrales/index.html#no-confundamos-tres-distribuciones-diferentes",
     "title": "Distribuciones muestrales",
     "section": "No confundamos tres distribuciones diferentes",
-    "text": "No confundamos tres distribuciones diferentes\nPoblación\\(X\\)todos los valores posibles de la variableUna muestra observada\\(x_1,x_2,\\ldots,x_n\\)los datos que obtuvimosDistribución muestral\\(\\bar{X}\\)los valores que puede tomar la media entre muestras posibles\n\nUna muestra es un conjunto de datos; una distribución muestral describe cómo cambia un estadístico entre muestras."
+    "text": "No confundamos tres distribuciones diferentes\nPoblación\\(X\\)todos los valores posibles de la variableUna muestra observada\\(x_1,x_2,\\ldots,x_n\\)los datos que obtuvimosDistribución muestral\\(\\bar{x}\\)los valores que puede tomar la media entre muestras posibles\n\nUna muestra es un conjunto de datos; una distribución muestral describe cómo cambia un estadístico entre muestras."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#usemos-una-población-diminuta-para-ver-todo",
@@ -1740,7 +1810,7 @@
     "href": "clases/04_distribuciones_muestrales/index.html#la-distribución-está-centrada-correctamente",
     "title": "Distribuciones muestrales",
     "section": "La distribución está centrada correctamente",
-    "text": "La distribución está centrada correctamente\n\n\n\\(\\mu=159{,}5\\)\n\n\n\\(E(\\bar{X})=159{,}5\\)\n\n\n\\(\\boxed{E(\\bar{X})=\\mu}\\)\n\n\n\nLa media muestral varía entre muestras, pero su distribución está centrada en la media poblacional."
+    "text": "La distribución está centrada correctamente\n\n\n\\(\\mu=159{,}5\\)\n\n\n\\(E(\\bar{x})=159{,}5\\)\n\n\n\\(\\boxed{E(\\bar{x})=\\mu}\\)\n\n\n\nLa media muestral varía entre muestras, pero su distribución está centrada en la media poblacional."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#no-alcanza-con-saber-dónde-está-centrada",
@@ -1754,28 +1824,28 @@
     "href": "clases/04_distribuciones_muestrales/index.html#el-error-estándar-mide-la-variación-entre-estimaciones",
     "title": "Distribuciones muestrales",
     "section": "El error estándar mide la variación entre estimaciones",
-    "text": "El error estándar mide la variación entre estimaciones\n\nEl error estándar es la desviación estándar de la distribución muestral de un estimador. Para el caso de la media muestral:\n\n\n si conocemos \\(\\sigma\\)\\(\\sigma_{\\bar{X}}=\\dfrac{\\sigma}{\\sqrt n}\\)\n si estimamos \\(\\sigma\\) mediante \\(S\\)\\(S_{\\bar{x}}=\\dfrac{S}{\\sqrt n}\\)\n\n\n\\(S_{\\bar{x}}\\) es el error estándar estimado de la media. Expresa cuánto tienden a variar las medias muestrales entre muestras.\n\n\nNo garantiza cuánto se aleja una estimación particular del verdadero parámetro."
+    "text": "El error estándar mide la variación entre estimaciones\n\nEl error estándar es la desviación estándar de la distribución muestral de un estimador. Para el caso de la media muestral:\n\n\n si conocemos \\(\\sigma\\)\\(\\sigma_{\\bar{x}}=\\dfrac{\\sigma}{\\sqrt n}\\)\n si estimamos \\(\\sigma\\) mediante \\(S\\)\\(S_{\\bar{x}}=\\dfrac{S}{\\sqrt n}\\)\n\n\n\\(S_{\\bar{x}}\\) es el error estándar estimado de la media. Expresa cuánto tienden a variar las medias muestrales entre muestras.\n\n\nNo garantiza cuánto se aleja una estimación particular del verdadero parámetro."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#dos-componentes-controlan-el-error-estándar",
     "href": "clases/04_distribuciones_muestrales/index.html#dos-componentes-controlan-el-error-estándar",
     "title": "Distribuciones muestrales",
     "section": "Dos componentes controlan el error estándar",
-    "text": "Dos componentes controlan el error estándar\n\n\\[\\sigma_{\\bar{X}}=\\frac{\\sigma}{\\sqrt n}\\]\n\n\n \n  mayor \\(\\sigma\\)\n  \n   \n   \n   \n  \n  más ancha\\(\\sigma\\uparrow\\Rightarrow\\sigma_{\\bar{X}}\\uparrow\\)\n \n \n  mayor \\(n\\)\n  \n   \n   \n   \n  \n  más estrecha\\(n\\uparrow\\Rightarrow\\sigma_{\\bar{X}}\\downarrow\\)"
+    "text": "Dos componentes controlan el error estándar\n\n\\[\\sigma_{\\bar{x}}=\\frac{\\sigma}{\\sqrt n}\\]\n\n\n \n  mayor \\(\\sigma\\)\n  \n   \n   \n   \n  \n  más ancha\\(\\sigma\\uparrow\\Rightarrow\\sigma_{\\bar{x}}\\uparrow\\)\n \n \n  mayor \\(n\\)\n  \n   \n   \n   \n  \n  más estrecha\\(n\\uparrow\\Rightarrow\\sigma_{\\bar{x}}\\downarrow\\)"
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#las-medias-varían-menos-que-los-datos-individuales",
     "href": "clases/04_distribuciones_muestrales/index.html#las-medias-varían-menos-que-los-datos-individuales",
     "title": "Distribuciones muestrales",
     "section": "Las medias varían menos que los datos individuales",
-    "text": "Las medias varían menos que los datos individuales\n\n Variable original: \\(X\\) · dispersión \\(\\sigma\\)Media muestral: \\(\\bar{X}\\) · dispersión \\(\\sigma_{\\bar{X}}=\\sigma/\\sqrt n\\)\n \n  \n  \n  \n \n\n\n\\[\\operatorname{Var}(\\bar{X})=\\operatorname{Var}\\left(\\frac{X_1+\\cdots+X_n}{n}\\right)=\\frac{\\sigma^2}{n}\\] \\[\\sigma_{\\bar{X}}=\\sqrt{\\operatorname{Var}(\\bar{X})}=\\frac{\\sigma}{\\sqrt n}&lt;\\sigma\\quad(n&gt;1)\\]\n\n\nPromediar reduce la variabilidad.\n\n\nAl aumentar (n) ocurren dos cosas distintas: disminuye la dispersión de las medias y su distribución tiende a hacerse Normal."
+    "text": "Las medias varían menos que los datos individuales\n\n Variable original: \\(X\\) · dispersión \\(\\sigma\\)Media muestral: \\(\\bar{x}\\) · dispersión \\(\\sigma_{\\bar{x}}=\\sigma/\\sqrt n\\)\n \n  \n  \n  \n \n\n\n\\[\\operatorname{Var}(\\bar{x})=\\operatorname{Var}\\left(\\frac{X_1+\\cdots+X_n}{n}\\right)=\\frac{\\sigma^2}{n}\\] \\[\\sigma_{\\bar{x}}=\\sqrt{\\operatorname{Var}(\\bar{x})}=\\frac{\\sigma}{\\sqrt n}&lt;\\sigma\\quad(n&gt;1)\\]\n\n\nPromediar reduce la variabilidad.\n\n\nAl aumentar (n) ocurren dos cosas distintas: disminuye la dispersión de las medias y su distribución tiende a hacerse Normal."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#muestras-más-grandes-producen-medias-más-estables",
     "href": "clases/04_distribuciones_muestrales/index.html#muestras-más-grandes-producen-medias-más-estables",
     "title": "Distribuciones muestrales",
     "section": "Muestras más grandes producen medias más estables",
-    "text": "Muestras más grandes producen medias más estables\n\n \n Misma población · elegí el tamaño de muestra\n Distribución de \\(\\bar{X}\\)\n\n\nCompará \\(n=5,\\ 10,\\ 30\\) y \\(100\\) manteniendo la misma población."
+    "text": "Muestras más grandes producen medias más estables\n\n \n Misma población · elegí el tamaño de muestra\n Distribución de \\(\\bar{x}\\)\n\n\nCompará \\(n=5,\\ 10,\\ 30\\) y \\(100\\) manteniendo la misma población."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#una-población-más-variable-transmite-más-incertidumbre",
@@ -1789,7 +1859,7 @@
     "href": "clases/04_distribuciones_muestrales/index.html#hasta-ahora-usamos-una-población-linda",
     "title": "Distribuciones muestrales",
     "section": "Hasta ahora usamos una población “linda”",
-    "text": "Hasta ahora usamos una población “linda”\n\n \n Población muy asimétrica¿Qué forma tendrá la distribución de \\(\\bar{X}\\)?Tomaremos muchas muestras del mismo tamaño.\n\n\nSi los datos individuales no son normales, ¿qué pasa con las medias muestrales?"
+    "text": "Hasta ahora usamos una población “linda”\n\n \n Población muy asimétrica¿Qué forma tendrá la distribución de \\(\\bar{x}\\)?Tomaremos muchas muestras del mismo tamaño.\n\n\nSi los datos individuales no son normales, ¿qué pasa con las medias muestrales?"
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#con-muestras-pequeñas-la-asimetría-todavía-se-nota",
@@ -1803,14 +1873,14 @@
     "href": "clases/04_distribuciones_muestrales/index.html#al-aumentar-n-la-distribución-de-las-medias-se-vuelve-más-normal",
     "title": "Distribuciones muestrales",
     "section": "Al aumentar n, la distribución de las medias se vuelve más normal",
-    "text": "Al aumentar n, la distribución de las medias se vuelve más normal\n\n \\(n=2\\)\n \\(n=5\\)\n \\(n=10\\)\n \\(n=30\\)\n \\(n=100\\)\n\n\nLa población no cambió: cambia la distribución de \\(\\bar{X}\\)."
+    "text": "Al aumentar n, la distribución de las medias se vuelve más normal\n\n \\(n=2\\)\n \\(n=5\\)\n \\(n=10\\)\n \\(n=30\\)\n \\(n=100\\)\n\n\nLa población no cambió: cambia la distribución de \\(\\bar{x}\\)."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#el-teorema-central-del-límite-explica-el-patrón",
     "href": "clases/04_distribuciones_muestrales/index.html#el-teorema-central-del-límite-explica-el-patrón",
     "title": "Distribuciones muestrales",
     "section": "El Teorema Central del Límite explica el patrón",
-    "text": "El Teorema Central del Límite explica el patrón\n\nSi tomamos muestras aleatorias suficientemente grandes de una población con media \\(\\mu\\) y varianza finita, la distribución muestral de \\(\\bar{X}\\) tiende a una distribución Normal.\n\n\n\nFORMA\\(\\bar{X}\\) tiende a ser NormalEste es el aporte central del TCL.\n\n\nCENTRO\\(E(\\bar{X})=\\mu\\)Las medias se centran en la media poblacional.\n\n\nDISPERSIÓN\\(\\sigma_{\\bar{X}}=\\dfrac{\\sigma}{\\sqrt n}\\)Proviene de las propiedades de la media de variables independientes, no del TCL.\n\n\n\n¿Qué significa muestras suficientemente grandes?"
+    "text": "El Teorema Central del Límite explica el patrón\n\nSi tomamos muestras aleatorias suficientemente grandes de una población con media \\(\\mu\\) y varianza finita, la distribución muestral de \\(\\bar{x}\\) tiende a una distribución Normal.\n\n\n\nFORMA\\(\\bar{x}\\) tiende a ser NormalEste es el aporte central del TCL.\n\n\nCENTRO\\(E(\\bar{x})=\\mu\\)Las medias se centran en la media poblacional.\n\n\nDISPERSIÓN\\(\\sigma_{\\bar{x}}=\\dfrac{\\sigma}{\\sqrt n}\\)Proviene de las propiedades de la media de variables independientes, no del TCL.\n\n\n\n¿Qué significa muestras suficientemente grandes?"
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#entonces-con-n-30-siempre-alcanza",
@@ -1831,42 +1901,42 @@
     "href": "clases/04_distribuciones_muestrales/index.html#y-si-la-muestra-es-pequeña-y-sigma-es-desconocida",
     "title": "Distribuciones muestrales",
     "section": "¿Y si la muestra es pequeña y \\(\\sigma\\) es desconocida?",
-    "text": "¿Y si la muestra es pequeña y \\(\\sigma\\) es desconocida?\n\nSi la población original es Normal, \\(\\sigma^2\\) es desconocida y \\(n\\) es pequeño, sustituimos \\(\\sigma\\) por \\(S\\) y usamos la distribución t de Student.\n\n\n ESTANDARIZAMOS CON EL ERROR ESTÁNDAR ESTIMADO\\(t=\\dfrac{\\bar{X}-\\mu}{S/\\sqrt n}\\)\n DISTRIBUCIÓN RESULTANTE\\(t\\sim t_{n-1}\\)\\(n-1\\) grados de libertad\n\n\n\nLa t es similar a la Normal, pero tiene colas más pesadas.\nRefleja la incertidumbre adicional de estimar \\(\\sigma\\) mediante \\(S\\).\nAl aumentar los grados de libertad, la t se aproxima a la Normal."
+    "text": "¿Y si la muestra es pequeña y \\(\\sigma\\) es desconocida?\n\nSi la población original es Normal, \\(\\sigma^2\\) es desconocida y \\(n\\) es pequeño, sustituimos \\(\\sigma\\) por \\(S\\) y usamos la distribución t de Student.\n\n\n ESTANDARIZAMOS CON EL ERROR ESTÁNDAR ESTIMADO\\(t=\\dfrac{\\bar{x}-\\mu}{S/\\sqrt n}\\)\n DISTRIBUCIÓN RESULTANTE\\(t\\sim t_{n-1}\\)\\(n-1\\) grados de libertad\n\n\n\nLa t es similar a la Normal, pero tiene colas más pesadas.\nRefleja la incertidumbre adicional de estimar \\(\\sigma\\) mediante \\(S\\).\nAl aumentar los grados de libertad, la t se aproxima a la Normal."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#qué-distribución-usamos-para-la-media",
     "href": "clases/04_distribuciones_muestrales/index.html#qué-distribución-usamos-para-la-media",
     "title": "Distribuciones muestrales",
     "section": "¿Qué distribución usamos para la media?",
-    "text": "¿Qué distribución usamos para la media?\n\n Población Normal\\(\\sigma\\) conocida\\(\\bar{X}\\) es Normal para cualquier \\(n\\)centro \\(\\mu\\) · error estándar \\(\\sigma/\\sqrt n\\)\n Población Normal\\(\\sigma\\) desconocida\\(\\dfrac{\\bar{X}-\\mu}{S/\\sqrt n}\\sim t_{n-1}\\)especialmente importante con muestras pequeñas\n Población no Normal\\(n\\) suficientemente grande\\(\\bar{X}\\) es aproximadamente Normalcentro cercano a \\(\\mu\\) · error estimado \\(S/\\sqrt n\\)\n Población no Normal\\(n\\) pequeñoNo asumir Normalidad automáticamentela calidad de la aproximación depende de la población\n\n\nLa distribución t corresponde a la cantidad estandarizada, no directamente a \\(\\bar{X}\\)."
+    "text": "¿Qué distribución usamos para la media?\n\n Población Normal\\(\\sigma\\) conocida\\(\\bar{x}\\) es Normal para cualquier \\(n\\)centro \\(\\mu\\) · error estándar \\(\\sigma/\\sqrt n\\)\n Población Normal\\(\\sigma\\) desconocida\\(\\dfrac{\\bar{x}-\\mu}{S/\\sqrt n}\\sim t_{n-1}\\)especialmente importante con muestras pequeñas\n Población no Normal\\(n\\) suficientemente grande\\(\\bar{x}\\) es aproximadamente Normalcentro cercano a \\(\\mu\\) · error estimado \\(S/\\sqrt n\\)\n Población no Normal\\(n\\) pequeñoNo asumir Normalidad automáticamentela calidad de la aproximación depende de la población\n\n\nLa distribución t corresponde a la cantidad estandarizada, no directamente a \\(\\bar{x}\\)."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#volvamos-al-maíz",
     "href": "clases/04_distribuciones_muestrales/index.html#volvamos-al-maíz",
     "title": "Distribuciones muestrales",
     "section": "Volvamos al maíz",
-    "text": "Volvamos al maíz\n\n \\(n=25\\)\n \\(\\bar{x}=7{,}3\\text{ t/ha}\\)\n \\(\\mu=?\\)\n\n\nObservamos una sola muestra y obtuvimos \\(\\bar{x}=7{,}3\\text{ t/ha}\\). Pero queremos aprender sobre la media de toda la población, \\(\\mu\\).\n\n\nComo conocemos cómo se comporta \\(\\bar{X}\\) entre muestras, podemos preguntarnos:\n\n\n¿Qué tan compatible es nuestro resultado con distintos valores posibles de \\(\\mu\\)?"
+    "text": "Volvamos al maíz\n\n \\(n=25\\)\n \\(\\bar{x}=7{,}3\\text{ t/ha}\\)\n \\(\\mu=?\\)\n\n\nObservamos una sola muestra y obtuvimos \\(\\bar{x}=7{,}3\\text{ t/ha}\\). Pero queremos aprender sobre la media de toda la población, \\(\\mu\\).\n\n\nComo conocemos cómo se comporta \\(\\bar{x}\\) entre muestras, podemos preguntarnos:\n\n\n¿Qué tan compatible es nuestro resultado con distintos valores posibles de \\(\\mu\\)?"
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#la-misma-lógica-se-aplica-a-muchos-estadísticos",
     "href": "clases/04_distribuciones_muestrales/index.html#la-misma-lógica-se-aplica-a-muchos-estadísticos",
     "title": "Distribuciones muestrales",
     "section": "La misma lógica se aplica a muchos estadísticos",
-    "text": "La misma lógica se aplica a muchos estadísticos\n\n\\(\\bar{X}\\)\\(p\\)\\(\\bar{X}_1-\\bar{X}_2\\)\\(p_1-p_2\\)\n\n\nCada estimador tiene una distribución muestral que describe cómo varía entre muestras."
+    "text": "La misma lógica se aplica a muchos estadísticos\n\n\\(\\bar{x}\\)\\(p\\)\\(\\bar{x}_1-\\bar{x}_2\\)\\(p_1-p_2\\)\n\n\nCada estimador tiene una distribución muestral que describe cómo varía entre muestras."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#distintos-estimadores-distintas-distribuciones-muestrales",
     "href": "clases/04_distribuciones_muestrales/index.html#distintos-estimadores-distintas-distribuciones-muestrales",
     "title": "Distribuciones muestrales",
     "section": "Distintos estimadores, distintas distribuciones muestrales",
-    "text": "Distintos estimadores, distintas distribuciones muestrales\n\n MEDIAestimador \\(\\bar{X}\\)parámetro \\(\\mu\\)\n PROPORCIÓNestimador \\(p\\)parámetro \\(\\pi\\)\n DIFERENCIA DE MEDIASestimador \\(\\bar{X}_1-\\bar{X}_2\\)parámetro \\(\\mu_1-\\mu_2\\)\n DIFERENCIA DE PROPORCIONESestimador \\(p_1-p_2\\)parámetro \\(\\pi_1-\\pi_2\\)\n\n\nCada estimador tiene su propia distribución muestral y su propio error estándar.\n\n\nPor ejemplo, \\(S_{\\bar{x}}\\) para la media y \\(S_p\\) para la proporción."
+    "text": "Distintos estimadores, distintas distribuciones muestrales\n\n MEDIAestimador \\(\\bar{x}\\)parámetro \\(\\mu\\)\n PROPORCIÓNestimador \\(p\\)parámetro \\(\\pi\\)\n DIFERENCIA DE MEDIASestimador \\(\\bar{x}_1-\\bar{x}_2\\)parámetro \\(\\mu_1-\\mu_2\\)\n DIFERENCIA DE PROPORCIONESestimador \\(p_1-p_2\\)parámetro \\(\\pi_1-\\pi_2\\)\n\n\nCada estimador tiene su propia distribución muestral y su propio error estándar.\n\n\nPor ejemplo, \\(S_{\\bar{x}}\\) para la media y \\(S_p\\) para la proporción."
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#de-la-población-a-la-inferencia",
     "href": "clases/04_distribuciones_muestrales/index.html#de-la-población-a-la-inferencia",
     "title": "Distribuciones muestrales",
     "section": "De la población a la inferencia",
-    "text": "De la población a la inferencia\nPOBLACIÓN\\(\\mu\\)↓muestreo aleatorioMUESTRA\\(\\bar{x}\\)↓muestras repetidasDISTRIBUCIÓN MUESTRAL\\(E(\\bar{X})=\\mu\\)\\(\\sigma_{\\bar{X}}=\\sigma/\\sqrt n\\)↓INFERENCIA"
+    "text": "De la población a la inferencia\nPOBLACIÓN\\(\\mu\\)↓muestreo aleatorioMUESTRA\\(\\bar{x}\\)↓muestras repetidasDISTRIBUCIÓN MUESTRAL\\(E(\\bar{x})=\\mu\\)\\(\\sigma_{\\bar{x}}=\\sigma/\\sqrt n\\)↓INFERENCIA"
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#tres-ideas-para-llevarse",
