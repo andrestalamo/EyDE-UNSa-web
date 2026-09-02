@@ -149,7 +149,7 @@ Andrés Tálamo
 </div>
 </div>
 
-  <p class="date">31 de agosto de 2026</p>
+  <p class="date">2 de septiembre de 2026</p>
 </section>
 <section id="la-pregunta-define-la-población" class="slide level2 center">
 <h2>La pregunta define la población</h2>
@@ -259,46 +259,26 @@ El <strong>estimador</strong> es la regla; la <strong>estimación</strong> es el
 <strong>No.</strong> Esto es justamente lo que vimos en Distribuciones Muestrales.
 </div>
 </section>
-<section id="recordemos-la-clase-04" class="slide level2 center">
-<h2>Recordemos la Clase 04</h2>
-<div class="recap-flow">
- <div><small>POBLACIÓN</small><strong>\(\mu\)</strong><span>parámetro desconocido</span></div>
- <b class="fragment">→<small>muestreo repetido</small></b>
- <div class="fragment"><small>MUCHAS MUESTRAS</small><strong>\(\bar{x}_1,\bar{x}_2,\ldots\)</strong><span>las medias cambian</span></div>
- <b class="fragment">→</b>
- <div class="fragment"><small>DISTRIBUCIÓN MUESTRAL</small><strong>\(E(\bar{x})=\mu\)</strong><span>\(S_{\bar{x}}=s/\sqrt{n}\)</span></div>
+<section id="de-la-clase-04-a-la-inferencia" class="slide level2 center">
+<h2>De la Clase 04 a la inferencia</h2>
+<div class="inference-directions">
+ <div><small>EN LA CLASE 04</small><strong>\(\mu\) y \(\sigma\) conocidos</strong><b>→</b><span>muchas muestras</span><b>→</b><span>muchos valores de \(\bar{x}\)</span><b>→</b><span>distribución muestral de \(\bar{x}\)</span></div>
+ <div class="fragment"><small>AHORA · CLASE 05</small><strong>observamos una \(\bar{x}\)</strong><b>→</b><span>\(\mu\) es desconocido</span><b>→</b><span>queremos inferir sobre \(\mu\)</span></div>
 </div>
 <div class="takeaway-large fragment">
-La distribución del estadístico conecta la muestra con el parámetro.
+Usamos la distribución del estadístico para razonar en la dirección inversa.
 </div>
 </section>
-<section id="en-nuestra-muestra" class="slide level2 center">
-<h2>En nuestra muestra</h2>
+<section id="en-nuestra-muestra-un-número-solo-se-queda-corto" class="slide level2 center">
+<h2>En nuestra muestra, un número solo se queda corto</h2>
 <div class="data-strip">
-<span><span class="math inline">\(n=25\)</span></span><span><span class="math inline">\(\bar x=7{,}3\text{ t/ha}\)</span></span><span><span class="math inline">\(s=1{,}5\text{ t/ha}\)</span></span>
+<span><span class="math inline">\(n=25\)</span></span><span><span class="math inline">\(\bar{x}=7{,}3\text{ t/ha}\)</span></span><span><span class="math inline">\(s=1{,}5\text{ t/ha}\)</span></span>
 </div>
-<p><span class="math display">\[S_{\bar{x}}=\frac{s}{\sqrt{n}}=\frac{1{,}5}{\sqrt{25}}=0{,}30\text{ t/ha}\]</span></p>
-<div class="precision-se">
-<div>
-<p><strong>MENOR <span class="math inline">\(S_{\bar{x}}\)</span></strong></p>
-<p>mayor precisión de <span class="math inline">\(\bar{x}\)</span> como estimación de <span class="math inline">\(\mu\)</span></p>
-</div>
-<div>
-<p><strong>MAYOR <span class="math inline">\(S_{\bar{x}}\)</span></strong></p>
-<p>menor precisión de <span class="math inline">\(\bar{x}\)</span> como estimación de <span class="math inline">\(\mu\)</span></p>
-</div>
-</div>
-<div class="alerta fragment">
-<p>El error estándar mide la <strong>precisión de la estimación puntual</strong>; no describe la variabilidad entre lotes.</p>
-</div>
-</section>
-<section id="un-número-solo-se-queda-corto" class="slide level2 center">
-<h2>Un número solo se queda corto</h2>
-<div class="lonely-number">
-<span class="math inline">\(7{,}3\text{ t/ha}\)</span>
+<div class="se-transition">
+<span><small>EN CLASE 04</small><span class="math inline">\(\sigma_{\bar{x}}=\dfrac{\sigma}{\sqrt n}\)</span><em>conocíamos <span class="math inline">\(\sigma\)</span></em></span><b>→</b><span><small>EN ESTA MUESTRA</small><span class="math inline">\(S_{\bar{x}}=\dfrac{s}{\sqrt n}=0{,}30\text{ t/ha}\)</span><em>estimamos el error estándar con <span class="math inline">\(s\)</span></em></span>
 </div>
 <div class="pregunta fragment">
-<p>Sabemos que otra muestra habría dado otro valor. ¿Cómo comunicamos esa incertidumbre?</p>
+<p>Otra muestra habría dado otra <span class="math inline">\(\bar{x}\)</span>. ¿Cómo comunicamos esa incertidumbre sin quedarnos sólo con 7,3?</p>
 </div>
 <div class="interval-transition fragment">
 Intervalo de confianza
@@ -307,9 +287,9 @@ Intervalo de confianza
 <section id="de-un-punto-a-un-intervalo" class="slide level2 center">
 <h2>De un punto a un intervalo</h2>
 <div class="point-to-interval">
- <div><small>ESTIMACIÓN PUNTUAL</small><span class="axis"><i style="--x:50%"></i></span><strong>un valor</strong></div>
+ <div><small>ESTIMACIÓN PUNTUAL</small><span class="axis"><i style="--x:50%"></i></span><strong>un único valor</strong><em>más específica; por sí sola no expresa la incertidumbre del muestreo</em></div>
  <b class="fragment">\(\longrightarrow\)</b>
- <div class="fragment"><small>ESTIMACIÓN POR INTERVALO</small><span class="axis interval"><i style="--x:50%"></i></span><strong>un rango plausible</strong></div>
+ <div class="fragment"><small>ESTIMACIÓN POR INTERVALO</small><span class="axis interval"><i style="--x:50%"></i></span><strong>un rango plausible</strong><em>menos específica; incorpora incertidumbre mediante confianza y amplitud</em></div>
 </div>
 <div class="idea fragment">
 <p>En lugar de informar solamente un valor, construimos un rango de valores plausibles para el parámetro.</p>
@@ -317,83 +297,60 @@ Intervalo de confianza
 </section>
 <section id="cómo-construimos-ese-intervalo" class="slide level2 center">
 <h2>¿Cómo construimos ese intervalo?</h2>
-<div class="class-bridge">
-<strong>Clase 04</strong><span>distribución de medias muestrales</span><b>→</b><strong>Clase 05</strong><span>cuantificamos la incertidumbre</span>
+<div class="inverse-interval">
+<div>
+<small>EN CLASE 04 · PROBLEMA DIRECTO</small><strong>Si <span class="math inline">\(\mu\)</span> era conocido, preguntábamos dónde podía caer <span class="math inline">\(\bar{x}\)</span></strong><span class="math display">\[\mu-1{,}96\,\sigma_{\bar{x}}&lt;\bar{x}&lt;\mu+1{,}96\,\sigma_{\bar{x}}\]</span>
 </div>
-<div class="sampling-distribution" aria-label="Distribución muestral con región central del 95 por ciento">
- <svg viewbox="0 0 900 245" role="img" aria-labelledby="sampling-title sampling-desc">
-  <title id="sampling-title">Distribución muestral de la media</title>
-  <desc id="sampling-desc">Curva centrada en mu, con 95 por ciento central y 2,5 por ciento en cada cola.</desc>
-  <path class="tail" d="M40 205 C90 205,115 201,160 168 L160 205 Z"></path>
-  <path class="central" d="M160 168 C245 86,320 36,450 26 C580 36,655 86,740 168 L740 205 L160 205 Z"></path>
-  <path class="tail" d="M740 168 C785 201,810 205,860 205 L740 205 Z"></path>
-  <path class="curve" d="M40 205 C140 205,175 145,250 86 C310 39,374 26,450 26 C526 26,590 39,650 86 C725 145,760 205,860 205"></path>
-  <line class="baseline" x1="40" y1="205" x2="860" y2="205"></line>
-  <line class="cut" x1="160" y1="168" x2="160" y2="216"></line><line class="cut" x1="450" y1="26" x2="450" y2="216"></line><line class="cut" x1="740" y1="168" x2="740" y2="216"></line>
-  <text x="95" y="195">2,5%</text><text x="450" y="150">95% central</text><text x="805" y="195">2,5%</text>
- </svg>
- <div class="distribution-labels"><span>\(\mu-k^*S_{\bar{x}}\)</span><strong>\(\mu\)</strong><span>\(\mu+k^*S_{\bar{x}}\)</span></div>
+<b class="fragment">⇅</b>
+<div class="fragment">
+<small>AHORA · PROBLEMA INVERSO</small><strong>Observamos <span class="math inline">\(\bar{x}\)</span> y, suponiendo que estima a <span class="math inline">\(\mu\)</span>, construimos un intervalo de valores a su alrededor</strong><span class="math display">\[\bar{x}-1{,}96\,\sigma_{\bar{x}}&lt;\mu&lt;\bar{x}+1{,}96\,\sigma_{\bar{x}}\]</span>
 </div>
-<div class="idea fragment">
-<p>Si repitiéramos el muestreo, el 95% central de las medias quedaría delimitado por valores críticos medidos en unidades de error estándar.</p>
+</div>
+<div class="takeaway-large fragment">
+El intervalo de confianza nace de la distribución muestral; no es una fórmula aislada.
 </div>
 </section>
 <section id="si-barx-es-aproximadamente-normal-por-qué-usamos-t" class="slide level2 center">
 <h2>Si <span class="math inline">\(\bar{x}\)</span> es aproximadamente Normal, ¿por qué usamos t?</h2>
 <div class="sampling-law">
-<p>La distribución muestral de <span class="math inline">\(\bar{x}\)</span> es <strong>Normal si la población es Normal</strong> y <strong>aproximadamente Normal para <span class="math inline">\(n\)</span> suficientemente grande</strong> por el TCL.</p>
+<p>En la Clase 04 estandarizamos con <strong>z</strong> porque conocíamos <span class="math inline">\(\sigma\)</span>. En inferencia, <span class="math inline">\(\sigma\)</span> suele ser desconocida: al reemplazarla por <span class="math inline">\(s\)</span> incorporamos incertidumbre adicional y usamos <strong>t de Student</strong>.</p>
 </div>
 <div class="inference-choice">
 <div>
-<p><strong>SI CONOCIÉRAMOS <span class="math inline">\(\sigma\)</span></strong></p>
-<p>Usamos <span class="math inline">\(\sigma/\sqrt n\)</span> y comparamos el estadístico estandarizado con la Normal estándar, <strong>z</strong>.</p>
+<p><strong>SI <span class="math inline">\(\sigma\)</span> FUERA CONOCIDA</strong></p>
+<p>Usamos <span class="math inline">\(\sigma_{\bar{x}}=\sigma/\sqrt n\)</span> y el estadístico estandarizado <strong>z</strong>, que se compara con la Normal estándar.</p>
 </div>
 <div class="fragment">
-<p><strong>COMO <span class="math inline">\(\sigma\)</span> SUELE SER DESCONOCIDA</strong></p>
-<p>La estimamos con <span class="math inline">\(s\)</span>; esa incertidumbre adicional lleva a una <strong>t de Student</strong>.</p>
+<p><strong>SI <span class="math inline">\(\sigma\)</span> ES DESCONOCIDA</strong></p>
+<p>Usamos <span class="math inline">\(S_{\bar{x}}=s/\sqrt n\)</span> y el estadístico estandarizado <strong>t</strong>.</p>
 </div>
 </div>
-<div class="df-role fragment">
-<div>
-<p><strong>Cuanto menor es <span class="math inline">\(n\)</span>:</strong> menos grados de libertad, colas más pesadas y mayor diferencia respecto de Normal.</p>
-</div>
-<div>
-<p><strong>Al aumentar <span class="math inline">\(n\)</span>:</strong> aumentan los grados de libertad y t se aproxima a Normal.</p>
-</div>
+<div class="t-df-band fragment">
+<strong>EFECTO COMÚN DE LOS GRADOS DE LIBERTAD</strong><span>Con pocos grados de libertad, t tiene colas más pesadas.</span><b>→</b><span>Al aumentar <span class="math inline">\(n\)</span>, aumentan los grados de libertad y t se aproxima progresivamente a Normal.</span>
 </div>
 <div class="case-decision fragment">
-<p>No usamos las reglas “<span class="math inline">\(n&gt;30\)</span> → Normal” ni “<span class="math inline">\(n&lt;30\)</span> → t”. <strong>t corresponde al estadístico estandarizado, no a <span class="math inline">\(\bar{x}\)</span>.</strong></p>
+<p>En la práctica, como <span class="math inline">\(\sigma\)</span> casi nunca es conocida, usamos <strong>t para inferir sobre una media</strong>. Con muestras grandes, t se aproxima a Normal. <strong>t corresponde al estadístico estandarizado, no a <span class="math inline">\(\bar{x}\)</span>.</strong></p>
 </div>
 </section>
-<section id="ic-del-95" class="slide level2 center">
-<h2>IC del 95%</h2>
-<div class="sampling-distribution compact" aria-label="Distribución t con región central del 95 por ciento">
- <svg viewbox="0 0 900 210" role="img" aria-labelledby="t-title t-desc">
-  <title id="t-title">Distribución t y valores críticos</title>
-  <desc id="t-desc">Región central del 95 por ciento entre menos t estrella y más t estrella, con alfa sobre dos en cada cola.</desc>
-  <path class="tail" d="M40 175 C95 175,120 169,170 139 L170 175 Z"></path>
-  <path class="central" d="M170 139 C260 68,340 27,450 20 C560 27,640 68,730 139 L730 175 L170 175 Z"></path>
-  <path class="tail" d="M730 139 C780 169,805 175,860 175 L730 175 Z"></path>
-  <path class="curve" d="M40 175 C145 175,190 112,270 60 C325 26,385 20,450 20 C515 20,575 26,630 60 C710 112,755 175,860 175"></path>
-  <line class="baseline" x1="40" y1="175" x2="860" y2="175"></line>
-  <line class="cut" x1="170" y1="139" x2="170" y2="187"></line><line class="cut" x1="730" y1="139" x2="730" y2="187"></line>
-  <text x="100" y="166">α/2 = 0,025</text><text x="450" y="127">95%</text><text x="800" y="166">α/2 = 0,025</text>
- </svg>
- <div class="distribution-labels critical"><strong>\(-t^*\)</strong><span>margen = \(t^*S_{\bar{x}}\)</span><strong>\(+t^*\)</strong></div>
+<section id="de-la-escala-t-al-intervalo-de-confianza" class="slide level2 center">
+<h2>De la escala t al intervalo de confianza</h2>
+<div class="scale-visuals">
+ <div class="scale-panel standardized"><small>ESCALA t ESTANDARIZADA · CENTRADA EN 0</small><div><svg viewbox="0 0 520 130" role="img" aria-label="Distribución t con región central uno menos alfa"><path class="scale-tail" d="M20 104 C60 104 86 99 118 78 L118 104 Z M402 78 C434 99 460 104 500 104 L402 104 Z"></path><path class="scale-center" d="M118 78 C165 38 205 18 260 14 C315 18 355 38 402 78 L402 104 L118 104 Z"></path><path class="scale-curve" d="M20 104 C80 104 105 86 150 50 C190 20 220 14 260 14 C300 14 330 20 370 50 C415 86 440 104 500 104"></path><line x1="20" y1="104" x2="500" y2="104"></line><line x1="118" y1="78" x2="118" y2="112"></line><line x1="260" y1="14" x2="260" y2="112"></line><line x1="402" y1="78" x2="402" y2="112"></line><text x="66" y="98">α/2</text><text x="260" y="72">1−α</text><text x="454" y="98">α/2</text><text x="118" y="126">−t*</text><text x="260" y="126">0</text><text x="402" y="126">+t*</text></svg><span>\(-t_{\alpha/2,n-1}&lt;\dfrac{\bar{x}-\mu}{S_{\bar{x}}}&lt;t_{\alpha/2,n-1}\)</span></div></div>
+ <b class="fragment">↓ <small>DESESTANDARIZAMOS</small></b>
+ <div class="scale-panel original fragment"><small>ESCALA ORIGINAL · RENDIMIENTO (t/ha)</small><div><svg viewbox="0 0 520 105" role="img" aria-label="Intervalo de confianza en la escala del rendimiento"><line class="original-axis" x1="35" y1="50" x2="485" y2="50"></line><line class="original-interval" x1="115" y1="50" x2="405" y2="50"></line><line class="original-cap" x1="115" y1="30" x2="115" y2="70"></line><line class="original-cap" x1="405" y1="30" x2="405" y2="70"></line><circle cx="260" cy="50" r="9"></circle><text x="115" y="92">LI</text><text x="260" y="92">x̄</text><text x="405" y="92">LS</text></svg><span>\(\bar{x}-t_{\alpha/2,n-1}S_{\bar{x}}&lt;\mu&lt;\bar{x}+t_{\alpha/2,n-1}S_{\bar{x}}\)</span></div></div>
 </div>
-<p><span class="math display">\[IC_{95\%}:\quad \bar{x}\pm t^*S_{\bar{x}},\qquad S_{\bar{x}}=\frac{s}{\sqrt{n}}\]</span></p>
 <div class="formula-step fragment">
-<span class="math inline">\(t^*_{24}\approx2{,}064\)</span> · <span class="math inline">\(IC_{95\%}=7{,}3\pm2{,}064\times0{,}30\)</span>
+Para <span class="math inline">\(1-\alpha=0{,}95\)</span> y <span class="math inline">\(n-1=24\)</span>: <span class="math inline">\(t_{0{,}025;24}\approx2{,}064\)</span> · <span class="math inline">\(IC_{95\%}=7{,}3\pm2{,}064\times0{,}30\)</span>
 </div>
 </section>
 <section id="el-resultado" class="slide level2 center">
 <h2>El resultado</h2>
 <div class="result-interval">
-<small>MARGEN DE ERROR</small><strong><span class="math inline">\(7{,}3\pm0{,}62\)</span></strong><b><span class="math inline">\(IC_{95\%}\approx[6{,}68\ ;\ 7{,}92]\text{ t/ha}\)</span></b>
+<small>MARGEN DE ERROR (O ERROR DE ESTIMACIÓN)</small><strong><span class="math inline">\(7{,}3\pm0{,}62\)</span></strong><b><span class="math inline">\(IC_{95\%}\approx[6{,}68\ ;\ 7{,}92]\text{ t/ha}\)</span></b>
 </div>
 <div class="ci-axis"><span>6,68</span><i></i><b>7,3</b><i></i><span>7,92</span></div>
-<div class="pregunta fragment">
-<p>¿Qué significa realmente este 95%?</p>
+<div class="coverage-probability fragment">
+<strong><span class="math inline">\(P[LI(\text{muestra})&lt;\mu&lt;LS(\text{muestra})]=1-\alpha\)</span></strong><span>Antes de tomar la muestra, <span class="math inline">\(LI\)</span> y <span class="math inline">\(LS\)</span> son aleatorios. <span class="math inline">\(1-\alpha\)</span> es el <b>nivel de confianza</b> del procedimiento.</span>
 </div>
 </section>
 <section id="una-interpretación-tentadora" class="slide level2 center">
@@ -425,7 +382,7 @@ Cada clic repite el procedimiento completo. La línea vertical marca el verdader
 <p>Si repitiéramos muchas veces el muestreo y construyéramos el intervalo de la misma manera, aproximadamente el <strong>95% de esos intervalos</strong> contendría al verdadero parámetro.</p>
 </div>
 <div class="idea fragment">
-<p>La confianza pertenece al <strong>procedimiento</strong>, no a un parámetro que cambia de lugar.</p>
+<p>La confianza pertenece al <strong>procedimiento de construcción</strong>: <span class="math inline">\(\mu\)</span> es fijo; antes del muestreo, <span class="math inline">\(LI\)</span> y <span class="math inline">\(LS\)</span> dependen de la muestra y son aleatorios; una vez calculado el intervalo a partir de la muestra, sus límites quedan fijos.</p>
 </div>
 </section>
 <section id="qué-podemos-decir-con-nuestra-muestra" class="slide level2 center">
@@ -450,11 +407,34 @@ La estimación y su incertidumbre se informan juntas.
 <strong>Más estrecho → más preciso.</strong><br><small>Precisión no significa automáticamente que el intervalo sea más correcto.</small>
 </div>
 </section>
+<section id="actividad-ic-del-99" class="slide level2 ic99-slide center">
+<h2>Actividad: IC del 99%</h2>
+<div class="data-strip">
+<span><span class="math inline">\(n=25\)</span></span><span><span class="math inline">\(\bar{x}=7{,}3\text{ t/ha}\)</span></span><span><span class="math inline">\(s=1{,}5\text{ t/ha}\)</span></span><span><span class="math inline">\(S_{\bar{x}}=0{,}30\text{ t/ha}\)</span></span>
+</div>
+<div class="pregunta">
+<p>Calculemos un IC del 99% para <span class="math inline">\(\mu\)</span>. <strong>¿Qué creen que va a pasar con la precisión?</strong></p>
+</div>
+<div class="ic99-calculation fragment">
+<span><span class="math inline">\(gl=24\)</span></span><span><span class="math inline">\(t_{0{,}005;24}\approx2{,}797\)</span></span><span><span class="math inline">\(E=2{,}797\times0{,}30\approx0{,}839\text{ t/ha}\)</span></span><strong><span class="math inline">\(IC_{99\%}:\ 7{,}3\pm0{,}839\approx[6{,}46\ ;\ 8{,}14]\text{ t/ha}\)</span></strong>
+</div>
+<div class="ci99-visual fragment">
+<div>
+<small>IC95%</small><span class="ci-comparison ci95"><i></i><b class="limit-left">6,68</b><strong><span class="math inline">\(\bar{x}=7{,}30\text{ t/ha}\)</span></strong><b class="limit-right">7,92</b></span><em><span class="math inline">\([6{,}68\ ;\ 7{,}92]\text{ t/ha}\)</span></em>
+</div>
+<div>
+<small>IC99%</small><span class="ci-comparison ci99"><i></i><b class="limit-left">6,46</b><strong><span class="math inline">\(\bar{x}=7{,}30\text{ t/ha}\)</span></strong><b class="limit-right">8,14</b></span><em><span class="math inline">\([6{,}46\ ;\ 8{,}14]\text{ t/ha}\)</span></em>
+</div>
+</div>
+<div class="confidence-chain fragment">
+<span>MAYOR CONFIANZA</span><b>→</b><span>MAYOR VALOR CRÍTICO</span><b>→</b><span>INTERVALO MÁS ANCHO</span><b>→</b><span>MENOR PRECISIÓN</span>
+</div>
+</section>
 <section id="de-qué-depende-la-amplitud" class="slide level2 center">
 <h2>¿De qué depende la amplitud?</h2>
 <div class="margin-logic">
 <p><strong>Margen de error (o error de estimación)</strong></p>
-<p><span class="math display">\[ME=t^*S_{\bar{x}},\qquad S_{\bar{x}}=\frac{s}{\sqrt{n}}\]</span></p>
+<p><span class="math display">\[E=t_{\alpha/2,n-1}S_{\bar{x}},\qquad S_{\bar{x}}=\frac{s}{\sqrt{n}}\]</span></p>
 </div>
 <div class="width-factors">
 <div>
@@ -528,8 +508,8 @@ Intervalo más estrecho → mayor precisión
 <p>El tamaño muestral aporta información; la heterogeneidad entre lotes introduce incertidumbre.</p>
 </div>
 </section>
-<section id="confianza-y-precisión-un-compromiso" class="slide level2 center">
-<h2>Confianza y precisión: un compromiso</h2>
+<section id="confianza-y-precisión-un-compromiso-a-igual-n-y-variabilidad" class="slide level2 center">
+<h2>Confianza y precisión: un compromiso (a igual <span class="math inline">\(n\)</span> y variabilidad)</h2>
 <div class="confidence-tradeoff">
 <span><small>MAYOR CONFIANZA</small><strong>mayor valor crítico</strong></span><b>→</b><span><strong>intervalo más ancho</strong><small>menor precisión</small></span>
 </div>
@@ -568,6 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const loScale = 5.7, hiScale = 8.8, x = value => 55 + (value - loScale) / (hiScale - loScale) * 790;
       svg.innerHTML = "";
       const axis = document.createElementNS(NS, "line"); axis.setAttribute("x1", 55); axis.setAttribute("x2", 845); axis.setAttribute("y1", 286); axis.setAttribute("y2", 286); axis.setAttribute("class", "coverage-axis"); svg.appendChild(axis);
+      const axisLabel = document.createElementNS(NS, "text"); axisLabel.setAttribute("x", 450); axisLabel.setAttribute("y", 299); axisLabel.setAttribute("class", "coverage-axis-label"); axisLabel.textContent = "Rendimiento promedio (t/ha)"; svg.appendChild(axisLabel);
       const truth = document.createElementNS(NS, "line"); truth.setAttribute("x1", x(mu)); truth.setAttribute("x2", x(mu)); truth.setAttribute("y1", 8); truth.setAttribute("y2", 286); truth.setAttribute("class", "coverage-truth"); svg.appendChild(truth);
       intervals.forEach((it, i) => {
         const y = 14 + i * 8.8;
@@ -605,6 +586,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+</section>
+<section id="cuántas-unidades-necesitamos" class="slide level2 center">
+<h2>¿Cuántas unidades necesitamos?</h2>
+<div class="sample-size-formula">
+<p><span class="math display">\[E=z_{\alpha/2}\frac{\sigma}{\sqrt n}
+\qquad\Longrightarrow\qquad
+n=\left(\frac{z_{\alpha/2}\sigma}{E}\right)^2\]</span></p>
+</div>
+<div class="sample-size-symbols">
+<span><b><span class="math inline">\(n\)</span></b>tamaño muestral necesario</span><span><b><span class="math inline">\(z_{\alpha/2}\)</span></b>valor crítico del nivel de confianza</span><span><b><span class="math inline">\(\sigma\)</span></b>variabilidad esperada</span><span><b><span class="math inline">\(E\)</span></b>error de estimación máximo tolerable</span>
+</div>
+<div class="planning-effects fragment">
+<span>MÁS CONFIANZA → MAYOR <span class="math inline">\(n\)</span></span><span>MÁS VARIABILIDAD → MAYOR <span class="math inline">\(n\)</span></span><span>MENOR <span class="math inline">\(E\)</span> → MAYOR <span class="math inline">\(n\)</span></span>
+</div>
+<div class="idea fragment">
+<p>Como <span class="math inline">\(\sigma\)</span> tampoco suele conocerse al planificar, la estimamos con un estudio piloto, bibliografía o estudios anteriores. El software puede ajustar el cálculo usando t; aquí usamos z para comprender la lógica.</p>
+</div>
+</section>
+<section id="planifiquemos-una-muestra" class="slide level2 center">
+<h2>Planifiquemos una muestra</h2>
+<div class="planning-scenario">
+<span><small>CONFIANZA</small><strong>95%</strong></span><span><small>ERROR MÁXIMO</small><strong><span class="math inline">\(E=0{,}30\)</span> t/ha</strong></span><span><small>VARIABILIDAD ESPERADA</small><strong><span class="math inline">\(\sigma\approx1{,}5\)</span> t/ha</strong><em>estudio piloto o información previa</em></span>
+</div>
+<div class="planning-calculation">
+<span class="math inline">\(z_{0{,}025}=1{,}96\)</span><b>→</b><span class="math inline">\(n=\left(\dfrac{1{,}96\times1{,}5}{0{,}30}\right)^2=(9{,}8)^2=96{,}04\)</span><b>→</b><strong><span class="math inline">\(n=97\)</span> lotes</strong>
+</div>
+<div class="report-card fragment">
+<p>Necesitaríamos <strong>al menos 97 lotes</strong> para estimar el rendimiento promedio con un 95% de confianza y un error de estimación máximo de aproximadamente 0,30 t/ha, bajo la variabilidad supuesta.</p>
+</div>
+<div class="tiny center fragment">
+Siempre redondeamos hacia arriba. El cálculo depende de que la estimación previa de <span class="math inline">\(\sigma\)</span> sea razonable.
+</div>
 </section>
 <section id="hasta-ahora-usamos-una-población-real" class="slide level2 center">
 <h2>Hasta ahora usamos una población real</h2>
@@ -696,72 +709,51 @@ Población conceptual <small>(también llamada virtual o hipotética)</small>
 <p>Usamos <span class="math inline">\(p\)</span> para estimar <span class="math inline">\(\pi\)</span>. En esta muestra, la estimación puntual es <strong>0,8425</strong>, o aproximadamente <strong>84,25%</strong>.</p>
 </div>
 </section>
-<section id="pero-otra-muestra-daría-otro-p" class="slide level2 center">
-<h2>Pero otra muestra daría otro <span class="math inline">\(p\)</span></h2>
-<div class="repeated-proportions">
-<span><small>MUESTRA 1</small><b>119 viables</b><span class="math inline">\(p_1=0{,}815\)</span></span><span><small>MUESTRA 2</small><b>126 viables</b><span class="math inline">\(p_2=0{,}863\)</span></span><span><small>MUESTRA 3</small><b>121 viables</b><span class="math inline">\(p_3=0{,}829\)</span></span><b>···</b><span><small>MUESTRA <span class="math inline">\(k\)</span></small><b>124 viables</b><span class="math inline">\(p_k=0{,}849\)</span></span>
-</div>
-<div class="definition-large fragment">
-<p>Muchas muestras producen muchos valores de <span class="math inline">\(p\)</span>: juntos forman la <strong>distribución muestral de <span class="math inline">\(p\)</span></strong>.</p>
-</div>
-</section>
 <section id="de-la-distribución-de-p-al-intervalo" class="slide level2 center">
 <h2>De la distribución de <span class="math inline">\(p\)</span> al intervalo</h2>
-<div class="sampling-distribution proportion-distribution" aria-label="Distribución muestral aproximadamente Normal de la proporción muestral">
- <svg viewbox="0 0 900 235" role="img" aria-labelledby="p-title p-desc">
-  <title id="p-title">Distribución muestral de p</title>
-  <desc id="p-desc">Distribución aproximadamente Normal centrada en pi, con 95 por ciento central y 2,5 por ciento en cada cola.</desc>
-  <path class="tail" d="M40 195 C90 195,115 191,160 158 L160 195 Z"></path>
-  <path class="central" d="M160 158 C245 76,320 26,450 16 C580 26,655 76,740 158 L740 195 L160 195 Z"></path>
-  <path class="tail" d="M740 158 C785 191,810 195,860 195 L740 195 Z"></path>
-  <path class="curve" d="M40 195 C140 195,175 135,250 76 C310 29,374 16,450 16 C526 16,590 29,650 76 C725 135,760 195,860 195"></path>
-  <line class="baseline" x1="40" y1="195" x2="860" y2="195"></line>
-  <line class="cut" x1="160" y1="158" x2="160" y2="206"></line><line class="cut" x1="450" y1="16" x2="450" y2="206"></line><line class="cut" x1="740" y1="158" x2="740" y2="206"></line>
-  <text x="95" y="185">2,5%</text><text x="450" y="140">95% central</text><text x="805" y="185">2,5%</text>
- </svg>
- <div class="distribution-labels"><span>\(\pi-z^*S_p\)</span><strong>\(\pi\)</strong><span>\(\pi+z^*S_p\)</span></div>
+<div class="sampling-law">
+<p><strong>Recordemos la Clase 04:</strong> bajo ciertas condiciones, <span class="math inline">\(p\)</span> tiene una distribución muestral aproximadamente Normal, centrada en <span class="math inline">\(\pi\)</span>.</p>
 </div>
-<div class="distribution-to-ci">
-<span>distribución aproximadamente Normal</span><b><span class="math inline">\(z^*=1{,}96\)</span></b><span><span class="math inline">\(S_p\)</span> mide la variación de <span class="math inline">\(p\)</span> entre muestras</span>
+<div class="proportion-se-transition">
+<div>
+<small>ERROR ESTÁNDAR TEÓRICO</small><strong><span class="math inline">\(\sigma_p=\sqrt{\dfrac{\pi(1-\pi)}{n}}\)</span></strong><span>en la Clase 04 conocíamos <span class="math inline">\(\pi\)</span></span>
+</div>
+<b>→</b>
+<div class="fragment">
+<small>ERROR ESTÁNDAR ESTIMADO</small><strong><span class="math inline">\(S_p=\sqrt{\dfrac{p(1-p)}{n}}\)</span></strong><span>ahora <span class="math inline">\(\pi\)</span> es desconocida y la reemplazamos por <span class="math inline">\(p\)</span></span>
+</div>
 </div>
 <div class="idea fragment">
-<p>Usamos esa variación para construir un intervalo alrededor del <span class="math inline">\(p\)</span> observado.</p>
+<p>Con el error estándar estimado construimos el intervalo alrededor del <span class="math inline">\(p\)</span> observado.</p>
 </div>
 </section>
-<section id="intervalo-de-confianza-para-pi" class="slide level2 center">
+<section id="intervalo-de-confianza-para-pi" class="slide level2 proportion-ci-slide center">
 <h2>Intervalo de confianza para <span class="math inline">\(\pi\)</span></h2>
 <p><span class="math display">\[S_p=\sqrt{\frac{p(1-p)}{n}}=\sqrt{\frac{0{,}8425(1-0{,}8425)}{146}}=0{,}03015\]</span></p>
 <p><span class="math display">\[IC_{95\%}:\quad p\pm z^*S_p=0{,}8425\pm1{,}96\times0{,}03015\]</span></p>
-<div class="result-interval fragment">
-<small>MARGEN DE ERROR</small><strong><span class="math inline">\(0{,}0591\)</span></strong><b><span class="math inline">\(IC_{95\%}\approx[0{,}7834\ ;\ 0{,}9016]\)</span></b><span>aproximadamente 78,34% a 90,16%</span>
+<div class="result-interval proportion-result fragment">
+<small>MARGEN DE ERROR (O ERROR DE ESTIMACIÓN)</small><strong><span class="math inline">\(0{,}0591\)</span></strong><b><span class="math inline">\(IC_{95\%}\approx[0{,}7834\ ;\ 0{,}9016]\)</span></b><span>aproximadamente 78,34% a 90,16%</span>
+</div>
+<div class="z-not-t fragment">
+<strong>¿POR QUÉ z Y NO t?</strong><span>Para una media, reemplazar <span class="math inline">\(\sigma\)</span> por <span class="math inline">\(s\)</span> conduce al estadístico t. Para una proporción usamos la aproximación Normal de <span class="math inline">\(p\)</span>: reemplazar <span class="math inline">\(\pi\)</span> por <span class="math inline">\(p\)</span> en <span class="math inline">\(S_p\)</span> no produce una distribución t. Por eso este IC aproximado usa z.</span>
 </div>
 <!-- Nota docente: se usa el intervalo de Wald como aproximación introductoria. Para proporciones, el intervalo de Wilson suele ofrecer mejor desempeño. -->
 </section>
-<section id="es-razonable-la-aproximación-normal" class="slide level2 center">
-<h2>¿Es razonable la aproximación Normal?</h2>
-<div class="normal-approx-flow">
+<section id="podemos-usar-aquí-la-aproximación-normal" class="slide level2 center">
+<h2>¿Podemos usar aquí la aproximación Normal?</h2>
+<div class="condition-check">
 <div>
-<small>VARIABLE ORIGINAL</small><strong>viable / no viable</strong>
-</div>
-<b>→</b>
-<div>
-<small>MUESTRAS REPETIDAS</small><strong>muchos valores de <span class="math inline">\(p\)</span></strong>
-</div>
-<b>→</b>
-<div>
-<small>SI <span class="math inline">\(n\)</span> ES SUFICIENTE</small><strong>forma aproximadamente Normal</strong>
-</div>
-</div>
-<div class="condition-check fragment">
-<div>
-<small>SEMILLAS VIABLES</small><strong><span class="math inline">\(np=123\)</span></strong>
+<small>SEMILLAS VIABLES</small><strong><span class="math inline">\(np=123\)</span></strong><span><span class="math inline">\(123\ge10\)</span></span>
 </div>
 <div>
-<small>SEMILLAS NO VIABLES</small><strong><span class="math inline">\(n(1-p)=23\)</span></strong>
+<small>SEMILLAS NO VIABLES</small><strong><span class="math inline">\(n(1-p)=23\)</span></strong><span><span class="math inline">\(23\ge10\)</span></span>
 </div>
 </div>
 <div class="idea fragment">
-<p>La aproximación funciona mejor cuando hay suficientes observaciones en ambas categorías. Para este curso usamos <span class="math inline">\(np\ge10\)</span> y <span class="math inline">\(n(1-p)\ge10\)</span> como <strong>regla práctica</strong>, no como una ley exacta.</p>
+<p>Sí. Para este curso usamos <span class="math inline">\(np\ge10\)</span> y <span class="math inline">\(n(1-p)\ge10\)</span> como <strong>regla práctica</strong>, no como una ley exacta.</p>
+</div>
+<div class="alerta fragment">
+<p>Si alguna de estas cantidades es menor que 10, <strong>no usamos esta aproximación Normal</strong>: debemos recurrir a un método específico para proporciones. <small>Por ejemplo, intervalos de Wilson o métodos binomiales exactos.</small></p>
 </div>
 </section>
 <section id="cómo-lo-interpretamos" class="slide level2 center">
@@ -783,8 +775,8 @@ Población conceptual <small>(también llamada virtual o hipotética)</small>
 <small>PROPORCIÓN</small><strong><span class="math inline">\(\pi\leftarrow p\)</span></strong><span><span class="math inline">\(S_p=\sqrt{p(1-p)/n}\)</span></span><b><span class="math inline">\(p\pm z^*S_p\)</span></b>
 </div>
 </div>
-<div class="takeaway-large fragment">
-Cambia el parámetro y cambia la distribución del estadístico; la lógica de la inferencia es la misma.
+<div class="proportion-planning fragment">
+<strong>Planificación para una proporción</strong><span><span class="math inline">\(n=\dfrac{z_{\alpha/2}^{,2}p^*(1-p^*)}{E^2}\)</span></span><small><span class="math inline">\(p^*\)</span> proviene de información previa; sin ella usamos <span class="math inline">\(p^*=0{,}5\)</span>, la opción conservadora que produce el mayor <span class="math inline">\(n\)</span>.</small>
 </div>
 </section>
 <section id="no-sólo-podemos-estimar-mu-y-pi" class="slide level2 center">

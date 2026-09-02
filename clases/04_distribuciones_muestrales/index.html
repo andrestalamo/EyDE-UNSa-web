@@ -149,7 +149,7 @@ Andrés Tálamo
 </div>
 </div>
 
-  <p class="date">31 de agosto de 2026</p>
+  <p class="date">2 de septiembre de 2026</p>
 </section>
 <section id="la-pregunta-define-la-población-de-referencia" class="slide level2 center">
 <h2>La pregunta define la población de referencia</h2>
@@ -217,7 +217,10 @@ Todas provienen de muestras aleatorias de <span class="math inline">\(n=25\)</sp
 <p>Si todavía no tomamos la muestra, ¿qué valor obtendremos para <span class="math inline">\(\bar{x}\)</span>?</p>
 </div>
 <div class="idea fragment">
-<p>No lo sabemos: depende de qué muestra resulte seleccionada.</p>
+<p>No lo sabemos: depende de qué muestra resulte seleccionada. <strong>Como <span class="math inline">\(\bar{x}\)</span> cambia de muestra en muestra, <span class="math inline">\(\bar{x}\)</span> es una variable aleatoria.</strong></p>
+</div>
+<div class="takeaway-large fragment">
+Como es una variable aleatoria, <span class="math inline">\(\bar{x}\)</span> tiene una <strong>distribución</strong>.
 </div>
 </section>
 <section id="el-muestreo-introduce-variabilidad" class="slide level2 center">
@@ -256,8 +259,8 @@ Distintas muestras de la misma población producen <strong>distintas estimacione
 (function(){
  const NS='http://www.w3.org/2000/svg', green='#2d6a4f', dark='#173c2b', gold='#d7a928', brown='#8a5a3b', gray='#66736d';
  function randn(){let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
- function draw(shape){if(shape==='skew')return 5.6-Math.log(Math.max(Math.random(),1e-9))*1.4;if(shape==='bimodal')return (Math.random()<.5?5.5:8.5)+randn()*.55;return 7+randn()*1.5;}
- function density(shape,x){if(shape==='skew'){if(x<5.6)return 0;return Math.exp(-(x-5.6)/1.4)/1.4;}if(shape==='bimodal')return .5*Math.exp(-.5*((x-5.5)/.55)**2)/.55+.5*Math.exp(-.5*((x-8.5)/.55)**2)/.55;return Math.exp(-.5*((x-7)/1.5)**2)/1.5;}
+ function draw(shape){if(shape==='skew'){let g=0;for(let i=0;i<4;i++)g-=Math.log(Math.max(Math.random(),1e-9));return 4.2+.7*g;}if(shape==='bimodal')return (Math.random()<.5?5.5:8.5)+randn()*.55;return 7+randn()*1.5;}
+ function density(shape,x){if(shape==='skew'){if(x<4.2)return 0;const t=x-4.2;return t**3*Math.exp(-t/.7)/(6*.7**4);}if(shape==='bimodal')return .5*Math.exp(-.5*((x-5.5)/.55)**2)/.55+.5*Math.exp(-.5*((x-8.5)/.55)**2)/.55;return Math.exp(-.5*((x-7)/1.5)**2)/1.5;}
  function el(name,attrs){const e=document.createElementNS(NS,name);Object.entries(attrs||{}).forEach(([k,v])=>e.setAttribute(k,v));return e;}
  function path(svg,pts,attrs){const p=el('polyline',{points:pts.map(p=>p.join(',')).join(' '),fill:'none',...attrs});svg.appendChild(p);}
  function init(root){if(root.dataset.ready)return;root.dataset.ready='1';const nEl=root.querySelector('.n'),shapeEl=root.querySelector('.shape'),pop=root.querySelector('.population-svg'),means=root.querySelector('.means-svg'),label=root.querySelector('.current-mean'),nVal=root.querySelector('.n-value'),presets=root.querySelector('.preset-row');let values=[],last=[];
@@ -276,15 +279,15 @@ Distintas muestras de la misma población producen <strong>distintas estimacione
 })();
 </script>
 </section>
-<section id="los-estadísticos-también-varían-entre-muestras" class="slide level2 center">
-<h2>Los estadísticos también varían entre muestras</h2>
+<section id="no-sólo-varía-barx" class="slide level2 center">
+<h2>No sólo varía <span class="math inline">\(\bar{x}\)</span></h2>
 <div class="random-statistic-flow">
  <div><small>MUESTRA ALEATORIA</small><div class="dot-cloud sample"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>cambian los individuos</span></div>
  <b class="fragment">→</b>
- <div class="fragment"><small>ESTADÍSTICO ALEATORIO</small><strong>\(\bar{x}\)</strong><span>puede tomar distintos valores</span></div>
+ <div class="fragment"><small>OTROS ESTADÍSTICOS</small><strong>\(p,\ \bar{x}_1-\bar{x}_2,\ p_1-p_2\)</strong><span>también cambian entre muestras</span></div>
 </div>
 <div class="idea fragment">
-<p>Antes de observar la muestra no sabemos qué valor tendrá el estadístico. Por eso, <span class="math inline">\(\bar{x}\)</span> es también una <strong>variable aleatoria</strong>.</p>
+<p>Cada estadístico que cambia entre muestras es una <strong>variable aleatoria</strong> y tiene su propia distribución muestral.</p>
 </div>
 </section>
 <section id="apareció-una-nueva-distribución" class="slide level2 center">
@@ -303,7 +306,7 @@ La segunda es la <strong>distribución muestral de la media</strong>.
 <p>Una <strong>distribución muestral</strong> es la distribución de los valores que puede tomar un estadístico (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(\Delta\bar{x}\)</span>, <span class="math inline">\(\Delta p\)</span>, …) al obtener muestras aleatorias repetidas del mismo tamaño de una población.</p>
 </div>
 <div class="center fragment">
-Hoy nos concentraremos principalmente en <span class="math inline">\(\bar{x}\)</span>.
+Hoy estudiaremos principalmente las distribuciones muestrales de <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(p\)</span>.
 </div>
 </section>
 <section id="no-confundamos-tres-distribuciones-diferentes" class="slide level2 center">
@@ -355,7 +358,7 @@ Al considerar todos los pares posibles con reposición: <span class="math inline
 <section id="las-medias-posibles-forman-una-distribución" class="slide level2 center">
 <h2>Las medias posibles forman una distribución</h2>
 
-<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-medias-poblacion-diminuta-1.png" width="960" class="r-stretch"></section>
 <section id="la-distribución-está-centrada-correctamente" class="slide level2 center">
 <h2>La distribución está centrada correctamente</h2>
 <div class="center formula-stack">
@@ -376,7 +379,7 @@ Al considerar todos los pares posibles con reposición: <span class="math inline
 <section id="no-alcanza-con-saber-dónde-está-centrada" class="slide level2 center">
 <h2>No alcanza con saber dónde está centrada</h2>
 
-<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="pregunta fragment">
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><div class="pregunta fragment">
 <p>¿Con cuál esperaríamos estimaciones más precisas?</p>
 </div>
 </section>
@@ -433,7 +436,7 @@ Al considerar todos los pares posibles con reposición: <span class="math inline
  </svg>
 </div>
 <div class="averaging-formulas fragment">
-<p><span class="math display">\[\operatorname{Var}(\bar{x})=\operatorname{Var}\left(\frac{X_1+\cdots+X_n}{n}\right)=\frac{\sigma^2}{n}\]</span> <span class="math display">\[\sigma_{\bar{x}}=\sqrt{\operatorname{Var}(\bar{x})}=\frac{\sigma}{\sqrt n}&lt;\sigma\quad(n&gt;1)\]</span></p>
+<p><span class="math display">\[\sigma_{\bar{x}}=\frac{\sigma}{\sqrt n}\]</span> <span>Las medias muestrales varían menos entre sí que las observaciones individuales.</span> <span><span class="math inline">\(\sigma_{\bar{x}}\)</span> es la desviación estándar de la distribución de las medias; también la llamamos <strong>error estándar de la media</strong>.</span></p>
 </div>
 <div class="idea center fragment">
 <p><strong>Promediar reduce la variabilidad.</strong></p>
@@ -442,8 +445,8 @@ Al considerar todos los pares posibles con reposición: <span class="math inline
 <strong>Al aumentar (n) ocurren dos cosas distintas:</strong> disminuye la dispersión de las medias y su distribución tiende a hacerse Normal.
 </div>
 </section>
-<section id="muestras-más-grandes-producen-medias-más-estables" class="slide level2 interactive-slide center">
-<h2>Muestras más grandes producen medias más estables</h2>
+<section id="muestras-más-grandes-producen-medias-más-similares-entre-sí" class="slide level2 interactive-slide center">
+<h2>Muestras más grandes producen medias más similares entre sí</h2>
 <div class="sampling-explorer sampling-compact" data-n="10" data-shape="normal" data-presets="5,10,30,100" data-autorun="1000" data-auto-on-change="1000">
  <input class="n" type="hidden" value="10"><input class="shape" type="hidden" value="normal">
  <div class="compact-question">Misma población · elegí el tamaño de muestra</div><div class="preset-row"></div>
@@ -452,11 +455,14 @@ Al considerar todos los pares posibles con reposición: <span class="math inline
 <div class="center small">
 Compará <span class="math inline">\(n=5,\ 10,\ 30\)</span> y <span class="math inline">\(100\)</span> manteniendo la misma población.
 </div>
+<div class="center small fragment">
+<span class="math inline">\(n\uparrow\;\Rightarrow\;\sigma_{\bar{x}}\downarrow\;\Rightarrow\)</span> medias muestrales más parecidas entre sí.
+</div>
 </section>
 <section id="una-población-más-variable-transmite-más-incertidumbre" class="slide level2 center">
 <h2>Una población más variable transmite más incertidumbre</h2>
 
-<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/unnamed-chunk-3-1.png" width="1008" class="r-stretch"><div class="idea fragment">
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/unnamed-chunk-2-1.png" width="1008" class="r-stretch"><div class="idea fragment">
 <p>Con el mismo <span class="math inline">\(n\)</span>, una población más variable produce una distribución muestral más ancha.</p>
 </div>
 </section>
@@ -464,10 +470,10 @@ Compará <span class="math inline">\(n=5,\ 10,\ 30\)</span> y <span class="math 
 <h2>Hasta ahora usamos una población “linda”</h2>
 <div class="sampling-explorer sampling-observation" data-n="10" data-shape="skew">
  <input class="n" type="hidden" value="10"><input class="shape" type="hidden" value="skew">
- <div class="sampling-panels"><div><strong>Población muy asimétrica</strong><svg class="population-svg" viewbox="0 0 1100 175"></svg></div><div class="question-panel"><strong>¿Qué forma tendrá la distribución de \(\bar{x}\)?</strong><span>Tomaremos muchas muestras del mismo tamaño.</span><svg class="means-svg hidden-engine" viewbox="0 0 1100 205"></svg></div></div>
+ <div class="sampling-panels"><div><strong>Datos con asimetría positiva moderada</strong><svg class="population-svg" viewbox="0 0 1100 175"></svg></div><div class="question-panel"><strong>¿Qué forma tendrá la distribución de \(\bar{x}\)?</strong><span>Tomaremos muchas muestras del mismo tamaño.</span><svg class="means-svg hidden-engine" viewbox="0 0 1100 205"></svg></div></div>
 </div>
 <div class="pregunta">
-<p>Si los datos individuales no son normales, ¿qué pasa con las medias muestrales?</p>
+<p>Si los datos individuales no se distribuyen normalmente, ¿qué pasa con las medias muestrales?</p>
 </div>
 </section>
 <section id="con-muestras-pequeñas-la-asimetría-todavía-se-nota" class="slide level2 interactive-slide center">
@@ -527,55 +533,21 @@ No hay un número mágico.
 <p><span class="math inline">\(n=30\)</span> es una regla práctica tradicional, no es una regla de oro.</p>
 </div>
 </section>
+<section id="entre-29-y-30-no-ocurre-un-salto" class="slide level2 interactive-slide center">
+<h2>Entre 29 y 30 no ocurre un salto</h2>
+<div class="tcl-comparison tcl-near-thirty">
+ <div><b>n = 25</b><svg class="tcl-svg" data-n="25" viewbox="0 0 1100 150" preserveaspectratio="none" role="img" aria-label="Distribución de medias para n igual a 25"></svg></div>
+ <div><b>n = 29</b><svg class="tcl-svg" data-n="29" viewbox="0 0 1100 150" preserveaspectratio="none" role="img" aria-label="Distribución de medias para n igual a 29"></svg></div>
+ <div><b>n = 30</b><svg class="tcl-svg" data-n="30" viewbox="0 0 1100 150" preserveaspectratio="none" role="img" aria-label="Distribución de medias para n igual a 30"></svg></div>
+ <div><b>n = 40</b><svg class="tcl-svg" data-n="40" viewbox="0 0 1100 150" preserveaspectratio="none" role="img" aria-label="Distribución de medias para n igual a 40"></svg></div>
+</div>
+<div class="takeaway-large fragment">
+<p>La aproximación mejora gradualmente: <span class="math inline">\(n=30\)</span> no marca una frontera matemática.</p>
+</div>
+</section>
 <section id="lo-sorprendente-del-teorema-central-del-límite" class="slide level2 center">
 <h2>Lo sorprendente del Teorema Central del Límite</h2>
 <div class="tcl-surprise"><div>Los datos individuales <strong>no necesitan</strong> tener distribución Normal</div><div class="fragment">↓</div><div class="fragment">La distribución de sus <strong>medias</strong> puede aproximarse a una Normal</div></div>
-</section>
-<section id="y-si-la-muestra-es-pequeña-y-sigma-es-desconocida" class="slide level2 center">
-<h2>¿Y si la muestra es pequeña y <span class="math inline">\(\sigma\)</span> es desconocida?</h2>
-<div class="idea small">
-<p>Si la población original es Normal, <span class="math inline">\(\sigma^2\)</span> es desconocida y <span class="math inline">\(n\)</span> es pequeño, sustituimos <span class="math inline">\(\sigma\)</span> por <span class="math inline">\(S\)</span> y usamos la distribución t de Student.</p>
-</div>
-<div class="student-intro">
- <div><small>ESTANDARIZAMOS CON EL ERROR ESTÁNDAR ESTIMADO</small><strong>\(t=\dfrac{\bar{x}-\mu}{S/\sqrt n}\)</strong></div>
- <div class="fragment"><small>DISTRIBUCIÓN RESULTANTE</small><strong>\(t\sim t_{n-1}\)</strong><span>\(n-1\) grados de libertad</span></div>
-</div>
-<div class="small">
-<ul>
-<li class="fragment">La t es similar a la Normal, pero tiene colas más pesadas.</li>
-<li class="fragment">Refleja la incertidumbre adicional de estimar <span class="math inline">\(\sigma\)</span> mediante <span class="math inline">\(S\)</span>.</li>
-<li class="fragment">Al aumentar los grados de libertad, la t se aproxima a la Normal.</li>
-</ul>
-</div>
-</section>
-<section id="qué-distribución-usamos-para-la-media" class="slide level2 center">
-<h2>¿Qué distribución usamos para la media?</h2>
-<div class="mean-case-map">
- <div><strong>Población Normal<br>\(\sigma\) conocida</strong><span>\(\bar{x}\) es Normal para cualquier \(n\)</span><small>centro \(\mu\) · error estándar \(\sigma/\sqrt n\)</small></div>
- <div class="fragment"><strong>Población Normal<br>\(\sigma\) desconocida</strong><span>\(\dfrac{\bar{x}-\mu}{S/\sqrt n}\sim t_{n-1}\)</span><small>especialmente importante con muestras pequeñas</small></div>
- <div class="fragment"><strong>Población no Normal<br>\(n\) suficientemente grande</strong><span>\(\bar{x}\) es aproximadamente Normal</span><small>centro cercano a \(\mu\) · error estimado \(S/\sqrt n\)</small></div>
- <div class="fragment"><strong>Población no Normal<br>\(n\) pequeño</strong><span>No asumir Normalidad automáticamente</span><small>la calidad de la aproximación depende de la población</small></div>
-</div>
-<div class="muted tiny center fragment">
-<p>La distribución t corresponde a la cantidad estandarizada, no directamente a <span class="math inline">\(\bar{x}\)</span>.</p>
-</div>
-</section>
-<section id="volvamos-al-maíz" class="slide level2 center">
-<h2>Volvamos al maíz</h2>
-<div class="maize-return">
- <span>\(n=25\)</span>
- <span>\(\bar{x}=7{,}3\text{ t/ha}\)</span>
- <span>\(\mu=?\)</span>
-</div>
-<div class="small center fragment">
-<p>Observamos una sola muestra y obtuvimos <span class="math inline">\(\bar{x}=7{,}3\text{ t/ha}\)</span>. Pero queremos aprender sobre la media de toda la población, <span class="math inline">\(\mu\)</span>.</p>
-</div>
-<div class="idea fragment">
-<p>Como conocemos cómo se comporta <span class="math inline">\(\bar{x}\)</span> entre muestras, podemos preguntarnos:</p>
-</div>
-<div class="pregunta fragment">
-<p>¿Qué tan compatible es nuestro resultado con distintos valores posibles de <span class="math inline">\(\mu\)</span>?</p>
-</div>
 </section>
 <section id="la-misma-lógica-se-aplica-a-muchos-estadísticos" class="slide level2 center">
 <h2>La misma lógica se aplica a muchos estadísticos</h2>
@@ -598,36 +570,300 @@ No hay un número mágico.
 <p>Cada estimador tiene su propia distribución muestral y su propio error estándar.</p>
 </div>
 <div class="muted tiny center fragment">
-<p>Por ejemplo, <span class="math inline">\(S_{\bar{x}}\)</span> para la media y <span class="math inline">\(S_p\)</span> para la proporción.</p>
+<p>Por ejemplo, <span class="math inline">\(\sigma_{\bar{x}}\)</span> para la distribución teórica de la media y <span class="math inline">\(\sigma_p\)</span> para la distribución teórica de la proporción.</p>
 </div>
 </section>
-<section id="de-la-población-a-la-inferencia" class="slide level2 center">
-<h2>De la población a la inferencia</h2>
-<div class="concept-map"><div><strong>POBLACIÓN</strong><span>\(\mu\)</span></div><b>↓<small>muestreo aleatorio</small></b><div><strong>MUESTRA</strong><span>\(\bar{x}\)</span></div><b>↓<small>muestras repetidas</small></b><div><strong>DISTRIBUCIÓN MUESTRAL</strong><span>\(E(\bar{x})=\mu\)</span><span>\(\sigma_{\bar{x}}=\sigma/\sqrt n\)</span></div><b>↓</b><div class="final"><strong>INFERENCIA</strong></div></div>
-</section>
-<section id="tres-ideas-para-llevarse" class="slide level2 center">
-<h2>Tres ideas para llevarse</h2>
-<div class="takeaway-list">
-<ol type="1">
-<li class="fragment">Una estimación cambia de muestra a muestra.</li>
-<li class="fragment">Esa variabilidad puede describirse mediante una distribución muestral.</li>
-<li class="fragment">Cuanto menor es el error estándar, más precisa es la estimación.</li>
-</ol>
+<section id="ahora-usemos-la-distribución-de-barx-para-calcular-probabilidades" class="slide level2 center">
+<h2>Ahora usemos la distribución de <span class="math inline">\(\bar{x}\)</span> para calcular probabilidades</h2>
+<div class="maize-probability-base">
+<div>
+<p><strong>POBLACIÓN</strong></p>
+<p><span class="math inline">\(\mu=7{,}0\)</span> t/ha · <span class="math inline">\(\sigma=1{,}2\)</span> t/ha</p>
+</div>
+<div class="fragment">
+<p><strong>MUESTRAS</strong></p>
+<p><span class="math inline">\(n=36\)</span> parcelas</p>
+</div>
+<div class="fragment">
+<p><strong>DISTRIBUCIÓN MUESTRAL</strong></p>
+<p><span class="math inline">\(\bar{x}\sim N\left(\mu=7{,}0;\ \sigma_{\bar{x}}=0{,}2\right)\)</span> porque <span class="math inline">\(\sigma_{\bar{x}}=1{,}2/\sqrt{36}=0{,}2\)</span>.</p>
+</div>
 </div>
 <div class="idea fragment">
-<p>El Teorema Central del Límite explica por qué la distribución Normal aparece una y otra vez en inferencia.</p>
+<p>Una probabilidad sobre <span class="math inline">\(\bar{x}\)</span> describe qué proporción de las muestras produciría una media en cierta región.</p>
 </div>
 </section>
-<section id="la-próxima-pregunta" class="slide level2 center">
-<h2>La próxima pregunta</h2>
-<div class="takeaway-large">
-Tenemos una media muestral y conocemos cuánto puede variar entre muestras.
+<section id="cuál-es-la-probabilidad-de-obtener-barx74text-tha" class="slide level2 center">
+<h2>¿Cuál es la probabilidad de obtener <span class="math inline">\(\bar{x}&gt;7{,}4\text{ t/ha}\)</span>?</h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-xbar-cola-derecha-74-1.png" style="width:88.0%" class="r-stretch"><p><span class="math display">\[z=\frac{7{,}4-7{,}0}{0{,}2}=2\qquad P(\bar{x}&gt;7{,}4)=P(Z&gt;2)=0{,}0228\]</span></p>
+<div class="center small fragment">
+<p>Sólo alrededor del <strong>2,28%</strong> de las muestras tendría una media superior a 7,4 t/ha.</p>
+</div>
+</section>
+<section id="cuál-es-la-probabilidad-de-obtener-barx68text-tha" class="slide level2 center">
+<h2>¿Cuál es la probabilidad de obtener <span class="math inline">\(\bar{x}&lt;6{,}8\text{ t/ha}\)</span>?</h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-xbar-cola-izquierda-68-1.png" style="width:88.0%" class="r-stretch"><p><span class="math display">\[z=\frac{6{,}8-7{,}0}{0{,}2}=-1\qquad P(\bar{x}&lt;6{,}8)=P(Z&lt;-1)=0{,}1587\]</span></p>
+<div class="center small fragment">
+<p>Aproximadamente el <strong>15,87%</strong> de las muestras tendría una media inferior a 6,8 t/ha.</p>
+</div>
+</section>
+<section id="qué-proporción-cae-entre-68-y-72-tha" class="slide level2 center">
+<h2>¿Qué proporción cae entre 6,8 y 7,2 t/ha?</h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-xbar-region-68-72-1.png" style="width:88.0%" class="r-stretch"><p><span class="math display">\[P(6{,}8&lt;\bar{x}&lt;7{,}2)=P(-1&lt;Z&lt;1)=0{,}6827\]</span></p>
+<div class="center small fragment">
+<p>Alrededor del <strong>68,27%</strong> de las medias muestrales queda dentro de esa región.</p>
+</div>
+</section>
+<section id="ahora-planteemos-el-problema-inverso" class="slide level2 center">
+<h2>Ahora planteemos el problema inverso</h2>
+<div class="inverse-problem">
+<div>
+<p><strong>ANTES</strong></p>
+<p>Nos daban un valor de <span class="math inline">\(\bar{x}\)</span> y buscábamos el área o probabilidad.</p>
+</div>
+<div class="fragment">
+<p><strong>AHORA</strong></p>
+<p>Nos dan un área y buscamos el valor de <span class="math inline">\(\bar{x}\)</span> que la delimita.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>Primero buscamos el cuantil <span class="math inline">\(z\)</span> correspondiente y luego regresamos a la escala del rendimiento: <span class="math inline">\(\bar{x}=\mu+z\sigma_{\bar{x}}\)</span>.</p>
+</div>
+</section>
+<section id="dónde-comienza-el-10-más-alto-de-las-medias" class="slide level2 center">
+<h2>¿Dónde comienza el 10% más alto de las medias?</h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-xbar-cuantil-superior-10-1.png" style="width:88.0%" class="r-stretch"><p><span class="math display">\[Z_{0{,}10}=1{,}282\qquad \bar{x}=7{,}0+1{,}282(0{,}2)=7{,}256\approx7{,}26\text{ t/ha}\]</span></p>
+<div class="center small fragment">
+<p>El <strong>10% superior de las medias muestrales de rendimiento</strong> comienza aproximadamente en <strong>7,26 t/ha</strong>.</p>
+</div>
+</section>
+<section id="debajo-de-qué-valor-queda-el-5-más-bajo" class="slide level2 center">
+<h2>¿Debajo de qué valor queda el 5% más bajo?</h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-xbar-cuantil-inferior-5-1.png" style="width:88.0%" class="r-stretch"><p><span class="math display">\[z_{0{,}05}=-1{,}645\qquad \bar{x}=7{,}0-1{,}645(0{,}2)=6{,}671\]</span></p>
+<div class="center small fragment">
+<p>El 5% más bajo de las <strong>medias de rendimiento obtenidas en muestras de 36 parcelas</strong> queda por debajo de aproximadamente <strong>6,67 t/ha</strong>.</p>
+</div>
+</section>
+<section id="dónde-cae-el-95-central-de-las-medias-muestrales" class="slide level2 center">
+<h2>¿Dónde cae el 95% central de las medias muestrales?</h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-xbar-region-central-95-1.png" style="width:88.0%" class="r-stretch"><p><span class="math display">\[7{,}0\pm1{,}96(0{,}2)=[6{,}608;\ 7{,}392]\]</span></p>
+<div class="idea fragment">
+<p>Si repitiéramos el muestreo muchas veces, aproximadamente el <strong>95% de las medias muestrales</strong> caería entre 6,61 y 7,39 t/ha.</p>
+</div>
+</section>
+<section id="de-una-variable-binaria-a-una-proporción" class="slide level2 center">
+<h2>De una variable binaria a una proporción</h2>
+<div class="seed-proportion-flow">
+ <div><small>POBLACIÓN DE SEMILLAS</small><div class="seed-population"><i class="viable"></i><i class="viable"></i><i class="viable"></i><i class="nonviable"></i><i class="viable"></i><i class="viable"></i><i class="nonviable"></i><i class="viable"></i><i class="viable"></i><i class="viable"></i><i class="viable"></i><i class="nonviable"></i><i class="viable"></i><i class="viable"></i><i class="viable"></i><i class="viable"></i><i class="nonviable"></i><i class="viable"></i></div><strong>82% son viables: \(\pi=0{,}82\)</strong></div>
+ <b>→</b>
+ <div class="fragment"><small>MUESTRA DE TAMAÑO \(n\)</small><strong>contamos las viables</strong><span class="proportion-definition"><span>\(p=\)</span><span class="text-fraction"><span>número de viables</span><span>\(n\)</span></span></span></div>
+</div>
+<div class="parameter-statistic-pair fragment">
+<div>
+<p><strong><span class="math inline">\(\pi=0{,}82\)</span></strong> · proporción verdadera de semillas viables en la población</p>
+</div>
+<div>
+<p><strong><span class="math inline">\(p\)</span></strong> · proporción viable observada en una muestra</p>
+</div>
+</div>
+</section>
+<section id="otra-muestra-otro-p" class="slide level2 center">
+<h2>Otra muestra, otro <span class="math inline">\(p\)</span></h2>
+<div class="repeated-p-samples">
+<div>
+<p><strong>Muestra 1</strong> · 29 de 37 viables</p>
+<p><span class="math inline">\(p_1=29/37=0{,}784\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Muestra 2</strong> · 32 de 37 viables</p>
+<p><span class="math inline">\(p_2=32/37=0{,}865\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Muestra 3</strong> · 30 de 37 viables</p>
+<p><span class="math inline">\(p_3=30/37=0{,}811\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Muestra 4</strong> · 33 de 37 viables</p>
+<p><span class="math inline">\(p_4=33/37=0{,}892\)</span></p>
+</div>
+</div>
+<div class="idea fragment">
+<p>Antes de tomar la muestra, <span class="math inline">\(p\)</span> puede asumir distintos valores: es una <strong>variable aleatoria</strong> entre muestras repetidas.</p>
+</div>
+</section>
+<section id="muchos-valores-de-p-forman-una-distribución" class="slide level2 center">
+<h2>Muchos valores de <span class="math inline">\(p\)</span> forman una distribución</h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-p-5000-muestras-n37-1.png" style="width:92.0%" class="r-stretch"><div class="center small fragment">
+<p>La línea dorada marca <span class="math inline">\(\pi=0{,}82\)</span>. La media empírica de las 5.000 proporciones es 0,821: la distribución se centra alrededor de <span class="math inline">\(\pi\)</span> y sus valores están separados por saltos de <span class="math inline">\(1/n\)</span>.</p>
+</div>
+</section>
+<section id="el-tamaño-de-muestra-cambia-la-distribución-de-p" class="slide level2 center">
+<h2>El tamaño de muestra cambia la distribución de <span class="math inline">\(p\)</span></h2>
+
+<img data-src="Clase_04_Distribuciones_Muestrales_2026_files/figure-revealjs/plot-p-comparacion-n20-n120-1.png" style="width:94.0%" class="r-stretch"><div class="center small">
+En ambos paneles, la línea dorada marca <span class="math inline">\(\pi=0{,}82\)</span>.
+</div>
+<div class="p-size-comparison fragment">
+<div>
+<p><strong><span class="math inline">\(n=20\)</span>:</strong> escalonada, más ancha y con pocos resultados no viables esperados.</p>
+</div>
+<div>
+<p><strong><span class="math inline">\(n=120\)</span>:</strong> más concentrada y con forma aproximadamente Normal.</p>
+</div>
+</div>
+</section>
+<section id="centro-y-error-estándar-de-p" class="slide level2 center">
+<h2>Centro y error estándar de <span class="math inline">\(p\)</span></h2>
+<div class="p-theory-formulas">
+<div>
+<p><strong>CENTRO</strong></p>
+<p><span class="math display">\[E(p)=\pi\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>DISPERSIÓN ENTRE MUESTRAS</strong></p>
+<p><span class="math display">\[\sigma_p=\sqrt{\frac{\pi(1-\pi)}{n}}\]</span></p>
+</div>
+</div>
+<div class="calculation-strip fragment">
+<p>Con <span class="math inline">\(\pi=0{,}82\)</span>: <span class="math inline">\(\sigma_p=0{,}086\)</span> para <span class="math inline">\(n=20\)</span> y <span class="math inline">\(\sigma_p=0{,}035\)</span> para <span class="math inline">\(n=120\)</span>.</p>
+</div>
+<div class="center small fragment">
+<p><span class="math inline">\(\sigma_p\)</span> es el <strong>error estándar de <span class="math inline">\(p\)</span></strong>: mide cuánto varían las proporciones observadas entre muestras repetidas del mismo tamaño.</p>
+</div>
+<div class="idea fragment">
+<p>Aquí aparece <span class="math inline">\(\pi\)</span> en la fórmula de <span class="math inline">\(\sigma_p\)</span> porque describimos la distribución muestral <strong>teórica</strong>. En la Clase 05, como <span class="math inline">\(\pi\)</span> será desconocida, estimaremos este error estándar usando <span class="math inline">\(p\)</span>.</p>
+</div>
+</section>
+<section id="por-qué-puede-aparecer-una-forma-aproximadamente-normal" class="slide level2 center">
+<h2>¿Por qué puede aparecer una forma aproximadamente Normal?</h2>
+<div class="binary-to-normal">
+<div>
+<p><strong>VARIABLE ORIGINAL</strong></p>
+<p>Cada semilla sólo puede ser viable o no viable.</p>
+</div>
+<div class="fragment">
+<p><strong>ESTADÍSTICO</strong></p>
+<p><span class="math inline">\(p\)</span> promedia muchos resultados binarios codificados como 1 y 0.</p>
+</div>
+<div class="fragment">
+<p><strong>DISTRIBUCIÓN DE <span class="math inline">\(p\)</span></strong></p>
+<p>Con suficiente información en ambas categorías, su forma puede aproximarse a Normal.</p>
+</div>
+</div>
+<div class="condition-explanation fragment">
+<p><span class="math inline">\(n\pi\)</span> es el número esperado de viables y <span class="math inline">\(n(1-\pi)\)</span> el de no viables. Con <span class="math inline">\(\pi=0{,}82\)</span>, para <span class="math inline">\(n=20\)</span> son 16,4 y 3,6; para <span class="math inline">\(n=120\)</span>, 98,4 y 21,6. La aproximación Normal mejora cuando ambos valores son suficientemente grandes.</p>
+</div>
+</section>
+<section id="apliquemos-la-distribución-de-p" class="slide level2 p-application center">
+<h2>Apliquemos la distribución de <span class="math inline">\(p\)</span></h2>
+<p>En la población, el <strong>82% de las semillas son viables</strong>: <span class="math inline">\(\pi=0{,}82\)</span> es la proporción poblacional de semillas viables.</p>
+<p>Tomamos una muestra de <span class="math inline">\(n=120\)</span> semillas y llamamos <span class="math inline">\(p\)</span> a la proporción de semillas viables observada en esa muestra.</p>
+<p><span class="math display">\[\sigma_p=\sqrt{\frac{0{,}82(1-0{,}82)}{120}}=0{,}035\]</span></p>
+<div class="pregunta fragment">
+<p>¿Qué proporción de las muestras tendrá más de 85% de semillas viables?</p>
+</div>
+<div class="calculation-strip fragment">
+<p><span class="math display">\[z=\frac{0{,}85-0{,}82}{0{,}035}=0{,}86
+\qquad P(p&gt;0{,}85)\approx P(Z&gt;0{,}86)=0{,}195\]</span></p>
+</div>
+<div class="idea fragment">
+<p>Aproximadamente el <strong>19,5%</strong> de las muestras produciría <span class="math inline">\(p&gt;0{,}85\)</span> bajo estas condiciones.</p>
+</div>
+</section>
+<section id="qué-buscamos-en-un-buen-estimador" class="slide level2 center">
+<h2>¿Qué buscamos en un buen estimador?</h2>
+<div class="target-matrix">
+ <div class="target-corner"></div><div class="target-col">ALTA PRECISIÓN</div><div class="target-col">BAJA PRECISIÓN</div>
+ <div class="target-row">INSESGADO</div>
+ <div class="target-case"><svg viewbox="0 0 180 180" role="img" aria-label="Estimaciones precisas e insesgadas"><circle class="ring r1" cx="90" cy="90" r="76"></circle><circle class="ring r2" cx="90" cy="90" r="52"></circle><circle class="ring r3" cx="90" cy="90" r="27"></circle><circle class="bull" cx="90" cy="90" r="7"></circle><g class="estimates"><circle cx="84" cy="84" r="5"></circle><circle cx="96" cy="86" r="5"></circle><circle cx="91" cy="98" r="5"></circle><circle cx="82" cy="95" r="5"></circle><circle cx="99" cy="96" r="5"></circle><circle cx="89" cy="89" r="5"></circle><circle cx="94" cy="92" r="5"></circle></g></svg><span><strong>Insesgado y preciso</strong>juntas y centradas</span></div>
+ <div class="target-case"><svg viewbox="0 0 180 180" role="img" aria-label="Estimaciones dispersas pero insesgadas"><circle class="ring r1" cx="90" cy="90" r="76"></circle><circle class="ring r2" cx="90" cy="90" r="52"></circle><circle class="ring r3" cx="90" cy="90" r="27"></circle><circle class="bull" cx="90" cy="90" r="7"></circle><g class="estimates"><circle cx="42" cy="47" r="5"></circle><circle cx="139" cy="48" r="5"></circle><circle cx="42" cy="132" r="5"></circle><circle cx="139" cy="134" r="5"></circle><circle cx="68" cy="108" r="5"></circle><circle cx="111" cy="72" r="5"></circle><circle cx="91" cy="90" r="5"></circle></g></svg><span><strong>Insesgado y poco preciso</strong>dispersas, centradas en promedio</span></div>
+ <div class="target-row">SESGADO</div>
+ <div class="target-case"><svg viewbox="0 0 180 180" role="img" aria-label="Estimaciones precisas pero sesgadas"><circle class="ring r1" cx="90" cy="90" r="76"></circle><circle class="ring r2" cx="90" cy="90" r="52"></circle><circle class="ring r3" cx="90" cy="90" r="27"></circle><circle class="bull" cx="90" cy="90" r="7"></circle><g class="estimates"><circle cx="127" cy="52" r="5"></circle><circle cx="139" cy="55" r="5"></circle><circle cx="132" cy="64" r="5"></circle><circle cx="143" cy="67" r="5"></circle><circle cx="123" cy="62" r="5"></circle><circle cx="136" cy="48" r="5"></circle><circle cx="131" cy="57" r="5"></circle></g></svg><span><strong>Sesgado y preciso</strong>juntas, pero desplazadas</span></div>
+ <div class="target-case"><svg viewbox="0 0 180 180" role="img" aria-label="Estimaciones dispersas y sesgadas"><circle class="ring r1" cx="90" cy="90" r="76"></circle><circle class="ring r2" cx="90" cy="90" r="52"></circle><circle class="ring r3" cx="90" cy="90" r="27"></circle><circle class="bull" cx="90" cy="90" r="7"></circle><g class="estimates"><circle cx="111" cy="31" r="5"></circle><circle cx="151" cy="51" r="5"></circle><circle cx="128" cy="79" r="5"></circle><circle cx="157" cy="100" r="5"></circle><circle cx="102" cy="57" r="5"></circle><circle cx="139" cy="117" r="5"></circle><circle cx="119" cy="43" r="5"></circle></g></svg><span><strong>Sesgado y poco preciso</strong>dispersas y desplazadas</span></div>
+</div>
+<div class="estimator-properties">
+<div>
+<p><strong>INSESGADO:</strong> acierta al parámetro en promedio. Aquí: <span class="math inline">\(E(\bar{x})=\mu\)</span> y <span class="math inline">\(E(p)=\pi\)</span>.</p>
+</div>
+<div>
+<p><strong>PRECISO:</strong> cambia poco entre muestras. Menor error estándar → mayor precisión.</p>
+</div>
+<div>
+<p><strong>EFICIENTE:</strong> entre estimadores insesgados del mismo parámetro, preferimos el de menor variabilidad.</p>
+</div>
+</div>
+<div class="center target-legend">
+Centro = parámetro verdadero · cada punto = estimación obtenida de una muestra distinta.
+</div>
+</section>
+<section id="y-qué-significa-que-sea-consistente" class="slide level2 center">
+<h2>¿Y qué significa que sea consistente?</h2>
+<div class="consistency-warning">
+<strong>Cada punto es el promedio de una repetición independiente de tiros del mismo tirador.</strong><span>Repetimos todo el procedimiento muchas veces; entre paneles sólo cambia cuántos tiros incluye cada repetición.</span>
+</div>
+<div class="consistency-targets">
+ <div><strong>n = 5 tiros por repetición</strong><svg viewbox="0 0 180 180" role="img" aria-label="Promedios de repeticiones independientes del mismo tirador con n igual a cinco"><circle class="ring r1" cx="90" cy="90" r="76"></circle><circle class="ring r2" cx="90" cy="90" r="52"></circle><circle class="ring r3" cx="90" cy="90" r="27"></circle><circle class="bull" cx="90" cy="90" r="7"></circle><g class="estimates"><circle cx="38" cy="42" r="5"></circle><circle cx="141" cy="45" r="5"></circle><circle cx="42" cy="132" r="5"></circle><circle cx="146" cy="130" r="5"></circle><circle cx="65" cy="64" r="5"></circle><circle cx="118" cy="68" r="5"></circle><circle cx="62" cy="111" r="5"></circle><circle cx="122" cy="116" r="5"></circle><circle cx="91" cy="47" r="5"></circle><circle cx="88" cy="137" r="5"></circle><circle cx="102" cy="92" r="5"></circle></g></svg></div>
+ <div class="fragment"><strong>n = 20 tiros por repetición</strong><svg viewbox="0 0 180 180" role="img" aria-label="Promedios de repeticiones independientes del mismo tirador con n igual a veinte"><circle class="ring r1" cx="90" cy="90" r="76"></circle><circle class="ring r2" cx="90" cy="90" r="52"></circle><circle class="ring r3" cx="90" cy="90" r="27"></circle><circle class="bull" cx="90" cy="90" r="7"></circle><g class="estimates"><circle cx="64" cy="65" r="5"></circle><circle cx="116" cy="69" r="5"></circle><circle cx="68" cy="112" r="5"></circle><circle cx="114" cy="114" r="5"></circle><circle cx="82" cy="78" r="5"></circle><circle cx="103" cy="80" r="5"></circle><circle cx="78" cy="99" r="5"></circle><circle cx="101" cy="103" r="5"></circle><circle cx="91" cy="65" r="5"></circle><circle cx="89" cy="119" r="5"></circle><circle cx="92" cy="91" r="5"></circle></g></svg></div>
+ <div class="fragment"><strong>n = 100 tiros por repetición</strong><svg viewbox="0 0 180 180" role="img" aria-label="Promedios de repeticiones independientes del mismo tirador con n igual a cien"><circle class="ring r1" cx="90" cy="90" r="76"></circle><circle class="ring r2" cx="90" cy="90" r="52"></circle><circle class="ring r3" cx="90" cy="90" r="27"></circle><circle class="bull" cx="90" cy="90" r="7"></circle><g class="estimates"><circle cx="82" cy="82" r="5"></circle><circle cx="98" cy="83" r="5"></circle><circle cx="82" cy="98" r="5"></circle><circle cx="98" cy="97" r="5"></circle><circle cx="87" cy="87" r="5"></circle><circle cx="94" cy="87" r="5"></circle><circle cx="86" cy="94" r="5"></circle><circle cx="95" cy="94" r="5"></circle><circle cx="90" cy="79" r="5"></circle><circle cx="90" cy="102" r="5"></circle><circle cx="90" cy="90" r="5"></circle></g></svg></div>
+</div>
+<div class="consistency-map">
+<div>
+<p>una repetición de <span class="math inline">\(n\)</span> tiros → <strong>muestra</strong></p>
+</div>
+<div>
+<p>promedio de los tiros → <strong><span class="math inline">\(\bar{x}\)</span></strong></p>
+</div>
+<div>
+<p>centro → <strong><span class="math inline">\(\mu\)</span></strong></p>
+</div>
+<div>
+<p>muchas repeticiones → <strong>distribución muestral</strong></p>
+</div>
+</div>
+<div class="consistency-result fragment">
+<p><strong>CONSISTENCIA:</strong> al aumentar <span class="math inline">\(n\)</span>, el estimador se concentra cada vez más cerca del parámetro.</p>
+<p><span class="math inline">\(n\uparrow\;\Rightarrow\;\sigma_{\bar{x}}=\sigma/\sqrt n\downarrow\;\Rightarrow\)</span> mayor concentración alrededor de <span class="math inline">\(\mu\)</span>.</p>
+</div>
+<div class="center consistency-caution">
+No estamos diciendo que el tirador se vuelva más preciso. Estudiamos cómo cambia la distribución de los promedios al aumentar el número de tiros de cada repetición.
+</div>
+</section>
+<section id="lo-esencial-de-hoy" class="slide level2 center">
+<h2>Lo esencial de hoy</h2>
+<div class="takeaway-list">
+<ol type="1">
+<li class="fragment">Un estadístico cambia entre muestras: es una <strong>variable aleatoria</strong> y tiene una distribución muestral.</li>
+<li class="fragment">Para la media: <span class="math inline">\(E(\bar{x})=\mu\)</span> y <span class="math inline">\(\sigma_{\bar{x}}=\sigma/\sqrt n\)</span>.</li>
+<li class="fragment">Para la proporción: <span class="math inline">\(E(p)=\pi\)</span> y <span class="math inline">\(\sigma_p=\sqrt{\pi(1-\pi)/n}\)</span>.</li>
+<li class="fragment">Al aumentar <span class="math inline">\(n\)</span>, disminuye el error estándar; los estimadores se concentran más y podemos calcular probabilidades sobre sus valores.</li>
+<li class="fragment">Bajo las condiciones trabajadas, <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(p\)</span> son <strong>insesgados y consistentes</strong>; el TCL explica la aproximación Normal de <span class="math inline">\(\bar{x}\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="el-puente-hacia-el-tema-siguiente-inferencia" class="slide level2 center">
+<h2>El puente hacia el tema siguiente: inferencia</h2>
+<div class="forward-reverse-bridge">
+<div>
+<p><strong>HOY: PROBLEMA DIRECTO</strong></p>
+<p>Conocemos el parámetro y usamos la distribución muestral para calcular dónde pueden caer <span class="math inline">\(\bar{x}\)</span> o <span class="math inline">\(p\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>EN INFERENCIA: PROBLEMA INVERSO</strong></p>
+<p>Observamos un estadístico y el parámetro poblacional es desconocido.</p>
+</div>
 </div>
 <div class="pregunta fragment">
-<p>¿Cómo usamos eso para decir qué valores son plausibles para la media poblacional?</p>
+<p>¿Cómo usamos el estadístico y su error estándar para acotar valores plausibles del parámetro?</p>
 </div>
-<div class="center fragment">
-<strong>Próxima clase:</strong> Inferencia estadística
+<div class="center small fragment">
+<strong>Próxima clase:</strong> inferencia estadística.
 </div>
 
 
