@@ -177,7 +177,7 @@ a:focus-visible {
 
 .class-card {
   display: flex;
-  min-height: 132px;
+  min-height: 158px;
   flex-direction: column;
   justify-content: center;
   gap: 0.45rem;
