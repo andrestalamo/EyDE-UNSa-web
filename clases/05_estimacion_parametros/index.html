@@ -439,7 +439,7 @@ La estimación y su incertidumbre se informan juntas.
 <span><span class="math inline">\(n=25\)</span></span><span><span class="math inline">\(\bar{x}=7{,}3\text{ t/ha}\)</span></span><span><span class="math inline">\(s=1{,}5\text{ t/ha}\)</span></span><span><span class="math inline">\(S_{\bar{x}}=0{,}30\text{ t/ha}\)</span></span>
 </div>
 <div class="pregunta">
-<p>Calculemos un IC del 99% para <span class="math inline">\(\mu\)</span>. <strong>¿Qué creen que va a pasar con la precisión?</strong></p>
+<p><strong>¿Qué creen que va a pasar con la precisión en comparación con el IC del 95% ya calculado?</strong></p>
 </div>
 <div class="ic99-calculation fragment">
 <span><span class="math inline">\(gl=24\)</span></span><span><span class="math inline">\(t_{0{,}005;24}\approx2{,}797\)</span></span><span><span class="math inline">\(E=2{,}797\times0{,}30\approx0{,}839\text{ t/ha}\)</span></span><strong><span class="math inline">\(IC_{99\%}:\ 7{,}3\pm0{,}839\approx[6{,}46\ ;\ 8{,}14]\text{ t/ha}\)</span></strong>
@@ -460,23 +460,23 @@ La estimación y su incertidumbre se informan juntas.
 <h2>¿De qué depende la amplitud?</h2>
 <div class="margin-logic">
 <p><strong>Margen de error (o error de estimación)</strong></p>
-<p><span class="math display">\[E=t_{\alpha/2,n-1}S_{\bar{x}},\qquad S_{\bar{x}}=\frac{s}{\sqrt{n}}\]</span></p>
+<p><span class="math display">\[E=t^*S_{\bar{x}}=t^*\frac{s}{\sqrt{n}}\]</span></p>
 </div>
 <div class="width-factors">
 <div>
+<p><strong>MAYOR NIVEL DE CONFIANZA</strong></p>
+<p>mayor valor crítico <span class="math inline">\(\longrightarrow\)</span> mayor margen de error <span class="math inline">\(\longrightarrow\)</span> IC más ancho</p>
+<p><strong>menor precisión</strong></p>
+</div>
+<div class="fragment">
 <p><strong>MÁS VARIABILIDAD · <span class="math inline">\(\uparrow s\)</span></strong></p>
-<p><span class="math inline">\(\uparrow S_{\bar{x}}\)</span> → mayor error de estimación → IC más ancho</p>
+<p><span class="math inline">\(\uparrow S_{\bar{x}}\)</span> <span class="math inline">\(\longrightarrow\)</span> mayor margen de error <span class="math inline">\(\longrightarrow\)</span> IC más ancho</p>
 <p><strong>menor precisión</strong></p>
 </div>
 <div class="fragment">
 <p><strong>MAYOR TAMAÑO MUESTRAL · <span class="math inline">\(\uparrow n\)</span></strong></p>
-<p><span class="math inline">\(\downarrow S_{\bar{x}}\)</span> → menor error de estimación → IC más estrecho</p>
+<p><span class="math inline">\(\downarrow S_{\bar{x}}\)</span> <span class="math inline">\(\longrightarrow\)</span> menor margen de error <span class="math inline">\(\longrightarrow\)</span> IC más estrecho</p>
 <p><strong>mayor precisión</strong></p>
-</div>
-<div class="fragment">
-<p><strong>MAYOR NIVEL DE CONFIANZA</strong></p>
-<p>mayor valor crítico → mayor error de estimación → IC más ancho</p>
-<p><strong>menor precisión</strong></p>
 </div>
 </div>
 </section>
@@ -516,22 +516,6 @@ La estimación y su incertidumbre se informan juntas.
 <div class="precision-verdict" data-precision-verdict="">
 Intervalo más estrecho → mayor precisión
 </div>
-</div>
-</section>
-<section id="qué-hacen-n-y-s-con-la-precisión" class="slide level2 center">
-<h2>¿Qué hacen <span class="math inline">\(n\)</span> y <span class="math inline">\(s\)</span> con la precisión?</h2>
-<div class="precision-reading">
-<div class="precision-reading-card">
-<p><strong>Si aumenta <span class="math inline">\(n\)</span></strong></p>
-<p><span class="math inline">\(S_{\bar{x}}=s/\sqrt n\)</span> disminuye, el intervalo se estrecha y la estimación gana <strong>precisión</strong>.</p>
-</div>
-<div class="precision-reading-card fragment">
-<p><strong>Si aumenta <span class="math inline">\(s\)</span></strong></p>
-<p><span class="math inline">\(S_{\bar{x}}\)</span> aumenta, el intervalo se ensancha y la estimación pierde <strong>precisión</strong>.</p>
-</div>
-</div>
-<div class="idea fragment">
-<p>El tamaño muestral aporta información; la heterogeneidad entre lotes introduce incertidumbre.</p>
 </div>
 </section>
 <section id="confianza-y-precisión-un-compromiso-a-igual-n-y-variabilidad" class="slide level2 center">
@@ -632,8 +616,11 @@ n=\left(\frac{z_{\alpha/2}\sigma}{E}\right)^2\]</span></p>
 </section>
 <section id="planifiquemos-una-muestra" class="slide level2 center">
 <h2>Planifiquemos una muestra</h2>
+<div class="planning-intro">
+Supongamos que queremos realizar un nuevo muestreo para estimar el rendimiento medio de la población, con un <strong>95% de confianza</strong> y un <strong>error de estimación de <span class="math inline">\(\pm0{,}3\)</span> t/ha</strong>. A partir de información previa, disponemos de una estimación de la desviación estándar de aproximadamente <strong>1,5 t/ha</strong>.
+</div>
 <div class="planning-scenario">
-<span><small>CONFIANZA</small><strong>95%</strong></span><span><small>ERROR MÁXIMO</small><strong><span class="math inline">\(E=0{,}30\)</span> t/ha</strong></span><span><small>VARIABILIDAD ESPERADA</small><strong><span class="math inline">\(\sigma\approx1{,}5\)</span> t/ha</strong><em>estudio piloto o información previa</em></span>
+<span><small>CONFIANZA</small><strong>95%</strong></span><span><small>ERROR DE ESTIMACIÓN DESEADO</small><strong><span class="math inline">\(\pm0{,}3\)</span> t/ha</strong></span><span><small>DESVIACIÓN ESTÁNDAR ESPERADA</small><strong><span class="math inline">\(\sigma\approx1{,}5\)</span> t/ha</strong><em>estimación basada en información previa</em></span>
 </div>
 <div class="planning-calculation">
 <span class="math inline">\(z_{0{,}025}=1{,}96\)</span><b>→</b><span class="math inline">\(n=\left(\dfrac{1{,}96\times1{,}5}{0{,}30}\right)^2=(9{,}8)^2=96{,}04\)</span><b>→</b><strong><span class="math inline">\(n=97\)</span> lotes</strong>
@@ -712,13 +699,16 @@ Población conceptual <small>(también llamada virtual o hipotética)</small>
 </div>
 </div>
 </section>
-<section id="tomamos-una-muestra" class="slide level2 center">
-<h2>Tomamos una muestra</h2>
+<section id="tomamos-una-muestra-de-n146-semillas" class="slide level2 center">
+<h2>Tomamos una muestra de <span class="math inline">\(n=146\)</span> semillas</h2>
 <div class="seed-sample" aria-label="Muestra de ciento cuarenta y seis semillas: ciento veintitrés viables y veintitrés no viables">
  <div class="seed-count viable"><span>123</span><strong>viables</strong></div>
  <div class="seed-count nonviable"><span>23</span><strong>no viables</strong></div>
 </div>
-<p><span class="math display">\[n=146,\qquad x=123,\qquad p=\frac{x}{n}=\frac{123}{146}=0{,}8425\approx84{,}25\%\]</span></p>
+<div class="seed-observation">
+<strong>123 semillas resultaron viables.</strong>
+</div>
+<p><span class="math display">\[p=\frac{123}{146}=0{,}8425\approx84{,}25\%\]</span></p>
 </section>
 <section id="estimación-puntual-de-pi" class="slide level2 center">
 <h2>Estimación puntual de <span class="math inline">\(\pi\)</span></h2>
@@ -867,8 +857,8 @@ Población conceptual <small>(también llamada virtual o hipotética)</small>
 <div class="takeaway-list">
 <ol type="1">
 <li class="fragment">Un estadístico muestral permite estimar un parámetro poblacional.</li>
-<li class="fragment">El error estándar expresa la precisión de la estimación.</li>
-<li class="fragment">Un intervalo de confianza comunica estimación + incertidumbre.</li>
+<li class="fragment">El error estándar expresa la precisión de la estimación puntual.</li>
+<li class="fragment">Un intervalo de confianza comunica estimación + incertidumbre + precisión.</li>
 <li class="fragment">Ningún procedimiento estadístico permite generalizar más allá de la población que el diseño y el muestreo permiten representar.</li>
 </ol>
 </div>

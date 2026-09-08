@@ -1929,14 +1929,14 @@
     "href": "clases/05_estimacion_parametros/index.html#actividad-ic-del-99",
     "title": "Inferencia estadística",
     "section": "Actividad: IC del 99%",
-    "text": "Actividad: IC del 99%\n\n\\(n=25\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\\(S_{\\bar{x}}=0{,}30\\text{ t/ha}\\)\n\n\nCalculemos un IC del 99% para \\(\\mu\\). ¿Qué creen que va a pasar con la precisión?\n\n\n\\(gl=24\\)\\(t_{0{,}005;24}\\approx2{,}797\\)\\(E=2{,}797\\times0{,}30\\approx0{,}839\\text{ t/ha}\\)\\(IC_{99\\%}:\\ 7{,}3\\pm0{,}839\\approx[6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nIC95%6,68\\(\\bar{x}=7{,}30\\text{ t/ha}\\)7,92\\([6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n\nIC99%6,46\\(\\bar{x}=7{,}30\\text{ t/ha}\\)8,14\\([6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nMAYOR CONFIANZA→MAYOR VALOR CRÍTICO→INTERVALO MÁS ANCHO→MENOR PRECISIÓN"
+    "text": "Actividad: IC del 99%\n\n\\(n=25\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\\(S_{\\bar{x}}=0{,}30\\text{ t/ha}\\)\n\n\n¿Qué creen que va a pasar con la precisión en comparación con el IC del 95% ya calculado?\n\n\n\\(gl=24\\)\\(t_{0{,}005;24}\\approx2{,}797\\)\\(E=2{,}797\\times0{,}30\\approx0{,}839\\text{ t/ha}\\)\\(IC_{99\\%}:\\ 7{,}3\\pm0{,}839\\approx[6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nIC95%6,68\\(\\bar{x}=7{,}30\\text{ t/ha}\\)7,92\\([6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n\nIC99%6,46\\(\\bar{x}=7{,}30\\text{ t/ha}\\)8,14\\([6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nMAYOR CONFIANZA→MAYOR VALOR CRÍTICO→INTERVALO MÁS ANCHO→MENOR PRECISIÓN"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
     "href": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
     "title": "Inferencia estadística",
     "section": "¿De qué depende la amplitud?",
-    "text": "¿De qué depende la amplitud?\n\nMargen de error (o error de estimación)\n\\[E=t_{\\alpha/2,n-1}S_{\\bar{x}},\\qquad S_{\\bar{x}}=\\frac{s}{\\sqrt{n}}\\]\n\n\n\nMÁS VARIABILIDAD · \\(\\uparrow s\\)\n\\(\\uparrow S_{\\bar{x}}\\) → mayor error de estimación → IC más ancho\nmenor precisión\n\n\nMAYOR TAMAÑO MUESTRAL · \\(\\uparrow n\\)\n\\(\\downarrow S_{\\bar{x}}\\) → menor error de estimación → IC más estrecho\nmayor precisión\n\n\nMAYOR NIVEL DE CONFIANZA\nmayor valor crítico → mayor error de estimación → IC más ancho\nmenor precisión"
+    "text": "¿De qué depende la amplitud?\n\nMargen de error (o error de estimación)\n\\[E=t^*S_{\\bar{x}}=t^*\\frac{s}{\\sqrt{n}}\\]\n\n\n\nMAYOR NIVEL DE CONFIANZA\nmayor valor crítico \\(\\longrightarrow\\) mayor margen de error \\(\\longrightarrow\\) IC más ancho\nmenor precisión\n\n\nMÁS VARIABILIDAD · \\(\\uparrow s\\)\n\\(\\uparrow S_{\\bar{x}}\\) \\(\\longrightarrow\\) mayor margen de error \\(\\longrightarrow\\) IC más ancho\nmenor precisión\n\n\nMAYOR TAMAÑO MUESTRAL · \\(\\uparrow n\\)\n\\(\\downarrow S_{\\bar{x}}\\) \\(\\longrightarrow\\) menor margen de error \\(\\longrightarrow\\) IC más estrecho\nmayor precisión"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#exploremos-la-precisión",
@@ -1944,13 +1944,6 @@
     "title": "Inferencia estadística",
     "section": "Exploremos la precisión",
     "text": "Exploremos la precisión\n\n\ntamaño muestral n\n\n25\n\n variabilidad s (t/ha)\n\n1,5\n\n nivel de confianza90%95%99%\n\n\n\nerror estándar \\(S_{\\bar{x}}\\)\n0,300\n\n\nvalor crítico \\(t^*\\)\n2,064\n\n\nerror de estimación\n0,619\n\n\namplitud\n1,238\n\n\nmedia muestral fija: 7,3 t/haIC 95%: [6,68; 7,92]\n\nIntervalo más estrecho → mayor precisión"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
-    "href": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
-    "title": "Inferencia estadística",
-    "section": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?",
-    "text": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?\n\n\nSi aumenta \\(n\\)\n\\(S_{\\bar{x}}=s/\\sqrt n\\) disminuye, el intervalo se estrecha y la estimación gana precisión.\n\n\nSi aumenta \\(s\\)\n\\(S_{\\bar{x}}\\) aumenta, el intervalo se ensancha y la estimación pierde precisión.\n\n\n\nEl tamaño muestral aporta información; la heterogeneidad entre lotes introduce incertidumbre."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#confianza-y-precisión-un-compromiso-a-igual-n-y-variabilidad",
@@ -1971,7 +1964,7 @@
     "href": "clases/05_estimacion_parametros/index.html#planifiquemos-una-muestra",
     "title": "Inferencia estadística",
     "section": "Planifiquemos una muestra",
-    "text": "Planifiquemos una muestra\n\nCONFIANZA95%ERROR MÁXIMO\\(E=0{,}30\\) t/haVARIABILIDAD ESPERADA\\(\\sigma\\approx1{,}5\\) t/haestudio piloto o información previa\n\n\n\\(z_{0{,}025}=1{,}96\\)→\\(n=\\left(\\dfrac{1{,}96\\times1{,}5}{0{,}30}\\right)^2=(9{,}8)^2=96{,}04\\)→\\(n=97\\) lotes\n\n\nNecesitaríamos al menos 97 lotes para estimar el rendimiento promedio con un 95% de confianza y un error de estimación máximo de aproximadamente 0,30 t/ha, bajo la variabilidad supuesta.\n\n\nSiempre redondeamos hacia arriba. El cálculo depende de que la estimación previa de \\(\\sigma\\) sea razonable."
+    "text": "Planifiquemos una muestra\n\nSupongamos que queremos realizar un nuevo muestreo para estimar el rendimiento medio de la población, con un 95% de confianza y un error de estimación de \\(\\pm0{,}3\\) t/ha. A partir de información previa, disponemos de una estimación de la desviación estándar de aproximadamente 1,5 t/ha.\n\n\nCONFIANZA95%ERROR DE ESTIMACIÓN DESEADO\\(\\pm0{,}3\\) t/haDESVIACIÓN ESTÁNDAR ESPERADA\\(\\sigma\\approx1{,}5\\) t/haestimación basada en información previa\n\n\n\\(z_{0{,}025}=1{,}96\\)→\\(n=\\left(\\dfrac{1{,}96\\times1{,}5}{0{,}30}\\right)^2=(9{,}8)^2=96{,}04\\)→\\(n=97\\) lotes\n\n\nNecesitaríamos al menos 97 lotes para estimar el rendimiento promedio con un 95% de confianza y un error de estimación máximo de aproximadamente 0,30 t/ha, bajo la variabilidad supuesta.\n\n\nSiempre redondeamos hacia arriba. El cálculo depende de que la estimación previa de \\(\\sigma\\) sea razonable."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
@@ -2009,11 +2002,11 @@
     "text": "Otra pregunta, otro parámetro\n\n¿Qué proporción de las semillas de un lote grande de maíz destinado a la siembra es viable?\n\n\n\nPOBLACIÓNtodas las semillas del lote\n\n\nUNIDADcada semilla\n\n\nVARIABLEviabilidad: sí / no\n\n\nPARÁMETRO\\(\\pi\\)proporción verdadera y desconocida"
   },
   {
-    "objectID": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
-    "href": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
+    "objectID": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra-de-n146-semillas",
+    "href": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra-de-n146-semillas",
     "title": "Inferencia estadística",
-    "section": "Tomamos una muestra",
-    "text": "Tomamos una muestra\n\n 123viables\n 23no viables\n\n\\[n=146,\\qquad x=123,\\qquad p=\\frac{x}{n}=\\frac{123}{146}=0{,}8425\\approx84{,}25\\%\\]"
+    "section": "Tomamos una muestra de \\(n=146\\) semillas",
+    "text": "Tomamos una muestra de \\(n=146\\) semillas\n\n 123viables\n 23no viables\n\n\n123 semillas resultaron viables.\n\n\\[p=\\frac{123}{146}=0{,}8425\\approx84{,}25\\%\\]"
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual-de-pi",
@@ -2076,7 +2069,7 @@
     "href": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
     "title": "Inferencia estadística",
     "section": "Lo importante de hoy",
-    "text": "Lo importante de hoy\n\n\nUn estadístico muestral permite estimar un parámetro poblacional.\nEl error estándar expresa la precisión de la estimación.\nUn intervalo de confianza comunica estimación + incertidumbre.\nNingún procedimiento estadístico permite generalizar más allá de la población que el diseño y el muestreo permiten representar."
+    "text": "Lo importante de hoy\n\n\nUn estadístico muestral permite estimar un parámetro poblacional.\nEl error estándar expresa la precisión de la estimación puntual.\nUn intervalo de confianza comunica estimación + incertidumbre + precisión.\nNingún procedimiento estadístico permite generalizar más allá de la población que el diseño y el muestreo permiten representar."
   },
   {
     "objectID": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
