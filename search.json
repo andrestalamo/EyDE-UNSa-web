@@ -1,334 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Estadística y Diseño Experimental",
-    "section": "",
-    "text": "Ingeniería Agronómica Facultad de Ciencias Naturales Universidad Nacional de Salta\n\nMateriales docentes de la asignatura Estadística y Diseño Experimental.\n\n\n\n\nPresentaciones y recursos de las clases teóricas de la asignatura.\nIr a Clases →"
-  },
-  {
-    "objectID": "index.html#materiales-de-clase",
-    "href": "index.html#materiales-de-clase",
-    "title": "Estadística y Diseño Experimental",
-    "section": "",
-    "text": "Presentaciones y recursos de las clases teóricas de la asignatura.\nIr a Clases →"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
-    "href": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
-    "title": "Inferencia estadística",
-    "section": "La pregunta define la población",
-    "text": "La pregunta define la población\n\n¿Cuál fue el rendimiento promedio de los lotes sembrados con la variedad A por los productores de una cooperativa del Valle de Lerma durante la campaña 2025/26?\n\n\nLa pregunta define la población de referencia.\n\n\nSi cambian las unidadesel lugaro el períodopuede cambiar la población sobre la que queremos inferir."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
-    "href": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
-    "title": "Inferencia estadística",
-    "section": "¿Cuál es la población?",
-    "text": "¿Cuál es la población?\n\n \n POBLACIÓNTodos los lotes que cumplen las condiciones de la pregunta\\(N=5000\\)Las unidades existen y, en principio, podrían identificarse.\n\n\nEn este caso tenemos una población real."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
-    "href": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
-    "title": "Inferencia estadística",
-    "section": "¿Y si midiéramos todos?",
-    "text": "¿Y si midiéramos todos?\n\nCENSO\nMedir los 5.000 lotes\nConoceríamos la media poblacional \\(\\mu\\) y la desviación estándar poblacional \\(\\sigma\\).\n\n\nSi conocemos toda la población, no necesitamos inferir esos parámetros."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
-    "href": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
-    "title": "Inferencia estadística",
-    "section": "Pero generalmente no medimos todos",
-    "text": "Pero generalmente no medimos todos\n\n POBLACIÓN\\(N=5000\\)lotes\n \\(\\longrightarrow\\)muestreo aleatorio\n MUESTRA\\(n=25\\)lotes observados\n\n\n¿Qué podemos aprender sobre toda la población observando sólo esos 25 lotes?"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#población-y-muestra",
-    "href": "clases/05_estimacion_parametros/index.html#población-y-muestra",
-    "title": "Inferencia estadística",
-    "section": "Población y muestra",
-    "text": "Población y muestra\n\n POBLACIÓNtodas las unidadesparámetros\\(\\mu,\\ \\sigma,\\ \\pi\\)generalmente desconocidos\n MUESTRAalgunas unidades observadasestadísticos\\(\\bar{x},\\ s,\\ p\\)calculados con los datos\n\n\npoblación ↔︎ muestraparámetros ↔︎ estadísticos\\(\\mu\\leftrightarrow\\bar{x}\\)\\(\\sigma\\leftrightarrow s\\)\\(\\pi\\leftrightarrow p\\)\n\n\nLos estadísticos se usan para aprender sobre los parámetros."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
-    "href": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
-    "title": "Inferencia estadística",
-    "section": "Parámetro y estadístico no son lo mismo",
-    "text": "Parámetro y estadístico no son lo mismo\n\ndescribe la población\\(\\mu=?\\)\\(\\ne\\)se calcula en la muestra\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\n\n\n¿Entonces \\(\\mu=7{,}3\\text{ t/ha}\\)?\n\n\nNo necesariamente. Usamos lo observado en la muestra para aprender sobre la población."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual",
-    "href": "clases/05_estimacion_parametros/index.html#estimación-puntual",
-    "title": "Inferencia estadística",
-    "section": "Estimación puntual",
-    "text": "Estimación puntual\n\nUsamos un estadístico calculado en la muestra para estimar un parámetro desconocido.\n\n\n\\(\\bar{x}\\) estima a \\(\\mu\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)el valor calculado en esta muestra es la estimación puntual de \\(\\mu\\)\n\n\nNuestra estimación puntual del rendimiento medio poblacional es 7,3 t/ha."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
-    "href": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
-    "title": "Inferencia estadística",
-    "section": "Otros parámetros, otros estimadores",
-    "text": "Otros parámetros, otros estimadores\n\n PARÁMETROESTADÍSTICO QUE LO ESTIMA\n \\(\\mu\\)\\(\\bar{x}\\)\n \\(\\sigma\\)\\(s\\)\n \\(\\sigma^2\\)\\(s^2\\)\n \\(\\pi\\)\\(p\\)\n \\(\\Delta\\mu=\\mu_1-\\mu_2\\)\\(\\bar{x}_1-\\bar{x}_2\\)\n \\(\\Delta\\pi=\\pi_1-\\pi_2\\)\\(p_1-p_2\\)\n\n\nEl estimador es la regla; la estimación es el valor obtenido al aplicarla a una muestra."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
-    "href": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
-    "title": "Inferencia estadística",
-    "section": "¿Podemos confiar en 7,3?",
-    "text": "¿Podemos confiar en 7,3?\n\n\\(7{,}3\\text{ t/ha}\\)\n\n\nSi tomáramos otra muestra de 25 lotes, ¿obtendríamos exactamente 7,3?\n\n\nNo. Esto es justamente lo que vimos en Distribuciones Muestrales."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#de-la-clase-04-a-la-inferencia",
-    "href": "clases/05_estimacion_parametros/index.html#de-la-clase-04-a-la-inferencia",
-    "title": "Inferencia estadística",
-    "section": "De la Clase 04 a la inferencia",
-    "text": "De la Clase 04 a la inferencia\n\n EN LA CLASE 04\\(\\mu\\) y \\(\\sigma\\) conocidos→muchas muestras→muchos valores de \\(\\bar{x}\\)→distribución muestral de \\(\\bar{x}\\)\n AHORA · CLASE 05observamos una \\(\\bar{x}\\)→\\(\\mu\\) es desconocido→queremos inferir sobre \\(\\mu\\)\n\n\nUsamos la distribución del estadístico para razonar en la dirección inversa."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra-un-número-solo-se-queda-corto",
-    "href": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra-un-número-solo-se-queda-corto",
-    "title": "Inferencia estadística",
-    "section": "En nuestra muestra, un número solo se queda corto",
-    "text": "En nuestra muestra, un número solo se queda corto\n\n\\(n=25\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\n\n\nEN CLASE 04\\(\\sigma_{\\bar{x}}=\\dfrac{\\sigma}{\\sqrt n}\\)conocíamos \\(\\sigma\\)→EN ESTA MUESTRA\\(S_{\\bar{x}}=\\dfrac{s}{\\sqrt n}=0{,}30\\text{ t/ha}\\)estimamos el error estándar con \\(s\\)\n\n\nOtra muestra habría dado otra \\(\\bar{x}\\). ¿Cómo comunicamos esa incertidumbre sin quedarnos sólo con 7,3?\n\n\nIntervalo de confianza"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
-    "href": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
-    "title": "Inferencia estadística",
-    "section": "De un punto a un intervalo",
-    "text": "De un punto a un intervalo\n\n ESTIMACIÓN PUNTUALun único valormás específica; por sí sola no expresa la incertidumbre del muestreo\n \\(\\longrightarrow\\)\n ESTIMACIÓN POR INTERVALOun rango plausiblemenos específica; incorpora incertidumbre mediante confianza y amplitud\n\n\nEn lugar de informar solamente un valor, construimos un rango de valores plausibles para el parámetro."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
-    "href": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
-    "title": "Inferencia estadística",
-    "section": "¿Cómo construimos ese intervalo?",
-    "text": "¿Cómo construimos ese intervalo?\n\n\nEN CLASE 04 · PROBLEMA DIRECTOSi \\(\\mu\\) era conocido, preguntábamos dónde podía caer \\(\\bar{x}\\)\\[\\mu-1{,}96\\,\\sigma_{\\bar{x}}&lt;\\bar{x}&lt;\\mu+1{,}96\\,\\sigma_{\\bar{x}}\\]\n\n⇅\n\nAHORA · PROBLEMA INVERSOObservamos \\(\\bar{x}\\) y, suponiendo que estima a \\(\\mu\\), construimos un intervalo de valores a su alrededor\\[\\bar{x}-1{,}96\\,\\sigma_{\\bar{x}}&lt;\\mu&lt;\\bar{x}+1{,}96\\,\\sigma_{\\bar{x}}\\]\n\n\n\nEl intervalo de confianza nace de la distribución muestral; no es una fórmula aislada."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#si-barx-es-aproximadamente-normal-por-qué-usamos-t",
-    "href": "clases/05_estimacion_parametros/index.html#si-barx-es-aproximadamente-normal-por-qué-usamos-t",
-    "title": "Inferencia estadística",
-    "section": "Si \\(\\bar{x}\\) es aproximadamente Normal, ¿por qué usamos t?",
-    "text": "Si \\(\\bar{x}\\) es aproximadamente Normal, ¿por qué usamos t?\n\nEn la Clase 04 estandarizamos con z porque conocíamos \\(\\sigma\\). En inferencia, \\(\\sigma\\) suele ser desconocida: al reemplazarla por \\(s\\) incorporamos incertidumbre adicional y usamos t de Student.\n\n\n\nSI \\(\\sigma\\) FUERA CONOCIDA\nUsamos \\(\\sigma_{\\bar{x}}=\\sigma/\\sqrt n\\) y el estadístico estandarizado z, que se compara con la Normal estándar.\n\n\nSI \\(\\sigma\\) ES DESCONOCIDA\nUsamos \\(S_{\\bar{x}}=s/\\sqrt n\\) y el estadístico estandarizado t.\n\n\n\nEFECTO COMÚN DE LOS GRADOS DE LIBERTADCon pocos grados de libertad, t tiene colas más pesadas.→Al aumentar \\(n\\), aumentan los grados de libertad y t se aproxima progresivamente a Normal.\n\n\nEn la práctica, como \\(\\sigma\\) casi nunca es conocida, usamos t para inferir sobre una media. Con muestras grandes, t se aproxima a Normal. t corresponde al estadístico estandarizado, no a \\(\\bar{x}\\)."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#de-la-escala-t-al-intervalo-de-confianza",
-    "href": "clases/05_estimacion_parametros/index.html#de-la-escala-t-al-intervalo-de-confianza",
-    "title": "Inferencia estadística",
-    "section": "De la escala t al intervalo de confianza",
-    "text": "De la escala t al intervalo de confianza\n\n ESCALA t ESTANDARIZADA · CENTRADA EN 0α/21−αα/2−t*0+t*\\(-t_{\\alpha/2,n-1}&lt;\\dfrac{\\bar{x}-\\mu}{S_{\\bar{x}}}&lt;t_{\\alpha/2,n-1}\\)\n ↓ DESESTANDARIZAMOS\n ESCALA ORIGINAL · RENDIMIENTO (t/ha)LIx̄LS\\(\\bar{x}-t_{\\alpha/2,n-1}S_{\\bar{x}}&lt;\\mu&lt;\\bar{x}+t_{\\alpha/2,n-1}S_{\\bar{x}}\\)\n\n\nPara \\(1-\\alpha=0{,}95\\) y \\(n-1=24\\): \\(t_{0{,}025;24}\\approx2{,}064\\) · \\(IC_{95\\%}=7{,}3\\pm2{,}064\\times0{,}30\\)"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#el-resultado",
-    "href": "clases/05_estimacion_parametros/index.html#el-resultado",
-    "title": "Inferencia estadística",
-    "section": "El resultado",
-    "text": "El resultado\n\nMARGEN DE ERROR (O ERROR DE ESTIMACIÓN)\\(7{,}3\\pm0{,}62\\)\\(IC_{95\\%}\\approx[6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n6,687,37,92\n\n\\(P[LI(\\text{muestra})&lt;\\mu&lt;LS(\\text{muestra})]=1-\\alpha\\)Antes de tomar la muestra, \\(LI\\) y \\(LS\\) son aleatorios. \\(1-\\alpha\\) es el nivel de confianza del procedimiento."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
-    "href": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
-    "title": "Inferencia estadística",
-    "section": "Una interpretación tentadora",
-    "text": "Una interpretación tentadora\n\n“Hay un 95% de probabilidad de que \\(\\mu\\) esté entre 6,68 y 7,92.”\n\n\n¿Correcto?\n\n\nNo, en la interpretación frecuentista clásica."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
-    "href": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
-    "title": "Inferencia estadística",
-    "section": "Volvamos a muchas muestras",
-    "text": "Volvamos a muchas muestras\n\n Generar 30 muestraspoblación: \\(\\mu=7{,}25\\), \\(\\sigma=1{,}5\\)cada muestra: \\(n=25\\)\n \n — cobertura en esta tanda— cobertura acumulada contiene \\(\\mu\\)  no contiene \\(\\mu\\)\n\n\nCada clic repite el procedimiento completo. La línea vertical marca el verdadero valor de \\(\\mu\\)."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
-    "href": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
-    "title": "Inferencia estadística",
-    "section": "¿Qué significa entonces el 95%?",
-    "text": "¿Qué significa entonces el 95%?\n\nSi repitiéramos muchas veces el muestreo y construyéramos el intervalo de la misma manera, aproximadamente el 95% de esos intervalos contendría al verdadero parámetro.\n\n\nLa confianza pertenece al procedimiento de construcción: \\(\\mu\\) es fijo; antes del muestreo, \\(LI\\) y \\(LS\\) dependen de la muestra y son aleatorios; una vez calculado el intervalo a partir de la muestra, sus límites quedan fijos."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
-    "href": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
-    "title": "Inferencia estadística",
-    "section": "¿Qué podemos decir con nuestra muestra?",
-    "text": "¿Qué podemos decir con nuestra muestra?\n\nCon un 95% de confianza, estimamos que el rendimiento promedio de todos los lotes de la cooperativa sembrados con la variedad A en el Valle de Lerma durante la campaña 2025/26 se encuentra entre 6,68 y 7,92 t/ha; la estimación puntual es 7,3 t/ha.\n\n\nLa estimación y su incertidumbre se informan juntas."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#precisión-intervalo-ancho-vs.-estrecho",
-    "href": "clases/05_estimacion_parametros/index.html#precisión-intervalo-ancho-vs.-estrecho",
-    "title": "Inferencia estadística",
-    "section": "Precisión: intervalo ancho vs. estrecho",
-    "text": "Precisión: intervalo ancho vs. estrecho\n\n intervalo ancho\n intervalo estrecho\n\n\n¿Cuál es más preciso?\n\n\nMás estrecho → más preciso.Precisión no significa automáticamente que el intervalo sea más correcto."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#actividad-ic-del-99",
-    "href": "clases/05_estimacion_parametros/index.html#actividad-ic-del-99",
-    "title": "Inferencia estadística",
-    "section": "Actividad: IC del 99%",
-    "text": "Actividad: IC del 99%\n\n\\(n=25\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\\(S_{\\bar{x}}=0{,}30\\text{ t/ha}\\)\n\n\nCalculemos un IC del 99% para \\(\\mu\\). ¿Qué creen que va a pasar con la precisión?\n\n\n\\(gl=24\\)\\(t_{0{,}005;24}\\approx2{,}797\\)\\(E=2{,}797\\times0{,}30\\approx0{,}839\\text{ t/ha}\\)\\(IC_{99\\%}:\\ 7{,}3\\pm0{,}839\\approx[6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nIC95%6,68\\(\\bar{x}=7{,}30\\text{ t/ha}\\)7,92\\([6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n\nIC99%6,46\\(\\bar{x}=7{,}30\\text{ t/ha}\\)8,14\\([6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nMAYOR CONFIANZA→MAYOR VALOR CRÍTICO→INTERVALO MÁS ANCHO→MENOR PRECISIÓN"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
-    "href": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
-    "title": "Inferencia estadística",
-    "section": "¿De qué depende la amplitud?",
-    "text": "¿De qué depende la amplitud?\n\nMargen de error (o error de estimación)\n\\[E=t_{\\alpha/2,n-1}S_{\\bar{x}},\\qquad S_{\\bar{x}}=\\frac{s}{\\sqrt{n}}\\]\n\n\n\nMÁS VARIABILIDAD · \\(\\uparrow s\\)\n\\(\\uparrow S_{\\bar{x}}\\) → mayor error de estimación → IC más ancho\nmenor precisión\n\n\nMAYOR TAMAÑO MUESTRAL · \\(\\uparrow n\\)\n\\(\\downarrow S_{\\bar{x}}\\) → menor error de estimación → IC más estrecho\nmayor precisión\n\n\nMAYOR NIVEL DE CONFIANZA\nmayor valor crítico → mayor error de estimación → IC más ancho\nmenor precisión"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#exploremos-la-precisión",
-    "href": "clases/05_estimacion_parametros/index.html#exploremos-la-precisión",
-    "title": "Inferencia estadística",
-    "section": "Exploremos la precisión",
-    "text": "Exploremos la precisión\n\n\ntamaño muestral n\n\n25\n\n variabilidad s (t/ha)\n\n1,5\n\n nivel de confianza90%95%99%\n\n\n\nerror estándar \\(S_{\\bar{x}}\\)\n0,300\n\n\nvalor crítico \\(t^*\\)\n2,064\n\n\nerror de estimación\n0,619\n\n\namplitud\n1,238\n\n\nmedia muestral fija: 7,3 t/haIC 95%: [6,68; 7,92]\n\nIntervalo más estrecho → mayor precisión"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
-    "href": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
-    "title": "Inferencia estadística",
-    "section": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?",
-    "text": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?\n\n\nSi aumenta \\(n\\)\n\\(S_{\\bar{x}}=s/\\sqrt n\\) disminuye, el intervalo se estrecha y la estimación gana precisión.\n\n\nSi aumenta \\(s\\)\n\\(S_{\\bar{x}}\\) aumenta, el intervalo se ensancha y la estimación pierde precisión.\n\n\n\nEl tamaño muestral aporta información; la heterogeneidad entre lotes introduce incertidumbre."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#confianza-y-precisión-un-compromiso-a-igual-n-y-variabilidad",
-    "href": "clases/05_estimacion_parametros/index.html#confianza-y-precisión-un-compromiso-a-igual-n-y-variabilidad",
-    "title": "Inferencia estadística",
-    "section": "Confianza y precisión: un compromiso (a igual \\(n\\) y variabilidad)",
-    "text": "Confianza y precisión: un compromiso (a igual \\(n\\) y variabilidad)\n\nMAYOR CONFIANZAmayor valor crítico→intervalo más anchomenor precisión\n\n\nPara mantener más confianza necesitamos abarcar más valores posibles. No es una falla: es el costo de exigir mayor cobertura al procedimiento."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#cuántas-unidades-necesitamos",
-    "href": "clases/05_estimacion_parametros/index.html#cuántas-unidades-necesitamos",
-    "title": "Inferencia estadística",
-    "section": "¿Cuántas unidades necesitamos?",
-    "text": "¿Cuántas unidades necesitamos?\n\n\\[E=z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n}\n\\qquad\\Longrightarrow\\qquad\nn=\\left(\\frac{z_{\\alpha/2}\\sigma}{E}\\right)^2\\]\n\n\n\\(n\\)tamaño muestral necesario\\(z_{\\alpha/2}\\)valor crítico del nivel de confianza\\(\\sigma\\)variabilidad esperada\\(E\\)error de estimación máximo tolerable\n\n\nMÁS CONFIANZA → MAYOR \\(n\\)MÁS VARIABILIDAD → MAYOR \\(n\\)MENOR \\(E\\) → MAYOR \\(n\\)\n\n\nComo \\(\\sigma\\) tampoco suele conocerse al planificar, la estimamos con un estudio piloto, bibliografía o estudios anteriores. El software puede ajustar el cálculo usando t; aquí usamos z para comprender la lógica."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#planifiquemos-una-muestra",
-    "href": "clases/05_estimacion_parametros/index.html#planifiquemos-una-muestra",
-    "title": "Inferencia estadística",
-    "section": "Planifiquemos una muestra",
-    "text": "Planifiquemos una muestra\n\nCONFIANZA95%ERROR MÁXIMO\\(E=0{,}30\\) t/haVARIABILIDAD ESPERADA\\(\\sigma\\approx1{,}5\\) t/haestudio piloto o información previa\n\n\n\\(z_{0{,}025}=1{,}96\\)→\\(n=\\left(\\dfrac{1{,}96\\times1{,}5}{0{,}30}\\right)^2=(9{,}8)^2=96{,}04\\)→\\(n=97\\) lotes\n\n\nNecesitaríamos al menos 97 lotes para estimar el rendimiento promedio con un 95% de confianza y un error de estimación máximo de aproximadamente 0,30 t/ha, bajo la variabilidad supuesta.\n\n\nSiempre redondeamos hacia arriba. El cálculo depende de que la estimación previa de \\(\\sigma\\) sea razonable."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
-    "href": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
-    "title": "Inferencia estadística",
-    "section": "Hasta ahora usamos una población real",
-    "text": "Hasta ahora usamos una población real\n\n POBLACIÓN REAL O FINITA\n Todos los lotes de la cooperativa sembrados con variedad A durante 2025/26\n existenpueden identificarseen principio pueden censarse"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
-    "href": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
-    "title": "Inferencia estadística",
-    "section": "Pero pensemos otra pregunta",
-    "text": "Pero pensemos otra pregunta\n\n¿Cuál es el rendimiento promedio de la variedad A en lotes comerciales del Valle de Lerma manejados con las prácticas habituales de la zona?\n\n\n¿Dónde están todas las unidades que forman esa población?"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
-    "href": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
-    "title": "Inferencia estadística",
-    "section": "Población conceptual o virtual",
-    "text": "Población conceptual o virtual\n\nConjunto de resultados que podrían obtenerse al cultivar repetidamente esa variedad bajo las condiciones a las que queremos generalizar.\n\n\nPoblación conceptual (también llamada virtual o hipotética)\n\n\nNo siempre inferimos hacia un conjunto físico y enumerado de unidades."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
-    "href": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
-    "title": "Inferencia estadística",
-    "section": "La pregunta vuelve a ser fundamental",
-    "text": "La pregunta vuelve a ser fundamental\n\n\nPREGUNTA A\n¿Cuál fue el rendimiento de los lotes de esta cooperativa en 2025/26?\n\\(\\longrightarrow\\) población real\n\n\nPREGUNTA B\n¿Cuál es el rendimiento promedio de la variedad A en lotes comerciales del Valle de Lerma manejados con las prácticas habituales de la zona?\n\\(\\longrightarrow\\) población conceptual\n\n\n\nLa pregunta define la población a la que pretendemos generalizar."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#otra-pregunta-otro-parámetro",
-    "href": "clases/05_estimacion_parametros/index.html#otra-pregunta-otro-parámetro",
-    "title": "Inferencia estadística",
-    "section": "Otra pregunta, otro parámetro",
-    "text": "Otra pregunta, otro parámetro\n\n¿Qué proporción de las semillas de un lote grande de maíz destinado a la siembra es viable?\n\n\n\nPOBLACIÓNtodas las semillas del lote\n\n\nUNIDADcada semilla\n\n\nVARIABLEviabilidad: sí / no\n\n\nPARÁMETRO\\(\\pi\\)proporción verdadera y desconocida"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
-    "href": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
-    "title": "Inferencia estadística",
-    "section": "Tomamos una muestra",
-    "text": "Tomamos una muestra\n\n 123viables\n 23no viables\n\n\\[n=146,\\qquad x=123,\\qquad p=\\frac{x}{n}=\\frac{123}{146}=0{,}8425\\approx84{,}25\\%\\]"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual-de-pi",
-    "href": "clases/05_estimacion_parametros/index.html#estimación-puntual-de-pi",
-    "title": "Inferencia estadística",
-    "section": "Estimación puntual de \\(\\pi\\)",
-    "text": "Estimación puntual de \\(\\pi\\)\n\n\nPARÁMETRO POBLACIONAL\\(\\pi=?\\)proporción de todas las semillas del lote que son viables\n\n←\n\nESTADÍSTICO MUESTRAL\\(p=0{,}8425\\)proporción viable observada en la muestra de 146 semillas\n\n\n\nUsamos \\(p\\) para estimar \\(\\pi\\). En esta muestra, la estimación puntual es 0,8425, o aproximadamente 84,25%."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#de-la-distribución-de-p-al-intervalo",
-    "href": "clases/05_estimacion_parametros/index.html#de-la-distribución-de-p-al-intervalo",
-    "title": "Inferencia estadística",
-    "section": "De la distribución de \\(p\\) al intervalo",
-    "text": "De la distribución de \\(p\\) al intervalo\n\nRecordemos la Clase 04: bajo ciertas condiciones, \\(p\\) tiene una distribución muestral aproximadamente Normal, centrada en \\(\\pi\\).\n\n\n\nERROR ESTÁNDAR TEÓRICO\\(\\sigma_p=\\sqrt{\\dfrac{\\pi(1-\\pi)}{n}}\\)en la Clase 04 conocíamos \\(\\pi\\)\n\n→\n\nERROR ESTÁNDAR ESTIMADO\\(S_p=\\sqrt{\\dfrac{p(1-p)}{n}}\\)ahora \\(\\pi\\) es desconocida y la reemplazamos por \\(p\\)\n\n\n\nCon el error estándar estimado construimos el intervalo alrededor del \\(p\\) observado."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#intervalo-de-confianza-para-pi",
-    "href": "clases/05_estimacion_parametros/index.html#intervalo-de-confianza-para-pi",
-    "title": "Inferencia estadística",
-    "section": "Intervalo de confianza para \\(\\pi\\)",
-    "text": "Intervalo de confianza para \\(\\pi\\)\n\\[S_p=\\sqrt{\\frac{p(1-p)}{n}}=\\sqrt{\\frac{0{,}8425(1-0{,}8425)}{146}}=0{,}03015\\]\n\\[IC_{95\\%}:\\quad p\\pm z^*S_p=0{,}8425\\pm1{,}96\\times0{,}03015\\]\n\nMARGEN DE ERROR (O ERROR DE ESTIMACIÓN)\\(0{,}0591\\)\\(IC_{95\\%}\\approx[0{,}7834\\ ;\\ 0{,}9016]\\)aproximadamente 78,34% a 90,16%\n\n\n¿POR QUÉ z Y NO t?Para una media, reemplazar \\(\\sigma\\) por \\(s\\) conduce al estadístico t. Para una proporción usamos la aproximación Normal de \\(p\\): reemplazar \\(\\pi\\) por \\(p\\) en \\(S_p\\) no produce una distribución t. Por eso este IC aproximado usa z."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#podemos-usar-aquí-la-aproximación-normal",
-    "href": "clases/05_estimacion_parametros/index.html#podemos-usar-aquí-la-aproximación-normal",
-    "title": "Inferencia estadística",
-    "section": "¿Podemos usar aquí la aproximación Normal?",
-    "text": "¿Podemos usar aquí la aproximación Normal?\n\n\nSEMILLAS VIABLES\\(np=123\\)\\(123\\ge10\\)\n\n\nSEMILLAS NO VIABLES\\(n(1-p)=23\\)\\(23\\ge10\\)\n\n\n\nSí. Para este curso usamos \\(np\\ge10\\) y \\(n(1-p)\\ge10\\) como regla práctica, no como una ley exacta.\n\n\nSi alguna de estas cantidades es menor que 10, no usamos esta aproximación Normal: debemos recurrir a un método específico para proporciones. Por ejemplo, intervalos de Wilson o métodos binomiales exactos."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#cómo-lo-interpretamos",
-    "href": "clases/05_estimacion_parametros/index.html#cómo-lo-interpretamos",
-    "title": "Inferencia estadística",
-    "section": "¿Cómo lo interpretamos?",
-    "text": "¿Cómo lo interpretamos?\n\nCon un 95% de confianza, estimamos que entre aproximadamente 78,34% y 90,16% de todas las semillas del lote de maíz destinado a la siembra son viables.\n\n\nSi repitiéramos muchas veces el muestreo y construyéramos los intervalos de la misma manera, aproximadamente el 95% contendría la verdadera proporción \\(\\pi\\)."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#la-misma-lógica-distinto-parámetro",
-    "href": "clases/05_estimacion_parametros/index.html#la-misma-lógica-distinto-parámetro",
-    "title": "Inferencia estadística",
-    "section": "La misma lógica, distinto parámetro",
-    "text": "La misma lógica, distinto parámetro\n\n\nMEDIA\\(\\mu\\leftarrow\\bar{x}\\)\\(S_{\\bar{x}}=s/\\sqrt{n}\\)\\(\\bar{x}\\pm t^*S_{\\bar{x}}\\)\n\n\nPROPORCIÓN\\(\\pi\\leftarrow p\\)\\(S_p=\\sqrt{p(1-p)/n}\\)\\(p\\pm z^*S_p\\)\n\n\n\nPlanificación para una proporción\\(n=\\dfrac{z_{\\alpha/2}^{,2}p^*(1-p^*)}{E^2}\\)\\(p^*\\) proviene de información previa; sin ella usamos \\(p^*=0{,}5\\), la opción conservadora que produce el mayor \\(n\\)."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#no-sólo-podemos-estimar-mu-y-pi",
-    "href": "clases/05_estimacion_parametros/index.html#no-sólo-podemos-estimar-mu-y-pi",
-    "title": "Inferencia estadística",
-    "section": "No sólo podemos estimar \\(\\mu\\) y \\(\\pi\\)",
-    "text": "No sólo podemos estimar \\(\\mu\\) y \\(\\pi\\)\n\n\n\n\n\n\n\n\n\nParámetro\n¿Qué representa?\nEstadístico que lo estima\n\n\n\n\n\\(\\mu\\)\nMedia poblacional\n\\(\\bar{x}\\)\n\n\n\\(\\pi\\)\nProporción poblacional\n\\(p\\)\n\n\n\\(\\sigma\\)\nDesvío estándar poblacional\n\\(s\\)\n\n\n\\(\\sigma^2\\)\nVarianza poblacional\n\\(s^2\\)\n\n\n\\(\\Delta\\mu=\\mu_1-\\mu_2\\)\nDiferencia entre dos medias poblacionales\n\\(\\bar{x}_1-\\bar{x}_2\\)\n\n\n\\(\\Delta\\pi=\\pi_1-\\pi_2\\)\nDiferencia entre dos proporciones poblacionales\n\\(p_1-p_2\\)"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
-    "href": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
-    "title": "Inferencia estadística",
-    "section": "Del dato a la población",
-    "text": "Del dato a la población\n\n PREGUNTA\\(\\longrightarrow\\)POBLACIÓN\\(\\longrightarrow\\)MUESTRA\\(\\longrightarrow\\)ESTADÍSTICO\\(\\longrightarrow\\)ESTIMACIÓN\\(\\longrightarrow\\)INCERTIDUMBRE"
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
-    "href": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
-    "title": "Inferencia estadística",
-    "section": "Lo importante de hoy",
-    "text": "Lo importante de hoy\n\n\nUn estadístico muestral permite estimar un parámetro poblacional.\nEl error estándar expresa la precisión de la estimación.\nUn intervalo de confianza comunica estimación + incertidumbre.\nNingún procedimiento estadístico permite generalizar más allá de la población que el diseño y el muestreo permiten representar."
-  },
-  {
-    "objectID": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
-    "href": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
-    "title": "Inferencia estadística",
-    "section": "Puente a la próxima clase",
-    "text": "Puente a la próxima clase\n\n\nHASTA AHORA\n¿Cuánto vale aproximadamente un parámetro?\n\n\nLUEGO\n¿Los datos son compatibles con un valor determinado del parámetro o con diferencias entre poblaciones?\n\n\n\nPruebas de hipótesis"
-  },
-  {
-    "objectID": "clases/index.html",
-    "href": "clases/index.html",
-    "title": "Clases",
-    "section": "",
-    "text": "Materiales de las clases teóricas de Estadística y Diseño Experimental.\n\n Clase 01 Estadística descriptiva \n Clase 02 Probabilidad \n Clase 03 Distribuciones de probabilidad \n Clase 04 Distribuciones muestrales \n Clase 05 Inferencia estadística: estimación de parámetros"
-  },
-  {
     "objectID": "clases/02_probabilidad/index.html#la-descripción-fue-el-primer-paso",
     "href": "clases/02_probabilidad/index.html#la-descripción-fue-el-primer-paso",
     "title": "Probabilidad",
@@ -1169,6 +840,398 @@
     "text": "La próxima pregunta es sobre incertidumbre\n\n¿Cuánta incertidumbre tenemos cuando usamos una muestra para aprender sobre una población?\n\n\nEse es el puente hacia la Inferencia Estadística."
   },
   {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#de-estimar-a-poner-a-prueba",
+    "href": "clases/06_pruebas_hipotesis/index.html#de-estimar-a-poner-a-prueba",
+    "title": "Inferencia estadística",
+    "section": "De estimar a poner a prueba",
+    "text": "De estimar a poner a prueba\n\n\nESTIMACIÓN · CLASE 05\n¿Cuánto vale aproximadamente \\(\\mu\\)?\n\n\nPRUEBA · CLASE 06\n¿Son nuestros datos compatibles con un valor determinado de \\(\\mu\\)?\n\n\n\nSeguimos haciendo inferencia sobre parámetros poblacionales."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#la-pregunta-de-investigación",
+    "href": "clases/06_pruebas_hipotesis/index.html#la-pregunta-de-investigación",
+    "title": "Inferencia estadística",
+    "section": "La pregunta de investigación",
+    "text": "La pregunta de investigación\nEn este ejemplo, el rendimiento de referencia de la zona, bajo las prácticas habituales de manejo, es 7,0 t/ha. Es un valor previo al estudio; lo tratamos como fijo: \\(\\mu_0=7{,}0\\) t/ha.\n\n¿El rendimiento promedio de la nueva variedad, en lotes comerciales de esta zona agroecológica y bajo las condiciones de manejo definidas, difiere de 7,0 t/ha?\n\n\nNos interesan diferencias hacia arriba o hacia abajo con respecto al valor de referencia."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#la-pregunta-define-la-población",
+    "href": "clases/06_pruebas_hipotesis/index.html#la-pregunta-define-la-población",
+    "title": "Inferencia estadística",
+    "section": "La pregunta define la población",
+    "text": "La pregunta define la población\n\n\n\n\n\n\n\nElemento\nEn este estudio\n\n\n\n\nPoblación de referencia\nPoblación real: conjunto de lotes comerciales con la nueva variedad que cumplen las condiciones de zona, campaña y manejo del estudio\n\n\nUnidad estadística\nUn lote comercial\n\n\nVariable\nRendimiento de cada lote, en t/ha\n\n\nParámetro \\(\\mu\\)\nRendimiento medio de esa población de lotes\n\n\n\n\nLa inferencia queda restringida a esa población: no hablamos de cualquier lote, sino de los lotes de esa zona y bajo esas condiciones, definidas antes del muestreo.\n\n\nEn otros estudios, especialmente experimentales, puede ser útil una población virtual o hipotética: las posibles repeticiones del proceso bajo las mismas condiciones. Aquí trabajamos con una población real."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#dos-posibilidades",
+    "href": "clases/06_pruebas_hipotesis/index.html#dos-posibilidades",
+    "title": "Inferencia estadística",
+    "section": "Dos posibilidades",
+    "text": "Dos posibilidades\n\n\nA · COINCIDE O NO DIFIERE\nEl rendimiento promedio poblacional coincide con el valor de referencia.\n\n\nB · DIFIERE\nEl rendimiento promedio poblacional es menor o mayor que el valor de referencia."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#les-damos-nombre-hipótesis",
+    "href": "clases/06_pruebas_hipotesis/index.html#les-damos-nombre-hipótesis",
+    "title": "Inferencia estadística",
+    "section": "Les damos nombre: hipótesis",
+    "text": "Les damos nombre: hipótesis\n\n\nHIPÓTESIS NULA\n\\[H_0:\\mu=7{,}0\\text{ t/ha}\\]\n\n\nHIPÓTESIS ALTERNATIVA\n\\[H_1:\\mu\\ne7{,}0\\text{ t/ha}\\]\n\n\nSe llama nula porque habitualmente plantea ausencia de diferencia, efecto o asociación respecto del escenario de referencia. Aquí: \\(\\mu-7=0\\), la diferencia respecto de 7 es nula.\n\n\\(H_0\\) es el escenario de referencia que ponemos a prueba. No buscamos demostrarlo.\n\n\nEvaluaremos si la información de la muestra es compatible con \\(H_0\\) o aporta suficiente evidencia en su contra."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#tomamos-una-muestra",
+    "href": "clases/06_pruebas_hipotesis/index.html#tomamos-una-muestra",
+    "title": "Inferencia estadística",
+    "section": "Tomamos una muestra",
+    "text": "Tomamos una muestra\nUna muestra aleatoria de 23 lotes, con observaciones independientes.\n\n\\(n=23\\qquad\\bar{x}=7,5\\) t/ha \\(\\qquad s=1{,}5\\) t/ha. Referencia: \\(\\mu_0=7{,}0\\) t/ha.\n\\(\\bar{x}-\\mu_0=7,5-7{,}0=+0,5\\) t/ha.\n\n¿Alcanza para concluir que el promedio poblacional es diferente?"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#la-diferencia-sola-no-alcanza",
+    "href": "clases/06_pruebas_hipotesis/index.html#la-diferencia-sola-no-alcanza",
+    "title": "Inferencia estadística",
+    "section": "La diferencia sola no alcanza",
+    "text": "La diferencia sola no alcanza\nMisma media, misma referencia y mismo \\(n=23\\); cambia la variabilidad entre lotes.\n\n\nLa misma diferencia de +0,5 t/ha puede ser más o menos inusual según la variabilidad esperable entre medias muestrales. También importa \\(n\\).\n\n\nPuntos didácticos construidos con igual media y n; no son los datos observados del estudio. Menor dispersión individual implica menor error estándar a igual n."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#se-acuerdan-del-error-estándar",
+    "href": "clases/06_pruebas_hipotesis/index.html#se-acuerdan-del-error-estándar",
+    "title": "Inferencia estadística",
+    "section": "¿Se acuerdan del error estándar?",
+    "text": "¿Se acuerdan del error estándar?\nDe las clases 04 y 05: estimamos cuánto varían las medias entre muestras del mismo tamaño.\n\\[S_{\\bar{x}}=\\frac{s}{\\sqrt n}=\\frac{1{,}5}{\\sqrt{23}}\\approx 0,313\\text{ t/ha}\\]\n\n\\(s\\) describe la variación entre lotes; \\(S_{\\bar{x}}\\) estima la variación entre medias muestrales."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#cuántos-errores-estándar-nos-alejamos",
+    "href": "clases/06_pruebas_hipotesis/index.html#cuántos-errores-estándar-nos-alejamos",
+    "title": "Inferencia estadística",
+    "section": "¿Cuántos errores estándar nos alejamos?",
+    "text": "¿Cuántos errores estándar nos alejamos?\n\\[\\bar{x}-\\mu_0=7,5-7{,}0=0,5\\text{ t/ha}\\]\n\\[\\frac{0,50}{1{,}5/\\sqrt{23}}\\approx 1,599\\]\n\nEl promedio observado quedó a aproximadamente 1,60 errores estándar estimados de la referencia. ¿Es inusual?"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#supongamos-que-h_0-es-cierta",
+    "href": "clases/06_pruebas_hipotesis/index.html#supongamos-que-h_0-es-cierta",
+    "title": "Inferencia estadística",
+    "section": "Supongamos que \\(H_0\\) es cierta",
+    "text": "Supongamos que \\(H_0\\) es cierta\n\\[\\mu=7{,}0\\text{ t/ha}\\]\n\nSi tomáramos muchísimas muestras de 23 lotes, ¿qué valores de \\(\\bar{x}\\) podríamos obtener sólo por variación muestral?\n\n\nLa mayoría serían cercanos a 7,0; algunos menores y otros mayores. Casi nunca exactamente 7,0."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#una-distribución-bajo-h_0",
+    "href": "clases/06_pruebas_hipotesis/index.html#una-distribución-bajo-h_0",
+    "title": "Inferencia estadística",
+    "section": "Una distribución bajo \\(H_0\\)",
+    "text": "Una distribución bajo \\(H_0\\)\nSi \\(H_0\\) fuera cierta, ¿cómo variarían las medias de muestras de 23 lotes?\n\n\nIlustración: población Normal con \\(\\mu=7\\) y \\(\\sigma=1{,}5\\) t/ha. En el estudio real, \\(\\sigma\\) es desconocida.\n\n\\(H_0\\) fija el centro; los supuestos y la variabilidad completan el modelo de referencia."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#ubicamos-el-resultado-observado-en-la-distribución-de-h_0",
+    "href": "clases/06_pruebas_hipotesis/index.html#ubicamos-el-resultado-observado-en-la-distribución-de-h_0",
+    "title": "Inferencia estadística",
+    "section": "Ubicamos el resultado observado en la distribución de \\(H_0\\)",
+    "text": "Ubicamos el resultado observado en la distribución de \\(H_0\\)\n\n\nSi \\(\\mu\\) realmente fuera 7,0 t/ha, ¿qué tan inusual sería observar una diferencia como la encontrada (+0,5 t/ha) o todavía más extrema?"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#el-estadístico-t-mide-esa-distancia",
+    "href": "clases/06_pruebas_hipotesis/index.html#el-estadístico-t-mide-esa-distancia",
+    "title": "Inferencia estadística",
+    "section": "El estadístico t mide esa distancia",
+    "text": "El estadístico t mide esa distancia\nUn estadístico de prueba cuantifica la discrepancia entre lo observado en la muestra y lo esperado bajo \\(H_0\\).\nBajo \\(H_0\\) y los supuestos de la prueba: \\(T\\sim t_{22}\\). \\(T\\) varía entre muestras; \\(t_{\\mathrm{calc}}\\) es el valor calculado con la nuestra.\nEn este caso, estandarizamos la diferencia con su error estándar (recién lo vimos):\n\\[t_{\\mathrm{calc}}=\\frac{\\bar{x}-\\mu_0}{S_{\\bar{x}}}=\\frac{7,5-7{,}0}{1{,}5/\\sqrt{23}}\\approx 1,599\\qquad gl=22\\]\n\nLa media muestral está a 1,60 errores estándar por encima de la referencia. Conocer la distribución de \\(T\\) bajo \\(H_0\\) permitirá evaluar cuán inusual es y calcular probabilidades asociadas."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#por-qué-comparamos-con-una-t",
+    "href": "clases/06_pruebas_hipotesis/index.html#por-qué-comparamos-con-una-t",
+    "title": "Inferencia estadística",
+    "section": "¿Por qué comparamos con una t?",
+    "text": "¿Por qué comparamos con una t?\nComo \\(\\sigma\\) es desconocida, la reemplazamos por \\(s\\):\n\\[T=\\frac{\\bar{x}-\\mu}{s/\\sqrt n}\\]\nCon observaciones independientes de una población Normal, este estadístico sigue una t con \\(n-1\\) grados de libertad.\n\nLa distribución t corresponde a \\(T\\), no a \\(\\bar{x}\\). Con muchos grados de libertad, t se aproxima a Normal."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#supuestos-y-robustez-de-la-prueba-t",
+    "href": "clases/06_pruebas_hipotesis/index.html#supuestos-y-robustez-de-la-prueba-t",
+    "title": "Inferencia estadística",
+    "section": "Supuestos y robustez de la prueba t",
+    "text": "Supuestos y robustez de la prueba t\nSUPUESTOS / CONDICIONES\n\nMuestreo que represente la población definida y observaciones independientes.\nPara la distribución t exacta de una media: Normalidad poblacional.\n\nROBUSTEZ\nLa prueba puede tolerar desviaciones moderadas de Normalidad. Depende de \\(n\\), la asimetría y los valores extremos.\n\nCon sólo \\(n\\), \\(\\bar{x}\\) y \\(s\\) no verificamos estas condiciones. En este ejemplo didáctico las suponemos razonables."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#qué-resultados-consideraríamos-tan-extremos-como-el-observado",
+    "href": "clases/06_pruebas_hipotesis/index.html#qué-resultados-consideraríamos-tan-extremos-como-el-observado",
+    "title": "Inferencia estadística",
+    "section": "¿Qué resultados consideraríamos tan extremos como el observado?",
+    "text": "¿Qué resultados consideraríamos tan extremos como el observado?\n\\(H_1:\\mu\\ne7{,}0\\): interesan medias menores o mayores que 7, alejadas al menos tanto como la observada.\n\n\nEn la distribución de t, esas direcciones son las dos colas: \\(T\\le-1,599\\) o \\(T\\ge 1,599\\)."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#esa-probabilidad-se-llama-valor-p",
+    "href": "clases/06_pruebas_hipotesis/index.html#esa-probabilidad-se-llama-valor-p",
+    "title": "Inferencia estadística",
+    "section": "Esa probabilidad se llama valor-p",
+    "text": "Esa probabilidad se llama valor-p\nQueremos calcular la probabilidad, bajo \\(H_0\\), de obtener un estadístico tan extremo como el observado o más extremo.\nEsa probabilidad se llama valor-p (p-value, en inglés). En esta prueba bilateral:\n\\[\\text{valor-p}=P(|T|\\ge |t_{\\mathrm{calc}}|\\mid H_0)\\approx 0,1242\\]\n\\(T\\): variable aleatoria bajo \\(H_0\\). \\(t_{\\mathrm{calc}}\\): valor calculado con nuestra muestra.\n\nEl valor-p supone \\(H_0\\) cierta; no calcula la probabilidad de \\(H_0\\).\n\n\nLos módulos incluyen ambas direcciones. T varía entre muestras; t_calc es el número calculado con los datos de este estudio."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#leemos-el-área-bilateral",
+    "href": "clases/06_pruebas_hipotesis/index.html#leemos-el-área-bilateral",
+    "title": "Inferencia estadística",
+    "section": "Leemos el área bilateral",
+    "text": "Leemos el área bilateral\n\n\nBajo \\(H_0\\) y los supuestos, aproximadamente 12,4% de los estadísticos serían tan extremos o más extremos que el observado."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#un-umbral-de-decisión-alpha",
+    "href": "clases/06_pruebas_hipotesis/index.html#un-umbral-de-decisión-alpha",
+    "title": "Inferencia estadística",
+    "section": "Un umbral de decisión: \\(\\alpha\\)",
+    "text": "Un umbral de decisión: \\(\\alpha\\)\nEl valor-p cuantifica cuán raro sería un resultado como el observado o más extremo, suponiendo \\(H_0\\) cierta.\nPara decidir, necesitamos definir a partir de qué probabilidad lo consideraremos suficientemente raro.\nUMBRAL: \\(\\alpha\\), nivel de significación. Aquí: \\(\\alpha=0{,}05\\), establecido antes de mirar los resultados.\nCRITERIO DE DECISIÓN:\n\nRechazamos \\(H_0\\) si y sólo si valor-p \\(&lt;\\alpha\\).\nSi valor-p \\(\\ge\\alpha\\), no rechazamos \\(H_0\\).\n\n\nNuestro valor-p \\(\\approx 0,1242\\ge0{,}05\\): no rechazamos \\(H_0\\)."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#alpha-también-define-regiones-de-rechazo",
+    "href": "clases/06_pruebas_hipotesis/index.html#alpha-también-define-regiones-de-rechazo",
+    "title": "Inferencia estadística",
+    "section": "\\(\\alpha\\) también define regiones de rechazo",
+    "text": "\\(\\alpha\\) también define regiones de rechazo\nBilateral: dos regiones de rechazo (o regiones críticas); \\(\\alpha=0{,}05\\), 0,025 en cada cola.\n\nRechazamos \\(H_0\\) si \\(t_{\\mathrm{calc}}\\) cae en alguna región de rechazo: \\(t_{\\mathrm{calc}}&lt;-t^*\\) o \\(t_{\\mathrm{calc}}&gt;+t^*\\); \\(t^*_{0{,}025;22}\\approx 2,074\\).\n\n\\(t_{\\mathrm{calc}}\\approx 1,599\\) queda en la región de no rechazo. No es una región de aceptación: no rechazar \\(H_0\\) no demuestra que sea verdadera."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#qué-podemos-concluir",
+    "href": "clases/06_pruebas_hipotesis/index.html#qué-podemos-concluir",
+    "title": "Inferencia estadística",
+    "section": "¿Qué podemos concluir?",
+    "text": "¿Qué podemos concluir?\n\nCon \\(\\alpha=0{,}05\\), los datos no aportan evidencia suficiente para concluir que el rendimiento medio de la nueva variedad, en los lotes comerciales de la zona, campaña y manejo definidos, difiera de la referencia de 7,0 t/ha.\n\nLa media muestral fue 0,5 t/ha mayor que la referencia (valor-p ≈ 0,1242). Esa diferencia debe interpretarse considerando su incertidumbre.\n\nNo rechazar \\(H_0\\) no demuestra \\(H_0\\). Volveremos al IC95% para cuantificar la incertidumbre."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#no-rechazar-h_0-no-demuestra-que-h_0-sea-verdadera",
+    "href": "clases/06_pruebas_hipotesis/index.html#no-rechazar-h_0-no-demuestra-que-h_0-sea-verdadera",
+    "title": "Inferencia estadística",
+    "section": "No rechazar \\(H_0\\) no demuestra que \\(H_0\\) sea verdadera",
+    "text": "No rechazar \\(H_0\\) no demuestra que \\(H_0\\) sea verdadera\nComo en un juicio, no alcanzar evidencia suficiente para rechazar una hipótesis inicial no equivale a demostrar que sea verdadera.\n\n“Ausencia de evidencia no es evidencia de ausencia.”\nNo rechazar \\(H_0\\) no demuestra igualdad ni ausencia de diferencia poblacional."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#no-es-una-frontera-mágica",
+    "href": "clases/06_pruebas_hipotesis/index.html#no-es-una-frontera-mágica",
+    "title": "Inferencia estadística",
+    "section": "0,05 no es una frontera mágica",
+    "text": "0,05 no es una frontera mágica\n\n\n\\[\\text{valor-p}=0{,}049\\]\nJusto por debajo del umbral.\n\n\n\\[\\text{valor-p}=0{,}051\\]\nJusto por encima del umbral.\n\n\n\nLa evidencia no cambia bruscamente al cruzar 0,05: 0,049 y 0,051 representan evidencia muy similar, aunque el criterio de decisión los ubique a lados distintos del umbral.\nEn nuestro ejemplo, valor-p \\(\\approx 0,1242\\). También debemos mirar la estimación y su incertidumbre."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#volvemos-al-ic-de-la-clase-05",
+    "href": "clases/06_pruebas_hipotesis/index.html#volvemos-al-ic-de-la-clase-05",
+    "title": "Inferencia estadística",
+    "section": "Volvemos al IC de la Clase 05",
+    "text": "Volvemos al IC de la Clase 05\nPara los mismos datos y el mismo modelo t:\n\\[t^*_{0{,}025;22}=2,074\\]\n\\[IC95\\%:\\quad7,5\\pm 2,074\\times\\frac{1{,}5}{\\sqrt{23}}\\]\n\\[[6,85;\\ 8,15]\\text{ t/ha}\\]\nAquí \\(t^*_{0{,}025;22}\\) deja 0,025 de probabilidad en la cola derecha."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#el-valor-70-queda-incluido",
+    "href": "clases/06_pruebas_hipotesis/index.html#el-valor-70-queda-incluido",
+    "title": "Inferencia estadística",
+    "section": "El valor 7,0 queda incluido",
+    "text": "El valor 7,0 queda incluido\n\n\nEl intervalo incluye \\(\\mu_0=7{,}0\\). Es coherente con no rechazar \\(H_0\\)."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#ic-y-prueba-de-hipótesis-dos-caras-de-la-misma-moneda",
+    "href": "clases/06_pruebas_hipotesis/index.html#ic-y-prueba-de-hipótesis-dos-caras-de-la-misma-moneda",
+    "title": "Inferencia estadística",
+    "section": "IC y prueba de hipótesis: dos caras de la misma moneda",
+    "text": "IC y prueba de hipótesis: dos caras de la misma moneda\nCon los mismos datos, modelo y procedimiento, el IC reúne los valores de \\(\\mu_0\\) que no rechazamos en la prueba bilateral.\n\n\nSI EL IC95% NO CONTIENE \\(\\mu_0\\)\nRechazamos \\(H_0\\) al nivel 0,05.\n\n\nSI EL IC95% CONTIENE \\(\\mu_0\\)\nNo rechazamos \\(H_0\\) al nivel 0,05.\n\n\n\nEn la prueba bilateral y el IC correspondientes, el nivel de confianza es \\(1-\\alpha\\).\n\\(\\alpha=0{,}05\\quad\\longleftrightarrow\\quad1-\\alpha=0{,}95\\) (IC95%)."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#la-prueba-y-el-ic-cuentan-la-misma-historia",
+    "href": "clases/06_pruebas_hipotesis/index.html#la-prueba-y-el-ic-cuentan-la-misma-historia",
+    "title": "Inferencia estadística",
+    "section": "La prueba y el IC cuentan la misma historia",
+    "text": "La prueba y el IC cuentan la misma historia\n\n\n\\(\\mu_0\\) está dentro del IC95% \\(\\longleftrightarrow\\) \\(t_{\\mathrm{calc}}\\) está en la región de no rechazo.\nPara una prueba bilateral con \\(\\alpha=0{,}05\\), el IC95% correspondiente y la prueba cuentan la misma historia."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#es-importante-en-términos-agronómicos",
+    "href": "clases/06_pruebas_hipotesis/index.html#es-importante-en-términos-agronómicos",
+    "title": "Inferencia estadística",
+    "section": "¿Es importante en términos agronómicos?",
+    "text": "¿Es importante en términos agronómicos?\nDiferencia estimada respecto de 7,0: +0,5 t/ha.\n\\[IC95\\%\\text{ para }\\mu:\\quad[6,85;\\ 8,15]\\text{ t/ha}\\]\nEl IC incluye 7: hay valores poblacionales menores y mayores que la referencia compatibles con nuestros datos.\n\n¿Una mejora de 0,2 t/ha justificaría cambiar de variedad? ¿Y una de 1 t/ha?\n¿Qué implican los costos, la estabilidad y las condiciones de manejo?\n¿La estimación es suficientemente precisa para decidir?"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#significación-e-importancia-agronómica",
+    "href": "clases/06_pruebas_hipotesis/index.html#significación-e-importancia-agronómica",
+    "title": "Inferencia estadística",
+    "section": "Significación e importancia agronómica",
+    "text": "Significación e importancia agronómica\n\n\nESTADÍSTICAMENTE SIGNIFICATIVO\nNo significa necesariamente importante agronómicamente.\n\n\nNO SIGNIFICATIVO\nNo significa necesariamente ausencia de efecto."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#una-conclusión-que-ayude-a-decidir",
+    "href": "clases/06_pruebas_hipotesis/index.html#una-conclusión-que-ayude-a-decidir",
+    "title": "Inferencia estadística",
+    "section": "Una conclusión que ayude a decidir",
+    "text": "Una conclusión que ayude a decidir\n\n“\\(\\mu=7\\) t/ha”. ¿Podemos concluir esto?\n\n\nNO. Con \\(\\alpha=0{,}05\\), para los lotes comerciales de la zona, campaña y manejo definidos, no hay evidencia suficiente de que la media de la nueva variedad difiera de 7,0 t/ha (valor-p ≈ 0,1242).\nEstimamos un rendimiento medio de 7,5 t/ha, 0,5 t/ha por encima de la referencia, con IC95% de \\(\\mu\\): [6,85; 8,15] t/ha.\n\nEl IC incluye 7: no rechazar no demuestra igualdad. Informamos la estimación y su incertidumbre."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#la-dirección-surge-de-la-pregunta",
+    "href": "clases/06_pruebas_hipotesis/index.html#la-dirección-surge-de-la-pregunta",
+    "title": "Inferencia estadística",
+    "section": "La dirección surge de la pregunta",
+    "text": "La dirección surge de la pregunta\n\n\n\nPregunta previa al análisis\nAlternativa\nExtremos relevantes\n\n\n\n\n¿Difiere?\n\\(H_1:\\mu\\ne\\mu_0\\)\nAmbas colas\n\n\n¿Es mayor?\n\\(H_1:\\mu&gt;\\mu_0\\)\nCola derecha\n\n\n¿Es menor?\n\\(H_1:\\mu&lt;\\mu_0\\)\nCola izquierda\n\n\n\nUna alternativa unilateral requiere teoría o una expectativa científica definida antes de mirar los datos.\n\nFertilizante: esperar mayor rendimiento, con fundamento agronómico y dosis no tóxicas.\nGerminación: tratamiento diseñado para reducir el tiempo hasta germinar.\n\n\nLa dirección contraria debe ser científicamente poco plausible o no responder a la pregunta. No elegimos la dirección según la media observada ni para reducir el valor-p.\n\n\nEn las unilaterales, las nulas completas son mu &lt;= mu0 y mu &gt;= mu0, respectivamente. La distribución en el límite mu0 permite calcular el valor-p."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#y-si-la-pregunta-apunta-a-comparar-dos-poblaciones",
+    "href": "clases/06_pruebas_hipotesis/index.html#y-si-la-pregunta-apunta-a-comparar-dos-poblaciones",
+    "title": "Inferencia estadística",
+    "section": "¿Y si la pregunta apunta a comparar dos poblaciones?",
+    "text": "¿Y si la pregunta apunta a comparar dos poblaciones?\n\n¿Difieren los rendimientos promedio de las variedades A y B?\n\nLa pregunta puede ser la misma, pero la estructura de los datos determina cómo expresamos el parámetro y construimos su estimador.\n\n¿Cómo obtuvimos los datos de ambas poblaciones?"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#podemos-tener-2-diseños-adecuados-y-diferentes",
+    "href": "clases/06_pruebas_hipotesis/index.html#podemos-tener-2-diseños-adecuados-y-diferentes",
+    "title": "Inferencia estadística",
+    "section": "Podemos tener 2 diseños adecuados y diferentes",
+    "text": "Podemos tener 2 diseños adecuados y diferentes\n\n\nDISEÑO AL AZAR\nMuestras independientes.\nUnidades distintas reciben A o B. No existe correspondencia/relación uno a uno.\n\n\nDISEÑO PAREADO\nMuestras relacionadas.\nCada observación de A está vinculada a una de B por el diseño.\n\n\n\n¿Existe una correspondencia/relación real, definida por el diseño, entre una observación de A y una de B?"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#unidades-independientes",
+    "href": "clases/06_pruebas_hipotesis/index.html#unidades-independientes",
+    "title": "Inferencia estadística",
+    "section": "Unidades independientes",
+    "text": "Unidades independientes\n\nDiseño completamente aleatorizado: asignamos A o B a unidades independientes, no relacionadas. El esquema representa su ubicación, no pares."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#dos-poblaciones-muestras-independientes",
+    "href": "clases/06_pruebas_hipotesis/index.html#dos-poblaciones-muestras-independientes",
+    "title": "Inferencia estadística",
+    "section": "Dos poblaciones, muestras independientes",
+    "text": "Dos poblaciones, muestras independientes\n\n\\[\\Delta\\mu=\\mu_B-\\mu_A\\qquad\\Delta\\bar{x}=\\bar{x}_B-\\bar{x}_A\\]\n\nComparamos dos medias de muestras independientes: comparamos \\(\\Delta\\bar{x}\\) con 0 considerando su error estándar."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#prueba-t-de-student-para-comparar-dos-medias-muestras-independientes",
+    "href": "clases/06_pruebas_hipotesis/index.html#prueba-t-de-student-para-comparar-dos-medias-muestras-independientes",
+    "title": "Inferencia estadística",
+    "section": "Prueba t de Student para comparar dos medias: muestras independientes",
+    "text": "Prueba t de Student para comparar dos medias: muestras independientes\nLa versión clásica de Student supone igualdad de varianzas poblacionales:\n\\[\\sigma_A^2=\\sigma_B^2\\]\nHomogeneidad de varianzas y homocedasticidad son términos equivalentes.\n\nEste supuesto volverá a aparecer cuando estudiemos ANOVA. Si no podemos sostenerlo, podemos usar una t con corrección de Welch."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#prueba-t-con-corrección-de-welch",
+    "href": "clases/06_pruebas_hipotesis/index.html#prueba-t-con-corrección-de-welch",
+    "title": "Inferencia estadística",
+    "section": "Prueba t con corrección de Welch",
+    "text": "Prueba t con corrección de Welch\nWelch permite comparar medias sin asumir homogeneidad de varianzas.\n\\[t_{\\mathrm{calc}}=\\frac{\\Delta\\bar{x}-0}{S_{\\Delta\\bar{x}}}\\qquad S_{\\Delta\\bar{x}}=S_{\\bar{x}_B-\\bar{x}_A}=\\sqrt{\\frac{s_B^2}{n_B}+\\frac{s_A^2}{n_A}}\\]\nLos grados de libertad se ajustan con el tamaño y la variabilidad de ambas muestras; habitualmente los calcula el software.\n\nUsaremos Welch. No necesitamos comparar previamente las varianzas para elegirla."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#ejemplo-dos-muestras-independientes",
+    "href": "clases/06_pruebas_hipotesis/index.html#ejemplo-dos-muestras-independientes",
+    "title": "Inferencia estadística",
+    "section": "Ejemplo: dos muestras independientes",
+    "text": "Ejemplo: dos muestras independientes\nRendimiento en parcelas independientes de la zona y manejo del estudio, en t/ha:\n\n\n\nVariedad\n\\(n\\)\n\\(\\bar{x}\\)\n\\(s\\)\n\n\n\n\nA\n11\n7,0\n0,6\n\n\nB\n13\n7,8\n0,8\n\n\n\n\\[\\Delta\\bar{x}=\\bar{x}_B-\\bar{x}_A=0,80\\text{ t/ha}\\]\n\\[S_{\\Delta\\bar{x}}=\\sqrt{\\frac{0{,}8^2}{13}+\\frac{0{,}6^2}{11}}\\approx 0,286\\text{ t/ha}\\qquad t_{\\mathrm{calc}}=\\frac{0,80-0}{S_{\\Delta\\bar{x}}}\\approx 2,794\\]\n\n\\(gl\\approx 21,73\\): en Welch pueden no ser enteros. Los obtiene el software; no los calcularemos a mano."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#distribución-t-bajo-h_0-welch",
+    "href": "clases/06_pruebas_hipotesis/index.html#distribución-t-bajo-h_0-welch",
+    "title": "Inferencia estadística",
+    "section": "Distribución t bajo \\(H_0\\): Welch",
+    "text": "Distribución t bajo \\(H_0\\): Welch\n\\(H_0:\\Delta\\mu=0\\); \\(H_1:\\Delta\\mu\\ne0\\). Referencia t aproximada bajo \\(H_0\\), con \\(gl\\approx 21,73\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLas dos áreas reúnen resultados tan extremos o más extremos que \\(|t_{\\mathrm{calc}}|\\approx 2,794\\):\n\\(\\text{valor-p bilateral}=P(|T|\\ge |t_{\\mathrm{calc}}|\\mid H_0)\\approx 0,0106\\)."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#conclusión-dos-muestras-independientes",
+    "href": "clases/06_pruebas_hipotesis/index.html#conclusión-dos-muestras-independientes",
+    "title": "Inferencia estadística",
+    "section": "Conclusión: dos muestras independientes",
+    "text": "Conclusión: dos muestras independientes\n\n\n\n\n\n\n\n\n\n\n\nIlustración didáctica: valores construidos que reproducen \\(n\\), media y \\(s\\); no son datos de campo.\n\n\nPara las parcelas de la zona y manejo estudiados, con \\(\\alpha=0{,}05\\) hay evidencia de que los rendimientos medios difieren (valor-p ≈ 0,0106).\nEstimamos 0,80 t/ha más en B. IC95% para \\(\\Delta\\mu\\): [0,206; 1,394] t/ha.\n\n\n\nLa variedad B rindió 11,4% más que la A en la muestra. Describimos dirección y magnitud; el IC cuantifica la incertidumbre de la diferencia absoluta.\n\n\n100 × (media B − media A) / media A. Los valores ilustrativos reproducen exactamente los resúmenes; no permiten recuperar la distribución real de los datos originales. El IC no corresponde al porcentaje."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#welch-también-necesita-un-diseño-válido",
+    "href": "clases/06_pruebas_hipotesis/index.html#welch-también-necesita-un-diseño-válido",
+    "title": "Inferencia estadística",
+    "section": "Welch también necesita un diseño válido",
+    "text": "Welch también necesita un diseño válido\n\nIndependencia entre unidades y entre muestras.\nPara muestras pequeñas, distribuciones aproximadamente Normales, sin valores extremos dominantes.\nRevisar datos y diseño: Welch no corrige dependencia ni sesgos de muestreo."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#dos-parcelas-relacionadas-dentro-de-cada-sector",
+    "href": "clases/06_pruebas_hipotesis/index.html#dos-parcelas-relacionadas-dentro-de-cada-sector",
+    "title": "Inferencia estadística",
+    "section": "Dos parcelas relacionadas dentro de cada sector",
+    "text": "Dos parcelas relacionadas dentro de cada sector\nEn 11 sectores del lote, identificamos dos parcelas próximas, con suelo y manejo similares dentro del sector. Asignamos al azar A a una y B a la otra.\n\n\nDentro del sector, las parcelas comparten condiciones. Entre sectores pueden cambiar fertilidad, humedad y suelo; los sectores son independientes.\n\n\nMás adelante veremos que este principio se utiliza formalmente en los diseños en bloques. No se presupone aquí ese concepto técnico."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#dos-poblaciones-datos-relacionados",
+    "href": "clases/06_pruebas_hipotesis/index.html#dos-poblaciones-datos-relacionados",
+    "title": "Inferencia estadística",
+    "section": "Dos poblaciones, datos relacionados",
+    "text": "Dos poblaciones, datos relacionados\n\nNueva variable: diferencia dentro de cada par, \\(d_i=B_i-A_i\\).\nParámetro: \\(\\mu_d\\). Estimador: \\(\\bar{d}\\).\n\nAnalizamos una sola variable: las diferencias. Esto convierte el problema en una prueba para UNA media poblacional, como al comienzo."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#analizamos-diferencias-dentro-de-cada-par",
+    "href": "clases/06_pruebas_hipotesis/index.html#analizamos-diferencias-dentro-de-cada-par",
+    "title": "Inferencia estadística",
+    "section": "Analizamos diferencias dentro de cada par",
+    "text": "Analizamos diferencias dentro de cada par\n\\(d_i=B_i-A_i\\). Parámetro: \\(\\mu_d\\); estimador: \\(\\bar{d}\\).\n\\[H_0:\\mu_d=0\\qquad H_1:\\mu_d\\ne0\\]\n¿Qué información nos da el signo de \\(d_i\\)?\n\n\\(d_i&gt;0\\): B rindió más que A dentro de ese par.\n\\(d_i&lt;0\\): B rindió menos que A dentro de ese par.\n\n\nBajo d = B − A, μd = E(B − A) = μB − μA. La igualdad de los parámetros no hace independientes las muestras: el estimador y su error estándar se construyen a partir de las diferencias relacionadas."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#ejemplo-11-pares-de-parcelas",
+    "href": "clases/06_pruebas_hipotesis/index.html#ejemplo-11-pares-de-parcelas",
+    "title": "Inferencia estadística",
+    "section": "Ejemplo: 11 pares de parcelas",
+    "text": "Ejemplo: 11 pares de parcelas\n\\[n=11\\text{ pares}\\qquad \\bar{d}=0{,}50\\text{ t/ha}\\qquad s_d=0{,}40\\text{ t/ha}\\]\n\\[S_{\\bar{d}}=\\frac{0{,}40}{\\sqrt{11}}=0,121\\text{ t/ha}\\]\n\\[t_{\\mathrm{calc}}=\\frac{0{,}50}{S_{\\bar{d}}}=4,146\\qquad gl=10\\]\nEl tamaño muestral relevante es 11 diferencias, no 22 observaciones independientes."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#distribución-t-bajo-h_0-pareada",
+    "href": "clases/06_pruebas_hipotesis/index.html#distribución-t-bajo-h_0-pareada",
+    "title": "Inferencia estadística",
+    "section": "Distribución t bajo \\(H_0\\): pareada",
+    "text": "Distribución t bajo \\(H_0\\): pareada\n\\(H_0:\\mu_d=0\\). Distribución t con \\(gl=10\\) para las 11 diferencias.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\text{valor-p}=P(|T|\\ge|t_{\\mathrm{calc}}|\\mid H_0)\\approx 0,0020\\). Es la misma lógica de una media poblacional; lo nuevo fue construir \\(d\\) a partir de pares relacionados."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#resultado-de-la-comparación-pareada",
+    "href": "clases/06_pruebas_hipotesis/index.html#resultado-de-la-comparación-pareada",
+    "title": "Inferencia estadística",
+    "section": "Resultado de la comparación pareada",
+    "text": "Resultado de la comparación pareada\nPara las parcelas en sectores con las condiciones de suelo y manejo representadas por el estudio, con \\(\\alpha=0{,}05\\) hay evidencia de que A y B difieren en rendimiento medio (valor-p ≈ 0,0020).\nEstimamos 0,50 t/ha más en B que en A:\n\\[IC95\\%\\text{ de }\\mu_d:\\quad[0,231;\\ 0,769]\\text{ t/ha}\\]\n\nEl intervalo es positivo: el 0 no está incluido en el IC; respalda una media mayor para B y cuantifica la incertidumbre de la diferencia.\n\n\nSupuestos: sectores independientes y diferencias aproximadamente Normales, sin valores extremos dominantes. La normalidad relevante es la de las diferencias."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#por-qué-parear-puede-mejorar-la-precisión",
+    "href": "clases/06_pruebas_hipotesis/index.html#por-qué-parear-puede-mejorar-la-precisión",
+    "title": "Inferencia estadística",
+    "section": "¿Por qué parear puede mejorar la precisión?",
+    "text": "¿Por qué parear puede mejorar la precisión?\n\n\nENTRE SECTORES\nPueden cambiar el suelo, la humedad o la fertilidad.\n\n\nDENTRO DEL SECTOR\nAl calcular \\(B_i-A_i\\), parte de esa heterogeneidad común se cancela.\n\n\n\nSi las unidades del par responden de manera similar, disminuye la variabilidad de las diferencias. Puede mejorar la precisión."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#el-pareamiento-viene-del-diseño",
+    "href": "clases/06_pruebas_hipotesis/index.html#el-pareamiento-viene-del-diseño",
+    "title": "Inferencia estadística",
+    "section": "El pareamiento viene del diseño",
+    "text": "El pareamiento viene del diseño\n\nNo elegimos una prueba pareada simplemente porque parezca más precisa.\n\n\nEl pareamiento debe surgir de cómo se obtuvieron los datos y de una relación real entre las unidades. No se inventa después de observar los resultados.\n\nTener igual cantidad de observaciones de A y B no alcanza para que estén pareadas."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#misma-pregunta-distinto-diseño",
+    "href": "clases/06_pruebas_hipotesis/index.html#misma-pregunta-distinto-diseño",
+    "title": "Inferencia estadística",
+    "section": "Misma pregunta, distinto diseño",
+    "text": "Misma pregunta, distinto diseño\n¿A y B difieren en rendimiento promedio?\n\n\nUNIDADES SIN RELACIÓN\nPrueba t para dos medias independientes\nUsaremos la corrección de Welch.\n\n\nUNIDADES RELACIONADAS EN PARES\nPrueba t para datos pareados\nUna media de diferencias.\n\n\n\nLa prueba depende de la pregunta y de cómo fueron generados los datos."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#una-proporción-la-misma-lógica",
+    "href": "clases/06_pruebas_hipotesis/index.html#una-proporción-la-misma-lógica",
+    "title": "Inferencia estadística",
+    "section": "Una proporción: la misma lógica",
+    "text": "Una proporción: la misma lógica\nEn este ejemplo, con el tratamiento de referencia históricamente germina el 80% de las semillas: \\(\\pi_0=0{,}80\\) es una referencia previa.\nPregunta: ¿El nuevo tratamiento de escarificación produce una proporción diferente?\n\\[H_0:\\pi=0{,}80\\qquad H_1:\\pi\\ne0{,}80\\]\nObservamos la proporción muestral \\(p\\). Bajo \\(H_0\\), suponemos \\(\\pi=\\pi_0\\): para saber qué resultados serían esperables, calculamos la variabilidad con ese valor de referencia, no con \\(p\\).\n\\[\\sigma_{p,H_0}=\\sqrt{\\frac{\\pi_0(1-\\pi_0)}{n}}\\]\n\nSuponiendo \\(H_0\\) cierta, ¿qué tan inusual sería el resultado observado?"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#un-mapa-para-organizar-preguntas",
+    "href": "clases/06_pruebas_hipotesis/index.html#un-mapa-para-organizar-preguntas",
+    "title": "Inferencia estadística",
+    "section": "Un mapa para organizar preguntas",
+    "text": "Un mapa para organizar preguntas\n\n\n\n\n\n\n\n\nPregunta\nParámetro y referencia\nEstructura y procedimiento\n\n\n\n\nUna media\n\\(\\mu\\); \\(\\mu_0\\): valor de referencia\nt para una media\n\n\nUna proporción\n\\(\\pi\\); \\(\\pi_0\\): valor de referencia\nPrueba para una proporción\n\n\nDos medias\n\\(\\Delta\\mu=\\mu_B-\\mu_A\\); en pares: \\(\\mu_d\\)\nIndependientes: t con Welch; relacionadas: t pareada\n\n\nDos proporciones\n\\(\\Delta\\pi=\\pi_B-\\pi_A\\)\nProcedimiento según sean muestras independientes o relacionadas\n\n\n\n\nPrimero pregunta → parámetro → estructura de los datos."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#qué-puede-salir-mal-al-decidir",
+    "href": "clases/06_pruebas_hipotesis/index.html#qué-puede-salir-mal-al-decidir",
+    "title": "Inferencia estadística",
+    "section": "¿Qué puede salir mal al decidir?",
+    "text": "¿Qué puede salir mal al decidir?\n\n\nPodemos rechazar \\(H_0\\) cuando era cierta.\n\n\nPodemos no rechazar \\(H_0\\) cuando era falsa.\n\n\n\nEstas posibilidades nos llevan a los errores tipo I y II y a la potencia estadística. Será el núcleo de la próxima clase."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#procedimiento-de-una-prueba-de-hipótesis",
+    "href": "clases/06_pruebas_hipotesis/index.html#procedimiento-de-una-prueba-de-hipótesis",
+    "title": "Inferencia estadística",
+    "section": "Procedimiento de una prueba de hipótesis",
+    "text": "Procedimiento de una prueba de hipótesis\n\n\nPlantear \\(H_0\\) y \\(H_1\\) según la pregunta de investigación.\nFijar el nivel de significación \\(\\alpha\\).\nDefinir el estadístico y su distribución suponiendo \\(H_0\\) verdadera.\nEstablecer el criterio de decisión: valor-p o \\(t_{\\mathrm{calc}}\\) y los valores críticos correspondientes.\nRealizar los cálculos necesarios.\nDecidir sobre \\(H_0\\): rechazar o no rechazar.\nConcluir según la pregunta: comunicar población, dirección, magnitud e incertidumbre, cuando corresponda."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#lo-esencial-de-hoy",
+    "href": "clases/06_pruebas_hipotesis/index.html#lo-esencial-de-hoy",
+    "title": "Inferencia estadística",
+    "section": "Lo esencial de hoy",
+    "text": "Lo esencial de hoy\n\n\nUna prueba de hipótesis evalúa qué tan compatibles son los datos con una hipótesis sobre la población.\nEl estadístico de prueba mide la discrepancia entre lo hipotetizado y lo observado en nuestro estudio.\nEl valor-p cuantifica cuán inusual sería una discrepancia como la observada, o más extrema, si \\(H_0\\) fuera cierta.\nNo rechazar \\(H_0\\) no demuestra que sea verdadera.\nUna conclusión útil informa población, significación/confianza, dirección y magnitud de la diferencia y su incertidumbre.\nPara comparar dos medias, cómo se obtuvieron los datos determina si las muestras son independientes o relacionadas."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/index.html#próxima-clase",
+    "href": "clases/06_pruebas_hipotesis/index.html#próxima-clase",
+    "title": "Inferencia estadística",
+    "section": "Próxima clase",
+    "text": "Próxima clase\n\nErrores · Potencia · Tamaño de muestra\n\n\n¿Qué determina nuestra capacidad para detectar un efecto relevante?\n\nErrores tipo I y II, potencia estadística y planificación del tamaño muestral."
+  },
+  {
     "objectID": "clases/01_descriptiva/index.html#bienvenidas-y-bienvenidos",
     "href": "clases/01_descriptiva/index.html#bienvenidas-y-bienvenidos",
     "title": "Estadística descriptiva",
@@ -1692,6 +1755,405 @@
     "title": "Estadística descriptiva",
     "section": "Para llevarse de esta clase",
     "text": "Para llevarse de esta clase\n\nPrimero preguntamos.\nDespués obtenemos datos adecuados.\nAntes de analizarlos, los miramos.\nResumir implica elegir qué información conservar.\n\n\nUna decisión confiable empieza mucho antes del cálculo."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Estadística y Diseño Experimental",
+    "section": "",
+    "text": "Ingeniería Agronómica Facultad de Ciencias Naturales Universidad Nacional de Salta\n\nMateriales docentes de la asignatura Estadística y Diseño Experimental.\n\n\n\n\nPresentaciones y recursos de las clases teóricas de la asignatura.\nIr a Clases →"
+  },
+  {
+    "objectID": "index.html#materiales-de-clase",
+    "href": "index.html#materiales-de-clase",
+    "title": "Estadística y Diseño Experimental",
+    "section": "",
+    "text": "Presentaciones y recursos de las clases teóricas de la asignatura.\nIr a Clases →"
+  },
+  {
+    "objectID": "clases/index.html",
+    "href": "clases/index.html",
+    "title": "Clases",
+    "section": "",
+    "text": "Materiales de las clases teóricas de Estadística y Diseño Experimental.\n\n Clase 01 Estadística descriptiva \n Clase 02 Probabilidad \n Clase 03 Distribuciones de probabilidad \n Clase 04 Distribuciones muestrales \n Clase 05 Inferencia estadística: estimación de parámetros \n Clase 06 Pruebas de hipótesis"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
+    "href": "clases/05_estimacion_parametros/index.html#la-pregunta-define-la-población",
+    "title": "Inferencia estadística",
+    "section": "La pregunta define la población",
+    "text": "La pregunta define la población\n\n¿Cuál fue el rendimiento promedio de los lotes sembrados con la variedad A por los productores de una cooperativa del Valle de Lerma durante la campaña 2025/26?\n\n\nLa pregunta define la población de referencia.\n\n\nSi cambian las unidadesel lugaro el períodopuede cambiar la población sobre la que queremos inferir."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
+    "href": "clases/05_estimacion_parametros/index.html#cuál-es-la-población",
+    "title": "Inferencia estadística",
+    "section": "¿Cuál es la población?",
+    "text": "¿Cuál es la población?\n\n \n POBLACIÓNTodos los lotes que cumplen las condiciones de la pregunta\\(N=5000\\)Las unidades existen y, en principio, podrían identificarse.\n\n\nEn este caso tenemos una población real."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
+    "href": "clases/05_estimacion_parametros/index.html#y-si-midiéramos-todos",
+    "title": "Inferencia estadística",
+    "section": "¿Y si midiéramos todos?",
+    "text": "¿Y si midiéramos todos?\n\nCENSO\nMedir los 5.000 lotes\nConoceríamos la media poblacional \\(\\mu\\) y la desviación estándar poblacional \\(\\sigma\\).\n\n\nSi conocemos toda la población, no necesitamos inferir esos parámetros."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
+    "href": "clases/05_estimacion_parametros/index.html#pero-generalmente-no-medimos-todos",
+    "title": "Inferencia estadística",
+    "section": "Pero generalmente no medimos todos",
+    "text": "Pero generalmente no medimos todos\n\n POBLACIÓN\\(N=5000\\)lotes\n \\(\\longrightarrow\\)muestreo aleatorio\n MUESTRA\\(n=25\\)lotes observados\n\n\n¿Qué podemos aprender sobre toda la población observando sólo esos 25 lotes?"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#población-y-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#población-y-muestra",
+    "title": "Inferencia estadística",
+    "section": "Población y muestra",
+    "text": "Población y muestra\n\n POBLACIÓNtodas las unidadesparámetros\\(\\mu,\\ \\sigma,\\ \\pi\\)generalmente desconocidos\n MUESTRAalgunas unidades observadasestadísticos\\(\\bar{x},\\ s,\\ p\\)calculados con los datos\n\n\npoblación ↔︎ muestraparámetros ↔︎ estadísticos\\(\\mu\\leftrightarrow\\bar{x}\\)\\(\\sigma\\leftrightarrow s\\)\\(\\pi\\leftrightarrow p\\)\n\n\nLos estadísticos se usan para aprender sobre los parámetros."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
+    "href": "clases/05_estimacion_parametros/index.html#parámetro-y-estadístico-no-son-lo-mismo",
+    "title": "Inferencia estadística",
+    "section": "Parámetro y estadístico no son lo mismo",
+    "text": "Parámetro y estadístico no son lo mismo\n\ndescribe la población\\(\\mu=?\\)\\(\\ne\\)se calcula en la muestra\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\n\n\n¿Entonces \\(\\mu=7{,}3\\text{ t/ha}\\)?\n\n\nNo necesariamente. Usamos lo observado en la muestra para aprender sobre la población."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual",
+    "href": "clases/05_estimacion_parametros/index.html#estimación-puntual",
+    "title": "Inferencia estadística",
+    "section": "Estimación puntual",
+    "text": "Estimación puntual\n\nUsamos un estadístico calculado en la muestra para estimar un parámetro desconocido.\n\n\n\\(\\bar{x}\\) estima a \\(\\mu\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)el valor calculado en esta muestra es la estimación puntual de \\(\\mu\\)\n\n\nNuestra estimación puntual del rendimiento medio poblacional es 7,3 t/ha."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
+    "href": "clases/05_estimacion_parametros/index.html#otros-parámetros-otros-estimadores",
+    "title": "Inferencia estadística",
+    "section": "Otros parámetros, otros estimadores",
+    "text": "Otros parámetros, otros estimadores\n\n PARÁMETROESTADÍSTICO QUE LO ESTIMA\n \\(\\mu\\)\\(\\bar{x}\\)\n \\(\\sigma\\)\\(s\\)\n \\(\\sigma^2\\)\\(s^2\\)\n \\(\\pi\\)\\(p\\)\n \\(\\Delta\\mu=\\mu_1-\\mu_2\\)\\(\\bar{x}_1-\\bar{x}_2\\)\n \\(\\Delta\\pi=\\pi_1-\\pi_2\\)\\(p_1-p_2\\)\n\n\nEl estimador es la regla; la estimación es el valor obtenido al aplicarla a una muestra."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
+    "href": "clases/05_estimacion_parametros/index.html#podemos-confiar-en-73",
+    "title": "Inferencia estadística",
+    "section": "¿Podemos confiar en 7,3?",
+    "text": "¿Podemos confiar en 7,3?\n\n\\(7{,}3\\text{ t/ha}\\)\n\n\nSi tomáramos otra muestra de 25 lotes, ¿obtendríamos exactamente 7,3?\n\n\nNo. Esto es justamente lo que vimos en Distribuciones Muestrales."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-la-clase-04-a-la-inferencia",
+    "href": "clases/05_estimacion_parametros/index.html#de-la-clase-04-a-la-inferencia",
+    "title": "Inferencia estadística",
+    "section": "De la Clase 04 a la inferencia",
+    "text": "De la Clase 04 a la inferencia\n\n EN LA CLASE 04\\(\\mu\\) y \\(\\sigma\\) conocidos→muchas muestras→muchos valores de \\(\\bar{x}\\)→distribución muestral de \\(\\bar{x}\\)\n AHORA · CLASE 05observamos una \\(\\bar{x}\\)→\\(\\mu\\) es desconocido→queremos inferir sobre \\(\\mu\\)\n\n\nUsamos la distribución del estadístico para razonar en la dirección inversa."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra-un-número-solo-se-queda-corto",
+    "href": "clases/05_estimacion_parametros/index.html#en-nuestra-muestra-un-número-solo-se-queda-corto",
+    "title": "Inferencia estadística",
+    "section": "En nuestra muestra, un número solo se queda corto",
+    "text": "En nuestra muestra, un número solo se queda corto\n\n\\(n=25\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\n\n\nEN CLASE 04\\(\\sigma_{\\bar{x}}=\\dfrac{\\sigma}{\\sqrt n}\\)conocíamos \\(\\sigma\\)→EN ESTA MUESTRA\\(S_{\\bar{x}}=\\dfrac{s}{\\sqrt n}=0{,}30\\text{ t/ha}\\)estimamos el error estándar con \\(s\\)\n\n\nOtra muestra habría dado otra \\(\\bar{x}\\). ¿Cómo comunicamos esa incertidumbre sin quedarnos sólo con 7,3?\n\n\nIntervalo de confianza"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
+    "href": "clases/05_estimacion_parametros/index.html#de-un-punto-a-un-intervalo",
+    "title": "Inferencia estadística",
+    "section": "De un punto a un intervalo",
+    "text": "De un punto a un intervalo\n\n ESTIMACIÓN PUNTUALun único valormás específica; por sí sola no expresa la incertidumbre del muestreo\n \\(\\longrightarrow\\)\n ESTIMACIÓN POR INTERVALOun rango plausiblemenos específica; incorpora incertidumbre mediante confianza y amplitud\n\n\nEn lugar de informar solamente un valor, construimos un rango de valores plausibles para el parámetro."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
+    "href": "clases/05_estimacion_parametros/index.html#cómo-construimos-ese-intervalo",
+    "title": "Inferencia estadística",
+    "section": "¿Cómo construimos ese intervalo?",
+    "text": "¿Cómo construimos ese intervalo?\n\n\nEN CLASE 04 · PROBLEMA DIRECTOSi \\(\\mu\\) era conocido, preguntábamos dónde podía caer \\(\\bar{x}\\)\\[\\mu-1{,}96\\,\\sigma_{\\bar{x}}&lt;\\bar{x}&lt;\\mu+1{,}96\\,\\sigma_{\\bar{x}}\\]\n\n⇅\n\nAHORA · PROBLEMA INVERSOObservamos \\(\\bar{x}\\) y, suponiendo que estima a \\(\\mu\\), construimos un intervalo de valores a su alrededor\\[\\bar{x}-1{,}96\\,\\sigma_{\\bar{x}}&lt;\\mu&lt;\\bar{x}+1{,}96\\,\\sigma_{\\bar{x}}\\]\n\n\n\nEl intervalo de confianza nace de la distribución muestral; no es una fórmula aislada."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#si-barx-es-aproximadamente-normal-por-qué-usamos-t",
+    "href": "clases/05_estimacion_parametros/index.html#si-barx-es-aproximadamente-normal-por-qué-usamos-t",
+    "title": "Inferencia estadística",
+    "section": "Si \\(\\bar{x}\\) es aproximadamente Normal, ¿por qué usamos t?",
+    "text": "Si \\(\\bar{x}\\) es aproximadamente Normal, ¿por qué usamos t?\n\nEn la Clase 04 estandarizamos con z porque conocíamos \\(\\sigma\\). En inferencia, \\(\\sigma\\) suele ser desconocida: al reemplazarla por \\(s\\) incorporamos incertidumbre adicional y usamos t de Student.\n\n\n\nSI \\(\\sigma\\) FUERA CONOCIDA\nUsamos \\(\\sigma_{\\bar{x}}=\\sigma/\\sqrt n\\) y el estadístico estandarizado z, que se compara con la Normal estándar.\n\n\nSI \\(\\sigma\\) ES DESCONOCIDA\nUsamos \\(S_{\\bar{x}}=s/\\sqrt n\\) y el estadístico estandarizado t.\n\n\n\nEFECTO COMÚN DE LOS GRADOS DE LIBERTADCon pocos grados de libertad, t tiene colas más pesadas.→Al aumentar \\(n\\), aumentan los grados de libertad y t se aproxima progresivamente a Normal.\n\n\nEn la práctica, como \\(\\sigma\\) casi nunca es conocida, usamos t para inferir sobre una media. Con muestras grandes, t se aproxima a Normal. t corresponde al estadístico estandarizado, no a \\(\\bar{x}\\)."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-la-escala-t-al-intervalo-de-confianza",
+    "href": "clases/05_estimacion_parametros/index.html#de-la-escala-t-al-intervalo-de-confianza",
+    "title": "Inferencia estadística",
+    "section": "De la escala t al intervalo de confianza",
+    "text": "De la escala t al intervalo de confianza\n\n ESCALA t ESTANDARIZADA · CENTRADA EN 0α/21−αα/2−t*0+t*\\(-t_{\\alpha/2,n-1}&lt;\\dfrac{\\bar{x}-\\mu}{S_{\\bar{x}}}&lt;t_{\\alpha/2,n-1}\\)\n ↓ DESESTANDARIZAMOS\n ESCALA ORIGINAL · RENDIMIENTO (t/ha)LIx̄LS\\(\\bar{x}-t_{\\alpha/2,n-1}S_{\\bar{x}}&lt;\\mu&lt;\\bar{x}+t_{\\alpha/2,n-1}S_{\\bar{x}}\\)\n\n\nPara \\(1-\\alpha=0{,}95\\) y \\(n-1=24\\): \\(t_{0{,}025;24}\\approx2{,}064\\) · \\(IC_{95\\%}=7{,}3\\pm2{,}064\\times0{,}30\\)"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#el-resultado",
+    "href": "clases/05_estimacion_parametros/index.html#el-resultado",
+    "title": "Inferencia estadística",
+    "section": "El resultado",
+    "text": "El resultado\n\nMARGEN DE ERROR (O ERROR DE ESTIMACIÓN)\\(7{,}3\\pm0{,}62\\)\\(IC_{95\\%}\\approx[6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n6,687,37,92\n\n\\(P[LI(\\text{muestra})&lt;\\mu&lt;LS(\\text{muestra})]=1-\\alpha\\)Antes de tomar la muestra, \\(LI\\) y \\(LS\\) son aleatorios. \\(1-\\alpha\\) es el nivel de confianza del procedimiento."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
+    "href": "clases/05_estimacion_parametros/index.html#una-interpretación-tentadora",
+    "title": "Inferencia estadística",
+    "section": "Una interpretación tentadora",
+    "text": "Una interpretación tentadora\n\n“Hay un 95% de probabilidad de que \\(\\mu\\) esté entre 6,68 y 7,92.”\n\n\n¿Correcto?\n\n\nNo, en la interpretación frecuentista clásica."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
+    "href": "clases/05_estimacion_parametros/index.html#volvamos-a-muchas-muestras",
+    "title": "Inferencia estadística",
+    "section": "Volvamos a muchas muestras",
+    "text": "Volvamos a muchas muestras\n\n Generar 30 muestraspoblación: \\(\\mu=7{,}25\\), \\(\\sigma=1{,}5\\)cada muestra: \\(n=25\\)\n \n — cobertura en esta tanda— cobertura acumulada contiene \\(\\mu\\)  no contiene \\(\\mu\\)\n\n\nCada clic repite el procedimiento completo. La línea vertical marca el verdadero valor de \\(\\mu\\)."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
+    "href": "clases/05_estimacion_parametros/index.html#qué-significa-entonces-el-95",
+    "title": "Inferencia estadística",
+    "section": "¿Qué significa entonces el 95%?",
+    "text": "¿Qué significa entonces el 95%?\n\nSi repitiéramos muchas veces el muestreo y construyéramos el intervalo de la misma manera, aproximadamente el 95% de esos intervalos contendría al verdadero parámetro.\n\n\nLa confianza pertenece al procedimiento de construcción: \\(\\mu\\) es fijo; antes del muestreo, \\(LI\\) y \\(LS\\) dependen de la muestra y son aleatorios; una vez calculado el intervalo a partir de la muestra, sus límites quedan fijos."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#qué-podemos-decir-con-nuestra-muestra",
+    "title": "Inferencia estadística",
+    "section": "¿Qué podemos decir con nuestra muestra?",
+    "text": "¿Qué podemos decir con nuestra muestra?\n\nCon un 95% de confianza, estimamos que el rendimiento promedio de todos los lotes de la cooperativa sembrados con la variedad A en el Valle de Lerma durante la campaña 2025/26 se encuentra entre 6,68 y 7,92 t/ha; la estimación puntual es 7,3 t/ha.\n\n\nLa estimación y su incertidumbre se informan juntas."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#precisión-intervalo-ancho-vs.-estrecho",
+    "href": "clases/05_estimacion_parametros/index.html#precisión-intervalo-ancho-vs.-estrecho",
+    "title": "Inferencia estadística",
+    "section": "Precisión: intervalo ancho vs. estrecho",
+    "text": "Precisión: intervalo ancho vs. estrecho\n\n intervalo ancho\n intervalo estrecho\n\n\n¿Cuál es más preciso?\n\n\nMás estrecho → más preciso.Precisión no significa automáticamente que el intervalo sea más correcto."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#actividad-ic-del-99",
+    "href": "clases/05_estimacion_parametros/index.html#actividad-ic-del-99",
+    "title": "Inferencia estadística",
+    "section": "Actividad: IC del 99%",
+    "text": "Actividad: IC del 99%\n\n\\(n=25\\)\\(\\bar{x}=7{,}3\\text{ t/ha}\\)\\(s=1{,}5\\text{ t/ha}\\)\\(S_{\\bar{x}}=0{,}30\\text{ t/ha}\\)\n\n\nCalculemos un IC del 99% para \\(\\mu\\). ¿Qué creen que va a pasar con la precisión?\n\n\n\\(gl=24\\)\\(t_{0{,}005;24}\\approx2{,}797\\)\\(E=2{,}797\\times0{,}30\\approx0{,}839\\text{ t/ha}\\)\\(IC_{99\\%}:\\ 7{,}3\\pm0{,}839\\approx[6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nIC95%6,68\\(\\bar{x}=7{,}30\\text{ t/ha}\\)7,92\\([6{,}68\\ ;\\ 7{,}92]\\text{ t/ha}\\)\n\n\nIC99%6,46\\(\\bar{x}=7{,}30\\text{ t/ha}\\)8,14\\([6{,}46\\ ;\\ 8{,}14]\\text{ t/ha}\\)\n\n\n\nMAYOR CONFIANZA→MAYOR VALOR CRÍTICO→INTERVALO MÁS ANCHO→MENOR PRECISIÓN"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
+    "href": "clases/05_estimacion_parametros/index.html#de-qué-depende-la-amplitud",
+    "title": "Inferencia estadística",
+    "section": "¿De qué depende la amplitud?",
+    "text": "¿De qué depende la amplitud?\n\nMargen de error (o error de estimación)\n\\[E=t_{\\alpha/2,n-1}S_{\\bar{x}},\\qquad S_{\\bar{x}}=\\frac{s}{\\sqrt{n}}\\]\n\n\n\nMÁS VARIABILIDAD · \\(\\uparrow s\\)\n\\(\\uparrow S_{\\bar{x}}\\) → mayor error de estimación → IC más ancho\nmenor precisión\n\n\nMAYOR TAMAÑO MUESTRAL · \\(\\uparrow n\\)\n\\(\\downarrow S_{\\bar{x}}\\) → menor error de estimación → IC más estrecho\nmayor precisión\n\n\nMAYOR NIVEL DE CONFIANZA\nmayor valor crítico → mayor error de estimación → IC más ancho\nmenor precisión"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#exploremos-la-precisión",
+    "href": "clases/05_estimacion_parametros/index.html#exploremos-la-precisión",
+    "title": "Inferencia estadística",
+    "section": "Exploremos la precisión",
+    "text": "Exploremos la precisión\n\n\ntamaño muestral n\n\n25\n\n variabilidad s (t/ha)\n\n1,5\n\n nivel de confianza90%95%99%\n\n\n\nerror estándar \\(S_{\\bar{x}}\\)\n0,300\n\n\nvalor crítico \\(t^*\\)\n2,064\n\n\nerror de estimación\n0,619\n\n\namplitud\n1,238\n\n\nmedia muestral fija: 7,3 t/haIC 95%: [6,68; 7,92]\n\nIntervalo más estrecho → mayor precisión"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
+    "href": "clases/05_estimacion_parametros/index.html#qué-hacen-n-y-s-con-la-precisión",
+    "title": "Inferencia estadística",
+    "section": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?",
+    "text": "¿Qué hacen \\(n\\) y \\(s\\) con la precisión?\n\n\nSi aumenta \\(n\\)\n\\(S_{\\bar{x}}=s/\\sqrt n\\) disminuye, el intervalo se estrecha y la estimación gana precisión.\n\n\nSi aumenta \\(s\\)\n\\(S_{\\bar{x}}\\) aumenta, el intervalo se ensancha y la estimación pierde precisión.\n\n\n\nEl tamaño muestral aporta información; la heterogeneidad entre lotes introduce incertidumbre."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#confianza-y-precisión-un-compromiso-a-igual-n-y-variabilidad",
+    "href": "clases/05_estimacion_parametros/index.html#confianza-y-precisión-un-compromiso-a-igual-n-y-variabilidad",
+    "title": "Inferencia estadística",
+    "section": "Confianza y precisión: un compromiso (a igual \\(n\\) y variabilidad)",
+    "text": "Confianza y precisión: un compromiso (a igual \\(n\\) y variabilidad)\n\nMAYOR CONFIANZAmayor valor crítico→intervalo más anchomenor precisión\n\n\nPara mantener más confianza necesitamos abarcar más valores posibles. No es una falla: es el costo de exigir mayor cobertura al procedimiento."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#cuántas-unidades-necesitamos",
+    "href": "clases/05_estimacion_parametros/index.html#cuántas-unidades-necesitamos",
+    "title": "Inferencia estadística",
+    "section": "¿Cuántas unidades necesitamos?",
+    "text": "¿Cuántas unidades necesitamos?\n\n\\[E=z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n}\n\\qquad\\Longrightarrow\\qquad\nn=\\left(\\frac{z_{\\alpha/2}\\sigma}{E}\\right)^2\\]\n\n\n\\(n\\)tamaño muestral necesario\\(z_{\\alpha/2}\\)valor crítico del nivel de confianza\\(\\sigma\\)variabilidad esperada\\(E\\)error de estimación máximo tolerable\n\n\nMÁS CONFIANZA → MAYOR \\(n\\)MÁS VARIABILIDAD → MAYOR \\(n\\)MENOR \\(E\\) → MAYOR \\(n\\)\n\n\nComo \\(\\sigma\\) tampoco suele conocerse al planificar, la estimamos con un estudio piloto, bibliografía o estudios anteriores. El software puede ajustar el cálculo usando t; aquí usamos z para comprender la lógica."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#planifiquemos-una-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#planifiquemos-una-muestra",
+    "title": "Inferencia estadística",
+    "section": "Planifiquemos una muestra",
+    "text": "Planifiquemos una muestra\n\nCONFIANZA95%ERROR MÁXIMO\\(E=0{,}30\\) t/haVARIABILIDAD ESPERADA\\(\\sigma\\approx1{,}5\\) t/haestudio piloto o información previa\n\n\n\\(z_{0{,}025}=1{,}96\\)→\\(n=\\left(\\dfrac{1{,}96\\times1{,}5}{0{,}30}\\right)^2=(9{,}8)^2=96{,}04\\)→\\(n=97\\) lotes\n\n\nNecesitaríamos al menos 97 lotes para estimar el rendimiento promedio con un 95% de confianza y un error de estimación máximo de aproximadamente 0,30 t/ha, bajo la variabilidad supuesta.\n\n\nSiempre redondeamos hacia arriba. El cálculo depende de que la estimación previa de \\(\\sigma\\) sea razonable."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
+    "href": "clases/05_estimacion_parametros/index.html#hasta-ahora-usamos-una-población-real",
+    "title": "Inferencia estadística",
+    "section": "Hasta ahora usamos una población real",
+    "text": "Hasta ahora usamos una población real\n\n POBLACIÓN REAL O FINITA\n Todos los lotes de la cooperativa sembrados con variedad A durante 2025/26\n existenpueden identificarseen principio pueden censarse"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
+    "href": "clases/05_estimacion_parametros/index.html#pero-pensemos-otra-pregunta",
+    "title": "Inferencia estadística",
+    "section": "Pero pensemos otra pregunta",
+    "text": "Pero pensemos otra pregunta\n\n¿Cuál es el rendimiento promedio de la variedad A en lotes comerciales del Valle de Lerma manejados con las prácticas habituales de la zona?\n\n\n¿Dónde están todas las unidades que forman esa población?"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
+    "href": "clases/05_estimacion_parametros/index.html#población-conceptual-o-virtual",
+    "title": "Inferencia estadística",
+    "section": "Población conceptual o virtual",
+    "text": "Población conceptual o virtual\n\nConjunto de resultados que podrían obtenerse al cultivar repetidamente esa variedad bajo las condiciones a las que queremos generalizar.\n\n\nPoblación conceptual (también llamada virtual o hipotética)\n\n\nNo siempre inferimos hacia un conjunto físico y enumerado de unidades."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
+    "href": "clases/05_estimacion_parametros/index.html#la-pregunta-vuelve-a-ser-fundamental",
+    "title": "Inferencia estadística",
+    "section": "La pregunta vuelve a ser fundamental",
+    "text": "La pregunta vuelve a ser fundamental\n\n\nPREGUNTA A\n¿Cuál fue el rendimiento de los lotes de esta cooperativa en 2025/26?\n\\(\\longrightarrow\\) población real\n\n\nPREGUNTA B\n¿Cuál es el rendimiento promedio de la variedad A en lotes comerciales del Valle de Lerma manejados con las prácticas habituales de la zona?\n\\(\\longrightarrow\\) población conceptual\n\n\n\nLa pregunta define la población a la que pretendemos generalizar."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#otra-pregunta-otro-parámetro",
+    "href": "clases/05_estimacion_parametros/index.html#otra-pregunta-otro-parámetro",
+    "title": "Inferencia estadística",
+    "section": "Otra pregunta, otro parámetro",
+    "text": "Otra pregunta, otro parámetro\n\n¿Qué proporción de las semillas de un lote grande de maíz destinado a la siembra es viable?\n\n\n\nPOBLACIÓNtodas las semillas del lote\n\n\nUNIDADcada semilla\n\n\nVARIABLEviabilidad: sí / no\n\n\nPARÁMETRO\\(\\pi\\)proporción verdadera y desconocida"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
+    "href": "clases/05_estimacion_parametros/index.html#tomamos-una-muestra",
+    "title": "Inferencia estadística",
+    "section": "Tomamos una muestra",
+    "text": "Tomamos una muestra\n\n 123viables\n 23no viables\n\n\\[n=146,\\qquad x=123,\\qquad p=\\frac{x}{n}=\\frac{123}{146}=0{,}8425\\approx84{,}25\\%\\]"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#estimación-puntual-de-pi",
+    "href": "clases/05_estimacion_parametros/index.html#estimación-puntual-de-pi",
+    "title": "Inferencia estadística",
+    "section": "Estimación puntual de \\(\\pi\\)",
+    "text": "Estimación puntual de \\(\\pi\\)\n\n\nPARÁMETRO POBLACIONAL\\(\\pi=?\\)proporción de todas las semillas del lote que son viables\n\n←\n\nESTADÍSTICO MUESTRAL\\(p=0{,}8425\\)proporción viable observada en la muestra de 146 semillas\n\n\n\nUsamos \\(p\\) para estimar \\(\\pi\\). En esta muestra, la estimación puntual es 0,8425, o aproximadamente 84,25%."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#de-la-distribución-de-p-al-intervalo",
+    "href": "clases/05_estimacion_parametros/index.html#de-la-distribución-de-p-al-intervalo",
+    "title": "Inferencia estadística",
+    "section": "De la distribución de \\(p\\) al intervalo",
+    "text": "De la distribución de \\(p\\) al intervalo\n\nRecordemos la Clase 04: bajo ciertas condiciones, \\(p\\) tiene una distribución muestral aproximadamente Normal, centrada en \\(\\pi\\).\n\n\n\nERROR ESTÁNDAR TEÓRICO\\(\\sigma_p=\\sqrt{\\dfrac{\\pi(1-\\pi)}{n}}\\)en la Clase 04 conocíamos \\(\\pi\\)\n\n→\n\nERROR ESTÁNDAR ESTIMADO\\(S_p=\\sqrt{\\dfrac{p(1-p)}{n}}\\)ahora \\(\\pi\\) es desconocida y la reemplazamos por \\(p\\)\n\n\n\nCon el error estándar estimado construimos el intervalo alrededor del \\(p\\) observado."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#intervalo-de-confianza-para-pi",
+    "href": "clases/05_estimacion_parametros/index.html#intervalo-de-confianza-para-pi",
+    "title": "Inferencia estadística",
+    "section": "Intervalo de confianza para \\(\\pi\\)",
+    "text": "Intervalo de confianza para \\(\\pi\\)\n\\[S_p=\\sqrt{\\frac{p(1-p)}{n}}=\\sqrt{\\frac{0{,}8425(1-0{,}8425)}{146}}=0{,}03015\\]\n\\[IC_{95\\%}:\\quad p\\pm z^*S_p=0{,}8425\\pm1{,}96\\times0{,}03015\\]\n\nMARGEN DE ERROR (O ERROR DE ESTIMACIÓN)\\(0{,}0591\\)\\(IC_{95\\%}\\approx[0{,}7834\\ ;\\ 0{,}9016]\\)aproximadamente 78,34% a 90,16%\n\n\n¿POR QUÉ z Y NO t?Para una media, reemplazar \\(\\sigma\\) por \\(s\\) conduce al estadístico t. Para una proporción usamos la aproximación Normal de \\(p\\): reemplazar \\(\\pi\\) por \\(p\\) en \\(S_p\\) no produce una distribución t. Por eso este IC aproximado usa z."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#podemos-usar-aquí-la-aproximación-normal",
+    "href": "clases/05_estimacion_parametros/index.html#podemos-usar-aquí-la-aproximación-normal",
+    "title": "Inferencia estadística",
+    "section": "¿Podemos usar aquí la aproximación Normal?",
+    "text": "¿Podemos usar aquí la aproximación Normal?\n\n\nSEMILLAS VIABLES\\(np=123\\)\\(123\\ge10\\)\n\n\nSEMILLAS NO VIABLES\\(n(1-p)=23\\)\\(23\\ge10\\)\n\n\n\nSí. Para este curso usamos \\(np\\ge10\\) y \\(n(1-p)\\ge10\\) como regla práctica, no como una ley exacta.\n\n\nSi alguna de estas cantidades es menor que 10, no usamos esta aproximación Normal: debemos recurrir a un método específico para proporciones. Por ejemplo, intervalos de Wilson o métodos binomiales exactos."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#cómo-lo-interpretamos",
+    "href": "clases/05_estimacion_parametros/index.html#cómo-lo-interpretamos",
+    "title": "Inferencia estadística",
+    "section": "¿Cómo lo interpretamos?",
+    "text": "¿Cómo lo interpretamos?\n\nCon un 95% de confianza, estimamos que entre aproximadamente 78,34% y 90,16% de todas las semillas del lote de maíz destinado a la siembra son viables.\n\n\nSi repitiéramos muchas veces el muestreo y construyéramos los intervalos de la misma manera, aproximadamente el 95% contendría la verdadera proporción \\(\\pi\\)."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#la-misma-lógica-distinto-parámetro",
+    "href": "clases/05_estimacion_parametros/index.html#la-misma-lógica-distinto-parámetro",
+    "title": "Inferencia estadística",
+    "section": "La misma lógica, distinto parámetro",
+    "text": "La misma lógica, distinto parámetro\n\n\nMEDIA\\(\\mu\\leftarrow\\bar{x}\\)\\(S_{\\bar{x}}=s/\\sqrt{n}\\)\\(\\bar{x}\\pm t^*S_{\\bar{x}}\\)\n\n\nPROPORCIÓN\\(\\pi\\leftarrow p\\)\\(S_p=\\sqrt{p(1-p)/n}\\)\\(p\\pm z^*S_p\\)\n\n\n\nPlanificación para una proporción\\(n=\\dfrac{z_{\\alpha/2}^{,2}p^*(1-p^*)}{E^2}\\)\\(p^*\\) proviene de información previa; sin ella usamos \\(p^*=0{,}5\\), la opción conservadora que produce el mayor \\(n\\)."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#no-sólo-podemos-estimar-mu-y-pi",
+    "href": "clases/05_estimacion_parametros/index.html#no-sólo-podemos-estimar-mu-y-pi",
+    "title": "Inferencia estadística",
+    "section": "No sólo podemos estimar \\(\\mu\\) y \\(\\pi\\)",
+    "text": "No sólo podemos estimar \\(\\mu\\) y \\(\\pi\\)\n\n\n\n\n\n\n\n\n\nParámetro\n¿Qué representa?\nEstadístico que lo estima\n\n\n\n\n\\(\\mu\\)\nMedia poblacional\n\\(\\bar{x}\\)\n\n\n\\(\\pi\\)\nProporción poblacional\n\\(p\\)\n\n\n\\(\\sigma\\)\nDesvío estándar poblacional\n\\(s\\)\n\n\n\\(\\sigma^2\\)\nVarianza poblacional\n\\(s^2\\)\n\n\n\\(\\Delta\\mu=\\mu_1-\\mu_2\\)\nDiferencia entre dos medias poblacionales\n\\(\\bar{x}_1-\\bar{x}_2\\)\n\n\n\\(\\Delta\\pi=\\pi_1-\\pi_2\\)\nDiferencia entre dos proporciones poblacionales\n\\(p_1-p_2\\)"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
+    "href": "clases/05_estimacion_parametros/index.html#del-dato-a-la-población",
+    "title": "Inferencia estadística",
+    "section": "Del dato a la población",
+    "text": "Del dato a la población\n\n PREGUNTA\\(\\longrightarrow\\)POBLACIÓN\\(\\longrightarrow\\)MUESTRA\\(\\longrightarrow\\)ESTADÍSTICO\\(\\longrightarrow\\)ESTIMACIÓN\\(\\longrightarrow\\)INCERTIDUMBRE"
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
+    "href": "clases/05_estimacion_parametros/index.html#lo-importante-de-hoy",
+    "title": "Inferencia estadística",
+    "section": "Lo importante de hoy",
+    "text": "Lo importante de hoy\n\n\nUn estadístico muestral permite estimar un parámetro poblacional.\nEl error estándar expresa la precisión de la estimación.\nUn intervalo de confianza comunica estimación + incertidumbre.\nNingún procedimiento estadístico permite generalizar más allá de la población que el diseño y el muestreo permiten representar."
+  },
+  {
+    "objectID": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
+    "href": "clases/05_estimacion_parametros/index.html#puente-a-la-próxima-clase",
+    "title": "Inferencia estadística",
+    "section": "Puente a la próxima clase",
+    "text": "Puente a la próxima clase\n\n\nHASTA AHORA\n¿Cuánto vale aproximadamente un parámetro?\n\n\nLUEGO\n¿Los datos son compatibles con un valor determinado del parámetro o con diferencias entre poblaciones?\n\n\n\nPruebas de hipótesis"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "57 diapositivas incluyendo portada; 100 estados Reveal: 57 entradas + 43 apariciones. Navegación exclusivamente horizontal. La nueva diapositiva 55, “Procedimiento de una prueba de hipótesis”, precede a “Lo esencial de hoy” y “Próxima clase”. No usa fragments. Las comparaciones permanecen simultáneas; máximo una aparición por diapositiva.\nArchivos editados:\n\nClase_06_Pruebas_Hipotesis_2026.qmd\ncalculos_y_graficos.R\n../../css/clases/06-pruebas-hipotesis.css\nVALIDACION.md\n\nQuarto regeneró el HTML y los recursos locales. No se modificaron clases 01–05 ni estilos compartidos: 24 archivos protegidos comparados por SHA-256 contra la base anterior. Se preservaron los cambios ajenos preexistentes en el repositorio. No hubo commit, push ni publicación.\n\n\n\nSe usa sistemáticamente t_calc para el estadístico calculado, en fórmulas, textos, callouts, etiquetas de gráficos y este registro. En R la variable del primer ejemplo es tcalc. La búsqueda de la notación anterior y sus variantes en las fuentes y HTML generado dio cero coincidencias. Las figuras se regeneraron y se inspeccionaron sus etiquetas.\nT se reserva para la variable aleatoria con distribución t bajo H0; t* identifica el valor crítico. El valor-p bilateral se expresa como P(|T| ≥ |t_calc| | H0). No hay un procedimiento calculado con Z que requiera otra sustitución.\nLa diapo 14 sigue esta secuencia:\n\nDefinición conceptual del estadístico de prueba: discrepancia entre observado y esperado bajo H0.\nDistribución bajo H0 y los supuestos: T ~ t_22. T varía entre muestras; t_calc es el valor particular calculado.\n“En este caso, estandarizamos la diferencia con su error estándar (recién lo vimos)” y cálculo numérico de t_calc.\n\nEl callout final recuerda que la media muestral está a 1,60 errores estándar por encima de la referencia y que la distribución de T permite evaluar esa distancia y calcular probabilidades.\n\n\n\nLa figura se construye en un único sistema de coordenadas, no en paneles con márgenes independientes. La transformación entre rendimiento y coordenada horizontal es (valor − μ0) / S. Así, −t, 0 y +t se alinean exactamente con 6,351351…, 7,0 y 7,648649… en la escala de rendimiento. Líneas verticales punteadas hacen visible esta correspondencia.\n\nArriba: referencia t de 22 gl centrada en cero, críticos ±2,074, áreas 2,5% / 95% / 2,5%, regiones de rechazo/no rechazo y marcador t_calc = 1,599 sobre el eje.\nCentro: la referencia se reexpresa en unidades de rendimiento, centrada en μ0 = 7. Se conserva S observado fijo = 1,5/√23. El marcador 7,5 queda dentro de la zona central.\nAbajo: IC95% de μ centrado en 7,5, con la misma escala horizontal de rendimiento que el panel central. Se marca μ0 = 7 dentro del intervalo [6,85; 8,15]. El IC está desplazado respecto del centro de H0 porque se construye alrededor de la media observada.\n\nPrecisión conceptual: con σ desconocida, μ0 + S_observado × T es la referencia t reexpresada manteniendo S fijo, no la distribución marginal exacta de X̄. Bajo población Normal, X̄ es Normal con error estándar σ/√n. La figura y el código aclaran esta distinción; no se atribuye una t exacta a la media muestral ni se reemplaza la prueba por una Z. La equivalencia algebraica de los criterios para los datos observados sí es exacta.\nEl callout expresa: “μ0 está dentro del IC95% ↔︎ t_calc está en la región de no rechazo”, seguido de la correspondencia entre la prueba bilateral con α = 0,05 y su IC95%.\n\n\n\n\n\n\nMagnitud\nValor\n\n\n\n\nn\n23\n\n\nμ0\n7\n\n\nMedia observada\n7,5\n\n\ns\n1,5\n\n\ngl\n22\n\n\nα\n0,05\n\n\nS = s/√n\n0,3127716210856\n\n\nt*\n2,0738730679040\n\n\nt_calc\n1,5986105077709\n\n\nCrítico inferior en escala de la media: μ0 − t*S\n6,351351358626\n\n\nCrítico superior en escala de la media: μ0 + t*S\n7,648648641374\n\n\nIC95% de μ: límite inferior\n6,851351358626\n\n\nIC95% de μ: límite superior\n8,148648641374\n\n\n\nSe verifica en R: |t_calc| ≤ t* ↔︎ la media 7,5 está entre los críticos de su escala ↔︎ μ0 = 7 está dentro del IC observado. Los tres resultados son verdaderos. La comparación aplicada mantiene la convención de no rechazo cuando valor-p ≥ α y rechazo cuando valor-p &lt; α.\n\n\n\nDiapo 31: se eliminó por completo el IC de μ − 7 y su interpretación en extremos negativos/positivos. Quedan la pregunta inicial “μ = 7 t/ha. ¿Podemos concluir esto?”, la aparición con “NO”, la conclusión aplicada a la población con α y valor-p, la media estimada 7,5 t/ha (0,5 por encima de la referencia), el IC de μ [6,85; 8,15] y un callout breve. No hay IC de μ − 7 en el bloque introductorio. Los intervalos de diferencias de Welch y pareada se conservan porque esas diferencias son sus parámetros de interés.\nDiapo 32: “No elegimos la dirección según la media observada ni para reducir el valor-p”. Se conserva el fundamento científico previo de las alternativas unilaterales.\nDiapo 34: título “Podemos tener 2 diseños adecuados y diferentes”. Paneles simultáneos “DISEÑO AL AZAR / Muestras independientes” y “DISEÑO PAREADO / Muestras relacionadas”, con las explicaciones de unidades distintas y vínculo por diseño. No se sugiere que el diseño pareado excluya la aleatorización: la asignación al azar dentro de sectores permanece explicada en el ejemplo posterior.\n\n\n\nSecuencia vertical numerada, visible completa y sin fragments:\n\nPlantear H0 y H1 según la pregunta de investigación.\nFijar α.\nDefinir el estadístico y su distribución bajo H0.\nEstablecer criterio por valor-p o por t_calc y valores críticos.\nRealizar los cálculos.\nDecidir rechazar/no rechazar H0.\nConcluir según la pregunta: población, dirección, magnitud e incertidumbre cuando corresponda.\n\nSe mantuvo H1 porque la Clase 06 ya la usa consistentemente. La inspección de las fuentes QMD de clases 01–05 no encontró una convención alternativa H_a; no se introdujo una notación nueva al final ni se hicieron modificaciones históricas.\n\n\n\nLos cálculos se contrastan con t.test() sobre vectores didácticos reproducibles. Ambas colas usan vértices reflejados y los recuadros conservan dimensiones/márgenes idénticos. Cada cola es valor-p/2 (tolerancia 1e-14), con integración numérica independiente (tolerancia 1e-9).\n\n\n\nPrueba\nCada cola\nValor-p bilateral\n\n\n\n\nUna media\n0,06208580111037\n0,12417160222073\n\n\nWelch\n0,00532218567994\n0,01064437135988\n\n\nPareada\n0,00099668896270\n0,00199337792541\n\n\n\nEl gráfico descriptivo conserva la aclaración visible de datos ilustrativos. Resúmenes verificados: A (n = 11, media = 7,0, s = 0,6); B (n = 13, media = 7,8, s = 0,8). Diferencia relativa 11,4% respecto de A.\nLa planificación del tamaño muestral sigue en Clase 05: “¿Cuántas unidades necesitamos?” (línea 543; fórmula n = (zσ/E)² en 546–548) y “Planifiquemos una muestra” (línea 561; cálculo n = 96,04 → 97 lotes en 565). Clase 05 no fue modificada.\n\n\n\nRender completo de Quarto y recorrido por ArrowRight en Chrome a viewport 1280 × 720, esperando imágenes, fuentes y MathJax. Se capturaron e inspeccionaron los 100 estados, incluidas las figuras y las diapositivas 14, 28, 31, 34 y 55 a tamaño completo.\nResultado: 57 diapositivas horizontales, ninguna vertical; sin desbordes, superposiciones, texto cortado, fórmulas rotas, imágenes ausentes ni errores JavaScript. En las iteraciones se corrigieron una etiqueta superpuesta en la escala central y la numeración duplicada del procedimiento; la versión final muestra las tres escalas y los siete pasos legibles.\nR_PROFILE_USER=/dev/null RENV_CONFIG_AUTOLOADER_ENABLED=false quarto render EyDE-UNSa/clases/06_pruebas_hipotesis/Clase_06_Pruebas_Hipotesis_2026.qmd\nR_PROFILE_USER=/dev/null RENV_CONFIG_AUTOLOADER_ENABLED=false Rscript -e 'source(\"EyDE-UNSa/clases/06_pruebas_hipotesis/calculos_y_graficos.R\"); print(criticos_media); print(ic); print(validacion_colas)'\nEvidencia local: /tmp/eyde06-ultima/review.json, check.cjs, capturas de los estados y hojas de contacto. Sin commit, push ni publicación.\n\n\n\n\n\n\n\n\n\n\n\nDiapositiva\nTítulo\nEstados\n\n\n\n\n1\nInferencia estadística\n1\n\n\n2\nDe estimar a poner a prueba\n2\n\n\n3\nLa pregunta de investigación\n2\n\n\n4\nLa pregunta define la población\n2\n\n\n5\nDos posibilidades\n1\n\n\n6\nLes damos nombre: hipótesis\n2\n\n\n7\nTomamos una muestra\n2\n\n\n8\nLa diferencia sola no alcanza\n2\n\n\n9\n¿Se acuerdan del error estándar?\n2\n\n\n10\n¿Cuántos errores estándar nos alejamos?\n2\n\n\n11\nSupongamos que H0H_0 es cierta\n2\n\n\n12\nUna distribución bajo H0H_0\n1\n\n\n13\nUbicamos el resultado observado en la distribución de H0H_0\n2\n\n\n14\nEl estadístico t mide esa distancia\n2\n\n\n15\n¿Por qué comparamos con una t?\n2\n\n\n16\nSupuestos y robustez de la prueba t\n2\n\n\n17\n¿Qué resultados consideraríamos tan extremos como el observado?\n2\n\n\n18\nEsa probabilidad se llama valor-p\n2\n\n\n19\nLeemos el área bilateral\n2\n\n\n20\nUn umbral de decisión: α\n2\n\n\n21\nαtambién define regiones de rechazo\n2\n\n\n22\n¿Qué podemos concluir?\n2\n\n\n23\nNo rechazar H0H_0 no demuestra que H0H_0 sea verdadera\n2\n\n\n24\n0,05 no es una frontera mágica\n2\n\n\n25\nVolvemos al IC de la Clase 05\n1\n\n\n26\nEl valor 7,0 queda incluido\n2\n\n\n27\nIC y prueba de hipótesis: dos caras de la misma moneda\n2\n\n\n28\nLa prueba y el IC cuentan la misma historia\n1\n\n\n29\n¿Es importante en términos agronómicos?\n1\n\n\n30\nSignificación e importancia agronómica\n1\n\n\n31\nUna conclusión que ayude a decidir\n2\n\n\n32\nLa dirección surge de la pregunta\n2\n\n\n33\n¿Y si la pregunta apunta a comparar dos poblaciones?\n2\n\n\n34\nPodemos tener 2 diseños adecuados y diferentes\n2\n\n\n35\nUnidades independientes\n1\n\n\n36\nDos poblaciones, muestras independientes\n2\n\n\n37\nPrueba t de Student para comparar dos medias: muestras independientes\n2\n\n\n38\nPrueba t con corrección de Welch\n2\n\n\n39\nEjemplo: dos muestras independientes\n2\n\n\n40\nDistribución t bajo H0H_0: Welch\n2\n\n\n41\nConclusión: dos muestras independientes\n2\n\n\n42\nWelch también necesita un diseño válido\n1\n\n\n43\nDos parcelas relacionadas dentro de cada sector\n2\n\n\n44\nDos poblaciones, datos relacionados\n2\n\n\n45\nAnalizamos diferencias dentro de cada par\n2\n\n\n46\nEjemplo: 11 pares de parcelas\n1\n\n\n47\nDistribución t bajo H0H_0: pareada\n2\n\n\n48\nResultado de la comparación pareada\n2\n\n\n49\n¿Por qué parear puede mejorar la precisión?\n2\n\n\n50\nEl pareamiento viene del diseño\n1\n\n\n51\nMisma pregunta, distinto diseño\n2\n\n\n52\nUna proporción: la misma lógica\n2\n\n\n53\nUn mapa para organizar preguntas\n2\n\n\n54\n¿Qué puede salir mal al decidir?\n2\n\n\n55\nProcedimiento de una prueba de hipótesis\n1\n\n\n56\nLo esencial de hoy\n1\n\n\n57\nPróxima clase\n1"
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#alcance",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#alcance",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "57 diapositivas incluyendo portada; 100 estados Reveal: 57 entradas + 43 apariciones. Navegación exclusivamente horizontal. La nueva diapositiva 55, “Procedimiento de una prueba de hipótesis”, precede a “Lo esencial de hoy” y “Próxima clase”. No usa fragments. Las comparaciones permanecen simultáneas; máximo una aparición por diapositiva.\nArchivos editados:\n\nClase_06_Pruebas_Hipotesis_2026.qmd\ncalculos_y_graficos.R\n../../css/clases/06-pruebas-hipotesis.css\nVALIDACION.md\n\nQuarto regeneró el HTML y los recursos locales. No se modificaron clases 01–05 ni estilos compartidos: 24 archivos protegidos comparados por SHA-256 contra la base anterior. Se preservaron los cambios ajenos preexistentes en el repositorio. No hubo commit, push ni publicación."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#notación-y-secuencia-de-la-diapositiva-14",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#notación-y-secuencia-de-la-diapositiva-14",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "Se usa sistemáticamente t_calc para el estadístico calculado, en fórmulas, textos, callouts, etiquetas de gráficos y este registro. En R la variable del primer ejemplo es tcalc. La búsqueda de la notación anterior y sus variantes en las fuentes y HTML generado dio cero coincidencias. Las figuras se regeneraron y se inspeccionaron sus etiquetas.\nT se reserva para la variable aleatoria con distribución t bajo H0; t* identifica el valor crítico. El valor-p bilateral se expresa como P(|T| ≥ |t_calc| | H0). No hay un procedimiento calculado con Z que requiera otra sustitución.\nLa diapo 14 sigue esta secuencia:\n\nDefinición conceptual del estadístico de prueba: discrepancia entre observado y esperado bajo H0.\nDistribución bajo H0 y los supuestos: T ~ t_22. T varía entre muestras; t_calc es el valor particular calculado.\n“En este caso, estandarizamos la diferencia con su error estándar (recién lo vimos)” y cálculo numérico de t_calc.\n\nEl callout final recuerda que la media muestral está a 1,60 errores estándar por encima de la referencia y que la distribución de T permite evaluar esa distancia y calcular probabilidades."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#tres-escalas-alineadas-diapositiva-28",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#tres-escalas-alineadas-diapositiva-28",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "La figura se construye en un único sistema de coordenadas, no en paneles con márgenes independientes. La transformación entre rendimiento y coordenada horizontal es (valor − μ0) / S. Así, −t, 0 y +t se alinean exactamente con 6,351351…, 7,0 y 7,648649… en la escala de rendimiento. Líneas verticales punteadas hacen visible esta correspondencia.\n\nArriba: referencia t de 22 gl centrada en cero, críticos ±2,074, áreas 2,5% / 95% / 2,5%, regiones de rechazo/no rechazo y marcador t_calc = 1,599 sobre el eje.\nCentro: la referencia se reexpresa en unidades de rendimiento, centrada en μ0 = 7. Se conserva S observado fijo = 1,5/√23. El marcador 7,5 queda dentro de la zona central.\nAbajo: IC95% de μ centrado en 7,5, con la misma escala horizontal de rendimiento que el panel central. Se marca μ0 = 7 dentro del intervalo [6,85; 8,15]. El IC está desplazado respecto del centro de H0 porque se construye alrededor de la media observada.\n\nPrecisión conceptual: con σ desconocida, μ0 + S_observado × T es la referencia t reexpresada manteniendo S fijo, no la distribución marginal exacta de X̄. Bajo población Normal, X̄ es Normal con error estándar σ/√n. La figura y el código aclaran esta distinción; no se atribuye una t exacta a la media muestral ni se reemplaza la prueba por una Z. La equivalencia algebraica de los criterios para los datos observados sí es exacta.\nEl callout expresa: “μ0 está dentro del IC95% ↔︎ t_calc está en la región de no rechazo”, seguido de la correspondencia entre la prueba bilateral con α = 0,05 y su IC95%."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#valores-y-equivalencia-verificados-en-r",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#valores-y-equivalencia-verificados-en-r",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "Magnitud\nValor\n\n\n\n\nn\n23\n\n\nμ0\n7\n\n\nMedia observada\n7,5\n\n\ns\n1,5\n\n\ngl\n22\n\n\nα\n0,05\n\n\nS = s/√n\n0,3127716210856\n\n\nt*\n2,0738730679040\n\n\nt_calc\n1,5986105077709\n\n\nCrítico inferior en escala de la media: μ0 − t*S\n6,351351358626\n\n\nCrítico superior en escala de la media: μ0 + t*S\n7,648648641374\n\n\nIC95% de μ: límite inferior\n6,851351358626\n\n\nIC95% de μ: límite superior\n8,148648641374\n\n\n\nSe verifica en R: |t_calc| ≤ t* ↔︎ la media 7,5 está entre los críticos de su escala ↔︎ μ0 = 7 está dentro del IC observado. Los tres resultados son verdaderos. La comparación aplicada mantiene la convención de no rechazo cuando valor-p ≥ α y rechazo cuando valor-p &lt; α."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#simplificación-y-diseños",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#simplificación-y-diseños",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "Diapo 31: se eliminó por completo el IC de μ − 7 y su interpretación en extremos negativos/positivos. Quedan la pregunta inicial “μ = 7 t/ha. ¿Podemos concluir esto?”, la aparición con “NO”, la conclusión aplicada a la población con α y valor-p, la media estimada 7,5 t/ha (0,5 por encima de la referencia), el IC de μ [6,85; 8,15] y un callout breve. No hay IC de μ − 7 en el bloque introductorio. Los intervalos de diferencias de Welch y pareada se conservan porque esas diferencias son sus parámetros de interés.\nDiapo 32: “No elegimos la dirección según la media observada ni para reducir el valor-p”. Se conserva el fundamento científico previo de las alternativas unilaterales.\nDiapo 34: título “Podemos tener 2 diseños adecuados y diferentes”. Paneles simultáneos “DISEÑO AL AZAR / Muestras independientes” y “DISEÑO PAREADO / Muestras relacionadas”, con las explicaciones de unidades distintas y vínculo por diseño. No se sugiere que el diseño pareado excluya la aleatorización: la asignación al azar dentro de sectores permanece explicada en el ejemplo posterior."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#procedimiento-de-siete-pasos-diapositiva-55",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#procedimiento-de-siete-pasos-diapositiva-55",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "Secuencia vertical numerada, visible completa y sin fragments:\n\nPlantear H0 y H1 según la pregunta de investigación.\nFijar α.\nDefinir el estadístico y su distribución bajo H0.\nEstablecer criterio por valor-p o por t_calc y valores críticos.\nRealizar los cálculos.\nDecidir rechazar/no rechazar H0.\nConcluir según la pregunta: población, dirección, magnitud e incertidumbre cuando corresponda.\n\nSe mantuvo H1 porque la Clase 06 ya la usa consistentemente. La inspección de las fuentes QMD de clases 01–05 no encontró una convención alternativa H_a; no se introdujo una notación nueva al final ni se hicieron modificaciones históricas."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#validaciones-conservadas",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#validaciones-conservadas",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "Los cálculos se contrastan con t.test() sobre vectores didácticos reproducibles. Ambas colas usan vértices reflejados y los recuadros conservan dimensiones/márgenes idénticos. Cada cola es valor-p/2 (tolerancia 1e-14), con integración numérica independiente (tolerancia 1e-9).\n\n\n\nPrueba\nCada cola\nValor-p bilateral\n\n\n\n\nUna media\n0,06208580111037\n0,12417160222073\n\n\nWelch\n0,00532218567994\n0,01064437135988\n\n\nPareada\n0,00099668896270\n0,00199337792541\n\n\n\nEl gráfico descriptivo conserva la aclaración visible de datos ilustrativos. Resúmenes verificados: A (n = 11, media = 7,0, s = 0,6); B (n = 13, media = 7,8, s = 0,8). Diferencia relativa 11,4% respecto de A.\nLa planificación del tamaño muestral sigue en Clase 05: “¿Cuántas unidades necesitamos?” (línea 543; fórmula n = (zσ/E)² en 546–548) y “Planifiquemos una muestra” (línea 561; cálculo n = 96,04 → 97 lotes en 565). Clase 05 no fue modificada."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#revisión-visual-y-reproducción",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#revisión-visual-y-reproducción",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "Render completo de Quarto y recorrido por ArrowRight en Chrome a viewport 1280 × 720, esperando imágenes, fuentes y MathJax. Se capturaron e inspeccionaron los 100 estados, incluidas las figuras y las diapositivas 14, 28, 31, 34 y 55 a tamaño completo.\nResultado: 57 diapositivas horizontales, ninguna vertical; sin desbordes, superposiciones, texto cortado, fórmulas rotas, imágenes ausentes ni errores JavaScript. En las iteraciones se corrigieron una etiqueta superpuesta en la escala central y la numeración duplicada del procedimiento; la versión final muestra las tres escalas y los siete pasos legibles.\nR_PROFILE_USER=/dev/null RENV_CONFIG_AUTOLOADER_ENABLED=false quarto render EyDE-UNSa/clases/06_pruebas_hipotesis/Clase_06_Pruebas_Hipotesis_2026.qmd\nR_PROFILE_USER=/dev/null RENV_CONFIG_AUTOLOADER_ENABLED=false Rscript -e 'source(\"EyDE-UNSa/clases/06_pruebas_hipotesis/calculos_y_graficos.R\"); print(criticos_media); print(ic); print(validacion_colas)'\nEvidencia local: /tmp/eyde06-ultima/review.json, check.cjs, capturas de los estados y hojas de contacto. Sin commit, push ni publicación."
+  },
+  {
+    "objectID": "clases/06_pruebas_hipotesis/VALIDACION.html#estados-por-diapositiva",
+    "href": "clases/06_pruebas_hipotesis/VALIDACION.html#estados-por-diapositiva",
+    "title": "Validación de Clase 06 — última pasada puntual",
+    "section": "",
+    "text": "Diapositiva\nTítulo\nEstados\n\n\n\n\n1\nInferencia estadística\n1\n\n\n2\nDe estimar a poner a prueba\n2\n\n\n3\nLa pregunta de investigación\n2\n\n\n4\nLa pregunta define la población\n2\n\n\n5\nDos posibilidades\n1\n\n\n6\nLes damos nombre: hipótesis\n2\n\n\n7\nTomamos una muestra\n2\n\n\n8\nLa diferencia sola no alcanza\n2\n\n\n9\n¿Se acuerdan del error estándar?\n2\n\n\n10\n¿Cuántos errores estándar nos alejamos?\n2\n\n\n11\nSupongamos que H0H_0 es cierta\n2\n\n\n12\nUna distribución bajo H0H_0\n1\n\n\n13\nUbicamos el resultado observado en la distribución de H0H_0\n2\n\n\n14\nEl estadístico t mide esa distancia\n2\n\n\n15\n¿Por qué comparamos con una t?\n2\n\n\n16\nSupuestos y robustez de la prueba t\n2\n\n\n17\n¿Qué resultados consideraríamos tan extremos como el observado?\n2\n\n\n18\nEsa probabilidad se llama valor-p\n2\n\n\n19\nLeemos el área bilateral\n2\n\n\n20\nUn umbral de decisión: α\n2\n\n\n21\nαtambién define regiones de rechazo\n2\n\n\n22\n¿Qué podemos concluir?\n2\n\n\n23\nNo rechazar H0H_0 no demuestra que H0H_0 sea verdadera\n2\n\n\n24\n0,05 no es una frontera mágica\n2\n\n\n25\nVolvemos al IC de la Clase 05\n1\n\n\n26\nEl valor 7,0 queda incluido\n2\n\n\n27\nIC y prueba de hipótesis: dos caras de la misma moneda\n2\n\n\n28\nLa prueba y el IC cuentan la misma historia\n1\n\n\n29\n¿Es importante en términos agronómicos?\n1\n\n\n30\nSignificación e importancia agronómica\n1\n\n\n31\nUna conclusión que ayude a decidir\n2\n\n\n32\nLa dirección surge de la pregunta\n2\n\n\n33\n¿Y si la pregunta apunta a comparar dos poblaciones?\n2\n\n\n34\nPodemos tener 2 diseños adecuados y diferentes\n2\n\n\n35\nUnidades independientes\n1\n\n\n36\nDos poblaciones, muestras independientes\n2\n\n\n37\nPrueba t de Student para comparar dos medias: muestras independientes\n2\n\n\n38\nPrueba t con corrección de Welch\n2\n\n\n39\nEjemplo: dos muestras independientes\n2\n\n\n40\nDistribución t bajo H0H_0: Welch\n2\n\n\n41\nConclusión: dos muestras independientes\n2\n\n\n42\nWelch también necesita un diseño válido\n1\n\n\n43\nDos parcelas relacionadas dentro de cada sector\n2\n\n\n44\nDos poblaciones, datos relacionados\n2\n\n\n45\nAnalizamos diferencias dentro de cada par\n2\n\n\n46\nEjemplo: 11 pares de parcelas\n1\n\n\n47\nDistribución t bajo H0H_0: pareada\n2\n\n\n48\nResultado de la comparación pareada\n2\n\n\n49\n¿Por qué parear puede mejorar la precisión?\n2\n\n\n50\nEl pareamiento viene del diseño\n1\n\n\n51\nMisma pregunta, distinto diseño\n2\n\n\n52\nUna proporción: la misma lógica\n2\n\n\n53\nUn mapa para organizar preguntas\n2\n\n\n54\n¿Qué puede salir mal al decidir?\n2\n\n\n55\nProcedimiento de una prueba de hipótesis\n1\n\n\n56\nLo esencial de hoy\n1\n\n\n57\nPróxima clase\n1"
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#la-pregunta-define-la-población-de-referencia",

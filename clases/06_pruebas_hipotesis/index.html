@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <meta name="author" content="Andrés Tálamo">
+  <title>Estadística y Diseño Experimental — EyDE – Inferencia estadística</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-edb892b9678fa0e66886f2d9c0410fcc.css">
+  <link rel="stylesheet" href="../../css/components/inference-shared.css">
+  <link rel="stylesheet" href="../../css/clases/06-pruebas-hipotesis.css">
+  <link rel="stylesheet" href="../../css/components/home-link.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["TeX"],
+      webFont: "TeX"
+    }
+  });
+  </script>
+  <script>
+  (function useMathJaxSvg() {
+    function switchRenderer() {
+      if (!window.MathJax || !MathJax.Hub || !MathJax.Ajax) {
+        window.setTimeout(switchRenderer, 50);
+        return;
+      }
+      MathJax.Hub.Queue(
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/config.js"],
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/jax.js"],
+        ["setRenderer", MathJax.Hub, "SVG"],
+        ["Rerender", MathJax.Hub]
+      );
+    }
+    switchRenderer();
+  })();
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Inferencia estadística</h1>
+  <p class="subtitle">Pruebas de hipótesis</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Andrés Tálamo 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:andrestalamo@gmail.com">andrestalamo@gmail.com</a>
+</div>
+</div>
+</div>
+
+  <p class="date">8 de septiembre de 2026</p>
+</section>
+<section id="de-estimar-a-poner-a-prueba" class="slide level2 center">
+<h2>De estimar a poner a prueba</h2>
+<div class="h6-pair">
+<div>
+<p><strong>ESTIMACIÓN · CLASE 05</strong></p>
+<p>¿Cuánto vale aproximadamente <span class="math inline">\(\mu\)</span>?</p>
+</div>
+<div>
+<p><strong>PRUEBA · CLASE 06</strong></p>
+<p>¿Son nuestros datos compatibles con un valor determinado de <span class="math inline">\(\mu\)</span>?</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>Seguimos haciendo <strong>inferencia sobre parámetros poblacionales</strong>.</p>
+</div>
+</section>
+<section id="la-pregunta-de-investigación" class="slide level2 center">
+<h2>La pregunta de investigación</h2>
+<p>En este ejemplo, el rendimiento de referencia de la zona, bajo las prácticas habituales de manejo, es <strong>7,0 t/ha</strong>. Es un valor previo al estudio; lo tratamos como fijo: <span class="math inline">\(\mu_0=7{,}0\)</span> t/ha.</p>
+<div class="research-card">
+<p>¿El rendimiento promedio de la <strong>nueva variedad</strong>, en lotes comerciales de esta zona agroecológica y bajo las condiciones de manejo definidas, <strong>difiere de 7,0 t/ha</strong>?</p>
+</div>
+<div class="pregunta fragment">
+<p>Nos interesan diferencias <strong>hacia arriba o hacia abajo con respecto al valor de referencia</strong>.</p>
+</div>
+</section>
+<section id="la-pregunta-define-la-población" class="slide level2 center">
+<h2>La pregunta define la población</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>En este estudio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Población de referencia</td>
+<td><strong>Población real:</strong> conjunto de lotes comerciales con la nueva variedad que cumplen las condiciones de zona, campaña y manejo del estudio</td>
+</tr>
+<tr class="even">
+<td>Unidad estadística</td>
+<td>Un lote comercial</td>
+</tr>
+<tr class="odd">
+<td>Variable</td>
+<td>Rendimiento de cada lote, en t/ha</td>
+</tr>
+<tr class="even">
+<td>Parámetro <span class="math inline">\(\mu\)</span></td>
+<td>Rendimiento medio de esa población de lotes</td>
+</tr>
+</tbody>
+</table>
+<div class="idea fragment">
+<p>La inferencia queda <strong>restringida</strong> a esa población: no hablamos de cualquier lote, sino de los lotes de esa zona y bajo esas condiciones, definidas antes del muestreo.</p>
+</div>
+<aside class="notes">
+<p>En otros estudios, especialmente experimentales, puede ser útil una población virtual o hipotética: las posibles repeticiones del proceso bajo las mismas condiciones. Aquí trabajamos con una población real.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dos-posibilidades" class="slide level2 center">
+<h2>Dos posibilidades</h2>
+<div class="h6-pair">
+<div>
+<p><strong>A · COINCIDE O NO DIFIERE</strong></p>
+<p>El rendimiento promedio poblacional coincide con el valor de referencia.</p>
+</div>
+<div>
+<p><strong>B · DIFIERE</strong></p>
+<p>El rendimiento promedio poblacional es menor o mayor que el valor de referencia.</p>
+</div>
+</div>
+</section>
+<section id="les-damos-nombre-hipótesis" class="slide level2 h6-compact h6-hypotheses center">
+<h2>Les damos nombre: hipótesis</h2>
+<div class="h6-pair">
+<div>
+<p><strong>HIPÓTESIS NULA</strong></p>
+<p><span class="math display">\[H_0:\mu=7{,}0\text{ t/ha}\]</span></p>
+</div>
+<div>
+<p><strong>HIPÓTESIS ALTERNATIVA</strong></p>
+<p><span class="math display">\[H_1:\mu\ne7{,}0\text{ t/ha}\]</span></p>
+</div>
+</div>
+<p>Se llama <strong>nula</strong> porque habitualmente plantea ausencia de diferencia, efecto o asociación respecto del escenario de referencia. Aquí: <span class="math inline">\(\mu-7=0\)</span>, la diferencia respecto de 7 es nula.</p>
+<div class="idea">
+<p><span class="math inline">\(H_0\)</span> es el <strong>escenario de referencia que ponemos a prueba</strong>. No buscamos demostrarlo.</p>
+</div>
+<div class="idea fragment">
+<p>Evaluaremos si la información de la muestra es <strong>compatible con <span class="math inline">\(H_0\)</span></strong> o aporta suficiente <strong>evidencia en su contra</strong>.</p>
+</div>
+</section>
+<section id="tomamos-una-muestra" class="slide level2 h6-compact center">
+<h2>Tomamos una muestra</h2>
+<p>Una muestra aleatoria de <strong>23 lotes</strong>, con observaciones independientes.</p>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:92.0%" class="r-stretch"><p><span class="math inline">\(n=23\qquad\bar{x}=7,5\)</span> t/ha <span class="math inline">\(\qquad s=1{,}5\)</span> t/ha. Referencia: <span class="math inline">\(\mu_0=7{,}0\)</span> t/ha.</p>
+<p><span class="math inline">\(\bar{x}-\mu_0=7,5-7{,}0=+0,5\)</span> t/ha.</p>
+<div class="pregunta fragment">
+<p>¿Alcanza para concluir que el promedio poblacional es diferente?</p>
+</div>
+</section>
+<section id="la-diferencia-sola-no-alcanza" class="slide level2 h6-compact center">
+<h2>La diferencia sola no alcanza</h2>
+<p>Misma media, misma referencia y mismo <span class="math inline">\(n=23\)</span>; cambia la variabilidad entre lotes.</p>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
+<p>La misma diferencia de <strong>+0,5 t/ha</strong> puede ser más o menos inusual según la variabilidad esperable <strong>entre medias muestrales</strong>. También importa <span class="math inline">\(n\)</span>.</p>
+</div>
+<aside class="notes">
+<p>Puntos didácticos construidos con igual media y n; no son los datos observados del estudio. Menor dispersión individual implica menor error estándar a igual n.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="se-acuerdan-del-error-estándar" class="slide level2 center">
+<h2>¿Se acuerdan del error estándar?</h2>
+<p>De las clases 04 y 05: estimamos cuánto varían las medias entre muestras del mismo tamaño.</p>
+<p><span class="math display">\[S_{\bar{x}}=\frac{s}{\sqrt n}=\frac{1{,}5}{\sqrt{23}}\approx 0,313\text{ t/ha}\]</span></p>
+<div class="idea fragment">
+<p><span class="math inline">\(s\)</span> describe la variación <strong>entre lotes</strong>; <span class="math inline">\(S_{\bar{x}}\)</span> estima la variación <strong>entre medias muestrales</strong>.</p>
+</div>
+</section>
+<section id="cuántos-errores-estándar-nos-alejamos" class="slide level2 center">
+<h2>¿Cuántos errores estándar nos alejamos?</h2>
+<p><span class="math display">\[\bar{x}-\mu_0=7,5-7{,}0=0,5\text{ t/ha}\]</span></p>
+<p><span class="math display">\[\frac{0,50}{1{,}5/\sqrt{23}}\approx 1,599\]</span></p>
+<div class="pregunta fragment">
+<p>El promedio observado quedó a <strong>aproximadamente 1,60 errores estándar estimados</strong> de la referencia. ¿Es inusual?</p>
+</div>
+</section>
+<section id="supongamos-que-h_0-es-cierta" class="slide level2 center">
+<h2>Supongamos que <span class="math inline">\(H_0\)</span> es cierta</h2>
+<p><span class="math display">\[\mu=7{,}0\text{ t/ha}\]</span></p>
+<div class="pregunta">
+<p>Si tomáramos muchísimas muestras de 23 lotes, ¿qué valores de <span class="math inline">\(\bar{x}\)</span> podríamos obtener sólo por variación muestral?</p>
+</div>
+<div class="fragment">
+<p>La mayoría serían cercanos a 7,0; algunos menores y otros mayores. <strong>Casi nunca exactamente 7,0</strong>.</p>
+</div>
+</section>
+<section id="una-distribución-bajo-h_0" class="slide level2 h6-compact h6-reference-distribution center">
+<h2>Una distribución bajo <span class="math inline">\(H_0\)</span></h2>
+<p>Si <span class="math inline">\(H_0\)</span> fuera cierta, ¿cómo variarían las medias de muestras de 23 lotes?</p>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:92.0%" class="r-stretch"><div class="h6-note">
+<p>Ilustración: población Normal con <span class="math inline">\(\mu=7\)</span> y <span class="math inline">\(\sigma=1{,}5\)</span> t/ha. En el estudio real, <strong><span class="math inline">\(\sigma\)</span> es desconocida</strong>.</p>
+</div>
+<p><span class="math inline">\(H_0\)</span> fija el centro; los supuestos y la variabilidad completan el modelo de referencia.</p>
+</section>
+<section id="ubicamos-el-resultado-observado-en-la-distribución-de-h_0" class="slide level2 center">
+<h2>Ubicamos el resultado observado en la distribución de <span class="math inline">\(H_0\)</span></h2>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:92.0%" class="r-stretch"><div class="pregunta fragment">
+<p>Si <span class="math inline">\(\mu\)</span> realmente fuera 7,0 t/ha, ¿qué tan inusual sería observar una diferencia como la encontrada (<strong>+0,5 t/ha</strong>) o todavía más extrema?</p>
+</div>
+</section>
+<section id="el-estadístico-t-mide-esa-distancia" class="slide level2 h6-compact center">
+<h2>El estadístico t mide esa distancia</h2>
+<p>Un <strong>estadístico de prueba</strong> cuantifica la discrepancia entre lo observado en la muestra y lo esperado bajo <span class="math inline">\(H_0\)</span>.</p>
+<p>Bajo <span class="math inline">\(H_0\)</span> y los supuestos de la prueba: <span class="math inline">\(T\sim t_{22}\)</span>. <strong><span class="math inline">\(T\)</span> varía entre muestras</strong>; <span class="math inline">\(t_{\mathrm{calc}}\)</span> es el valor calculado con la nuestra.</p>
+<p>En este caso, estandarizamos la diferencia con su error estándar <strong>(recién lo vimos)</strong>:</p>
+<p><span class="math display">\[t_{\mathrm{calc}}=\frac{\bar{x}-\mu_0}{S_{\bar{x}}}=\frac{7,5-7{,}0}{1{,}5/\sqrt{23}}\approx 1,599\qquad gl=22\]</span></p>
+<div class="idea fragment">
+<p>La media muestral está a <strong>1,60 errores estándar por encima</strong> de la referencia. Conocer la distribución de <span class="math inline">\(T\)</span> bajo <span class="math inline">\(H_0\)</span> permitirá evaluar cuán inusual es y <strong>calcular probabilidades asociadas</strong>.</p>
+</div>
+</section>
+<section id="por-qué-comparamos-con-una-t" class="slide level2 center">
+<h2>¿Por qué comparamos con una t?</h2>
+<p>Como <span class="math inline">\(\sigma\)</span> es desconocida, la reemplazamos por <span class="math inline">\(s\)</span>:</p>
+<p><span class="math display">\[T=\frac{\bar{x}-\mu}{s/\sqrt n}\]</span></p>
+<p>Con observaciones independientes de una población Normal, <strong>este estadístico</strong> sigue una t con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
+<div class="idea fragment">
+<p>La distribución t corresponde a <strong><span class="math inline">\(T\)</span>, no a <span class="math inline">\(\bar{x}\)</span></strong>. Con muchos grados de libertad, t se aproxima a Normal.</p>
+</div>
+</section>
+<section id="supuestos-y-robustez-de-la-prueba-t" class="slide level2 h6-compact center">
+<h2>Supuestos y robustez de la prueba t</h2>
+<p><strong>SUPUESTOS / CONDICIONES</strong></p>
+<ul>
+<li>Muestreo que represente la población definida y <strong>observaciones independientes</strong>.</li>
+<li>Para la distribución t exacta de una media: <strong>Normalidad poblacional</strong>.</li>
+</ul>
+<p><strong>ROBUSTEZ</strong></p>
+<p>La prueba puede tolerar desviaciones moderadas de Normalidad. Depende de <strong><span class="math inline">\(n\)</span>, la asimetría y los valores extremos</strong>.</p>
+<div class="alerta fragment">
+<p>Con sólo <span class="math inline">\(n\)</span>, <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(s\)</span> no verificamos estas condiciones. En este ejemplo didáctico las suponemos razonables.</p>
+</div>
+</section>
+<section id="qué-resultados-consideraríamos-tan-extremos-como-el-observado" class="slide level2 h6-compact center">
+<h2>¿Qué resultados consideraríamos tan extremos como el observado?</h2>
+<p><span class="math inline">\(H_1:\mu\ne7{,}0\)</span>: interesan medias <strong>menores o mayores que 7</strong>, alejadas al menos tanto como la observada.</p>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
+<p>En la distribución de t, esas direcciones son las <strong>dos colas</strong>: <span class="math inline">\(T\le-1,599\)</span> o <span class="math inline">\(T\ge 1,599\)</span>.</p>
+</div>
+</section>
+<section id="esa-probabilidad-se-llama-valor-p" class="slide level2 h6-compact center">
+<h2>Esa probabilidad se llama valor-p</h2>
+<p>Queremos calcular la <strong>probabilidad, bajo <span class="math inline">\(H_0\)</span></strong>, de obtener un estadístico tan extremo como el observado o más extremo.</p>
+<p>Esa probabilidad se llama <strong>valor-p (p-value, en inglés)</strong>. En esta prueba bilateral:</p>
+<p><span class="math display">\[\text{valor-p}=P(|T|\ge |t_{\mathrm{calc}}|\mid H_0)\approx 0,1242\]</span></p>
+<p><span class="math inline">\(T\)</span>: variable aleatoria bajo <span class="math inline">\(H_0\)</span>. <span class="math inline">\(t_{\mathrm{calc}}\)</span>: valor calculado con nuestra muestra.</p>
+<div class="idea fragment">
+<p>El valor-p <strong>supone <span class="math inline">\(H_0\)</span> cierta</strong>; no calcula la probabilidad de <span class="math inline">\(H_0\)</span>.</p>
+</div>
+<aside class="notes">
+<p>Los módulos incluyen ambas direcciones. T varía entre muestras; t_calc es el número calculado con los datos de este estudio.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="leemos-el-área-bilateral" class="slide level2 center">
+<h2>Leemos el área bilateral</h2>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:92.0%" class="r-stretch"><div class="fragment">
+<p>Bajo <span class="math inline">\(H_0\)</span> y los supuestos, aproximadamente <strong>12,4%</strong> de los estadísticos serían tan extremos o más extremos que el observado.</p>
+</div>
+</section>
+<section id="un-umbral-de-decisión-alpha" class="slide level2 h6-compact center">
+<h2>Un umbral de decisión: <span class="math inline">\(\alpha\)</span></h2>
+<p>El valor-p cuantifica cuán raro sería un resultado como el observado o más extremo, <strong>suponiendo <span class="math inline">\(H_0\)</span> cierta</strong>.</p>
+<p>Para decidir, necesitamos definir <strong>a partir de qué probabilidad lo consideraremos suficientemente raro</strong>.</p>
+<p><strong>UMBRAL:</strong> <span class="math inline">\(\alpha\)</span>, nivel de significación. Aquí: <span class="math inline">\(\alpha=0{,}05\)</span>, establecido <strong>antes de mirar los resultados</strong>.</p>
+<p><strong>CRITERIO DE DECISIÓN:</strong></p>
+<ul>
+<li>Rechazamos <span class="math inline">\(H_0\)</span> <strong>si y sólo si</strong> valor-p <span class="math inline">\(&lt;\alpha\)</span>.</li>
+<li>Si valor-p <span class="math inline">\(\ge\alpha\)</span>, <strong>no rechazamos <span class="math inline">\(H_0\)</span></strong>.</li>
+</ul>
+<div class="idea fragment">
+<p>Nuestro valor-p <span class="math inline">\(\approx 0,1242\ge0{,}05\)</span>: <strong>no rechazamos <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+</section>
+<section id="alpha-también-define-regiones-de-rechazo" class="slide level2 h6-critical h6-compact center">
+<h2><span class="math inline">\(\alpha\)</span> también define regiones de rechazo</h2>
+<p>Bilateral: dos <strong>regiones de rechazo (o regiones críticas)</strong>; <span class="math inline">\(\alpha=0{,}05\)</span>, <strong>0,025 en cada cola</strong>.</p>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:92.0%" class="r-stretch"><p>Rechazamos <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t_{\mathrm{calc}}\)</span> cae en alguna región de rechazo: <span class="math inline">\(t_{\mathrm{calc}}&lt;-t^*\)</span> o <span class="math inline">\(t_{\mathrm{calc}}&gt;+t^*\)</span>; <span class="math inline">\(t^*_{0{,}025;22}\approx 2,074\)</span>.</p>
+<div class="idea fragment">
+<p><span class="math inline">\(t_{\mathrm{calc}}\approx 1,599\)</span> queda en la <strong>región de no rechazo</strong>. No es una región de aceptación: no rechazar <span class="math inline">\(H_0\)</span> no demuestra que sea verdadera.</p>
+</div>
+</section>
+<section id="qué-podemos-concluir" class="slide level2 center">
+<h2>¿Qué podemos concluir?</h2>
+<div class="h6-report">
+<p>Con <span class="math inline">\(\alpha=0{,}05\)</span>, los datos <strong>no aportan evidencia suficiente</strong> para concluir que el rendimiento medio de la <strong>nueva variedad</strong>, en los lotes comerciales de la zona, campaña y manejo definidos, <strong>difiera de la referencia de 7,0 t/ha</strong>.</p>
+</div>
+<p>La media muestral fue <strong>0,5 t/ha mayor</strong> que la referencia (valor-p ≈ 0,1242). Esa diferencia debe interpretarse considerando su <strong>incertidumbre</strong>.</p>
+<div class="idea fragment">
+<p><strong>No rechazar <span class="math inline">\(H_0\)</span> no demuestra <span class="math inline">\(H_0\)</span>.</strong> Volveremos al IC95% para cuantificar la incertidumbre.</p>
+</div>
+</section>
+<section id="no-rechazar-h_0-no-demuestra-que-h_0-sea-verdadera" class="slide level2 center">
+<h2>No rechazar <span class="math inline">\(H_0\)</span> no demuestra que <span class="math inline">\(H_0\)</span> sea verdadera</h2>
+<p>Como en un juicio, no alcanzar evidencia suficiente para rechazar una hipótesis inicial <strong>no equivale a demostrar que sea verdadera</strong>.</p>
+<div class="idea fragment">
+<p><strong>“Ausencia de evidencia no es evidencia de ausencia.”</strong></p>
+<p>No rechazar <span class="math inline">\(H_0\)</span> no demuestra igualdad ni ausencia de diferencia poblacional.</p>
+</div>
+</section>
+<section id="no-es-una-frontera-mágica" class="slide level2 center">
+<h2>0,05 no es una frontera mágica</h2>
+<div class="h6-pair">
+<div>
+<p><span class="math display">\[\text{valor-p}=0{,}049\]</span></p>
+<p>Justo por debajo del umbral.</p>
+</div>
+<div>
+<p><span class="math display">\[\text{valor-p}=0{,}051\]</span></p>
+<p>Justo por encima del umbral.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>La evidencia <strong>no cambia bruscamente</strong> al cruzar 0,05: 0,049 y 0,051 representan evidencia muy similar, aunque el criterio de decisión los ubique a lados distintos del umbral.</p>
+<p>En nuestro ejemplo, valor-p <span class="math inline">\(\approx 0,1242\)</span>. También debemos mirar la <strong>estimación y su incertidumbre</strong>.</p>
+</div>
+</section>
+<section id="volvemos-al-ic-de-la-clase-05" class="slide level2 center">
+<h2>Volvemos al IC de la Clase 05</h2>
+<p>Para <strong>los mismos datos y el mismo modelo t</strong>:</p>
+<p><span class="math display">\[t^*_{0{,}025;22}=2,074\]</span></p>
+<p><span class="math display">\[IC95\%:\quad7,5\pm 2,074\times\frac{1{,}5}{\sqrt{23}}\]</span></p>
+<p><span class="math display">\[[6,85;\ 8,15]\text{ t/ha}\]</span></p>
+<p>Aquí <span class="math inline">\(t^*_{0{,}025;22}\)</span> deja 0,025 de probabilidad en la cola derecha.</p>
+</section>
+<section id="el-valor-70-queda-incluido" class="slide level2 center">
+<h2>El valor 7,0 queda incluido</h2>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
+<p>El intervalo incluye <span class="math inline">\(\mu_0=7{,}0\)</span>. Es coherente con <strong>no rechazar <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+</section>
+<section id="ic-y-prueba-de-hipótesis-dos-caras-de-la-misma-moneda" class="slide level2 center">
+<h2>IC y prueba de hipótesis: dos caras de la misma moneda</h2>
+<p>Con <strong>los mismos datos, modelo y procedimiento</strong>, el IC reúne los valores de <span class="math inline">\(\mu_0\)</span> que no rechazamos en la prueba bilateral.</p>
+<div class="h6-pair">
+<div>
+<p><strong>SI EL IC95% NO CONTIENE <span class="math inline">\(\mu_0\)</span></strong></p>
+<p>Rechazamos <span class="math inline">\(H_0\)</span> al nivel 0,05.</p>
+</div>
+<div>
+<p><strong>SI EL IC95% CONTIENE <span class="math inline">\(\mu_0\)</span></strong></p>
+<p>No rechazamos <span class="math inline">\(H_0\)</span> al nivel 0,05.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>En la prueba bilateral y el IC correspondientes, el nivel de confianza es <span class="math inline">\(1-\alpha\)</span>.</p>
+<p><span class="math inline">\(\alpha=0{,}05\quad\longleftrightarrow\quad1-\alpha=0{,}95\)</span> (<strong>IC95%</strong>).</p>
+</div>
+</section>
+<section id="la-prueba-y-el-ic-cuentan-la-misma-historia" class="slide level2 h6-compact h6-test-ic center">
+<h2>La prueba y el IC cuentan la misma historia</h2>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:100.0%" class="r-stretch"><div class="idea">
+<p><span class="math inline">\(\mu_0\)</span> está dentro del IC95% <span class="math inline">\(\longleftrightarrow\)</span> <span class="math inline">\(t_{\mathrm{calc}}\)</span> está en la región de no rechazo.</p>
+<p>Para una prueba bilateral con <span class="math inline">\(\alpha=0{,}05\)</span>, el IC95% correspondiente y la prueba <strong>cuentan la misma historia</strong>.</p>
+</div>
+</section>
+<section id="es-importante-en-términos-agronómicos" class="slide level2 center">
+<h2>¿Es importante en términos agronómicos?</h2>
+<p>Diferencia estimada respecto de 7,0: <strong>+0,5 t/ha</strong>.</p>
+<p><span class="math display">\[IC95\%\text{ para }\mu:\quad[6,85;\ 8,15]\text{ t/ha}\]</span></p>
+<p>El IC incluye 7: hay valores poblacionales <strong>menores y mayores que la referencia</strong> compatibles con nuestros datos.</p>
+<ul>
+<li>¿Una mejora de 0,2 t/ha justificaría cambiar de variedad? ¿Y una de 1 t/ha?</li>
+<li>¿Qué implican los costos, la estabilidad y las condiciones de manejo?</li>
+<li>¿La estimación es suficientemente precisa para decidir?</li>
+</ul>
+</section>
+<section id="significación-e-importancia-agronómica" class="slide level2 center">
+<h2>Significación e importancia agronómica</h2>
+<div class="h6-pair">
+<div>
+<p><strong>ESTADÍSTICAMENTE SIGNIFICATIVO</strong></p>
+<p>No significa necesariamente <strong>importante agronómicamente</strong>.</p>
+</div>
+<div>
+<p><strong>NO SIGNIFICATIVO</strong></p>
+<p>No significa necesariamente <strong>ausencia de efecto</strong>.</p>
+</div>
+</div>
+</section>
+<section id="una-conclusión-que-ayude-a-decidir" class="slide level2 h6-compact center">
+<h2>Una conclusión que ayude a decidir</h2>
+<div class="h6-poor">
+<p>“<span class="math inline">\(\mu=7\)</span> t/ha”. ¿Podemos concluir esto?</p>
+</div>
+<div class="fragment">
+<p><strong>NO.</strong> Con <span class="math inline">\(\alpha=0{,}05\)</span>, para los lotes comerciales de la zona, campaña y manejo definidos, no hay evidencia suficiente de que la media de la nueva variedad <strong>difiera de 7,0 t/ha</strong> (valor-p ≈ 0,1242).</p>
+<p>Estimamos un rendimiento medio de <strong>7,5 t/ha</strong>, <strong>0,5 t/ha por encima</strong> de la referencia, con IC95% de <span class="math inline">\(\mu\)</span>: <strong>[6,85; 8,15] t/ha</strong>.</p>
+<div class="idea">
+<p>El IC incluye 7: <strong>no rechazar no demuestra igualdad</strong>. Informamos la estimación y su incertidumbre.</p>
+</div>
+</div>
+</section>
+<section id="la-dirección-surge-de-la-pregunta" class="slide level2 h6-compact h6-direction center">
+<h2>La dirección surge de la pregunta</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Pregunta previa al análisis</th>
+<th>Alternativa</th>
+<th>Extremos relevantes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¿Difiere?</td>
+<td><span class="math inline">\(H_1:\mu\ne\mu_0\)</span></td>
+<td>Ambas colas</td>
+</tr>
+<tr class="even">
+<td>¿Es mayor?</td>
+<td><span class="math inline">\(H_1:\mu&gt;\mu_0\)</span></td>
+<td>Cola derecha</td>
+</tr>
+<tr class="odd">
+<td>¿Es menor?</td>
+<td><span class="math inline">\(H_1:\mu&lt;\mu_0\)</span></td>
+<td>Cola izquierda</td>
+</tr>
+</tbody>
+</table>
+<p>Una alternativa unilateral requiere <strong>teoría o una expectativa científica definida antes de mirar los datos</strong>.</p>
+<ul>
+<li><strong>Fertilizante:</strong> esperar mayor rendimiento, con fundamento agronómico y dosis no tóxicas.</li>
+<li><strong>Germinación:</strong> tratamiento diseñado para reducir el tiempo hasta germinar.</li>
+</ul>
+<div class="alerta fragment">
+<p>La dirección contraria debe ser científicamente poco plausible o no responder a la pregunta. <strong>No elegimos la dirección según la media observada ni para reducir el valor-p.</strong></p>
+</div>
+<aside class="notes">
+<p>En las unilaterales, las nulas completas son mu &lt;= mu0 y mu &gt;= mu0, respectivamente. La distribución en el límite mu0 permite calcular el valor-p.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="y-si-la-pregunta-apunta-a-comparar-dos-poblaciones" class="slide level2 center">
+<h2>¿Y si la pregunta apunta a comparar dos poblaciones?</h2>
+<div class="pregunta">
+<p>¿Difieren los rendimientos promedio de las variedades <strong>A y B</strong>?</p>
+</div>
+<p>La pregunta puede ser la misma, pero la <strong>estructura de los datos</strong> determina cómo expresamos el parámetro y construimos su estimador.</p>
+<div class="idea fragment">
+<p>¿Cómo obtuvimos los datos de ambas poblaciones?</p>
+</div>
+</section>
+<section id="podemos-tener-2-diseños-adecuados-y-diferentes" class="slide level2 center">
+<h2>Podemos tener 2 diseños adecuados y diferentes</h2>
+<div class="h6-pair">
+<div>
+<p><strong>DISEÑO AL AZAR</strong></p>
+<p>Muestras independientes.</p>
+<p>Unidades distintas reciben A o B. No existe correspondencia/relación uno a uno.</p>
+</div>
+<div>
+<p><strong>DISEÑO PAREADO</strong></p>
+<p>Muestras relacionadas.</p>
+<p>Cada observación de A está vinculada a una de B por el diseño.</p>
+</div>
+</div>
+<div class="pregunta fragment">
+<p>¿Existe una <strong>correspondencia/relación real, definida por el diseño</strong>, entre una observación de A y una de B?</p>
+</div>
+</section>
+<section id="unidades-independientes" class="slide level2 center">
+<h2>Unidades independientes</h2>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:92.0%" class="r-stretch"><p>Diseño completamente aleatorizado: asignamos A o B a <strong>unidades independientes, no relacionadas</strong>. El esquema representa su ubicación, no pares.</p>
+</section>
+<section id="dos-poblaciones-muestras-independientes" class="slide level2 h6-compact center">
+<h2>Dos poblaciones, muestras independientes</h2>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:92.0%" class="r-stretch"><p><span class="math display">\[\Delta\mu=\mu_B-\mu_A\qquad\Delta\bar{x}=\bar{x}_B-\bar{x}_A\]</span></p>
+<div class="idea fragment">
+<p>Comparamos <strong>dos medias de muestras independientes</strong>: comparamos <span class="math inline">\(\Delta\bar{x}\)</span> con 0 considerando su error estándar.</p>
+</div>
+</section>
+<section id="prueba-t-de-student-para-comparar-dos-medias-muestras-independientes" class="slide level2 center">
+<h2>Prueba t de Student para comparar dos medias: muestras independientes</h2>
+<p>La versión clásica de Student supone <strong>igualdad de varianzas poblacionales</strong>:</p>
+<p><span class="math display">\[\sigma_A^2=\sigma_B^2\]</span></p>
+<p><strong>Homogeneidad de varianzas</strong> y <strong>homocedasticidad</strong> son términos equivalentes.</p>
+<div class="idea fragment">
+<p>Este supuesto volverá a aparecer cuando estudiemos <strong>ANOVA</strong>. Si no podemos sostenerlo, podemos usar una t con <strong>corrección de Welch</strong>.</p>
+</div>
+</section>
+<section id="prueba-t-con-corrección-de-welch" class="slide level2 h6-compact center">
+<h2>Prueba t con corrección de Welch</h2>
+<p>Welch permite comparar medias <strong>sin asumir homogeneidad de varianzas</strong>.</p>
+<p><span class="math display">\[t_{\mathrm{calc}}=\frac{\Delta\bar{x}-0}{S_{\Delta\bar{x}}}\qquad S_{\Delta\bar{x}}=S_{\bar{x}_B-\bar{x}_A}=\sqrt{\frac{s_B^2}{n_B}+\frac{s_A^2}{n_A}}\]</span></p>
+<p>Los grados de libertad se ajustan con el <strong>tamaño y la variabilidad de ambas muestras</strong>; habitualmente los calcula el software.</p>
+<div class="idea fragment">
+<p>Usaremos Welch. <strong>No necesitamos comparar previamente las varianzas para elegirla.</strong></p>
+</div>
+</section>
+<section id="ejemplo-dos-muestras-independientes" class="slide level2 h6-welch center">
+<h2>Ejemplo: dos muestras independientes</h2>
+<p>Rendimiento en parcelas independientes de la zona y manejo del estudio, en t/ha:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Variedad</th>
+<th style="text-align: right;"><span class="math inline">\(n\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\bar{x}\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(s\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">7,0</td>
+<td style="text-align: right;">0,6</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">7,8</td>
+<td style="text-align: right;">0,8</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\Delta\bar{x}=\bar{x}_B-\bar{x}_A=0,80\text{ t/ha}\]</span></p>
+<p><span class="math display">\[S_{\Delta\bar{x}}=\sqrt{\frac{0{,}8^2}{13}+\frac{0{,}6^2}{11}}\approx 0,286\text{ t/ha}\qquad t_{\mathrm{calc}}=\frac{0,80-0}{S_{\Delta\bar{x}}}\approx 2,794\]</span></p>
+<div class="idea fragment">
+<p><span class="math inline">\(gl\approx 21,73\)</span>: en Welch pueden <strong>no ser enteros</strong>. Los obtiene el software; no los calcularemos a mano.</p>
+</div>
+</section>
+<section id="distribución-t-bajo-h_0-welch" class="slide level2 h6-compact center">
+<h2>Distribución t bajo <span class="math inline">\(H_0\)</span>: Welch</h2>
+<p><span class="math inline">\(H_0:\Delta\mu=0\)</span>; <span class="math inline">\(H_1:\Delta\mu\ne0\)</span>. Referencia t <strong>aproximada</strong> bajo <span class="math inline">\(H_0\)</span>, con <span class="math inline">\(gl\approx 21,73\)</span>.</p>
+<div class="h6-plot-stack">
+<div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:92.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="0">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:92.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="idea fragment" data-fragment-index="0">
+<p>Las dos áreas reúnen resultados tan extremos o más extremos que <span class="math inline">\(|t_{\mathrm{calc}}|\approx 2,794\)</span>:</p>
+<p><span class="math inline">\(\text{valor-p bilateral}=P(|T|\ge |t_{\mathrm{calc}}|\mid H_0)\approx 0,0106\)</span>.</p>
+</div>
+</section>
+<section id="conclusión-dos-muestras-independientes" class="slide level2 h6-compact h6-descriptive center">
+<h2>Conclusión: dos muestras independientes</h2>
+<div class="h6-descriptive-grid">
+<div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Ilustración didáctica:</strong> valores construidos que reproducen <span class="math inline">\(n\)</span>, media y <span class="math inline">\(s\)</span>; no son datos de campo.</p>
+</div>
+<div>
+<p>Para las <strong>parcelas de la zona y manejo estudiados</strong>, con <span class="math inline">\(\alpha=0{,}05\)</span> hay evidencia de que los rendimientos medios <strong>difieren</strong> (valor-p ≈ 0,0106).</p>
+<p>Estimamos <strong>0,80 t/ha más en B</strong>. IC95% para <span class="math inline">\(\Delta\mu\)</span>: <strong>[0,206; 1,394] t/ha</strong>.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p><strong>La variedad B rindió 11,4% más que la A</strong> en la muestra. Describimos dirección y magnitud; el IC cuantifica la incertidumbre de la diferencia absoluta.</p>
+</div>
+<aside class="notes">
+<p>100 × (media B − media A) / media A. Los valores ilustrativos reproducen exactamente los resúmenes; no permiten recuperar la distribución real de los datos originales. El IC no corresponde al porcentaje.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="welch-también-necesita-un-diseño-válido" class="slide level2 center">
+<h2>Welch también necesita un diseño válido</h2>
+<ul>
+<li>Independencia entre unidades y entre muestras.</li>
+<li>Para muestras pequeñas, distribuciones aproximadamente Normales, sin valores extremos dominantes.</li>
+<li>Revisar datos y diseño: Welch <strong>no corrige dependencia ni sesgos de muestreo</strong>.</li>
+</ul>
+</section>
+<section id="dos-parcelas-relacionadas-dentro-de-cada-sector" class="slide level2 h6-compact center">
+<h2>Dos parcelas relacionadas dentro de cada sector</h2>
+<p>En <strong>11 sectores del lote</strong>, identificamos dos parcelas próximas, con suelo y manejo similares dentro del sector. Asignamos al azar <strong>A a una y B a la otra</strong>.</p>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
+<p>Dentro del sector, las parcelas comparten condiciones. Entre sectores pueden cambiar fertilidad, humedad y suelo; <strong>los sectores son independientes</strong>.</p>
+</div>
+<aside class="notes">
+<p>Más adelante veremos que este principio se utiliza formalmente en los diseños en bloques. No se presupone aquí ese concepto técnico.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dos-poblaciones-datos-relacionados" class="slide level2 h6-compact center">
+<h2>Dos poblaciones, datos relacionados</h2>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:92.0%" class="r-stretch"><p><strong>Nueva variable:</strong> diferencia dentro de cada par, <span class="math inline">\(d_i=B_i-A_i\)</span>.</p>
+<p>Parámetro: <span class="math inline">\(\mu_d\)</span>. Estimador: <span class="math inline">\(\bar{d}\)</span>.</p>
+<div class="idea fragment">
+<p>Analizamos <strong>una sola variable: las diferencias</strong>. Esto convierte el problema en una prueba para <strong>UNA media poblacional</strong>, como al comienzo.</p>
+</div>
+</section>
+<section id="analizamos-diferencias-dentro-de-cada-par" class="slide level2 center">
+<h2>Analizamos diferencias dentro de cada par</h2>
+<p><span class="math inline">\(d_i=B_i-A_i\)</span>. Parámetro: <span class="math inline">\(\mu_d\)</span>; estimador: <span class="math inline">\(\bar{d}\)</span>.</p>
+<p><span class="math display">\[H_0:\mu_d=0\qquad H_1:\mu_d\ne0\]</span></p>
+<p>¿Qué información nos da el <strong>signo de <span class="math inline">\(d_i\)</span></strong>?</p>
+<div class="idea fragment">
+<p><span class="math inline">\(d_i&gt;0\)</span>: B rindió <strong>más</strong> que A dentro de ese par.</p>
+<p><span class="math inline">\(d_i&lt;0\)</span>: B rindió <strong>menos</strong> que A dentro de ese par.</p>
+</div>
+<aside class="notes">
+<p>Bajo d = B − A, μd = E(B − A) = μB − μA. La igualdad de los parámetros no hace independientes las muestras: el estimador y su error estándar se construyen a partir de las diferencias relacionadas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ejemplo-11-pares-de-parcelas" class="slide level2 center">
+<h2>Ejemplo: 11 pares de parcelas</h2>
+<p><span class="math display">\[n=11\text{ pares}\qquad \bar{d}=0{,}50\text{ t/ha}\qquad s_d=0{,}40\text{ t/ha}\]</span></p>
+<p><span class="math display">\[S_{\bar{d}}=\frac{0{,}40}{\sqrt{11}}=0,121\text{ t/ha}\]</span></p>
+<p><span class="math display">\[t_{\mathrm{calc}}=\frac{0{,}50}{S_{\bar{d}}}=4,146\qquad gl=10\]</span></p>
+<p>El tamaño muestral relevante es <strong>11 diferencias</strong>, no 22 observaciones independientes.</p>
+</section>
+<section id="distribución-t-bajo-h_0-pareada" class="slide level2 h6-compact center">
+<h2>Distribución t bajo <span class="math inline">\(H_0\)</span>: pareada</h2>
+<p><span class="math inline">\(H_0:\mu_d=0\)</span>. Distribución t con <span class="math inline">\(gl=10\)</span> para las 11 diferencias.</p>
+<div class="h6-plot-stack">
+<div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:92.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="0">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:92.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="idea fragment" data-fragment-index="0">
+<p><span class="math inline">\(\text{valor-p}=P(|T|\ge|t_{\mathrm{calc}}|\mid H_0)\approx 0,0020\)</span>. Es <strong>la misma lógica de una media poblacional</strong>; lo nuevo fue construir <span class="math inline">\(d\)</span> a partir de pares relacionados.</p>
+</div>
+</section>
+<section id="resultado-de-la-comparación-pareada" class="slide level2 h6-compact center">
+<h2>Resultado de la comparación pareada</h2>
+<p>Para las <strong>parcelas en sectores con las condiciones de suelo y manejo representadas por el estudio</strong>, con <span class="math inline">\(\alpha=0{,}05\)</span> hay evidencia de que A y B <strong>difieren en rendimiento medio</strong> (valor-p ≈ 0,0020).</p>
+<p>Estimamos <strong>0,50 t/ha más en B que en A</strong>:</p>
+<p><span class="math display">\[IC95\%\text{ de }\mu_d:\quad[0,231;\ 0,769]\text{ t/ha}\]</span></p>
+<div class="idea fragment">
+<p>El intervalo es positivo: <strong>el 0 no está incluido en el IC</strong>; respalda una <strong>media mayor para B</strong> y cuantifica la incertidumbre de la diferencia.</p>
+</div>
+<div class="h6-note">
+<p>Supuestos: sectores independientes y diferencias aproximadamente Normales, sin valores extremos dominantes. La normalidad relevante es la de las diferencias.</p>
+</div>
+</section>
+<section id="por-qué-parear-puede-mejorar-la-precisión" class="slide level2 center">
+<h2>¿Por qué parear puede mejorar la precisión?</h2>
+<div class="h6-pair">
+<div>
+<p><strong>ENTRE SECTORES</strong></p>
+<p>Pueden cambiar el suelo, la humedad o la fertilidad.</p>
+</div>
+<div>
+<p><strong>DENTRO DEL SECTOR</strong></p>
+<p>Al calcular <span class="math inline">\(B_i-A_i\)</span>, parte de esa heterogeneidad común se cancela.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>Si las unidades del par responden de manera similar, disminuye la variabilidad de las diferencias. <strong>Puede</strong> mejorar la precisión.</p>
+</div>
+</section>
+<section id="el-pareamiento-viene-del-diseño" class="slide level2 center">
+<h2>El pareamiento viene del diseño</h2>
+<div class="alerta">
+<p>No elegimos una prueba pareada simplemente porque <strong>parezca más precisa</strong>.</p>
+</div>
+<div class="definition-large">
+<p>El pareamiento debe surgir de <strong>cómo se obtuvieron los datos y de una relación real entre las unidades</strong>. No se inventa después de observar los resultados.</p>
+</div>
+<p>Tener igual cantidad de observaciones de A y B no alcanza para que estén pareadas.</p>
+</section>
+<section id="misma-pregunta-distinto-diseño" class="slide level2 center">
+<h2>Misma pregunta, distinto diseño</h2>
+<p><strong>¿A y B difieren en rendimiento promedio?</strong></p>
+<div class="h6-pair">
+<div>
+<p><strong>UNIDADES SIN RELACIÓN</strong></p>
+<p>Prueba t para <strong>dos medias independientes</strong></p>
+<p>Usaremos la corrección de Welch.</p>
+</div>
+<div>
+<p><strong>UNIDADES RELACIONADAS EN PARES</strong></p>
+<p>Prueba t para <strong>datos pareados</strong></p>
+<p>Una media de diferencias.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>La prueba depende de la <strong>pregunta y de cómo fueron generados los datos</strong>.</p>
+</div>
+</section>
+<section id="una-proporción-la-misma-lógica" class="slide level2 h6-proportion center">
+<h2>Una proporción: la misma lógica</h2>
+<p>En este ejemplo, con el tratamiento de referencia históricamente germina el <strong>80% de las semillas</strong>: <span class="math inline">\(\pi_0=0{,}80\)</span> es una referencia previa.</p>
+<p><strong>Pregunta:</strong> ¿El nuevo tratamiento de escarificación produce una proporción <strong>diferente</strong>?</p>
+<p><span class="math display">\[H_0:\pi=0{,}80\qquad H_1:\pi\ne0{,}80\]</span></p>
+<p>Observamos la proporción muestral <span class="math inline">\(p\)</span>. Bajo <span class="math inline">\(H_0\)</span>, suponemos <span class="math inline">\(\pi=\pi_0\)</span>: para saber qué resultados serían esperables, calculamos la variabilidad <strong>con ese valor de referencia</strong>, no con <span class="math inline">\(p\)</span>.</p>
+<p><span class="math display">\[\sigma_{p,H_0}=\sqrt{\frac{\pi_0(1-\pi_0)}{n}}\]</span></p>
+<div class="idea fragment">
+<p>Suponiendo <span class="math inline">\(H_0\)</span> cierta, ¿qué tan inusual sería el <strong>resultado observado</strong>?</p>
+</div>
+</section>
+<section id="un-mapa-para-organizar-preguntas" class="slide level2 center">
+<h2>Un mapa para organizar preguntas</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pregunta</th>
+<th>Parámetro y referencia</th>
+<th>Estructura y procedimiento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Una media</td>
+<td><span class="math inline">\(\mu\)</span>; <span class="math inline">\(\mu_0\)</span>: valor de referencia</td>
+<td>t para una media</td>
+</tr>
+<tr class="even">
+<td>Una proporción</td>
+<td><span class="math inline">\(\pi\)</span>; <span class="math inline">\(\pi_0\)</span>: valor de referencia</td>
+<td>Prueba para una proporción</td>
+</tr>
+<tr class="odd">
+<td>Dos medias</td>
+<td><span class="math inline">\(\Delta\mu=\mu_B-\mu_A\)</span>; en pares: <span class="math inline">\(\mu_d\)</span></td>
+<td>Independientes: t con Welch; relacionadas: t pareada</td>
+</tr>
+<tr class="even">
+<td>Dos proporciones</td>
+<td><span class="math inline">\(\Delta\pi=\pi_B-\pi_A\)</span></td>
+<td>Procedimiento según sean muestras independientes o relacionadas</td>
+</tr>
+</tbody>
+</table>
+<div class="idea fragment">
+<p>Primero <strong>pregunta → parámetro → estructura de los datos</strong>.</p>
+</div>
+</section>
+<section id="qué-puede-salir-mal-al-decidir" class="slide level2 center">
+<h2>¿Qué puede salir mal al decidir?</h2>
+<div class="h6-pair">
+<div>
+<p>Podemos <strong>rechazar <span class="math inline">\(H_0\)</span> cuando era cierta</strong>.</p>
+</div>
+<div>
+<p>Podemos <strong>no rechazar <span class="math inline">\(H_0\)</span> cuando era falsa</strong>.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>Estas posibilidades nos llevan a los <strong>errores tipo I y II</strong> y a la <strong>potencia estadística</strong>. Será el núcleo de la próxima clase.</p>
+</div>
+</section>
+<section id="procedimiento-de-una-prueba-de-hipótesis" class="slide level2 h6-procedure center">
+<h2>Procedimiento de una prueba de hipótesis</h2>
+<div class="h6-route">
+<ol type="1">
+<li><strong>Plantear <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></strong> según la pregunta de investigación.</li>
+<li><strong>Fijar</strong> el nivel de significación <span class="math inline">\(\alpha\)</span>.</li>
+<li><strong>Definir el estadístico</strong> y su distribución suponiendo <span class="math inline">\(H_0\)</span> verdadera.</li>
+<li><strong>Establecer el criterio de decisión:</strong> valor-p o <span class="math inline">\(t_{\mathrm{calc}}\)</span> y los valores críticos correspondientes.</li>
+<li><strong>Realizar</strong> los cálculos necesarios.</li>
+<li><strong>Decidir sobre <span class="math inline">\(H_0\)</span>:</strong> rechazar o no rechazar.</li>
+<li><strong>Concluir según la pregunta:</strong> comunicar población, dirección, magnitud e incertidumbre, cuando corresponda.</li>
+</ol>
+</div>
+</section>
+<section id="lo-esencial-de-hoy" class="slide level2 center">
+<h2>Lo esencial de hoy</h2>
+<div class="h6-summary">
+<ol type="1">
+<li>Una prueba de hipótesis evalúa qué tan <strong>compatibles son los datos con una hipótesis sobre la población</strong>.</li>
+<li>El <strong>estadístico de prueba</strong> mide la discrepancia entre lo hipotetizado y lo observado en nuestro estudio.</li>
+<li>El <strong>valor-p</strong> cuantifica cuán inusual sería una discrepancia como la observada, o más extrema, si <span class="math inline">\(H_0\)</span> fuera cierta.</li>
+<li><strong>No rechazar <span class="math inline">\(H_0\)</span> no demuestra que sea verdadera.</strong></li>
+<li>Una conclusión útil informa población, significación/confianza, dirección y magnitud de la diferencia y su incertidumbre.</li>
+<li>Para comparar dos medias, <strong>cómo se obtuvieron los datos</strong> determina si las muestras son independientes o relacionadas.</li>
+</ol>
+</div>
+</section>
+<section id="próxima-clase" class="slide level2 center">
+<h2>Próxima clase</h2>
+<div class="next-class">
+<p>Errores · Potencia · Tamaño de muestra</p>
+</div>
+<div class="pregunta">
+<p>¿Qué determina nuestra capacidad para detectar un efecto relevante?</p>
+</div>
+<p>Errores tipo I y II, potencia estadística y planificación del tamaño muestral.</p>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../assets/branding/eyde-logo.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Andrés Tálamo - Estadística y Diseño Experimental - UNSa</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <a class="eyde-home-link" href="../../index.html" target="_self" aria-label="Volver al inicio" title="Volver al inicio" data-preview-link="false">⌂</a>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiado");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiado");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

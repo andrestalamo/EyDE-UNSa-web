@@ -129,6 +129,32 @@
       margin-right: 0; 
     }
   </style>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["TeX"],
+      webFont: "TeX"
+    }
+  });
+  </script>
+  <script>
+  (function useMathJaxSvg() {
+    function switchRenderer() {
+      if (!window.MathJax || !MathJax.Hub || !MathJax.Ajax) {
+        window.setTimeout(switchRenderer, 50);
+        return;
+      }
+      MathJax.Hub.Queue(
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/config.js"],
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/jax.js"],
+        ["setRenderer", MathJax.Hub, "SVG"],
+        ["Rerender", MathJax.Hub]
+      );
+    }
+    switchRenderer();
+  })();
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -149,7 +175,7 @@ Andrés Tálamo
 </div>
 </div>
 
-  <p class="date">2 de septiembre de 2026</p>
+  <p class="date">8 de septiembre de 2026</p>
 </section>
 <section id="la-pregunta-define-la-población" class="slide level2 center">
 <h2>La pregunta define la población</h2>

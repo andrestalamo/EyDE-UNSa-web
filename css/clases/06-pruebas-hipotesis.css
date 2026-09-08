@@ -1,0 +1,62 @@
+/* Sólo Clase 06: conserva tema, componentes, fuentes y MathJax compartidos. */
+.h6-pair {display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:28px auto;width:94%;}
+.h6-pair>div {border-top:7px solid var(--verde);background:rgba(45,106,79,.055);padding:22px 26px;}
+.h6-pair>div:nth-child(2){border-color:var(--maiz);}
+.h6-pair p {margin:12px 0;}
+.h6-note {font-size:.78em;color:var(--gris);border-left:5px solid var(--maiz);padding:10px 18px;margin:16px 0;}
+.h6-poor {color:var(--gris);border-left:5px solid var(--tierra);padding:8px 18px;}
+.h6-report {background:rgba(45,106,79,.07);border-left:8px solid var(--verde);padding:16px 24px;margin:18px 0;}
+.h6-summary {font-size:.89em;}
+.h6-summary li {margin-bottom:13px;}
+.reveal .slides section .cell-output-display img {display:block;margin:0 auto;max-height:310px;object-fit:contain;}
+.reveal .slides section>table {font-size:.85em;}
+
+/* Espaciado local de las incorporaciones; se conserva el tamaño de fuente. */
+.reveal .slides section.h6-welch > p,
+.reveal .slides section.h6-proportion > p {margin:12px 0;}
+.reveal .slides section.h6-welch .math.display,
+.reveal .slides section.h6-proportion .math.display {margin:12px 0;}
+.reveal .slides section.h6-welch .idea,
+.reveal .slides section.h6-proportion .idea {margin:14px 0;padding:12px 20px;}
+.reveal .slides section.h6-welch .idea p,
+.reveal .slides section.h6-proportion .idea p {margin:8px 0;}
+.reveal .slides section.h6-welch .MathJax_SVG_Display,
+.reveal .slides section.h6-proportion .MathJax_SVG_Display,
+.reveal .slides section.h6-welch .MathJax_Display,
+.reveal .slides section.h6-proportion .MathJax_Display {margin:0.35em 0 !important;}
+.reveal .slides section.h6-welch > table {margin:8px auto;}
+
+/* Revelación de las áreas bilaterales sobre el mismo eje y observado. */
+.h6-plot-stack {display:grid;}
+.h6-plot-stack > div {grid-area:1 / 1;min-width:0;}
+.h6-plot-stack > div.fragment {background:var(--papel);}
+/* Espacios para pasos con más explicación; no cambia la tipografía. */
+.reveal .slides section.h6-compact > p {margin:12px 0;}
+.reveal .slides section.h6-compact .idea {margin:14px 0;padding:12px 20px;}
+.reveal .slides section.h6-compact .idea p {margin:8px 0;}
+.reveal .slides section.h6-compact .MathJax_SVG_Display,
+.reveal .slides section.h6-compact .MathJax_Display {margin:0.45em 0 !important;}
+
+.reveal .slides section.h6-reference-distribution > img {max-height:270px;object-fit:contain;}
+
+/* Composiciones puntuales: población/muestra y descripción con inferencia. */
+.reveal .slides section.h6-hypotheses .h6-pair {margin:12px auto;}
+.reveal .slides section.h6-hypotheses .h6-pair>div {padding:10px 20px;}
+.h6-descriptive-grid {display:grid;grid-template-columns:44% 56%;gap:22px;align-items:center;}
+.h6-descriptive-grid > div {min-width:0;}
+.h6-descriptive-grid > div:first-child > p {font-size:.7em;margin:6px 0;}
+.reveal .slides section.h6-descriptive .cell-output-display img {max-height:280px;}
+.reveal .slides section.h6-test-ic > img {max-height:375px;object-fit:contain;}
+.reveal .slides section.h6-direction li {margin:8px 0;}
+.reveal .slides section.h6-direction .alerta {margin:12px 0;padding:12px 20px;}
+.reveal .slides section.h6-direction .alerta p {margin:8px 0;}
+
+/* Última pasada: gráfico alineado y procedimiento completo. */
+.reveal .slides section.h6-test-ic > img {max-height:415px;object-fit:contain;}
+.reveal .slides section.h6-test-ic .idea {margin:8px 0;padding:8px 16px;}
+.reveal .slides section.h6-test-ic .idea p {margin:4px 0;}
+.h6-route ol {list-style:none;counter-reset:paso;margin:16px 0;padding:0;}
+.h6-route li {counter-increment:paso;position:relative;padding:8px 18px 8px 62px;margin:7px 0;background:rgba(45,106,79,.055);border-left:3px solid var(--verde);}
+.h6-route li::before {content:counter(paso);position:absolute;left:13px;top:9px;font-weight:700;color:var(--verde);}
+.reveal .slides section.h6-procedure .h6-route ol,
+.reveal .slides section.h6-procedure .h6-route li {list-style:none;}
