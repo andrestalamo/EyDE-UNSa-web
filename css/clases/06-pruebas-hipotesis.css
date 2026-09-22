@@ -42,7 +42,7 @@
 /* Composiciones puntuales: población/muestra y descripción con inferencia. */
 .reveal .slides section.h6-hypotheses .h6-pair {margin:12px auto;}
 .reveal .slides section.h6-hypotheses .h6-pair>div {padding:10px 20px;}
-.h6-descriptive-grid {display:grid;grid-template-columns:44% 56%;gap:22px;align-items:center;}
+.h6-descriptive-grid {display:grid;grid-template-columns:minmax(0,44fr) minmax(0,56fr);gap:22px;align-items:center;}
 .h6-descriptive-grid > div {min-width:0;}
 .h6-descriptive-grid > div:first-child > p {font-size:.7em;margin:6px 0;}
 .reveal .slides section.h6-descriptive .cell-output-display img {max-height:280px;}
@@ -60,3 +60,41 @@
 .h6-route li::before {content:counter(paso);position:absolute;left:13px;top:9px;font-weight:700;color:var(--verde);}
 .reveal .slides section.h6-procedure .h6-route ol,
 .reveal .slides section.h6-procedure .h6-route li {list-style:none;}
+
+/* Revisión puntual: cierre de tabla y figuras con explicaciones explícitas. */
+.reveal .slides section.h6-welch > table tbody tr:last-child td {border-bottom:2px solid var(--verde);}
+.reveal .slides section.h6-variability .h6-note {margin:6px 0;padding:6px 14px;}
+.reveal .slides section.h6-variability .cell-output-display img {max-height:245px;}
+.reveal .slides section.h6-reference-distribution .h6-note {margin:8px 0;padding:6px 14px;}
+.reveal .slides section.h6-reference-distribution .h6-note p {margin:6px 0;}
+.reveal .slides section.h6-reference-distribution .cell-output-display img {max-height:245px;}
+.reveal .slides section.h6-ci-included .cell-output-display img {max-height:260px;}
+.reveal .slides section.h6-agronomy li {margin:8px 0;}
+.reveal .slides section.h6-agronomy .h6-note {margin:8px 0;padding:6px 14px;}
+.reveal .slides section.h6-paired-result .h6-note {margin:6px 0;padding:6px 14px;}
+.h6-proportion-grid {display:grid;grid-template-columns:minmax(0,52fr) minmax(0,48fr);gap:20px;align-items:center;}
+.h6-proportion-grid > div {min-width:0;}
+.h6-proportion-grid > div > p {margin:10px 0;}
+.reveal .slides section.h6-proportion-calculation .cell-output-display img {max-height:215px;}
+.reveal .slides section.h6-proportion-calculation .math.display {font-size:.88em;}
+.reveal .slides section.h6-procedure .h6-route li {margin:5px 0;padding-top:6px;padding-bottom:6px;}
+
+.reveal .slides section.h6-proportion-calculation .h6-proportion-grid > div:last-child > p:last-child {font-size:.78em;}
+.reveal .slides section.h6-proportion-calculation .idea {margin:8px 0;padding:8px 18px;}
+.reveal .slides section.h6-proportion-calculation .idea p {margin:5px 0;}
+.reveal .slides section.h6-proportion .idea {margin:8px 0;padding:8px 18px;}
+
+/* Siete pasos: etiquetas discretas sobre el desarrollo de cada ejemplo. */
+.reveal .slides .h6-step {font-size:.68em;font-weight:700;color:var(--verde);}
+.reveal .slides section > p:has(> .h6-step:only-child) {margin:6px 0;}
+.reveal .slides .h6-descriptive-grid p:has(> .h6-step:only-child) {margin:4px 0;}
+
+/* Conclusiones completas: ajuste local, sin cambiar la jerarquía del tema. */
+.reveal .slides section.h6-paired-result .h6-descriptive-grid > div:last-child {font-size:.9em;}
+.reveal .slides section.h6-paired-result .h6-descriptive-grid > div:last-child p {margin:8px 0;}
+.reveal .slides section.h6-proportion-calculation .idea {font-size:.88em;}
+
+/* D56: liberar altura en los cálculos para la conclusión completa. */
+.reveal .slides section.h6-proportion-calculation .MathJax_SVG_Display,
+.reveal .slides section.h6-proportion-calculation .MathJax_Display {margin:.2em 0 !important;}
+.reveal .slides section.h6-proportion-calculation .cell-output-display img {max-height:185px;}

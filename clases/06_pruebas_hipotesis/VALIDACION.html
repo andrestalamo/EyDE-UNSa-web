@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -90,6 +55,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -133,17 +127,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#validación-de-clase-06-última-pasada-puntual" id="toc-validación-de-clase-06-última-pasada-puntual" class="nav-link active" data-scroll-target="#validación-de-clase-06-última-pasada-puntual">Validación de Clase 06 — última pasada puntual</a>
+  <li><a href="#clase-06-revisión-final-retomada" id="toc-clase-06-revisión-final-retomada" class="nav-link active" data-scroll-target="#clase-06-revisión-final-retomada">Clase 06 — revisión final retomada</a>
   <ul class="collapse">
-  <li><a href="#alcance" id="toc-alcance" class="nav-link" data-scroll-target="#alcance">Alcance</a></li>
-  <li><a href="#notación-y-secuencia-de-la-diapositiva-14" id="toc-notación-y-secuencia-de-la-diapositiva-14" class="nav-link" data-scroll-target="#notación-y-secuencia-de-la-diapositiva-14">Notación y secuencia de la diapositiva 14</a></li>
-  <li><a href="#tres-escalas-alineadas-diapositiva-28" id="toc-tres-escalas-alineadas-diapositiva-28" class="nav-link" data-scroll-target="#tres-escalas-alineadas-diapositiva-28">Tres escalas alineadas — diapositiva 28</a></li>
-  <li><a href="#valores-y-equivalencia-verificados-en-r" id="toc-valores-y-equivalencia-verificados-en-r" class="nav-link" data-scroll-target="#valores-y-equivalencia-verificados-en-r">Valores y equivalencia verificados en R</a></li>
-  <li><a href="#simplificación-y-diseños" id="toc-simplificación-y-diseños" class="nav-link" data-scroll-target="#simplificación-y-diseños">Simplificación y diseños</a></li>
-  <li><a href="#procedimiento-de-siete-pasos-diapositiva-55" id="toc-procedimiento-de-siete-pasos-diapositiva-55" class="nav-link" data-scroll-target="#procedimiento-de-siete-pasos-diapositiva-55">Procedimiento de siete pasos — diapositiva 55</a></li>
-  <li><a href="#validaciones-conservadas" id="toc-validaciones-conservadas" class="nav-link" data-scroll-target="#validaciones-conservadas">Validaciones conservadas</a></li>
-  <li><a href="#revisión-visual-y-reproducción" id="toc-revisión-visual-y-reproducción" class="nav-link" data-scroll-target="#revisión-visual-y-reproducción">Revisión visual y reproducción</a></li>
-  <li><a href="#estados-por-diapositiva" id="toc-estados-por-diapositiva" class="nav-link" data-scroll-target="#estados-por-diapositiva">Estados por diapositiva</a></li>
+  <li><a href="#estado-recuperado-y-alcance" id="toc-estado-recuperado-y-alcance" class="nav-link" data-scroll-target="#estado-recuperado-y-alcance">Estado recuperado y alcance</a></li>
+  <li><a href="#notación-y-contenido" id="toc-notación-y-contenido" class="nav-link" data-scroll-target="#notación-y-contenido">Notación y contenido</a></li>
+  <li><a href="#d25-inspección-del-zoom" id="toc-d25-inspección-del-zoom" class="nav-link" data-scroll-target="#d25-inspección-del-zoom">D25: inspección del zoom</a></li>
+  <li><a href="#conclusiones-finales" id="toc-conclusiones-finales" class="nav-link" data-scroll-target="#conclusiones-finales">Conclusiones finales</a>
+  <ul class="collapse">
+  <li><a href="#una-media-d22-y-d32" id="toc-una-media-d22-y-d32" class="nav-link" data-scroll-target="#una-media-d22-y-d32">Una media — D22 y D32</a></li>
+  <li><a href="#welch-d42" id="toc-welch-d42" class="nav-link" data-scroll-target="#welch-d42">Welch — D42</a></li>
+  <li><a href="#relacionadas-d50" id="toc-relacionadas-d50" class="nav-link" data-scroll-target="#relacionadas-d50">Relacionadas — D50</a></li>
+  <li><a href="#una-proporción-d56" id="toc-una-proporción-d56" class="nav-link" data-scroll-target="#una-proporción-d56">Una proporción — D56</a></li>
+  </ul></li>
+  <li><a href="#comprobación-numérica-en-r-limpio" id="toc-comprobación-numérica-en-r-limpio" class="nav-link" data-scroll-target="#comprobación-numérica-en-r-limpio">Comprobación numérica en R limpio</a></li>
+  <li><a href="#siete-pasos-y-numeración-conservados" id="toc-siete-pasos-y-numeración-conservados" class="nav-link" data-scroll-target="#siete-pasos-y-numeración-conservados">Siete pasos y numeración conservados</a></li>
+  <li><a href="#validación-visual-y-técnica" id="toc-validación-visual-y-técnica" class="nav-link" data-scroll-target="#validación-visual-y-técnica">Validación visual y técnica</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -154,472 +152,164 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="validación-de-clase-06-última-pasada-puntual" class="level1">
-<h1>Validación de Clase 06 — última pasada puntual</h1>
-<section id="alcance" class="level2">
-<h2 class="anchored" data-anchor-id="alcance">Alcance</h2>
-<p>57 diapositivas incluyendo portada; 100 estados Reveal: 57 entradas + 43 apariciones. Navegación exclusivamente horizontal. La nueva diapositiva 55, “Procedimiento de una prueba de hipótesis”, precede a “Lo esencial de hoy” y “Próxima clase”. No usa fragments. Las comparaciones permanecen simultáneas; máximo una aparición por diapositiva.</p>
-<p>Archivos editados:</p>
+<section id="clase-06-revisión-final-retomada" class="level1">
+<h1>Clase 06 — revisión final retomada</h1>
+<section id="estado-recuperado-y-alcance" class="level2">
+<h2 class="anchored" data-anchor-id="estado-recuperado-y-alcance">Estado recuperado y alcance</h2>
+<p>Se leyeron el QMD actual, los cambios guardados y la validación anterior antes de editar. Ya estaban implementados D12 con varianza, el zoom de D25 en ambas escalas, la convención de error estándar, la distinción entre estimador y valor observado pareado, la población de germinación, las cuatro conclusiones completas y los siete pasos. D50 ya cabía a 1280 × 720 y se conservó. D56 aún desbordaba: se abreviaron redundancias y ajustaron espaciados y altura gráfica, sin agregar ni mover diapositivas. Se corrigió también la errata «en la semillas».</p>
+<p>Esta reanudación cambió la convención visible de grados de libertad a delta minúscula, terminó D56 y completó las comprobaciones. No se modificaron datos, resultados, estética general ni estructura. No se hizo commit ni push.</p>
+</section>
+<section id="notación-y-contenido" class="level2">
+<h2 class="anchored" data-anchor-id="notación-y-contenido">Notación y contenido</h2>
 <ul>
-<li><code>Clase_06_Pruebas_Hipotesis_2026.qmd</code></li>
-<li><code>calculos_y_graficos.R</code></li>
-<li><code>../../css/clases/06-pruebas-hipotesis.css</code></li>
-<li><code>VALIDACION.md</code></li>
+<li>D12: <span class="math inline">\(\bar X\sim N(\mu_0,\sigma^2/n)\)</span>, <span class="math inline">\(E(\bar X\mid H_0)=\mu_0\)</span> y <span class="math inline">\(\sigma_{\bar X}=\sigma/\sqrt n\)</span>. Se conserva la población Normal de la ilustración y la aclaración de que sigma es desconocida en el estudio real.</li>
+<li>Grados de libertad: <strong>12 apariciones visibles de <code>\nu</code> reemplazadas por <code>\delta</code></strong>: D14 (3), D15 (1), D39 (2), D40 (1), D41 (1), D47 (2), D48 (1), D49 (1). <strong>0 apariciones residuales de <code>gl</code> al retomar</strong>, por lo que no hubo reemplazos nuevos de ese símbolo. D25 ahora explicita también <span class="math inline">\(T\sim t_\delta\)</span>, <span class="math inline">\(\delta=22\)</span>. Se conservaron las expresiones verbales «grados de libertad» y la diferencia poblacional <span class="math inline">\(\Delta\mu\)</span>. Los nombres internos <code>nu</code>, <code>nu_w</code>, <code>nu_d</code> de R no se muestran como notación en la presentación.</li>
+<li>No quedan <code>\nu</code>, <code>gl</code> como símbolo ni <code>EE(...)</code> en el contenido visible. Error estándar: <span class="math inline">\(S_{\bar X}\)</span>, <span class="math inline">\(S_{\Delta\bar X}\)</span>, <span class="math inline">\(S_{\bar D}\)</span> y <span class="math inline">\(S_p\)</span>.</li>
+<li>D45–D47: <span class="math inline">\(D\)</span> es la variable diferencia; <span class="math inline">\(D_i\)</span> la diferencia aleatoria del par; <span class="math inline">\(d_i\)</span> su observación; <span class="math inline">\(\mu_D\)</span> el parámetro; <span class="math inline">\(\bar D\)</span> el estimador y <span class="math inline">\(\bar d\)</span> su valor observado. <span class="math inline">\(S_{\bar D}\)</span> estima la variabilidad de <span class="math inline">\(\bar D\)</span>.</li>
+<li>D54 y D56: referencia a semillas del tipo y procedencia estudiados, con escarificación y condiciones de germinación definidas. No se limita la inferencia a las 400 semillas observadas.</li>
 </ul>
-<p>Quarto regeneró el HTML y los recursos locales. No se modificaron clases 01–05 ni estilos compartidos: 24 archivos protegidos comparados por SHA-256 contra la base anterior. Se preservaron los cambios ajenos preexistentes en el repositorio. No hubo commit, push ni publicación.</p>
 </section>
-<section id="notación-y-secuencia-de-la-diapositiva-14" class="level2">
-<h2 class="anchored" data-anchor-id="notación-y-secuencia-de-la-diapositiva-14">Notación y secuencia de la diapositiva 14</h2>
-<p>Se usa sistemáticamente <strong>t_calc</strong> para el estadístico calculado, en fórmulas, textos, callouts, etiquetas de gráficos y este registro. En R la variable del primer ejemplo es <code>tcalc</code>. La búsqueda de la notación anterior y sus variantes en las fuentes y HTML generado dio <strong>cero coincidencias</strong>. Las figuras se regeneraron y se inspeccionaron sus etiquetas.</p>
-<p><strong>T</strong> se reserva para la variable aleatoria con distribución t bajo H0; <strong>t</strong>* identifica el valor crítico. El valor-p bilateral se expresa como P(|T| ≥ |t_calc| | H0). No hay un procedimiento calculado con Z que requiera otra sustitución.</p>
-<p>La diapo 14 sigue esta secuencia:</p>
-<ol type="1">
-<li>Definición conceptual del estadístico de prueba: discrepancia entre observado y esperado bajo H0.</li>
-<li>Distribución bajo H0 y los supuestos: T ~ t_22. T varía entre muestras; t_calc es el valor particular calculado.</li>
-<li>“En este caso, estandarizamos la diferencia con su error estándar (recién lo vimos)” y cálculo numérico de t_calc.</li>
-</ol>
-<p>El callout final recuerda que la media muestral está a 1,60 errores estándar por encima de la referencia y que la distribución de T permite evaluar esa distancia y calcular probabilidades.</p>
+<section id="d25-inspección-del-zoom" class="level2">
+<h2 class="anchored" data-anchor-id="d25-inspección-del-zoom">D25: inspección del zoom</h2>
+<p>Eje x: <strong>[2,045; 2,103]</strong>. Eje y: <strong>[0,04559104; 0,05570418]</strong>. El margen vertical es el 45% del rango de densidades local por cada extremo; ambos ejes usan límites exactos sin expansión automática. La escala vertical está recortada y ampliada deliberadamente.</p>
+<p>Se verificó visualmente el HTML: se aprecia el descenso de la cola derecha; las posiciones 2,0641, 2,074 y 2,0838 están separadas y los rótulos no se superponen. Los observados usan círculo verde y triángulo maíz; el crítico, rombo blanco y línea discontinua. Valores-p bilaterales: 0,051, 0,050 y 0,049. Se conserva el mensaje de incompatibilidad prácticamente igual y que 0,05 no es una frontera científica ni biológica.</p>
 </section>
-<section id="tres-escalas-alineadas-diapositiva-28" class="level2">
-<h2 class="anchored" data-anchor-id="tres-escalas-alineadas-diapositiva-28">Tres escalas alineadas — diapositiva 28</h2>
-<p>La figura se construye en <strong>un único sistema de coordenadas</strong>, no en paneles con márgenes independientes. La transformación entre rendimiento y coordenada horizontal es (valor − μ0) / S. Así, −t<em>, 0 y +t</em> se alinean exactamente con 6,351351…, 7,0 y 7,648649… en la escala de rendimiento. Líneas verticales punteadas hacen visible esta correspondencia.</p>
-<ul>
-<li><strong>Arriba:</strong> referencia t de 22 gl centrada en cero, críticos ±2,074, áreas 2,5% / 95% / 2,5%, regiones de rechazo/no rechazo y marcador t_calc = 1,599 sobre el eje.</li>
-<li><strong>Centro:</strong> la referencia se reexpresa en unidades de rendimiento, centrada en μ0 = 7. Se conserva S observado fijo = 1,5/√23. El marcador 7,5 queda dentro de la zona central.</li>
-<li><strong>Abajo:</strong> IC95% de μ centrado en 7,5, con la misma escala horizontal de rendimiento que el panel central. Se marca μ0 = 7 dentro del intervalo [6,85; 8,15]. El IC está desplazado respecto del centro de H0 porque se construye alrededor de la media observada.</li>
-</ul>
-<p><strong>Precisión conceptual:</strong> con σ desconocida, μ0 + S_observado × T es la referencia t reexpresada manteniendo S fijo, no la distribución marginal exacta de X̄. Bajo población Normal, X̄ es Normal con error estándar σ/√n.&nbsp;La figura y el código aclaran esta distinción; no se atribuye una t exacta a la media muestral ni se reemplaza la prueba por una Z. La equivalencia algebraica de los criterios para los datos observados sí es exacta.</p>
-<p>El callout expresa: “μ0 está dentro del IC95% ↔︎ t_calc está en la región de no rechazo”, seguido de la correspondencia entre la prueba bilateral con α = 0,05 y su IC95%.</p>
+<section id="conclusiones-finales" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones-finales">Conclusiones finales</h2>
+<section id="una-media-d22-y-d32" class="level3">
+<h3 class="anchored" data-anchor-id="una-media-d22-y-d32">Una media — D22 y D32</h3>
+<p>Con <span class="math inline">\(\alpha=0,05\)</span>, los datos no aportan evidencia suficiente para concluir que el rendimiento medio de la nueva variedad, en los lotes comerciales de la zona, campaña y manejo definidos, difiera de la referencia de 7,0 t/ha. Muestra: media 7,5 t/ha; +0,5 t/ha, un +7,1% respecto de 7,0 (valor-p ≈ 0,1242). IC95% de <span class="math inline">\(\mu\)</span>: [6,85; 8,15] t/ha. El intervalo corresponde a la media, no al porcentaje. No rechazamos la nula; eso no demuestra igualdad. El IC incluye valores menores y mayores que 7,0 t/ha.</p>
 </section>
-<section id="valores-y-equivalencia-verificados-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="valores-y-equivalencia-verificados-en-r">Valores y equivalencia verificados en R</h2>
+<section id="welch-d42" class="level3">
+<h3 class="anchored" data-anchor-id="welch-d42">Welch — D42</h3>
+<p>0,010644 &lt; 0,05: rechazamos la nula. Para las parcelas de la zona y manejo estudiados, con <span class="math inline">\(\alpha=0,05\)</span> hay evidencia de que los rendimientos medios difieren. Muestra: B presentó mayor rendimiento medio, +0,80 t/ha respecto de A. IC95% de <span class="math inline">\(\Delta\mu\)</span>: [0,206; 1,394] t/ha. Diferencia relativa observada: +11,4%, tomando A como referencia. El IC corresponde a la diferencia absoluta, no a ese porcentaje.</p>
+</section>
+<section id="relacionadas-d50" class="level3">
+<h3 class="anchored" data-anchor-id="relacionadas-d50">Relacionadas — D50</h3>
+<p>0,001993 &lt; 0,05: rechazamos la nula. Para las parcelas en sectores con las condiciones de suelo y manejo del estudio, con <span class="math inline">\(\alpha=0,05\)</span> hay evidencia de que A y B difieren en rendimiento medio. Muestra: B rindió más en promedio dentro de los pares, <span class="math inline">\(\bar d=+0,50\)</span> t/ha. IC95% de <span class="math inline">\(\mu_D\)</span>: [0,231; 0,769] t/ha. El IC positivo respalda una media mayor para B y cuantifica la incertidumbre.</p>
+<p><strong>No se calculó ni se informó magnitud relativa pareada.</strong> Sólo se dispone legítimamente de la media y el desvío de las diferencias. Las medias marginales usadas para construir la ilustración son didácticas y no constituyen una base observada válida para un porcentaje.</p>
+</section>
+<section id="una-proporción-d56" class="level3">
+<h3 class="anchored" data-anchor-id="una-proporción-d56">Una proporción — D56</h3>
+<p>0,012419 &lt; 0,05: rechazamos la nula. Con <span class="math inline">\(\alpha=0,05\)</span>, hay evidencia de germinación diferente del 80% en semillas del tipo y procedencia estudiados, con escarificación y condiciones definidas. Muestra: <span class="math inline">\(p=0,85=85\%\)</span> (mayor): +5 puntos porcentuales; +6,25% relativo al 80%. No se agregó un IC para la proporción.</p>
+<p>Las cuatro conclusiones recuperan población, nivel, evidencia, dirección y magnitud observada; agregan magnitud relativa e incertidumbre sólo cuando están disponibles y son legítimas. Se distingue muestra de población e IC absoluto de porcentaje.</p>
+</section>
+</section>
+<section id="comprobación-numérica-en-r-limpio" class="level2">
+<h2 class="anchored" data-anchor-id="comprobación-numérica-en-r-limpio">Comprobación numérica en R limpio</h2>
+<p>Se ejecutaron los controles de <code>calculos_y_graficos.R</code>, incluidos contrastes con <code>t.test</code>, <code>prop.test(correct=FALSE)</code>, cuantiles y probabilidades de colas. Todos pasaron.</p>
 <table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Magnitud</th>
-<th style="text-align: right;">Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>n</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="even">
-<td>μ0</td>
-<td style="text-align: right;">7</td>
-</tr>
-<tr class="odd">
-<td>Media observada</td>
-<td style="text-align: right;">7,5</td>
-</tr>
-<tr class="even">
-<td>s</td>
-<td style="text-align: right;">1,5</td>
-</tr>
-<tr class="odd">
-<td>gl</td>
-<td style="text-align: right;">22</td>
-</tr>
-<tr class="even">
-<td>α</td>
-<td style="text-align: right;">0,05</td>
-</tr>
-<tr class="odd">
-<td>S = s/√n</td>
-<td style="text-align: right;">0,3127716210856</td>
-</tr>
-<tr class="even">
-<td>t*</td>
-<td style="text-align: right;">2,0738730679040</td>
-</tr>
-<tr class="odd">
-<td>t_calc</td>
-<td style="text-align: right;">1,5986105077709</td>
-</tr>
-<tr class="even">
-<td>Crítico inferior en escala de la media: μ0 − t*S</td>
-<td style="text-align: right;">6,351351358626</td>
-</tr>
-<tr class="odd">
-<td>Crítico superior en escala de la media: μ0 + t*S</td>
-<td style="text-align: right;">7,648648641374</td>
-</tr>
-<tr class="even">
-<td>IC95% de μ: límite inferior</td>
-<td style="text-align: right;">6,851351358626</td>
-</tr>
-<tr class="odd">
-<td>IC95% de μ: límite superior</td>
-<td style="text-align: right;">8,148648641374</td>
-</tr>
-</tbody>
-</table>
-<p>Se verifica en R: |t_calc| ≤ t* ↔︎ la media 7,5 está entre los críticos de su escala ↔︎ μ0 = 7 está dentro del IC observado. Los tres resultados son verdaderos. La comparación aplicada mantiene la convención de no rechazo cuando valor-p ≥ α y rechazo cuando valor-p &lt; α.</p>
-</section>
-<section id="simplificación-y-diseños" class="level2">
-<h2 class="anchored" data-anchor-id="simplificación-y-diseños">Simplificación y diseños</h2>
-<p><strong>Diapo 31:</strong> se eliminó por completo el IC de μ − 7 y su interpretación en extremos negativos/positivos. Quedan la pregunta inicial “μ = 7 t/ha. ¿Podemos concluir esto?”, la aparición con “NO”, la conclusión aplicada a la población con α y valor-p, la media estimada 7,5 t/ha (0,5 por encima de la referencia), el IC de μ [6,85; 8,15] y un callout breve. No hay IC de μ − 7 en el bloque introductorio. Los intervalos de diferencias de Welch y pareada se conservan porque esas diferencias son sus parámetros de interés.</p>
-<p><strong>Diapo 32:</strong> “No elegimos la dirección según la media observada ni para reducir el valor-p”. Se conserva el fundamento científico previo de las alternativas unilaterales.</p>
-<p><strong>Diapo 34:</strong> título “Podemos tener 2 diseños adecuados y diferentes”. Paneles simultáneos “DISEÑO AL AZAR / Muestras independientes” y “DISEÑO PAREADO / Muestras relacionadas”, con las explicaciones de unidades distintas y vínculo por diseño. No se sugiere que el diseño pareado excluya la aleatorización: la asignación al azar dentro de sectores permanece explicada en el ejemplo posterior.</p>
-</section>
-<section id="procedimiento-de-siete-pasos-diapositiva-55" class="level2">
-<h2 class="anchored" data-anchor-id="procedimiento-de-siete-pasos-diapositiva-55">Procedimiento de siete pasos — diapositiva 55</h2>
-<p>Secuencia vertical numerada, visible completa y sin fragments:</p>
-<ol type="1">
-<li>Plantear H0 y H1 según la pregunta de investigación.</li>
-<li>Fijar α.</li>
-<li>Definir el estadístico y su distribución bajo H0.</li>
-<li>Establecer criterio por valor-p o por t_calc y valores críticos.</li>
-<li>Realizar los cálculos.</li>
-<li>Decidir rechazar/no rechazar H0.</li>
-<li>Concluir según la pregunta: población, dirección, magnitud e incertidumbre cuando corresponda.</li>
-</ol>
-<p>Se mantuvo <strong>H1</strong> porque la Clase 06 ya la usa consistentemente. La inspección de las fuentes QMD de clases 01–05 no encontró una convención alternativa H_a; no se introdujo una notación nueva al final ni se hicieron modificaciones históricas.</p>
-</section>
-<section id="validaciones-conservadas" class="level2">
-<h2 class="anchored" data-anchor-id="validaciones-conservadas">Validaciones conservadas</h2>
-<p>Los cálculos se contrastan con <code>t.test()</code> sobre vectores didácticos reproducibles. Ambas colas usan vértices reflejados y los recuadros conservan dimensiones/márgenes idénticos. Cada cola es valor-p/2 (tolerancia 1e-14), con integración numérica independiente (tolerancia 1e-9).</p>
-<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Prueba</th>
-<th style="text-align: right;">Cada cola</th>
+<th style="text-align: right;">Estadístico</th>
 <th style="text-align: right;">Valor-p bilateral</th>
+<th>IC95%</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Una media</td>
-<td style="text-align: right;">0,06208580111037</td>
-<td style="text-align: right;">0,12417160222073</td>
+<td style="text-align: right;">1,598610508</td>
+<td style="text-align: right;">0,1241716022</td>
+<td>[6,851351; 8,148649] t/ha</td>
 </tr>
 <tr class="even">
 <td>Welch</td>
-<td style="text-align: right;">0,00532218567994</td>
-<td style="text-align: right;">0,01064437135988</td>
+<td style="text-align: right;">2,794436</td>
+<td style="text-align: right;">0,0106443714</td>
+<td>[0,2058613; 1,3941387] t/ha</td>
 </tr>
 <tr class="odd">
-<td>Pareada</td>
-<td style="text-align: right;">0,00099668896270</td>
-<td style="text-align: right;">0,00199337792541</td>
+<td>Relacionadas</td>
+<td style="text-align: right;">4,145780988</td>
+<td style="text-align: right;">0,0019933779</td>
+<td>[0,2312763; 0,7687237] t/ha</td>
+</tr>
+<tr class="even">
+<td>Una proporción</td>
+<td style="text-align: right;">2,500000000</td>
+<td style="text-align: right;">0,0124193307</td>
+<td>No desarrollado</td>
 </tr>
 </tbody>
 </table>
-<p>El gráfico descriptivo conserva la aclaración visible de datos ilustrativos. Resúmenes verificados: A (n = 11, media = 7,0, s = 0,6); B (n = 13, media = 7,8, s = 0,8). Diferencia relativa 11,4% respecto de A.</p>
-<p>La planificación del tamaño muestral sigue en Clase 05: “¿Cuántas unidades necesitamos?” (línea 543; fórmula n = (zσ/E)² en 546–548) y “Planifiquemos una muestra” (línea 561; cálculo n = 96,04 → 97 lotes en 565). Clase 05 no fue modificada.</p>
+<ul>
+<li>Una media: <span class="math inline">\(100(7,5-7)/7=7,142857\%\)</span>, mostrado +7,1%.</li>
+<li>Welch: <span class="math inline">\(100(7,8-7)/7=11,428571\%\)</span>, mostrado +11,4%.</li>
+<li>Proporción: <span class="math inline">\(0,85-0,80=0,05\)</span>, equivalente a +5 puntos porcentuales; <span class="math inline">\(100(0,85-0,80)/0,80=6,25\%\)</span>.</li>
+<li>Germinación: n=400, 340 germinadas, p=0,85, referencia 0,80, error estándar 0,02, z=2,50. Conteos esperados 320 y 80; aproximación Normal bilateral sin corrección de continuidad.</li>
+</ul>
 </section>
-<section id="revisión-visual-y-reproducción" class="level2">
-<h2 class="anchored" data-anchor-id="revisión-visual-y-reproducción">Revisión visual y reproducción</h2>
-<p>Render completo de Quarto y recorrido por ArrowRight en Chrome a viewport 1280 × 720, esperando imágenes, fuentes y MathJax. Se capturaron e inspeccionaron los 100 estados, incluidas las figuras y las diapositivas 14, 28, 31, 34 y 55 a tamaño completo.</p>
-<p>Resultado: 57 diapositivas horizontales, ninguna vertical; sin desbordes, superposiciones, texto cortado, fórmulas rotas, imágenes ausentes ni errores JavaScript. En las iteraciones se corrigieron una etiqueta superpuesta en la escala central y la numeración duplicada del procedimiento; la versión final muestra las tres escalas y los siete pasos legibles.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">R_PROFILE_USER</span><span class="op">=</span>/dev/null <span class="va">RENV_CONFIG_AUTOLOADER_ENABLED</span><span class="op">=</span>false <span class="ex">quarto</span> render EyDE-UNSa/clases/06_pruebas_hipotesis/Clase_06_Pruebas_Hipotesis_2026.qmd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">R_PROFILE_USER</span><span class="op">=</span>/dev/null <span class="va">RENV_CONFIG_AUTOLOADER_ENABLED</span><span class="op">=</span>false <span class="ex">Rscript</span> <span class="at">-e</span> <span class="st">'source("EyDE-UNSa/clases/06_pruebas_hipotesis/calculos_y_graficos.R"); print(criticos_media); print(ic); print(validacion_colas)'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Evidencia local: <code>/tmp/eyde06-ultima/review.json</code>, <code>check.cjs</code>, capturas de los estados y hojas de contacto. Sin commit, push ni publicación.</p>
-</section>
-<section id="estados-por-diapositiva" class="level2">
-<h2 class="anchored" data-anchor-id="estados-por-diapositiva">Estados por diapositiva</h2>
+<section id="siete-pasos-y-numeración-conservados" class="level2">
+<h2 class="anchored" data-anchor-id="siete-pasos-y-numeración-conservados">Siete pasos y numeración conservados</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 36%">
-<col style="width: 27%">
-<col style="width: 36%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">Diapositiva</th>
-<th>Título</th>
-<th style="text-align: right;">Estados</th>
+<th>Paso</th>
+<th>Welch</th>
+<th>Relacionadas</th>
+<th>Proporción</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1</td>
-<td>Inferencia estadística</td>
-<td style="text-align: right;">1</td>
+<td>1</td>
+<td>D37</td>
+<td>D46</td>
+<td>D54</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2</td>
-<td>De estimar a poner a prueba</td>
-<td style="text-align: right;">2</td>
+<td>2</td>
+<td>D37</td>
+<td>D46</td>
+<td>D54</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">3</td>
-<td>La pregunta de investigación</td>
-<td style="text-align: right;">2</td>
+<td>3</td>
+<td>D39</td>
+<td>D47</td>
+<td>D55</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">4</td>
-<td>La pregunta define la población</td>
-<td style="text-align: right;">2</td>
+<td>4</td>
+<td>D39</td>
+<td>D47</td>
+<td>D55</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">5</td>
-<td>Dos posibilidades</td>
-<td style="text-align: right;">1</td>
+<td>5</td>
+<td>D40–41</td>
+<td>D48–49</td>
+<td>D56</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">6</td>
-<td>Les damos nombre: hipótesis</td>
-<td style="text-align: right;">2</td>
+<td>6</td>
+<td>D42</td>
+<td>D50</td>
+<td>D56</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">7</td>
-<td>Tomamos una muestra</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td>La diferencia sola no alcanza</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td>¿Se acuerdan del error estándar?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td>¿Cuántos errores estándar nos alejamos?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td>Supongamos que H0H_0 es cierta</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td>Una distribución bajo H0H_0</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td>Ubicamos el resultado observado en la distribución de H0H_0</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td>El estadístico t mide esa distancia</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td>¿Por qué comparamos con una t?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td>Supuestos y robustez de la prueba t</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td>¿Qué resultados consideraríamos tan extremos como el observado?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">18</td>
-<td>Esa probabilidad se llama valor-p</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">19</td>
-<td>Leemos el área bilateral</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">20</td>
-<td>Un umbral de decisión: α</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">21</td>
-<td>αtambién define regiones de rechazo</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">22</td>
-<td>¿Qué podemos concluir?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">23</td>
-<td>No rechazar H0H_0 no demuestra que H0H_0 sea verdadera</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">24</td>
-<td>0,05 no es una frontera mágica</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">25</td>
-<td>Volvemos al IC de la Clase 05</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">26</td>
-<td>El valor 7,0 queda incluido</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">27</td>
-<td>IC y prueba de hipótesis: dos caras de la misma moneda</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">28</td>
-<td>La prueba y el IC cuentan la misma historia</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">29</td>
-<td>¿Es importante en términos agronómicos?</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">30</td>
-<td>Significación e importancia agronómica</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">31</td>
-<td>Una conclusión que ayude a decidir</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">32</td>
-<td>La dirección surge de la pregunta</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">33</td>
-<td>¿Y si la pregunta apunta a comparar dos poblaciones?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">34</td>
-<td>Podemos tener 2 diseños adecuados y diferentes</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">35</td>
-<td>Unidades independientes</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">36</td>
-<td>Dos poblaciones, muestras independientes</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">37</td>
-<td>Prueba t de Student para comparar dos medias: muestras independientes</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">38</td>
-<td>Prueba t con corrección de Welch</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">39</td>
-<td>Ejemplo: dos muestras independientes</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">40</td>
-<td>Distribución t bajo H0H_0: Welch</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">41</td>
-<td>Conclusión: dos muestras independientes</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">42</td>
-<td>Welch también necesita un diseño válido</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">43</td>
-<td>Dos parcelas relacionadas dentro de cada sector</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">44</td>
-<td>Dos poblaciones, datos relacionados</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">45</td>
-<td>Analizamos diferencias dentro de cada par</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">46</td>
-<td>Ejemplo: 11 pares de parcelas</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">47</td>
-<td>Distribución t bajo H0H_0: pareada</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">48</td>
-<td>Resultado de la comparación pareada</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">49</td>
-<td>¿Por qué parear puede mejorar la precisión?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">50</td>
-<td>El pareamiento viene del diseño</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">51</td>
-<td>Misma pregunta, distinto diseño</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">52</td>
-<td>Una proporción: la misma lógica</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">53</td>
-<td>Un mapa para organizar preguntas</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">54</td>
-<td>¿Qué puede salir mal al decidir?</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">55</td>
-<td>Procedimiento de una prueba de hipótesis</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">56</td>
-<td>Lo esencial de hoy</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">57</td>
-<td>Próxima clase</td>
-<td style="text-align: right;">1</td>
+<td>7</td>
+<td>D42</td>
+<td>D50</td>
+<td>D56</td>
 </tr>
 </tbody>
 </table>
+<p>El procedimiento general permanece en D23. Se conservan 60 diapositivas horizontales, los títulos y su orden, 46 elementos fragment y 44 apariciones efectivas: 104 estados en total.</p>
+</section>
+<section id="validación-visual-y-técnica" class="level2">
+<h2 class="anchored" data-anchor-id="validación-visual-y-técnica">Validación visual y técnica</h2>
+<p>Render desde proceso R limpio con <code>R_PROFILE_USER=/dev/null</code>, <code>RENV_CONFIG_AUTOLOADER_ENABLED=false</code> y <code>freeze: false</code>. Capturas de todos los estados en Chrome a 1280 × 720; revisión visual mediante hojas de contacto y ampliación de las diapositivas clave. Las fórmulas usan MathJax SVG; las figuras mantienen etiquetas verbales y numéricas.</p>
+<p>La evidencia se encuentra en <code>/tmp/eyde06-precommit/review.json</code>, <code>screens/</code> y las hojas de contacto. <code>resumed.qmd</code> conserva el estado al retomar. La revisión anterior de VALIDACION.md estaba desactualizada respecto del QMD y fue sustituida por este registro.</p>
+<p>Resultado final: <strong>104 estados revisados, sin overflow detectado</strong>, 278 expresiones SVG MathJax, ningún error matemático o JavaScript ni imágenes faltantes. D56 entra íntegramente y no invade el pie. Navegación: 103 avances con ArrowRight, desde 1/60 hasta 60/60. Se compararon los títulos y las líneas de fragments con el estado recuperado: idénticos. <code>git diff --check</code> pasó. No se detectaron problemas conceptuales, numéricos o visuales adicionales pendientes.</p>
 
 
 </section>

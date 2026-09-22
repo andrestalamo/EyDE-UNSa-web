@@ -175,7 +175,7 @@ Andrés Tálamo
 </div>
 </div>
 
-  <p class="date">8 de septiembre de 2026</p>
+  <p class="date">22 de septiembre de 2026</p>
 </section>
 <section id="de-estimar-a-poner-a-prueba" class="slide level2 center">
 <h2>De estimar a poner a prueba</h2>
@@ -190,7 +190,7 @@ Andrés Tálamo
 </div>
 </div>
 <div class="idea fragment">
-<p>Seguimos haciendo <strong>inferencia sobre parámetros poblacionales</strong>.</p>
+<p>Lo veremos primero para <span class="math inline">\(\mu\)</span>, pero la lógica de las pruebas de hipótesis se aplica también a <strong>otros parámetros poblacionales</strong>.</p>
 </div>
 </section>
 <section id="la-pregunta-de-investigación" class="slide level2 center">
@@ -200,7 +200,7 @@ Andrés Tálamo
 <p>¿El rendimiento promedio de la <strong>nueva variedad</strong>, en lotes comerciales de esta zona agroecológica y bajo las condiciones de manejo definidas, <strong>difiere de 7,0 t/ha</strong>?</p>
 </div>
 <div class="pregunta fragment">
-<p>Nos interesan diferencias <strong>hacia arriba o hacia abajo con respecto al valor de referencia</strong>.</p>
+<p>Nos interesan rendimientos medios <strong>mayores o menores que el valor de referencia</strong>.</p>
 </div>
 </section>
 <section id="la-pregunta-define-la-población" class="slide level2 center">
@@ -295,12 +295,15 @@ Andrés Tálamo
 <p>¿Alcanza para concluir que el promedio poblacional es diferente?</p>
 </div>
 </section>
-<section id="la-diferencia-sola-no-alcanza" class="slide level2 h6-compact center">
+<section id="la-diferencia-sola-no-alcanza" class="slide level2 h6-compact h6-variability center">
 <h2>La diferencia sola no alcanza</h2>
-<p>Misma media, misma referencia y mismo <span class="math inline">\(n=23\)</span>; cambia la variabilidad entre lotes.</p>
+<p>Cada punto es el rendimiento observado en una <strong>UE (lote/parcela)</strong>. En ambos conjuntos: <span class="math inline">\(n=23\)</span> y <span class="math inline">\(\bar{x}=7{,}5\)</span> t/ha.</p>
 
-<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
-<p>La misma diferencia de <strong>+0,5 t/ha</strong> puede ser más o menos inusual según la variabilidad esperable <strong>entre medias muestrales</strong>. También importa <span class="math inline">\(n\)</span>.</p>
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:92.0%" class="r-stretch"><div class="h6-note">
+<p>Rombo: <span class="math inline">\(\bar{x}=7{,}5\)</span>. Barra horizontal: <span class="math inline">\(\bar{x}\pm1\,S_{\bar X}\)</span>, con <span class="math inline">\(S_{\bar X}=s/\sqrt n\)</span>. <span class="math inline">\(s\)</span> describe las observaciones; <span class="math inline">\(S_{\bar X}\)</span>, la <strong>variabilidad esperable de las medias muestrales</strong>, no la dispersión de los puntos.</p>
+</div>
+<div class="idea fragment">
+<p>La misma diferencia de <strong>+0,5 t/ha</strong> puede ser más o menos inusual según la <strong>variabilidad entre las UE y el tamaño de la muestra</strong>. Ambos determinan cuánto varían las medias entre muestras.</p>
 </div>
 <aside class="notes">
 <p>Puntos didácticos construidos con igual media y n; no son los datos observados del estudio. Menor dispersión individual implica menor error estándar a igual n.</p>
@@ -319,9 +322,9 @@ Andrés Tálamo
 <section id="se-acuerdan-del-error-estándar" class="slide level2 center">
 <h2>¿Se acuerdan del error estándar?</h2>
 <p>De las clases 04 y 05: estimamos cuánto varían las medias entre muestras del mismo tamaño.</p>
-<p><span class="math display">\[S_{\bar{x}}=\frac{s}{\sqrt n}=\frac{1{,}5}{\sqrt{23}}\approx 0,313\text{ t/ha}\]</span></p>
+<p><span class="math display">\[S_{\bar X}=\frac{s}{\sqrt n}=\frac{1{,}5}{\sqrt{23}}\approx 0,313\text{ t/ha}\]</span></p>
 <div class="idea fragment">
-<p><span class="math inline">\(s\)</span> describe la variación <strong>entre lotes</strong>; <span class="math inline">\(S_{\bar{x}}\)</span> estima la variación <strong>entre medias muestrales</strong>.</p>
+<p><span class="math inline">\(s\)</span> describe la variación <strong>entre lotes</strong>; <span class="math inline">\(S_{\bar X}\)</span> estima la variación <strong>entre medias muestrales</strong>.</p>
 </div>
 </section>
 <section id="cuántos-errores-estándar-nos-alejamos" class="slide level2 center">
@@ -336,7 +339,7 @@ Andrés Tálamo
 <h2>Supongamos que <span class="math inline">\(H_0\)</span> es cierta</h2>
 <p><span class="math display">\[\mu=7{,}0\text{ t/ha}\]</span></p>
 <div class="pregunta">
-<p>Si tomáramos muchísimas muestras de 23 lotes, ¿qué valores de <span class="math inline">\(\bar{x}\)</span> podríamos obtener sólo por variación muestral?</p>
+<p>Si tomáramos muchísimas muestras de 23 lotes, ¿qué valores de <span class="math inline">\(\bar{X}\)</span> podríamos obtener sólo por variación muestral?</p>
 </div>
 <div class="fragment">
 <p>La mayoría serían cercanos a 7,0; algunos menores y otros mayores. <strong>Casi nunca exactamente 7,0</strong>.</p>
@@ -347,7 +350,9 @@ Andrés Tálamo
 <p>Si <span class="math inline">\(H_0\)</span> fuera cierta, ¿cómo variarían las medias de muestras de 23 lotes?</p>
 
 <img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:92.0%" class="r-stretch"><div class="h6-note">
-<p>Ilustración: población Normal con <span class="math inline">\(\mu=7\)</span> y <span class="math inline">\(\sigma=1{,}5\)</span> t/ha. En el estudio real, <strong><span class="math inline">\(\sigma\)</span> es desconocida</strong>.</p>
+<p>Medias muestrales bajo <span class="math inline">\(H_0\)</span>: <span class="math inline">\(\bar X\sim N\!\left(\mu_0,\frac{\sigma^2}{n}\right)\)</span>, con <span class="math inline">\(\mu_0=7\)</span> t/ha.</p>
+<p><span class="math inline">\(E(\bar X\mid H_0)=\mu_0\qquad\sigma_{\bar X}=\sigma/\sqrt n\)</span>.</p>
+<p>Ilustración con población Normal y <span class="math inline">\(\sigma=1{,}5\)</span> t/ha. En el estudio real, <strong><span class="math inline">\(\sigma\)</span> es desconocida</strong>.</p>
 </div>
 <p><span class="math inline">\(H_0\)</span> fija el centro; los supuestos y la variabilidad completan el modelo de referencia.</p>
 </section>
@@ -358,23 +363,23 @@ Andrés Tálamo
 <p>Si <span class="math inline">\(\mu\)</span> realmente fuera 7,0 t/ha, ¿qué tan inusual sería observar una diferencia como la encontrada (<strong>+0,5 t/ha</strong>) o todavía más extrema?</p>
 </div>
 </section>
-<section id="el-estadístico-t-mide-esa-distancia" class="slide level2 h6-compact center">
-<h2>El estadístico t mide esa distancia</h2>
+<section id="el-estadístico-t-relativiza-esa-distancia" class="slide level2 h6-compact center">
+<h2>El estadístico <span class="math inline">\(t\)</span> relativiza esa distancia</h2>
 <p>Un <strong>estadístico de prueba</strong> cuantifica la discrepancia entre lo observado en la muestra y lo esperado bajo <span class="math inline">\(H_0\)</span>.</p>
-<p>Bajo <span class="math inline">\(H_0\)</span> y los supuestos de la prueba: <span class="math inline">\(T\sim t_{22}\)</span>. <strong><span class="math inline">\(T\)</span> varía entre muestras</strong>; <span class="math inline">\(t_{\mathrm{calc}}\)</span> es el valor calculado con la nuestra.</p>
-<p>En este caso, estandarizamos la diferencia con su error estándar <strong>(recién lo vimos)</strong>:</p>
-<p><span class="math display">\[t_{\mathrm{calc}}=\frac{\bar{x}-\mu_0}{S_{\bar{x}}}=\frac{7,5-7{,}0}{1{,}5/\sqrt{23}}\approx 1,599\qquad gl=22\]</span></p>
+<p>Bajo <span class="math inline">\(H_0\)</span> y los supuestos de la prueba: <span class="math inline">\(T\sim t_\delta\)</span>, con <span class="math inline">\(\delta=22\)</span>. <strong><span class="math inline">\(T\)</span> varía entre muestras</strong>; <span class="math inline">\(t_{\mathrm{calc}}\)</span> es el valor calculado con la nuestra.</p>
+<p>Dividimos la diferencia por <span class="math inline">\(S_{\bar X}\)</span>: la variabilidad estimada <strong>entre medias muestrales</strong>.</p>
+<p><span class="math display">\[t_{\mathrm{calc}}=\frac{\bar{x}-\mu_0}{S_{\bar X}}=\frac{7,5-7{,}0}{1{,}5/\sqrt{23}}\approx 1,599\qquad \delta=22\]</span></p>
 <div class="idea fragment">
-<p>La media muestral está a <strong>1,60 errores estándar por encima</strong> de la referencia. Conocer la distribución de <span class="math inline">\(T\)</span> bajo <span class="math inline">\(H_0\)</span> permitirá evaluar cuán inusual es y <strong>calcular probabilidades asociadas</strong>.</p>
+<p><span class="math inline">\(t\)</span> cuantifica cuán lejos está la media observada del valor propuesto por <span class="math inline">\(H_0\)</span>, <strong>en unidades de error estándar</strong>: aquí, 1,60 por encima.</p>
 </div>
 </section>
 <section id="por-qué-comparamos-con-una-t" class="slide level2 center">
 <h2>¿Por qué comparamos con una t?</h2>
-<p>Como <span class="math inline">\(\sigma\)</span> es desconocida, la reemplazamos por <span class="math inline">\(s\)</span>:</p>
-<p><span class="math display">\[T=\frac{\bar{x}-\mu}{s/\sqrt n}\]</span></p>
-<p>Con observaciones independientes de una población Normal, <strong>este estadístico</strong> sigue una t con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
+<p>Como <span class="math inline">\(\sigma\)</span> es desconocida, estimamos el error estándar con <span class="math inline">\(S_{\bar X}=s/\sqrt n\)</span>, donde <span class="math inline">\(s\)</span> es el desvío estándar de las observaciones:</p>
+<p><span class="math display">\[T=\frac{\bar{X}-\mu}{S_{\bar X}}\]</span></p>
+<p>Con observaciones independientes de una población Normal, <strong>este estadístico</strong> sigue una t con <span class="math inline">\(\delta=n-1\)</span> grados de libertad.</p>
 <div class="idea fragment">
-<p>La distribución t corresponde a <strong><span class="math inline">\(T\)</span>, no a <span class="math inline">\(\bar{x}\)</span></strong>. Con muchos grados de libertad, t se aproxima a Normal.</p>
+<p>La distribución t corresponde a <strong><span class="math inline">\(T\)</span>, no a <span class="math inline">\(\bar{X}\)</span></strong>. Con muchos grados de libertad, t se aproxima a Normal.</p>
 </div>
 </section>
 <section id="supuestos-y-robustez-de-la-prueba-t" class="slide level2 h6-compact center">
@@ -395,12 +400,13 @@ Andrés Tálamo
 <p><span class="math inline">\(H_1:\mu\ne7{,}0\)</span>: interesan medias <strong>menores o mayores que 7</strong>, alejadas al menos tanto como la observada.</p>
 
 <img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
-<p>En la distribución de t, esas direcciones son las <strong>dos colas</strong>: <span class="math inline">\(T\le-1,599\)</span> o <span class="math inline">\(T\ge 1,599\)</span>.</p>
+<p>En la distribución de <span class="math inline">\(T\)</span>, esas direcciones son las <strong>dos colas</strong>: <span class="math inline">\(T\le-1,599\)</span> o <span class="math inline">\(T\ge 1,599\)</span>.</p>
+<p>Ya sabemos calcular probabilidades asociadas a una distribución <span class="math inline">\(t\)</span> de Student.</p>
 </div>
 </section>
 <section id="esa-probabilidad-se-llama-valor-p" class="slide level2 h6-compact center">
 <h2>Esa probabilidad se llama valor-p</h2>
-<p>Queremos calcular la <strong>probabilidad, bajo <span class="math inline">\(H_0\)</span></strong>, de obtener un estadístico tan extremo como el observado o más extremo.</p>
+<p>El valor-p es una <strong>probabilidad condicional</strong>: la probabilidad, <strong>suponiendo que <span class="math inline">\(H_0\)</span> es verdadera</strong>, de obtener un resultado tan extremo como el observado o más extremo.</p>
 <p>Esa probabilidad se llama <strong>valor-p (p-value, en inglés)</strong>. En esta prueba bilateral:</p>
 <p><span class="math display">\[\text{valor-p}=P(|T|\ge |t_{\mathrm{calc}}|\mid H_0)\approx 0,1242\]</span></p>
 <p><span class="math inline">\(T\)</span>: variable aleatoria bajo <span class="math inline">\(H_0\)</span>. <span class="math inline">\(t_{\mathrm{calc}}\)</span>: valor calculado con nuestra muestra.</p>
@@ -432,7 +438,7 @@ Andrés Tálamo
 <h2>Un umbral de decisión: <span class="math inline">\(\alpha\)</span></h2>
 <p>El valor-p cuantifica cuán raro sería un resultado como el observado o más extremo, <strong>suponiendo <span class="math inline">\(H_0\)</span> cierta</strong>.</p>
 <p>Para decidir, necesitamos definir <strong>a partir de qué probabilidad lo consideraremos suficientemente raro</strong>.</p>
-<p><strong>UMBRAL:</strong> <span class="math inline">\(\alpha\)</span>, nivel de significación. Aquí: <span class="math inline">\(\alpha=0{,}05\)</span>, establecido <strong>antes de mirar los resultados</strong>.</p>
+<p><strong>UMBRAL:</strong> <span class="math inline">\(\alpha\)</span> es el <strong>nivel de significación</strong>, fijado <strong>a priori por quien investiga</strong>. Valores habituales: <span class="math inline">\(0{,}10\)</span>; <span class="math inline">\(0{,}05\)</span> y <span class="math inline">\(0{,}01\)</span>. Aquí: <span class="math inline">\(\alpha=0{,}05\)</span>.</p>
 <p><strong>CRITERIO DE DECISIÓN:</strong></p>
 <ul>
 <li>Rechazamos <span class="math inline">\(H_0\)</span> <strong>si y sólo si</strong> valor-p <span class="math inline">\(&lt;\alpha\)</span>.</li>
@@ -451,14 +457,30 @@ Andrés Tálamo
 <p><span class="math inline">\(t_{\mathrm{calc}}\approx 1,599\)</span> queda en la <strong>región de no rechazo</strong>. No es una región de aceptación: no rechazar <span class="math inline">\(H_0\)</span> no demuestra que sea verdadera.</p>
 </div>
 </section>
-<section id="qué-podemos-concluir" class="slide level2 center">
+<section id="qué-podemos-concluir" class="slide level2 h6-compact h6-complete-conclusion center">
 <h2>¿Qué podemos concluir?</h2>
 <div class="h6-report">
 <p>Con <span class="math inline">\(\alpha=0{,}05\)</span>, los datos <strong>no aportan evidencia suficiente</strong> para concluir que el rendimiento medio de la <strong>nueva variedad</strong>, en los lotes comerciales de la zona, campaña y manejo definidos, <strong>difiera de la referencia de 7,0 t/ha</strong>.</p>
 </div>
-<p>La media muestral fue <strong>0,5 t/ha mayor</strong> que la referencia (valor-p ≈ 0,1242). Esa diferencia debe interpretarse considerando su <strong>incertidumbre</strong>.</p>
+<p><strong>Muestra:</strong> <span class="math inline">\(\bar x=7,5\)</span> t/ha; <strong>+0,5 t/ha</strong>, un <strong>+7,1%</strong> respecto de 7,0 (valor-p <span class="math inline">\(\approx 0,1242\)</span>).</p>
+<p><strong>Incertidumbre:</strong> IC95% de <span class="math inline">\(\mu\)</span>: <strong>[6,85; 8,15] t/ha</strong>. El intervalo corresponde a la media, no al porcentaje.</p>
 <div class="idea fragment">
-<p><strong>No rechazar <span class="math inline">\(H_0\)</span> no demuestra <span class="math inline">\(H_0\)</span>.</strong> Volveremos al IC95% para cuantificar la incertidumbre.</p>
+<p><strong>No rechazamos <span class="math inline">\(H_0\)</span>; eso no demuestra igualdad.</strong> El IC incluye valores menores y mayores que 7,0 t/ha.</p>
+</div>
+</section>
+<section id="procedimiento-de-una-prueba-de-hipótesis" class="slide level2 h6-procedure center">
+<h2>Procedimiento de una prueba de hipótesis</h2>
+<p>Abstraemos los pasos del ejemplo que acabamos de resolver.</p>
+<div class="h6-route">
+<ol type="1">
+<li><strong>Plantear <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></strong> según la pregunta de investigación.</li>
+<li><strong>Fijar</strong> el nivel de significación <span class="math inline">\(\alpha\)</span>.</li>
+<li><strong>Definir el estadístico</strong> y su distribución suponiendo <span class="math inline">\(H_0\)</span> verdadera.</li>
+<li><strong>Establecer el criterio de decisión:</strong> valor-p o estadístico y valores críticos correspondientes.</li>
+<li><strong>Realizar</strong> los cálculos necesarios.</li>
+<li><strong>Decidir sobre <span class="math inline">\(H_0\)</span>:</strong> rechazar o no rechazar.</li>
+<li><strong>Concluir según la pregunta:</strong> comunicar población, dirección, magnitud e incertidumbre, cuando corresponda.</li>
+</ol>
 </div>
 </section>
 <section id="no-rechazar-h_0-no-demuestra-que-h_0-sea-verdadera" class="slide level2 center">
@@ -469,21 +491,13 @@ Andrés Tálamo
 <p>No rechazar <span class="math inline">\(H_0\)</span> no demuestra igualdad ni ausencia de diferencia poblacional.</p>
 </div>
 </section>
-<section id="no-es-una-frontera-mágica" class="slide level2 center">
+<section id="no-es-una-frontera-mágica" class="slide level2 h6-compact center">
 <h2>0,05 no es una frontera mágica</h2>
-<div class="h6-pair">
-<div>
-<p><span class="math display">\[\text{valor-p}=0{,}049\]</span></p>
-<p>Justo por debajo del umbral.</p>
-</div>
-<div>
-<p><span class="math display">\[\text{valor-p}=0{,}051\]</span></p>
-<p>Justo por encima del umbral.</p>
-</div>
-</div>
+<p><strong>Zoom de la cola derecha.</strong> <span class="math inline">\(T\sim t_{\delta}\)</span>, <span class="math inline">\(\delta=22\)</span>; prueba bilateral, <span class="math inline">\(\alpha=0{,}05\)</span>: <span class="math inline">\(t^*=\text{2,074}\)</span>.</p>
+
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:92.0%" class="r-stretch"><p><span class="math inline">\(2{,}0641&lt;2{,}074&lt;2{,}0838\)</span>: tres valores extremadamente próximos.</p>
 <div class="idea fragment">
-<p>La evidencia <strong>no cambia bruscamente</strong> al cruzar 0,05: 0,049 y 0,051 representan evidencia muy similar, aunque el criterio de decisión los ubique a lados distintos del umbral.</p>
-<p>En nuestro ejemplo, valor-p <span class="math inline">\(\approx 0,1242\)</span>. También debemos mirar la <strong>estimación y su incertidumbre</strong>.</p>
+<p>Los dos resultados observados, a ambos lados del valor crítico, representan <strong>grados de incompatibilidad con <span class="math inline">\(H_0\)</span> prácticamente iguales</strong>. La regla los separa, pero <strong>0,05 no es una frontera científica ni biológica</strong>.</p>
 </div>
 </section>
 <section id="volvemos-al-ic-de-la-clase-05" class="slide level2 center">
@@ -492,13 +506,13 @@ Andrés Tálamo
 <p><span class="math display">\[t^*_{0{,}025;22}=2,074\]</span></p>
 <p><span class="math display">\[IC95\%:\quad7,5\pm 2,074\times\frac{1{,}5}{\sqrt{23}}\]</span></p>
 <p><span class="math display">\[[6,85;\ 8,15]\text{ t/ha}\]</span></p>
-<p>Aquí <span class="math inline">\(t^*_{0{,}025;22}\)</span> deja 0,025 de probabilidad en la cola derecha.</p>
 </section>
-<section id="el-valor-70-queda-incluido" class="slide level2 center">
+<section id="el-valor-70-queda-incluido" class="slide level2 h6-compact h6-ci-included center">
 <h2>El valor 7,0 queda incluido</h2>
 
-<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
-<p>El intervalo incluye <span class="math inline">\(\mu_0=7{,}0\)</span>. Es coherente con <strong>no rechazar <span class="math inline">\(H_0\)</span></strong>.</p>
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
+<p>El IC incluye valores <strong>menores que 7</strong>, el <strong>7</strong> y valores <strong>mayores que 7</strong> t/ha.</p>
+<p>¿Los datos permiten sostener claramente que la media poblacional es mayor o menor que 7? <strong>No rechazamos <span class="math inline">\(H_0\)</span>; eso no demuestra que <span class="math inline">\(\mu=7\)</span>.</strong></p>
 </div>
 </section>
 <section id="ic-y-prueba-de-hipótesis-dos-caras-de-la-misma-moneda" class="slide level2 center">
@@ -515,28 +529,31 @@ Andrés Tálamo
 </div>
 </div>
 <div class="idea fragment">
-<p>En la prueba bilateral y el IC correspondientes, el nivel de confianza es <span class="math inline">\(1-\alpha\)</span>.</p>
-<p><span class="math inline">\(\alpha=0{,}05\quad\longleftrightarrow\quad1-\alpha=0{,}95\)</span> (<strong>IC95%</strong>).</p>
+<p>Prueba bilateral de nivel <span class="math inline">\(\alpha\)</span> <span class="math inline">\(\longleftrightarrow\)</span> IC correspondiente de nivel <span class="math inline">\(1-\alpha\)</span>.</p>
+<p>Prueba bilateral al <span class="math inline">\(5\%\)</span> <span class="math inline">\(\longleftrightarrow\)</span> IC del <span class="math inline">\(95\%\)</span>.</p>
 </div>
 </section>
 <section id="la-prueba-y-el-ic-cuentan-la-misma-historia" class="slide level2 h6-compact h6-test-ic center">
 <h2>La prueba y el IC cuentan la misma historia</h2>
 
-<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:100.0%" class="r-stretch"><div class="idea">
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%" class="r-stretch"><div class="idea">
 <p><span class="math inline">\(\mu_0\)</span> está dentro del IC95% <span class="math inline">\(\longleftrightarrow\)</span> <span class="math inline">\(t_{\mathrm{calc}}\)</span> está en la región de no rechazo.</p>
 <p>Para una prueba bilateral con <span class="math inline">\(\alpha=0{,}05\)</span>, el IC95% correspondiente y la prueba <strong>cuentan la misma historia</strong>.</p>
 </div>
 </section>
-<section id="es-importante-en-términos-agronómicos" class="slide level2 center">
+<section id="es-importante-en-términos-agronómicos" class="slide level2 h6-compact h6-agronomy center">
 <h2>¿Es importante en términos agronómicos?</h2>
 <p>Diferencia estimada respecto de 7,0: <strong>+0,5 t/ha</strong>.</p>
 <p><span class="math display">\[IC95\%\text{ para }\mu:\quad[6,85;\ 8,15]\text{ t/ha}\]</span></p>
-<p>El IC incluye 7: hay valores poblacionales <strong>menores y mayores que la referencia</strong> compatibles con nuestros datos.</p>
+<p>¿Una mejora de <strong>0,2 t/ha</strong> justificaría cambiar de variedad? ¿Y una de <strong>1 t/ha</strong>?</p>
 <ul>
-<li>¿Una mejora de 0,2 t/ha justificaría cambiar de variedad? ¿Y una de 1 t/ha?</li>
-<li>¿Qué implican los costos, la estabilidad y las condiciones de manejo?</li>
-<li>¿La estimación es suficientemente precisa para decidir?</li>
+<li><strong>Significación estadística:</strong> ¿hay evidencia de incompatibilidad con <span class="math inline">\(H_0\)</span>?</li>
+<li><strong>Magnitud del efecto:</strong> ¿cuánto difiere el rendimiento respecto de la referencia?</li>
+<li><strong>Relevancia agronómica:</strong> ¿esa magnitud justifica cambiar una decisión productiva o de manejo?</li>
 </ul>
+<div class="h6-note">
+<p>Puede haber significación estadística con poca importancia agronómica, o una diferencia potencialmente importante sin significación. La relevancia depende del <strong>contexto, costos, beneficios y consecuencias</strong>. También importan la estabilidad y la precisión para decidir.</p>
+</div>
 </section>
 <section id="significación-e-importancia-agronómica" class="slide level2 center">
 <h2>Significación e importancia agronómica</h2>
@@ -557,8 +574,9 @@ Andrés Tálamo
 <p>“<span class="math inline">\(\mu=7\)</span> t/ha”. ¿Podemos concluir esto?</p>
 </div>
 <div class="fragment">
-<p><strong>NO.</strong> Con <span class="math inline">\(\alpha=0{,}05\)</span>, para los lotes comerciales de la zona, campaña y manejo definidos, no hay evidencia suficiente de que la media de la nueva variedad <strong>difiera de 7,0 t/ha</strong> (valor-p ≈ 0,1242).</p>
-<p>Estimamos un rendimiento medio de <strong>7,5 t/ha</strong>, <strong>0,5 t/ha por encima</strong> de la referencia, con IC95% de <span class="math inline">\(\mu\)</span>: <strong>[6,85; 8,15] t/ha</strong>.</p>
+<p><strong>NO.</strong> Con <span class="math inline">\(\alpha=0{,}05\)</span>, para los lotes comerciales de la zona, campaña y manejo definidos, no hay evidencia suficiente de que la media de la nueva variedad <strong>difiera de 7,0 t/ha</strong> (valor-p <span class="math inline">\(\approx 0,1242\)</span>).</p>
+<p><strong>Muestra:</strong> media de <strong>7,5 t/ha</strong>, <strong>+0,5 t/ha</strong> respecto de 7,0: <strong>+7,1%</strong>.</p>
+<p><strong>Incertidumbre:</strong> IC95% de <span class="math inline">\(\mu\)</span>: <strong>[6,85; 8,15] t/ha</strong>. Corresponde a la media, no al porcentaje.</p>
 <div class="idea">
 <p>El IC incluye 7: <strong>no rechazar no demuestra igualdad</strong>. Informamos la estimación y su incertidumbre.</p>
 </div>
@@ -617,7 +635,7 @@ Andrés Tálamo
 <section id="y-si-la-pregunta-apunta-a-comparar-dos-poblaciones" class="slide level2 center">
 <h2>¿Y si la pregunta apunta a comparar dos poblaciones?</h2>
 <div class="pregunta">
-<p>¿Difieren los rendimientos promedio de las variedades <strong>A y B</strong>?</p>
+<p>En las <strong>parcelas de la zona y bajo las condiciones de manejo del estudio</strong>, ¿difiere el rendimiento medio entre las variedades <strong>A y B</strong>?</p>
 </div>
 <p>La pregunta puede ser la misma, pero la <strong>estructura de los datos</strong> determina cómo expresamos el parámetro y construimos su estimador.</p>
 <div class="idea fragment">
@@ -645,14 +663,16 @@ Andrés Tálamo
 <section id="unidades-independientes" class="slide level2 center">
 <h2>Unidades independientes</h2>
 
-<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:92.0%" class="r-stretch"><p>Diseño completamente aleatorizado: asignamos A o B a <strong>unidades independientes, no relacionadas</strong>. El esquema representa su ubicación, no pares.</p>
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:92.0%" class="r-stretch"><p>Diseño completamente aleatorizado: asignamos A o B a <strong>unidades independientes, no relacionadas</strong>. El esquema representa su ubicación, no pares.</p>
 </section>
 <section id="dos-poblaciones-muestras-independientes" class="slide level2 h6-compact center">
 <h2>Dos poblaciones, muestras independientes</h2>
 
-<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:92.0%" class="r-stretch"><p><span class="math display">\[\Delta\mu=\mu_B-\mu_A\qquad\Delta\bar{x}=\bar{x}_B-\bar{x}_A\]</span></p>
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:92.0%" class="r-stretch"><p><span class="math display">\[\Delta\mu=\mu_B-\mu_A\qquad\Delta\bar{x}=\bar{x}_B-\bar{x}_A\]</span></p>
 <div class="idea fragment">
-<p>Comparamos <strong>dos medias de muestras independientes</strong>: comparamos <span class="math inline">\(\Delta\bar{x}\)</span> con 0 considerando su error estándar.</p>
+<p><span class="h6-step">Paso 1 · Plantear <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></span></p>
+<p><span class="math inline">\(H_0:\Delta\mu=0\)</span>; <span class="math inline">\(H_1:\Delta\mu\ne0\)</span>.</p>
+<p><span class="h6-step">Paso 2 · Fijar el nivel de significación <span class="math inline">\(\alpha\)</span></span>: <span class="math inline">\(\alpha=0{,}05\)</span>, antes de mirar los resultados.</p>
 </div>
 </section>
 <section id="prueba-t-de-student-para-comparar-dos-medias-muestras-independientes" class="slide level2 center">
@@ -666,15 +686,18 @@ Andrés Tálamo
 </section>
 <section id="prueba-t-con-corrección-de-welch" class="slide level2 h6-compact center">
 <h2>Prueba t con corrección de Welch</h2>
+<p><span class="h6-step">Paso 3 · Definir el estadístico</span></p>
 <p>Welch permite comparar medias <strong>sin asumir homogeneidad de varianzas</strong>.</p>
-<p><span class="math display">\[t_{\mathrm{calc}}=\frac{\Delta\bar{x}-0}{S_{\Delta\bar{x}}}\qquad S_{\Delta\bar{x}}=S_{\bar{x}_B-\bar{x}_A}=\sqrt{\frac{s_B^2}{n_B}+\frac{s_A^2}{n_A}}\]</span></p>
-<p>Los grados de libertad se ajustan con el <strong>tamaño y la variabilidad de ambas muestras</strong>; habitualmente los calcula el software.</p>
+<p><span class="math display">\[t_{\mathrm{calc}}=\frac{\Delta\bar{x}-0}{S_{\Delta\bar X}}\qquad S_{\Delta\bar X}=S_{\bar X_B-\bar X_A}=\sqrt{\frac{s_B^2}{n_B}+\frac{s_A^2}{n_A}}\]</span></p>
+<p>Bajo <span class="math inline">\(H_0\)</span>: <span class="math inline">\(T\overset{\mathrm{aprox.}}{\sim}t_\delta\)</span>. El software ajusta los grados de libertad <span class="math inline">\(\delta\)</span> con el tamaño y la variabilidad de las muestras.</p>
+<p><span class="h6-step">Paso 4 · Establecer el criterio de decisión</span>: rechazar <span class="math inline">\(H_0\)</span> si valor-p <span class="math inline">\(&lt;\alpha\)</span>; de lo contrario, no rechazar.</p>
 <div class="idea fragment">
 <p>Usaremos Welch. <strong>No necesitamos comparar previamente las varianzas para elegirla.</strong></p>
 </div>
 </section>
 <section id="ejemplo-dos-muestras-independientes" class="slide level2 h6-welch center">
 <h2>Ejemplo: dos muestras independientes</h2>
+<p><span class="h6-step">Paso 5 · Realizar los cálculos necesarios</span></p>
 <p>Rendimiento en parcelas independientes de la zona y manejo del estudio, en t/ha:</p>
 <table class="caption-top">
 <thead>
@@ -701,27 +724,17 @@ Andrés Tálamo
 </tbody>
 </table>
 <p><span class="math display">\[\Delta\bar{x}=\bar{x}_B-\bar{x}_A=0,80\text{ t/ha}\]</span></p>
-<p><span class="math display">\[S_{\Delta\bar{x}}=\sqrt{\frac{0{,}8^2}{13}+\frac{0{,}6^2}{11}}\approx 0,286\text{ t/ha}\qquad t_{\mathrm{calc}}=\frac{0,80-0}{S_{\Delta\bar{x}}}\approx 2,794\]</span></p>
+<p><span class="math display">\[S_{\Delta\bar X}=\sqrt{\frac{0{,}8^2}{13}+\frac{0{,}6^2}{11}}\approx 0,286\text{ t/ha}\qquad t_{\mathrm{calc}}=\frac{0,80-0}{S_{\Delta\bar X}}\approx 2,794\]</span></p>
 <div class="idea fragment">
-<p><span class="math inline">\(gl\approx 21,73\)</span>: en Welch pueden <strong>no ser enteros</strong>. Los obtiene el software; no los calcularemos a mano.</p>
+<p><span class="math inline">\(\delta\approx 21,73\)</span>: en Welch pueden <strong>no ser enteros</strong>. Los obtiene el software; no los calcularemos a mano.</p>
 </div>
 </section>
 <section id="distribución-t-bajo-h_0-welch" class="slide level2 h6-compact center">
 <h2>Distribución t bajo <span class="math inline">\(H_0\)</span>: Welch</h2>
-<p><span class="math inline">\(H_0:\Delta\mu=0\)</span>; <span class="math inline">\(H_1:\Delta\mu\ne0\)</span>. Referencia t <strong>aproximada</strong> bajo <span class="math inline">\(H_0\)</span>, con <span class="math inline">\(gl\approx 21,73\)</span>.</p>
+<p><span class="h6-step">Paso 5 · Realizar los cálculos necesarios</span></p>
+<p><span class="math inline">\(H_0:\Delta\mu=0\)</span>; <span class="math inline">\(H_1:\Delta\mu\ne0\)</span>. Referencia t <strong>aproximada</strong> bajo <span class="math inline">\(H_0\)</span>, con <span class="math inline">\(\delta\approx 21,73\)</span>.</p>
 <div class="h6-plot-stack">
 <div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:92.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment" data-fragment-index="0">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -732,10 +745,21 @@ Andrés Tálamo
 </div>
 </div>
 </div>
+<div class="fragment" data-fragment-index="0">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:92.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="idea fragment" data-fragment-index="0">
 <p>Las dos áreas reúnen resultados tan extremos o más extremos que <span class="math inline">\(|t_{\mathrm{calc}}|\approx 2,794\)</span>:</p>
-<p><span class="math inline">\(\text{valor-p bilateral}=P(|T|\ge |t_{\mathrm{calc}}|\mid H_0)\approx 0,0106\)</span>.</p>
+<p><span class="math inline">\(\text{valor-p bilateral}=P(|T|\ge |t_{\mathrm{calc}}|\mid H_0)\approx 0,010644\)</span>.</p>
 </div>
 </section>
 <section id="conclusión-dos-muestras-independientes" class="slide level2 h6-compact h6-descriptive center">
@@ -746,7 +770,7 @@ Andrés Tálamo
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -754,15 +778,18 @@ Andrés Tálamo
 <p><strong>Ilustración didáctica:</strong> valores construidos que reproducen <span class="math inline">\(n\)</span>, media y <span class="math inline">\(s\)</span>; no son datos de campo.</p>
 </div>
 <div>
-<p>Para las <strong>parcelas de la zona y manejo estudiados</strong>, con <span class="math inline">\(\alpha=0{,}05\)</span> hay evidencia de que los rendimientos medios <strong>difieren</strong> (valor-p ≈ 0,0106).</p>
-<p>Estimamos <strong>0,80 t/ha más en B</strong>. IC95% para <span class="math inline">\(\Delta\mu\)</span>: <strong>[0,206; 1,394] t/ha</strong>.</p>
+<p><span class="h6-step">Paso 6 · Decidir sobre <span class="math inline">\(H_0\)</span></span>: <span class="math inline">\(0,010644&lt;0{,}05\)</span>: <strong>rechazamos <span class="math inline">\(H_0\)</span></strong>.</p>
+<p><span class="h6-step">Paso 7 · Concluir según la pregunta</span></p>
+<p>Para las <strong>parcelas de la zona y manejo estudiados</strong>, con <span class="math inline">\(\alpha=0{,}05\)</span> hay evidencia de que los rendimientos medios <strong>difieren</strong>.</p>
+<p><strong>Muestra:</strong> B presentó mayor rendimiento medio: <strong>+0,80 t/ha</strong> respecto de A.</p>
+<p><strong>Incertidumbre:</strong> IC95% de <span class="math inline">\(\Delta\mu\)</span>: <strong>[0,206; 1,394] t/ha</strong>.</p>
 </div>
 </div>
 <div class="idea fragment">
-<p><strong>La variedad B rindió 11,4% más que la A</strong> en la muestra. Describimos dirección y magnitud; el IC cuantifica la incertidumbre de la diferencia absoluta.</p>
+<p><strong>Diferencia relativa observada: +11,4%</strong>, tomando A como referencia. El IC corresponde a la <strong>diferencia absoluta</strong>, no a ese porcentaje.</p>
 </div>
 <aside class="notes">
-<p>100 × (media B − media A) / media A. Los valores ilustrativos reproducen exactamente los resúmenes; no permiten recuperar la distribución real de los datos originales. El IC no corresponde al porcentaje.</p>
+<p><span class="math inline">\(100(\bar{x}_B-\bar{x}_A)/\bar{x}_A\)</span>. Los valores ilustrativos reproducen exactamente los resúmenes; no permiten recuperar la distribución real de los datos originales. El IC no corresponde al porcentaje.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -787,7 +814,7 @@ Andrés Tálamo
 <h2>Dos parcelas relacionadas dentro de cada sector</h2>
 <p>En <strong>11 sectores del lote</strong>, identificamos dos parcelas próximas, con suelo y manejo similares dentro del sector. Asignamos al azar <strong>A a una y B a la otra</strong>.</p>
 
-<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:92.0%" class="r-stretch"><div class="idea fragment">
 <p>Dentro del sector, las parcelas comparten condiciones. Entre sectores pueden cambiar fertilidad, humedad y suelo; <strong>los sectores son independientes</strong>.</p>
 </div>
 <aside class="notes">
@@ -807,23 +834,25 @@ Andrés Tálamo
 <section id="dos-poblaciones-datos-relacionados" class="slide level2 h6-compact center">
 <h2>Dos poblaciones, datos relacionados</h2>
 
-<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:92.0%" class="r-stretch"><p><strong>Nueva variable:</strong> diferencia dentro de cada par, <span class="math inline">\(d_i=B_i-A_i\)</span>.</p>
-<p>Parámetro: <span class="math inline">\(\mu_d\)</span>. Estimador: <span class="math inline">\(\bar{d}\)</span>.</p>
+<img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:92.0%" class="r-stretch"><p><strong>Variable diferencia <span class="math inline">\(D\)</span>:</strong> <span class="math inline">\(D_i=X_{Bi}-X_{Ai}\)</span> para el par <span class="math inline">\(i\)</span>. Observamos <span class="math inline">\(d_i=x_{Bi}-x_{Ai}\)</span>.</p>
+<p>Parámetro: <span class="math inline">\(\mu_D\)</span>. Estimador: <span class="math inline">\(\bar D\)</span>. En la muestra observamos <span class="math inline">\(\bar d\)</span>.</p>
 <div class="idea fragment">
-<p>Analizamos <strong>una sola variable: las diferencias</strong>. Esto convierte el problema en una prueba para <strong>UNA media poblacional</strong>, como al comienzo.</p>
+<p>Aplicamos el <strong>mismo procedimiento a una sola variable: las diferencias</strong>. Es una prueba para <strong>una media poblacional</strong>, como al comienzo.</p>
 </div>
 </section>
 <section id="analizamos-diferencias-dentro-de-cada-par" class="slide level2 center">
 <h2>Analizamos diferencias dentro de cada par</h2>
-<p><span class="math inline">\(d_i=B_i-A_i\)</span>. Parámetro: <span class="math inline">\(\mu_d\)</span>; estimador: <span class="math inline">\(\bar{d}\)</span>.</p>
-<p><span class="math display">\[H_0:\mu_d=0\qquad H_1:\mu_d\ne0\]</span></p>
+<p><span class="h6-step">Paso 1 · Plantear <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></span></p>
+<p><span class="math inline">\(D_i=X_{Bi}-X_{Ai}\)</span>. Parámetro: <span class="math inline">\(\mu_D\)</span>; estimador: <span class="math inline">\(\bar D\)</span>. Valor observado: <span class="math inline">\(\bar d\)</span>.</p>
+<p><span class="math display">\[H_0:\mu_D=0\qquad H_1:\mu_D\ne0\]</span></p>
+<p><span class="h6-step">Paso 2 · Fijar el nivel de significación <span class="math inline">\(\alpha\)</span></span>: <span class="math inline">\(\alpha=0{,}05\)</span>, fijado a priori.</p>
 <p>¿Qué información nos da el <strong>signo de <span class="math inline">\(d_i\)</span></strong>?</p>
 <div class="idea fragment">
 <p><span class="math inline">\(d_i&gt;0\)</span>: B rindió <strong>más</strong> que A dentro de ese par.</p>
 <p><span class="math inline">\(d_i&lt;0\)</span>: B rindió <strong>menos</strong> que A dentro de ese par.</p>
 </div>
 <aside class="notes">
-<p>Bajo d = B − A, μd = E(B − A) = μB − μA. La igualdad de los parámetros no hace independientes las muestras: el estimador y su error estándar se construyen a partir de las diferencias relacionadas.</p>
+<p>Bajo <span class="math inline">\(D=X_B-X_A\)</span>, <span class="math inline">\(\mu_D=E(D)=\mu_B-\mu_A\)</span>. La igualdad de los parámetros no hace independientes las muestras: el estimador y su error estándar se construyen a partir de las diferencias relacionadas.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -836,29 +865,31 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
+<section id="muestras-relacionadas-estadístico-y-criterio" class="slide level2 h6-compact center">
+<h2>Muestras relacionadas: estadístico y criterio</h2>
+<p><span class="h6-step">Paso 3 · Definir el estadístico</span></p>
+<p>Una media poblacional de diferencias: <span class="math inline">\(\mu_D\)</span>; bajo <span class="math inline">\(H_0\)</span>, <span class="math inline">\(\mu_{D,0}=0\)</span>.</p>
+<p><span class="math inline">\(S_{\bar D}\)</span> estima la variabilidad de <span class="math inline">\(\bar D\)</span>; <span class="math inline">\(\bar d\)</span> es su valor observado.</p>
+<p><span class="math display">\[t_{\mathrm{calc}}=\frac{\bar d-\mu_{D,0}}{S_{\bar D}}\qquad S_{\bar D}=\frac{s_D}{\sqrt n}\]</span></p>
+<p>Bajo <span class="math inline">\(H_0\)</span>, con diferencias independientes y Normales: <span class="math inline">\(T\sim t_\delta\)</span>, con <span class="math inline">\(\delta=n-1\)</span>.</p>
+<p><span class="h6-step">Paso 4 · Establecer el criterio de decisión</span></p>
+<p>Rechazamos <span class="math inline">\(H_0\)</span> si valor-p <span class="math inline">\(&lt;\alpha=0{,}05\)</span>; de lo contrario, no rechazamos.</p>
+<p>La alternativa es bilateral: consideramos <strong>ambas colas</strong>.</p>
+</section>
 <section id="ejemplo-11-pares-de-parcelas" class="slide level2 center">
 <h2>Ejemplo: 11 pares de parcelas</h2>
-<p><span class="math display">\[n=11\text{ pares}\qquad \bar{d}=0{,}50\text{ t/ha}\qquad s_d=0{,}40\text{ t/ha}\]</span></p>
-<p><span class="math display">\[S_{\bar{d}}=\frac{0{,}40}{\sqrt{11}}=0,121\text{ t/ha}\]</span></p>
-<p><span class="math display">\[t_{\mathrm{calc}}=\frac{0{,}50}{S_{\bar{d}}}=4,146\qquad gl=10\]</span></p>
+<p><span class="h6-step">Paso 5 · Realizar los cálculos necesarios</span></p>
+<p><span class="math display">\[n=11\text{ pares}\qquad \bar{d}=0{,}50\text{ t/ha}\qquad s_D=0{,}40\text{ t/ha}\]</span></p>
+<p><span class="math display">\[S_{\bar D}=\frac{0{,}40}{\sqrt{11}}=0,121\text{ t/ha}\]</span></p>
+<p><span class="math display">\[t_{\mathrm{calc}}=\frac{0{,}50}{S_{\bar D}}=4,146\qquad \delta=n-1=10\]</span></p>
 <p>El tamaño muestral relevante es <strong>11 diferencias</strong>, no 22 observaciones independientes.</p>
 </section>
 <section id="distribución-t-bajo-h_0-pareada" class="slide level2 h6-compact center">
 <h2>Distribución t bajo <span class="math inline">\(H_0\)</span>: pareada</h2>
-<p><span class="math inline">\(H_0:\mu_d=0\)</span>. Distribución t con <span class="math inline">\(gl=10\)</span> para las 11 diferencias.</p>
+<p><span class="h6-step">Paso 5 · Realizar los cálculos necesarios</span></p>
+<p><span class="math inline">\(H_0:\mu_D=0\)</span>. Distribución t con <span class="math inline">\(\delta=10\)</span> para las 11 diferencias.</p>
 <div class="h6-plot-stack">
 <div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:92.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment" data-fragment-index="0">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -869,21 +900,50 @@ Andrés Tálamo
 </div>
 </div>
 </div>
+<div class="fragment" data-fragment-index="0">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-19-1.png" style="width:92.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="idea fragment" data-fragment-index="0">
-<p><span class="math inline">\(\text{valor-p}=P(|T|\ge|t_{\mathrm{calc}}|\mid H_0)\approx 0,0020\)</span>. Es <strong>la misma lógica de una media poblacional</strong>; lo nuevo fue construir <span class="math inline">\(d\)</span> a partir de pares relacionados.</p>
+<p><span class="math inline">\(\text{valor-p}=P(|T|\ge|t_{\mathrm{calc}}|\mid H_0)\approx 0,001993\)</span>. Es <strong>la misma lógica de una media poblacional</strong>; lo nuevo fue construir <span class="math inline">\(d\)</span> a partir de pares relacionados.</p>
 </div>
 </section>
-<section id="resultado-de-la-comparación-pareada" class="slide level2 h6-compact center">
+<section id="resultado-de-la-comparación-pareada" class="slide level2 h6-compact h6-descriptive h6-paired-result center">
 <h2>Resultado de la comparación pareada</h2>
-<p>Para las <strong>parcelas en sectores con las condiciones de suelo y manejo representadas por el estudio</strong>, con <span class="math inline">\(\alpha=0{,}05\)</span> hay evidencia de que A y B <strong>difieren en rendimiento medio</strong> (valor-p ≈ 0,0020).</p>
-<p>Estimamos <strong>0,50 t/ha más en B que en A</strong>:</p>
-<p><span class="math display">\[IC95\%\text{ de }\mu_d:\quad[0,231;\ 0,769]\text{ t/ha}\]</span></p>
+<div class="h6-descriptive-grid">
+<div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Ilustración didáctica, no registros de campo.</strong> Reproduce las 11 diferencias, su media y su desvío. Cada línea une A y B del <strong>mismo sector</strong> (unidad del par).</p>
+</div>
+<div>
+<p><span class="h6-step">Paso 6 · Decidir sobre <span class="math inline">\(H_0\)</span></span>: <span class="math inline">\(0,001993&lt;0{,}05\)</span>: <strong>rechazamos <span class="math inline">\(H_0\)</span></strong>.</p>
+<p><span class="h6-step">Paso 7 · Concluir según la pregunta</span></p>
+<p>Para las <strong>parcelas en sectores con las condiciones de suelo y manejo del estudio</strong>, con <span class="math inline">\(\alpha=0{,}05\)</span> hay evidencia de que A y B <strong>difieren en rendimiento medio</strong>.</p>
+<p><strong>Muestra:</strong> B rindió más en promedio dentro de los pares: <span class="math inline">\(\bar d=+0,50\)</span> t/ha.</p>
+<p><strong>Incertidumbre:</strong> IC95% de <span class="math inline">\(\mu_D\)</span>: <strong>[0,231; 0,769] t/ha</strong>.</p>
+</div>
+</div>
 <div class="idea fragment">
-<p>El intervalo es positivo: <strong>el 0 no está incluido en el IC</strong>; respalda una <strong>media mayor para B</strong> y cuantifica la incertidumbre de la diferencia.</p>
+<p>La información relevante es el <strong>cambio dentro de cada sector</strong>. El IC positivo respalda una media mayor para B y cuantifica la incertidumbre.</p>
 </div>
 <div class="h6-note">
-<p>Supuestos: sectores independientes y diferencias aproximadamente Normales, sin valores extremos dominantes. La normalidad relevante es la de las diferencias.</p>
+<p>Sectores independientes; diferencias aproximadamente Normales, sin valores extremos dominantes.</p>
 </div>
 </section>
 <section id="por-qué-parear-puede-mejorar-la-precisión" class="slide level2 center">
@@ -895,7 +955,7 @@ Andrés Tálamo
 </div>
 <div>
 <p><strong>DENTRO DEL SECTOR</strong></p>
-<p>Al calcular <span class="math inline">\(B_i-A_i\)</span>, parte de esa heterogeneidad común se cancela.</p>
+<p>Al calcular <span class="math inline">\(d_i=x_{Bi}-x_{Ai}\)</span>, parte de esa heterogeneidad común se cancela.</p>
 </div>
 </div>
 <div class="idea fragment">
@@ -918,12 +978,12 @@ Andrés Tálamo
 <div class="h6-pair">
 <div>
 <p><strong>UNIDADES SIN RELACIÓN</strong></p>
-<p>Prueba t para <strong>dos medias independientes</strong></p>
+<p>Prueba <span class="math inline">\(t\)</span> para <strong>muestras independientes</strong></p>
 <p>Usaremos la corrección de Welch.</p>
 </div>
 <div>
 <p><strong>UNIDADES RELACIONADAS EN PARES</strong></p>
-<p>Prueba t para <strong>datos pareados</strong></p>
+<p>Prueba <span class="math inline">\(t\)</span> para <strong>muestras relacionadas (datos pareados)</strong></p>
 <p>Una media de diferencias.</p>
 </div>
 </div>
@@ -934,12 +994,52 @@ Andrés Tálamo
 <section id="una-proporción-la-misma-lógica" class="slide level2 h6-proportion center">
 <h2>Una proporción: la misma lógica</h2>
 <p>En este ejemplo, con el tratamiento de referencia históricamente germina el <strong>80% de las semillas</strong>: <span class="math inline">\(\pi_0=0{,}80\)</span> es una referencia previa.</p>
-<p><strong>Pregunta:</strong> ¿El nuevo tratamiento de escarificación produce una proporción <strong>diferente</strong>?</p>
+<p><strong>Pregunta:</strong> En <strong>semillas del tipo y procedencia estudiados, bajo las condiciones de germinación definidas</strong>, ¿el nuevo tratamiento de escarificación produce una proporción de germinación <strong>diferente del 80%</strong>?</p>
+<p><span class="h6-step">Paso 1 · Plantear <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></span></p>
 <p><span class="math display">\[H_0:\pi=0{,}80\qquad H_1:\pi\ne0{,}80\]</span></p>
-<p>Observamos la proporción muestral <span class="math inline">\(p\)</span>. Bajo <span class="math inline">\(H_0\)</span>, suponemos <span class="math inline">\(\pi=\pi_0\)</span>: para saber qué resultados serían esperables, calculamos la variabilidad <strong>con ese valor de referencia</strong>, no con <span class="math inline">\(p\)</span>.</p>
-<p><span class="math display">\[\sigma_{p,H_0}=\sqrt{\frac{\pi_0(1-\pi_0)}{n}}\]</span></p>
+<p><span class="h6-step">Paso 2 · Fijar el nivel de significación <span class="math inline">\(\alpha\)</span></span>: <span class="math inline">\(\alpha=0{,}05\)</span>, fijado antes de mirar los resultados.</p>
 <div class="idea fragment">
-<p>Suponiendo <span class="math inline">\(H_0\)</span> cierta, ¿qué tan inusual sería el <strong>resultado observado</strong>?</p>
+<p>Aplicamos el <strong>mismo procedimiento</strong>, ahora a <span class="math inline">\(\pi\)</span>: suponiendo <span class="math inline">\(H_0\)</span> cierta, ¿qué tan inusual sería el <strong>resultado observado</strong>?</p>
+</div>
+</section>
+<section id="una-proporción-estadístico-y-criterio" class="slide level2 h6-compact center">
+<h2>Una proporción: estadístico y criterio</h2>
+<p><span class="h6-step">Paso 3 · Definir el estadístico</span></p>
+<p>Bajo <span class="math inline">\(H_0\)</span>, calculamos la variabilidad de <span class="math inline">\(p\)</span> <strong>con <span class="math inline">\(\pi_0=0{,}80\)</span></strong>:</p>
+<p><span class="math display">\[S_p=\sqrt{\frac{\pi_0(1-\pi_0)}{n}}\qquad z=\frac{p-\pi_0}{S_p}\]</span></p>
+<p>Bajo <span class="math inline">\(H_0\)</span>: <span class="math inline">\(Z\overset{\mathrm{aprox.}}{\sim}N(0,1)\)</span>, con observaciones independientes y conteos esperados suficientemente grandes.</p>
+<p><span class="h6-step">Paso 4 · Establecer el criterio de decisión</span></p>
+<p>Rechazamos <span class="math inline">\(H_0\)</span> si valor-p <span class="math inline">\(&lt;\alpha=0{,}05\)</span>; de lo contrario, no rechazamos.</p>
+<p>La alternativa es bilateral: consideramos <strong>ambas colas</strong>.</p>
+</section>
+<section id="una-proporción-del-resultado-al-valor-p" class="slide level2 h6-compact h6-proportion-calculation center">
+<h2>Una proporción: del resultado al valor-p</h2>
+<p><span class="h6-step">Paso 5 · Realizar los cálculos necesarios</span></p>
+<p><strong>Muestra didáctica aleatoria:</strong> <span class="math inline">\(n=400\)</span> semillas; <strong>340 germinadas</strong>.</p>
+<div class="h6-proportion-grid">
+<div>
+<p><span class="math inline">\(p=\dfrac{340}{400}=0{,}85\)</span>; bajo <span class="math inline">\(H_0\)</span>: <span class="math inline">\(\pi_0=0{,}80\)</span>.</p>
+<p><span class="math display">\[S_p=\sqrt{\frac{0{,}80(0{,}20)}{400}}=0{,}02\]</span></p>
+<p><span class="math display">\[z=\frac{0{,}85-0{,}80}{0{,}02}=2{,}50\]</span></p>
+</div>
+<div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_06_Pruebas_Hipotesis_2026_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Condiciones: <span class="math inline">\(n\pi_0=320\)</span> y <span class="math inline">\(n(1-\pi_0)=80\)</span>.</p>
+</div>
+</div>
+<div class="idea fragment">
+<p><span class="math inline">\(H_1:\pi\ne0{,}80\)</span>: valor-p <span class="math inline">\(=P(|Z|\ge2{,}50\mid H_0)=2P(Z\ge2{,}50)\approx 0,012419\)</span>.</p>
+<p><span class="h6-step">Paso 6 · Decidir sobre <span class="math inline">\(H_0\)</span></span>: <span class="math inline">\(0,012419&lt;0{,}05\)</span>: <strong>rechazamos <span class="math inline">\(H_0\)</span></strong>.</p>
+<p><span class="h6-step">Paso 7 · Concluir según la pregunta</span>: Con <span class="math inline">\(\alpha=0{,}05\)</span>, hay evidencia de germinación diferente del 80% en <strong>semillas del tipo y procedencia estudiados, con escarificación y condiciones definidas</strong>.</p>
+<p><strong>Muestra:</strong> <span class="math inline">\(p=0{,}85=85\%\)</span> (mayor): <strong>+5 puntos porcentuales</strong>; <strong>+6,25% relativo al 80%</strong>.</p>
 </div>
 </section>
 <section id="un-mapa-para-organizar-preguntas" class="slide level2 center">
@@ -961,17 +1061,17 @@ Andrés Tálamo
 <tr class="odd">
 <td>Una media</td>
 <td><span class="math inline">\(\mu\)</span>; <span class="math inline">\(\mu_0\)</span>: valor de referencia</td>
-<td>t para una media</td>
+<td><span class="math inline">\(\mu\rightarrow t\)</span> para una media</td>
 </tr>
 <tr class="even">
 <td>Una proporción</td>
 <td><span class="math inline">\(\pi\)</span>; <span class="math inline">\(\pi_0\)</span>: valor de referencia</td>
-<td>Prueba para una proporción</td>
+<td><span class="math inline">\(\pi\rightarrow z\)</span> para una proporción</td>
 </tr>
 <tr class="odd">
 <td>Dos medias</td>
-<td><span class="math inline">\(\Delta\mu=\mu_B-\mu_A\)</span>; en pares: <span class="math inline">\(\mu_d\)</span></td>
-<td>Independientes: t con Welch; relacionadas: t pareada</td>
+<td><span class="math inline">\(\Delta\mu=\mu_B-\mu_A\)</span>; en pares: <span class="math inline">\(\mu_D\)</span></td>
+<td>Independientes: <span class="math inline">\(\Delta\mu\rightarrow t\)</span> de Welch; relacionadas: <span class="math inline">\(\mu_D\rightarrow t\)</span> sobre diferencias</td>
 </tr>
 <tr class="even">
 <td>Dos proporciones</td>
@@ -981,35 +1081,23 @@ Andrés Tálamo
 </tbody>
 </table>
 <div class="idea fragment">
-<p>Primero <strong>pregunta → parámetro → estructura de los datos</strong>.</p>
+<p><strong>Los mismos siete pasos</strong>: pregunta y parámetro; hipótesis y comportamiento bajo <span class="math inline">\(H_0\)</span>; estadístico y valor-p; decisión y conclusión.</p>
 </div>
 </section>
 <section id="qué-puede-salir-mal-al-decidir" class="slide level2 center">
 <h2>¿Qué puede salir mal al decidir?</h2>
 <div class="h6-pair">
 <div>
-<p>Podemos <strong>rechazar <span class="math inline">\(H_0\)</span> cuando era cierta</strong>.</p>
+<p><strong>Error tipo I:</strong> rechazar <span class="math inline">\(H_0\)</span> cuando era cierta.</p>
+<p>Analogía habitual: <strong>falso positivo</strong>.</p>
 </div>
 <div>
-<p>Podemos <strong>no rechazar <span class="math inline">\(H_0\)</span> cuando era falsa</strong>.</p>
+<p><strong>Error tipo II:</strong> no rechazar <span class="math inline">\(H_0\)</span> cuando era falsa.</p>
+<p>Analogía habitual: <strong>falso negativo</strong>.</p>
 </div>
 </div>
 <div class="idea fragment">
-<p>Estas posibilidades nos llevan a los <strong>errores tipo I y II</strong> y a la <strong>potencia estadística</strong>. Será el núcleo de la próxima clase.</p>
-</div>
-</section>
-<section id="procedimiento-de-una-prueba-de-hipótesis" class="slide level2 h6-procedure center">
-<h2>Procedimiento de una prueba de hipótesis</h2>
-<div class="h6-route">
-<ol type="1">
-<li><strong>Plantear <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></strong> según la pregunta de investigación.</li>
-<li><strong>Fijar</strong> el nivel de significación <span class="math inline">\(\alpha\)</span>.</li>
-<li><strong>Definir el estadístico</strong> y su distribución suponiendo <span class="math inline">\(H_0\)</span> verdadera.</li>
-<li><strong>Establecer el criterio de decisión:</strong> valor-p o <span class="math inline">\(t_{\mathrm{calc}}\)</span> y los valores críticos correspondientes.</li>
-<li><strong>Realizar</strong> los cálculos necesarios.</li>
-<li><strong>Decidir sobre <span class="math inline">\(H_0\)</span>:</strong> rechazar o no rechazar.</li>
-<li><strong>Concluir según la pregunta:</strong> comunicar población, dirección, magnitud e incertidumbre, cuando corresponda.</li>
-</ol>
+<p>“Falso positivo” y “falso negativo” son <strong>analogías útiles</strong>; las definiciones se expresan respecto de <span class="math inline">\(H_0\)</span>. Los errores y la potencia serán el núcleo de la próxima clase.</p>
 </div>
 </section>
 <section id="lo-esencial-de-hoy" class="slide level2 center">
