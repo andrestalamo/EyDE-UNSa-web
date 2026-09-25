@@ -1,0 +1,125 @@
+/* Clase 08: ajustes locales sobre la identidad EyDE. */
+.reveal .slides section.h8 {font-size:.94em;}
+.reveal .slides section.h8 > p {margin:12px 0;}
+.reveal .slides section.h8 h2 {font-size:1.48em;line-height:1.12;margin-bottom:16px;}
+.h8 .idea,.h8 .pregunta,.h8 .alerta {padding:10px 18px;margin:12px 0;}
+.h8 .idea p,.h8 .pregunta p,.h8 .alerta p {margin:5px 0;}
+.h8 .pregunta {font-size:1.05em;}
+.h8 .MathJax_Display,.h8 .MathJax_SVG_Display {margin:.35em 0 !important;}
+.h8 .cell-output-display img {display:block;width:100%;max-height:325px;object-fit:contain;margin:0 auto;}
+.h8 .cell-output-display {margin:0;}
+.h8-pair {display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;}
+.h8-pair > div {min-width:0;}
+.h8-note {font-size:.68em;line-height:1.22;color:var(--gris);margin:7px 0;}
+.h8-stack {display:grid;}
+.h8-stack > div {grid-area:1 / 1;min-width:0;}
+.h8-stack > .fragment {background:var(--papel);}
+.h8-large .cell-output-display img {max-height:415px;}
+.h8 table {font-size:.8em;width:95%;}
+.h8 .h8-source {font-size:.58em;line-height:1.2;color:var(--gris);margin:6px 0;}
+.h8 .paper-image {display:block;max-height:350px;max-width:100%;object-fit:contain;margin:12px auto;}
+.h8 .paper-wide {width:95%;max-height:370px;}
+.h8 .paper-text {width:100%;max-height:350px;}
+.h8 .meme {display:block;max-height:360px;margin:10px auto;}
+.h8-compact {font-size:.87em!important;}
+.h8-compact li {margin-bottom:9px;}
+.h8 .h8-flow {font-size:1.05em;line-height:1.6;text-align:center;}
+#title-slide h1 {font-size:2.3em;}
+#title-slide .subtitle {font-size:1.06em;}
+
+/* Reemplazos progresivos de figuras, sin transparencia transitoria. */
+.h8-stack > .fragment {transition:none !important;}
+
+.h8-paper-pair {align-items:start;}
+
+/* Ronda de contenido: fotos pendientes, mosaico y construcción fila-punto. */
+.h8-questions {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;text-align:left;}
+.h8-question {border-top:3px solid var(--maiz);padding:14px 10px;}
+.h8-question p {margin:10px 0;}
+.h8-question-photo {width:100%;height:210px;object-fit:cover;display:block;}
+.h8-mosaic {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,175px);gap:12px 20px;width:82%;margin:0 auto;}
+.h8-mosaic > div {min-width:0;min-height:0;background:white;}
+.h8-mosaic p {margin:0;height:100%;}
+.h8 .h8-meme {display:block;width:100%;height:100%;max-height:175px;object-fit:contain;margin:0;}
+.h8-build .h8-pair {grid-template-columns:.9fr 1.1fr;}
+.h8-build table {width:100%;font-size:.78em;}
+.h8-build .cell-output-display img {max-height:365px;}
+.h8-build .h8-stack > div {background:var(--papel);}
+.h8-row-1 tbody tr:nth-child(1),.h8-row-2 tbody tr:nth-child(2),
+.h8-row-3 tbody tr:nth-child(3),.h8-row-4 tbody tr:nth-child(4) {background:#f1e3b1;color:var(--verde-oscuro);font-weight:700;}
+.h8-r-continuo .cell-output-display img {max-height:335px;}
+.h8-steps > p {text-align:left;}
+.h8-test-r > p {line-height:1.25;}
+
+/* Actividad local: controles grandes, tabla con desplazamiento y resultados vinculados. */
+.h8-live {display:grid;grid-template-columns: .85fr 1.15fr;gap:20px;align-items:start;text-align:left;}
+.h8-live > div {min-width:0;}
+.h8-live form {display:grid;grid-template-columns:1.2fr .85fr auto;gap:8px;align-items:end;font-size:20px;}
+.h8-live label {display:block;}
+.h8-live input {display:block;box-sizing:border-box;width:100%;min-width:0;border:1px solid #66736d;border-radius:4px;padding:6px;font:inherit;color:#173c2b;background:white;}
+.h8-live button {font:inherit;border:1px solid #2d6a4f;border-radius:4px;background:#2d6a4f;color:white;padding:7px 9px;cursor:pointer;}
+.h8-live :is(input,button):focus-visible {outline:3px solid #d7a928;outline-offset:2px;}
+.h8-live #h8-input-status {font-size:17px;line-height:1.2;min-height:40px;margin:7px 0;}
+.h8-live-table {height:210px;overflow-y:auto;border-bottom:1px solid #aaa;overscroll-behavior:contain;}
+.h8-live table {width:100%;font-size:19px;margin:0;border-collapse:collapse;}
+.h8-live th,.h8-live td {padding:3px 5px;}
+.h8-live thead {position:sticky;top:0;background:var(--papel,#f6f3e8);z-index:1;}
+.h8-live .h8-invalid {background:#fff0da;}
+.h8-live .h8-live-help {font-size:15px;line-height:1.2;margin:8px 0;}
+.h8-live svg {width:100%;height:auto;display:block;font-family:inherit;}
+.h8-live-metrics {display:grid;grid-template-columns:.45fr .7fr .7fr .45fr 1fr 1.6fr;gap:8px;margin-top:12px;font-size:19px;}
+.h8-live-metrics > div {padding:8px 5px;border-top:3px solid #d7a928;background:#f0f1e9;}
+.h8-live-metrics strong {display:block;font-size:22px;white-space:nowrap;}
+.h8 [data-live] {font-variant-numeric:tabular-nums;}
+.h8 .h8-infostat-raw {font:19px/1.25 'Courier New',monospace;white-space:pre;box-shadow:none;background:white;padding:12px 18px;width:96%;box-sizing:border-box;color:#111;margin:5px auto;}
+.h8 .h8-infostat-coef {display:block;width:96%;max-height:245px;object-fit:contain;background:white;margin:8px auto;}
+.h8-output-reading {min-height:165px;margin-top:20px;}
+/* La tabla auténtica permanece visible durante las preguntas. */
+.h8-infostat-figure {position:relative;width:96%;max-width:900px;margin:10px auto;}
+.h8-infostat-figure img {display:block;width:100%;height:auto;margin:0;background:white;}
+.h8-output-mark {position:absolute;box-sizing:border-box;border:3px solid #b28613;border-radius:3px;pointer-events:none;}
+.h8-mark-coef {left:14%;top:43%;width:12%;height:53%;}
+.h8-mark-se {left:26.1%;top:69.5%;width:11.2%;height:26.5%;}
+.h8-mark-ci {left:37.3%;top:69.5%;width:24%;height:26.5%;}
+.h8-mark-test {left:61.3%;top:69.5%;width:23.2%;height:26.5%;}
+
+/* Segunda ronda: recorte visual del margen externo, sin editar ni deformar el meme. */
+.h8-causal-pair {display:grid;grid-template-columns:1fr 1fr;gap:35px;width:88%;margin:12px auto;align-items:center;}
+.h8-cats-crop {position:relative;height:305px;overflow:hidden;}
+.reveal .h8-cats-crop img {position:absolute;width:100%;max-width:none;max-height:none;left:0;top:-118px;margin:0;}
+.h8-truck {height:305px;display:flex;align-items:center;justify-content:center;}
+.reveal .h8-truck img {max-width:100%;max-height:305px;margin:0;object-fit:contain;}
+.h8-infer-action {text-align:left;margin:0 0 5px;}
+.h8-infer-action button,.h8-ols button {font:inherit;font-size:19px;background:#2d6a4f;color:white;border:1px solid #173c2b;border-radius:4px;padding:7px 12px;cursor:pointer;}
+.h8-infer-action button:disabled {background:#66736d;cursor:default;}
+.h8-live-metrics [hidden] {display:none!important;}
+.reveal .h8-infostat-figure img {max-width:100%;max-height:none;}
+.h8-mark-coef {left:13.9%;top:42.4%;width:12%;height:54.8%;}
+.h8-mark-se {left:25.9%;top:69.1%;width:11.4%;height:28.1%;}
+.h8-mark-ci {left:37.3%;top:69.1%;width:25.7%;height:28.1%;}
+.h8-mark-test {left:63%;top:69.1%;width:21.5%;height:28.1%;}
+.h8-ols {display:grid;grid-template-columns:.75fr 1.25fr;gap:25px;align-items:center;text-align:left;}
+.h8-ols > * {min-width:0;}
+.h8-ols-controls label {font-size:22px;display:block;margin:10px 0 3px;}
+.h8-ols-controls output {font-weight:bold;float:right;}
+.h8-ols input {width:100%;height:30px;accent-color:#2d6a4f;cursor:pointer;}
+.h8-ols .h8-sse {font-size:28px;text-align:center;margin:12px 0;padding:8px;border-top:3px solid #d7a928;}
+.h8-sse strong {display:block;font-size:35px;}
+.h8-sse small {font-size:16px;display:block;}
+.h8-ols svg {width:100%;height:auto;font-family:inherit;}
+.h8-ols button {width:100%;line-height:1.25;}
+.h8-ols :is(input,button):focus-visible {outline:3px solid #d7a928;outline-offset:3px;}
+.h8-cats-crop {width:100%;max-width:390px;height:auto;aspect-ratio:367 / 300;justify-self:center;}
+.reveal .h8-cats-crop img {width:108.72%;left:-4.36%;top:0;transform:translateY(-20%);}
+
+/* Reserva espacio para el footer en el estado óptimo de mínimos cuadrados. */
+.h8-ols svg {height:330px;}
+.h8-ols-controls label {margin-top:8px;}
+.h8-ols .h8-sse {margin:8px 0;}
+
+/* Ajustes limitados a las diapositivas de fotos y contraste derecho. */
+.h8 .h8-question-photo {width:100%;max-width:100%;height:210px;object-fit:cover;margin:0;}
+.h8-right-hyp .fragment {font-size:.92em;line-height:1.2;}
+.h8-right-test .h8-pair {font-size:.85em;gap:20px;}
+.h8-right-test > p {font-size:.88em;}
+.h8-right-conclusion .fragment {font-size:.88em;line-height:1.22;}
