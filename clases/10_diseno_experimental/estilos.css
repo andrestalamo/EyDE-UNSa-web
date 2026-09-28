@@ -1,0 +1,64 @@
+/* Clase 10: tema y componentes EyDE compartidos; geometría local. */
+.reveal .slides section.de {font-size:.94em;}
+.reveal .slides section.de h2 {font-size:1.48em;line-height:1.12;margin-bottom:20px;}
+.de h3 {font-size:1.15em;margin:12px 0;}
+.de p {margin:14px 0;}
+.de .idea,.de .pregunta,.de .alerta {padding:14px 20px;margin:18px 0;}
+.de .pregunta {font-size:1.08em;}
+.de-pair {display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;}
+.de-pair>div {min-width:0;}
+.de-big {font-size:1.6em;line-height:1.3;font-weight:700;color:var(--verde-oscuro);margin:32px 0;}
+.de-tiles {display:grid;gap:22px;margin:28px 0;}
+.de-tiles>div {border-top:4px solid var(--maiz);padding:17px 12px;background:rgba(45,106,79,.045);line-height:1.3;}
+.de-flow {display:flex;align-items:center;gap:18px;margin:35px 0;justify-content:center;}
+.de-flow>div {border:3px solid var(--verde);padding:22px;flex:1;text-align:center;}
+.de-arrow {font-size:1.7em;color:var(--tierra);}
+.de-process {display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center;}
+.de-chain {text-align:center;}
+.de-chain>div {border:3px solid var(--verde);padding:12px;font-size:.9em;}
+.de-chain>span {font-size:1.2em;line-height:1.1;display:block;}
+.de-plots {display:grid;gap:15px;margin:24px 0;}
+.de-plot {border:3px solid var(--verde-oscuro);min-height:85px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.18em;background-image:repeating-linear-gradient(90deg,transparent 0 20px,#ffffff28 21px 23px);}
+.tr-a {background-color:#c6dbc6;color:#173c2b;}.tr-b {background-color:#ecd5bf;color:#59351e;}.tr-c {background-color:#f0dea0;color:#594509;}
+.de-surface {border:5px solid var(--verde);padding:22px;background:#dce7cc;text-align:center;}
+.de-samples {display:grid;grid-template-columns:repeat(4,1fr);gap:17px;margin:25px 0;}
+.de-samples i {height:42px;border:2px dashed var(--verde);background:#fff9;}
+.de-note {font-size:.72em;color:var(--gris);line-height:1.25;}
+.de-equation {font-size:1.6em;text-align:center;margin:28px 0;}
+.de-decisions>div {display:grid;grid-template-columns:1.2fr 40px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #bbc5bb;align-items:center;}
+.de-blocks {display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin:28px 0;}
+.de-blocks>div {border:2px solid #83967e;padding:16px;background:#fff5;}
+.de-blocks .de-plots {gap:8px;}
+.de-latin {display:grid;grid-template-columns:60px repeat(3,1fr);gap:12px;text-align:center;align-items:center;}
+.de-latin span {height:95px;display:grid;place-items:center;border:2px solid #66736d;font-size:1.5em;font-weight:bold;}
+.de-map {text-align:center;margin:18px auto;width:95%;font-size:1.02em;line-height:1.2;}
+.de-map>div {background:rgba(45,106,79,.06);padding:9px;border-left:5px solid var(--verde);}
+.de-map>span {display:block;color:var(--tierra);line-height:1.05;}
+.de-chart {display:block;width:100%;height:295px;font-family:inherit;font-size:25px;fill:var(--tinta);}
+
+/* Diagramas centrales ampliados tras revisión del HTML. */
+.reveal .slides section.de {text-align:left;}
+.de-blocks .de-plot {min-height:170px;}
+.de-blocks {margin:35px 0;}
+.de-latin span {height:115px;}
+#aun-así-las-ue-varían .de-plot {min-height:170px;}
+
+/* Primera ronda: orientación fija de principios, sin reducir tipografía. */
+.reveal .slides section.de-principio {height:660px;box-sizing:border-box;padding-top:40px;}
+.reveal .slides section.de-principio::before {position:absolute;top:0;left:0;font-size:20px;line-height:26px;letter-spacing:.06em;font-weight:650;color:var(--verde);}
+.reveal .slides section.de-principio-1::before {content:"PRINCIPIO 1 · REPLICACIÓN";}
+.reveal .slides section.de-principio-2::before {content:"PRINCIPIO 2 · ALEATORIZACIÓN";}
+.reveal .slides section.de-principio-3::before {content:"PRINCIPIO 3 · CONTROL LOCAL";}
+.de-d18 .de-plot,.de-d21 .de-plot {min-height:115px;}
+.de-d19 .de-pair {margin:42px 0;gap:45px;}
+.de-d19 .de-equation {font-size:1.8em;margin:40px 0;}
+.de-d20 .de-flow>div {padding:34px 22px;}
+.de-d23 .de-decisions>div {grid-template-columns:1.7fr 40px 1fr;padding:12px 0;}
+.de-d7 .de-tiles>div,.de-d11 .de-tiles>div,.de-d29 .de-tiles>div {padding:28px 18px;}
+.de-d6 .de-chain>div {padding:17px;}
+.de-d34>p {margin:22px 0;line-height:1.35;}
+.de-pots {display:grid;grid-template-columns:repeat(3,1fr);gap:60px;text-align:center;margin:28px 0;}
+.de-pot {width:220px;height:170px;margin:0 auto 16px;clip-path:polygon(0 0,100% 0,85% 100%,15% 100%);border-top:16px solid #0003;box-sizing:border-box;}
+.de-pot.negra {background:#303733;}
+.de-pot.blanca {background:#fff;box-shadow:inset 0 0 0 3px #b0b9b2;}
+.de-pot.terracota {background:#b56847;}

@@ -191,8 +191,8 @@ a:focus-visible {
   transition: border-color 120ms ease, background-color 120ms ease, transform 120ms ease;
 }
 
-.class-card:hover,
-.class-card:focus-visible {
+a.class-card[href]:hover,
+a.class-card[href]:focus-visible {
   border-color: var(--eyde-green);
   color: var(--eyde-dark-green);
   background: var(--eyde-paper);
@@ -232,4 +232,18 @@ a:focus-visible {
   .classes-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Estado editorial de una clase todavía no disponible. */
+.class-card .class-status {
+  align-self: flex-start;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(215, 169, 40, 0.45);
+  border-radius: 0.25rem;
+  color: var(--eyde-dark-green);
+  background: rgba(215, 169, 40, 0.14);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
 }
