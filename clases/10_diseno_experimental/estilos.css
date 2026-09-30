@@ -62,3 +62,139 @@
 .de-pot.negra {background:#303733;}
 .de-pot.blanca {background:#fff;box-shadow:inset 0 0 0 3px #b0b9b2;}
 .de-pot.terracota {background:#b56847;}
+
+/* Segunda revisión: comparaciones, principios y diseños construidos con fragments. */
+.de-palette>div:nth-child(3n+1) {border-top-color:#2d6a4f;}
+.de-palette>div:nth-child(3n+2) {border-top-color:#8a5a3b;}
+.de-palette>div:nth-child(3n) {border-top-color:#607d86;}
+.de-panels {align-items:stretch;gap:32px;margin:24px 0;}
+.de-panels>div {padding:22px 25px;background:rgba(45,106,79,.055);border:2px solid #aac0ac;border-top:7px solid #2d6a4f;}
+.de-panels>div:nth-child(2) {background:rgba(138,90,59,.05);border-color:#c5b2a2;border-top-color:#8a5a3b;}
+.de-panels h3 {margin:0 0 20px;}
+.de-compare .de-big {margin:26px 0;}
+.de-example {font-size:1.08em;line-height:1.45;text-align:center;border-top:2px solid #a5b5a4;padding-top:18px;}
+.de-system {margin:14px 0;}
+.de-system-top,.de-system-bottom {display:flex;justify-content:center;gap:60px;text-align:center;min-height:90px;}
+.de-system-top>div,.de-system-bottom>div {min-width:320px;color:var(--verde-oscuro);}
+.de-system-top span,.de-system-bottom span {display:block;font-size:1.35em;line-height:1.1;color:var(--tierra);}
+.de-system-main {display:grid;grid-template-columns:1fr 55px 1.15fr 55px 1fr;align-items:center;gap:12px;}
+.de-system-main>div {padding:22px 15px;border:3px solid var(--verde);text-align:center;}
+.de-system-main>span {font-size:1.5em;text-align:center;color:var(--tierra);}
+.de-system-main small {display:block;font-size:.78em;margin-top:12px;}
+.de-system-main .de-system-core {background:#dce7cc;padding:32px 15px;}
+.de-system-bottom {padding-top:10px;}
+.de-process-slide .pregunta {min-height:42px;}
+.de-sources .de-tiles>div {padding:22px;}
+.de-infer-chain {text-align:center;font-size:1.12em;}
+.de-infer-chain>div>div,.de-infer-chain>div:first-child {padding:12px 20px;background:#e5eadf;border-left:5px solid var(--verde);}
+.de-infer-chain span {color:var(--tierra);line-height:1.15;display:block;}
+.de-precision .de-panels {margin:20px 0;}
+.de-precision .de-equation {font-size:1.8em;margin:30px 0;}
+.reveal .slides section.de-rep-detail {height:auto;min-height:620px;}
+.de-rep-detail .de-surface {padding:16px;}
+.de-rep-detail .de-samples {margin:18px 0;gap:12px;}
+.de-rep-detail .de-samples i {height:32px;}
+.de-mini-units {display:flex;gap:12px;justify-content:center;margin:25px 0;}
+.de-mini-units i,.de-mini-blocks i {display:block;width:38px;height:45px;background:#c6dbc6;border:2px solid #2d6a4f;}
+.de-mini-blocks {display:flex;gap:20px;justify-content:center;margin:20px 0;}
+.de-mini-blocks>div {display:flex;gap:10px;border:3px solid #8a5a3b;padding:10px;}
+.de-grouping .de-panels {margin:16px 0;}
+.de-grouping .de-panels>div {padding:18px 22px;}
+.de-paths>div {display:grid;grid-template-columns:1.5fr 40px 1.1fr 40px .4fr;align-items:center;gap:15px;padding:16px 20px;margin:18px 0;border-left:7px solid #2d6a4f;background:#e7ece2;}
+.de-paths>div:nth-child(2) {border-color:#8a5a3b;background:#eee5dc;}
+.de-paths>div:nth-child(3) {border-color:#607d86;background:#e2e8e8;}
+.de-paths p {margin:0;}.de-paths b {font-size:1.3em;}.de-paths span {color:var(--tierra);}
+.de-assignment-grid {display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin:20px 0;}
+.de-assign-cell {position:relative;height:80px;background:#ebece3;border:2px solid #7b8b7c;overflow:hidden;}
+.de-ue-id {position:absolute;top:3px;left:8px;z-index:2;font-size:19px;line-height:1.2;font-weight:650;color:#173c2b;}
+.de-assignment {position:absolute;inset:0;display:grid;place-items:center;font-size:1.35em;font-weight:700;padding-top:12px;}
+.de-dca-method>div {margin:8px 0;}
+.de-dca-build .pregunta {font-size:1em;margin:12px 0;}
+.de-dca-build .idea {margin:6px 0;padding:8px 20px;}
+.de-dca-summary {display:grid;grid-template-columns:220px 1fr;gap:35px;align-items:center;margin:35px 0;}
+.de-dca-summary>strong {font-size:2.5em;text-align:center;color:var(--verde);}
+.de-dca-summary>div {border-left:5px solid #607d86;padding-left:30px;}
+.de-relevant .de-pot {height:130px;width:180px;}
+.de-relevant .de-pots {margin:20px 0;}
+.de-relevant .de-tiles {margin:20px 0;gap:20px;}
+.de-relevant .de-tiles>div {padding:16px;}
+.de-build-blocks {display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin:18px 0;}
+.de-build-block {position:relative;padding:14px;}
+.de-block-frame {position:absolute;inset:0;border:4px solid #8a5a3b;background:#eee5dc55;}
+.de-build-block h3 {position:relative;font-size:1em;margin:0 0 16px;}
+.de-block-cells {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.de-block-cells .de-assign-cell {height:160px;}
+.de-seedling {position:absolute;bottom:20px;left:50%;height:var(--plant-height);width:5px;background:var(--verde);}
+.de-seedling::before,.de-seedling::after {content:"";position:absolute;width:24px;height:13px;border-radius:80% 0;background:#6b9662;top:5px;right:3px;transform:rotate(22deg);}
+.de-seedling::after {right:auto;left:3px;top:22px;transform:rotate(-22deg);}
+.de-dbca-build>.fragment {margin:12px 0;}
+.de-benches {display:block;width:100%;height:385px;font-family:inherit;font-size:28px;fill:var(--verde-oscuro);}
+
+/* Margen inferior del DCA: misma tipografía, menos separación redundante. */
+.de-dca-build .de-assignment-grid {margin:10px 0;}
+.de-dca-build .de-dca-method>div {margin:5px 0;}
+.de-dca-build .pregunta {padding:10px 18px;}
+
+/* Tercera revisión: geometría local de las nuevas láminas, misma identidad EyDE. */
+.de-pop-chain {display:grid;grid-template-columns:1fr 35px 1fr 35px 1fr;gap:14px;align-items:center;margin:30px 0;}
+.de-pop-chain>div {border:3px solid var(--verde);padding:24px 18px;line-height:1.35;}
+.de-pop-chain>span {color:var(--tierra);font-size:1.5em;text-align:center;}
+.de-photo-pair {display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.reveal .de-photo-pair img {display:block;width:100%;height:290px;object-fit:contain;margin:0;background:#e7e8df;}
+.de-photo-pair h3 {margin:12px 0 6px;}
+.de-photo-pair p {margin:8px 0;}
+.de-credit {font-size:18px;line-height:1.25;color:var(--gris);}
+.de-border-layout {grid-template-columns:1fr 1.1fr;gap:38px;}
+.de-border-grid {display:grid;grid-template-columns:repeat(9,1fr);gap:5px;border:3px solid var(--verde-oscuro);padding:8px;}
+.de-border-grid>span {height:41px;display:grid;place-items:center;font-size:24px;}
+.de-edge {background:#ecd5bf;color:#59351e;}
+.de-core {background:#c6dbc6;color:#173c2b;}
+.de-edge-label {text-align:center;color:var(--tierra);margin:12px 0;}
+.de-border-key {display:flex;justify-content:center;gap:18px;margin-top:14px;}
+.de-border-key>span {padding:8px 14px;}
+.de-dcl-layout {display:grid;grid-template-columns:1.1fr 1fr;gap:38px;align-items:center;}
+.de-dcl-field {height:475px;position:relative;padding:65px 10px 75px 100px;box-sizing:border-box;}
+.de-dcl-empty {display:grid;grid-template-columns:repeat(3,1fr);gap:9px;height:100%;}
+.de-dcl-empty>span {background:#e6ebdf;border:3px solid #83967e;}
+.de-dcl-h {position:absolute;top:8px;left:110px;color:var(--tierra);font-weight:650;}
+.de-dcl-v {position:absolute;left:0;top:85px;writing-mode:vertical-rl;color:#607d86;font-weight:650;}
+.de-dcl-row-label {position:absolute;left:95px;bottom:30px;font-size:25px;}
+.de-dcl-col-label {position:absolute;left:95px;bottom:-8px;font-size:25px;}
+.de-latin-stages {display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:30px 0;}
+.de-latin-stages h3 {font-size:1em;margin:0 0 20px;}
+.de-latin-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.de-latin-grid span {display:grid;place-items:center;height:95px;border:2px solid #83967e;font-size:1.6em;font-weight:700;}
+.de-latin-stages p {font-size:.85em;}
+.de-batches {display:grid;gap:8px;margin:18px 0;}
+.de-batch-row {display:grid;grid-template-columns:140px repeat(3,1fr);gap:12px;align-items:stretch;}
+.de-batch-row>b {display:flex;align-items:center;font-size:25px;}
+.de-batch-row>span {border:2px solid #83967e;padding:8px 10px;font-size:25px;text-align:center;}
+.de-case-grid .idea {margin:14px 0;padding:12px 18px;}
+/* Flechas perpendiculares y rótulos espaciales explícitos del DCL. */
+.de-dcl-h {top:0;left:100px;right:10px;font-size:25px;}
+.de-dcl-h svg {display:block;width:100%;height:16px;}
+.de-dcl-v {top:65px;left:0;width:50px;height:335px;writing-mode:horizontal-tb;}
+.de-dcl-v svg {width:100%;height:100%;fill:currentColor;font-size:28px;}
+.de-dcl-cols {position:absolute;top:42px;left:100px;right:10px;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;font-size:20px;color:var(--tierra);}
+.de-dcl-rows {position:absolute;top:65px;bottom:75px;left:58px;display:grid;grid-template-rows:repeat(3,1fr);align-items:center;font-size:20px;color:#607d86;}
+
+.de-llama-layout {align-items:start;margin:26px 0;}
+.reveal .de-llama-layout img {display:block;width:100%;height:355px;object-fit:contain;margin:0;}
+
+/* Ajustes puntuales: caso de tomate en siete mesadas (D39–D41). */
+.de-case-greenhouse {display:block;width:100%;height:270px;font-family:inherit;font-size:19px;fill:var(--verde-oscuro);}
+.de-case-problem .de-pair {gap:30px;grid-template-columns:1.1fr 1fr;}
+.de-case-problem .idea {padding:12px 16px;margin:12px 0;}
+.de-case-levels {display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.de-case-levels>span {padding:10px 16px;text-align:center;font-weight:650;}
+.de-case-benches {display:grid;gap:7px;margin:16px 0;}
+.de-case-bench {display:grid;grid-template-columns:155px repeat(3,1fr);gap:12px;align-items:center;position:relative;padding-bottom:3px;border-bottom:4px solid #83967e;}
+.de-case-bench::before,.de-case-bench::after {content:"";position:absolute;bottom:-9px;height:5px;width:5px;background:#83967e;}
+.de-case-bench::before {left:165px;}.de-case-bench::after {right:12px;}
+.de-case-bench>b {font-size:24px;}
+.de-case-bench>span {display:flex;align-items:center;justify-content:center;gap:10px;padding:3px 8px;font-size:24px;}
+.de-case-pot {display:block;width:25px;height:25px;flex:none;background:currentColor;clip-path:polygon(0 0,100% 0,83% 100%,17% 100%);opacity:.8;}
+.reveal .de-case-plot .cell-output-display img {display:block;width:100%;height:350px;object-fit:contain;margin:0;}
+.de-case-plot .cell {margin:0;}
+.de-case-plot .pregunta {margin:12px 0;padding:12px 18px;}
+.de-case-plot p {margin:10px 0;}

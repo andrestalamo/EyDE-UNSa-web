@@ -175,42 +175,21 @@ Andrés Tálamo
 </div>
 </div>
 
-  <p class="date">28 de septiembre de 2026</p>
+  <p class="date">30 de septiembre de 2026</p>
 </section>
-<section id="tipos-de-estudios" class="slide level2 de center">
+<section id="tipos-de-estudios" class="slide level2 de de-compare center">
 <h2>Tipos de estudios</h2>
-<p class="de-note">Retomamos la Clase 01: la forma de obtener los datos importa.</p><div class="de-pair"><div><h3>Observacionales</h3><div class="de-big">Observamos</div><p>Variables tal como ocurren, sin asignar tratamientos.</p></div><div><h3>Experimentales / manipulativos</h3><div class="de-big">Manipulamos</div><p>Deliberadamente al menos una variable y observamos qué ocurre con otra.</p></div></div><div class="idea fragment">Hoy profundizamos cómo planificar esa manipulación.</div>
-<aside class="notes">
-<p>La Clase 01 anticipó estas diferencias mediante parcelas con variedades A y B; no formalizó los tres principios. No retomar las indagaciones guiadas.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p class="de-note">Retomamos la Clase 01: cómo obtenemos los datos condiciona la inferencia.</p><div class="de-pair de-panels"><div><h3>OBSERVACIONAL</h3><div class="de-big">Observamos</div><p>Registramos las variables tal como ocurren, sin asignar tratamientos.</p></div><div><h3>EXPERIMENTAL / MANIPULATIVO</h3><div class="de-big">Manipulamos</div><p>Modificamos deliberadamente al menos una variable y observamos qué ocurre con otra.</p></div></div><div class="idea fragment" data-fragment-index="0">Hoy profundizamos cómo planificar esa manipulación.</div>
 </section>
 <section id="experimentos-y-causalidad" class="slide level2 de center">
 <h2>Experimentos y causalidad</h2>
-<div class="de-pair"><div><h3>Observación</h3><p>Los lotes fertilizados tienen mayor rendimiento.</p><div class="pregunta">¿También tienen mejores suelos o distinto manejo?</div></div><div><h3>Experimento</h3><p>Asignamos fertilización a las UE y después comparamos el rendimiento.</p><div class="idea fragment">El diseño debe separar el factor principal de otras posibles causas.</div></div></div><div class="alerta fragment">Una asociación no alcanza; manipular tampoco garantiza por sí solo una conclusión causal.</div>
+<div class="de-pair"><div><h3>Observación</h3><p>Los lotes con mayor N tienen mayor rendimiento.</p><div class="pregunta">¿También tienen mejores suelos o distinto manejo?</div></div><div><h3>Experimento</h3><p>Asignamos fertilización a las UE y después comparamos el rendimiento.</p><div class="idea fragment">El diseño debe separar el factor principal de otras posibles causas.</div></div></div><div class="alerta fragment">Una asociación no alcanza; manipular tampoco garantiza por sí solo una conclusión causal.</div>
 </section>
-<section id="la-pregunta-agronómica" class="slide level2 de center">
-<h2>La pregunta agronómica</h2>
-<div class="pregunta">¿La fertilización con nitrógeno influye en el rendimiento del maíz?</div><div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div><strong>Factor principal</strong><br>Fertilización con N</div><div><strong>Niveles</strong><br>Fertilizado / no fertilizado</div><div><strong>Variable de respuesta</strong><br>Rendimiento del maíz (t/ha)</div></div><p class="de-note">Factor principal = variable explicativa principal = factor de diseño.</p>
-</section>
-<section id="sólo-depende-de-la-fertilización" class="slide level2 de center">
-<h2>¿Sólo depende de la fertilización?</h2>
-<div class="de-flow"><div>Fertilización con N</div><span class="de-arrow">→</span><div>Cultivo de maíz</div><span class="de-arrow">→</span><div>Rendimiento</div></div><div class="pregunta">¿Qué otras variables podrían modificar el rendimiento?</div><div class="fragment"><div class="de-tiles" style="grid-template-columns:repeat(2,1fr)"><div>Fertilidad inicial · textura</div><div>Agua · variedad · densidad</div><div>Malezas · plagas</div><div>Temperatura · radiación</div></div></div>
-</section>
-<section id="el-experimento-como-proceso" class="slide level2 de de-d6 center">
-<h2>El experimento como proceso</h2>
-<div class="de-process"><div class="de-chain"><div>FACTOR PRINCIPAL<br><strong>Fertilización con N</strong></div><span>↓</span><div>PROCESO / SISTEMA BIOLÓGICO<br><strong>Cultivo de maíz</strong></div><span>↓</span><div>VARIABLE DE RESPUESTA<br><strong>Rendimiento</strong></div></div><div class="fragment"><h3>Otras entradas</h3><p>Suelo · agua · variedad<br>Manejo · clima</p><p>← También afectan al sistema</p></div></div><div class="idea fragment"><strong>Señal:</strong> variación asociada al factor principal. <strong>Ruido:</strong> variación que no logramos explicar.</div>
+<section id="una-comparación-pertinente" class="slide level2 de center">
+<h2>Una comparación pertinente</h2>
+<div class="pregunta">¿La fertilización con N influye en el rendimiento del maíz de secano del Valle de Lerma durante la campaña estudiada?</div><div class="de-pair de-panels"><div><h3>Con N</h3><p>Condición cuyo efecto queremos estimar.</p></div><div><h3>Sin N</h3><p>Condición de comparación: <strong>control / testigo</strong> en este ensayo.</p></div></div><p><strong>Factor:</strong> fertilización con N · <strong>Variable de respuesta:</strong> rendimiento (t/ha).</p><div class="idea fragment" data-fragment-index="0">Para estimar un efecto necesitamos una comparación pertinente. No todo experimento debe tener un tratamiento llamado «control».</div>
 <aside class="notes">
-<p>Esquema rediseñado a partir de la diapositiva 13 de Silvia Sühring, que atribuye el modelo de proceso a Montgomery (1997). No equiparar ruido con una lista fija de factores no controlados; depende de lo explicado por el diseño y el análisis.</p>
+<p>Escenario didáctico, no estudio real del Valle de Lerma. Se mantienen las demás condiciones comparables. La ausencia de N añadido es el testigo en esta comparación; un testigo absoluto no es requisito de toda pregunta experimental.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -223,13 +202,60 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="otras-fuentes-de-variación" class="slide level2 de de-d7 center">
-<h2>Otras fuentes de variación</h2>
-<div class="de-tiles" style="grid-template-columns:repeat(2,1fr)"><div class="fragment"><strong>1 · Mantener o reducir</strong><br>Misma variedad y manejo uniforme.</div><div class="fragment"><strong>2 · Controlar con el diseño</strong><br>Bloques, cuando corresponda.</div><div class="fragment"><strong>3 · Medir e incorporar al análisis</strong><br>Covariables; ANCOVA.</div><div class="fragment"><strong>4 · Variación restante</strong><br>Fuentes no identificadas o no controladas adecuadamente.</div></div><div class="idea">Son posibilidades complementarias, no una dicotomía rígida.</div>
+<section id="la-pregunta-define-la-población" class="slide level2 de center">
+<h2>La pregunta define la población</h2>
+<div class="de-pop-chain"><div><strong>Pregunta</strong><br>Delimita la población de interés.</div><span>→</span><div><strong>Experimento</strong><br>Estudiamos una muestra de UE.</div><span>→</span><div><strong>Inferencia</strong><br>Buscamos concluir sobre esa población.</div></div><p>En el ejemplo: lotes de maíz de secano del Valle de Lerma, bajo las condiciones de la campaña estudiada.</p><div class="pregunta fragment" data-fragment-index="0">La población puede ser <strong>virtual o hipotética</strong>: no siempre es una lista finita de individuos existentes.</div><div class="idea fragment" data-fragment-index="1">La pregunta va más allá de las UE estudiadas. El diseño y la representatividad sostienen ese alcance.</div>
+<aside class="notes">
+<p>Población conceptual de UE y condiciones a las que interesa extender los resultados. La asignación aleatoria de tratamientos no equivale al muestreo aleatorio de una población; la extrapolación requiere justificación.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="el-experimento-como-proceso" class="slide level2 de de-process-slide center">
+<h2>El experimento como proceso</h2>
+<div class="pregunta fragment" data-fragment-index="0">¿Cómo distinguir el efecto de fertilizar de otras fuentes de variación?</div><div class="de-system"><div class="de-system-top"><div class="fragment" data-fragment-index="1">Fertilidad inicial · textura<span>↓</span></div><div class="fragment" data-fragment-index="2">Agua · variedad · densidad<span>↓</span></div></div><div class="de-system-main"><div><strong>Fertilización con N</strong><small>Factor principal</small></div><span>→</span><div class="de-system-core"><strong>Cultivo de maíz</strong><small>Proceso / sistema biológico</small></div><span>→</span><div><strong>Rendimiento</strong><small>Variable de respuesta</small></div></div><div class="de-system-bottom"><div class="fragment" data-fragment-index="3"><span>↑</span>Malezas · plagas</div><div class="fragment" data-fragment-index="4"><span>↑</span>Temperatura · radiación</div></div></div><div class="idea fragment" data-fragment-index="5"><strong>Señal:</strong> variación asociada a tratamientos. <strong>Ruido:</strong> variación no explicada / residual.</div>
+<aside class="notes">
+<p>Fusión de las antiguas D5–D6. Primera vista: sólo entrada, proceso y salida. Después: pregunta, cuatro pequeños grupos de variables exógenas y señal/ruido. Esquema propio basado en el modelo de proceso de Silvia (diapositiva 13, atribuido allí a Montgomery 1997). No hay dicotomía rígida entre variables controladas y no controladas. Las flechas convergen en el cultivo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-podemos-hacer-con-las-fuentes-de-variación" class="slide level2 de de-sources center">
+<h2>¿Qué podemos hacer con las fuentes de variación?</h2>
+<div class="de-tiles de-palette" style="grid-template-columns:repeat(2,1fr)"><div><div class="fragment" data-fragment-index="0"><strong>Mantener constante o reducir</strong><p>Mismo riego, mismo sustrato; reunir UE razonablemente homogéneas.</p><b>Agrupamiento → posible DCA.</b></div></div><div><div class="fragment" data-fragment-index="1"><strong>Incorporar la fuente al diseño</strong><p>Aceptar la heterogeneidad y representarla en la estructura experimental.</p><b>Bloqueo → DBCA.</b></div></div><div><div class="fragment" data-fragment-index="2"><strong>Registrar</strong><br>Medir fuentes conocidas para comprender la variación.</div></div><div><div class="fragment" data-fragment-index="3"><strong>No podemos manejarla</strong><br>Parte de la variación permanece.</div></div></div><div class="idea fragment" data-fragment-index="4">Actuar sobre una fuente e incorporarla al diseño son estrategias distintas.</div>
+<aside class="notes">
+<p>Variables exógenas y perturbadoras, según Silvia. Mantener constante reduce la variación de la fuente entre UE; bloquear reconoce heterogeneidad existente. Registrar una variable no elimina su efecto. No se introduce análisis con covariables.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="aun-así-las-ue-varían" class="slide level2 de de-d8 center">
 <h2>Aun así, las UE varían</h2>
-<div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-a"><span>+N · 7,1</span></div><div class="de-plot tr-a"><span>+N · 6,8</span></div><div class="de-plot tr-a"><span>+N · 7,6</span></div></div><p class="de-note">Rendimientos ficticios en t/ha. Igual tratamiento, distintas respuestas.</p><div class="pregunta fragment"><strong>Error experimental (EE):</strong> variación de la variable de respuesta entre UE tratadas de la misma forma.</div><p class="fragment">Parte de esa variación puede explicarse luego mediante otras fuentes conocidas, como los bloques.</p>
+<div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-a"><span>Con N · 7,1</span></div><div class="de-plot tr-a"><span>Con N · 6,8</span></div><div class="de-plot tr-a"><span>Con N · 7,6</span></div></div><p class="de-note">Rendimientos ficticios en t/ha. Igual tratamiento, distintas respuestas.</p><div class="pregunta fragment"><strong>Error experimental (EE):</strong> variación de la variable de respuesta entre UE tratadas de la misma forma.</div><p class="fragment">Parte de esa variación puede explicarse luego mediante otras fuentes conocidas, como los bloques.</p>
 <aside class="notes">
 <p>Incluye variación intrínseca y de ejecución o medición. Más adelante distinguimos la variación bruta entre UE del mismo tratamiento de la residual luego de considerar bloques.</p>
 <style type="text/css">
@@ -244,17 +270,9 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="validez-interna" class="slide level2 de center">
-<h2>Validez interna</h2>
-<div class="pregunta">¿Podemos atribuir las diferencias observadas al factor principal y no a otras causas?</div><div class="de-tiles" style="grid-template-columns:repeat(2,1fr)"><div>Manipulación</div><div>Aleatorización</div><div>Control de variables perturbadoras</div><div>Ausencia de confusión importante</div></div><div class="idea fragment">Buscamos que el tratamiento no quede ligado sistemáticamente a otra posible causa.</div>
-</section>
-<section id="validez-externa" class="slide level2 de center">
-<h2>Validez externa</h2>
-<div class="pregunta">¿A qué población, condiciones o situaciones podemos extrapolar las conclusiones?</div><div class="de-flow"><div>UE y condiciones estudiadas</div><span class="de-arrow">→</span><div>Población y condiciones de interés</div></div><div class="idea fragment">UE muy homogéneas y condiciones muy controladas pueden favorecer la validez interna, pero también pueden restringir el universo al que podemos extrapolar.</div><p>Ambas se planifican: ampliar ambientes o campañas puede ampliar el alcance.</p>
-</section>
 <section id="anatomía-de-un-experimento" class="slide level2 de de-d11 center">
 <h2>Anatomía de un experimento</h2>
-<div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div><strong>Factor principal</strong><br>Fertilización con N</div><div><strong>Niveles</strong><br>Con N / sin N</div><div><strong>Tratamientos</strong><br>Aplicar N / no aplicar N</div><div><strong>Variable de respuesta</strong><br>Rendimiento (t/ha)</div><div><strong>UE</strong><br>Cada parcela</div><div><strong>Réplicas</strong><br>Varias parcelas independientes por tratamiento</div></div><div class="idea">Asignamos al azar los tratamientos a las parcelas y los aplicamos de manera independiente.</div>
+<div class="de-tiles de-palette" style="grid-template-columns:repeat(3,1fr)"><div><strong>Factor principal</strong><br>Fertilización con N</div><div><strong>Niveles</strong><br>Con N / Sin N</div><div><strong>Tratamientos</strong><br>Con N / Sin N</div><div><strong>Variable de respuesta</strong><br>Rendimiento (t/ha)</div><div><strong>UE</strong><br>Cada parcela</div><div><strong>Réplicas</strong><br>Varias parcelas independientes por nivel del factor</div></div>
 <aside class="notes">
 <p>Se supone aplicación independiente, sin transferencia relevante entre parcelas.</p>
 <style type="text/css">
@@ -271,11 +289,24 @@ Andrés Tálamo
 </section>
 <section id="niveles-y-tratamientos" class="slide level2 de center">
 <h2>Niveles y tratamientos</h2>
-<div class="pregunta"><strong>Tratamiento = condición experimental aplicada a una UE.</strong></div><div class="de-pair"><div><h3>Con un factor</h3><div class="de-flow"><div>Nivel: con N</div><span class="de-arrow">→</span><div>Tratamiento: aplicar N</div></div><p>Los tratamientos corresponden a los niveles del factor.</p></div><div><h3>Con dos o más factores</h3><div class="de-flow"><div>Nivel de A + nivel de B</div><span class="de-arrow">→</span><div>Una condición conjunta</div></div><p>Pueden corresponder a combinaciones de niveles.</p></div></div><p class="de-note">La definición sigue siendo la misma; los diseños factoriales se estudiarán más adelante.</p>
+<div class="pregunta"><strong>Tratamiento:</strong> condición experimental que resulta del nivel o de la combinación de niveles de los factores que queremos estudiar.</div><div class="de-pair de-panels"><div><h3>Con un factor</h3><p><strong>Cada nivel corresponde a un tratamiento.</strong></p><p>Factor: fertilización con N<br>Niveles: <strong>Con N / Sin N</strong><br>Tratamientos: <strong>Con N / Sin N</strong></p></div><div><h3>Con más de un factor</h3><p>Los tratamientos corresponden a <strong>combinaciones de niveles</strong> de los factores.</p><p class="de-note">Retomaremos esta idea al estudiar experimentos factoriales.</p></div></div>
+<aside class="notes">
+<p>Nivel y tratamiento no se contraponen. Con un único factor coinciden. La definición de tratamiento se mantiene separada de la de UE; no presupone una única jerarquía de UE para todos los factores.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="unidad-experimental" class="slide level2 de center">
 <h2>Unidad experimental</h2>
-<div class="pregunta"><strong>UE = unidad mínima a la que se asigna / aplica independientemente un tratamiento.</strong></div><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-a"><span>+N</span></div><div class="de-plot tr-b"><span>−N</span></div><div class="de-plot tr-b"><span>−N</span></div><div class="de-plot tr-a"><span>+N</span></div><div class="de-plot tr-a"><span>+N</span></div><div class="de-plot tr-b"><span>−N</span></div></div><div class="idea fragment">Cada parcela recibe su tratamiento independientemente: <strong>UE = parcela.</strong></div>
+<div class="pregunta"><strong>UE = unidad mínima a la que se asigna / aplica independientemente un tratamiento.</strong></div><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-a"><span>Con N</span></div><div class="de-plot tr-b"><span>Sin N</span></div><div class="de-plot tr-b"><span>Sin N</span></div><div class="de-plot tr-a"><span>Con N</span></div><div class="de-plot tr-a"><span>Con N</span></div><div class="de-plot tr-b"><span>Sin N</span></div></div><div class="idea fragment">Cada parcela recibe su tratamiento independientemente: <strong>UE = parcela.</strong></div>
 <aside class="notes">
 <p>Esquema de seis UE para visualizar la asignación; no constituye una recomendación del número de réplicas. Dejar bordes suficientes para impedir transferencia relevante de fertilizante.</p>
 <style type="text/css">
@@ -290,15 +321,78 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="medir-más-no-significa-replicar" class="slide level2 de center">
+<section id="distintas-formas-de-una-ue" class="slide level2 de de-photo-slide center">
+<h2>Distintas formas de una UE</h2>
+<div class="de-photo-pair"><div><img src="imagenes/parcelas-broadbalk.jpg" alt="Parcelas agrícolas del campo experimental Broadbalk"><h3>UE = parcela</h3><p>Si el nivel del factor se asigna y aplica a cada parcela.</p><p class="de-credit"><a href="https://commons.wikimedia.org/wiki/File:Broadbalk,_a_national_treasure_-_geograph.org.uk_-_2912030.jpg">Michael Trolove · Broadbalk</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></p></div><div><img src="imagenes/caja-petri.jpg" alt="Fotografía de una caja de Petri con colonias bacterianas"><h3>UE = caja de Petri</h3><p>Si cada caja recibe independientemente una condición experimental.</p><p class="de-credit"><a href="https://commons.wikimedia.org/wiki/File:3._Бактерии_на_чашке_Петри.jpg">Amazing microbiology</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p></div></div><div class="idea fragment" data-fragment-index="0">Qué constituye la UE depende de <strong>cómo se asigna / aplica el factor</strong> en ese experimento.</div>
+<aside class="notes">
+<p>Fotografías reales ilustrativas, sin afirmar que representan los experimentos hipotéticos descritos. Broadbalk: imagen íntegra de un campo con parcelas; no inferimos su asignación actual a partir de la foto. Petri: la caja sería UE sólo bajo la asignación especificada, no cada colonia. No se modificaron las fotografías.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="un-experimento-real-esquila-en-llamas" class="slide level2 de de-llama-slide center">
+<h2>Un experimento real: esquila en llamas</h2>
+<div class="de-pair de-llama-layout"><div><img src="../../assets/imagenes/fotos/esquila_llamas.jpg" alt="Llamas en INTA Abra Pampa: ilustración del contexto de manejo, fuente Agroempresario"><p class="de-credit"><strong>Foto / contexto:</strong> <a href="https://agroempresario.com/publicacion/20633/inta-abra-pampa-referente-regional-en-manejo-y-produccion-de-llamas-y-vicunas/">Agroempresario, «INTA Abra Pampa, referente regional en manejo y producción de llamas y vicuñas»</a>.<br>Ilustrativa; no se atribuye al experimento de Ramos et al. (2025).</p></div><div><h3>INTA EEA Abra Pampa</h3><p><strong>Factor:</strong> método de esquila.<br>Manual / mecánica.</p><p><strong>Variables de respuesta:</strong><br>indicadores bioquímicos de estrés.</p><div class="idea fragment" data-fragment-index="0"><strong>UE = cada llama.</strong><br>El método de esquila se aplica al animal.</div></div></div><p class="de-note"><strong>Experimento:</strong> <a href="https://repositorio.inta.gob.ar/handle/20.500.12123/23964">Ramos N.E., Chavarría N.J., Tálamo A. y Romera A. (2025).</a> «Evaluación de indicadores bioquímicos de estrés en llamas esquiladas con diferentes métodos». 48° Congreso Argentino de Producción Animal.</p>
+<aside class="notes">
+<p>Resumen y póster verificados en el repositorio INTA, registro 23964. Comparación manual/mecánica e indicadores cortisol, glucosa y proteínas totales antes/después. Para el factor método de esquila, la UE es cada llama; las mediciones repetidas no son nuevas UE. No se atribuye aleatorización no documentada. La ficha cataloga a Romera como Sonia Alejandra; el resumen/póster firma Romera A, conservado en la cita solicitada. Fotografía local suministrada por el docente: assets/imagenes/fotos/esquila_llamas.jpg. Fuente/contexto visual: Agroempresario, https://agroempresario.com/publicacion/20633/inta-abra-pampa-referente-regional-en-manejo-y-produccion-de-llamas-y-vicunas/ . Ilustra el contexto regional de manejo de llamas; no se afirma ni sugiere que documente el experimento de Ramos et al.&nbsp;(2025).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tres-principios-básicos" class="slide level2 de center">
+<h2>Tres principios básicos</h2>
+<div class="de-tiles de-palette" style="grid-template-columns:repeat(3,1fr)"><div><strong>REPLICACIÓN</strong><br>Más de una UE por tratamiento</div><div><strong>ALEATORIZACIÓN</strong><br>Asignación al azar</div><div><strong>CONTROL LOCAL</strong><br>Reducir variación ajena al factor</div></div><div class="idea">En la Clase 01 preguntamos: ¿alcanza una parcela por variedad y dónde ubicamos cada una? Hoy formalizamos esas decisiones.</div><p class="de-note">Principios complementarios, con igual jerarquía; no son etapas de una secuencia.</p>
+</section>
+<section id="replicación" class="slide level2 de de-d18 de-principio de-principio-1 center">
+<h2>Replicación</h2>
+<div class="pregunta">Repetición / replicación: aplicar independientemente cada tratamiento a más de una UE.</div><div class="de-plots" style="grid-template-columns:repeat(6,1fr)"><div class="de-plot tr-a"><span>Con N</span></div><div class="de-plot tr-b"><span>Sin N</span></div><div class="de-plot tr-a"><span>Con N</span></div><div class="de-plot tr-b"><span>Sin N</span></div><div class="de-plot tr-b"><span>Sin N</span></div><div class="de-plot tr-a"><span>Con N</span></div></div><div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div class="fragment" data-fragment-index="0">Estimar la respuesta media</div><div class="fragment" data-fragment-index="1">Estimar el EE: la variación entre UE sometidas al mismo nivel del factor.</div><div class="fragment" data-fragment-index="2">Realizar inferencias</div></div><p class="de-note">Continuidad con las Clases 06–07: estimaciones, incertidumbre y pruebas de hipótesis.</p>
+</section>
+<section id="replicar-permite-hacer-inferencia" class="slide level2 de de-principio de-principio-1 de-inference center">
+<h2>Replicar permite hacer inferencia</h2>
+<div class="de-infer-chain"><div><strong>REPLICACIÓN</strong></div><div class="fragment" data-fragment-index="0"><span>↓</span><div>Estimar el <strong>error experimental</strong></div></div><div class="fragment" data-fragment-index="1"><span>↓</span><div>Cuantificar la <strong>incertidumbre</strong></div></div><div class="fragment" data-fragment-index="2"><span>↓</span><div>Sustentar la <strong>inferencia estadística</strong></div></div></div><div class="idea fragment" data-fragment-index="3">El alcance depende de la población delimitada, de cómo las UE la representan y del diseño. Más réplicas no habilita extrapolar a cualquier población.</div>
+</section>
+<section id="más-replicación-mayor-precisión" class="slide level2 de de-principio de-principio-1 de-precision center">
+<h2>Más replicación, mayor precisión</h2>
+<div class="de-pair de-panels"><div><h3>Más réplicas independientes</h3><p>Mejor estimación → menor error estándar → mayor precisión → generalmente mayor potencia.</p><div class="de-equation">\(S_{\bar X}=\frac{s}{\sqrt{n}}\)</div></div><div><h3>La variabilidad entre UE permanece</h3><div class="alerta">Replicar más no reduce por sí mismo el error experimental.</div><p>La estimación de la media se vuelve más precisa; las UE no se vuelven más homogéneas.</p></div></div><p class="de-note">Para una media de observaciones independientes. A igual variabilidad, efecto verdadero y α, aumentar n suele aumentar la potencia.</p>
+<aside class="notes">
+<p>Notación de Clases 06–07: s, desvío estándar de las observaciones; S con subíndice X barra, error típico/estándar de la media. Fórmula de una media independiente, no fórmula general de todo diseño. La variación realizada puede fluctuar por azar; aumentar n no reduce la variabilidad intrínseca.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="medir-más-no-significa-replicar" class="slide level2 de de-principio de-principio-1 de-rep-detail center">
 <h2>Medir más no significa replicar</h2>
-<div class="de-pair"><div><div class="de-surface"><strong>Una parcela fertilizada</strong><div class="de-samples"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11 subparcelas medidas</span></div></div><div><h3>¿Cuántas réplicas independientes tenemos?</h3><div class="pregunta fragment"><strong>Una.</strong><br>Una aplicación independiente del tratamiento.</div><p class="fragment">Las 11 submuestras / unidades de observación aportan información sobre <strong>esa UE</strong>.</p></div></div>
+<div class="de-pair"><div><div class="de-surface"><strong>Una parcela fertilizada</strong><div class="de-samples"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11 subparcelas medidas</span></div></div><div><h3>¿Cuántas réplicas independientes tenemos?</h3><div class="pregunta fragment"><strong>Una.</strong><br>Una aplicación independiente del tratamiento.</div><p class="fragment">Las 11 submuestras aportan información sobre <strong>esa UE</strong>. Medirla repetidamente tampoco crea réplicas independientes.</p></div></div>
 </section>
-<section id="pseudorreplicación-cuál-es-el-problema" class="slide level2 de center">
+<section id="pseudorreplicación-cuál-es-el-problema" class="slide level2 de de-principio de-principio-1 de-rep-detail center">
 <h2>Pseudorreplicación: ¿cuál es el problema?</h2>
-<div class="de-pair"><div><div class="de-surface"><strong>Superficie fertilizada</strong><div class="de-samples"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11 subparcelas medidas</span></div></div><div><div class="de-surface"><strong>Superficie no fertilizada</strong><div class="de-samples"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11 subparcelas medidas</span></div></div></div><div class="idea">Una aplicación independiente por condición. Las subparcelas describen lo que ocurre dentro de cada superficie.</div><div class="alerta fragment">El problema aparece al contarlas como réplicas independientes del tratamiento.</div><p class="de-note">Hurlbert (1984), <a href="https://doi.org/10.2307/1942661">Pseudoreplication and the Design of Ecological Field Experiments</a>.</p>
+<div class="de-pair"><div><div class="de-surface"><strong>Superficie fertilizada</strong><div class="de-samples"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11 subparcelas medidas</span></div></div><div><div class="de-surface"><strong>Superficie no fertilizada</strong><div class="de-samples"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11 subparcelas medidas</span></div></div></div><div class="idea">Una aplicación independiente por condición. Las subparcelas describen lo que ocurre dentro de cada superficie.</div><div class="alerta fragment">El problema aparece al considerarlas como réplicas independientes del tratamiento.</div><p class="de-note">Hurlbert (1984), <a href="https://doi.org/10.2307/1942661">Pseudoreplication and the Design of Ecological Field Experiments</a>.</p>
 </section>
-<section id="el-alcance-de-la-inferencia" class="slide level2 de de-d16 center">
+<section id="el-alcance-de-la-inferencia" class="slide level2 de de-principio de-principio-1 de-rep-detail de-d16 center">
 <h2>El alcance de la inferencia</h2>
 <div class="pregunta">¿Cómo difiere el rendimiento entre <em>esta</em> superficie fertilizada y <em>esta</em> superficie no fertilizada?</div><p>Podemos describir y comparar esas dos superficies.</p><div class="alerta fragment">No podemos atribuir esa diferencia exclusivamente a la fertilización ni generalizarla como efecto de fertilizar.</div><div class="de-big">La inferencia tiene el alcance<br>que permite el diseño.</div>
 <aside class="notes">
@@ -315,19 +409,11 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="tres-principios-básicos" class="slide level2 de center">
-<h2>Tres principios básicos</h2>
-<div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div><strong>REPLICACIÓN</strong><br>Más de una UE por tratamiento</div><div><strong>ALEATORIZACIÓN</strong><br>Asignación al azar</div><div><strong>CONTROL LOCAL</strong><br>Reducir variación ajena al factor</div></div><div class="idea">En la Clase 01 preguntamos: ¿alcanza una parcela por variedad y dónde ubicamos cada una? Hoy formalizamos esas decisiones.</div><p class="de-note">Principios complementarios, con igual jerarquía; no son etapas de una secuencia.</p>
-</section>
-<section id="replicación" class="slide level2 de de-d18 de-principio de-principio-1 center">
-<h2>Replicación</h2>
-<div class="pregunta">Aplicar independientemente cada tratamiento a más de una UE.</div><div class="de-plots" style="grid-template-columns:repeat(6,1fr)"><div class="de-plot tr-a"><span>+N</span></div><div class="de-plot tr-b"><span>−N</span></div><div class="de-plot tr-a"><span>+N</span></div><div class="de-plot tr-b"><span>−N</span></div><div class="de-plot tr-b"><span>−N</span></div><div class="de-plot tr-a"><span>+N</span></div></div><div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div class="fragment">Estimar la respuesta media</div><div class="fragment">Estimar la variación entre UE de igual tratamiento y el EE</div><div>Realizar inferencias</div></div><p class="de-note">Continuidad con las Clases 06–07: estimaciones, incertidumbre y pruebas de hipótesis.</p>
-</section>
-<section id="replicar-más-no-disminuye-el-ee" class="slide level2 de de-d19 de-principio de-principio-1 center">
-<h2>Replicar más no disminuye el EE</h2>
-<div class="de-pair"><div><h3>Más réplicas</h3><p>Mejor estimación → menor error estándar → mayor precisión → generalmente mayor potencia.</p><div class="de-equation">\(S(\bar X)=\frac{S}{\sqrt{n}}\)</div></div><div><h3>Control local</h3><p>Puede reducir la variación no atribuible al factor principal y el error experimental.</p><div class="alerta">Más UE no hace más homogéneas a las UE.</div></div></div><p class="de-note">Para una media de observaciones independientes. A igual variabilidad, efecto verdadero y α, aumentar n suele aumentar la potencia.</p>
+<section id="aleatorización" class="slide level2 de de-principio de-principio-2 center">
+<h2>Aleatorización</h2>
+<div class="pregunta">Asignación al azar de los tratamientos a las UE, respetando las restricciones del diseño.</div><div class="de-tiles de-palette" style="grid-template-columns:repeat(2,1fr)"><div><div class="fragment" data-fragment-index="0"><strong>Evitar sesgos</strong><br>No favorecer un tratamiento sistemáticamente al asignarlo.</div></div><div><div class="fragment" data-fragment-index="1">Evita que una fuente de variación quede asociada sistemáticamente con un tratamiento.</div></div></div><div class="idea fragment" data-fragment-index="2">No hace desaparecer la variación: busca evitar que afecte sistemáticamente más a un tratamiento que a otro.</div>
 <aside class="notes">
-<p>Notación solicitada: S, desvío estándar; S(X barra), error estándar de la media. La fórmula es un recordatorio para una media, no la fórmula completa para cualquier diseño. Con bloques se separa la variación sistemática: no cambia mágicamente la dispersión bruta observada.</p>
+<p>La aleatorización puede producir desequilibrios casuales. También puede aleatorizarse el orden de aplicación o medición. No confundir selección de UE con asignación de tratamientos.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -340,11 +426,11 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="aleatorización" class="slide level2 de de-d20 de-principio de-principio-2 center">
-<h2>Aleatorización</h2>
-<div class="pregunta">Asignación al azar de las UE a los tratamientos, respetando las restricciones del diseño.</div><div class="de-flow"><div>Identificar UE</div><span class="de-arrow">→</span><div>Sortear asignación</div><span class="de-arrow">→</span><div>Aplicar tratamientos</div></div><div class="idea fragment">Evita asociaciones sistemáticas por la asignación y reduce sesgos; puede haber desequilibrios por azar.</div><p>Cuando corresponda, aleatorizamos también el orden de aplicación o medición.</p>
+<section id="aleatorización-e-inferencia" class="slide level2 de de-principio de-principio-2 center">
+<h2>Aleatorización e inferencia</h2>
+<div class="pregunta">La aleatorización proporciona la base probabilística para la inferencia estadística.</div><p>Permite comparar tratamientos sobre una base probabilística y evita asignarlos sistemáticamente a determinadas condiciones.</p><div class="idea fragment" data-fragment-index="0">También debemos evitar interferencias entre UE y reconocer dependencias espaciales o temporales: el sorteo no las elimina físicamente.</div><div class="de-pair de-panels"><div><h3>Replicación</h3><p>Permite estimar variabilidad e incertidumbre.</p></div><div><h3>Aleatorización</h3><p>Evita asignaciones sistemáticas y fundamenta la comparación probabilística.</p></div></div>
 <aside class="notes">
-<p>No confundir muestreo aleatorio con asignación aleatoria. El azar no impide interferencias entre UE ni elimina toda dependencia por sí solo.</p>
+<p>Se matiza el enunciado histórico de independencia garantizada por el azar. La asignación aleatoria restringida tampoco equivale a asignaciones probabilísticamente independientes entre sí. No se enseña que sortear transforme errores correlacionados en independientes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -359,17 +445,13 @@ Andrés Tálamo
 </section>
 <section id="qué-pasa-si-no-aleatorizamos" class="slide level2 de de-d21 de-principio de-principio-2 center">
 <h2>¿Qué pasa si no aleatorizamos?</h2>
-<div class="de-pair"><div><h3>Tanda de la mañana</h3><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-a"><span>+N</span></div><div class="de-plot tr-a"><span>+N</span></div><div class="de-plot tr-a"><span>+N</span></div></div><p>Se aplica siempre N.</p></div><div><h3>Tanda de la tarde</h3><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-b"><span>−N</span></div><div class="de-plot tr-b"><span>−N</span></div><div class="de-plot tr-b"><span>−N</span></div></div><p>Nunca se aplica N.</p></div></div><div class="pregunta fragment">Si temperatura o manejo cambian entre tandas, ¿a qué atribuimos la diferencia?</div><div class="idea fragment">Tratamiento y tanda quedan confundidos. Distribuir los tratamientos al azar dentro de cada tanda permite separarlos.</div>
+<div class="de-pair"><div><h3>Tanda de la mañana</h3><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-a"><span>Con N</span></div><div class="de-plot tr-a"><span>Con N</span></div><div class="de-plot tr-a"><span>Con N</span></div></div><p>Se aplica siempre N.</p></div><div><h3>Tanda de la tarde</h3><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-b"><span>Sin N</span></div><div class="de-plot tr-b"><span>Sin N</span></div><div class="de-plot tr-b"><span>Sin N</span></div></div><p>Nunca se aplica N.</p></div></div><div class="pregunta fragment">Si temperatura o manejo cambian entre tandas, ¿a qué atribuimos la diferencia?</div><div class="idea fragment">Tratamiento y tanda quedan confundidos. Distribuir los tratamientos al azar dentro de cada tanda permite separarlos.</div>
 </section>
-<section id="control-local" class="slide level2 de de-d22 de-principio de-principio-3 center">
+<section id="control-local" class="slide level2 de de-principio de-principio-3 center">
 <h2>Control local</h2>
-<div class="pregunta">Acciones / procedimientos destinados a reducir la variación no atribuible al factor principal.</div><div class="de-tiles" style="grid-template-columns:repeat(2,1fr)"><div>Seleccionar UE razonablemente homogéneas</div><div>Uniformar técnicas y manejo</div><div>Formar bloques relevantes</div><div>Registrar covariables relevantes</div></div><div class="idea fragment">Busca reducir el error experimental; aumentar n por sí solo no lo reduce.</div>
-</section>
-<section id="qué-hacemos-con-una-fuente-de-variación" class="slide level2 de de-d23 de-principio de-principio-3 center">
-<h2>¿Qué hacemos con una fuente de variación?</h2>
-<div class="de-decisions"><div class="fragment"><strong>¿Podemos evitarla o reducirla?</strong><span>→</span><div>Homogeneización / estandarización</div></div><div class="fragment"><strong>¿Hay una fuente sistemática de variación que esperamos que afecte la variable de respuesta?</strong><span>→</span><div>Considerar bloques</div></div><div class="fragment"><strong>¿Es medible y se asocia con la respuesta?</strong><span>→</span><div>Covariable / ANCOVA</div></div><div class="fragment"><strong>¿No logramos identificarla o controlarla?</strong><span>→</span><div>Contribuye al error experimental</div></div></div><div class="alerta fragment">ANCOVA no elimina variación puramente aleatoria sin una variable medible que la explique.</div>
+<div class="pregunta">Acciones destinadas a reducir / controlar variación ajena al factor que queremos estudiar.</div><div class="de-tiles de-palette" style="grid-template-columns:repeat(2,1fr)"><div><strong>Agrupamiento</strong><br>Reunir UE razonablemente homogéneas.</div><div><strong>Bloqueo</strong><br>Formar bloques según una fuente relevante.</div><div><strong>Balanceo</strong><br>Procurar un número similar de UE en cada nivel del factor.<p class="de-note">Favorece precisiones comparables entre niveles.</p></div><div><strong>Técnica</strong><br>Cuidar manejo, aplicación y medición.</div></div><div class="idea fragment" data-fragment-index="0">El balanceo suele ser conveniente, pero <strong>un DCA puede ser desbalanceado</strong>.</div>
 <aside class="notes">
-<p>Las preguntas no son ramas excluyentes. Covariables preferentemente previas al tratamiento; no ajustar de manera automática por consecuencias del propio tratamiento.</p>
+<p>Silvia Sühring, control local: agrupamiento, bloqueo, balanceo y técnica. La conveniencia de precisiones comparables supone condiciones de variabilidad semejantes. El balanceo no vuelve homogéneas las UE ni es requisito del DCA.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -382,15 +464,83 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="principios-generales-diseños-particulares" class="slide level2 de center">
-<h2>Principios generales, diseños particulares</h2>
-<div class="de-big">Los principios son generales.<br>El diseño depende de nuestras UE<br>y de las fuentes de variación.</div><div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div><strong>DCA</strong><br>Aleatorización completa</div><div><strong>DBCA</strong><br>Un criterio de bloqueo</div><div><strong>DCL</strong><br>Dos criterios de bloqueo</div></div><p>Son soluciones para distintas estructuras experimentales.</p>
-</section>
-<section id="diseño-completamente-aleatorizado-dca" class="slide level2 de de-d25 center">
-<h2>Diseño completamente aleatorizado (DCA)</h2>
-<p><strong>21 macetas</strong> en condiciones relativamente homogéneas. Factor principal: variedad de maíz (A, B y C).</p><div class="de-plots" style="grid-template-columns:repeat(7,1fr)"><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-b"><span>B</span></div></div><div class="idea">Asignamos los tratamientos completamente al azar entre todas las UE.</div><p class="de-note">Una maceta = una UE. 3 tratamientos × 7 réplicas = 21 UE (7/7/7). Letras y colores identifican tratamientos.</p>
+<section id="agrupamiento-y-bloqueo" class="slide level2 de de-principio de-principio-3 de-grouping center">
+<h2>Agrupamiento y bloqueo</h2>
+<div class="de-pair de-panels"><div><h3>AGRUPAMIENTO</h3><p>Reunir UE lo más homogéneas posible para realizar el experimento.</p><div class="de-mini-units"><i></i><i></i><i></i><i></i><i></i><i></i></div><p>Asignar los tratamientos <strong>sin restricciones</strong> entre esas UE.</p></div><div><h3>BLOQUEO</h3><p>Ante una variable específica que puede influir en la variable de respuesta, formar <strong>bloques internamente homogéneos</strong>.</p><div class="de-mini-blocks"><div><i></i><i></i><i></i></div><div><i></i><i></i><i></i></div></div><p>Aleatorizar <strong>dentro de cada bloque</strong>.</p></div></div><div class="idea">Agrupamiento y bloqueo son estrategias distintas de control local.</div>
 <aside class="notes">
-<p>Asignación didáctica reproducible (semilla 202610). 7 réplicas es un número ilustrativo y no una recomendación de tamaño muestral. Se muestra un ejemplo balanceado para enseñar la estructura básica; el balance no es un requisito absoluto del DCA.</p>
+<p>Definiciones de Silvia, diapositivas 35–36. Agrupamiento no se utiliza como sinónimo de formar bloques. La homogeneidad siempre es relativa a fuentes relevantes para la respuesta.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="efecto-de-borde-y-bordura" class="slide level2 de de-principio de-principio-3 center">
+<h2>Efecto de borde y bordura</h2>
+<div class="de-pair de-border-layout"><div><div class="de-edge-label">↓ Influencias desde el exterior ↓</div><div class="de-border-grid" role="img" aria-label="Una parcela: plantas exteriores de bordura en ocre y parcela útil interior en verde"><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-core">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span><span class="de-edge">●</span></div><div class="de-border-key"><span class="de-edge">Bordura</span><span class="de-core">Parcela útil</span></div></div><div><p>En los bordes pueden cambiar la <strong>luz, el agua, los nutrientes o la competencia</strong>, incluso por parcelas vecinas.</p><p class="fragment" data-fragment-index="0">Su respuesta puede no representar al interior.</p><div class="idea fragment" data-fragment-index="1">Usar una <strong>bordura</strong> y medir la respuesta en la <strong>parcela útil interior</strong>.</div></div></div><p class="fragment" data-fragment-index="2"><strong>Una parcela = una UE.</strong> La bordura no es una réplica ni una UE adicional.</p>
+<aside class="notes">
+<p>Esquema didáctico propio, sin escala: los puntos representan plantas dentro de una misma parcela tratada. No fija un ancho universal de bordura. La estrategia y el área útil se definen antes del ensayo según cultivo y posibles interferencias. Conexión con técnica/control local: reducir una fuente conocida de variación.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validez-interna-y-externa" class="slide level2 de center">
+<h2>Validez interna y externa</h2>
+<div class="de-pair de-panels"><div><h3>Validez interna</h3><p>¿Podemos atribuir las diferencias observadas al <strong>factor manipulado</strong> y no a otras causas?</p></div><div><h3>Validez externa</h3><p>¿Hasta qué <strong>población, condiciones, lugares o momentos</strong> podemos generalizar?</p></div></div><div class="idea fragment" data-fragment-index="0">Dependen del experimento en conjunto: replicación, aleatorización, control local y cómo las UE representan la población.</div>
+<aside class="notes">
+<p>Se ubica después de los tres principios, sin rótulo exclusivo de aleatorización. Aleatorizar contribuye a atribuir causalidad, pero no reemplaza la manipulación apropiada, la calidad de ejecución ni el control de interferencias.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="control-experimental-y-alcance-de-la-inferencia" class="slide level2 de center">
+<h2>Control experimental y alcance de la inferencia</h2>
+<div class="de-pair de-panels"><div><h3>Dentro del experimento</h3><p>UE muy homogéneas, buen control y aleatorización pueden sostener <strong>alta validez interna</strong>.</p></div><div><h3>Más allá del experimento</h3><p>Ese <strong>agrupamiento</strong> también puede restringir la población y las condiciones representadas.</p></div></div><p>No es una oposición obligatoria entre validez interna y externa: <strong>ambas se planifican</strong>.</p><div class="idea fragment" data-fragment-index="0">El diseño debe permitir una inferencia válida para la población definida por la pregunta.</div>
+<aside class="notes">
+<p>Conecta con la población virtual o hipotética del inicio. Seleccionar UE homogéneas puede delimitar el universo al que extrapolamos; no implica una pérdida automática de validez externa ni autoriza extrapolar sólo por tener más réplicas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="principios-generales-diseños-particulares" class="slide level2 de de-hinge center">
+<h2>Principios generales, diseños particulares</h2>
+<p class="de-hinge-intro"><strong>Los principios son generales; los diseños son soluciones particulares.</strong></p><div class="de-paths"><div><p>UE razonablemente homogéneas</p><span>→</span><p><strong>AGRUPAMIENTO</strong></p><span>→</span><b>DCA</b></div><div><p>Una fuente de heterogeneidad relevante para la respuesta</p><span>→</span><p><strong>BLOQUEO</strong></p><span>→</span><b>DBCA</b></div><div><p>Dos fuentes relevantes y distinguibles</p><span>→</span><p><strong>DOS CRITERIOS<br>DE BLOQUEO</strong></p><span>→</span><b>DCL</b></div></div><div class="idea">Son caminos alternativos. Elegir requiere conocer las UE y las fuentes que pueden afectar la respuesta.</div>
+</section>
+<section id="construimos-un-dca" class="slide level2 de de-dca-build center">
+<h2>Construimos un DCA</h2>
+<p><strong>21 macetas disponibles</strong> · 3 tratamientos: variedades A, B y C.</p><div class="pregunta fragment" data-fragment-index="0">¿Las UE son razonablemente homogéneas respecto de las variables perturbadoras relevantes?</div><div class="de-assignment-grid"><div class="de-assign-cell" data-ue="1"><span class="de-ue-id fragment" data-fragment-index="1">UE 01</span><span class="de-assignment fragment tr-c" data-fragment-index="9" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="2"><span class="de-ue-id fragment" data-fragment-index="1">UE 02</span><span class="de-assignment fragment tr-a" data-fragment-index="21" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="3"><span class="de-ue-id fragment" data-fragment-index="1">UE 03</span><span class="de-assignment fragment tr-b" data-fragment-index="17" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="4"><span class="de-ue-id fragment" data-fragment-index="1">UE 04</span><span class="de-assignment fragment tr-c" data-fragment-index="7" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="5"><span class="de-ue-id fragment" data-fragment-index="1">UE 05</span><span class="de-assignment fragment tr-c" data-fragment-index="22" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="6"><span class="de-ue-id fragment" data-fragment-index="1">UE 06</span><span class="de-assignment fragment tr-a" data-fragment-index="20" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="7"><span class="de-ue-id fragment" data-fragment-index="1">UE 07</span><span class="de-assignment fragment tr-b" data-fragment-index="18" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="8"><span class="de-ue-id fragment" data-fragment-index="1">UE 08</span><span class="de-assignment fragment tr-c" data-fragment-index="12" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="9"><span class="de-ue-id fragment" data-fragment-index="1">UE 09</span><span class="de-assignment fragment tr-a" data-fragment-index="5" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="10"><span class="de-ue-id fragment" data-fragment-index="1">UE 10</span><span class="de-assignment fragment tr-b" data-fragment-index="4" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="11"><span class="de-ue-id fragment" data-fragment-index="1">UE 11</span><span class="de-assignment fragment tr-a" data-fragment-index="14" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="12"><span class="de-ue-id fragment" data-fragment-index="1">UE 12</span><span class="de-assignment fragment tr-b" data-fragment-index="6" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="13"><span class="de-ue-id fragment" data-fragment-index="1">UE 13</span><span class="de-assignment fragment tr-a" data-fragment-index="11" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="14"><span class="de-ue-id fragment" data-fragment-index="1">UE 14</span><span class="de-assignment fragment tr-c" data-fragment-index="16" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="15"><span class="de-ue-id fragment" data-fragment-index="1">UE 15</span><span class="de-assignment fragment tr-a" data-fragment-index="23" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="16"><span class="de-ue-id fragment" data-fragment-index="1">UE 16</span><span class="de-assignment fragment tr-b" data-fragment-index="19" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="17"><span class="de-ue-id fragment" data-fragment-index="1">UE 17</span><span class="de-assignment fragment tr-a" data-fragment-index="24" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="18"><span class="de-ue-id fragment" data-fragment-index="1">UE 18</span><span class="de-assignment fragment tr-c" data-fragment-index="8" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="19"><span class="de-ue-id fragment" data-fragment-index="1">UE 19</span><span class="de-assignment fragment tr-b" data-fragment-index="15" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="20"><span class="de-ue-id fragment" data-fragment-index="1">UE 20</span><span class="de-assignment fragment tr-c" data-fragment-index="10" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="21"><span class="de-ue-id fragment" data-fragment-index="1">UE 21</span><span class="de-assignment fragment tr-b" data-fragment-index="13" data-treatment="B">B</span></div></div><div class="de-dca-method"><div class="fragment" data-fragment-index="2"><strong>Sí: aleatorización completa entre todas las UE, sin restricciones de bloqueo.</strong></div><div class="fragment" data-fragment-index="3">Métodos posibles: sorteo · números aleatorios · Excel · R.</div></div><div class="idea fragment" data-fragment-index="25"><strong>7 A + 7 B + 7 C.</strong> Una maceta = una UE.<br>Además, está balanceado; no es un requisito del DCA.</div>
+<aside class="notes">
+<p>Construcción reversible con fragments nativos. Semilla Python 20260929: se permutan las 21 etiquetas (7 A, 7 B, 7 C) entre todas las UE; otra permutación decide el orden de revelado. Sin restricciones de bloqueo significa que los tratamientos se sortean entre todas las UE, conservando las cantidades planificadas por tratamiento. No implica ausencia de restricciones físicas o espaciales. El balance es una elección didáctica, no un requisito del DCA. Siete réplicas no es una recomendación de tamaño muestral. Asignación UE 1–21: C,A,B,C,C,A,B,C,A,B,A,B,A,C,A,B,A,C,B,C,B. Orden de revelado: 10,9,12,4,18,1,20,13,8,21,11,19,14,3,7,16,6,2,5,15,17.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -405,13 +555,9 @@ Andrés Tálamo
 </section>
 <section id="cuándo-tiene-sentido-un-dca" class="slide level2 de center">
 <h2>¿Cuándo tiene sentido un DCA?</h2>
-<p>UE razonablemente homogéneas respecto de las fuentes relevantes, sin una estructura importante que justifique bloquear.</p><div class="pregunta">Si no hay una buena razón para bloquear, no necesitamos bloquear.</div><div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div>Simple</div><div>Flexible</div><div>Más grados de libertad para estimar el error que con bloques innecesarios</div></div><p class="de-note">La comparación supone igual número de UE y tratamientos. La tabla ANOVA queda para la próxima clase.</p>
-</section>
-<section id="heterogeneidad-siempre-hay-que-bloquear" class="slide level2 de de-d27 center">
-<h2>Heterogeneidad: ¿siempre hay que bloquear?</h2>
-<div class="de-pots"><div><div class="de-pot negra" aria-hidden="true"></div><strong>Negras</strong></div><div><div class="de-pot blanca" aria-hidden="true"></div><strong>Blancas</strong></div><div><div class="de-pot terracota" aria-hidden="true"></div><strong>Terracota</strong></div></div><div class="pregunta">¿Bloquearíamos por color?</div><div class="idea fragment">Sólo si esperamos que el color produzca una diferencia relevante en la variable de respuesta; por ejemplo, mediante cambios en la temperatura del sustrato.</div><p><strong>No bloqueamos por cualquier diferencia entre UE.</strong></p>
+<div class="pregunta">Si no identificamos una fuente de heterogeneidad relevante que justifique formar bloques, no hay razón para agregar bloqueo.</div><div class="de-dca-summary"><strong>DCA</strong><div><p><b>Simple y flexible:</b> aleatorización entre todas las UE.</p><p><b>Sin bloques innecesarios:</b> conserva más grados de libertad para estimar el error.</p></div></div><div class="idea">El agrupamiento puede dar lugar a un conjunto de UE razonablemente homogéneas.</div>
 <aside class="notes">
-<p>Los colores se muestran directamente y se nombran: negras, blancas y terracota. No se reutilizan las letras de los tratamientos.</p>
+<p>Comparación de grados de libertad a igual número de UE y tratamientos. No desarrollar aquí la tabla de análisis de la varianza.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -424,11 +570,11 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="bloques-completos-aleatorizados-dbca" class="slide level2 de center">
-<h2>Bloques completos aleatorizados (DBCA)</h2>
-<p>Ejemplo: tres soluciones nutritivas, agrupando plantas por <strong>tamaño inicial</strong>.</p><div class="de-blocks"><div><strong>Bloque 1 · pequeñas</strong><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-c"><span>C</span></div></div></div><div><strong>Bloque 2 · medianas</strong><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-b"><span>B</span></div><div class="de-plot tr-a"><span>A</span></div></div></div><div><strong>Bloque 3 · grandes</strong><div class="de-plots" style="grid-template-columns:repeat(3,1fr)"><div class="de-plot tr-a"><span>A</span></div><div class="de-plot tr-c"><span>C</span></div><div class="de-plot tr-b"><span>B</span></div></div></div></div><div class="idea">UE relativamente homogéneas dentro de cada bloque. Todos los tratamientos en cada bloque; asignación al azar dentro de él.</div>
+<section id="las-ue-son-heterogéneas-justifica-bloquear" class="slide level2 de de-relevant center">
+<h2>Las UE son heterogéneas: ¿justifica bloquear?</h2>
+<div class="de-pots"><div><div class="de-pot negra" aria-hidden="true"></div><strong>Negras</strong></div><div><div class="de-pot blanca" aria-hidden="true"></div><strong>Blancas</strong></div><div><div class="de-pot terracota" aria-hidden="true"></div><strong>Terracota</strong></div></div><p><strong>¿Bloquearíamos por color?</strong> No alcanza con detectar diferencias.</p><div class="de-tiles de-palette" style="grid-template-columns:repeat(3,1fr)"><div>La característica <strong>varía entre UE</strong>.</div><div>Es conocida <strong>antes de asignar</strong> los tratamientos.</div><div>Puede influir en la <strong>variable de respuesta</strong>.</div></div><div class="idea fragment" data-fragment-index="0">Sólo si el color puede afectar la respuesta, por ejemplo mediante la temperatura del sustrato.</div>
 <aside class="notes">
-<p>Plantines de la misma variedad. Cada maceta recibe una solución nutritiva de manera independiente. Tres bloques se muestran por claridad; son tres réplicas de cada solución nutritiva, no un n recomendado. La variación asociada a bloques se separa del residuo en el análisis.</p>
+<p>El color de maceta es una fuente candidata, no un bloque automático. Mantener el mensaje oral: no bloqueamos por cualquier diferencia entre UE.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -441,19 +587,49 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="un-bloque-no-es-necesariamente-una-franja" class="slide level2 de de-d29 center">
-<h2>Un bloque no es necesariamente una franja</h2>
-<div class="de-tiles" style="grid-template-columns:repeat(3,1fr)"><div>Sectores / tipos de suelo</div><div>Camada / procedencia</div><div>Tamaño inicial</div><div>Mesada / invernadero</div><div>Tanda / fecha experimental</div><div>Gradiente espacial</div></div><div class="de-big">Bloque ≠ gradiente</div><div class="idea">Grupos de UE relativamente homogéneas respecto de una fuente sistemática y relevante de variación.</div>
+<section id="construimos-un-dbca" class="slide level2 de de-dbca-build center">
+<h2>Construimos un DBCA</h2>
+<p><strong>9 macetas disponibles</strong> · tratamientos: soluciones nutritivas A, B y C.</p><div class="pregunta fragment" data-fragment-index="0">El tamaño inicial varía y puede influir en la biomasa final.</div><div class="de-build-blocks"><div class="de-build-block" data-block="1"><div class="de-block-frame fragment" data-fragment-index="1"></div><h3 class="fragment" data-fragment-index="1">Bloque 1 · pequeñas</h3><div class="de-block-cells"><div class="de-assign-cell" data-ue="1"><span class="de-ue-id">UE 1</span><span class="de-seedling" style="--plant-height:35px" aria-label="Planta de tamaño pequeñas"></span><span class="de-assignment fragment tr-a" data-fragment-index="4" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="2"><span class="de-ue-id">UE 2</span><span class="de-seedling" style="--plant-height:35px" aria-label="Planta de tamaño pequeñas"></span><span class="de-assignment fragment tr-c" data-fragment-index="3" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="3"><span class="de-ue-id">UE 3</span><span class="de-seedling" style="--plant-height:35px" aria-label="Planta de tamaño pequeñas"></span><span class="de-assignment fragment tr-b" data-fragment-index="5" data-treatment="B">B</span></div></div></div><div class="de-build-block" data-block="2"><div class="de-block-frame fragment" data-fragment-index="1"></div><h3 class="fragment" data-fragment-index="1">Bloque 2 · medianas</h3><div class="de-block-cells"><div class="de-assign-cell" data-ue="4"><span class="de-ue-id">UE 4</span><span class="de-seedling" style="--plant-height:60px" aria-label="Planta de tamaño medianas"></span><span class="de-assignment fragment tr-a" data-fragment-index="6" data-treatment="A">A</span></div><div class="de-assign-cell" data-ue="5"><span class="de-ue-id">UE 5</span><span class="de-seedling" style="--plant-height:60px" aria-label="Planta de tamaño medianas"></span><span class="de-assignment fragment tr-b" data-fragment-index="7" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="6"><span class="de-ue-id">UE 6</span><span class="de-seedling" style="--plant-height:60px" aria-label="Planta de tamaño medianas"></span><span class="de-assignment fragment tr-c" data-fragment-index="8" data-treatment="C">C</span></div></div></div><div class="de-build-block" data-block="3"><div class="de-block-frame fragment" data-fragment-index="1"></div><h3 class="fragment" data-fragment-index="1">Bloque 3 · grandes</h3><div class="de-block-cells"><div class="de-assign-cell" data-ue="7"><span class="de-ue-id">UE 7</span><span class="de-seedling" style="--plant-height:85px" aria-label="Planta de tamaño grandes"></span><span class="de-assignment fragment tr-b" data-fragment-index="9" data-treatment="B">B</span></div><div class="de-assign-cell" data-ue="8"><span class="de-ue-id">UE 8</span><span class="de-seedling" style="--plant-height:85px" aria-label="Planta de tamaño grandes"></span><span class="de-assignment fragment tr-c" data-fragment-index="10" data-treatment="C">C</span></div><div class="de-assign-cell" data-ue="9"><span class="de-ue-id">UE 9</span><span class="de-seedling" style="--plant-height:85px" aria-label="Planta de tamaño grandes"></span><span class="de-assignment fragment tr-a" data-fragment-index="11" data-treatment="A">A</span></div></div></div></div><div class="fragment" data-fragment-index="1"><strong>Bloques internamente homogéneos: aquí, 3 UE por bloque, una por tratamiento.</strong></div><div class="fragment" data-fragment-index="2">Aleatorización restringida: sorteamos A, B y C dentro de cada bloque, bloque por bloque.</div><div class="idea fragment" data-fragment-index="12">Cada bloque contiene <strong>una réplica de cada tratamiento</strong>. El sorteo se hace dentro de los bloques, no entre todas las UE.</div>
+<aside class="notes">
+<p>Plantines de una misma variedad. Se muestran tres tamaños iniciales conocidos antes del tratamiento. Los tratamientos se aplican independientemente a macetas. Ejemplo del DBCA básico con una UE por tratamiento en cada bloque, no regla universal para todas sus variantes. Se ilustra la formación de bloques revelando sus límites, sin animar desplazamientos físicos de macetas. Semilla Python 20260930; permutación de A/B/C independiente en cada bloque y orden de revelado aleatorio dentro de él. [{“size”: “Pequeñas”, “treatments”: [“A”, “C”, “B”], “reveal”: [1, 0, 2]}, {“size”: “Medianas”, “treatments”: [“A”, “B”, “C”], “reveal”: [0, 1, 2]}, {“size”: “Grandes”, “treatments”: [“B”, “C”, “A”], “reveal”: [0, 1, 2]}]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="los-bloques-no-siempre-responden-a-un-gradiente" class="slide level2 de de-bench-slide center">
+<h2>Los bloques no siempre responden a un gradiente</h2>
+<svg class="de-benches" viewbox="0 0 1200 390" role="img" aria-label="Esquema didáctico de tres mesadas de invernadero, cada una con una maceta de cada tratamiento A, B y C"><path d="M30 365V105L600 18L1170 105V365M600 18V80" fill="none" stroke="#9daa9c" stroke-width="6"></path><text x="235" y="130" text-anchor="middle">Mesada 1 = bloque</text><path d="M90 280h290v20H90zM110 300v65M360 300v65" fill="#d9d5c5" stroke="#66736d" stroke-width="5"></path><path d="M138 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M106 215h64l-9 62h-46z" fill="#ecd5bf" stroke="#173c2b" stroke-width="3"></path><text x="138" y="259" text-anchor="middle" font-weight="bold">B</text><path d="M233 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M201 215h64l-9 62h-46z" fill="#c6dbc6" stroke="#173c2b" stroke-width="3"></path><text x="233" y="259" text-anchor="middle" font-weight="bold">A</text><path d="M328 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M296 215h64l-9 62h-46z" fill="#f0dea0" stroke="#173c2b" stroke-width="3"></path><text x="328" y="259" text-anchor="middle" font-weight="bold">C</text><text x="600" y="130" text-anchor="middle">Mesada 2 = bloque</text><path d="M455 280h290v20H455zM475 300v65M725 300v65" fill="#d9d5c5" stroke="#66736d" stroke-width="5"></path><path d="M503 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M471 215h64l-9 62h-46z" fill="#f0dea0" stroke="#173c2b" stroke-width="3"></path><text x="503" y="259" text-anchor="middle" font-weight="bold">C</text><path d="M598 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M566 215h64l-9 62h-46z" fill="#ecd5bf" stroke="#173c2b" stroke-width="3"></path><text x="598" y="259" text-anchor="middle" font-weight="bold">B</text><path d="M693 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M661 215h64l-9 62h-46z" fill="#c6dbc6" stroke="#173c2b" stroke-width="3"></path><text x="693" y="259" text-anchor="middle" font-weight="bold">A</text><text x="965" y="130" text-anchor="middle">Mesada 3 = bloque</text><path d="M820 280h290v20H820zM840 300v65M1090 300v65" fill="#d9d5c5" stroke="#66736d" stroke-width="5"></path><path d="M868 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M836 215h64l-9 62h-46z" fill="#c6dbc6" stroke="#173c2b" stroke-width="3"></path><text x="868" y="259" text-anchor="middle" font-weight="bold">A</text><path d="M963 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M931 215h64l-9 62h-46z" fill="#f0dea0" stroke="#173c2b" stroke-width="3"></path><text x="963" y="259" text-anchor="middle" font-weight="bold">C</text><path d="M1058 215v-35m0 20q-35-28-22-36q26 0 22 36m0-7q35-24 27-34q-24 0-27 34" fill="#92b77c" stroke="#2d6a4f" stroke-width="3"></path><path d="M1026 215h64l-9 62h-46z" fill="#ecd5bf" stroke="#173c2b" stroke-width="3"></path><text x="1058" y="259" text-anchor="middle" font-weight="bold">B</text></svg><div class="idea">Una mesada puede definir un bloque si genera condiciones relevantes para la respuesta. No necesita ser una franja de un gradiente espacial.</div><p class="de-note">Esquema didáctico propio: cada maceta es una UE; todos los tratamientos aparecen en cada mesada.</p>
+<aside class="notes">
+<p>Se evaluaron fotografías históricas de invernaderos en Wikimedia Commons / Science History Institute. No documentan una delimitación inequívoca de bloques ni una licencia abierta concluyente en todos los casos. Se eligió ilustración vectorial propia, no fotografía ni evidencia de un ensayo real. La mesada es un bloque candidato sólo con justificación biológica; cada maceta recibe el tratamiento independientemente. También pueden servir camada, procedencia o tamaño inicial, sin saturar la proyección con una lista.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="dca-vs.-dbca" class="slide level2 de center">
 <h2>DCA vs.&nbsp;DBCA</h2>
-<div class="de-pair"><div><h3>DCA</h3><p>UE razonablemente homogéneas.</p><p>Aleatorización completa.</p></div><div><h3>DBCA</h3><p>Fuente sistemática relevante; homogeneidad relativa dentro de bloques.</p><p>Todos los tratamientos en cada bloque; aleatorización dentro de bloques.</p></div></div><div class="pregunta fragment"><strong>DBCA no es un DCA mejor.</strong> Bloquear agrega estructura y utiliza grados de libertad: tiene sentido si captura variación relevante.</div>
+<div class="de-pair"><div><h3>DCA</h3><p>UE razonablemente homogéneas; puede haber agrupamiento.</p><p>Aleatorización completa.</p></div><div><h3>DBCA</h3><p>Fuente sistemática relevante; homogeneidad relativa dentro de bloques.</p><p>Todos los tratamientos en cada bloque; aleatorización dentro de bloques.</p></div></div><div class="pregunta fragment"><strong>DBCA no es un DCA mejor.</strong> Bloquear agrega estructura y utiliza grados de libertad: tiene sentido si captura variación relevante.</div>
 </section>
-<section id="y-si-hay-dos-fuentes-sistemáticas" class="slide level2 de center">
-<h2>¿Y si hay dos fuentes sistemáticas?</h2>
-<div class="de-flow"><div>Cambio norte–sur<br>de fertilidad</div><span class="de-arrow">→</span><div>Parcelas</div><span class="de-arrow">←</span><div>Cambio este–oeste<br>de humedad</div></div><div class="pregunta">Dos criterios distintos de bloqueo pueden justificar un diseño en cuadrado latino (DCL).</div><div class="alerta fragment">Si ambas variables cambian juntas y un único sistema de bloques las representa, eso no justifica por sí mismo un DCL.</div>
+<section id="dcl-dos-criterios-de-bloqueo" class="slide level2 de de-dcl-intro center">
+<h2>DCL: dos criterios de bloqueo</h2>
+<div class="de-dcl-layout"><div class="de-dcl-field"><div class="de-dcl-h fragment" data-fragment-index="0"><span>Fertilidad</span><svg viewbox="0 0 500 18" aria-hidden="true"><path d="M0 9H490m-12-7 12 7-12 7" fill="none" stroke="currentColor" stroke-width="4"></path></svg></div><div class="de-dcl-v fragment" data-fragment-index="1"><svg viewbox="0 0 60 330" role="img" aria-label="Humedad: gradiente vertical"><text transform="translate(24,235) rotate(-90)">Humedad</text><path d="M48 5V320m-7-12 7 12 7-12" fill="none" stroke="currentColor" stroke-width="4"></path></svg></div><div class="de-dcl-cols fragment" data-fragment-index="3"><b>C1</b><b>C2</b><b>C3</b></div><div class="de-dcl-rows fragment" data-fragment-index="3"><b>F1</b><b>F2</b><b>F3</b></div><div class="de-dcl-empty" role="img" aria-label="Nueve parcelas sin tratamientos"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="de-dcl-row-label fragment" data-fragment-index="3">Filas = un sistema de bloques</div><div class="de-dcl-col-label fragment" data-fragment-index="3">Columnas = otro sistema</div></div><div><div class="pregunta fragment" data-fragment-index="2">Los criterios <strong>no tienen que ser gradientes ambientales ni espaciales perpendiculares</strong>.</div><p class="fragment" data-fragment-index="2">Aquí los gradientes son una ilustración agronómica.</p><div class="idea fragment" data-fragment-index="3">Dos fuentes relevantes y distinguibles → dos sistemas de bloques.</div></div></div>
 <aside class="notes">
-<p>Ejemplo hipotético: confirmar con información previa que los criterios cruzados son relevantes. No inferir gradientes de la mera posición geográfica.</p>
+<p>Primera vista: cuadrícula sin tratamientos. Flecha horizontal: fertilidad; vertical: humedad. En este ejemplo las columnas agrupan posiciones de fertilidad semejante y las filas posiciones de humedad semejante. Los criterios cruzados pueden ser no espaciales. Si dos variables cambian juntas y un único sistema las representa, no justifican por sí mismas dos sistemas de bloques.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -466,11 +642,11 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="diseño-en-cuadrado-latino-dcl" class="slide level2 de center">
-<h2>Diseño en cuadrado latino (DCL)</h2>
-<div class="de-pair"><div><div class="de-latin"><div></div><b>C1</b><b>C2</b><b>C3</b><b>F1</b><span class="tr-a">A</span><span class="tr-c">C</span><span class="tr-b">B</span><b>F2</b><span class="tr-c">C</span><span class="tr-b">B</span><span class="tr-a">A</span><b>F3</b><span class="tr-b">B</span><span class="tr-a">A</span><span class="tr-c">C</span></div></div><div><p><strong>A, B, C:</strong> tratamientos.</p><p><strong>Filas:</strong> un criterio de bloqueo.</p><p><strong>Columnas:</strong> segundo criterio.</p><p>Cada tratamiento aparece una vez por fila y una vez por columna.</p></div></div><p class="de-note">3 tratamientos · 3 filas × 3 columnas = 9 UE. Se aleatoriza respetando esta estructura. El énfasis del curso estará en DCA y DBCA.</p>
+<section id="dcl-de-la-forma-básica-al-sorteo" class="slide level2 de de-dcl-random center">
+<h2>DCL: de la forma básica al sorteo</h2>
+<div class="de-latin-stages"><div><h3>1 · Forma básica</h3><div class="de-latin-grid" data-latin="ABCBCACAB"><span class="tr-a">A</span><span class="tr-b">B</span><span class="tr-c">C</span><span class="tr-b">B</span><span class="tr-c">C</span><span class="tr-a">A</span><span class="tr-c">C</span><span class="tr-a">A</span><span class="tr-b">B</span></div><p>Una estructura válida.</p></div><div class="fragment" data-fragment-index="0"><h3>2 · Sortear filas</h3><div class="de-latin-grid" data-latin="CABABCBCA"><span class="tr-c">C</span><span class="tr-a">A</span><span class="tr-b">B</span><span class="tr-a">A</span><span class="tr-b">B</span><span class="tr-c">C</span><span class="tr-b">B</span><span class="tr-c">C</span><span class="tr-a">A</span></div><p>Orden sorteado: 3 → 1 → 2.</p></div><div class="fragment" data-fragment-index="1"><h3>3 · Sortear columnas</h3><div class="de-latin-grid" data-latin="BACCBAACB"><span class="tr-b">B</span><span class="tr-a">A</span><span class="tr-c">C</span><span class="tr-c">C</span><span class="tr-b">B</span><span class="tr-a">A</span><span class="tr-a">A</span><span class="tr-c">C</span><span class="tr-b">B</span></div><p>Orden sorteado: 3 → 2 → 1.</p></div></div><div class="idea fragment" data-fragment-index="2">En cada disposición: <strong>una vez cada nivel por fila y por columna</strong>.</div><p class="de-note">A, B y C: niveles / tratamientos · 3 filas × 3 columnas = 9 UE. Aleatorización compatible con la estructura del DCL.</p>
 <aside class="notes">
-<p>El número de filas y columnas coincide con el de tratamientos. Aleatorización: permutar al azar filas, columnas y etiquetas de un cuadrado válido. La ausencia de interacciones relevantes es una limitación a considerar al elegirlo, sin desarrollar aquí el análisis.</p>
+<p>Se reutiliza la antigua D33 como segunda parte de la construcción solicitada en D32; no se añade una tercera explicación redundante. Permutaciones ilustrativas del sorteo: filas [3,1,2], columnas [3,2,1]. Cada casillero final representa una posición/UE fija del experimento; se reordenan las asignaciones de la plantilla, no se trasladan físicamente parcelas. También pueden permutarse aleatoriamente las etiquetas de tratamientos. Todas las matrices conservan A/B/C una vez en cada fila/columna. Número de filas/columnas igual al de tratamientos. No se desarrolla análisis ni interacciones; énfasis del curso en DCA/DBCA.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -487,11 +663,11 @@ Andrés Tálamo
 <h2>Del problema al diseño</h2>
 <div class="de-map"><div>Pregunta</div><span>↓</span><div>Factor principal + variable de respuesta</div><span>↓</span><div>Unidad experimental</div><span>↓</span><div>Fuentes de variación</div><span>↓</span><div>Replicación + aleatorización + control local</div><span>↓</span><div>Elección del diseño</div><span>↓</span><div>Obtención de datos</div></div>
 </section>
-<section id="caso-integrador" class="slide level2 de de-d34 center">
-<h2>Caso integrador</h2>
-<p>Un vivero compara <strong>tres sustratos (A, B y C)</strong> para plantines de pimiento. Dispone de <strong>varias tandas de producción</strong>, con 3 macetas comparables en cada una. Las condiciones pueden cambiar entre tandas.</p><p>En cada tanda sortea un sustrato por maceta y mide la <strong>biomasa seca (g) a los 42 días</strong>.</p><div class="pregunta">Identifiquen factor, niveles, tratamientos, variable de respuesta, UE, réplicas, fuente de variación y diseño.</div><div class="idea fragment">¿Qué cambiaría si las UE fueran razonablemente homogéneas respecto de la tanda?</div>
+<section id="caso-integrador-mesadas-de-invernadero" class="slide level2 de de-case-problem center">
+<h2>Caso integrador: mesadas de invernadero</h2>
+<div class="pregunta">¿Cómo cambia el crecimiento de plantines de <strong>tomate cultivados en invernadero</strong> según el tipo de sustrato?</div><div class="de-pair"><svg class="de-case-greenhouse" viewbox="0 0 620 305" role="img" aria-label="Invernadero con siete mesadas en distintas posiciones, expuestas a condiciones locales diferentes"><path d="M8 294V85L310 10 612 85V294" fill="none" stroke="#9daa9c" stroke-width="5"></path><text x="310" y="75" text-anchor="middle">Distintas posiciones → distintas condiciones</text><g><rect x="26" y="105" width="120" height="52" rx="3" fill="#c6dbc6" stroke="#66736d" stroke-width="3"></rect><path d="M38 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="86" y="139" text-anchor="middle">Mesada 1</text></g><g><rect x="168" y="105" width="120" height="52" rx="3" fill="#d6e2cd" stroke="#66736d" stroke-width="3"></rect><path d="M180 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="228" y="139" text-anchor="middle">Mesada 2</text></g><g><rect x="310" y="105" width="120" height="52" rx="3" fill="#e2e7d7" stroke="#66736d" stroke-width="3"></rect><path d="M322 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="370" y="139" text-anchor="middle">Mesada 3</text></g><g><rect x="452" y="105" width="120" height="52" rx="3" fill="#e8e7da" stroke="#66736d" stroke-width="3"></rect><path d="M464 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="512" y="139" text-anchor="middle">Mesada 4</text></g><g><rect x="96" y="210" width="120" height="52" rx="3" fill="#cadbcd" stroke="#66736d" stroke-width="3"></rect><path d="M108 262v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="156" y="244" text-anchor="middle">Mesada 5</text></g><g><rect x="238" y="210" width="120" height="52" rx="3" fill="#dce2d2" stroke="#66736d" stroke-width="3"></rect><path d="M250 262v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="298" y="244" text-anchor="middle">Mesada 6</text></g><g><rect x="380" y="210" width="120" height="52" rx="3" fill="#e6e5d7" stroke="#66736d" stroke-width="3"></rect><path d="M392 262v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="440" y="244" text-anchor="middle">Mesada 7</text></g></svg><div><p><strong>7 mesadas / bancos</strong> en un invernadero.</p><p class="fragment" data-fragment-index="0">Su posición puede generar diferencias de <strong>luz y temperatura</strong> que influyen en el crecimiento.</p><div class="idea fragment" data-fragment-index="1">Fuente conocida y relevante de heterogeneidad → incorporarla mediante <strong>bloqueo</strong>.</div></div></div><p><strong>Factor:</strong> tipo de sustrato · <strong>Niveles:</strong></p><div class="de-case-levels"><span class="tr-a">Suelo + arena</span><span class="tr-b">Suelo + compost</span><span class="tr-c">Sustrato comercial</span></div><p><strong>Variable de respuesta:</strong> biomasa seca (g) a los 42 días.</p>
 <aside class="notes">
-<p>Respuesta: factor principal = sustrato; niveles A/B/C; tratamientos = aplicar cada sustrato; respuesta = biomasa seca en g; UE = maceta (un plantín, aplicación independiente); réplicas = macetas independientes con el mismo sustrato, una por tanda; tanda = fuente sistemática relevante; DBCA si hay razones previas para esperar ese efecto. Si no hay efecto relevante esperado de tanda ni otra estructura, DCA es apropiado; sortear entre todas las macetas. La selección del diseño ocurre antes de observar resultados. Misma variedad y manejo; 42 días es la edad de medición, no tamaño muestral.</p>
+<p>Ejemplo docente hipotético: tomate, misma variedad, una maceta por plantín y formulaciones de sustrato predefinidas. Esquema propio de siete mesadas; los matices de color sólo ilustran heterogeneidad, no son datos ambientales ni tratamientos. Elegimos DBCA por una fuente conocida y relevante para la respuesta, no porque sea superior al DCA. Cuarenta y dos días es la edad de medición.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -504,11 +680,37 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="puente-hacia-anova" class="slide level2 de center">
+<section id="dbca-siete-mesadas-siete-bloques" class="slide level2 de de-case-grid center">
+<h2>DBCA: siete mesadas, siete bloques</h2>
+<p><strong>Mesada = bloque · Cada maceta con un plantín de tomate = UE.</strong><br>Asignamos al azar los tres sustratos dentro de cada mesada, uno por maceta.</p><div class="de-case-benches"><div class="de-case-bench fragment" data-fragment-index="0"><b>Mesada 1</b><span class="tr-b" data-substrate="1"><i class="de-case-pot" aria-hidden="true"></i>Suelo + compost</span><span class="tr-c" data-substrate="2"><i class="de-case-pot" aria-hidden="true"></i>Sustrato comercial</span><span class="tr-a" data-substrate="0"><i class="de-case-pot" aria-hidden="true"></i>Suelo + arena</span></div><div class="de-case-bench fragment" data-fragment-index="1"><b>Mesada 2</b><span class="tr-a" data-substrate="0"><i class="de-case-pot" aria-hidden="true"></i>Suelo + arena</span><span class="tr-b" data-substrate="1"><i class="de-case-pot" aria-hidden="true"></i>Suelo + compost</span><span class="tr-c" data-substrate="2"><i class="de-case-pot" aria-hidden="true"></i>Sustrato comercial</span></div><div class="de-case-bench fragment" data-fragment-index="2"><b>Mesada 3</b><span class="tr-c" data-substrate="2"><i class="de-case-pot" aria-hidden="true"></i>Sustrato comercial</span><span class="tr-b" data-substrate="1"><i class="de-case-pot" aria-hidden="true"></i>Suelo + compost</span><span class="tr-a" data-substrate="0"><i class="de-case-pot" aria-hidden="true"></i>Suelo + arena</span></div><div class="de-case-bench fragment" data-fragment-index="3"><b>Mesada 4</b><span class="tr-a" data-substrate="0"><i class="de-case-pot" aria-hidden="true"></i>Suelo + arena</span><span class="tr-c" data-substrate="2"><i class="de-case-pot" aria-hidden="true"></i>Sustrato comercial</span><span class="tr-b" data-substrate="1"><i class="de-case-pot" aria-hidden="true"></i>Suelo + compost</span></div><div class="de-case-bench fragment" data-fragment-index="4"><b>Mesada 5</b><span class="tr-c" data-substrate="2"><i class="de-case-pot" aria-hidden="true"></i>Sustrato comercial</span><span class="tr-b" data-substrate="1"><i class="de-case-pot" aria-hidden="true"></i>Suelo + compost</span><span class="tr-a" data-substrate="0"><i class="de-case-pot" aria-hidden="true"></i>Suelo + arena</span></div><div class="de-case-bench fragment" data-fragment-index="5"><b>Mesada 6</b><span class="tr-b" data-substrate="1"><i class="de-case-pot" aria-hidden="true"></i>Suelo + compost</span><span class="tr-c" data-substrate="2"><i class="de-case-pot" aria-hidden="true"></i>Sustrato comercial</span><span class="tr-a" data-substrate="0"><i class="de-case-pot" aria-hidden="true"></i>Suelo + arena</span></div><div class="de-case-bench fragment" data-fragment-index="6"><b>Mesada 7</b><span class="tr-c" data-substrate="2"><i class="de-case-pot" aria-hidden="true"></i>Sustrato comercial</span><span class="tr-a" data-substrate="0"><i class="de-case-pot" aria-hidden="true"></i>Suelo + arena</span><span class="tr-b" data-substrate="1"><i class="de-case-pot" aria-hidden="true"></i>Suelo + compost</span></div></div><div class="idea fragment" data-fragment-index="7"><strong>7 mesadas × 3 macetas = 21 UE.</strong><br><strong>7 réplicas por nivel:</strong> una UE de cada nivel en cada bloque.</div>
+<aside class="notes">
+<p>Factor: tipo de sustrato. Niveles/tratamientos: Suelo + arena, Suelo + compost, Sustrato comercial. Cada maceta con un plantín de tomate recibe su sustrato independientemente; no hay aplicación común por mesada ni interferencia relevante entre macetas. Siete mesadas/bloques con tres UE cada una, una por nivel; siete réplicas independientes por nivel. La fila y sus apoyos representan la mesada; cada icono representa una maceta. Columnas: posiciones, no niveles fijos. Se conservan las permutaciones de la versión previa, generadas con Python random.Random(20260929), sample de tres niveles dentro de cada bloque. Siete réplicas ilustra la estructura, no recomienda un tamaño muestral. DBCA elegido antes de observar datos por heterogeneidad relevante entre mesadas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="puente-hacia-anova" class="slide level2 de de-case-plot center">
 <h2>Puente hacia ANOVA</h2>
-<svg class="de-chart" viewbox="0 0 1150 320" role="img" aria-label="Rendimientos ficticios: once parcelas por tratamiento, puntos individuales y líneas de medias"><line x1="110" y1="265" x2="1080" y2="265" stroke="#c9cec7"></line><text x="80" y="273">5</text><line x1="110" y1="214" x2="1080" y2="214" stroke="#c9cec7"></line><text x="80" y="222">6</text><line x1="110" y1="163" x2="1080" y2="163" stroke="#c9cec7"></line><text x="80" y="171">7</text><line x1="110" y1="112" x2="1080" y2="112" stroke="#c9cec7"></line><text x="80" y="120">8</text><line x1="110" y1="61" x2="1080" y2="61" stroke="#c9cec7"></line><text x="80" y="69">9</text><text x="20" y="25">Rendimiento (t/ha)</text><circle cx="282" cy="224.20000000000002" r="7" fill="#2d6a4f"></circle><circle cx="301" cy="193.59999999999997" r="7" fill="#2d6a4f"></circle><circle cx="320" cy="208.90000000000003" r="7" fill="#2d6a4f"></circle><circle cx="339" cy="152.8" r="7" fill="#2d6a4f"></circle><circle cx="358" cy="178.3" r="7" fill="#2d6a4f"></circle><circle cx="282" cy="219.09999999999997" r="7" fill="#2d6a4f"></circle><circle cx="301" cy="188.5" r="7" fill="#2d6a4f"></circle><circle cx="320" cy="163.0" r="7" fill="#2d6a4f"></circle><circle cx="339" cy="203.79999999999998" r="7" fill="#2d6a4f"></circle><circle cx="358" cy="173.2" r="7" fill="#2d6a4f"></circle><circle cx="282" cy="183.40000000000003" r="7" fill="#2d6a4f"></circle><line x1="242" y1="189.89090909090913" x2="398" y2="189.89090909090913" stroke="#2d6a4f" stroke-width="5"></line><text x="320" y="310" text-anchor="middle">A</text><circle cx="592" cy="193.59999999999997" r="7" fill="#8a5a3b"></circle><circle cx="611" cy="152.8" r="7" fill="#8a5a3b"></circle><circle cx="630" cy="132.4" r="7" fill="#8a5a3b"></circle><circle cx="649" cy="168.09999999999997" r="7" fill="#8a5a3b"></circle><circle cx="668" cy="157.90000000000003" r="7" fill="#8a5a3b"></circle><circle cx="592" cy="112.0" r="7" fill="#8a5a3b"></circle><circle cx="611" cy="142.59999999999997" r="7" fill="#8a5a3b"></circle><circle cx="630" cy="178.3" r="7" fill="#8a5a3b"></circle><circle cx="649" cy="122.20000000000002" r="7" fill="#8a5a3b"></circle><circle cx="668" cy="163.0" r="7" fill="#8a5a3b"></circle><circle cx="592" cy="137.5" r="7" fill="#8a5a3b"></circle><line x1="552" y1="150.94545454545448" x2="708" y2="150.94545454545448" stroke="#8a5a3b" stroke-width="5"></line><text x="630" y="310" text-anchor="middle">B</text><circle cx="902" cy="173.2" r="7" fill="#ab8010"></circle><circle cx="921" cy="137.5" r="7" fill="#ab8010"></circle><circle cx="940" cy="157.90000000000003" r="7" fill="#ab8010"></circle><circle cx="959" cy="101.80000000000004" r="7" fill="#ab8010"></circle><circle cx="978" cy="122.20000000000002" r="7" fill="#ab8010"></circle><circle cx="902" cy="147.7" r="7" fill="#ab8010"></circle><circle cx="921" cy="91.6" r="7" fill="#ab8010"></circle><circle cx="940" cy="132.4" r="7" fill="#ab8010"></circle><circle cx="959" cy="112.0" r="7" fill="#ab8010"></circle><circle cx="978" cy="152.8" r="7" fill="#ab8010"></circle><circle cx="902" cy="117.1" r="7" fill="#ab8010"></circle><line x1="862" y1="131.47272727272727" x2="1018" y2="131.47272727272727" stroke="#ab8010" stroke-width="5"></line><text x="940" y="310" text-anchor="middle">C</text></svg><p class="de-note">Datos ficticios · 11 UE por tratamiento · puntos: parcelas · líneas: medias.</p><div class="pregunta">¿Las diferencias entre tratamientos son grandes en relación con la variación entre UE tratadas de igual manera?</div><p>Necesitamos separar y cuantificar las fuentes: <strong>tratamientos, error experimental y, en DBCA, bloques</strong>.</p><p><strong>Próxima clase: ANÁLISIS DE LA VARIANZA (ANOVA).</strong>
-</p><aside class="notes">
-<p>No calcular ANOVA. Los datos son construidos para el cierre conceptual, no evidencia empírica. No incluyen un efecto de bloques simulado. La pregunta recupera la relación entre diferencia y variabilidad trabajada en Clase 06.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_10_Diseno_Experimental_2026_files/figure-revealjs/caso-sustratos-1.png" style="width:100.0%" alt="Biomasa seca ficticia de 21 plantines de tomate: siete macetas por sustrato, puntos individuales y líneas de medias."></p>
+</figure>
+</div>
+</div>
+</div>
+<p class="de-note">Datos ficticios · 7 macetas por sustrato · puntos: UE · líneas: medias descriptivas.</p><div class="pregunta">¿Las diferencias entre sustratos son grandes en relación con la variación entre UE tratadas de igual manera?</div><p>Necesitamos separar y cuantificar: <strong>sustrato, mesadas (bloques) y error experimental</strong>.</p><p><strong>Próxima clase: ANÁLISIS DE LA VARIANZA (ANOVA).</strong></p>
+<aside class="notes">
+<p>Gráfico descriptivo del caso integrador: 21 macetas de tomate, siete mesadas, tres sustratos. Datos ficticios construidos con efectos de sustrato, diferencias entre mesadas y desviaciones dentro de cada combinación. Las líneas muestran medias brutas, no efectos ajustados ni resultados de ANOVA. La agrupación por sustrato no muestra explícitamente la pertenencia a mesadas: el análisis debe respetar el DBCA. No calcular ANOVA. Jitter sólo horizontal (0.035) y semilla fija; no altera biomasa. theme_bw() de ggplot2.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -742,6 +944,44 @@ Andrés Tálamo
       });
     </script>
     <a class="eyde-home-link" href="../../index.html" target="_self" aria-label="Volver al inicio" title="Volver al inicio" data-preview-link="false">⌂</a>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
