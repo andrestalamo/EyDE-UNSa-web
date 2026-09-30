@@ -177,13 +177,49 @@ Andrés Tálamo
 
   <p class="date">30 de septiembre de 2026</p>
 </section>
-<section id="tipos-de-estudios" class="slide level2 de de-compare center">
-<h2>Tipos de estudios</h2>
-<p class="de-note">Retomamos la Clase 01: cómo obtenemos los datos condiciona la inferencia.</p><div class="de-pair de-panels"><div><h3>OBSERVACIONAL</h3><div class="de-big">Observamos</div><p>Registramos las variables tal como ocurren, sin asignar tratamientos.</p></div><div><h3>EXPERIMENTAL / MANIPULATIVO</h3><div class="de-big">Manipulamos</div><p>Modificamos deliberadamente al menos una variable y observamos qué ocurre con otra.</p></div></div><div class="idea fragment" data-fragment-index="0">Hoy profundizamos cómo planificar esa manipulación.</div>
+<section id="observacional-una-condición-que-ya-existe" class="slide level2 de de-grazing center">
+<h2>Observacional: una condición que ya existe</h2>
+<div class="pregunta">¿Difiere la compactación del suelo entre sectores pastoreados por vacas y sectores no pastoreados?</div>
+<div class="de-grazing-pair"><div><h3>Sector pastoreado</h3><div class="de-pasture"><svg class="de-cow" viewbox="0 0 150 80" aria-hidden="true"><path d="M25 23 Q14 17 10 30 M27 20 H98 V53 H27 Z M96 22 L108 12 L132 22 L129 43 L104 45 Z M110 15 L108 4 L119 13 M130 20 L143 14 L136 27 M35 51 V72 M83 51 V72 M103 43 V68" fill="#f8f6eb" stroke="#173c2b" stroke-width="5" stroke-linejoin="round"></path><path d="M40 21 H64 L70 36 L50 45 Z M81 34 L96 29 V50 H82 Z" fill="#173c2b"></path><circle cx="124" cy="26" r="3" fill="#173c2b"></circle></svg><svg class="de-cow" viewbox="0 0 150 80" aria-hidden="true"><path d="M25 23 Q14 17 10 30 M27 20 H98 V53 H27 Z M96 22 L108 12 L132 22 L129 43 L104 45 Z M110 15 L108 4 L119 13 M130 20 L143 14 L136 27 M35 51 V72 M83 51 V72 M103 43 V68" fill="#f8f6eb" stroke="#173c2b" stroke-width="5" stroke-linejoin="round"></path><path d="M40 21 H64 L70 36 L50 45 Z M81 34 L96 29 V50 H82 Z" fill="#173c2b"></path><circle cx="124" cy="26" r="3" fill="#173c2b"></circle></svg><span>Suelo · historia de pastoreo</span></div></div><div><h3>Sector no pastoreado</h3><div class="de-pasture de-pasture-empty"><span>Suelo · sin historia de pastoreo</span></div></div></div>
+<div class="de-measure">↓ Medimos en ambos: <strong>resistencia a la penetración</strong></div>
+<div class="idea fragment" data-fragment-index="0"><strong>OBSERVAMOS una condición existente.</strong> El investigador no asignó el pastoreo.</div>
+<p class="fragment" data-fragment-index="1">Una diferencia puede asociarse al pastoreo, pero también a otras diferencias entre sectores.</p>
+<aside class="notes">
+<p>Ejemplo conceptual: el investigador selecciona sectores con historias de pastoreo existentes y mide la variable de respuesta. Con/sin vacas no define el tipo de estudio; lo define quién asignó la condición. Suelo, manejo previo y localización podrían diferir sistemáticamente. No inferir causalidad sólo de esta comparación.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="experimentos-y-causalidad" class="slide level2 de center">
-<h2>Experimentos y causalidad</h2>
-<div class="de-pair"><div><h3>Observación</h3><p>Los lotes con mayor N tienen mayor rendimiento.</p><div class="pregunta">¿También tienen mejores suelos o distinto manejo?</div></div><div><h3>Experimento</h3><p>Asignamos fertilización a las UE y después comparamos el rendimiento.</p><div class="idea fragment">El diseño debe separar el factor principal de otras posibles causas.</div></div></div><div class="alerta fragment">Una asociación no alcanza; manipular tampoco garantiza por sí solo una conclusión causal.</div>
+<section id="experimento-el-investigador-asigna" class="slide level2 de de-grazing de-grazing-experiment center">
+<h2>Experimento: el investigador asigna</h2>
+<div class="pregunta">¿Cuál es el efecto del pastoreo de vacas sobre la compactación del suelo?</div>
+<div class="de-available"><strong>14 parcelas experimentales</strong><div><span>UE 1</span><span>UE 2</span><span>…</span><span>UE 14</span></div></div>
+<div class="de-random-label">↓ El investigador <strong>ASIGNA AL AZAR</strong> ↓</div>
+<div class="de-grazing-pair"><div><h3>Pastoreo con vacas</h3><div class="de-pasture"><svg class="de-cow" viewbox="0 0 150 80" aria-hidden="true"><path d="M25 23 Q14 17 10 30 M27 20 H98 V53 H27 Z M96 22 L108 12 L132 22 L129 43 L104 45 Z M110 15 L108 4 L119 13 M130 20 L143 14 L136 27 M35 51 V72 M83 51 V72 M103 43 V68" fill="#f8f6eb" stroke="#173c2b" stroke-width="5" stroke-linejoin="round"></path><path d="M40 21 H64 L70 36 L50 45 Z M81 34 L96 29 V50 H82 Z" fill="#173c2b"></path><circle cx="124" cy="26" r="3" fill="#173c2b"></circle></svg><span>7 UE</span></div></div><div><h3>Exclusión del pastoreo</h3><div class="de-pasture de-exclosure"><strong>Sin acceso de vacas</strong><span>7 UE</span></div></div></div>
+<div class="de-measure">↓ Medimos en cada UE: <strong>resistencia a la penetración</strong></div>
+<div class="idea fragment" data-fragment-index="0">Asignar el factor, junto con un <strong>diseño adecuado</strong>, sustenta la inferencia causal.</div>
+<div class="pregunta fragment" data-fragment-index="1">¿Quién decidió qué unidad tendría vacas y cuál no?</div>
+<aside class="notes">
+<p>Escenario hipotético. Factor: condición de pastoreo; niveles/tratamientos: pastoreo y exclusión. Cada parcela es UE si recibe la condición de manera independiente. Se supone manejo separado del acceso, sin interferencias relevantes entre parcelas; no son subparcelas de un único potrero con una aplicación común. Hay 14 parcelas disponibles antes de la asignación: se sortean 7 para pastoreo con vacas y 7 para exclusión del pastoreo. La fila superior representa el conjunto con UE 1, UE 2, puntos suspensivos y UE 14; no enumera todas las parcelas. Siete réplicas por nivel ilustran el esquema, no recomiendan un tamaño muestral. Cierre: observacional = condición existente, observamos y comparamos; experimento = investigador asigna, manipulamos y comparamos. La manipulación sola no garantiza causalidad.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="una-comparación-pertinente" class="slide level2 de center">
 <h2>Una comparación pertinente</h2>
@@ -224,23 +260,6 @@ Andrés Tálamo
 <div class="pregunta fragment" data-fragment-index="0">¿Cómo distinguir el efecto de fertilizar de otras fuentes de variación?</div><div class="de-system"><div class="de-system-top"><div class="fragment" data-fragment-index="1">Fertilidad inicial · textura<span>↓</span></div><div class="fragment" data-fragment-index="2">Agua · variedad · densidad<span>↓</span></div></div><div class="de-system-main"><div><strong>Fertilización con N</strong><small>Factor principal</small></div><span>→</span><div class="de-system-core"><strong>Cultivo de maíz</strong><small>Proceso / sistema biológico</small></div><span>→</span><div><strong>Rendimiento</strong><small>Variable de respuesta</small></div></div><div class="de-system-bottom"><div class="fragment" data-fragment-index="3"><span>↑</span>Malezas · plagas</div><div class="fragment" data-fragment-index="4"><span>↑</span>Temperatura · radiación</div></div></div><div class="idea fragment" data-fragment-index="5"><strong>Señal:</strong> variación asociada a tratamientos. <strong>Ruido:</strong> variación no explicada / residual.</div>
 <aside class="notes">
 <p>Fusión de las antiguas D5–D6. Primera vista: sólo entrada, proceso y salida. Después: pregunta, cuatro pequeños grupos de variables exógenas y señal/ruido. Esquema propio basado en el modelo de proceso de Silvia (diapositiva 13, atribuido allí a Montgomery 1997). No hay dicotomía rígida entre variables controladas y no controladas. Las flechas convergen en el cultivo.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="qué-podemos-hacer-con-las-fuentes-de-variación" class="slide level2 de de-sources center">
-<h2>¿Qué podemos hacer con las fuentes de variación?</h2>
-<div class="de-tiles de-palette" style="grid-template-columns:repeat(2,1fr)"><div><div class="fragment" data-fragment-index="0"><strong>Mantener constante o reducir</strong><p>Mismo riego, mismo sustrato; reunir UE razonablemente homogéneas.</p><b>Agrupamiento → posible DCA.</b></div></div><div><div class="fragment" data-fragment-index="1"><strong>Incorporar la fuente al diseño</strong><p>Aceptar la heterogeneidad y representarla en la estructura experimental.</p><b>Bloqueo → DBCA.</b></div></div><div><div class="fragment" data-fragment-index="2"><strong>Registrar</strong><br>Medir fuentes conocidas para comprender la variación.</div></div><div><div class="fragment" data-fragment-index="3"><strong>No podemos manejarla</strong><br>Parte de la variación permanece.</div></div></div><div class="idea fragment" data-fragment-index="4">Actuar sobre una fuente e incorporarla al diseño son estrategias distintas.</div>
-<aside class="notes">
-<p>Variables exógenas y perturbadoras, según Silvia. Mantener constante reduce la variación de la fuente entre UE; bloquear reconoce heterogeneidad existente. Registrar una variable no elimina su efecto. No se introduce análisis con covariables.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -464,6 +483,31 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
+<section id="fuentes-de-variación-decidir-qué-hacer" class="slide level2 de de-principio de-principio-3 de-variation-choice center">
+<h2>Fuentes de variación: decidir qué hacer</h2>
+<div class="pregunta">Identificamos una fuente potencial de variación…<br><strong>¿qué hacemos con ella?</strong></div>
+<div class="de-variation-options">
+<div><b>→ Agrupamiento</b><span>Restringir / seleccionar UE razonablemente homogéneas.</span></div>
+<div><b>→ Bloqueo</b><span>Incorporar una fuente relevante al diseño.</span></div>
+<div><b>→ Balanceo</b><span>Distribuir una condición entre tratamientos.</span></div>
+<div><b>→ Técnica</b><span>Estandarizar manejo, aplicación o medición.</span></div>
+<div><b>→ Medir y registrar</b><span>Conservar información sobre esa fuente.</span></div>
+<div><b>→ Variación no explicada</b><span>Reconocer la parte que no controlamos.</span></div>
+</div><div class="idea fragment" data-fragment-index="0"><strong>Bloquear es una estrategia de control local, no la única.</strong></div>
+<aside class="notes">
+<p>Alternativas, no pasos obligatorios ni excluyentes. Elegir según la pregunta, relevancia de la fuente, viabilidad y alcance poblacional. Ejemplo de balanceo: si hay dos tandas de medición, repartir las UE de cada tratamiento de forma equilibrada entre ambas; no asignar un tratamiento sólo a una tanda. Es distinto del número de réplicas por nivel, aunque ambos balances pueden ser útiles. Medir y registrar no elimina el efecto de la fuente. No toda heterogeneidad justifica bloques ni todo bloqueo mejora el experimento. No se introduce análisis con covariables.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="agrupamiento-y-bloqueo" class="slide level2 de de-principio de-principio-3 de-grouping center">
 <h2>Agrupamiento y bloqueo</h2>
 <div class="de-pair de-panels"><div><h3>AGRUPAMIENTO</h3><p>Reunir UE lo más homogéneas posible para realizar el experimento.</p><div class="de-mini-units"><i></i><i></i><i></i><i></i><i></i><i></i></div><p>Asignar los tratamientos <strong>sin restricciones</strong> entre esas UE.</p></div><div><h3>BLOQUEO</h3><p>Ante una variable específica que puede influir en la variable de respuesta, formar <strong>bloques internamente homogéneos</strong>.</p><div class="de-mini-blocks"><div><i></i><i></i><i></i></div><div><i></i><i></i><i></i></div></div><p>Aleatorizar <strong>dentro de cada bloque</strong>.</p></div></div><div class="idea">Agrupamiento y bloqueo son estrategias distintas de control local.</div>
@@ -663,6 +707,23 @@ Andrés Tálamo
 <h2>Del problema al diseño</h2>
 <div class="de-map"><div>Pregunta</div><span>↓</span><div>Factor principal + variable de respuesta</div><span>↓</span><div>Unidad experimental</div><span>↓</span><div>Fuentes de variación</div><span>↓</span><div>Replicación + aleatorización + control local</div><span>↓</span><div>Elección del diseño</div><span>↓</span><div>Obtención de datos</div></div>
 </section>
+<section id="de-la-pregunta-al-experimento" class="slide level2 de de-planning center">
+<h2>De la pregunta al experimento</h2>
+<p><strong>La pregunta define la población.</strong></p><div class="de-plan-row"><div><small>01</small><strong>Pregunta / objetivo</strong></div><span>→</span><div><small>02</small><strong>Población</strong></div><span>→</span><div><small>03</small><strong>Factor y niveles</strong></div><span>→</span><div><small>04</small><strong>Variable de respuesta</strong></div></div><div class="de-plan-next">↓</div><div class="de-plan-row"><div><small>05</small><strong>Unidad experimental</strong></div><span>→</span><div><small>06</small><strong>Fuentes de variación</strong></div><span>→</span><div><small>07</small><strong>Réplicas</strong></div><span>→</span><div><small>08</small><strong>Diseño experimental</strong><small>DCA · DBCA · DCL…</small></div></div><div class="de-plan-next">↓</div><div class="de-plan-row"><div><small>09</small><strong>Asignación aleatoria</strong><small>según el diseño</small></div><span>→</span><div><small>10</small><strong>Toma de datos</strong></div><span>→</span><div><small>11</small><strong>Análisis</strong></div><span>→</span><div><small>12</small><strong>Inferencia</strong></div></div><div class="idea fragment" data-fragment-index="0">Elegir <strong>DCA, DBCA o DCL</strong> es una parte del diseño del experimento, no todo el proceso.</div>
+<aside class="notes">
+<p>Síntesis docente de planificación, inspirada en la referencia de Silvia Sühring indicada por el docente, Pautas para planificar un experimento. No reproduce los 13 pasos. El flujo es una guía de decisiones relacionadas: puede requerir volver atrás. La asignación se concreta conforme al diseño elegido; no son decisiones independientes ni una cronología rígida. Réplicas: planificar cantidad y viabilidad. DCA, DBCA y DCL son alternativas para distintas estructuras, no una jerarquía de calidad.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="caso-integrador-mesadas-de-invernadero" class="slide level2 de de-case-problem center">
 <h2>Caso integrador: mesadas de invernadero</h2>
 <div class="pregunta">¿Cómo cambia el crecimiento de plantines de <strong>tomate cultivados en invernadero</strong> según el tipo de sustrato?</div><div class="de-pair"><svg class="de-case-greenhouse" viewbox="0 0 620 305" role="img" aria-label="Invernadero con siete mesadas en distintas posiciones, expuestas a condiciones locales diferentes"><path d="M8 294V85L310 10 612 85V294" fill="none" stroke="#9daa9c" stroke-width="5"></path><text x="310" y="75" text-anchor="middle">Distintas posiciones → distintas condiciones</text><g><rect x="26" y="105" width="120" height="52" rx="3" fill="#c6dbc6" stroke="#66736d" stroke-width="3"></rect><path d="M38 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="86" y="139" text-anchor="middle">Mesada 1</text></g><g><rect x="168" y="105" width="120" height="52" rx="3" fill="#d6e2cd" stroke="#66736d" stroke-width="3"></rect><path d="M180 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="228" y="139" text-anchor="middle">Mesada 2</text></g><g><rect x="310" y="105" width="120" height="52" rx="3" fill="#e2e7d7" stroke="#66736d" stroke-width="3"></rect><path d="M322 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="370" y="139" text-anchor="middle">Mesada 3</text></g><g><rect x="452" y="105" width="120" height="52" rx="3" fill="#e8e7da" stroke="#66736d" stroke-width="3"></rect><path d="M464 157v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="512" y="139" text-anchor="middle">Mesada 4</text></g><g><rect x="96" y="210" width="120" height="52" rx="3" fill="#cadbcd" stroke="#66736d" stroke-width="3"></rect><path d="M108 262v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="156" y="244" text-anchor="middle">Mesada 5</text></g><g><rect x="238" y="210" width="120" height="52" rx="3" fill="#dce2d2" stroke="#66736d" stroke-width="3"></rect><path d="M250 262v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="298" y="244" text-anchor="middle">Mesada 6</text></g><g><rect x="380" y="210" width="120" height="52" rx="3" fill="#e6e5d7" stroke="#66736d" stroke-width="3"></rect><path d="M392 262v18m96-18v18" stroke="#66736d" stroke-width="4"></path><text x="440" y="244" text-anchor="middle">Mesada 7</text></g></svg><div><p><strong>7 mesadas / bancos</strong> en un invernadero.</p><p class="fragment" data-fragment-index="0">Su posición puede generar diferencias de <strong>luz y temperatura</strong> que influyen en el crecimiento.</p><div class="idea fragment" data-fragment-index="1">Fuente conocida y relevante de heterogeneidad → incorporarla mediante <strong>bloqueo</strong>.</div></div></div><p><strong>Factor:</strong> tipo de sustrato · <strong>Niveles:</strong></p><div class="de-case-levels"><span class="tr-a">Suelo + arena</span><span class="tr-b">Suelo + compost</span><span class="tr-c">Sustrato comercial</span></div><p><strong>Variable de respuesta:</strong> biomasa seca (g) a los 42 días.</p>
@@ -697,8 +758,8 @@ Andrés Tálamo
           display:block!important;
       }</style></aside>
 </section>
-<section id="puente-hacia-anova" class="slide level2 de de-case-plot center">
-<h2>Puente hacia ANOVA</h2>
+<section id="del-experimento-a-los-datos" class="slide level2 de de-case-plot center">
+<h2>Del experimento a los datos</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -708,9 +769,28 @@ Andrés Tálamo
 </div>
 </div>
 </div>
-<p class="de-note">Datos ficticios · 7 macetas por sustrato · puntos: UE · líneas: medias descriptivas.</p><div class="pregunta">¿Las diferencias entre sustratos son grandes en relación con la variación entre UE tratadas de igual manera?</div><p>Necesitamos separar y cuantificar: <strong>sustrato, mesadas (bloques) y error experimental</strong>.</p><p><strong>Próxima clase: ANÁLISIS DE LA VARIANZA (ANOVA).</strong></p>
+<p class="de-note">Datos ficticios · 7 macetas por sustrato · puntos: UE · líneas: medias descriptivas.</p><div class="pregunta">¿Las diferencias entre sustratos son grandes en relación con la variación entre UE tratadas de igual manera?</div><p>Necesitamos separar y cuantificar: <strong>sustrato, mesadas (bloques) y error experimental</strong>.</p>
 <aside class="notes">
 <p>Gráfico descriptivo del caso integrador: 21 macetas de tomate, siete mesadas, tres sustratos. Datos ficticios construidos con efectos de sustrato, diferencias entre mesadas y desviaciones dentro de cada combinación. Las líneas muestran medias brutas, no efectos ajustados ni resultados de ANOVA. La agrupación por sustrato no muestra explícitamente la pertenencia a mesadas: el análisis debe respetar el DBCA. No calcular ANOVA. Jitter sólo horizontal (0.035) y semilla fija; no altera biomasa. theme_bw() de ggplot2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="del-diseño-al-análisis" class="slide level2 de de-analysis-bridge center">
+<h2>Del diseño al análisis</h2>
+<div class="de-bridge-grid"><div><h3>DISEÑO</h3><b>Antes de obtener los datos</b><p>Identificamos fuentes relevantes.</p><p>Decidimos cuáles incorporar o controlar.</p><p>Definimos cómo asignar tratamientos.</p></div><div class="de-bridge-middle"><strong>Estructura del<br>experimento</strong><span>↓</span><strong>DATOS</strong><span>↓</span></div><div><h3>ANÁLISIS</h3><b>Después de obtener los datos</b><p>El modelo debe respetar la estructura del diseño.</p><p>Asociamos la variación observada a distintas fuentes.</p></div></div>
+<div class="idea fragment" data-fragment-index="0">El análisis no puede corregir un diseño inadecuado.</div>
+<div class="pregunta fragment" data-fragment-index="1">En <strong>ANOVA</strong> veremos cómo separar la variación observada según las fuentes consideradas en el diseño.</div>
+<aside class="notes">
+<p>Puente conceptual, sin enseñar ANOVA. En el caso de tomate: sustrato, mesadas y variación residual; la estructura se decidió antes de medir. La frase final enfatiza que un análisis posterior no crea replicación o asignación que faltaron. No presentar DCA, DBCA y DCL como escalones de diseños mejores.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

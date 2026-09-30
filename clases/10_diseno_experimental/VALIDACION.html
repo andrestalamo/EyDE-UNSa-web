@@ -98,7 +98,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#clase-10-validación-de-la-tercera-revisión" id="toc-clase-10-validación-de-la-tercera-revisión" class="nav-link active" data-scroll-target="#clase-10-validación-de-la-tercera-revisión">Clase 10 — validación de la tercera revisión</a>
+  <li><a href="#validación-pastoreo-planificación-y-puente-hacia-anova" id="toc-validación-pastoreo-planificación-y-puente-hacia-anova" class="nav-link active" data-scroll-target="#validación-pastoreo-planificación-y-puente-hacia-anova">Validación: pastoreo, planificación y puente hacia ANOVA</a>
+  <ul class="collapse">
+  <li><a href="#cambios-de-esta-intervención" id="toc-cambios-de-esta-intervención" class="nav-link" data-scroll-target="#cambios-de-esta-intervención">Cambios de esta intervención</a></li>
+  <li><a href="#render-e-inspección" id="toc-render-e-inspección" class="nav-link" data-scroll-target="#render-e-inspección">Render e inspección</a></li>
+  </ul></li>
+  <li><a href="#clase-10-validación-de-la-tercera-revisión" id="toc-clase-10-validación-de-la-tercera-revisión" class="nav-link" data-scroll-target="#clase-10-validación-de-la-tercera-revisión">Clase 10 — validación de la tercera revisión</a>
   <ul class="collapse">
   <li><a href="#alcance" id="toc-alcance" class="nav-link" data-scroll-target="#alcance">Alcance</a></li>
   <li><a href="#diapositivas-agregadas-trasladadas-y-correspondencia" id="toc-diapositivas-agregadas-trasladadas-y-correspondencia" class="nav-link" data-scroll-target="#diapositivas-agregadas-trasladadas-y-correspondencia">Diapositivas agregadas, trasladadas y correspondencia</a></li>
@@ -117,6 +122,70 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="validación-pastoreo-planificación-y-puente-hacia-anova" class="level1">
+<h1>Validación: pastoreo, planificación y puente hacia ANOVA</h1>
+<p>Fecha: 30/09/2026. Total vigente: <strong>43 diapositivas, incluida la portada</strong>.</p>
+<section id="cambios-de-esta-intervención" class="level2">
+<h2 class="anchored" data-anchor-id="cambios-de-esta-intervención">Cambios de esta intervención</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Diapositiva actual</th>
+<th>Intervención y ubicación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D2</td>
+<td>Reemplaza Tipos de estudios: observación de sectores con/sin pastoreo ya existente.</td>
+</tr>
+<tr class="even">
+<td>D3</td>
+<td>Reemplaza Experimentos y causalidad: asignación aleatoria por el investigador, seis parcelas/UE y cierre comparativo.</td>
+</tr>
+<tr class="odd">
+<td>D24</td>
+<td>Antigua D7 reformulada y trasladada después de Control local, antes de Agrupamiento y bloqueo; seis alternativas ante una fuente de variación.</td>
+</tr>
+<tr class="even">
+<td>D39</td>
+<td>Nueva: De la pregunta al experimento, después de Del problema al diseño y antes del caso integrador.</td>
+</tr>
+<tr class="odd">
+<td>D42</td>
+<td>Antigua D41: nuevo título Del experimento a los datos; anuncio de próxima clase trasladado al cierre. Gráfico y código R intactos.</td>
+</tr>
+<tr class="even">
+<td>D43</td>
+<td>Nueva: Del diseño al análisis, cierre conceptual y puente a ANOVA.</td>
+</tr>
+</tbody>
+</table>
+<p>El caso integrador se conserva consecutivo en D40–42. Las otras 36 diapositivas de contenido previas se conservaron literalmente, al igual que el encabezado de configuración. El cambio de numeración es automático. DCA, DBCA y DCL se mantienen como alternativas, sin jerarquía de calidad.</p>
+</section>
+<section id="render-e-inspección" class="level2">
+<h2 class="anchored" data-anchor-id="render-e-inspección">Render e inspección</h2>
+<ul>
+<li><code>quarto render clases/10_diseno_experimental/Clase_10_Diseno_Experimental_2026.qmd --no-cache</code>: finaliza con código 0.</li>
+<li>Persiste el aviso no bloqueante de renv sobre paquetes del lockfile no instalados. La ejecución R y el render se completaron.</li>
+<li>Chrome local, viewport 1280 × 720: inspección visual de D2, D3, D24, D39, D42 y D43, incluyendo todos sus fragments: <strong>14 estados</strong>. Capturas completas de estados finales y planchas de todos los estados.</li>
+<li>Sin desbordes, texto cortado, superposiciones ni imágenes faltantes. Fragments reversibles y sin errores JavaScript registrados durante la revisión.</li>
+<li>D2: condición previa y ausencia de asignación explícitas; otras diferencias entre sectores reconocidas.</li>
+<li>D3: investigador y asignación al azar explícitos; UE 1–6 identificadas; notas aclaran independencia de aplicación y ausencia de interferencia relevante. La causalidad requiere diseño adecuado.</li>
+<li>D24: bloqueo como una alternativa; registro no equivale a eliminación del efecto. Balanceo ilustrado en notas. Sin introducir ANCOVA.</li>
+<li>D39: 12 decisiones en tres filas legibles; la pregunta define la población; seleccionar un diseño particular es sólo una parte. Las notas aclaran que las decisiones se relacionan y pueden revisarse.</li>
+<li>D43: distingue antes/después de los datos y exige respetar la estructura experimental; sin desarrollar procedimientos de ANOVA.</li>
+<li>Estilos añadidos con clases locales; sin cambios en estilos compartidos, otras clases ni índice. Comparación de hashes de archivos de fuente externos a Clase 10: sin cambios.</li>
+<li>Archivos editados: QMD, estilos.css, FUENTES.md y VALIDACION.md de Clase 10. Se conservaron los cambios existentes. Sin commit ni push.</li>
+</ul>
+<p>El registro siguiente corresponde a intervenciones anteriores y conserva su numeración histórica.</p>
+<hr>
+</section>
+</section>
 <section id="clase-10-validación-de-la-tercera-revisión" class="level1">
 <h1>Clase 10 — validación de la tercera revisión</h1>
 <p>Fecha: 29 de septiembre de 2026.</p>
