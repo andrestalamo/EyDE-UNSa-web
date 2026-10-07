@@ -1,0 +1,342 @@
+/* Geometría exclusiva de Clase 11; tema, tipografía y componentes EyDE compartidos. */
+.reveal .slides section.an {font-size:.94em;text-align:left;}
+.reveal .slides section.an h2 {font-size:1.46em;line-height:1.1;margin-bottom:20px;}
+.an p {margin:16px 0;}
+.an .pregunta,.an .idea {padding:13px 19px;margin:18px 0;}
+.an .pregunta {font-size:1.04em;}
+.an h3 {font-size:1.15em;margin:12px 0;}
+.an-center {text-align:center;}
+.an-note {font-size:23px;line-height:1.3;color:var(--gris);margin:14px 0;}
+.an-big {font-size:1.7em;line-height:1.35;margin:45px 0;color:var(--verde-oscuro);}
+.an-eq {font-size:1.65em;text-align:center;margin:30px 0;line-height:1.35;}
+.an-eq-medium {font-size:1.25em;}
+.an-eq-small {font-size:1.1em;}
+.an-duo {display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin:25px 0;}
+.an-duo>div {min-width:0;}
+.an-triple,.an-levels,.an-means {display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin:25px 0;text-align:center;}
+.an-levels>div {padding:20px 14px;border-bottom:6px solid var(--verde);background:#e5eadf;font-weight:650;}
+.an-levels>div:nth-child(2) {background:#eee5dc;border-color:var(--tierra);}
+.an-levels>div:nth-child(3) {background:#f0e7c6;border-color:var(--maiz);}
+.an-means {font-size:25px;margin:12px 0;}
+.an-labels {line-height:1.3;font-size:27px;margin:15px 0;}
+.an-labels>div {border-left:5px solid var(--verde);padding-left:15px;}
+.an-comparisons {display:flex;justify-content:space-around;gap:35px;font-size:2em;margin:65px 0;color:var(--verde-oscuro);}
+.an-counts {display:grid;grid-template-columns:repeat(5,1fr);gap:20px;text-align:center;margin:30px 0;}
+.an-counts div {border-top:5px solid var(--verde);padding-top:20px;}
+.an-counts span,.an-counts strong,.an-counts small {display:block;}
+.an-counts span {color:var(--tierra);}
+.an-counts strong {font-size:2em;}
+.an-counts small {font-size:22px;}
+.reveal .an img.an-chart {display:block;object-fit:contain;width:100%;height:345px;max-height:none;margin:10px 0;}
+.reveal .an img.an-short {height:245px;}
+.reveal .an img.an-fchart {height:320px;}
+.an-ratio {text-align:center;font-size:1.55em;line-height:1.4;margin:60px auto;width:90%;}
+.an-ratio hr {border:0;border-top:4px solid var(--verde);margin:20px 0;}
+.an-defs {display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;margin:24px 0;}
+.an-defs>div {display:flex;align-items:center;gap:20px;border-left:5px solid var(--verde);padding:10px 18px;}
+.an-defs span.math {font-size:1.4em;min-width:62px;}
+.an-defs span:not(.math) {font-size:27px;}
+.an-arrow {font-size:1.7em;color:var(--tierra);}
+.an-partition {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:35px 0;text-align:center;font-size:1.2em;}
+.an-partition div {padding:25px;background:#e5eadf;border-bottom:5px solid var(--verde);}
+.an-partition div:first-child {grid-column:1/-1;background:#eee5dc;border-color:var(--tierra);}
+.reveal .an table.an-table {width:100%;font-size:28px;margin:30px 0;border-collapse:collapse;}
+.reveal .an-table td,.reveal .an-table th {padding:18px 13px;text-align:right;white-space:nowrap;}
+.reveal .an-table td:first-child,.reveal .an-table th:first-child {text-align:left;}
+.reveal .an-symbol-table {font-size:25px!important;}
+.reveal .an-symbol-table td,.reveal .an-symbol-table th {padding:24px 10px;}
+.an-flow {display:flex;align-items:center;justify-content:center;gap:28px;margin:40px 0;text-align:center;}
+.an-flow>div {flex:1;border-top:5px solid var(--verde);padding:25px 14px;background:#e5eadf;}
+.an-flow>span {font-size:1.6em;color:var(--tierra);}
+.an-summary {display:grid;grid-template-columns:1fr 1fr;gap:20px 35px;margin:24px 0;}
+.an-summary b,.an-summary span {display:block;}
+.an-summary span {font-size:26px;line-height:1.25;margin-top:8px;}
+.an-procedure {font-size:27px;line-height:1.35;margin:20px 0 0 38px;}
+.an-procedure li {padding:8px 0;}
+.an-blocks {display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:30px 0;}
+.an-blocks>div {border-bottom:6px solid #83967e;background:#e5eadf;padding:15px;}
+.an-blocks b,.an-blocks span {display:block;}
+.an-blocks span {font-size:23px;margin-top:8px;}
+.an-designs {align-items:stretch;}
+.an-designs>div {border-top:6px solid var(--verde);background:#e5eadf;padding:20px 28px;}
+.an-designs>div:last-child {background:#eee5dc;border-color:var(--tierra);}
+.an-map {text-align:center;font-size:1.12em;margin:18px auto;width:90%;}
+.an-map>div {padding:12px 20px;background:#e5eadf;border-left:5px solid var(--verde);}
+.an-map>span {display:block;color:var(--tierra);line-height:1.1;}
+.an-lessons {font-size:1.13em;margin:25px 0 25px 40px;}
+.an-lessons li {padding:22px 10px;}
+.an-next>div {border-bottom:1px solid #a7b3a8;padding:20px 0;}
+.an-next>div>span {display:block;color:var(--tierra);margin-top:8px;}
+
+/* Segunda revisión: jerarquía de proyección y esquemas experimentales. */
+.an {--src-trat:#2d6a4f;--src-error:#8a5a3b;--src-total:#607d86;--src-block:#9a7410;}
+.src-trat {color:var(--src-trat)!important;}.src-error {color:var(--src-error)!important;}.src-total {color:var(--src-total)!important;}.src-block {color:var(--src-block)!important;}
+.an-note {font-size:26px;line-height:1.3;}
+.an-key {font-size:32px;line-height:1.3;}
+.an-takeaway {font-size:31px;line-height:1.3;margin:18px 0;padding:0;background:none;border:0;}
+.an-kicker {font-size:26px;letter-spacing:.035em;color:var(--gris);font-weight:650;}
+.an-question {font-size:35px;font-weight:650;line-height:1.25;margin:12px 0!important;color:var(--verde-oscuro);}
+.an-answer {font-size:34px;line-height:1.25;margin:10px 0!important;color:var(--tierra);}
+.an-two-means {display:flex;align-items:center;justify-content:space-around;margin:35px 100px;}
+.an-two-means>div {text-align:center;font-size:1.5em;}
+.an-two-means>strong {font-size:2.2em;}
+.an-two-means p {font-size:28px;}
+.an-dot {display:block;width:30px;height:30px;background:var(--verde);border-radius:50%;margin:20px auto;}
+.an-pot {display:inline-block;position:relative;width:80px;height:130px;margin:8px 15px;vertical-align:bottom;--potcolor:#c6dbc6;}
+.an-pot.level-1 {--potcolor:#ecd5bf;}.an-pot.level-2 {--potcolor:#f0dea0;}
+.an-pot>b {position:absolute;bottom:0;left:8px;width:64px;height:55px;background:var(--potcolor);border-top:8px solid #8a5a3b;clip-path:polygon(0 0,100% 0,83% 100%,17% 100%);}
+.an-pot>i {position:absolute;width:5px;height:calc(65px * var(--plant,1));bottom:55px;left:38px;background:#2d6a4f;}
+.an-pot>i::before,.an-pot>i::after {content:"";position:absolute;width:26px;height:14px;border-radius:80% 0;background:#63885a;top:10px;right:2px;transform:rotate(20deg);}
+.an-pot>i::after {left:3px;top:29px;transform:rotate(-20deg);}
+.an-pot-groups {display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:30px;margin:20px 0;}
+.an-pot-groups h3 {font-size:30px;}.an-pot-groups .math {font-size:1.5em;}
+.an-pot-groups p {margin:7px 0;}
+.an-network {display:block;width:100%;height:340px;}
+.an-network-slide .an-key {margin:15px 0;}
+.reveal .an-graph img.an-chart {height:410px;}
+.reveal .an-graph img.an-fchart {height:430px;}
+.an-graph .pregunta {background:none;border:0;padding:0;margin:12px 0;font-size:32px;}
+.an-graph .an-eq {margin:14px 0;}
+.an-count-formula {position:absolute;top:115px;left:190px;font-size:30px;}
+.an-source-key {display:flex;gap:25px;justify-content:space-between;font-size:28px;margin:15px 0;}
+.an-source-key>span {border-bottom:4px solid currentColor;padding:8px;}
+.an-seven-pots {display:grid;grid-template-columns:repeat(7,1fr);gap:10px;text-align:center;margin:35px 0;}
+.an-seven-pots .an-pot {margin:0 0 15px;height:155px;}
+.an-seven-pots strong {display:block;font-size:29px;}
+.an-pots-slide .an-key {margin:24px 0;}
+.reveal .an-between img.an-chart {height:355px;}
+.an-between .an-key {font-size:29px;margin:10px 0;}
+.an-null-message {font-size:28px;line-height:1.3;border-left:5px solid var(--src-total);padding-left:16px;}
+.an-model {display:grid;grid-template-columns:1fr 35px 1fr 35px 1.3fr 35px 1.1fr;gap:12px;align-items:start;margin:70px 0 55px;text-align:center;}
+.an-model>div>.math {font-size:2.25em;}
+.an-model p {font-size:29px;line-height:1.35;margin-top:32px;}
+.an-model .an-op {font-size:1.8em;padding-top:12px;}
+.an-deviation {display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:165px 95px 80px;column-gap:25px;margin:30px 0 15px;text-align:center;}
+.an-reference b {display:block;font-size:27px;min-height:68px;color:var(--verde-oscuro);}
+.an-reference .math {font-size:1.5em;display:block;}
+.an-reference strong {display:block;font-size:29px;margin-top:10px;}
+.an-dev-within {grid-column:1/3;grid-row:2;font-size:29px;}
+.an-dev-between {grid-column:2/4;grid-row:2;font-size:29px;}
+.an-dev-total {grid-column:1/4;grid-row:3;font-size:29px;}
+.an-decomp-eq {font-size:32px;text-align:center;margin:20px 0;}
+.an-partition-tree {text-align:center;font-size:39px;margin:35px 0;line-height:1.35;}
+.an-partition-tree>.src-total {font-weight:650;}
+.an-partition-tree .an-duo {font-size:33px;margin:0;}
+.an-branches {color:var(--gris);font-size:42px;}
+.an-gl-layout {display:grid;grid-template-columns:1fr 1.05fr;gap:45px;align-items:center;}
+.an-gl-layout .an-table {font-size:30px!important;}
+.an-gl-layout .an-kicker {font-size:25px;}
+.an-gl-pools {font-size:42px;margin:28px 0;color:var(--src-error);}
+.an-gl-slide .an-note {margin-top:28px;}
+.an-cm-slide .an-duo .an-eq {font-size:1.5em;}
+.an-error-anchor {font-size:2em;text-align:center;}
+.an-rep-route {display:grid;grid-template-columns:1fr 45px 1fr 45px 1fr;align-items:center;text-align:center;margin:22px 0;}
+.an-rep-route>span {font-size:42px;color:var(--tierra);}
+.an-rep-route .an-pot {height:100px;margin:0 5px;transform:scale(.8);transform-origin:bottom;}
+.an-rep-route .an-spread {font-size:30px;line-height:.85;display:block;height:100px;color:var(--src-error);}
+.an-rep-route .math {font-size:2em;}
+.an-rep-route p {font-size:29px;margin:10px 0;}
+.an-rep-slide .an-key {font-size:30px;}
+.an-f-ratio {display:flex;justify-content:center;gap:45px;align-items:center;margin:40px 0;font-size:2.1em;text-align:center;}
+.an-f-ratio hr {border:0;border-top:4px solid var(--gris);margin:20px 0;}
+.an-f-ratio small {display:block;font-size:29px;margin-top:14px;}
+.an-null-estimates {display:grid;grid-template-columns:1fr 1fr;text-align:center;margin:32px 120px;}
+.an-null-estimates>div {font-size:1.8em;}
+.an-null-estimates>div:first-child {grid-column:1;grid-row:1;}
+.an-null-estimates>div:nth-child(3) {grid-column:2;grid-row:1;}
+.an-null-estimates>span {grid-column:1/3;grid-row:2;font-size:40px;color:var(--gris);}
+.an-null-estimates>strong {grid-column:1/3;font-size:2em;}
+.reveal .an-table-slide table.an-table {font-size:31px!important;}
+.reveal .an-table-slide .an-table td,.reveal .an-table-slide .an-table th {padding:22px 11px;}
+.an-table-slide .an-eq {margin:24px 0;font-size:1.5em;}
+.an-table-slide .idea {background:none;border:0;padding:0;font-size:31px;}
+.an-context {display:grid;grid-template-columns:1.05fr 1fr;gap:35px;align-items:center;}
+.an-context>div:first-child {text-align:center;}
+.an-context .an-pot {height:200px;transform:scale(1.25);transform-origin:bottom;margin:0 18px 25px;}
+.an-context p {font-size:30px;}
+.an-context .an-note {font-size:26px;}
+.an-substrates {font-size:28px;text-align:center;margin-top:30px;color:var(--verde-oscuro);}
+.an-seven-steps {display:grid;gap:0;margin:22px 0;}
+.an-seven-steps>div {display:grid;grid-template-columns:40px 1.4fr 1fr;gap:20px;border-bottom:1px solid #b7c2b6;padding:17px 0;align-items:center;font-size:27px;}
+.an-seven-steps b {font-size:32px;color:var(--tierra);}
+.an-seven-steps span {font-size:26px;}
+.an-conclusion {font-size:34px;line-height:1.45!important;margin:35px 0!important;}
+.an-conclusion-slide .an-question {margin-top:35px!important;}
+.an-design-sources {font-size:39px;text-align:center;line-height:1.35;margin:60px 0;}
+.an-return-slide .an-note {margin-top:35px;}
+.an-design-bridge {display:grid;grid-template-columns:1.45fr 1fr;gap:60px;align-items:center;margin:15px 0;}
+.an-benches {display:grid;gap:10px;}
+.an-bench {display:flex;justify-content:space-around;align-items:end;border-bottom:5px solid #83967e;height:42px;}
+.an-bench>b {font-size:26px;width:30px;}
+.an-bench .an-pot {width:40px;height:42px;margin:0;}
+.an-bench .an-pot>b {width:30px;left:5px;height:23px;border-top-width:4px;}
+.an-bench .an-pot>i {bottom:23px;height:20px;width:3px;left:19px;}
+.an-bench .an-pot>i::before,.an-bench .an-pot>i::after {width:12px;height:7px;top:3px;}
+.an-bench .an-pot>i::after {top:10px;}
+.an-source-lists {display:grid;grid-template-columns:1fr 1fr;column-gap:25px;}
+.an-source-lists h3:first-child {grid-column:1;grid-row:1;}.an-source-lists h3:nth-of-type(2) {grid-column:2;grid-row:1;}
+.an-source-lists p {font-size:30px;margin:14px 0;}
+.an-source-lists p:nth-of-type(1) {grid-column:1;grid-row:2;}.an-source-lists p:nth-of-type(2) {grid-column:1;grid-row:4;}
+.an-source-lists p:nth-of-type(3) {grid-column:2;grid-row:2;}.an-source-lists p:nth-of-type(4) {grid-column:2;grid-row:3;}.an-source-lists p:nth-of-type(5) {grid-column:2;grid-row:4;}
+.an-design-bridge-slide .an-note {font-size:26px;}
+.an-summary-route {display:grid;grid-template-columns:1fr 30px 1.2fr 30px .8fr;gap:18px;align-items:center;text-align:center;font-size:32px;line-height:1.35;margin:60px 0;}
+.an-summary-route>span {font-size:40px;color:var(--gris);}
+.an-summary-route .math {font-size:1.25em;}
+.an-summary-bottom {font-size:34px;text-align:center;line-height:1.4;}
+.an-decomp-eq {font-size:38px;}
+.an-summary-route>div:first-child>span {display:block;line-height:1.35;color:var(--gris);}
+
+/* Reestructuración final: figuras progresivas y ejemplos DCA/DBCA. */
+.an-layers {position:relative;height:395px;margin:8px 0;}
+.reveal .an .an-layers img.an-chart {position:absolute;inset:0;height:100%;width:100%;object-fit:contain;margin:0;}
+.an-layers>.fragment {position:absolute;inset:0;}
+.an-concept-fraction {width:max-content;max-width:100%;margin:90px auto;text-align:center;font-size:44px;line-height:1.4;}
+.an-concept-fraction>div {padding:18px 12px;}
+.an-concept-fraction>div:first-child {border-bottom:5px solid #173c2b;}
+.an-risk {font-size:94px;font-weight:650;text-align:center;margin:40px 0;}
+.an-risk>span {color:var(--gris);padding:0 40px;}
+.reveal .an-pop-slide img.an-pop-chart {height:270px;}
+.an-pop-slide .an-key {font-size:30px;}
+.an-model {margin:35px 0 30px;}
+.an-model p {font-size:27px;}
+.an-decomp-layers {height:350px;}
+.an-decomp-slide .an-decomp-eq {font-size:35px;margin:10px 0;}
+.an-decomp-slide p {margin:7px 0;}
+.an-cm-slide .an-duo {margin:8px 0;}
+.an-cm-slide .an-eq {font-size:42px;margin:15px 0;}
+.an-step {font-size:27px;font-weight:650;color:var(--tierra);margin:15px 0!important;}
+.an-error-demo {display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;text-align:center;}
+.an-error-demo .an-pot {width:72px;margin:8px 5px;}
+.reveal .an-error-demo img.an-chart {height:235px;}
+.an-error-slide .an-key {font-size:29px;}
+.an-error-slide .an-eq {margin:12px 0;}
+.an-f-layout {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.an-f-layout .an-eq {font-size:48px;}
+.an-f-layout p {margin:20px 0;}
+.reveal .an-null-slide img.an-null-pop {height:170px;margin:2px 0;}
+.reveal .an-null-slide img.an-null-samples {height:200px;margin:2px 0;}
+.an-null-slide p {margin:5px 0;font-size:27px;}
+.an-reason-slide .an-layers {height:355px;}
+.an-question-stages p {font-size:29px;margin:9px 0;}
+.reveal .an-data-step img.an-chart {height:355px;}
+.an-data-step .an-key,.an-data-step .an-answer {font-size:29px;}
+.an-f-slide .an-f-layers {height:365px;}
+.an-f-slide p {margin:8px 0;}
+.an-pies {display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center;}
+.reveal .an-pies img.an-chart {height:345px;}
+.an-pie-slide .an-key {font-size:30px;}
+.an-table-slide .an-table td,.an-table-slide .an-table th {font-variant-numeric:tabular-nums;}
+.an-design-bridge .an-bench>b {width:50px;}
+.an-decomp-layers {height:390px;}
+.an-pie-legend {display:grid;gap:6px;text-align:left;width:max-content;margin:0 auto;font-size:28px;line-height:1.2;}
+.an-pie-legend span::before {content:'●';padding-right:10px;}
+.reveal .an-pies img.an-chart {height:285px;margin:0 auto;}
+.an-pie-slide .an-key {font-size:28px;margin:12px 0;}
+.reveal .an-null-slide img.an-null-pop {height:190px;}
+.reveal .an-null-slide img.an-null-samples {height:220px;}
+
+/* Ajustes puntuales de la revisión diapositiva por diapositiva. */
+.an-centered-question .an-big {text-align:center;}
+.an-build-slide .an-build-table {table-layout:fixed;}
+.reveal .an-build-table th:first-child {width:32%;}
+.reveal .an-build-table th,.reveal .an-build-table td {padding:17px 10px;font-size:29px;}
+.reveal .an-build-table th.an-goal-col {background:#8a5a3b;}
+.an-build-explainer {height:155px;position:relative;margin:12px 0;}
+.an-build-explainer>.fragment {position:absolute;inset:0;}
+.an-build-explainer .an-eq {font-size:33px;margin:12px 0;}
+.an-build-explainer .an-note {font-size:26px;margin:12px 0;}
+.an-gl-slide .an-gl-layout {grid-template-columns:1.1fr 1fr;gap:30px;}
+.an-gl-slide .an-table th:first-child {white-space:normal;}
+.an-research-question {font-size:39px;line-height:1.4;margin:30px 0!important;}
+.an-allocation {height:245px;position:relative;margin:8px 0;}
+.an-allocation>.fragment {position:absolute;inset:0;background:#f6f3ea;}
+.an-ue-grid {display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(3,75px);gap:6px 20px;text-align:center;}
+.an-ue-grid>div {position:relative;}
+.an-ue-grid .an-pot {width:54px;height:65px;margin:0;}
+.an-ue-grid .an-pot>b {width:40px;left:7px;height:30px;border-top-width:5px;}
+.an-ue-grid .an-pot>i {bottom:30px;height:35px;left:26px;width:3px;}
+.an-ue-grid .an-pot>i::before,.an-ue-grid .an-pot>i::after {width:16px;height:9px;top:4px;}
+.an-ue-grid .an-pot>i::after {top:18px;}
+.an-pot.level-neutral {--potcolor:#d8d8ce;}
+.an-level-number {position:absolute;top:44px;left:50%;transform:translateX(-50%);font-size:17px;font-weight:700;color:#173c2b;}
+.an-allocation-slide .an-key {font-size:27px;margin:8px 0;}
+.an-allocation-slide .an-answer {font-size:31px;margin:8px 0!important;}
+.an-allocation-key {display:flex;justify-content:space-between;font-size:25px;margin:8px 0;}
+.an-mixed-slide .an-eq {font-size:47px;margin:20px 0;}
+.an-mixed-defs {display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;}
+.an-mixed-defs p {font-size:27px;margin:8px 0;line-height:1.3;}
+.an-mixed-types {display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.an-mixed-types p {font-size:27px;line-height:1.25;margin:10px 0;}
+.an-parallel-tests {display:grid;grid-template-columns:1fr 1fr;gap:46px;}
+.an-parallel-tests>div {min-width:0;}
+.an-parallel-tests p {font-size:26px;line-height:1.3;margin:12px 0;}
+.an-parallel-tests .an-eq {font-size:30px;margin:15px 0;}
+.an-parallel-tests .an-kicker {font-size:28px;}
+.an-parallel-tests .an-note {font-size:25px;}
+.an-parallel-slide>.an-note {font-size:26px;}
+.an-build-explainer>.fragment {transition:none;}
+.an-parallel-tests>div {display:flex;flex-direction:column;}
+.an-parallel-tests>div>.fragment {margin-top:auto;}
+
+/* Revisión manual: datos íntegros, SC gráficas y conclusiones con evidencia. */
+.an-sc-stages {position:relative;height:475px;}
+.an-sc-stages>.fragment {position:absolute;inset:0;transition:none;}
+.reveal .an-sc-stages img.an-chart {height:325px;margin:0;}
+.an-sc-stages .an-key {font-size:29px;margin:7px 0;}
+.an-sc-stages .an-eq {font-size:36px;margin:12px 0;}
+.an-theory-table {table-layout:auto;}
+.reveal .an-theory-table td,.reveal .an-theory-table th {font-size:28px;padding:25px 10px;}
+.an-theory-table th:first-child {white-space:normal;}
+.reveal table.an-data-table {width:100%;font-size:28px;border-collapse:collapse;margin:14px 0;}
+.reveal table.an-data-table th,.reveal table.an-data-table td {padding:10px 12px;text-align:left;}
+.reveal table.an-data-table td:last-child {text-align:right;}
+.an-wide-slide .an-key {font-size:28px;}
+.an-long-tables {display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;}
+.reveal .an-long-tables table.an-data-table {font-size:23px;margin:8px 0;}
+.reveal .an-long-tables table.an-data-table th,.reveal .an-long-tables table.an-data-table td {padding:4px 6px;white-space:nowrap;}
+.an-long-slide .an-key {font-size:29px;margin:12px 0;}
+.an-long-slide .an-note {font-size:25px;margin:10px 0;}
+.an-measure-grid {display:grid;grid-template-columns:repeat(7,1fr);gap:12px 14px;text-align:center;}
+.an-measure-grid>div {display:flex;align-items:center;flex-direction:column;}
+.an-measure-grid .an-pot {height:68px;width:56px;margin:0;}
+.an-measure-grid .an-pot>b {height:30px;width:42px;left:7px;border-top-width:5px;}
+.an-measure-grid .an-pot>i {height:37px;bottom:30px;left:27px;width:3px;}
+.an-measure-grid .an-pot>i::before,.an-measure-grid .an-pot>i::after {height:8px;width:15px;top:3px;}
+.an-measure-grid .an-pot>i::after {top:18px;}
+.an-ue-id {font-size:20px;color:var(--gris);font-weight:400;}
+.an-measure-grid strong {font-size:27px;}
+.an-measure-benches {display:grid;gap:6px;}
+.an-measure-bench {display:grid;grid-template-columns:60px 1fr 1fr 1fr;align-items:center;border-bottom:3px solid #83967e;padding:0 10px;height:55px;}
+.an-measure-bench>div {display:flex;align-items:center;gap:18px;justify-content:center;}
+.an-measure-bench .an-pot {height:45px;width:40px;margin:0;}
+.an-measure-bench .an-pot>b {height:22px;width:30px;left:5px;border-top-width:4px;}
+.an-measure-bench .an-pot>i {height:23px;bottom:22px;left:19px;width:3px;}
+.an-measure-bench .an-pot>i::before,.an-measure-bench .an-pot>i::after {height:6px;width:12px;top:2px;}
+.an-measure-bench .an-pot>i::after {top:12px;}
+.an-measure-bench strong {font-size:27px;min-width:80px;}
+.an-measurement-slide .an-key {font-size:29px;}
+.an-inference {display:grid;grid-template-columns:.92fr 1.08fr;gap:30px;align-items:center;}
+.reveal .an-inference img.an-chart {height:365px;width:100%;}
+.an-inference-text {font-size:30px;line-height:1.36;}
+.an-inference .an-eq {font-size:33px;margin:15px 0;}
+.an-inference-slide .an-note {font-size:25px;line-height:1.3;}
+.an-inference-slide>.an-key {font-size:28px;margin:8px 0;}
+.an-pie-expanded .an-pies .an-eq {font-size:25px;margin:8px 0;}
+.reveal .an-pie-expanded .an-pies img.an-chart {height:225px;}
+.an-pie-expanded .an-pie-legend {font-size:25px;}
+.an-pie-expanded .an-key {font-size:28px;margin:10px 0;}
+
+/* Última corrección manual: una única base larga con scroll interno. */
+.reveal .an-wide-slide table.an-data-table {width:94%;table-layout:fixed;margin:18px auto;}
+.reveal .an-wide-slide table.an-data-table th:first-child {width:12%;}
+.reveal .an-wide-slide table.an-data-table th,.reveal .an-wide-slide table.an-data-table td {text-align:center;padding:10px 8px;}
+.an-data-scroll {max-height:425px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable;border-bottom:2px solid #83967e;width:88%;margin:12px auto;}
+.reveal .an-data-scroll table.an-data-table {width:100%;margin:0;font-size:27px;table-layout:auto;}
+.reveal .an-data-scroll table.an-data-table th,.reveal .an-data-scroll table.an-data-table td {text-align:center;padding:8px 12px;white-space:nowrap;}
+.reveal .an-data-scroll thead th {position:sticky;top:0;z-index:2;background:var(--verde-oscuro);}
+.an-long-slide .an-scroll-hint {font-size:21px;color:var(--gris);text-align:center;margin:5px 0;}
+.an-block-usefulness .an-key,.an-block-usefulness .an-answer {font-size:29px;line-height:1.28;margin:16px 0;}
+
+.reveal .an-data-scroll th:first-child {width:14%;}
+.reveal .an-data-scroll th:last-child {width:28%;}
+.reveal .an-data-scroll th:nth-child(2):nth-last-child(3) {width:15%;}

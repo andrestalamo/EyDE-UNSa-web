@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>validacion – Estadística y Diseño Experimental — EyDE</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2b462a1476201a5487cb5c3a2d116a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Estadística y Diseño Experimental — EyDE</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../clases/index.html"> 
+<span class="menu-text">Clases</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#última-ronda-manual-6-de-octubre-de-2026" id="toc-última-ronda-manual-6-de-octubre-de-2026" class="nav-link active" data-scroll-target="#última-ronda-manual-6-de-octubre-de-2026">Última ronda manual — 6 de octubre de 2026</a>
+  <ul class="collapse">
+  <li><a href="#verificación-de-esta-ronda" id="toc-verificación-de-esta-ronda" class="nav-link" data-scroll-target="#verificación-de-esta-ronda">Verificación de esta ronda</a></li>
+  </ul></li>
+  <li><a href="#revisión-manual-final-6-de-octubre-de-2026" id="toc-revisión-manual-final-6-de-octubre-de-2026" class="nav-link" data-scroll-target="#revisión-manual-final-6-de-octubre-de-2026">Revisión manual final — 6 de octubre de 2026</a>
+  <ul class="collapse">
+  <li><a href="#cambios-y-decisiones" id="toc-cambios-y-decisiones" class="nav-link" data-scroll-target="#cambios-y-decisiones">Cambios y decisiones</a></li>
+  <li><a href="#validación" id="toc-validación" class="nav-link" data-scroll-target="#validación">Validación</a></li>
+  </ul></li>
+  <li><a href="#revisión-puntual-por-diapositiva-6-de-octubre-de-2026" id="toc-revisión-puntual-por-diapositiva-6-de-octubre-de-2026" class="nav-link" data-scroll-target="#revisión-puntual-por-diapositiva-6-de-octubre-de-2026">Revisión puntual por diapositiva — 6 de octubre de 2026</a>
+  <ul class="collapse">
+  <li><a href="#alcance" id="toc-alcance" class="nav-link" data-scroll-target="#alcance">Alcance</a></li>
+  <li><a href="#cambios-por-numeración-anterior-actual" id="toc-cambios-por-numeración-anterior-actual" class="nav-link" data-scroll-target="#cambios-por-numeración-anterior-actual">Cambios por numeración anterior → actual</a></li>
+  <li><a href="#precisión-estadística" id="toc-precisión-estadística" class="nav-link" data-scroll-target="#precisión-estadística">Precisión estadística</a></li>
+  <li><a href="#render-y-validación-visual" id="toc-render-y-validación-visual" class="nav-link" data-scroll-target="#render-y-validación-visual">Render y validación visual</a></li>
+  <li><a href="#archivos-modificados" id="toc-archivos-modificados" class="nav-link" data-scroll-target="#archivos-modificados">Archivos modificados</a></li>
+  </ul></li>
+  <li><a href="#reestructuración-final-6-de-octubre-de-2026" id="toc-reestructuración-final-6-de-octubre-de-2026" class="nav-link" data-scroll-target="#reestructuración-final-6-de-octubre-de-2026">Reestructuración final — 6 de octubre de 2026</a>
+  <ul class="collapse">
+  <li><a href="#alcance-y-reproducción" id="toc-alcance-y-reproducción" class="nav-link" data-scroll-target="#alcance-y-reproducción">Alcance y reproducción</a></li>
+  <li><a href="#decisiones-narrativas-y-conceptuales" id="toc-decisiones-narrativas-y-conceptuales" class="nav-link" data-scroll-target="#decisiones-narrativas-y-conceptuales">Decisiones narrativas y conceptuales</a></li>
+  <li><a href="#validación-estadística" id="toc-validación-estadística" class="nav-link" data-scroll-target="#validación-estadística">Validación estadística</a></li>
+  <li><a href="#render-e-inspección-visual" id="toc-render-e-inspección-visual" class="nav-link" data-scroll-target="#render-e-inspección-visual">Render e inspección visual</a></li>
+  <li><a href="#archivos-modificados-y-creados-en-esta-revisión" id="toc-archivos-modificados-y-creados-en-esta-revisión" class="nav-link" data-scroll-target="#archivos-modificados-y-creados-en-esta-revisión">Archivos modificados y creados en esta revisión</a></li>
+  </ul></li>
+  <li><a href="#segunda-revisión-crítica-clase-11" id="toc-segunda-revisión-crítica-clase-11" class="nav-link" data-scroll-target="#segunda-revisión-crítica-clase-11">Segunda revisión crítica — Clase 11</a>
+  <ul class="collapse">
+  <li><a href="#alcance-1" id="toc-alcance-1" class="nav-link" data-scroll-target="#alcance-1">Alcance</a></li>
+  <li><a href="#cambios-de-estructura-y-revisión-por-diapositiva" id="toc-cambios-de-estructura-y-revisión-por-diapositiva" class="nav-link" data-scroll-target="#cambios-de-estructura-y-revisión-por-diapositiva">Cambios de estructura y revisión por diapositiva</a></li>
+  <li><a href="#precisión-conceptual" id="toc-precisión-conceptual" class="nav-link" data-scroll-target="#precisión-conceptual">Precisión conceptual</a></li>
+  <li><a href="#diseño-visual-y-proyección" id="toc-diseño-visual-y-proyección" class="nav-link" data-scroll-target="#diseño-visual-y-proyección">Diseño visual y proyección</a></li>
+  <li><a href="#validación-numérica" id="toc-validación-numérica" class="nav-link" data-scroll-target="#validación-numérica">Validación numérica</a></li>
+  <li><a href="#render-e-inspección-real" id="toc-render-e-inspección-real" class="nav-link" data-scroll-target="#render-e-inspección-real">Render e inspección real</a></li>
+  <li><a href="#archivos" id="toc-archivos" class="nav-link" data-scroll-target="#archivos">Archivos</a></li>
+  </ul></li>
+  <li><a href="#registro-histórico-de-la-primera-versión" id="toc-registro-histórico-de-la-primera-versión" class="nav-link" data-scroll-target="#registro-histórico-de-la-primera-versión">Registro histórico de la primera versión</a></li>
+  <li><a href="#validación-clase-11-anova" id="toc-validación-clase-11-anova" class="nav-link" data-scroll-target="#validación-clase-11-anova">Validación — Clase 11: ANOVA</a>
+  <ul class="collapse">
+  <li><a href="#alcance-y-decisiones" id="toc-alcance-y-decisiones" class="nav-link" data-scroll-target="#alcance-y-decisiones">Alcance y decisiones</a></li>
+  <li><a href="#comprobaciones-conceptuales" id="toc-comprobaciones-conceptuales" class="nav-link" data-scroll-target="#comprobaciones-conceptuales">Comprobaciones conceptuales</a></li>
+  <li><a href="#datos-y-validación-numérica" id="toc-datos-y-validación-numérica" class="nav-link" data-scroll-target="#datos-y-validación-numérica">Datos y validación numérica</a></li>
+  <li><a href="#render-y-revisión-visual" id="toc-render-y-revisión-visual" class="nav-link" data-scroll-target="#render-y-revisión-visual">Render y revisión visual</a></li>
+  <li><a href="#archivos-de-entrega" id="toc-archivos-de-entrega" class="nav-link" data-scroll-target="#archivos-de-entrega">Archivos de entrega</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="última-ronda-manual-6-de-octubre-de-2026" class="level1">
+<h1>Última ronda manual — 6 de octubre de 2026</h1>
+<p>Estado vigente: <strong>56 diapositivas, 113 estados</strong> (56 iniciales y 57 avances). No se reorganizó ni fusionó ninguna diapositiva. Este registro sustituye, para las láminas afectadas, las decisiones de presentación documentadas en el historial inferior.</p>
+<ul>
+<li>D31/D43: encabezados y valores centrados, columna inicial angosta y tres columnas de sustratos equilibradas; fuente conservada.</li>
+<li>D32/D44: una única tabla de 21 filas, contenedor de 425 px con scroll vertical, encabezados sticky, indicación discreta de continuación y mensajes conceptuales externos siempre visibles. Anchos ajustados a identificadores, factor y respuesta; sin scroll horizontal.</li>
+<li>D33: H0 matemática acompañada de la formulación biológica explícita.</li>
+<li>D30/D42 y bases largas: etiquetas visibles UE 1–UE 21; códigos internos intactos, mismas posiciones y correspondencias. Se conserva primero identificación y después medición.</li>
+<li>D52: alpha de puntos 0,75 y líneas 0,40; tamaños y colores intactos. Cajas en segundo plano.</li>
+<li>D53: Sustrato en x, biomasa en y, puntos y una línea por Mesada, con los mismos alpha. Sin cajas: prioriza perfiles para la inferencia del componente de Mesada. Pregunta visual conservada. D52 tiene otra función: conclusión global sobre Sustrato con cajas de apoyo. No se considera necesaria una fusión.</li>
+<li>D54: justificación a priori frente a evidencia a posteriori de utilidad en este experimento; Mesada permite separar esa fuente del Error. Hipótesis aleatoria y p permanecen explícitos en D53; no se deduce una regla general de diseño a partir de significación.</li>
+</ul>
+<section id="verificación-de-esta-ronda" class="level2">
+<h2 class="anchored" data-anchor-id="verificación-de-esta-ronda">Verificación de esta ronda</h2>
+<p>Render completo exitoso. Inspección visual de todas las láminas afectadas y sus 14 estados, incluida D30 por coherencia de etiquetas, a 1280 × 720. Sin desbordes externos, superposiciones, fórmulas fallidas, imágenes ausentes ni errores de consola. Las filas parcialmente visibles en el borde del contenedor son consecuencia intencional del scroll; todas son accesibles.</p>
+<p>Prueba real con rueda del navegador en D32/D44: scrollTop pasó de 0 a 755 px; encabezado conservó exactamente su coordenada vertical. Se alcanzó UE 21. Al seguir desplazando en el límite inferior, Reveal mantuvo los índices 31 y 43 (D32 y D44). scrollWidth = clientWidth: sin desplazamiento horizontal. Los mensajes permanecen fuera del contenedor. Se limita la propagación de wheel y teclas desde la región y se usa overscroll-behavior: contain.</p>
+<p>Comparación del HTML con CSV: cada una de las 21 filas y mediciones por experimento conserva valor, sustrato, mesada y correspondencia de UE. CSV de datos y resultados, verificacion_numerica.txt y semillas 202611/202612/202613 idénticos al inicio de esta ronda. Cálculos existentes se ejecutaron de nuevo durante el render, sin alterar SC, gl, CM, F ni p.</p>
+<p>Modificados sólo dentro de clases/11_anova: Clase_11_ANOVA_2026.qmd, analisis.R, estilos.css, figuras/conclusion-dbca.png, figuras/datos-mesada.png y VALIDACION.md. FUENTES.md no requiere cambios. HTML y recursos de la clase regenerados por Quarto en _site. Sin commit ni push.</p>
+<hr>
+</section>
+</section>
+<section id="revisión-manual-final-6-de-octubre-de-2026" class="level1">
+<h1>Revisión manual final — 6 de octubre de 2026</h1>
+<p>Estado vigente: <strong>56 diapositivas y 113 estados</strong>: 56 iniciales + 57 avances de fragments. El registro anterior queda debajo como historial y sus números ya no describen la versión vigente.</p>
+<section id="cambios-y-decisiones" class="level2">
+<h2 class="anchored" data-anchor-id="cambios-y-decisiones">Cambios y decisiones</h2>
+<ul>
+<li>D11–13: grupos en el bloque conceptual; Sustrato y Error como fuentes formales. Tratamiento se conserva en el diseño.</li>
+<li>D17: tres estados de segmentos sobre los 21 datos originales, con medias y fórmulas de SC Total, Error y Sustrato. No se agregó un cuarto estado: la identidad y la síntesis ya están en D15–16 y D18.</li>
+<li>D18: referencias verificadas a Clase 08, diapositivas 33 y 36.</li>
+<li>D19–27: SC → gl → varianza muestral → CM → F → tabla teórica, antes de la aplicación numérica.</li>
+<li>D29–32 y D41–44: asignación, mediciones, formato ancho y largo. Las 21 filas del formato largo se muestran en dos mitades contiguas (11 + 10) sin resumirlas. DCA explicita que las filas del ancho no son pares ni bloques; DBCA preserva Mesada.</li>
+<li>D36: tabla numérica DCA en ocho estados; p pendiente hasta D38. Se usa k consistentemente para el número de grupos.</li>
+<li>D33–40 y D48–52: procedimiento de Clase 06, definición del estadístico en paso 3 y cálculo observado en paso 5. Hipótesis DBCA sin F ni p; p aparece después del cálculo.</li>
+<li>D40 y D52: conclusiones sobre efecto global con datos. DBCA agrega cajas secundarias detrás de puntos y conexiones por mesada.</li>
+<li>D45–48: particiones según diseño, Sustrato fijo / Mesada aleatoria, convención de letras y «algún» como texto HTML uniforme. Los momentos de B permanecen sólo en notas.</li>
+<li>D53–54: inferencia del componente de variación de Mesada con p = 0,00042280 y gráfico; bloqueo justificado a priori.</li>
+<li>D55–56: perfiles sólo como puente a aditividad y próxima clase de Supuestos.</li>
+</ul>
+</section>
+<section id="validación" class="level2">
+<h2 class="anchored" data-anchor-id="validación">Validación</h2>
+<p>Render completo de Quarto exitoso. Inspección de las 56 diapositivas y todos sus 113 estados a 1280 × 720; fórmulas, imágenes y consola sin errores. Se corrigió la invasión del pie en las dos tablas largas ajustando espaciado, sin reducir la fuente. Inspección visual de capturas completas y contacto de todos los estados; revisión ampliada de tablas, SC, hipótesis y conclusiones. Sin desbordes en la comprobación final.</p>
+<p>Comparación automática del HTML con los CSV: las 21 mediciones de cada experimento coinciden por UE; las tablas anchas y largas conservan exactamente valores, Sustrato y, en DBCA, Mesada. Las cuatro tablas CSV y verificacion_numerica.txt siguen idénticas byte por byte frente al inicio de esta revisión. Semillas 202611, 202612 y 202613 intactas. Las verificaciones de SC manuales frente a aov, CM, F, p e integrales de densidad se ejecutaron nuevamente al renderizar y pasaron.</p>
+<p>DCA: F(2,18) = 6,2911687955; p = 0,00847649759825. DBCA Sustrato: F(2,12) = 30,7012071360; p = 0,0000190908563306. Mesada: F(6,12) = 10,0903749599; p = 0,000422799185354. Las figuras F previas permanecen idénticas, incluida F(2,18) decreciente desde cero y su tick observado.</p>
+<p>Archivos fuente modificados: Clase_11_ANOVA_2026.qmd, analisis.R, estilos.css, FUENTES.md y VALIDACION.md. Se crean seis PNG: sc-segmentos-total, sc-segmentos-error, sc-segmentos-sustrato, conclusion-dca, conclusion-dbca y datos-mesada. Los restantes gráficos no cambian. Salida HTML regenerada en _site por Quarto.</p>
+<p>Hashes de archivos fuente fuera de clases/11_anova sin cambios (se excluyen salidas de Quarto y Git). Sin commit ni push.</p>
+<hr>
+</section>
+</section>
+<section id="revisión-puntual-por-diapositiva-6-de-octubre-de-2026" class="level1">
+<h1>Revisión puntual por diapositiva — 6 de octubre de 2026</h1>
+<p>Estado vigente: <strong>46 diapositivas, 97 estados totales</strong> (46 estados iniciales y 51 avances de fragments). Antes: 45 diapositivas y 82 estados (45 iniciales y 37 avances). Se dividió únicamente la antigua D24 en dos; las posteriores avanzan una posición.</p>
+<section id="alcance" class="level2">
+<h2 class="anchored" data-anchor-id="alcance">Alcance</h2>
+<p>Sólo se modificaron archivos dentro de <code>clases/11_anova/</code>. Se compararon hashes de los archivos externos con la copia previa, excluidas salidas de Quarto y Git: ningún cambio. No se crearon nuevos archivos fuente fuera de la carpeta de la clase. No se hizo commit ni push.</p>
+<p>Las cuatro tablas CSV (<code>datos_tomate.csv</code>, <code>datos_dbca.csv</code>, <code>resultados_anova.csv</code>, <code>resultados_dbca.csv</code>) y <code>verificacion_numerica.txt</code> siguen idénticas byte por byte. Las semillas 202611, 202612 y 202613 no se tocaron. Renderizar ejecuta el pipeline existente y reproduce exactamente los mismos valores; no hubo nuevos sorteos ni búsquedas de resultados.</p>
+</section>
+<section id="cambios-por-numeración-anterior-actual" class="level2">
+<h2 class="anchored" data-anchor-id="cambios-por-numeración-anterior-actual">Cambios por numeración anterior → actual</h2>
+<ul>
+<li>D3 → D3: μ₁/μ₂/μ₃ mediante plotmath (<code>mu[1]</code>, etc., <code>parse=TRUE</code>), eliminando los subíndices Unicode sin glifo. Etiquetas por encima del máximo y líneas discontinuas limitadas al máximo para no atravesarlas. La corrección compartida se aplica también a las poblaciones bajo H0 de D22.</li>
+<li>D7 → D7: textos principales centrados, sin alterar contenido.</li>
+<li>D9/D23 → D9/D23: Escenario A/B; puntos de tamaño 3,1, alpha 0,65 y borde blanco fino. Medias opacas y con mayor grosor. Comparten los mismos dos archivos, escalas y posiciones.</li>
+<li>D18 → D18: tabla inicialmente vacía con Sustrato, Error, Total y encabezados F/p destacados. Ocho estados: inicial; gl Total; gl Sustrato; gl Error; tres SC; dos CM; pausa «¿Parecen similares?»; F. p queda pendiente. Las explicaciones se reemplazan sin superposición durante la transición.</li>
+<li>D19 → D19: encabezado «Fuente de variación» y nombre concreto Sustrato en fila y fórmulas, por coherencia inmediata con D18; números intactos.</li>
+<li>D24 → D24–25: pregunta, pregunta por población y respuestas potenciales; luego 21 UE neutras, factor/niveles, asignación irrestricta, 7 UE por nivel y nombre DCA. Las posiciones proceden del CSV DCA existente; la cuadrícula no representa bloques. Los números 1/2/3 acompañan al color para identificar niveles.</li>
+<li>D28–29 → D29–30: únicamente «Sustrato» en fila del ANOVA y explicación del CM, como referencia inmediata a D18.</li>
+<li>D30 → D31: ticks regulares 0,2,4,6,8,10,12. Al revelar F se agrega su tick y etiqueta 6,29 en una segunda línea para no superponerla con 6, más un punto exactamente en F calculado sobre y=0. La curva sigue siendo df(x,2,18), máxima en el límite cero y decreciente; el área y el p no cambian. Se reserva la altura de ambas líneas de etiquetas desde el estado inicial para mantener estable la geometría.</li>
+<li>D34 → D35: «SC Sustrato» en ambas leyendas. Los sectores siguen representando las SC originales de cada dataset.</li>
+<li>D36 → D37: modelo μ+αᵢ+Bⱼ+εᵢⱼ; Sustrato fijo y Mesada aleatoria. Definiciones y explicación breve de ambos tipos de efecto. La notación Bⱼ∼(0,σ²_Mesada) indica momentos; las condiciones de la referencia F se precisan sólo en notas.</li>
+<li>D38 → D39: hipótesis en paralelo, αᵢ=0 / igualdad de medias para Sustrato y σ²_Mesada=0 frente a &gt;0 para Mesada. Resultados de las dos filas revelados juntos y alineados. Bloqueo a priori visible.</li>
+<li>D40 → D41: ajuste de la nota para explicar por qué se conservan los cálculos en el DBCA balanceado aditivo con Mesada aleatoria.</li>
+<li>D43 → D44: interpretación en términos de variabilidad entre mesadas y eliminación de la hipótesis fija de igualdad de medias de bloques.</li>
+</ul>
+<p>No se reorganizaron otras diapositivas ni se incorporaron contenidos nuevos fuera del pedido.</p>
+</section>
+<section id="precisión-estadística" class="level2">
+<h2 class="anchored" data-anchor-id="precisión-estadística">Precisión estadística</h2>
+<p>Se cotejó la distinción fijo/aleatorio con D27 y D56–59 del material local de Silvia Sühring. En el DBCA completo, balanceado y aditivo, Sustrato fijo y Mesada aleatoria conservan los cocientes validados: CM Sustrato / CM Error con gl (2,12), y CM Mesada / CM Error con gl (6,12). La hipótesis de Mesada ahora es sobre su componente de varianza; no se comparan medias de las siete mesadas. La decisión de bloquear no depende retrospectivamente de p.</p>
+<p>Resultados intactos:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ejemplo / fuente</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">CM</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DCA / Sustrato</td>
+<td style="text-align: right;">87,2495238095</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">43,6247619048</td>
+<td style="text-align: right;">6,2911687955</td>
+<td style="text-align: right;">0,00847649759825</td>
+</tr>
+<tr class="even">
+<td>DCA / Error</td>
+<td style="text-align: right;">124,8171428571</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">6,9342857143</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="odd">
+<td>DCA / Total</td>
+<td style="text-align: right;">212,0666666667</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td>DBCA / Sustrato</td>
+<td style="text-align: right;">45,6180952381</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">22,8090476190</td>
+<td style="text-align: right;">30,7012071360</td>
+<td style="text-align: right;">0,0000190908563306</td>
+</tr>
+<tr class="odd">
+<td>DBCA / Mesada</td>
+<td style="text-align: right;">44,9790476190</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">7,4965079365</td>
+<td style="text-align: right;">10,0903749599</td>
+<td style="text-align: right;">0,000422799185354</td>
+</tr>
+<tr class="even">
+<td>DBCA / Error</td>
+<td style="text-align: right;">8,9152380952</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0,7429365079</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="odd">
+<td>DBCA / Total</td>
+<td style="text-align: right;">99,5123809524</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p>Los valores de las nuevas celdas y fórmulas se insertan desde los objetos del análisis validado. La marca F usa su valor completo para posicionarse; sólo el texto se redondea a 6,29. Se conservan las comprobaciones de densidad, integral, SC y CM del script existente.</p>
+</section>
+<section id="render-y-validación-visual" class="level2">
+<h2 class="anchored" data-anchor-id="render-y-validación-visual">Render y validación visual</h2>
+<p>Render completo correcto en <code>_site/clases/11_anova/index.html</code>. Comprobación automática de los 97 estados a 1280×720, e inspección visual de los 44 estados de las 17 diapositivas afectadas o referencias inmediatas. Capturas tomadas después de finalizar las transiciones.</p>
+<p>Se verificaron: desaparición del cuadrado y separación de μ; símbolos α, Bⱼ y σ²; orden de la tabla progresiva; pausa de los CM; secuencia pregunta/población/UE/factor/aleatorización/DCA; 21 macetas con siete asignaciones por nivel; eje F cada dos unidades y marca adicional 6,29; nombres SC Sustrato; modelo e hipótesis fijo/aleatorio; ausencia de overflow, texto/fórmulas cortados, superposiciones y errores de imágenes o MathJax. No se hizo una prueba física de proyección.</p>
+</section>
+<section id="archivos-modificados" class="level2">
+<h2 class="anchored" data-anchor-id="archivos-modificados">Archivos modificados</h2>
+<ul>
+<li><code>Clase_11_ANOVA_2026.qmd</code></li>
+<li><code>FUENTES.md</code></li>
+<li><code>analisis.R</code></li>
+<li><code>estilos.css</code></li>
+<li><code>figuras/f-dca-0.png</code></li>
+<li><code>figuras/f-dca-1.png</code></li>
+<li><code>figuras/f-dca-2.png</code></li>
+<li><code>figuras/panel-medias.png</code></li>
+<li><code>figuras/panel-puntos.png</code></li>
+<li><code>figuras/poblaciones-h0.png</code></li>
+<li><code>figuras/poblaciones.png</code></li>
+<li><code>VALIDACION.md</code></li>
+</ul>
+<p>Sin archivos nuevos ni eliminados. La salida HTML y sus copias de recursos se regeneraron mediante Quarto.</p>
+<hr>
+</section>
+</section>
+<section id="reestructuración-final-6-de-octubre-de-2026" class="level1">
+<h1>Reestructuración final — 6 de octubre de 2026</h1>
+<p>Versión vigente: <strong>45 diapositivas, incluida la portada; 82 estados visibles</strong>. Esta sección reemplaza el estado de las revisiones anteriores, conservadas al final como historial.</p>
+<section id="alcance-y-reproducción" class="level2">
+<h2 class="anchored" data-anchor-id="alcance-y-reproducción">Alcance y reproducción</h2>
+<p>Sólo se modificaron fuentes en <code>clases/11_anova/</code>. La comparación SHA-256 con la copia anterior no encontró cambios en otras clases, índice ni archivos globales (se excluyen <code>.git</code>, <code>.quarto</code> y <code>_site</code>, salida de render). Sin commit ni push.</p>
+<p><code>datos_tomate.csv</code>, <code>resultados_anova.csv</code> y <code>FUENTES.md</code> son idénticos byte por byte a la versión anterior. No se incorporaron fuentes externas. Los gráficos nuevos se calculan en R y los esquemas de macetas conservan los recursos locales existentes.</p>
+<p>Reproducción: desde esta carpeta, ejecutar <code>Rscript analisis.R</code>; desde la raíz del sitio, <code>quarto render clases/11_anova/Clase_11_ANOVA_2026.qmd</code>. El QMD también ejecuta el análisis completo mediante <code>source()</code>.</p>
+<ul>
+<li>DCA: semilla original 202611, siete UE por nivel, n=21, biomasa seca a los 42 días.</li>
+<li>DBCA: semilla 202612. Una sola simulación, sin búsqueda de significación. Parámetros fijados antes del análisis: media generadora 15 g; efectos de Sustrato −1,5 / 0 / 1,5 g; efectos de mesada normales con DE 1,5 g; error aleatorio normal con DE 1 g. Redondeo de las observaciones a 0,1 g. Posiciones aleatorias de los tres niveles dentro de cada mesada guardadas en CSV.</li>
+<li>Muestras ilustrativas bajo H0: semilla 202613; distintas de ambos datasets analizados.</li>
+</ul>
+</section>
+<section id="decisiones-narrativas-y-conceptuales" class="level2">
+<h2 class="anchored" data-anchor-id="decisiones-narrativas-y-conceptuales">Decisiones narrativas y conceptuales</h2>
+<ul>
+<li>D1–D23: problema, poblaciones, varias t, ENTRE/DENTRO, modelo, descomposición, SC, gl/CM y F. Se conservaron las posiciones pedagógicas de D3–D23 solicitadas.</li>
+<li>D24–D32: ANOVA a un criterio de clasificación, DCA hipotético, siete pasos completos.</li>
+<li>D33–D45: recuperación del diseño DBCA de Clase 10 con datos nuevos, círculos de SC, modelo aditivo, perfiles por mesada, siete pasos para Sustrato, fila Mesada y puente a Supuestos.</li>
+<li>Se cotejaron los siete pasos con Clase 06 (líneas 421–427): Plantear H0/H1; Fijar α; Definir estadístico y distribución; Establecer criterio; Realizar cálculos; Decidir sobre H0; Concluir según la pregunta. Se conserva el criterio p&lt;α usado allí.</li>
+<li>El p del DCA se deja pendiente en la tabla de cálculo para introducirlo mediante la distribución F, antes de la decisión. F calculado procede explícitamente del cociente de CM.</li>
+<li>14,3 % es sólo ilustración de tres pruebas independientes; la advertencia de dependencia de comparaciones compartidas está en pantalla.</li>
+<li>ε es error aleatorio asociado a la observación. Residuo ajustado e=Y−Ŷ se distingue en las notas. Error experimental mantiene su definición de variación entre UE tratadas de la misma manera.</li>
+<li>n minúscula, variable de respuesta y distinción entre factor, nivel y tratamiento. No se introduce error estándar ni otra notación que sustituya S de X barra.</li>
+<li>DCA y DBCA son diseños diferentes; no se agregan bloques retrospectivamente al DCA, no se transfiere un sector de SC Error entre datasets y no se plantea una jerarquía de diseños.</li>
+<li>Los sectores circulares representan SC con fuentes aditivas, no CM ni independencia probabilística genérica.</li>
+<li>Se muestra el nuevo DBCA como ANOVA a dos criterios; Sustrato de interés y Mesada de bloqueo, sin presentarlo como factorial.</li>
+<li>La decisión de bloquear es a priori, no depende del p de Mesada. La causalidad proviene del diseño/asignación, no de p (previsto en notas).</li>
+<li>Cierre: aditividad y próxima clase Supuestos; después, comparaciones múltiples. No se desarrolla interacción ni se diagnostican supuestos en esta clase.</li>
+</ul>
+</section>
+<section id="validación-estadística" class="level2">
+<h2 class="anchored" data-anchor-id="validación-estadística">Validación estadística</h2>
+<p>Se ejecutó el análisis completo desde cero. Se contrastaron SC, CM, F y p con <code>aov</code> y fórmulas directas; una comprobación independiente leyó ambos CSV y usó <code>lm</code>/<code>anova</code>. Todas las comprobaciones pasaron.</p>
+<p>DCA: SC Tratamientos = 87,2495238095; gl=2; CM=43,6247619048. SC Error=124,8171428571; gl=18; CM=6,9342857143. SC Total=212,0666666667; gl=20. F(2,18)=6,2911687955; p=0,00847649759825.</p>
+<p>DBCA:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">CM</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sustrato</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">45,6180952381</td>
+<td style="text-align: right;">22,8090476190</td>
+<td style="text-align: right;">30,7012071360</td>
+<td style="text-align: right;">0,0000190908563306</td>
+</tr>
+<tr class="even">
+<td>Mesada</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">44,9790476190</td>
+<td style="text-align: right;">7,4965079365</td>
+<td style="text-align: right;">10,0903749599</td>
+<td style="text-align: right;">0,000422799185354</td>
+</tr>
+<tr class="odd">
+<td>Error</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">8,9152380952</td>
+<td style="text-align: right;">0,7429365079</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">99,5123809524</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p>Particiones SC verificadas con tolerancia 1e−10. Grados de libertad DBCA: 2+6+12=20. Una UE por combinación de Sustrato y Mesada. Los CSV contienen precisión completa y las tablas redondean sólo para presentar.</p>
+<p>Curvas F calculadas con <code>df</code>, gl (2,18) y (2,12); línea vertical en el F exacto, sin redondear la geometría. <code>pf</code> coincide con la integral numérica hasta infinito. Los polígonos comienzan exactamente en F calculado y cubren toda la cola visible. Como toda ventana gráfica finita, omiten su continuación más allá del eje: 0,0004877631 para DCA y 0,0000008825781 para DBCA. Área visible + continuación = p (tolerancia 1e−10). Área trapezoidal del polígono coincide con integral visible con error relativo &lt;1e−4. No se usa zoom ni se infla la altura de la cola: un puntero la identifica cuando es muy pequeña. Valores detallados en <code>verificacion_numerica.txt</code>.</p>
+<p>D9/D23 usan el mismo par de escenarios: medias idénticas (tolerancia 1e−12), igual tamaño y límites; se cambia únicamente dispersión residual. D15 usa la observación máxima real del tercer sustrato, con las distancias sobre el mismo eje de biomasa. Las cuatro macetas de D20 son ilustrativas; no cambian n.</p>
+</section>
+<section id="render-e-inspección-visual" class="level2">
+<h2 class="anchored" data-anchor-id="render-e-inspección-visual">Render e inspección visual</h2>
+<p>Quarto produjo el HTML completo en <code>_site/clases/11_anova/index.html</code>. Inspección real en Chrome, 1280×720, de las 45 diapositivas y los 82 estados, además de overview a 1600×900 y secuencias consecutivas.</p>
+<ul>
+<li>Sin overflow, scroll necesario, superposiciones detectadas ni errores de MathJax o imágenes.</li>
+<li>D13: barra de fracción inequívoca, sin F formal adelantado.</li>
+<li>D9/D23: primero medias; después puntos y rótulos de panel en el mismo avance. Los ejes y posiciones no se desplazan.</li>
+<li>D15: total, entre, dentro e identidad en cuatro estados. Gráfico ampliado y medias rotuladas.</li>
+<li>D22: poblaciones iguales y muestras distintas; corregida una etiqueta vertical cortada y ampliadas las figuras.</li>
+<li>Curvas F: una sola escala por ejemplo, sin zoom. Corregidas marcas demasiado juntas en el eje del DBCA.</li>
+<li>Círculos de SC: sectores proporcionales y leyendas grandes fuera de las imágenes.</li>
+<li>Perfil DBCA: siete líneas con rótulos M1–M7 separados y eje de biomasa sin recortes. Se reutiliza deliberadamente al cerrar para preparar aditividad.</li>
+<li>Tablas con texto de 31 px; p pequeño del DBCA no se redondea a cero.</li>
+<li>Los fragmentos reservan el espacio de los elementos posteriores para mantener estable la geometría.</li>
+</ul>
+<p>La validación de legibilidad fue en pantalla; no se realizó una prueba física con proyector.</p>
+</section>
+<section id="archivos-modificados-y-creados-en-esta-revisión" class="level2">
+<h2 class="anchored" data-anchor-id="archivos-modificados-y-creados-en-esta-revisión">Archivos modificados y creados en esta revisión</h2>
+<p>Modificados:</p>
+<ul>
+<li><code>Clase_11_ANOVA_2026.qmd</code></li>
+<li><code>analisis.R</code></li>
+<li><code>estilos.css</code></li>
+<li><code>figuras/datos.png</code></li>
+<li><code>figuras/entre.png</code></li>
+<li><code>figuras/fuentes.png</code></li>
+<li><code>verificacion_numerica.txt</code></li>
+<li><code>VALIDACION.md</code></li>
+</ul>
+<p>Creados:</p>
+<ul>
+<li><code>datos_dbca.csv</code></li>
+<li><code>figuras/descomposicion-0.png</code></li>
+<li><code>figuras/descomposicion-1.png</code></li>
+<li><code>figuras/descomposicion-2.png</code></li>
+<li><code>figuras/error-cuatro.png</code></li>
+<li><code>figuras/f-dbca-0.png</code></li>
+<li><code>figuras/f-dbca-1.png</code></li>
+<li><code>figuras/f-dbca-2.png</code></li>
+<li><code>figuras/f-dca-0.png</code></li>
+<li><code>figuras/f-dca-1.png</code></li>
+<li><code>figuras/f-dca-2.png</code></li>
+<li><code>figuras/muestras-h0.png</code></li>
+<li><code>figuras/panel-medias.png</code></li>
+<li><code>figuras/panel-puntos.png</code></li>
+<li><code>figuras/perfil-dbca.png</code></li>
+<li><code>figuras/poblaciones-h0.png</code></li>
+<li><code>figuras/poblaciones.png</code></li>
+<li><code>figuras/sc-dbca.png</code></li>
+<li><code>figuras/sc-dca.png</code></li>
+<li><code>resultados_dbca.csv</code></li>
+</ul>
+<p>No se borraron archivos. Las figuras anteriores que quedaron sin uso se conservaron sin cambios.</p>
+<hr>
+</section>
+</section>
+<section id="segunda-revisión-crítica-clase-11" class="level1">
+<h1>Segunda revisión crítica — Clase 11</h1>
+<p>Versión vigente: <strong>35 diapositivas, incluida la portada</strong>. Esta sección reemplaza la numeración y el estado de validación de la primera versión, conservada más abajo como registro histórico.</p>
+<section id="alcance-1" class="level2">
+<h2 class="anchored" data-anchor-id="alcance-1">Alcance</h2>
+<p>Sólo se trabajó en <code>clases/11_anova/</code>. Se conservaron los cambios locales previos. Comparación SHA-256 de los archivos ajenos a esa carpeta, excluidas salidas de Quarto y Git: <strong>ningún cambio</strong>. No se modificaron índice, clases anteriores ni recursos globales. Sin commit ni push.</p>
+<p>Los bytes de <code>datos_tomate.csv</code>, <code>resultados_anova.csv</code> y <code>FUENTES.md</code> coinciden con sus copias anteriores a la revisión. Semilla <strong>202611</strong> intacta. No se añadieron fuentes externas; los nuevos recursos son esquemas propios HTML/CSS/SVG y un gráfico de R.</p>
+</section>
+<section id="cambios-de-estructura-y-revisión-por-diapositiva" class="level2">
+<h2 class="anchored" data-anchor-id="cambios-de-estructura-y-revisión-por-diapositiva">Cambios de estructura y revisión por diapositiva</h2>
+<p>Se eliminó la antigua D15 (hipótesis en términos de efectos); su precisión paramétrica quedó en las notas del modelo. Las antiguas D33–34 se fusionaron en la nueva D32. El resto conserva el orden conceptual. No se añadieron láminas para compensar eliminaciones.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Antes → ahora</th>
+<th>Revisión y elemento dominante</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 → 1</td>
+<td>Portada limpia conservada.</td>
+</tr>
+<tr class="even">
+<td>2 → 2</td>
+<td>Dos puntos/medias conectados, sin dos tarjetas.</td>
+</tr>
+<tr class="odd">
+<td>3 → 3</td>
+<td>Tres macetas con plantines, niveles y siete UE por nivel.</td>
+</tr>
+<tr class="even">
+<td>4 → 4</td>
+<td>Red triangular; cada fragment agrega una comparación real entre dos medias.</td>
+</tr>
+<tr class="odd">
+<td>5 → 5</td>
+<td>Gráfico de crecimiento de las comparaciones en lugar de cinco tarjetas.</td>
+</tr>
+<tr class="even">
+<td>6 → 6</td>
+<td>Hipótesis global dominante, sin gran caja ANOVA redundante.</td>
+</tr>
+<tr class="odd">
+<td>7 → 7</td>
+<td>Pregunta de transición conservada; dos momentos pedagógicos.</td>
+</tr>
+<tr class="even">
+<td>8 → 8</td>
+<td>Dotplot ampliado y pregunta dividida: grandes… respecto de qué.</td>
+</tr>
+<tr class="odd">
+<td>9 → 9</td>
+<td>Paneles de dispersión ampliados; misma escala y mismas medias.</td>
+</tr>
+<tr class="even">
+<td>10 → 10</td>
+<td>Gráfico ampliado, etiquetas directas dentro/entre y segmentos internos tierra.</td>
+</tr>
+<tr class="odd">
+<td>11 → 11</td>
+<td>Siete macetas independientes con las siete biomasas reales de Suelo + arena.</td>
+</tr>
+<tr class="even">
+<td>12 → 12</td>
+<td>Gráfico de medias; visible que bajo H0 también pueden diferir las medias muestrales y que la diferencia no es efecto puro.</td>
+</tr>
+<tr class="odd">
+<td>13 → 13</td>
+<td>Razón conceptual amplia, con fuentes rotuladas y colores consistentes.</td>
+</tr>
+<tr class="even">
+<td>14 → 14</td>
+<td>Modelo horizontal traducido término por término; restricciones sólo en notas.</td>
+</tr>
+<tr class="odd">
+<td>15 → eliminada</td>
+<td>Se evita una repetición formal de hipótesis que no aporta a esta introducción.</td>
+</tr>
+<tr class="even">
+<td>16 → 15</td>
+<td>Observación → media del tratamiento → media general; dentro, entre y total construidos en tres pasos. Ecuación secundaria ampliada.</td>
+</tr>
+<tr class="odd">
+<td>17 → 16</td>
+<td>Ejemplo aritmético de cancelación y cuadrados conservado; se retira el callout repetido.</td>
+</tr>
+<tr class="even">
+<td>18 → 17</td>
+<td>Árbol de componentes de variación y ecuación de SC con colores, sin “variación = tratamientos”.</td>
+</tr>
+<tr class="odd">
+<td>19 → 18</td>
+<td>Tabla mínima y esquema 7−1=6 por grupo; 6+6+6=18 gl del error.</td>
+</tr>
+<tr class="even">
+<td>20 → 19</td>
+<td>CM como SC/gl, con numeradores y fuentes separados por color y nombre.</td>
+</tr>
+<tr class="odd">
+<td>21 → 20</td>
+<td>Macetas → dispersión → estimación; CM Error dominante y frase sobre replicación visible.</td>
+</tr>
+<tr class="even">
+<td>22 → 21</td>
+<td>Cociente grande y traducción directa de numerador/denominador, sin revelados innecesarios.</td>
+</tr>
+<tr class="odd">
+<td>23 → 22</td>
+<td>Ambos CM convergen a σ² bajo H0; orden de 1, posibilidad de F&lt;1 y F&gt;1 no significativo visibles.</td>
+</tr>
+<tr class="even">
+<td>24 → 23</td>
+<td>Paneles de separación ampliados; residuos iguales y ejes comunes.</td>
+</tr>
+<tr class="odd">
+<td>25 → 24</td>
+<td>Distribución F y ampliación de cola más grandes; se retiran tres bloques de texto alrededor.</td>
+</tr>
+<tr class="even">
+<td>26 → 25</td>
+<td>Tabla conceptual ampliada; celda p corregida a “p-valor”; columnas por fragments.</td>
+</tr>
+<tr class="odd">
+<td>27 → 26</td>
+<td>Regreso al caso mediante macetas y descripción breve del experimento.</td>
+</tr>
+<tr class="even">
+<td>28 → 27</td>
+<td>Gráfico de datos ampliado; medias del mismo conjunto de datos.</td>
+</tr>
+<tr class="odd">
+<td>29 → 28</td>
+<td>Tabla numérica ampliada, fuentes codificadas, CM/F/p progresivos.</td>
+</tr>
+<tr class="even">
+<td>30 → 29</td>
+<td>Cotejo directo con Clase 06 y recuperación de los siete nombres/verbos de los pasos.</td>
+</tr>
+<tr class="odd">
+<td>31 → 30</td>
+<td>Conclusión global reformulada: la media no es igual para los tres sustratos; “¿Entre cuáles?” → ANOVA no lo responde.</td>
+</tr>
+<tr class="even">
+<td>32 → 31</td>
+<td>Dos componentes de variación, y aclaración visible de que causalidad no proviene del p-valor.</td>
+</tr>
+<tr class="odd">
+<td>33 + 34 → 32</td>
+<td>Siete mesadas con tres macetas, junto a las fuentes DCA/DBCA. Visible que DBCA no es superior.</td>
+</tr>
+<tr class="even">
+<td>35 → 33</td>
+<td>Flujo horizontal de variación/componentes/CM y cierre F→p→inferencia; se eliminan cinco cajas apiladas.</td>
+</tr>
+<tr class="odd">
+<td>36 → 34</td>
+<td>Cuatro ideas finales conservadas, sin agregar contenido.</td>
+</tr>
+<tr class="even">
+<td>37 → 35</td>
+<td>Preguntas pendientes conservadas; cierre sin callout adicional.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="precisión-conceptual" class="level2">
+<h2 class="anchored" data-anchor-id="precisión-conceptual">Precisión conceptual</h2>
+<ul>
+<li>Entre tratamientos no equivale a efecto puro: la nueva D12 lo muestra en pantalla, junto con la posibilidad de diferencias muestrales aun bajo H0.</li>
+<li>Modelo de la nueva D14: respuesta = media general + efecto asociado al tratamiento + error. Las notas mantienen μ como promedio de las medias poblacionales y suma α_i = 0; H0 de igualdad de medias sigue en la nueva D6. No se cambia el modelo numérico.</li>
+<li>Nueva D15 usa 22,40 g, 18,09 g y 15,47 g del mismo ejemplo para vincular observación, media del grupo y general. Es un esquema de relaciones, no un eje a escala. Las desviaciones tienen signo y la ecuación permanece correcta.</li>
+<li>Nueva D17 distingue “componente asociada a tratamientos” y “componente del error experimental”. La ecuación SC Total = SC Trat + SC Error se conserva. Las notas mantienen la explicación del término cruzado.</li>
+<li>Nueva D18: N=21, t=3; tratamientos 2, error 18, total 20. La intuición 7−1 se explica también en notas: la séptima desviación queda determinada por suma cero. Se distingue t de tratamientos del estadístico de Student.</li>
+<li>Nueva D20 mantiene visible: replicar permite estimar el error, no lo reduce por sí mismo.</li>
+<li>Nueva D22: bajo H0 ambos CM estiman σ²; orden de magnitud 1 no es umbral. Se conserva en notas la diferencia entre razón de esperanzas y esperanza de la razón.</li>
+<li>Nueva D25: “p-valor” en la celda p, no “Cola derecha”.</li>
+<li>Nueva D29: mismos siete pasos de Clase 06: Plantear H0/H1, Fijar α, Definir estadístico/distribución, Establecer criterio, Realizar cálculos, Decidir, Concluir. Las precisiones completas se conservan en notas.</li>
+<li>Nueva D30: inferencia global, sin sugerir que se identificó un par. No se aceptó H0 ni se afirmó que todas las medias difieren.</li>
+<li>Nuevas D31–32: causalidad vinculada al diseño/asignación; DBCA como otra estructura, no un diseño superior. La partición con bloques queda prevista en notas de la lámina fusionada.</li>
+</ul>
+</section>
+<section id="diseño-visual-y-proyección" class="level2">
+<h2 class="anchored" data-anchor-id="diseño-visual-y-proyección">Diseño visual y proyección</h2>
+<ul>
+<li>Se revisó el elemento dominante de cada lámina y la secuencia completa. Apertura: puntos → macetas → red de comparaciones → gráfico → hipótesis. Núcleo: gráficos grandes alternados con macetas, razón y modelo. Formalización: traducción horizontal → relaciones/desviaciones → ejemplo numérico → árbol → tabla con intuición. Cierre: caso concreto → gráfico → tabla → procedimiento → conclusión → mesadas.</li>
+<li>Codificación de fuentes: tratamientos verde #2d6a4f, error tierra #8a5a3b, total gris azulado #607d86, bloques ocre #9a7410. Se acompaña siempre con rótulos/símbolos. Los colores de macetas mantienen la codificación de sustratos de Clase 10; no se confunden con nuevas fuentes.</li>
+<li>Altura reservada a gráficos principales: <strong>345 → 410 px</strong>; distribución F: <strong>320 → 430 px</strong>. Se aumentó también el alto de exportación de R para que el contenido efectivo crezca, no sólo su contenedor. Gráficos cargados con texto adicional, como medias entre tratamientos, conservan altura adaptada para no apretar la lámina.</li>
+<li>Tipografía base de gráficos R: <strong>20 → 23 pt</strong>; etiquetas de paneles 18 → 21 pt.&nbsp;Ejes largos en dos líneas para evitar recortes. Textos secundarios de diapositivas 23 → 26 px.</li>
+<li>Tablas conceptual/numérica: <strong>25/28 → 31 px</strong>, con mayor espacio de celdas. Descomposición: ecuación final <strong>38 px</strong>, además de rótulos y valores grandes. El modelo muestra símbolos grandes y traducciones de 29 px.</li>
+<li>Se incorporaron esquemas propios de macetas, plantines y mesadas, red de tres comparaciones y gráfico exacto de t(t−1)/2. No se utilizaron fotos decorativas ni fuentes nuevas.</li>
+<li>Los fragments finales se destinan a construir comparaciones, formular/responder preguntas, descomponer desviaciones y completar tablas. Estados totales: <strong>67</strong>, frente a 76 en la primera versión. Se quitaron apariciones de texto redundantes y se añadieron los pasos significativos de la descomposición.</li>
+</ul>
+</section>
+<section id="validación-numérica" class="level2">
+<h2 class="anchored" data-anchor-id="validación-numérica">Validación numérica</h2>
+<p>Se reejecutaron las comprobaciones de <code>analisis.R</code> y, de forma independiente, <code>Rscript --vanilla</code> leyendo el CSV sin cargar ese script. Todos los valores se mantienen:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">CM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tratamientos</td>
+<td style="text-align: right;">87,249523809524</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">43,624761904762</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td style="text-align: right;">124,817142857143</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">6,934285714286</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">212,066666666667</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>F(2,18) = 6,291168795495; p = 0,008476497598249.</strong></p>
+<p>SC total = suma de componentes; CM=SC/gl; F=CM Trat/CM Error; aov, pf e integral coinciden. D9 conserva exactamente las medias entre paneles dentro de tolerancia 1e−12; la comparación de separación mantiene los mismos residuos. Las siete cifras en las macetas de la nueva D11 se cotejaron con las filas de Suelo + arena del CSV. No se cambió la semilla ni la simulación.</p>
+</section>
+<section id="render-e-inspección-real" class="level2">
+<h2 class="anchored" data-anchor-id="render-e-inspección-real">Render e inspección real</h2>
+<ul>
+<li>Render de la clase completa con <code>quarto render clases/11_anova/Clase_11_ANOVA_2026.qmd --no-cache</code>: código 0. Persiste únicamente el aviso no bloqueante de renv conocido; no se cambió el entorno.</li>
+<li>Chrome local a <strong>1280 × 720</strong>: captura e inspección de las <strong>35 diapositivas y los 67 estados</strong>, con MathJax terminado e imágenes cargadas. Se revisaron ampliaciones y planchas de seis estados; las comprobaciones de límites complementaron, sin reemplazar, la inspección real.</li>
+<li>Se detectaron y corrigieron durante el proceso clases de sección mal aplicadas y etiquetas de ejes demasiado largas. La versión revisada no muestra desbordes, superposiciones, errores matemáticos de render ni imágenes faltantes.</li>
+<li>Revisión real en modo <strong>overview de Reveal</strong> a 1600 × 900, desplazándose por apertura, núcleo, formalización, F, ejemplo y cierre. Se revisaron además secuencias de 4–6 láminas en planchas de contacto para comparar elementos dominantes y detectar repetición.</li>
+<li>Comprobación final específica de los cuatro estados de la nueva D15 y del esquema D33 después de ampliar su ecuación y ajustar la flecha del resumen.</li>
+<li>Fragments reversibles; sin errores JavaScript ni MathJax registrados. Tamaños revisados a escala de presentación; no se afirma haber probado un proyector físico.</li>
+<li>Evidencia temporal: <code>/tmp/eyde-qa11-r2/</code> (capturas y overview) y <code>/tmp/eyde-qa11-r2-final/</code> (últimos ajustes).</li>
+</ul>
+</section>
+<section id="archivos" class="level2">
+<h2 class="anchored" data-anchor-id="archivos">Archivos</h2>
+<p>Modificados: <code>Clase_11_ANOVA_2026.qmd</code>, <code>estilos.css</code>, <code>analisis.R</code>, <code>VALIDACION.md</code> y figuras regeneradas por R. Nuevo gráfico: <code>figuras/comparaciones.png</code>. El antiguo gráfico de desviaciones queda como recurso generado auxiliar, aunque la lámina usa ahora el esquema progresivo editable.</p>
+<p>Sin cambios: datos, resultados, semilla y <code>FUENTES.md</code>; tampoco se incorporaron fuentes nuevas. No hay cambios fuera de <code>clases/11_anova/</code> en los archivos fuente.</p>
+<hr>
+</section>
+</section>
+<section id="registro-histórico-de-la-primera-versión" class="level1">
+<h1>Registro histórico de la primera versión</h1>
+</section>
+<section id="validación-clase-11-anova" class="level1">
+<h1>Validación — Clase 11: ANOVA</h1>
+<p>Fecha: 30/09/2026. <strong>37 diapositivas</strong>, incluida la portada.</p>
+<section id="alcance-y-decisiones" class="level2">
+<h2 class="anchored" data-anchor-id="alcance-y-decisiones">Alcance y decisiones</h2>
+<p>Sólo se creó <code>clases/11_anova/</code>. No se editaron clases anteriores, índice, configuración ni estilos compartidos. No se hizo commit ni push.</p>
+<ul>
+<li>D1–7: necesidad de una prueba global; riesgo de multiplicar pruebas e hipótesis correctas.</li>
+<li>D8–13: gráficos antes de fórmulas; variación entre/dentro y error experimental.</li>
+<li>D14–21: modelo, parametrización, desviaciones, SC, gl y CM.</li>
+<li>D22–26: F, distribución nula, p y construcción por columnas de la tabla.</li>
+<li>D27–31: aplicación al mismo conjunto de 21 macetas y conclusión global.</li>
+<li>D32–34: DCA frente al DBCA de siete mesadas de Clase 10.</li>
+<li>D35–37: síntesis y temas pendientes.</li>
+</ul>
+<p>La variante DCA es explícita desde D3 y fue confirmada por el docente. El caso mantiene los tres sustratos, siete UE por tratamiento y biomasa seca a los 42 días; no analiza como DCA los datos bloqueados de la Clase 10. D30 conserva el procedimiento de siete pasos de Clase 06, con población y parámetros como contexto previo. Se mantiene t para cantidad de tratamientos y N para UE, con aclaración en notas. No fue necesario modificar el índice: el HTML local puede abrirse directamente.</p>
+</section>
+<section id="comprobaciones-conceptuales" class="level2">
+<h2 class="anchored" data-anchor-id="comprobaciones-conceptuales">Comprobaciones conceptuales</h2>
+<ul>
+<li>Modelo: Y_ij = μ + α_i + ε_ij, μ = promedio de las t medias poblacionales, α_i = μ_i − μ, suma α_i = 0. H0: medias iguales equivale a todos los efectos cero. H1: no todas iguales / al menos un efecto distinto de cero.</li>
+<li>Notación muestral consistente: Ȳ<em>i· y Ȳ</em>··; se distingue ε del residuo calculado.</li>
+<li>Identidad de desviaciones: total = dentro + entre. Al sumar cuadrados, el término cruzado se anula porque la suma de residuos dentro de cada tratamiento es cero. Las notas dan las tres fórmulas de SC, incluida la ponderación ni en tratamientos.</li>
+<li>gl: tratamientos t−1=2, error N−t=18, total N−1=20; 2+18=20.</li>
+<li>CM = SC/gl; F = CM_Trat/CM_Error. No se calcula un F de Error o Total.</li>
+<li>La referencia F(2,18) es condicional al modelo clásico; las condiciones se mencionan en notas, sin desarrollar diagnóstico.</li>
+<li>Se permite F&lt;1. F≈1 es intuición de escala, no esperanza exacta: la nota aclara E[F(2,18)] = 1,125. No se presenta F&gt;1 como criterio de significación.</li>
+<li>El p-valor es cola derecha bajo H0 y el modelo, no probabilidad de H0. No se usa 1−0,95³ para las comparaciones dependientes.</li>
+<li>Rechazar H0 no significa que todas las medias difieran ni identifica pares. En otros resultados se habla de no rechazar H0, no de aceptarla.</li>
+<li>Error experimental no significa equivocación ni sólo error de medición. La replicación permite estimarlo; no lo reduce por sí sola.</li>
+<li>El DBCA del cierre incluye tratamientos, bloques y error. Se modela separadamente la fuente mesada, sin prometer siempre una mejora ni presentar los diseños como jerarquía.</li>
+</ul>
+</section>
+<section id="datos-y-validación-numérica" class="level2">
+<h2 class="anchored" data-anchor-id="datos-y-validación-numérica">Datos y validación numérica</h2>
+<p><code>analisis.R</code>, semilla <strong>202611</strong>, genera 21 observaciones, positivas y con variación interna, guardadas en <code>datos_tomate.csv</code>. Medias: <strong>13,1142857143; 15,2; 18,0857142857 g</strong>. Media general: 15,4666666667 g.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">CM</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tratamientos</td>
+<td style="text-align: right;">87,249523809524</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">43,624761904762</td>
+<td style="text-align: right;">6,291168795495</td>
+<td style="text-align: right;">0,008476497598249</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td style="text-align: right;">124,817142857143</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">6,934285714286</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">212,066666666667</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>SC_Total = SC_Trat + SC_Error dentro de tolerancia 1e−10.</li>
+<li>SC manuales, CM y F coinciden con <code>summary(aov(biomasa ~ sustrato))</code>.</li>
+<li><code>pf(Fobs, 2, 18, lower.tail=FALSE)</code> coincide con el p de <code>aov()</code> y con la integral independiente de la densidad <code>df()</code> desde Fobs hasta infinito, dentro de 1e−10.</li>
+<li>Segunda ejecución independiente con <code>Rscript --vanilla</code>: lectura del CSV, agrupación de valores, SC directas y <code>aov()</code> sin cargar <code>analisis.R</code>; todos los resultados coinciden.</li>
+<li>D8 y D28 usan el mismo gráfico; D28–31 calculan números desde el mismo objeto de R en cada render. No hay tablas de resultados pegadas manualmente. Redondeo visual: dos decimales para SC/CM/F y cuatro para p; cálculo con precisión completa.</li>
+<li>D9: medias de ambos paneles iguales dentro de 1e−12, mismo n y ejes comunes. Sólo cambia la amplitud del residuo centrado.</li>
+<li>D24: residuos idénticos dentro de 1e−12, ejes comunes; sólo se amplía la separación de medias.</li>
+<li>D25: curva F(2,18), F observado y cola derecha; ampliación separada y rotulada con otra escala vertical. El p integra hasta infinito, aunque el gráfico sea finito.</li>
+</ul>
+<p><code>verificacion_numerica.txt</code> y <code>resultados_anova.csv</code> registran los cálculos. A α=0,05 se rechaza H0; la conclusión se limita a una diferencia global entre los sustratos en las condiciones poblacionales delimitadas.</p>
+</section>
+<section id="render-y-revisión-visual" class="level2">
+<h2 class="anchored" data-anchor-id="render-y-revisión-visual">Render y revisión visual</h2>
+<p>Comando desde la raíz del repositorio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render clases/11_anova/Clase_11_ANOVA_2026.qmd <span class="at">--no-cache</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Render final: <strong>código 0</strong>, sin errores. Salida <code>_site/clases/11_anova/index.html</code>. Persistió el aviso no bloqueante preexistente de renv sobre paquetes del lockfile no instalados; R y Quarto completaron correctamente el proceso.</p>
+<ul>
+<li>Chrome local, viewport <strong>1280 × 720</strong>, fuentes y MathJax SVG locales cargados.</li>
+<li>Revisión de las <strong>37 diapositivas y los 76 estados</strong> (estado inicial y todos los pasos de fragments). Inspección de capturas completas en láminas de contacto y ampliaciones de ecuaciones/gráficos críticos. Se verificó también la reversibilidad de los fragments.</li>
+<li>La primera revisión detectó un glifo acentuado defectuoso en D15, etiquetas juntas y cola muy pequeña en D25, y una regla CSS que partía H0 en el cierre D37. Se corrigieron; se ordenaron además los paneles de D24 de menor a mayor separación.</li>
+<li>Segunda revisión de los seis estados de D15, D24, D25 y D37 tras el render definitivo: resultados satisfactorios. Las demás diapositivas no cambiaron.</li>
+<li>Sin desbordes fuera de pantalla o sobre el pie; sin superposiciones finales, fórmulas incompletas, errores de MathJax, imágenes faltantes ni errores JavaScript.</li>
+<li>Tabla conceptual y numérica legibles; ecuaciones y gráficos grandes. La cola del p-valor se aprecia en la ampliación. Las notas evitan cargar el contenido proyectado.</li>
+<li>Evidencia temporal de revisión: <code>/tmp/eyde-qa11/</code> y <code>/tmp/eyde-qa11-fixed/</code>. Son capturas de trabajo, no recursos necesarios para la presentación.</li>
+</ul>
+</section>
+<section id="archivos-de-entrega" class="level2">
+<h2 class="anchored" data-anchor-id="archivos-de-entrega">Archivos de entrega</h2>
+<ul>
+<li><code>Clase_11_ANOVA_2026.qmd</code>: 37 diapositivas y notas.</li>
+<li><code>estilos.css</code>: estilos exclusivamente locales.</li>
+<li><code>analisis.R</code>: generación reproducible, ocho figuras, resultados y verificaciones.</li>
+<li><code>datos_tomate.csv</code>, <code>resultados_anova.csv</code>, <code>verificacion_numerica.txt</code>.</li>
+<li><code>figuras/</code>: ocho gráficos locales PNG generados desde R.</li>
+<li><code>FUENTES.md</code> y este archivo.</li>
+</ul>
+<p>Los recursos compartidos se referencian tal como en las clases recientes. La salida HTML y sus dependencias de Quarto se generan en <code>_site</code>, ignorado por Git.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

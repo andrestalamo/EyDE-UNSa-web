@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <meta name="author" content="Andrés Tálamo">
+  <title>Estadística y Diseño Experimental — EyDE – Análisis de la Varianza</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-edb892b9678fa0e66886f2d9c0410fcc.css">
+  <link rel="stylesheet" href="../../css/components/inference-shared.css">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="../../css/components/home-link.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["TeX"],
+      webFont: "TeX"
+    }
+  });
+  </script>
+  <script>
+  (function useMathJaxSvg() {
+    function switchRenderer() {
+      if (!window.MathJax || !MathJax.Hub || !MathJax.Ajax) {
+        window.setTimeout(switchRenderer, 50);
+        return;
+      }
+      MathJax.Hub.Queue(
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/config.js"],
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/jax.js"],
+        ["setRenderer", MathJax.Hub, "SVG"],
+        ["Rerender", MathJax.Hub]
+      );
+    }
+    switchRenderer();
+  })();
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Análisis de la Varianza</h1>
+  <p class="subtitle">ANOVA</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Andrés Tálamo 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:andrestalamo@gmail.com">andrestalamo@gmail.com</a>
+</div>
+</div>
+</div>
+
+  <p class="date">7 de octubre de 2026</p>
+</section>
+<section id="hasta-ahora-dos-medias" class="slide level2 an center">
+<h2>Hasta ahora: dos medias</h2>
+<div class="an-two-means"><div><span class="an-dot"></span><span class="math inline">\(\mu_1\)</span><p>Tratamiento 1</p></div><strong>↔</strong><div><span class="an-dot"></span><span class="math inline">\(\mu_2\)</span><p>Tratamiento 2</p></div></div><div class="an-eq"><span class="math inline">\(H_0:\mu_1=\mu_2\)</span></div><p class="an-center an-key">¿Difieren las medias? → <strong>prueba t</strong></p>
+<aside class="notes">
+<p>Recordatorio de Clase 06. No repetir la prueba t; la elección de su versión depende del diseño y condiciones del análisis. Hoy extendemos la pregunta a varias medias.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tres-poblaciones-tres-medias" class="slide level2 an an-pop-slide center">
+<h2>Tres poblaciones, tres medias</h2>
+<img class="an-chart an-pop-chart" src="figuras/poblaciones.png" alt="poblaciones"><p class="an-note an-center">Poblaciones hipotéticas de biomasa bajo cada sustrato.</p><div class="fragment" data-fragment-index="0"><p class="an-key">No podemos observar completamente las tres poblaciones.</p><p class="an-key"><strong>Experimento DCA hipotético:</strong> 21 macetas, 7 por sustrato.<br>Variable de respuesta: biomasa seca a los 42 días.</p></div>
+<aside class="notes">
+<p>Las curvas son ilustrativas, no distribuciones estimadas de las 21 observaciones. μ_i es poblacional; Y barra i es muestral. Cada población virtual corresponde a respuestas bajo un nivel de Sustrato. Este DCA es una variante hipotética para introducir ANOVA, distinta del DBCA original de Clase 10. No se eliminan bloques de aquel experimento. Factor=Sustrato; sus tres niveles corresponden aquí a tres tratamientos, sin hacer ambos conceptos universalmente sinónimos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="pruebas-t" class="slide level2 an an-network-slide center">
+<h2>¿3 pruebas t…?</h2>
+<svg class="an-network" viewbox="0 0 1000 350" role="img" aria-label="Tres medias unidas por tres comparaciones por pares"><g fill="none" stroke="#8a5a3b" stroke-width="6"><path class="fragment" data-fragment-index="0" d="M260 75 L740 75"></path><path class="fragment" data-fragment-index="1" d="M260 75 L500 275"></path><path class="fragment" data-fragment-index="2" d="M740 75 L500 275"></path></g><g fill="#2d6a4f"><circle cx="260" cy="75" r="18"></circle><circle cx="740" cy="75" r="18"></circle><circle cx="500" cy="275" r="18"></circle></g><g fill="#173c2b" font-size="34" text-anchor="middle"><text x="260" y="40">Media 1</text><text x="740" y="40">Media 2</text><text x="500" y="330">Media 3</text></g></svg><div class="fragment" data-fragment-index="3"><p class="an-key an-center"><strong>3 pruebas</strong> para una pregunta global.<br>Cada prueba tiene su riesgo de error Tipo I.</p></div>
+<aside class="notes">
+<p>Preguntar cuántos pares aparecen. Los números corresponden a los tres sustratos. No desarrollar correcciones. Las pruebas que comparten grupos no son independientes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="el-riesgo-de-algún-error-tipo-i" class="slide level2 an center">
+<h2>El riesgo de algún error Tipo I</h2>
+<p class="an-kicker">Tres pruebas, cada una con α = 0,05</p><div class="an-risk">5 % <span>→</span> ≈ 14 %</div><div class="an-eq"><span class="math inline">\(1-(1-0{,}05)^3=0{,}142625\approx14{,}3\%\)</span></div><p class="an-note">Las tres comparaciones comparten grupos y no son independientes; 14,3 % ilustra el problema, no es el valor exacto para este caso.</p>
+<aside class="notes">
+<p>La fórmula da la probabilidad de al menos un rechazo falso en tres pruebas independientes bajo la nula global. Aquí las comparaciones comparten muestras: se presenta como ilustración de la inflación, no como FWER exacto. No desarrollar correcciones ni pruebas múltiples.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="una-prueba-global" class="slide level2 an center">
+<h2>Una prueba global</h2>
+<p class="an-kicker">ANOVA · Una prueba global</p><div class="an-eq"><span class="math inline">\(H_0:\mu_1=\mu_2=\mu_3\)</span></div><p class="an-key an-center"><span class="math inline">\(H_1\)</span>: no todas las medias son iguales.</p><div class="fragment" data-fragment-index="0"><p class="an-center">Si rechazamos <span class="math inline">\(H_0\)</span>, queda pendiente saber <strong>cuáles</strong> difieren.</p></div>
+<aside class="notes">
+<p>H1 significa al menos una media diferente de otra, no que todas sean diferentes. Las medias son poblacionales; observar diferencias muestrales no basta para rechazar.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="una-aparente-contradicción" class="slide level2 an an-centered-question center">
+<h2>Una aparente contradicción</h2>
+<div class="an-big">Queremos comparar <strong>MEDIAS</strong>…</div><div class="fragment " data-fragment-index="0"><div class="an-big">…¿por qué se llama<br><strong>ANÁLISIS DE LA VARIANZA?</strong></div></div>
+<aside class="notes">
+<p>Dejar tiempo para respuestas antes de mostrar la segunda frase. Esta pregunta articula la clase.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="miremos-los-datos" class="slide level2 an an-graph an-look center">
+<h2>Miremos los datos</h2>
+<img class="an-chart" src="figuras/datos.png" alt="21 macetas: puntos individuales y medias por sustrato"><p class="an-question">¿Diferencias grandes…</p><div class="fragment" data-fragment-index="0"><p class="an-answer">…respecto de qué?</p></div>
+<aside class="notes">
+<p>No anticipar F ni p.&nbsp;La escala es biomasa seca (g) a los 42 días, la misma definición operacional que en Clase 10. Datos nuevos para la variante DCA.</p>
+<p>Datos simulados; cada punto es una UE y los segmentos horizontales son medias. Esta aclaración se explica oralmente para reservar espacio al gráfico.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="las-mismas-medias-distinta-variabilidad" class="slide level2 an an-graph center">
+<h2>Las mismas medias, distinta variabilidad</h2>
+<div class="an-layers "><img class="an-chart" src="figuras/panel-medias.png" alt="panel medias"><div class="fragment" data-fragment-index="0"><img class="an-chart" src="figuras/panel-puntos.png" alt="panel puntos"></div></div><p class="an-question">¿Grandes respecto de qué?</p><div class="fragment" data-fragment-index="0"><p class="an-answer">Igual separación de medias; distinta variación DENTRO.</p></div>
+<aside class="notes">
+<p>Estado inicial: sólo medias, exactamente en las mismas posiciones en ambos paneles. Primer avance: aparecen juntos puntos y etiquetas A/B. Los residuos centrados se multiplican por 1,7 y 0,45, sin cambiar medias ni tamaños. La escala es idéntica. Escenarios ilustrativos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dos-fuentes-de-variación" class="slide level2 an an-graph center">
+<h2>Dos fuentes de variación</h2>
+<img class="an-chart" src="figuras/fuentes.png" alt="Desviaciones internas y separación entre medias respecto de la media general"><div class="an-source-key"><span class="src-trat">ENTRE: separación de medias</span><span class="src-error">DENTRO: diferencias entre UE</span></div>
+<aside class="notes">
+<p>Los grupos están definidos por los niveles del factor Sustrato. Segmentos finos: desviaciones respecto de la media del tratamiento. Línea discontinua: media general. La variación entre medias también contiene fluctuación muestral; no es efecto puro.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="variación-dentro-de-los-grupos" class="slide level2 an an-pots-slide center">
+<h2>Variación dentro de los grupos</h2>
+<p class="an-kicker">Suelo + arena · 7 macetas independientes</p><div class="an-seven-pots"><div><span class="an-pot level-0" style="--plant:0.96" aria-hidden="true"><i></i><b></b></span><strong>10,8 g</strong></div><div><span class="an-pot level-0" style="--plant:1.04" aria-hidden="true"><i></i><b></b></span><strong>13,2 g</strong></div><div><span class="an-pot level-0" style="--plant:1.1233333333333333" aria-hidden="true"><i></i><b></b></span><strong>15,7 g</strong></div><div><span class="an-pot level-0" style="--plant:0.9466666666666667" aria-hidden="true"><i></i><b></b></span><strong>10,4 g</strong></div><div><span class="an-pot level-0" style="--plant:1.1066666666666665" aria-hidden="true"><i></i><b></b></span><strong>15,2 g</strong></div><div><span class="an-pot level-0" style="--plant:1.0266666666666666" aria-hidden="true"><i></i><b></b></span><strong>12,8 g</strong></div><div><span class="an-pot level-0" style="--plant:1.0566666666666666" aria-hidden="true"><i></i><b></b></span><strong>13,7 g</strong></div></div><p class="an-key an-center">Mismo tratamiento ≠ misma respuesta</p><div class="fragment" data-fragment-index="0"><p class="an-center src-error an-key">Variación entre UE con igual tratamiento<br>→ error experimental</p></div>
+<aside class="notes">
+<p>Conexión con Clase 10. Error experimental no significa equivocación ni sólo error de medición: incluye variación biológica y otras fuentes no explicadas por tratamientos. Esta equivalencia se utiliza en el DCA simple; con bloques, el modelo distingue esa fuente adicional.</p>
+<p>La altura del icono sólo sugiere variabilidad; los números debajo son las biomasas reales del conjunto simulado. No se representa una medición de altura. Cada maceta recibe independientemente su tratamiento.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="variación-entre-grupos" class="slide level2 an an-graph an-between center">
+<h2>Variación entre grupos</h2>
+<img class="an-chart" src="figuras/entre.png" alt="Medias observadas y distancias a la media general"><p class="an-key">Si el factor tiene efecto, puede manifestarse en la separación de las medias.</p><div class="fragment" data-fragment-index="0"><div class="an-null-message">Las diferencias observadas entre medias pueden deberse, al menos en parte, al azar.<br><strong>Diferencia observada ≠ efecto puro conocido.</strong></div></div>
+<aside class="notes">
+<p>Las medias muestrales no son los parámetros poblacionales. La media general se muestra como referencia discontinua. No interpretar las distancias como efectos puros conocidos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-idea-central-del-anova" class="slide level2 an center">
+<h2>La idea central del ANOVA</h2>
+<div class="an-concept-fraction"><div class="src-trat">Variación entre grupos</div><div class="src-error">Variación dentro de los grupos</div></div><p class="an-note an-center">Los grupos están definidos por los niveles del factor Sustrato.</p>
+<aside class="notes">
+<p>Imagen mental del cociente. Todavía no es F ni la división de SC brutas. Las dos fuentes se compararán mediante sus cuadrados medios. La barra pertenece a una fracción y abarca ambos términos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="un-modelo-que-explica-cada-observación" class="slide level2 an an-model-slide center">
+<h2>Un modelo que explica cada observación</h2>
+<div class="an-model"><div><span class="math inline">\(Y_{ij}\)</span><p>Respuesta<br>observada</p></div><span class="an-op">=</span><div><span class="math inline">\(\mu\)</span><p>Media<br>general</p></div><span class="an-op">+</span><div class="src-trat"><span class="math inline">\(\alpha_i\)</span><p>Efecto del i-ésimo<br>nivel del factor</p></div><span class="an-op">+</span><div class="src-error"><span class="math inline">\(\varepsilon_{ij}\)</span><p>Error aleatorio asociado<br>a la observación</p></div></div><p class="an-key an-center">La misma lógica que en regresión:<br><strong>respuesta = parte explicada por el modelo + error.</strong></p>
+<aside class="notes">
+<p>i: nivel de Sustrato; j: UE dentro del nivel. μ es media de las medias poblacionales; α_i=μ_i−μ con suma α_i=0. ε_ij es error aleatorio no observado, no el residuo ni la definición de error experimental. Después de ajustar, e_ij=Y_ij−Ŷ_ij es el residuo; en este DCA Ŷ_ij=Y barra i. ERROR EXPERIMENTAL: variación entre UE tratadas de la misma manera. La variabilidad residual permite estimarlo en el DCA. La referencia F clásica requiere las condiciones del modelo; se estudiarán en la próxima clase.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="descomponer-una-observación" class="slide level2 an an-graph an-decomp-slide center">
+<h2>Descomponer una observación</h2>
+<div class="an-layers an-decomp-layers"><img class="an-chart" src="figuras/descomposicion-0.png" alt="descomposicion 0"><div class="fragment" data-fragment-index="0"><img class="an-chart" src="figuras/descomposicion-1.png" alt="descomposicion 1"></div><div class="fragment" data-fragment-index="1"><img class="an-chart" src="figuras/descomposicion-2.png" alt="descomposicion 2"></div></div><div class="fragment" data-fragment-index="2"><div class="an-decomp-eq"><span class="math inline">\(Y_{ij}-\bar Y=(\bar Y_i-\bar Y)+(Y_{ij}-\bar Y_i)\)</span></div><p class="an-key an-center"><span class="src-total">TOTAL</span> = <span class="src-trat">ENTRE</span> + <span class="src-error">DENTRO</span></p></div>
+<aside class="notes">
+<p>La observación destacada es el máximo real del tercer sustrato. Estado inicial: puntos y media general, distancia total. Después aparecen medias de grupo y ENTRE; luego DENTRO; por último identidad. Todas las longitudes están en la escala de biomasa. TOTAL=Yij−Ybarra; ENTRE=Ybarra_i−Ybarra; DENTRO=Yij−Ybarra_i. Media general y de grupo no son parámetros. e_ij=Yij−Ŷij=Yij−Ybarra_i es el residuo ajustado; no confundirlo con ε_ij. La identidad de SC requiere sumar y anular términos cruzados, no cuadrar sin más cada identidad.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cómo-cuantificamos-esas-fuentes-de-variación" class="slide level2 an center">
+<h2>¿Cómo cuantificamos esas fuentes de variación?</h2>
+<p class="an-key an-center">Las desviaciones pueden ser positivas o negativas.</p><div class="an-eq"><span class="math inline">\((-2)+(-1)+0+1+2=0\)</span></div><div class="fragment" data-fragment-index="0"><div class="an-eq"><span class="math inline">\((-2)^2+(-1)^2+0^2+1^2+2^2=10\)</span></div><p class="an-center">Las elevamos al cuadrado y las sumamos.</p></div><div class="fragment" data-fragment-index="1"><div class="an-eq"><span class="math inline">\(SC_{Total}=SC_{Sustrato}+SC_{Error}\)</span></div></div>
+<aside class="notes">
+<p>Ejemplo aritmético ilustrativo, no otra muestra de tomate. Las sumas de cuadrados cuantifican magnitud sin cancelación por signos. Sus unidades son g². La partición es una propiedad del ajuste de medias de grupo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="las-distancias-se-convierten-en-sc" class="slide level2 an an-sc-slide center">
+<h2>Las distancias se convierten en SC</h2>
+<div class="an-sc-stages"><div class="fragment fade-out" data-fragment-index="0"><img class="an-chart" src="figuras/sc-segmentos-total.png" alt="sc segmentos total"><p class="an-key an-center">Variación total</p><div class="an-eq an-eq-medium"><span class="math inline">\(SC_{Total}=\sum_i\sum_j(Y_{ij}-\bar Y_{\cdot\cdot})^2\)</span></div></div><div class="fragment current-visible" data-fragment-index="0"><img class="an-chart" src="figuras/sc-segmentos-error.png" alt="sc segmentos error"><p class="an-key an-center">Variación dentro de los grupos</p><div class="an-eq an-eq-medium"><span class="math inline">\(SC_{Error}=\sum_i\sum_j(Y_{ij}-\bar Y_{i\cdot})^2\)</span></div></div><div class="fragment " data-fragment-index="1"><img class="an-chart" src="figuras/sc-segmentos-sustrato.png" alt="sc segmentos sustrato"><p class="an-key an-center">Variación asociada a Sustrato</p><div class="an-eq an-eq-medium"><span class="math inline">\(SC_{Sustrato}=\sum_i n_i(\bar Y_{i\cdot}-\bar Y_{\cdot\cdot})^2\)</span></div></div></div><p class="an-note an-center">Cada distancia se eleva al cuadrado; luego sumamos.<br>Barras: medias de grupo; línea discontinua: media general.</p>
+<aside class="notes">
+<p>Los 21 puntos son exactamente los del DCA. Barras de color: medias de grupo Ybarra_i·; línea discontinua: media general Ybarra··. Se reemplaza el conjunto de segmentos en cada avance: total, dentro, entre. En Sustrato cada diferencia de medias se pondera por ni=7, no se suman sólo tres distancias sin ponderación. En este DCA, dentro de grupos refiere a UE que recibieron el mismo nivel de Sustrato. La identidad individual ya vista conecta con la partición aditiva al sumar cuadrados y anular términos cruzados.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="partición-de-la-variación" class="slide level2 an center">
+<h2>Partición de la variación</h2>
+<div class="an-eq"><span class="math inline">\(SC_{Total}=SC_{Sustrato}+SC_{Error}\)</span></div><p class="an-question an-center">¿Les resulta familiar?</p><div class="fragment" data-fragment-index="0"><p class="an-key">En regresión también particionamos la variación total en una parte explicada por el modelo y una parte residual.</p><div class="an-eq"><span class="math inline">\(SC_{Total}=SC_{Modelo}+SC_{Residual}\)</span></div></div>
+<p class="an-note an-center">Clase 08 — Correlación y Regresión, diap. 33 y 36.</p>
+<aside class="notes">
+<p>Referencias verificadas en QMD y HTML reales de Clase 08, contando la portada: D33 «Observado, ajustado o predicho y residuo»; D36 «Variabilidad de la respuesta». Observado = ajustado + residuo después del ajuste; no confundir residuo con ε del modelo poblacional. SC_Total=Σ(Yij−Ybarra)²; SC_Trat=Σni(Ybarra_i−Ybarra)²; SC_Error=Σ(Yij−Ybarra_i)². Aquí ni=7. Las desviaciones internas suman cero y anulan el término cruzado. Fuentes aditivas en esta partición; no decir que la causalidad se deduce de una partición algebraica.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="podemos-comparar-directamente-las-sc" class="slide level2 an center">
+<h2>¿Podemos comparar directamente las SC?</h2>
+<p class="an-research-question">Las fuentes acumulan cantidades diferentes de información independiente.</p><div class="fragment " data-fragment-index="0"><p class="an-answer">Formalmente, tienen <strong>distintos grados de libertad</strong>.</p></div><p class="an-note">DCA: 3 grupos · 21 observaciones</p>
+<aside class="notes">
+<p>No son cantidades directamente comparables de variabilidad porque acumulan información independiente con distintas dimensiones. La siguiente lámina concreta los gl sin desarrollar una teoría general.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="los-grados-de-libertad-del-ejemplo" class="slide level2 an an-gl-slide center">
+<h2>Los grados de libertad del ejemplo</h2>
+<div class="an-gl-layout">
+<table class="an-table caption-top">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Fuente de variación</th>
+<th data-quarto-table-cell-role="th">gl</th>
+</tr>
+<tr class="even">
+<td>Sustrato</td>
+<td><span class="math inline">\(k-1=3-1=2\)</span></td>
+</tr>
+<tr class="odd">
+<td>Error</td>
+<td><span class="math inline">\(n-k=21-3=18\)</span></td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td><span class="math inline">\(n-1=21-1=20\)</span></td>
+</tr>
+</tbody>
+</table>
+<div><p class="an-key">7 UE por grupo → 6 gl</p><p class="an-answer">3 × 6 = 18 gl de Error</p><p class="an-note">k = 3 grupos / niveles<br>n = 21 observaciones</p></div></div>
+<aside class="notes">
+<p>Dentro de cada grupo, las siete desviaciones suman cero: con seis conocidas, la séptima queda determinada. Las k desviaciones de medias de grupo respecto de la media general cumplen una restricción (ponderada si tamaños distintos) y tienen k−1 gl. No son meramente correcciones de tamaño.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sc-diferentes-no-bastan-para-comparar" class="slide level2 an center">
+<h2>SC diferentes no bastan para comparar</h2>
+<div class="an-duo"><div class="an-eq "><span class="math inline">\(SC_{Sustrato}=\text{87,25}\)</span></div><div class="an-eq "><span class="math inline">\(SC_{Error}=\text{124,82}\)</span></div></div><p class="an-key an-center">No las comparemos como si acumularan la misma información.</p><div class="fragment " data-fragment-index="0"><p class="an-key">Recordemos la varianza muestral:</p><div class="an-eq "><span class="math inline">\(S^2=\frac{\sum(X_i-\bar X)^2}{n-1}=\frac{SC}{gl}\)</span></div></div>
+<aside class="notes">
+<p>Se mantienen SC=87,2495 y 124,8171 del ejemplo; el mayor valor de SC Error no responde todavía la pregunta por el efecto. La varianza muestral motiva dividir por gl.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cuadrados-medios" class="slide level2 an center">
+<h2>Cuadrados medios</h2>
+<div class="an-eq "><span class="math inline">\(CM=\frac{SC}{gl}\)</span></div><p class="an-key an-center">Una cantidad tipo-varianza: la SC ajustada por sus grados de libertad.</p><div class="fragment " data-fragment-index="0"><div class="an-duo"><div class="an-eq "><span class="math inline">\(CM_{Sustrato}=\frac{SC_{Sustrato}}{k-1}\)</span></div><div class="an-eq "><span class="math inline">\(CM_{Error}=\frac{SC_{Error}}{n-k}\)</span></div></div></div>
+<aside class="notes">
+<p>No afirmar que todo CM es una varianza muestral. Tiene unidades de respuesta al cuadrado. Todavía no se muestran CM calculados ni F observado. La siguiente lámina interpreta CM Error.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-representa-cm-error" class="slide level2 an an-error-slide center">
+<h2>¿Qué representa CM Error?</h2>
+<div class="an-error-demo"><div><p class="an-kicker">Suelo + compost</p><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><p class="an-note">4 macetas ilustrativas</p></div><img class="an-chart" src="figuras/error-cuatro.png" alt="error cuatro"></div><p class="an-question">Mismo nivel del factor, respuestas diferentes.</p><p class="an-key">Esta variación entre UE tratadas de la misma manera permite estimar el error experimental.</p><div class="an-eq an-eq-medium"><span class="math inline">\(CM_{Error}=\frac{SC_{Error}}{gl_{Error}}\)</span></div>
+<aside class="notes">
+<p>Se ilustran cuatro UE del nivel compost, pero el conjunto real sigue siendo n=21, siete por nivel. CM_Error combina la variación residual de los tres niveles. Replicar permite estimar el error experimental; no lo reduce por sí mismo. ε es error aleatorio del modelo; e es residuo ajustado. No usar todavía la palabra denominador.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="el-estadístico-f" class="slide level2 an center">
+<h2>El estadístico F</h2>
+<div class="an-f-layout"><div class="an-eq"><span class="math inline">\(F=\frac{CM_{Sustrato}}{CM_{Error}}\)</span></div><div><p class="an-key src-trat">ENTRE → CM Sustrato<br><strong>NUMERADOR</strong></p><p class="an-key src-error">DENTRO → CM Error<br><strong>DENOMINADOR</strong></p></div></div><p class="an-key">No importa sólo cuánto se apartan los datos de H₀, sino cuánto representa ese apartamiento respecto de la variabilidad esperable.</p><div class="fragment" data-fragment-index="0"><p class="an-answer">Como todo estadístico de prueba, F tiene una distribución de probabilidad bajo H₀.</p></div>
+<aside class="notes">
+<p>Formaliza el cociente conceptual. CMTrat no se define como datos menos H0; esa frase sólo recupera la lógica de contraste de Clase 06. No mostrar aún F observado. CMError referencia la variación dentro de grupos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-ocurre-bajo-h₀" class="slide level2 an an-null-slide center">
+<h2>¿Qué ocurre bajo H₀?</h2>
+<p class="an-key an-center"><span class="math inline">\(H_0:\mu_1=\mu_2=\mu_3=\mu\)</span></p><img class="an-chart an-null-pop" src="figuras/poblaciones-h0.png" alt="poblaciones h0"><div class="fragment" data-fragment-index="0"><img class="an-chart an-null-samples" src="figuras/muestras-h0.png" alt="muestras h0"><p class="an-note an-center">Medias poblacionales iguales; medias muestrales diferentes por azar.</p></div><div class="fragment" data-fragment-index="1"><p class="an-key an-center"><span class="math inline">\(CM_{Sustrato}\approx CM_{Error}\quad\Rightarrow\quad F\approx1\)</span></p></div>
+<aside class="notes">
+<p>Bajo H0, ENTRE y DENTRO reflejan la misma fuente de variación aleatoria. Formalmente E(CMTrat)=E(CMError)=σ²; no se exige igualdad de los CM observados ni F=1. La razón de esperanzas no es la esperanza de la razón. F puede ser menor que 1; F&gt;1 no implica significación y 1 no es un umbral universal. Estas muestras son ilustrativas, generadas con otra semilla bajo medias iguales; no son el DCA ni el DBCA que se analizarán.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="razonar-sobre-f" class="slide level2 an an-graph an-reason-slide center">
+<h2>Razonar sobre F</h2>
+<div class="an-layers "><img class="an-chart" src="figuras/panel-medias.png" alt="panel medias"><div class="fragment" data-fragment-index="0"><img class="an-chart" src="figuras/panel-puntos.png" alt="panel puntos"></div></div><div class="an-question-stages"><p class="an-key">¿En cuál hay mayor variabilidad ENTRE? → Igual en ambos.</p><div class="fragment" data-fragment-index="0"><p class="an-key">¿En cuál hay mayor variabilidad DENTRO?</p></div><div class="fragment" data-fragment-index="1"><p class="an-key"><span class="math inline">\(F=\frac{CM_{Sustrato}}{CM_{Error}}\)</span>　¿En cuál esperamos un F mayor?</p></div></div>
+<aside class="notes">
+<p>Mismos paneles que D9, mismas medias, escala y tamaños. Primer avance: puntos y etiquetas simultáneos. Segundo: cociente. A tiene más dispersión; B menor denominador y mismo numerador, por lo que F es mayor en B. No solicitar cálculo visual exacto. Recordar F&lt;1 posible; F&gt;1 no basta para rechazar.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-estructura-de-la-tabla-anova" class="slide level2 an an-table-slide center">
+<h2>La estructura de la tabla ANOVA</h2>
+<table class="an-table an-theory-table caption-top">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Fuente de variación</th>
+<th data-quarto-table-cell-role="th">gl</th>
+<th data-quarto-table-cell-role="th">SC</th>
+<th data-quarto-table-cell-role="th">CM</th>
+<th data-quarto-table-cell-role="th">F</th>
+</tr>
+<tr class="even">
+<td>Sustrato</td>
+<td><span class="math inline">\(k-1\)</span></td>
+<td><span class="math inline">\(SC_{Sustrato}\)</span></td>
+<td><span class="math inline">\(\frac{SC_{Sustrato}}{k-1}\)</span></td>
+<td><span class="math inline">\(\frac{CM_{Sustrato}}{CM_{Error}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Error</td>
+<td><span class="math inline">\(n-k\)</span></td>
+<td><span class="math inline">\(SC_{Error}\)</span></td>
+<td><span class="math inline">\(\frac{SC_{Error}}{n-k}\)</span></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td><span class="math inline">\(n-1\)</span></td>
+<td><span class="math inline">\(SC_{Total}\)</span></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p class="an-note">k = número de grupos / niveles del factor · n = total de observaciones</p>
+<aside class="notes">
+<p>Tabla teórica antes de la aplicación del procedimiento. No hay columna p ni resultados numéricos. No se calculan CM Total ni F Error/Total para esta prueba.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-pregunta-antes-del-diseño" class="slide level2 an center">
+<h2>La pregunta antes del diseño</h2>
+<p class="an-research-question">¿Difiere la biomasa seca media a los 42 días entre plantines de tomate cultivados con distintos tipos de sustrato?</p><div class="fragment " data-fragment-index="0"><p class="an-question">¿Cuál es la población de interés?</p></div><div class="fragment " data-fragment-index="1"><p class="an-key">Queremos comparar las distribuciones de biomasa seca que obtendríamos en plantines de tomate bajo cada uno de los tres sustratos, en las condiciones definidas por el experimento.</p></div>
+<aside class="notes">
+<p>Una población objetivo de UE bajo condiciones definidas y tres distribuciones potenciales de respuesta bajo tratamientos. No afirmar tres poblaciones biológicas independientes. μ1, μ2, μ3 son medias de esas respuestas potenciales. Este ejemplo sigue siendo la variante hipotética DCA.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reconstruimos-el-experimento" class="slide level2 an an-allocation-slide center">
+<h2>Reconstruimos el experimento</h2>
+<p class="an-key">21 UE razonablemente homogéneas respecto de las fuentes de variación relevantes</p><div class="an-allocation"><div class="an-ue-grid"><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div><div><span class="an-pot level-neutral" aria-hidden="true"><i></i><b></b></span><span class="an-level-number"></span></div></div><div class="fragment " data-fragment-index="1"><div class="an-ue-grid"><div><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">3</span></div><div><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">1</span></div><div><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">2</span></div><div><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">3</span></div><div><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">3</span></div><div><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">2</span></div><div><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">3</span></div><div><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">2</span></div><div><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">2</span></div><div><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">2</span></div><div><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">2</span></div><div><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">3</span></div><div><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">3</span></div><div><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">1</span></div><div><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">1</span></div><div><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">1</span></div><div><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">1</span></div><div><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">1</span></div><div><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">3</span></div><div><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">1</span></div><div><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-level-number">2</span></div></div></div></div><div class="fragment " data-fragment-index="0"><p class="an-key"><strong>Factor:</strong> tipo de sustrato</p><div class="an-allocation-key"><span>1 · Suelo + arena</span><span>2 · Suelo + compost</span><span>3 · Sustrato comercial</span></div></div><div class="fragment " data-fragment-index="1"><p class="an-key"><strong>Aleatorización irrestricta</strong> de los tres tratamientos entre las 21 UE.</p></div><div class="fragment " data-fragment-index="2"><p class="an-key"><strong>7 UE por nivel del factor</strong></p></div><div class="fragment " data-fragment-index="3"><p class="an-answer">Diseño completamente aleatorizado (DCA)</p></div>
+<aside class="notes">
+<p>Primero se ven las 21 macetas neutras, sin tratamiento. Se presentan factor y niveles. Después se revela la asignación completa guardada en datos_tomate.csv, ordenada por posición; no se sortea nuevamente. Los números 1/2/3 identifican los niveles además del color. Aleatorización completa con conteos fijados de siete por nivel, sin restricciones por bloques; la cuadrícula es una disposición visual de posiciones, no bloques. Sólo al final se nombra DCA. A continuación se retoma el procedimiento de hipótesis aprobado.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cada-ue-aporta-una-medición" class="slide level2 an an-measurement-slide center">
+<h2>Cada UE aporta una medición</h2>
+<p class="an-key">Después de 42 días, medimos la biomasa seca de cada plantín.</p><div class="an-measure-grid"><div data-ue="UE18" data-biomasa="20"><b class="an-ue-id">UE 18</b><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">20,0 g</strong></div><div data-ue="UE04" data-biomasa="10.4"><b class="an-ue-id">UE 4</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">10,4 g</strong></div><div data-ue="UE13" data-biomasa="13.3"><b class="an-ue-id">UE 13</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">13,3 g</strong></div><div data-ue="UE17" data-biomasa="18.2"><b class="an-ue-id">UE 17</b><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">18,2 g</strong></div><div data-ue="UE16" data-biomasa="14.7"><b class="an-ue-id">UE 16</b><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">14,7 g</strong></div><div data-ue="UE11" data-biomasa="18.8"><b class="an-ue-id">UE 11</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">18,8 g</strong></div><div data-ue="UE20" data-biomasa="15"><b class="an-ue-id">UE 20</b><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">15,0 g</strong></div><div data-ue="UE14" data-biomasa="14.5"><b class="an-ue-id">UE 14</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">14,5 g</strong></div><div data-ue="UE10" data-biomasa="17.5"><b class="an-ue-id">UE 10</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">17,5 g</strong></div><div data-ue="UE12" data-biomasa="12.1"><b class="an-ue-id">UE 12</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">12,1 g</strong></div><div data-ue="UE08" data-biomasa="18.2"><b class="an-ue-id">UE 8</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">18,2 g</strong></div><div data-ue="UE15" data-biomasa="19.9"><b class="an-ue-id">UE 15</b><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">19,9 g</strong></div><div data-ue="UE19" data-biomasa="22.4"><b class="an-ue-id">UE 19</b><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">22,4 g</strong></div><div data-ue="UE02" data-biomasa="13.2"><b class="an-ue-id">UE 2</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">13,2 g</strong></div><div data-ue="UE05" data-biomasa="15.2"><b class="an-ue-id">UE 5</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">15,2 g</strong></div><div data-ue="UE03" data-biomasa="15.7"><b class="an-ue-id">UE 3</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">15,7 g</strong></div><div data-ue="UE01" data-biomasa="10.8"><b class="an-ue-id">UE 1</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">10,8 g</strong></div><div data-ue="UE06" data-biomasa="12.8"><b class="an-ue-id">UE 6</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">12,8 g</strong></div><div data-ue="UE21" data-biomasa="16.4"><b class="an-ue-id">UE 21</b><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">16,4 g</strong></div><div data-ue="UE07" data-biomasa="13.7"><b class="an-ue-id">UE 7</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">13,7 g</strong></div><div data-ue="UE09" data-biomasa="12"><b class="an-ue-id">UE 9</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><strong class="fragment" data-fragment-index="0">12,0 g</strong></div></div><p class="an-note an-center">Cada UE → una medición → una observación</p>
+<aside class="notes">
+<p>Los valores se extraen de los mismos objetos leídos/generados por el análisis existente. El orden en las UE usa la posición de asignación guardada; no se sortean datos nuevos. Un solo avance revela las 21 biomasas. Las etiquetas UE permiten seguir cada observación hasta las tablas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dca-los-datos-en-formato-ancho" class="slide level2 an an-wide-slide center">
+<h2>DCA: los datos en formato ancho</h2>
+<table class="an-data-table caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Réplica</th>
+<th data-quarto-table-cell-role="th">Suelo + arena</th>
+<th data-quarto-table-cell-role="th">Suelo + compost</th>
+<th data-quarto-table-cell-role="th">Sustrato comercial</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>10,8</td>
+<td>18,2</td>
+<td>19,9</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>13,2</td>
+<td>12,0</td>
+<td>14,7</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>15,7</td>
+<td>17,5</td>
+<td>18,2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>10,4</td>
+<td>18,8</td>
+<td>20,0</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>15,2</td>
+<td>12,1</td>
+<td>22,4</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>12,8</td>
+<td>13,3</td>
+<td>15,0</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>13,7</td>
+<td>14,5</td>
+<td>16,4</td>
+</tr>
+</tbody>
+</table>
+<p class="an-note">Biomasa seca (g) a los 42 días</p><p class="an-key">Las filas NO representan bloques ni pares: «Réplica 1» de un sustrato no está relacionada con «Réplica 1» de otro.</p>
+<aside class="notes">
+<p>Valores íntegros del CSV. En DCA la réplica es sólo un índice de presentación dentro de cada nivel. En DBCA cada fila conserva Mesada y sí tiene significado experimental.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dca-una-fila-por-observación" class="slide level2 an an-long-slide center">
+<h2>DCA: una fila por observación</h2>
+<div class="an-data-scroll" tabindex="0" role="region" aria-label="Base completa: 21 observaciones, desplazamiento vertical" onwheel="event.stopPropagation()" onkeydown="event.stopPropagation()">
+<table class="an-data-table caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">UE</th>
+<th data-quarto-table-cell-role="th">Sustrato</th>
+<th data-quarto-table-cell-role="th">Biomasa seca<br>
+(g)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UE 1</td>
+<td>Suelo + arena</td>
+<td>10,8</td>
+</tr>
+<tr class="even">
+<td>UE 2</td>
+<td>Suelo + arena</td>
+<td>13,2</td>
+</tr>
+<tr class="odd">
+<td>UE 3</td>
+<td>Suelo + arena</td>
+<td>15,7</td>
+</tr>
+<tr class="even">
+<td>UE 4</td>
+<td>Suelo + arena</td>
+<td>10,4</td>
+</tr>
+<tr class="odd">
+<td>UE 5</td>
+<td>Suelo + arena</td>
+<td>15,2</td>
+</tr>
+<tr class="even">
+<td>UE 6</td>
+<td>Suelo + arena</td>
+<td>12,8</td>
+</tr>
+<tr class="odd">
+<td>UE 7</td>
+<td>Suelo + arena</td>
+<td>13,7</td>
+</tr>
+<tr class="even">
+<td>UE 8</td>
+<td>Suelo + compost</td>
+<td>18,2</td>
+</tr>
+<tr class="odd">
+<td>UE 9</td>
+<td>Suelo + compost</td>
+<td>12,0</td>
+</tr>
+<tr class="even">
+<td>UE 10</td>
+<td>Suelo + compost</td>
+<td>17,5</td>
+</tr>
+<tr class="odd">
+<td>UE 11</td>
+<td>Suelo + compost</td>
+<td>18,8</td>
+</tr>
+<tr class="even">
+<td>UE 12</td>
+<td>Suelo + compost</td>
+<td>12,1</td>
+</tr>
+<tr class="odd">
+<td>UE 13</td>
+<td>Suelo + compost</td>
+<td>13,3</td>
+</tr>
+<tr class="even">
+<td>UE 14</td>
+<td>Suelo + compost</td>
+<td>14,5</td>
+</tr>
+<tr class="odd">
+<td>UE 15</td>
+<td>Sustrato comercial</td>
+<td>19,9</td>
+</tr>
+<tr class="even">
+<td>UE 16</td>
+<td>Sustrato comercial</td>
+<td>14,7</td>
+</tr>
+<tr class="odd">
+<td>UE 17</td>
+<td>Sustrato comercial</td>
+<td>18,2</td>
+</tr>
+<tr class="even">
+<td>UE 18</td>
+<td>Sustrato comercial</td>
+<td>20,0</td>
+</tr>
+<tr class="odd">
+<td>UE 19</td>
+<td>Sustrato comercial</td>
+<td>22,4</td>
+</tr>
+<tr class="even">
+<td>UE 20</td>
+<td>Sustrato comercial</td>
+<td>15,0</td>
+</tr>
+<tr class="odd">
+<td>UE 21</td>
+<td>Sustrato comercial</td>
+<td>16,4</td>
+</tr>
+</tbody>
+</table>
+</div><p class="an-scroll-hint">21 observaciones · desplazá la tabla para ver todas las filas ↕</p><p class="an-key an-center"><strong>Una fila = una UE = una observación</strong></p><p class="an-note">Formato para analizar los datos en R y otros programas estadísticos.</p>
+<aside class="notes">
+<p>La tabla larga contiene las 21 filas completas, repartidas en dos columnas visuales para legibilidad: primeras 11 y luego 10. No son dos variables adicionales ni tablas relacionadas; es la continuación de la misma base. Biomasa seca a los 42 días, en g. IDs, niveles, mesada cuando corresponde y biomasas contrastados con los CSV.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="hipótesis-y-nivel-de-significación" class="slide level2 an center">
+<h2>Hipótesis y nivel de significación</h2>
+<p class="an-step">Paso 1 · Plantear H₀ y H₁</p><div class="an-eq"><span class="math inline">\(H_0:\mu_1=\mu_2=\mu_3\)</span></div><p class="an-key an-center">La biomasa seca media de los plantines de tomate es igual para los tres tipos de sustrato.</p><p class="an-key an-center">H₁: al menos una μᵢ es diferente.</p><div class="fragment" data-fragment-index="0"><p class="an-step">Paso 2 · Fijar el nivel de significación α</p><div class="an-eq"><span class="math inline">\(\alpha=0{,}05\)</span></div></div>
+<aside class="notes">
+<p>μi es la biomasa seca media poblacional a los 42 días bajo el nivel i de Sustrato. H1 no dice que todas difieran. Fijar α antes de observar resultados.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="estadístico-y-criterio-de-decisión" class="slide level2 an center">
+<h2>Estadístico y criterio de decisión</h2>
+<p class="an-step">Paso 3 · Definir el estadístico y su distribución</p><div class="an-eq"><span class="math inline">\(F=\frac{CM_{Sustrato}}{CM_{Error}}\quad;\quad F\sim F_{2,18}\text{ bajo }H_0\)</span></div><p class="an-note an-center">gl₁ = 3 − 1 = 2　·　gl₂ = 21 − 3 = 18</p><div class="fragment" data-fragment-index="0"><p class="an-step">Paso 4 · Establecer el criterio de decisión</p><p class="an-key">Rechazar H₀ si valor-p &lt; α = 0,05.<br>De lo contrario, no rechazar H₀.</p></div>
+<aside class="notes">
+<p>Denominaciones y orden tomados de Clase 06. La distribución se define antes de calcular el F observado. La referencia exacta supone el modelo clásico; se estudiarán condiciones en Supuestos. La igualdad p=α tiene probabilidad cero con estadístico continuo; se conserva criterio p&lt;α de Clase 06.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="volvamos-a-los-datos" class="slide level2 an an-graph an-data-step center">
+<h2>Volvamos a los datos</h2>
+<p class="an-step">Paso 5 · Realizar los cálculos necesarios</p><img class="an-chart" src="figuras/datos.png" alt="datos"><p class="an-key">¿Las medias muestrales parecen diferir? ¿Hay variabilidad dentro de cada tratamiento?</p><div class="fragment" data-fragment-index="0"><p class="an-answer">¿Son grandes las diferencias en relación con esa variabilidad?<br>Para responderlo, calculamos F.</p></div>
+<aside class="notes">
+<p>Preguntar grandes o pequeñas respecto de la variabilidad, sin exigir estimar F a ojo. Los segmentos son medias, no intervalos. Datos simulados originales, 21 observaciones.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tabla-anova-del-dca" class="slide level2 an an-table-slide an-build-slide center">
+<h2>Tabla ANOVA del DCA</h2>
+<p class="an-step">Paso 5 · Realizar los cálculos necesarios</p>
+<table class="an-table an-build-table caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Fuente de variación</th>
+<th data-quarto-table-cell-role="th">gl</th>
+<th data-quarto-table-cell-role="th">SC</th>
+<th data-quarto-table-cell-role="th">CM</th>
+<th class="an-goal-col" data-quarto-table-cell-role="th">F</th>
+<th class="an-goal-col" data-quarto-table-cell-role="th">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sustrato</td>
+<td><span class="fragment" data-fragment-index="1">2</span></td>
+<td><span class="fragment" data-fragment-index="3">87,25</span></td>
+<td><span class="fragment" data-fragment-index="4">43,62</span></td>
+<td><span class="fragment" data-fragment-index="6">6,29</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td><span class="fragment" data-fragment-index="2">18</span></td>
+<td><span class="fragment" data-fragment-index="3">124,82</span></td>
+<td><span class="fragment" data-fragment-index="4">6,93</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td><span class="fragment" data-fragment-index="0">20</span></td>
+<td><span class="fragment" data-fragment-index="3">212,07</span></td>
+<td><span class="fragment" data-fragment-index="4">—</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="an-build-explainer"><div class="fragment fade-out" data-fragment-index="0"><p class="an-key an-center">Queremos llegar hasta acá: calcular <strong>F y su valor-p</strong>.</p></div><div class="fragment current-visible" data-fragment-index="0"><div class="an-eq an-eq-medium"><span class="math inline">\(gl_T=n-1=21-1=20\)</span></div></div><div class="fragment current-visible" data-fragment-index="1"><div class="an-eq an-eq-medium"><span class="math inline">\(gl_{Sustrato}=k-1=3-1=2\)</span></div></div><div class="fragment current-visible" data-fragment-index="2"><div class="an-eq an-eq-medium"><span class="math inline">\(gl_E=gl_T-gl_{Sustrato}=20-2=18\)</span></div><p class="an-note an-center">Comprobación: 3(7 − 1) = 18</p></div><div class="fragment current-visible" data-fragment-index="3"><div class="an-eq an-eq-medium"><span class="math inline">\(SC_{Total}=SC_{Sustrato}+SC_{Error}\)</span></div></div><div class="fragment current-visible" data-fragment-index="4"><div class="an-eq an-eq-medium"><span class="math inline">\(CM_{Sustrato}=\frac{SC_{Sustrato}}{2}=\text{43,62}\qquad CM_{Error}=\frac{SC_{Error}}{18}=\text{6,93}\)</span></div></div><div class="fragment current-visible" data-fragment-index="5"><p class="an-question an-center">43,62 vs 6,93<br><strong>¿Parecen similares?</strong></p></div><div class="fragment " data-fragment-index="6"><div class="an-eq an-eq-medium"><span class="math inline">\(F=\frac{CM_{Sustrato}}{CM_{Error}}=\frac{\text{43,62}}{\text{6,93}}=\text{6,29}\)</span></div><p class="an-note an-center">F cuantifica la diferencia entre los cuadrados medios.<br>El valor-p queda pendiente.</p></div></div>
+<aside class="notes">
+<p>Se construye en este orden: gl Total, gl Sustrato, gl Error, tres SC, dos CM, pausa de comparación y F. Los resultados provienen de los objetos ya validados; no se cambian datos ni redondeos internos. F y p se presentan desde el comienzo como destino, pero p se reserva para la distribución F. CM=SC/gl tiene naturaleza y dimensión de varianza: conecta con S²=SC/(n−1), sin convertir gl en una mera corrección por tamaño. Aquí Sustrato nombra la fuente concreta. F cuantifica la diferencia relativa entre CM, no una resta.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-significa-f-calculado" class="slide level2 an center">
+<h2>¿Qué significa F calculado?</h2>
+<div class="an-eq"><span class="math inline">\(F_c=\text{6,29}\)</span></div><p class="an-key an-center">El CM de Sustrato es <strong>6,29 veces</strong> el CM del Error.</p><div class="fragment" data-fragment-index="0"><p class="an-question">¿6,29 es suficientemente grande para rechazar H₀?</p><p class="an-answer">Necesitamos su distribución bajo H₀.</p></div>
+<aside class="notes">
+<p>No decir veces mayor. Recuperar paso 3: ya definimos F(2,18); ahora usaremos esa distribución para interpretar el valor obtenido. La razón no informa por sí sola sobre significación.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="f-bajo-h₀-y-el-p-valor" class="slide level2 an an-f-slide center">
+<h2>F bajo H₀ y el p-valor</h2>
+<p class="an-step">Paso 5 · Realizar los cálculos necesarios</p><p class="an-key an-center"><span class="math inline">\(F\sim F_{2,18}\text{ bajo }H_0\)</span></p><div class="an-layers an-f-layers"><img class="an-chart" src="figuras/f-dca-0.png" alt="f dca 0"><div class="fragment" data-fragment-index="0"><img class="an-chart" src="figuras/f-dca-1.png" alt="f dca 1"></div><div class="fragment" data-fragment-index="1"><img class="an-chart" src="figuras/f-dca-2.png" alt="f dca 2"></div></div><div class="fragment" data-fragment-index="1"><p class="an-key an-center"><span class="math inline">\(p=P(F_{2,18}\ge F_c\mid H_0)=\text{0,0085}\)</span></p></div>
+<aside class="notes">
+<p>La curva representa los valores de F que se obtendrían por variación aleatoria bajo H0 en repeticiones del experimento. Primer avance: línea vertical en F exacto, mostrado redondeado. Segundo: toda la cola derecha visible, integrada hasta infinito para p.&nbsp;No se usa zoom ni curva dibujada a mano. La densidad es df(x,2,18); la integral coincide con pf. La cola continúa más allá de la ventana; se informa la magnitud truncada en verificacion_numerica.txt.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="decisión-para-el-dca" class="slide level2 an center">
+<h2>Decisión para el DCA</h2>
+<p class="an-step">Paso 6 · Decidir sobre H₀</p><div class="an-eq"><span class="math inline">\(p=\text{0,0085}&lt;\alpha=0{,}05\)</span></div><p class="an-big an-center">Rechazamos H₀.</p><p class="an-key">El resultado sería poco frecuente bajo la igualdad de las tres medias poblacionales.</p>
+<aside class="notes">
+<p>p no es probabilidad de que H0 sea verdadera, ni tamaño del efecto. La decisión está condicionada al modelo y diseño. El criterio se fijó antes de los cálculos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="conclusión-del-dca" class="slide level2 an an-inference-slide center">
+<h2>Conclusión del DCA</h2>
+<p class="an-step">Paso 7 · Concluir según la pregunta</p><div class="an-inference"><div><p class="an-inference-text">Con α = 0,05, existe evidencia de un <strong>efecto del tipo de sustrato sobre la biomasa seca media</strong> de los plantines de tomate, en las condiciones definidas por este experimento.</p><div class="fragment " data-fragment-index="0"><p class="an-note">Se rechaza H₀: la media no es igual para los tres sustratos.</p></div></div><img class="an-chart" src="figuras/conclusion-dca.png" alt="conclusion dca"></div><p class="an-note">El ANOVA detecta un efecto global del Sustrato; todavía no indica entre qué niveles se encuentran las diferencias.</p>
+<aside class="notes">
+<p>La inferencia se refiere a las distribuciones de respuestas de la población objetivo bajo condiciones representadas, no sólo a las siete UE observadas. Interpretación causal apoyada en la aleatorización experimental. Respuesta: biomasa seca a los 42 días. No identifica pares.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="y-si-detectamos-una-fuente-de-heterogeneidad-en-las-ue" class="slide level2 an center">
+<h2>¿Y si detectamos una fuente de heterogeneidad en las UE?</h2>
+<p class="an-kicker">Volvemos al DBCA de la Clase 10</p><div class="an-design-bridge"><div><div class="an-benches"><div class="an-bench"><b>M1</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span></div><div class="an-bench"><b>M2</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span></div><div class="an-bench"><b>M3</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span></div><div class="an-bench"><b>M4</b><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span></div><div class="an-bench"><b>M5</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span></div><div class="an-bench"><b>M6</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span></div><div class="an-bench"><b>M7</b><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span></div></div></div><div><p class="an-key"><strong>7 mesadas</strong><br>Una UE de cada sustrato por mesada.<br>21 UE en total.</p><p class="an-key">Asignación aleatoria de los tres niveles <strong>dentro de cada mesada</strong>.</p></div></div><p class="an-note">DCA hipotético y DBCA original: dos estructuras experimentales diferentes.</p>
+<aside class="notes">
+<p>Se recupera el diseño de Clase 10, con datos docentes nuevos simulados para ese diseño. No se agregan bloques retrospectivamente al CSV DCA. El esquema muestra la asignación reproducible de posiciones del nuevo DBCA. DBCA no es superior a DCA: responde a otra estructura. La interpretación causal proviene del diseño y asignación, no de p.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cada-ue-aporta-una-medición-1" class="slide level2 an an-measurement-slide an-measurement-dbca center">
+<h2>Cada UE aporta una medición</h2>
+<p class="an-key">Después de 42 días, medimos la biomasa seca de cada plantín.</p><div class="an-measure-benches"><div class="an-measure-bench"><b>M1</b><div data-ue="DB02" data-biomasa="14.9"><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 2</span><strong class="fragment" data-fragment-index="0">14,9 g</strong></div><div data-ue="DB01" data-biomasa="12"><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 1</span><strong class="fragment" data-fragment-index="0">12,0 g</strong></div><div data-ue="DB03" data-biomasa="17.8"><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 3</span><strong class="fragment" data-fragment-index="0">17,8 g</strong></div></div><div class="an-measure-bench"><b>M2</b><div data-ue="DB04" data-biomasa="14.1"><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 4</span><strong class="fragment" data-fragment-index="0">14,1 g</strong></div><div data-ue="DB06" data-biomasa="15.6"><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 6</span><strong class="fragment" data-fragment-index="0">15,6 g</strong></div><div data-ue="DB05" data-biomasa="14.2"><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 5</span><strong class="fragment" data-fragment-index="0">14,2 g</strong></div></div><div class="an-measure-bench"><b>M3</b><div data-ue="DB07" data-biomasa="14.1"><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 7</span><strong class="fragment" data-fragment-index="0">14,1 g</strong></div><div data-ue="DB09" data-biomasa="16.5"><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 9</span><strong class="fragment" data-fragment-index="0">16,5 g</strong></div><div data-ue="DB08" data-biomasa="14.2"><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 8</span><strong class="fragment" data-fragment-index="0">14,2 g</strong></div></div><div class="an-measure-bench"><b>M4</b><div data-ue="DB10" data-biomasa="10.8"><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 10</span><strong class="fragment" data-fragment-index="0">10,8 g</strong></div><div data-ue="DB12" data-biomasa="15.2"><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 12</span><strong class="fragment" data-fragment-index="0">15,2 g</strong></div><div data-ue="DB11" data-biomasa="12.6"><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 11</span><strong class="fragment" data-fragment-index="0">12,6 g</strong></div></div><div class="an-measure-bench"><b>M5</b><div data-ue="DB14" data-biomasa="16.6"><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 14</span><strong class="fragment" data-fragment-index="0">16,6 g</strong></div><div data-ue="DB13" data-biomasa="15.9"><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 13</span><strong class="fragment" data-fragment-index="0">15,9 g</strong></div><div data-ue="DB15" data-biomasa="20"><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 15</span><strong class="fragment" data-fragment-index="0">20,0 g</strong></div></div><div class="an-measure-bench"><b>M6</b><div data-ue="DB17" data-biomasa="16.9"><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 17</span><strong class="fragment" data-fragment-index="0">16,9 g</strong></div><div data-ue="DB16" data-biomasa="14"><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 16</span><strong class="fragment" data-fragment-index="0">14,0 g</strong></div><div data-ue="DB18" data-biomasa="17.3"><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 18</span><strong class="fragment" data-fragment-index="0">17,3 g</strong></div></div><div class="an-measure-bench"><b>M7</b><div data-ue="DB20" data-biomasa="16.4"><span class="an-pot level-1" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 20</span><strong class="fragment" data-fragment-index="0">16,4 g</strong></div><div data-ue="DB19" data-biomasa="15.6"><span class="an-pot level-0" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 19</span><strong class="fragment" data-fragment-index="0">15,6 g</strong></div><div data-ue="DB21" data-biomasa="19.1"><span class="an-pot level-2" aria-hidden="true"><i></i><b></b></span><span class="an-ue-id">UE 21</span><strong class="fragment" data-fragment-index="0">19,1 g</strong></div></div></div><p class="an-note an-center">Cada UE → una medición → una observación</p>
+<aside class="notes">
+<p>Los valores se extraen de los mismos objetos leídos/generados por el análisis existente. El orden en las UE usa la posición de asignación guardada; no se sortean datos nuevos. Un solo avance revela las 21 biomasas. Las etiquetas UE permiten seguir cada observación hasta las tablas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dbca-los-datos-en-formato-ancho" class="slide level2 an an-wide-slide center">
+<h2>DBCA: los datos en formato ancho</h2>
+<table class="an-data-table caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Mesada</th>
+<th data-quarto-table-cell-role="th">Suelo + arena</th>
+<th data-quarto-table-cell-role="th">Suelo + compost</th>
+<th data-quarto-table-cell-role="th">Sustrato comercial</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M1</td>
+<td>12,0</td>
+<td>14,9</td>
+<td>17,8</td>
+</tr>
+<tr class="even">
+<td>M2</td>
+<td>14,1</td>
+<td>14,2</td>
+<td>15,6</td>
+</tr>
+<tr class="odd">
+<td>M3</td>
+<td>14,1</td>
+<td>14,2</td>
+<td>16,5</td>
+</tr>
+<tr class="even">
+<td>M4</td>
+<td>10,8</td>
+<td>12,6</td>
+<td>15,2</td>
+</tr>
+<tr class="odd">
+<td>M5</td>
+<td>15,9</td>
+<td>16,6</td>
+<td>20,0</td>
+</tr>
+<tr class="even">
+<td>M6</td>
+<td>14,0</td>
+<td>16,9</td>
+<td>17,3</td>
+</tr>
+<tr class="odd">
+<td>M7</td>
+<td>15,6</td>
+<td>16,4</td>
+<td>19,1</td>
+</tr>
+</tbody>
+</table>
+<p class="an-note">Biomasa seca (g) a los 42 días</p><p class="an-key">Las filas SÍ representan bloques: cada mesada contiene las tres UE de ese bloque.</p>
+<aside class="notes">
+<p>Valores íntegros del CSV. En DCA la réplica es sólo un índice de presentación dentro de cada nivel. En DBCA cada fila conserva Mesada y sí tiene significado experimental.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dbca-una-fila-por-observación" class="slide level2 an an-long-slide center">
+<h2>DBCA: una fila por observación</h2>
+<div class="an-data-scroll" tabindex="0" role="region" aria-label="Base completa: 21 observaciones, desplazamiento vertical" onwheel="event.stopPropagation()" onkeydown="event.stopPropagation()">
+<table class="an-data-table caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">UE</th>
+<th data-quarto-table-cell-role="th">Mesada</th>
+<th data-quarto-table-cell-role="th">Sustrato</th>
+<th data-quarto-table-cell-role="th">Biomasa seca<br>
+(g)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UE 1</td>
+<td>M1</td>
+<td>Suelo + arena</td>
+<td>12,0</td>
+</tr>
+<tr class="even">
+<td>UE 2</td>
+<td>M1</td>
+<td>Suelo + compost</td>
+<td>14,9</td>
+</tr>
+<tr class="odd">
+<td>UE 3</td>
+<td>M1</td>
+<td>Sustrato comercial</td>
+<td>17,8</td>
+</tr>
+<tr class="even">
+<td>UE 4</td>
+<td>M2</td>
+<td>Suelo + arena</td>
+<td>14,1</td>
+</tr>
+<tr class="odd">
+<td>UE 5</td>
+<td>M2</td>
+<td>Suelo + compost</td>
+<td>14,2</td>
+</tr>
+<tr class="even">
+<td>UE 6</td>
+<td>M2</td>
+<td>Sustrato comercial</td>
+<td>15,6</td>
+</tr>
+<tr class="odd">
+<td>UE 7</td>
+<td>M3</td>
+<td>Suelo + arena</td>
+<td>14,1</td>
+</tr>
+<tr class="even">
+<td>UE 8</td>
+<td>M3</td>
+<td>Suelo + compost</td>
+<td>14,2</td>
+</tr>
+<tr class="odd">
+<td>UE 9</td>
+<td>M3</td>
+<td>Sustrato comercial</td>
+<td>16,5</td>
+</tr>
+<tr class="even">
+<td>UE 10</td>
+<td>M4</td>
+<td>Suelo + arena</td>
+<td>10,8</td>
+</tr>
+<tr class="odd">
+<td>UE 11</td>
+<td>M4</td>
+<td>Suelo + compost</td>
+<td>12,6</td>
+</tr>
+<tr class="even">
+<td>UE 12</td>
+<td>M4</td>
+<td>Sustrato comercial</td>
+<td>15,2</td>
+</tr>
+<tr class="odd">
+<td>UE 13</td>
+<td>M5</td>
+<td>Suelo + arena</td>
+<td>15,9</td>
+</tr>
+<tr class="even">
+<td>UE 14</td>
+<td>M5</td>
+<td>Suelo + compost</td>
+<td>16,6</td>
+</tr>
+<tr class="odd">
+<td>UE 15</td>
+<td>M5</td>
+<td>Sustrato comercial</td>
+<td>20,0</td>
+</tr>
+<tr class="even">
+<td>UE 16</td>
+<td>M6</td>
+<td>Suelo + arena</td>
+<td>14,0</td>
+</tr>
+<tr class="odd">
+<td>UE 17</td>
+<td>M6</td>
+<td>Suelo + compost</td>
+<td>16,9</td>
+</tr>
+<tr class="even">
+<td>UE 18</td>
+<td>M6</td>
+<td>Sustrato comercial</td>
+<td>17,3</td>
+</tr>
+<tr class="odd">
+<td>UE 19</td>
+<td>M7</td>
+<td>Suelo + arena</td>
+<td>15,6</td>
+</tr>
+<tr class="even">
+<td>UE 20</td>
+<td>M7</td>
+<td>Suelo + compost</td>
+<td>16,4</td>
+</tr>
+<tr class="odd">
+<td>UE 21</td>
+<td>M7</td>
+<td>Sustrato comercial</td>
+<td>19,1</td>
+</tr>
+</tbody>
+</table>
+</div><p class="an-scroll-hint">21 observaciones · desplazá la tabla para ver todas las filas ↕</p><p class="an-key an-center"><strong>Una fila = una UE = una observación</strong></p><p class="an-note">Ahora conservamos también Mesada: forma parte del diseño y debe formar parte del análisis.</p>
+<aside class="notes">
+<p>La tabla larga contiene las 21 filas completas, repartidas en dos columnas visuales para legibilidad: primeras 11 y luego 10. No son dos variables adicionales ni tablas relacionadas; es la continuación de la misma base. Biomasa seca a los 42 días, en g. IDs, niveles, mesada cuando corresponde y biomasas contrastados con los CSV.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="en-esto-consiste-el-anova" class="slide level2 an an-pie-slide an-pie-expanded center">
+<h2>En esto consiste el ANOVA</h2>
+<p class="an-key">Particionar la variación total observada en distintas fuentes de variación.</p><div class="an-pies"><div><p class="an-kicker">DCA hipotético</p><div class="an-eq an-eq-small"><span class="math inline">\(SC_{Total}=SC_{Sustrato}+SC_{Error}\)</span></div><img class="an-chart" src="figuras/sc-dca.png" alt="SC Total dividida en Sustrato y Error"><div class="an-pie-legend"><span class="src-trat">SC Sustrato = 87,25</span><span class="src-error">SC Error = 124,82</span></div></div><div><p class="an-kicker">DBCA de las mesadas</p><div class="an-eq an-eq-small"><span class="math inline">\(SC_{Total}=SC_{Sustrato}+SC_{Mesada}+SC_{Error}\)</span></div><img class="an-chart" src="figuras/sc-dbca.png" alt="SC Total dividida en Sustrato, Mesada y Error"><div class="an-pie-legend"><span class="src-trat">SC Sustrato = 45,62</span><span class="src-block">SC Mesada = 44,98</span><span class="src-error">SC Error = 8,92</span></div></div></div><p class="an-key an-center">El diseño experimental determina qué fuentes podemos identificar y separar en el análisis.</p>
+<aside class="notes">
+<p>Las áreas representan SC, no CM. Cada círculo usa su propio dataset y escala total. No se mueve una porción del error DCA al bloque: son dos conjuntos distintos. No afirmar independencia probabilística de fuentes en términos genéricos. El ANOVA particiona la variabilidad total según el diseño.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-partición-en-el-dbca" class="slide level2 an center">
+<h2>La partición en el DBCA</h2>
+<div class="an-eq"><span class="math inline">\(SC_{Total}=SC_{Sustrato}+SC_{Mesada}+SC_{Error}\)</span></div><p class="an-key an-center">El diseño reconoció una fuente de heterogeneidad.<br>El análisis la incorpora como una fuente de variación.</p><div class="fragment" data-fragment-index="0"><p class="an-answer an-center">DBCA no es superior a DCA:<br>responde a una estructura experimental diferente.</p></div>
+<aside class="notes">
+<p>Partición aditiva del DBCA completo balanceado. Sustrato tiene gl2, Mesada gl6, Error gl12. No se exige ni se decide bloquear por un resultado significativo de Mesada.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anova-a-dos-criterios-de-clasificación" class="slide level2 an an-mixed-slide center">
+<h2>ANOVA a dos criterios de clasificación</h2>
+<div class="an-eq "><span class="math inline">\(Y_{ij}=\mu+\alpha_i+B_j+\varepsilon_{ij}\)</span></div><div class="an-mixed-defs"><p class="an-key"><span class="math inline">\(\mu\)</span>: media general</p><p class="an-key"><span class="math inline">\(\alpha_i\)</span>: efecto fijo del i-ésimo sustrato</p><p class="an-key"><span class="math inline">\(B_j\)</span>: efecto aleatorio de la j-ésima mesada</p><p class="an-key"><span class="math inline">\(\varepsilon_{ij}\)</span>: error aleatorio asociado a la observación ij</p></div><div class="fragment " data-fragment-index="0"><div class="an-mixed-types"><div><p class="an-kicker src-trat">SUSTRATO · EFECTO FIJO</p><p class="an-key">Son los tres sustratos elegidos específicamente para comparar.</p></div><div><p class="an-kicker src-block">MESADA · EFECTO ALEATORIO</p><p class="an-key">No interesan esas siete mesadas particulares, sino la variabilidad atribuible a esa fuente de heterogeneidad.</p></div></div></div>
+<p class="an-note">Convención: letras griegas para efectos fijos <span class="math inline">\((\alpha_i)\)</span>; mayúsculas latinas para aleatorios <span class="math inline">\((B_j)\)</span>.</p>
+<aside class="notes">
+<p>i identifica Sustrato; j Mesada. μ es media general y α_i efectos fijos con suma cero. B_j es variable aleatoria con media cero y varianza σ²_Mesada; estos momentos se conservan sólo en notas para priorizar la distinción conceptual en pantalla. Para las pruebas F exactas se supone normalidad de B y ε, independencia entre bloques y respecto de ε, y varianza residual común. No desarrollar estos supuestos ahora. Silvia Sühring D27, D56–59 distingue α/τ para efectos fijos y mayúsculas para aleatorios. En el DBCA completo, balanceado y aditivo, los CM y cocientes F ya calculados siguen siendo los mismos: E(CM_Error)=σ²; E(CM_Mesada)=σ²+3σ²_Mesada; bajo H0 de Sustrato, E(CM_Sustrato)=σ². aov proporciona las SC y cocientes exactos de esta descomposición balanceada; no se presenta su ajuste fijo como una estimación de componentes de varianza. No introducir interacción ni un bloque teórico de modelos mixtos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dos-preguntas-dos-pruebas" class="slide level2 an an-parallel-slide center">
+<h2>Dos preguntas, dos pruebas</h2>
+<div class="an-parallel-tests"><div><p class="an-kicker src-trat">Sustrato · efecto fijo</p><p class="an-key">¿Difieren los tres sustratos?</p><div class="an-eq an-eq-medium"><span class="math inline">\(H_0:\alpha_1=\alpha_2=\alpha_3=0\)</span></div><p class="an-key">Equivale a <span class="math inline">\(H_0:\mu_1=\mu_2=\mu_3\)</span></p><p class="an-key"><span class="math inline">\(H_A:\)</span> algún <span class="math inline">\(\alpha_i\ne0\)</span></p><p class="an-note">Interesan estos tres sustratos.</p></div><div><p class="an-kicker src-block">Mesada · efecto aleatorio</p><p class="an-key">¿La heterogeneidad entre mesadas aporta variabilidad a la respuesta?</p><div class="an-eq an-eq-medium"><span class="math inline">\(H_0:\sigma^2_{Mesada}=0\)</span></div><div class="an-eq an-eq-medium"><span class="math inline">\(H_1:\sigma^2_{Mesada}&gt;0\)</span></div></div></div><p class="an-step">Pasos 1–2 · Plantear H₀ y H₁ y fijar α = 0,05.</p><p class="an-note">Bloqueamos porque reconocimos <strong>a priori</strong> una fuente relevante de heterogeneidad.</p>
+<aside class="notes">
+<p>Se presentan en paralelo las hipótesis de Sustrato fijo y Mesada aleatoria, con referencia posterior a sus filas de la misma tabla ANOVA. Para Sustrato α_i=0 equivale a igualdad de medias con parametrización de suma cero. Para Mesada se contrasta componente de varianza cero frente a positiva; no igualdad de medias de las siete mesadas. El contraste F de Mesada usa gl (6,12) y el de Sustrato (2,12) en este DBCA completo aditivo. Los valores calculados no se muestran en esta diapositiva; se introducen en el paso 5. No decidimos bloquear por el p ni repetimos siete pasos completos para Mesada.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dbca-estadístico-y-criterio" class="slide level2 an center">
+<h2>DBCA: estadístico y criterio</h2>
+<p class="an-step">Paso 3 · Definir el estadístico y su distribución</p><div class="an-eq"><span class="math inline">\(F_{Sustrato}=\frac{CM_{Sustrato}}{CM_{Error}}\sim F_{2,12}\text{ bajo }H_0\)</span></div><p class="an-key an-center">gl₁ = 3 − 1 = 2<br>gl₂ = (3 − 1)(7 − 1) = 12</p><p class="an-step">Paso 4 · Establecer el criterio de decisión</p><p class="an-key">Rechazar H₀ si valor-p &lt; 0,05; de lo contrario, no rechazar.</p>
+<aside class="notes">
+<p>Con n=21, se estiman media general, dos efectos independientes de sustrato y seis de mesada: 21−1−2−6=12 gl residuales. No se usan los 18 gl del DCA. Referencia F condicionada al modelo aditivo y sus supuestos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tabla-anova-del-dbca" class="slide level2 an an-table-slide center">
+<h2>Tabla ANOVA del DBCA</h2>
+<p class="an-step">Paso 5 · Realizar los cálculos necesarios</p>
+<table class="an-table caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Fuente</th>
+<th data-quarto-table-cell-role="th">gl</th>
+<th data-quarto-table-cell-role="th">SC</th>
+<th data-quarto-table-cell-role="th">CM</th>
+<th data-quarto-table-cell-role="th">F</th>
+<th data-quarto-table-cell-role="th">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="src-trat odd">
+<td>Sustrato</td>
+<td>2</td>
+<td>45,62</td>
+<td>22,81</td>
+<td><span class="fragment" data-fragment-index="0">30,70</span></td>
+<td><span class="fragment" data-fragment-index="1">0,0000191</span></td>
+</tr>
+<tr class="src-block even">
+<td>Mesada</td>
+<td>6</td>
+<td>44,98</td>
+<td>7,50</td>
+<td><span class="fragment" data-fragment-index="0">10,09</span></td>
+<td><span class="fragment" data-fragment-index="1">0,0004</span></td>
+</tr>
+<tr class="src-error odd">
+<td>Error</td>
+<td>12</td>
+<td>8,92</td>
+<td>0,74</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="src-total even">
+<td>Total</td>
+<td>20</td>
+<td>99,51</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<div class="an-eq fragment" data-fragment-index="0"><span class="math inline">\(F_c=\frac{\text{22,8090}}{\text{0,7429}}=\text{30,70}\)</span></div>
+<aside class="notes">
+<p>Datos y resultados ya validados, conservados. En el DBCA completo balanceado y aditivo, la interpretación aleatoria de Mesada mantiene estos CM y las referencias F; cambia la hipótesis a σ²_Mesada=0. SC manuales y aov coinciden, cálculos sin redondeo intermedio. La fórmula simbólica se definió en paso 3; aquí, paso 5, se calcula F observado y después se revela p.&nbsp;F Sustrato usa CM Error con 12 gl; Mesada usa el mismo CM Error pero 6 gl en numerador. Guiones no son ceros.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dbca-f-bajo-h₀" class="slide level2 an an-f-slide center">
+<h2>DBCA: F bajo H₀</h2>
+<p class="an-step">Paso 5 · Realizar los cálculos necesarios</p><p class="an-key an-center"><span class="math inline">\(F\sim F_{2,12}\text{ bajo }H_0\)</span></p><div class="an-layers an-f-layers"><img class="an-chart" src="figuras/f-dbca-0.png" alt="f dbca 0"><div class="fragment" data-fragment-index="0"><img class="an-chart" src="figuras/f-dbca-1.png" alt="f dbca 1"></div><div class="fragment" data-fragment-index="1"><img class="an-chart" src="figuras/f-dbca-2.png" alt="f dbca 2"></div></div><div class="fragment" data-fragment-index="1"><p class="an-key an-center"><span class="math inline">\(p=P(F_{2,12}\ge F_c\mid H_0)=\text{0,0000191}\)</span></p></div>
+<aside class="notes">
+<p>Una sola distribución F(2,12) para la prueba de Sustrato. Línea exacta en F calculado; cola a la derecha es p.&nbsp;La integral numérica desde F hasta infinito coincide con pf y aov. Nada se dibuja a mano; etiquetas calculadas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dbca-decisión-y-conclusión" class="slide level2 an an-inference-slide center">
+<h2>DBCA: decisión y conclusión</h2>
+<p class="an-step">Paso 6 · Decidir sobre H₀</p><p class="an-key">p = 0,0000191 &lt; 0,05 → rechazamos H₀.</p><div class="an-inference"><div><p class="an-step">Paso 7 · Concluir según la pregunta</p><p class="an-inference-text">Con α = 0,05, existe evidencia de un <strong>efecto del tipo de sustrato sobre la biomasa seca media</strong> de los plantines de tomate, en las condiciones definidas por este experimento.</p></div><img class="an-chart" src="figuras/conclusion-dbca.png" alt="conclusion dbca"></div><p class="an-note">El ANOVA detecta un efecto global del Sustrato; todavía no indica entre qué niveles se encuentran las diferencias.</p>
+<aside class="notes">
+<p>El boxplot sólo resume marginalmente cada sustrato y queda en segundo plano. Los puntos son las 21 UE, y las líneas conectan las tres UE de una misma mesada. Se conserva la estructura de bloqueo al interpretar. La evidencia corresponde al efecto global de los tres sustratos elegidos bajo estas condiciones.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-variación-asociada-a-mesada" class="slide level2 an an-inference-slide center">
+<h2>La variación asociada a Mesada</h2>
+<div class="an-inference"><div><p class="an-key">p = 0,00042280</p><div class="an-eq an-eq-medium"><span class="math inline">\(H_0:\sigma^2_{Mesada}=0\)</span></div><div class="an-eq an-eq-medium"><span class="math inline">\(H_A:\sigma^2_{Mesada}&gt;0\)</span></div><p class="an-inference-text">Hay evidencia de un <strong>componente de variación asociado a las mesadas</strong>.</p></div><img class="an-chart" src="figuras/datos-mesada.png" alt="datos mesada"></div><p class="an-note">¿Las diferencias entre sustratos parecen mantenerse de manera parecida entre las distintas mesadas?</p>
+<aside class="notes">
+<p>Perfiles por Mesada: x = Sustrato; cada línea conecta las tres UE del bloque. Sin cajas para priorizar los desplazamientos entre perfiles. D52 conserva cajas y responde por Sustrato; aquí se interpreta el componente de Mesada. La pregunta visual se retoma en D55 como puente a aditividad. Es inferencia sobre σ²_Mesada, no comparación de medias de estas siete mesadas particulares. F=10,0904 con gl (6,12).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dos-inferencias-y-una-decisión-de-diseño" class="slide level2 an an-block-usefulness center">
+<h2>Dos inferencias y una decisión de diseño</h2>
+<div class="an-duo"><div><p class="an-kicker src-trat">SUSTRATO</p><p class="an-key">Evaluamos el efecto del tipo de sustrato sobre la biomasa seca media.</p></div><div><p class="an-kicker src-block">MESADA</p><p class="an-key">Evaluamos la variabilidad atribuible a diferencias entre mesadas.</p></div></div><p class="an-key">La decisión de bloquear se tomó <strong>a priori</strong>: había razones para considerar Mesada una fuente potencial de heterogeneidad, antes de observar los datos.</p><div class="fragment " data-fragment-index="0"><p class="an-answer">El ANOVA aporta evidencia <strong>a posteriori</strong> de que el bloqueo fue útil en este experimento: existe variabilidad asociada a las mesadas.</p><p class="an-key">Al incorporar Mesada al diseño y al análisis, esa fuente de variación puede separarse del Error.</p></div>
+<aside class="notes">
+<p>Sí interpretamos p de Mesada, que responde otra pregunta. Con p=0,00042280 se rechaza H0: sigma²_Mesada=0 frente a HA: sigma²_Mesada&gt;0. La evidencia de utilidad se refiere a este experimento; no establece una regla general de bloquear sólo si el p resulta significativo. El diseño no se eligió retrospectivamente. No se introduce comparación entre medias de mesadas ni teoría extensa de componentes de varianza.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-supone-este-modelo-aditivo" class="slide level2 an an-graph center">
+<h2>¿Qué supone este modelo aditivo?</h2>
+<img class="an-chart" src="figuras/perfil-dbca.png" alt="perfil dbca"><p class="an-key">¿Las diferencias entre sustratos parecen mantenerse de manera parecida entre las distintas mesadas?</p><div class="fragment" data-fragment-index="0"><p class="an-answer">Sustrato y Mesada tienen efectos <strong>aditivos</strong>.</p></div>
+<aside class="notes">
+<p>Recuperación deliberada del gráfico. No diagnosticar aditividad sólo porque las líneas parezcan aproximadamente paralelas, ni exigir paralelismo perfecto con error. La representación prepara el supuesto, sin desarrollar interacción. No confundir las líneas con curvas de respuesta de una misma UE.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="próxima-clase-supuestos" class="slide level2 an center">
+<h2>Próxima clase: Supuestos</h2>
+<p class="an-big">¿Qué debe cumplirse para confiar en este modelo?</p><p class="an-key">Retomaremos el perfil por mesada para discutir <strong>aditividad</strong> y revisar las condiciones del análisis.</p><p class="an-note">Después: comparaciones múltiples de medias.</p>
+<aside class="notes">
+<p>Cerrar como una clase continua: problema de medias, fuentes, SC y CM, F bajo H0, prueba DCA, diseño DBCA y modelo aditivo. No desarrollar hoy diagnósticos, Tukey, ANCOVA, factoriales/interacciones ni modelos completo/reducido.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../assets/branding/eyde-logo.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Andrés Tálamo - Estadística y Diseño Experimental - UNSa</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        math: {
+          mathjax: '../07_errores_potencia/vendor/mathjax/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <a class="eyde-home-link" href="../../index.html" target="_self" aria-label="Volver al inicio" title="Volver al inicio" data-preview-link="false">⌂</a>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiado");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiado");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
