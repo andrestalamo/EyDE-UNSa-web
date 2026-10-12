@@ -1908,7 +1908,7 @@
     "href": "clases/04_distribuciones_muestrales/index.html#construyamos-la-distribución-de-medias",
     "title": "Distribuciones muestrales",
     "section": "Construyamos la distribución de medias",
-    "text": "Construyamos la distribución de medias\n\n \n  Forma Aproximadamente NormalMuy asimétricaBimodal\n  n 25\n  Tomar una muestraRepetir 100Repetir 1000Reiniciar\n \n \n Población y muestra actualTodavía no tomamos una muestraMedias muestrales acumuladas"
+    "text": "Construyamos la distribución de medias\n\n \n  Distribución de X en la población Aproximadamente NormalMuy asimétricaBimodal\n  n 25\n  Tomar una muestraRepetir 100Repetir 1000Reiniciar\n \n \n Población y muestra actualTodavía no tomamos una muestraMedias muestrales acumuladas"
   },
   {
     "objectID": "clases/04_distribuciones_muestrales/index.html#no-sólo-varía-barx",
