@@ -350,6 +350,188 @@
     "text": "Diagramas y asignaciones didácticas\nLos esquemas restantes son HTML/CSS/SVG propios, sin imágenes generadas. La presentación funciona con imágenes locales.\n\nD4–5: pregunta de maíz de secano del Valle de Lerma, escenario docente hipotético.\nD30, DCA: se conserva la construcción de 21 macetas, 7 A / 7 B / 7 C, y sus 26 pasos. Semilla Python random.Random(20260929) para asignaciones y orden de revelado, registrados en notas. Sólo cambia la síntesis final para hacer explícito que está balanceado y que esto no es requisito del DCA. «Sin restricciones» significa sin restricciones de bloques/espacio, manteniendo las cantidades planificadas. No es recomendación de tamaño muestral.\nD33, DBCA: se conserva íntegra la construcción de 9 plantines, 3 bloques de tamaño inicial, una UE por solución nutritiva A/B/C en cada bloque; semilla random.Random(20260930). Ejemplo básico, no una regla de «tres bloques».\nD34: esquema propio de mesadas como posibles bloques; no exige gradiente espacial. En la revisión previa se descartaron fotos históricas Dow/Science History Institute por no mostrar bloques inequívocos y por licencia no concluyente.\nD36–37, DCL: cuadrícula vacía → fertilidad horizontal → humedad vertical → aclaración de criterios no necesariamente espaciales → filas/columnas como bloques. Forma básica ABC/BCA/CAB; permutación ilustrativa de filas [3,1,2] → CAB/ABC/BCA; columnas [3,2,1] → BAC/CBA/ACB. Las tres disposiciones son válidas. Se reordena la plantilla de asignación; no se mueven físicamente parcelas. También pueden permutarse las etiquetas. Sin introducir el análisis.\nD39–40: invernadero hipotético de tomate, 7 mesadas/bloques × 3 macetas = 21 UE. Niveles: Suelo + arena, Suelo + compost, Sustrato comercial, exactamente iguales en ambas láminas y en D41. Cada maceta con un plantín es una UE; siete macetas independientes por sustrato son sus siete réplicas. Mesadas con heterogeneidad relevante de luz/temperatura por posición justifican DBCA. Se conservan las permutaciones previas (Python random.Random(20260929)); sorteo dentro de cada mesada, columnas = posiciones. Edad de medición: 42 días.\nD41: gráfico de R/ggplot2 con theme_bw(base_size = 19), jitter horizontal 0.035 (semilla 39, sin jitter vertical) y nombres de los tres sustratos. Datos ficticios reproducibles: 21 observaciones, siete por sustrato, con diferencias entre mesadas y desviaciones individuales. Variable de respuesta: biomasa seca (g) de tomate a los 42 días. Líneas de medias descriptivas; no ANOVA ni efectos ajustados. Se reemplaza el SVG anterior de rendimientos, A/B/C y once observaciones por grupo para mantener coherencia con el caso.\n\nFragments nativos de Reveal.js, reversibles, sin temporizadores ni JavaScript adicional. Render desde EyDE-UNSa:\nquarto render clases/10_diseno_experimental/Clase_10_Diseno_Experimental_2026.qmd --no-cache\nSalida en _site/clases/10_diseno_experimental/index.html, ignorada por Git."
   },
   {
+    "objectID": "clases/12_supuestos_anova/index.html#qué-debe-cumplirse-para-confiar-en-este-modelo",
+    "href": "clases/12_supuestos_anova/index.html#qué-debe-cumplirse-para-confiar-en-este-modelo",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Qué debe cumplirse para confiar en este modelo?",
+    "text": "¿Qué debe cumplirse para confiar en este modelo?\n\nLa pregunta que dejamos abierta en la Clase 11\n\n\nConcordancia entre los datos y el modelo\n\n\nValores-p, intervalos y riesgos de error dependen de las condiciones del análisis.\n\n\nDISEÑAR→DESCRIBIR→COMPARAR→INFERIR\n\n\nRetomar literalmente la última pregunta de Clase 11. No volver a explicar ANOVA. Recordar oralmente α, error tipo I, error tipo II y potencia: su comportamiento esperado depende del modelo y del diseño. Hoy vamos a evaluar esas condiciones."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#antes-de-revisar-los-supuestos",
+    "href": "clases/12_supuestos_anova/index.html#antes-de-revisar-los-supuestos",
+    "title": "Supuestos del ANOVA",
+    "section": "Antes de revisar los supuestos",
+    "text": "Antes de revisar los supuestos\n\nMODELO ADECUADO\n\n↓DATOS CORRECTOS\n\n\n↓COMPORTAMIENTO DE LOS ERRORES\n\n\n\nEl modelo debe representar la pregunta y el diseño: si se trabajó con mesadas como bloques, no ignorarlas en el análisis. Después revisar unidades, carga y mediciones. Las pruebas sobre residuos no compensan un modelo mal planteado."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#un-dato-extraño-merece-una-pregunta",
+    "href": "clases/12_supuestos_anova/index.html#un-dato-extraño-merece-una-pregunta",
+    "title": "Supuestos del ANOVA",
+    "section": "Un dato extraño merece una pregunta",
+    "text": "Un dato extraño merece una pregunta\n\n\n\n\n\n\n\n\n\n\n¿Error de registro, de medición o variación biológica real?\nDESCRIBIR antes de INFERIR. No eliminar automáticamente.\n\n\nSituación hipotética: se cambió una medición sólo en una copia en memoria para discutir un registro llamativo; no pertenece al CSV original de Clase 11. Pedir explicaciones antes de revelar. Consultar registros y contexto; corregir un error comprobado es distinto de excluir un dato por su efecto sobre p."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#qué-predice-el-modelo-para-una-maceta",
+    "href": "clases/12_supuestos_anova/index.html#qué-predice-el-modelo-para-una-maceta",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Qué predice el modelo para una maceta?",
+    "text": "¿Qué predice el modelo para una maceta?\n\n\n\n\n\n\n\n\n\n\nEn este ANOVA de un factor, predice la media de su tratamiento.\n\n\nSon los mismos 21 datos docentes de Clase 11: biomasa seca a los 42 días, siete macetas independientes por sustrato. Cada punto es una UE. Los segmentos representan medias. Al incorporar mesadas al modelo cambia la predicción; la afirmación aquí es para el DCA de un factor."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#cuánto-se-aparta-de-lo-predicho",
+    "href": "clases/12_supuestos_anova/index.html#cuánto-se-aparta-de-lo-predicho",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Cuánto se aparta de lo predicho?",
+    "text": "¿Cuánto se aparta de lo predicho?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservado − predicho = residuo\n\n\n\\[e_{ij}=y_{ij}-\\hat y_i\\]\n\n\n22,40 − 18,09 = 4,31 g\n\n\nPrimero observar la maceta destacada y la media de su tratamiento. Revelar el segmento y preguntar qué distancia representa. Después introducir la idea verbal, la notación y, finalmente, el cálculo. Las dos figuras tienen idénticas escalas y posiciones para que el segmento aparezca sin desplazar los datos. Por encima de la media, residuo positivo; por debajo, negativo. Error y residuo no son idénticos: el error es desconocido, el residuo se calcula a partir del modelo ajustado. El redondeo se usa sólo para mostrar cifras."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#tres-supuestos-sobre-los-errores",
+    "href": "clases/12_supuestos_anova/index.html#tres-supuestos-sobre-los-errores",
+    "title": "Supuestos del ANOVA",
+    "section": "Tres supuestos sobre los errores",
+    "text": "Tres supuestos sobre los errores\n\n\nINDEPENDENCIA\n\nLos errores de distintas UE no dependen unos de otros.\n\n\n\nNORMALIDAD\n\nDistribución aproximadamente normal alrededor de cero.\n\n\n\nHOMOGENEIDAD DE VARIANZAS\n\nVariabilidad aproximadamente similar entre grupos.\n\n\n\n\nLos supuestos se refieren fundamentalmente a errores del modelo. Los residuos aportan evidencia sobre ellos; no son errores observados sin estimación. No introducir pruebas todavía. La evaluación práctica requiere considerar magnitud y consecuencias de los apartamientos."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#plantas-son-12-réplicas",
+    "href": "clases/12_supuestos_anova/index.html#plantas-son-12-réplicas",
+    "title": "Supuestos del ANOVA",
+    "section": "¿12 plantas son 12 réplicas?",
+    "text": "¿12 plantas son 12 réplicas?\n\n\n\n\n\n\n\n\n\n\nParcela = UE / réplica independiente\nPlanta medida dentro de la parcela = submuestra.\n\n\nTres tratamientos de sustrato aplicados a parcelas de cultivo de tomate, con tres parcelas independientes por tratamiento. En cada parcela se miden 12 plantas. Son nueve UE y 108 mediciones; existe replicación verdadera. La cantidad de parcelas es ilustrativa, no un cálculo de potencia. El esquema no representa bloques. Preguntar antes de revelar la respuesta."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#la-independencia-se-construye-con-el-diseño",
+    "href": "clases/12_supuestos_anova/index.html#la-independencia-se-construye-con-el-diseño",
+    "title": "Supuestos del ANOVA",
+    "section": "La independencia se construye con el diseño",
+    "text": "La independencia se construye con el diseño\n\nMedir 12 plantas dentro de una parcela no convierte esa parcela en 12 réplicas independientes.\n\n\n\nDefinir la unidad experimental\n\n\nAleatorizar los tratamientos\n\n\nConsiderar espacio, tiempo e influencias entre UE\n\n\n\nLa replicación ocurre al aplicar un tratamiento a varias parcelas independientes. La aleatorización no evita por sí sola escurrimiento entre parcelas ni dependencia temporal. Si la respuesta de interés es la media por parcela, puede resumirse cada parcela para un ANOVA sencillo; conservar todas las plantas requiere representar la agrupación. No desarrollar modelos jerárquicos."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#los-residuos-siguen-algún-patrón",
+    "href": "clases/12_supuestos_anova/index.html#los-residuos-siguen-algún-patrón",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Los residuos siguen algún patrón?",
+    "text": "¿Los residuos siguen algún patrón?\n\n\n\n\n\n\n\n\n\n\nLas rachas pueden indicar dependencia.\nNo ver un patrón no demuestra independencia.\n\n\nSimulaciones docentes: A proviene de errores independientes; B tiene autocorrelación. Ambos se centran mediante un ajuste de media. Pedir que describan diferencias antes de revelar. El orden debe corresponder al tiempo o al espacio, nunca ordenar por magnitud del residuo. En un ANOVA utilizaríamos residuos del modelo completo relevante."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#los-datos-tienen-que-ser-normales",
+    "href": "clases/12_supuestos_anova/index.html#los-datos-tienen-que-ser-normales",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Los datos tienen que ser normales?",
+    "text": "¿Los datos tienen que ser normales?\n\n\n\n\n\n\n\n\n\n\nNo necesariamente. Nos interesa la distribución de los errores del modelo.\n\n\nLos paneles tienen diferentes escalas verticales porque se resta la media del tratamiento. Mezclar grupos con medias distintas puede dar una distribución conjunta no normal. No es esa distribución mezclada la que evaluamos. Este gráfico muestra el centrado; por sí solo no diagnostica normalidad."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#cómo-leemos-un-q-q-plot",
+    "href": "clases/12_supuestos_anova/index.html#cómo-leemos-un-q-q-plot",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Cómo leemos un Q-Q plot?",
+    "text": "¿Cómo leemos un Q-Q plot?\n\n\n\n\n\n\n\n\n\n\nSi hay compatibilidad con normalidad, los puntos siguen razonablemente la recta.\n\n\nComparar posiciones de residuos ordenados con cuantiles esperados bajo normalidad. No enseñar cálculo de cuantiles. La recta usa los cuartiles. Los puntos fluctúan: no exigir alineación exacta. Son 51 residuos de un escenario simulado con 17 UE por sustrato; el tamaño facilita la lectura y no constituye una recomendación de muestreo."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#qué-desviaciones-llaman-la-atención",
+    "href": "clases/12_supuestos_anova/index.html#qué-desviaciones-llaman-la-atención",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Qué desviaciones llaman la atención?",
+    "text": "¿Qué desviaciones llaman la atención?\n\n\n\n\n\n\n\n\n\n\nA: fluctuaciones alrededor de la recta.\nB: curvatura marcada; conviene investigar.\n\n\nDejar discutir antes de revelar. A usa errores normales; B usa errores asimétricos, con semillas fijadas de antemano. No se seleccionaron semillas por el valor-p. Misma escala vertical para comparar. El diagnóstico no determina automáticamente transformar ni descartar el ANOVA."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#shapiro-wilk-una-evidencia-complementaria",
+    "href": "clases/12_supuestos_anova/index.html#shapiro-wilk-una-evidencia-complementaria",
+    "title": "Supuestos del ANOVA",
+    "section": "Shapiro-Wilk: una evidencia complementaria",
+    "text": "Shapiro-Wilk: una evidencia complementaria\n\n\\(H_0\\): los residuos provienen de una distribución normal.\n\nSi p &gt; 0,05, no encontramos evidencia suficiente para rechazar \\(H_0\\).\n\nNo rechazar \\(H_0\\) no demuestra normalidad.\n\n\nLa sensibilidad depende del tamaño muestral.\n\n\nLa hipótesis solicitada se presenta como formulación operativa de la prueba aplicada a residuos. Técnicamente el supuesto es sobre los errores y los residuos estimados tienen restricciones por el ajuste; usarla como diagnóstico complementario, no como garantía exacta. Con muestras pequeñas cuesta detectar desviaciones; con muy grandes se detectan diferencias pequeñas de escasa importancia práctica. p no mide gravedad. Mantener gráfico + contexto + prueba. No se muestran valores calculados que puedan confundirse con un requisito de aprobación."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#todos-los-tratamientos-deben-tener-la-misma-variabilidad",
+    "href": "clases/12_supuestos_anova/index.html#todos-los-tratamientos-deben-tener-la-misma-variabilidad",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Todos los tratamientos deben tener la misma variabilidad?",
+    "text": "¿Todos los tratamientos deben tener la misma variabilidad?\n\n\n\n\n\n\n\n\n\n\nNo exactamente. Buscamos dispersiones razonablemente comparables.\n\n\nComparar primero dispersiones, no medias. A y B son escenarios docentes con 17 UE por sustrato. Las diferencias de medias no son incumplimiento de homogeneidad. Ambas figuras comparten escala y colores. Las muestras conservan fluctuaciones naturales: incluso A no tiene varianzas muestrales idénticas."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#residuos-frente-a-valores-predichos",
+    "href": "clases/12_supuestos_anova/index.html#residuos-frente-a-valores-predichos",
+    "title": "Supuestos del ANOVA",
+    "section": "Residuos frente a valores predichos",
+    "text": "Residuos frente a valores predichos\n\n\n\n\n\n\n\n\n\n\n¿La amplitud vertical es parecida en los tres grupos?\n\n\nEje x: media ajustada de cada sustrato; eje y: observado menos predicho. Hay tres bandas porque sólo hay tres valores ajustados. No agregar jitter horizontal que sugiera predicciones diferentes. El promedio residual de cada grupo es cero por construcción: esto no prueba adecuación del modelo."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#qué-nos-dice-el-embudo",
+    "href": "clases/12_supuestos_anova/index.html#qué-nos-dice-el-embudo",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Qué nos dice el embudo?",
+    "text": "¿Qué nos dice el embudo?\n\n\n\n\n\n\n\n\n\n\nEn B, la dispersión aumenta con el valor predicho.\n\n\nPermitir descripción antes de revelar. Misma escala vertical para ambos escenarios. La apertura de las bandas muestra el embudo de un ANOVA de tres grupos; no hace falta inventar una nube continua. También puede existir heterogeneidad sin relación ordenada con las medias."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#levene-complementar-el-gráfico",
+    "href": "clases/12_supuestos_anova/index.html#levene-complementar-el-gráfico",
+    "title": "Supuestos del ANOVA",
+    "section": "Levene: complementar el gráfico",
+    "text": "Levene: complementar el gráfico\n\n\\(H_0\\): las varianzas de los grupos son iguales.\n\nSi p &gt; 0,05, no encontramos evidencia suficiente para rechazar \\(H_0\\).\n\nNo rechazar \\(H_0\\) no demuestra igualdad.\n\n\nImportan la magnitud del problema y las características del diseño.\n\n\nPrueba complementaria de homogeneidad entre grupos, no autorización para aplicar ANOVA. Importan la magnitud de heterogeneidad y el equilibrio de tamaños muestrales. No llamar inviolable al supuesto. No desarrollar variantes de Levene ni teoría de robustez. No se agrega un paquete para una prueba que aquí se enseña conceptualmente."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#es-razonable-una-descripción-aditiva",
+    "href": "clases/12_supuestos_anova/index.html#es-razonable-una-descripción-aditiva",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Es razonable una descripción aditiva?",
+    "text": "¿Es razonable una descripción aditiva?\n\n\n\n\n\n\n\n\n\n\nCada línea representa una mesada.\nEn diseños con más de un factor, también debemos preguntarnos si una descripción aditiva resulta razonable.\n\n\nUna línea por mesada, cada punto una UE distinta. Retomar la anticipación de Clase 11. A: perfiles aproximadamente paralelos; B: claramente no paralelos. Escenarios ilustrativos, no son nuevos resultados del CSV DBCA. Los datos tienen ruido: el paralelismo perfecto no es exigible y el gráfico no demuestra aditividad. No desarrollar interacción, prueba de Tukey ni teoría adicional."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#dónde-buscamos-evidencia",
+    "href": "clases/12_supuestos_anova/index.html#dónde-buscamos-evidencia",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Dónde buscamos evidencia?",
+    "text": "¿Dónde buscamos evidencia?\n\n\n\n\n\n\n\nPregunta\nPrincipal fuente de evidencia\n\n\n\n\n¿Independencia razonable?\nDiseño y estructura espacial/temporal\n\n\n¿Normalidad aproximada?\nQ-Q plot de residuos\n\n\n¿Variabilidad comparable?\nResiduos vs. predichos y grupos\n\n\n¿Información adicional?\nShapiro-Wilk / Levene como complemento\n\n\n\n\nLeer la tabla por preguntas, no como receta de pasos que se aprueban. Ninguna fuente de evidencia reemplaza a las otras. Independencia sigue dependiendo principalmente del diseño aunque se disponga de gráficos."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#el-festejo-anticipado",
+    "href": "clases/12_supuestos_anova/index.html#el-festejo-anticipado",
+    "title": "Supuestos del ANOVA",
+    "section": "El festejo anticipado",
+    "text": "El festejo anticipado\n\n\nImagen aportada por el docente, con el texto incorporado. La broma caricaturiza una interpretación mecánica; no celebramos obtener un valor-p particular. Pasar inmediatamente a la pregunta siguiente."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#entonces-puedo-hacer-anova",
+    "href": "clases/12_supuestos_anova/index.html#entonces-puedo-hacer-anova",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Entonces puedo hacer ANOVA?",
+    "text": "¿Entonces puedo hacer ANOVA?\n\n¿Alcanza con esas dos pruebas?\n\n\n\nNO ALCANZA CON ESO.\n\n\n\n\nDISEÑO + DATOS + MODELO + RESIDUOS\n\n\n\nRecuperar calidad de datos, independencia, adecuación del modelo y magnitud de desviaciones gráficas. No reemplazar una receta por otra: se evalúa evidencia conjunta y consecuencias para la pregunta."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#no-buscamos-aprobar-supuestos",
+    "href": "clases/12_supuestos_anova/index.html#no-buscamos-aprobar-supuestos",
+    "title": "Supuestos del ANOVA",
+    "section": "No buscamos “aprobar” supuestos",
+    "text": "No buscamos “aprobar” supuestos\n\nBuscamos problemas que puedancomprometer nuestra inferencia.\n\n\n\nDiseño + gráficos + contexto + interpretación\n\n\n\nHacer una pausa. Preguntar qué problemas podrían permanecer ocultos si sólo miráramos dos valores-p. Recuperar unidad experimental, errores de registro y patrones de residuos."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#si-aparece-un-problema-primero-entenderlo",
+    "href": "clases/12_supuestos_anova/index.html#si-aparece-un-problema-primero-entenderlo",
+    "title": "Supuestos del ANOVA",
+    "section": "Si aparece un problema, primero entenderlo",
+    "text": "Si aparece un problema, primero entenderlo\n\n\n1. Revisar los datos y el diseño.\n\n\n2. Identificar qué supuesto parece comprometido.\n\n\n3. Evaluar la magnitud y la estructura del problema.\n\n\n\nRecuperar oralmente los tres ejemplos: un registro extraño, rachas en los residuos y un embudo. No todos tienen igual gravedad ni la misma solución. Investigar antes de decidir."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#revisar-el-modelo-y-volver-a-evaluar",
+    "href": "clases/12_supuestos_anova/index.html#revisar-el-modelo-y-volver-a-evaluar",
+    "title": "Supuestos del ANOVA",
+    "section": "Revisar el modelo y volver a evaluar",
+    "text": "Revisar el modelo y volver a evaluar\n\n\n4. ¿El modelo representa el problema?\n\n\n5. Considerar una transformación, otro procedimiento u otro modelo.\n\n\n6. Volver a evaluar el modelo.\n\n\n\nNo enseñar Shapiro significativo → transformar. Sólo como ejemplo oral: log(Y) puede considerarse si Y &gt; 0 y tiene sentido para el problema. El logaritmo cambia la escala de interpretación y no arregla la falta de independencia ni convierte plantas en parcelas. Si resumimos plantas por parcela, la respuesta pasa a ser media por parcela. No desarrollar un catálogo de transformaciones ni métodos avanzados."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#dos-valores-p-favorables-qué-falta",
+    "href": "clases/12_supuestos_anova/index.html#dos-valores-p-favorables-qué-falta",
+    "title": "Supuestos del ANOVA",
+    "section": "Dos valores-p favorables… ¿qué falta?",
+    "text": "Dos valores-p favorables… ¿qué falta?\n\nShapiro-Wilk: p &gt; 0,05　·　Levene: p &gt; 0,05\n\n\n3 parcelas por tratamiento · 12 plantas por parcelaSe analizaron las 108 plantas como réplicas independientes.¿Es correcto?\n\n\nHay 9 réplicas independientes: 3 por tratamiento.\nLas 108 plantas son mediciones agrupadas en parcelas.\n\n\nSituación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de la diapositiva 8: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#los-supuestos-se-evalúan-no-se-aprueban",
+    "href": "clases/12_supuestos_anova/index.html#los-supuestos-se-evalúan-no-se-aprueban",
+    "title": "Supuestos del ANOVA",
+    "section": "Los supuestos se evalúan; no se “aprueban”",
+    "text": "Los supuestos se evalúan; no se “aprueban”\n\nDISEÑO + DATOS+ MODELO + RESIDUOS\n\n\nUn ANOVA no es confiable simplemente porque Shapiro-Wilk y Levene dieron p &gt; 0,05.\n\n\nVolver a la pregunta inicial: ¿qué debe cumplirse para confiar en el modelo? Pedir una respuesta que incluya diseño y diagnóstico. Cerrar: los supuestos se evalúan e interpretan; no se aprueban."
+  },
+  {
     "objectID": "clases/08_correlacion_regresion/VALIDACION.html",
     "href": "clases/08_correlacion_regresion/VALIDACION.html",
     "title": "Validación — segunda ronda de Clase 08",
@@ -4226,6 +4408,55 @@
     "title": "Correlación y regresión lineal simple",
     "section": "¿Qué quiero saber sobre dos variables cuantitativas?",
     "text": "¿Qué quiero saber sobre dos variables cuantitativas?\n\n\n¿Quiero describir su asociación lineal?\nCORRELACIÓN\n\\(r\\longrightarrow\\rho\\)\n\n\n¿Quiero modelar cómo cambia \\(Y\\) con \\(X\\) y estimar o predecir \\(Y\\)?\nREGRESIÓN\n\\((b_0,b_1)\\longrightarrow(\\beta_0,\\beta_1)\\)\n\n\n\nLa técnica la define la pregunta."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/VALIDACION.html",
+    "href": "clases/12_supuestos_anova/VALIDACION.html",
+    "title": "Segunda pasada — 14 de octubre de 2026",
+    "section": "",
+    "text": "Estado vigente: 27 diapositivas y 58 estados (27 iniciales + 31 avances). Este registro sustituye los conteos anteriores, conservados debajo como historial.\n\nApertura y ejemplos conservados. Aditividad pasa a D19, entre Levene e integración.\nD21–23: meme → pregunta ANOVA → mensaje central, sin anticipar el remate.\nD6 cambia el título a «¿Cuánto se aparta de lo predicho?» para no revelar la respuesta verbal antes del gráfico. Secuencia de cinco estados: observado/predicho → segmento → explicación verbal → ecuación → cálculo. Dos capas R con idénticas escalas, datos y posiciones; espacio reservado para todos los fragmentos.\nD7: independencia con énfasis tipográfico y borde de la paleta existente. Sin semáforos ni símbolos de aprobación.\nD15: nuevo título solicitado. D25: log(Y) sólo en notas del docente.\nD26: respuesta oculta inicialmente; aparece con un único avance. Ninguna pista nueva antes de revelar.\nSin fotos ni descargas. Placeholder del meme preparado para sustituir su área central por una imagen con dimensiones acotadas.\nÚnica modificación de gráficos: desdoblamiento del gráfico del residuo en dos capas. Las simulaciones, semillas, datos y demás gráficos conservan su definición.\n\n\n\nRender completo exitoso. Inspección visual de las 27 diapositivas y los 58 estados en Chrome a 1280 × 720, incluida revisión ampliada de D6 y D15. Sin desbordes, imágenes ausentes ni errores de JavaScript. Comprobación geométrica de títulos y figuras en todos los avances: sin desplazamientos mayores a 0,5 px. Se verificó la respuesta inicialmente oculta del ejercicio final y su revelado posterior. La ecuación permanece subordinada al gráfico y a la explicación verbal. No se redujo globalmente la fuente.\nSe mantienen las afirmaciones estadísticas. Matiz ya documentado en las notas de Shapiro-Wilk: los supuestos corresponden a errores; los residuos son estimaciones sujetas a restricciones del ajuste. La formulación solicitada de H0 se conserva como descripción operativa del diagnóstico, sin atribuirle una demostración del supuesto.\nSólo se editaron el QMD, el CSS local y este registro dentro de Clase 12. No se modificaron clases anteriores ni archivos compartidos. Sin commit ni push.\n\n\n\n\nSupuestos del ANOVA\n¿Qué debe cumplirse para confiar en este modelo?\nAntes de revisar los supuestos\nUn dato extraño merece una pregunta\n¿Qué predice el modelo para una maceta?\n¿Cuánto se aparta de lo predicho?\nTres supuestos sobre los errores\n¿12 plantas son 12 réplicas?\nLa independencia se construye con el diseño\n¿Los residuos siguen algún patrón?\n¿Los datos tienen que ser normales?\n¿Cómo leemos un Q-Q plot?\n¿Qué desviaciones llaman la atención?\nShapiro-Wilk: una evidencia complementaria\n¿Todos los tratamientos deben tener la misma variabilidad?\nResiduos frente a valores predichos\n¿Qué nos dice el embudo?\nLevene: complementar el gráfico\n¿Es razonable una descripción aditiva?\n¿Dónde buscamos evidencia?\nEl festejo anticipado\n¿Entonces puedo hacer ANOVA?\nNo buscamos “aprobar” supuestos\nSi aparece un problema, primero entenderlo\nRevisar el modelo y volver a evaluar\nDos valores-p favorables… ¿qué falta?\nLos supuestos se evalúan; no se “aprueban”"
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/VALIDACION.html#validación-de-esta-revisión",
+    "href": "clases/12_supuestos_anova/VALIDACION.html#validación-de-esta-revisión",
+    "title": "Segunda pasada — 14 de octubre de 2026",
+    "section": "",
+    "text": "Render completo exitoso. Inspección visual de las 27 diapositivas y los 58 estados en Chrome a 1280 × 720, incluida revisión ampliada de D6 y D15. Sin desbordes, imágenes ausentes ni errores de JavaScript. Comprobación geométrica de títulos y figuras en todos los avances: sin desplazamientos mayores a 0,5 px. Se verificó la respuesta inicialmente oculta del ejercicio final y su revelado posterior. La ecuación permanece subordinada al gráfico y a la explicación verbal. No se redujo globalmente la fuente.\nSe mantienen las afirmaciones estadísticas. Matiz ya documentado en las notas de Shapiro-Wilk: los supuestos corresponden a errores; los residuos son estimaciones sujetas a restricciones del ajuste. La formulación solicitada de H0 se conserva como descripción operativa del diagnóstico, sin atribuirle una demostración del supuesto.\nSólo se editaron el QMD, el CSS local y este registro dentro de Clase 12. No se modificaron clases anteriores ni archivos compartidos. Sin commit ni push."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/VALIDACION.html#orden-vigente",
+    "href": "clases/12_supuestos_anova/VALIDACION.html#orden-vigente",
+    "title": "Segunda pasada — 14 de octubre de 2026",
+    "section": "",
+    "text": "Supuestos del ANOVA\n¿Qué debe cumplirse para confiar en este modelo?\nAntes de revisar los supuestos\nUn dato extraño merece una pregunta\n¿Qué predice el modelo para una maceta?\n¿Cuánto se aparta de lo predicho?\nTres supuestos sobre los errores\n¿12 plantas son 12 réplicas?\nLa independencia se construye con el diseño\n¿Los residuos siguen algún patrón?\n¿Los datos tienen que ser normales?\n¿Cómo leemos un Q-Q plot?\n¿Qué desviaciones llaman la atención?\nShapiro-Wilk: una evidencia complementaria\n¿Todos los tratamientos deben tener la misma variabilidad?\nResiduos frente a valores predichos\n¿Qué nos dice el embudo?\nLevene: complementar el gráfico\n¿Es razonable una descripción aditiva?\n¿Dónde buscamos evidencia?\nEl festejo anticipado\n¿Entonces puedo hacer ANOVA?\nNo buscamos “aprobar” supuestos\nSi aparece un problema, primero entenderlo\nRevisar el modelo y volver a evaluar\nDos valores-p favorables… ¿qué falta?\nLos supuestos se evalúan; no se “aprueban”"
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/VALIDACION.html#alcance",
+    "href": "clases/12_supuestos_anova/VALIDACION.html#alcance",
+    "title": "Segunda pasada — 14 de octubre de 2026",
+    "section": "Alcance",
+    "text": "Alcance\nArchivos fuente nuevos: Clase_12_Supuestos_ANOVA_2026.qmd, estilos.css y este registro. No se modificaron clases anteriores, archivos compartidos, índice ni dependencias. Sin commit ni push.\nSe mantienen YAML RevealJS, tema EyDE, logo, navegación al inicio, includes y MathJax local/SVG de las clases recientes. El CSS local limita sus reglas a .s12 y resuelve geometría de figuras, ecuación, tabla, esquemas y placeholder; no redefine paleta ni tipografía."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/VALIDACION.html#contenido-y-procedencia",
+    "href": "clases/12_supuestos_anova/VALIDACION.html#contenido-y-procedencia",
+    "title": "Segunda pasada — 14 de octubre de 2026",
+    "section": "Contenido y procedencia",
+    "text": "Contenido y procedencia\n\nApertura: pregunta final de Clase 11. No se repite la explicación de ANOVA.\nDCA: lectura de ../11_anova/datos_tomate.csv, sin ejecutar el script que genera los archivos de esa clase. 21 macetas, siete por sustrato. Residuos calculados con lm y comprobados contra las medias de grupo.\nIndependencia: tres tratamientos, tres parcelas independientes por tratamiento, doce plantas por parcela. Nueve UE, 108 submuestras; existe replicación real. La situación final cuestiona analizar las 108 plantas como independientes.\nShapiro-Wilk: formulación solicitada de H0 y aclaración explícita de que no rechazar no demuestra normalidad. Las notas distinguen errores y residuos.\nAditividad: una sola diapositiva de perfiles; sin desarrollo de interacción ni pruebas adicionales.\nMeme: placeholder deliberado, pendiente de reemplazo por la imagen.\nLas pruebas se enseñan conceptualmente. Los p &gt; 0,05 del ejercicio final son una premisa hipotética, no resultados calculados sobre las figuras simuladas."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/VALIDACION.html#reproducibilidad",
+    "href": "clases/12_supuestos_anova/VALIDACION.html#reproducibilidad",
+    "title": "Segunda pasada — 14 de octubre de 2026",
+    "section": "Reproducibilidad",
+    "text": "Reproducibilidad\nTodo el código R está dentro del QMD y oculto. Sólo se usa ggplot2 y paquetes de R/knitr ya disponibles. Semillas 20261201–20261207 para los escenarios normal, heterogéneo, asimétrico, series ordenadas, asignación ilustrativa a parcelas y perfiles; jitter con semillas explícitas 1201/1202. Sin selección de semillas por valores-p. Se documenta la finalidad de las simulaciones; 17 UE por tratamiento facilita leer los gráficos y no es una recomendación de tamaño muestral.\nDoce figuras PNG generadas por knitr. Los paneles comparativos usan escalas comunes salvo datos frente a residuos, donde el cambio de escala se explica en notas. En residuos frente a predichos se conservan las tres bandas reales de valores ajustados, sin jitter horizontal."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/VALIDACION.html#render-y-revisión",
+    "href": "clases/12_supuestos_anova/VALIDACION.html#render-y-revisión",
+    "title": "Segunda pasada — 14 de octubre de 2026",
+    "section": "Render y revisión",
+    "text": "Render y revisión\nRender completo exitoso con Quarto y ejecución de todos los chunks. Fue necesario permitir acceso a la caché Sass de Quarto; se desactivó el autoload de renv para usar los paquetes ya instalados, sin instalar ni actualizar nada.\nSalida: _site/clases/12_supuestos_anova/index.html, con figuras y recursos de Quarto. Los artefactos generados quedan ignorados por las reglas existentes de Git.\nRevisión en Chrome a 1280 × 720: 27 diapositivas y 55 estados (iniciales más avances de fragmentos). Inspección visual de capturas de todas las diapositivas/estados, comparación con Clase 11 y comprobación geométrica. Se revisaron ecuaciones SVG, tamaño del texto, ejes, etiquetas, figuras y mensajes. Se corrigieron etiquetas entre paneles de aditividad, nombres de parcelas, fondo del esquema, alineación con Clase 11 y tamaño/etiquetas del residuo, y se volvió a renderizar.\nResultado final: sin desbordes externos detectados, sin imágenes ausentes y sin errores de JavaScript. La ecuación del residuo y las hipótesis se renderizan mediante MathJax/SVG."
   },
   {
     "objectID": "clases/10_diseno_experimental/VALIDACION.html",

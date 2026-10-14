@@ -1,0 +1,31 @@
+/* Ajustes locales de geometría: se conserva tema, paleta y componentes EyDE. */
+.reveal .slides section.s12 {font-size:.94em;text-align:left;}
+.reveal .slides section.s12 h2 {font-size:1.46em;line-height:1.12;margin-bottom:18px;}
+.s12 p {margin:14px 0;}
+.s12 .cell-output-display {margin:0;}
+.s12 .cell-output-display img {display:block;width:100%;max-height:345px;object-fit:contain;margin:0 auto;}
+.s12 .MathJax_SVG_Display {margin:.25em 0!important;}
+.s12 .idea,.s12 .pregunta {margin:16px 0;padding:14px 20px;}
+.s12 .s12-note {font-size:.8em;line-height:1.3;color:var(--gris);margin:20px 0;}
+.s12-flow {display:flex;flex-direction:column;align-items:center;gap:14px;font-size:1.15em;margin:25px 0;}
+.s12-flow>div {display:flex;flex-direction:column;align-items:center;gap:14px;}
+.s12-flow span {color:var(--maiz);}
+.s12-equation {font-size:1.16em;text-align:center;}
+.s12-defs {display:grid;gap:25px;margin:28px 0;}
+.s12-defs>div {border-left:5px solid var(--maiz);padding:10px 20px;}
+.s12-defs p {margin:8px 0 0;}
+.reveal .s12 table {font-size:.87em;width:100%;margin:26px 0;}
+.reveal .s12 table td,.reveal .s12 table th {padding:18px 15px;}
+.s12-meme {text-align:center;font-size:1.08em;line-height:1.3;}
+.s12-placeholder {border:3px dashed var(--gris);margin:20px auto;padding:38px 15px;width:65%;color:var(--gris);}
+.s12-placeholder span {font-size:.7em;}
+
+/* Revisión narrativa: reservar el espacio de cada estado, sin desplazar el gráfico. */
+.s12-residuo-layers {display:grid;}
+.s12-residuo-layers>div {grid-area:1 / 1;min-width:0;}
+.s12-residuo-layers>.fragment {background:var(--papel);transition:none!important;}
+.s12-residuo p {margin:8px 0;}
+.s12-residuo .cell-output-display img {max-height:315px;}
+.s12-defs>.s12-independencia {border-left-color:var(--verde);border-left-width:8px;}
+.s12-independencia>strong {font-size:1.12em;}
+.reveal .s12 img.s12-meme-image {display:block;object-fit:contain;width:auto;height:510px;max-height:510px;max-width:100%;margin:10px auto 0;}
