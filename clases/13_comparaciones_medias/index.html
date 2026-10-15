@@ -180,7 +180,7 @@ Andrés Tálamo
 <section id="qué-nos-dijo-el-anova" class="slide level2 s13 center">
 <h2>¿Qué nos dijo el ANOVA?</h2>
 <p class="muted">
-Un factor de efectos fijos · varios tratamientos
+Un factor de efectos fijos · varios niveles
 </p>
 <p><span class="math display">\[H_0:\ \mu_1=\mu_2=\cdots=\mu_t\]</span></p>
 <p>Rechazamos <span class="math inline">\(H_0\)</span> con el nivel de significación <span class="math inline">\(\alpha\)</span> elegido.</p>
@@ -215,6 +215,9 @@ DESCRIBIR → COMPARAR → INFERIR
 </section>
 <section id="muchas-medias-muchas-comparaciones" class="slide level2 s13 center">
 <h2>Muchas medias, muchas comparaciones</h2>
+<p class="small muted">
+Novillitos Brangus · factor: tipo de dieta · cinco niveles nominales. Datos simulados.
+</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -225,15 +228,15 @@ DESCRIBIR → COMPARAR → INFERIR
 </div>
 </div>
 <div class="center">
-3 tratamientos → <strong>3 pares</strong>　 ·　4 → <strong>6</strong>　 ·　6 → <strong>15</strong>
+3 niveles → <strong>3 pares</strong> · 4 niveles → <strong>6 pares</strong> · 6 niveles → <strong>15 pares</strong>
 </div>
 <div class="fragment">
 <div class="center">
-<span class="math inline">\(m=t(t-1)/2\)</span> comparaciones de a pares
+<span class="math inline">\(m=t(t-1)/2\)</span> · <span class="math inline">\(t\)</span>: número de niveles del factor
 </div>
 </div>
 <aside class="notes">
-<p>Cinco medias del ejemplo aportado: diez pares posibles. El gráfico muestra únicamente medias muestrales, sin inferencia. No pedir calcular m. Las escalas de los gráficos de puntos no necesitan comenzar en cero.</p>
+<p>Cinco medias del experimento simulado de dietas: diez pares posibles. 35 novillitos de unos 200 kg asignados aleatoriamente a cinco dietas, siete por dieta, con alimentación individual; animal = UE independiente. Tras adaptación, se mide la ganancia media diaria durante 70 días. Las dietas son categorías, no dosis crecientes. El gráfico muestra únicamente medias muestrales, sin inferencia. No pedir calcular m. Las escalas de los gráficos de puntos no necesitan comenzar en cero.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -296,9 +299,17 @@ DESCRIBIR → COMPARAR → INFERIR
 </section>
 <section id="que-las-medias-muestrales-difieran-no-alcanza" class="slide level2 s13 center">
 <h2>Que las medias muestrales difieran no alcanza</h2>
-<p><span class="math display">\[\bar Y_A=42{,}3\qquad \bar Y_B=43{,}1\]</span></p>
-<div class="dato-grande center">
-42,3 ≠ 43,1
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="center">
+<strong>0,50 ≠ 0,65 kg/día</strong>
 </div>
 <div class="fragment">
 <p>No necesitamos una prueba para comprobar esa <strong>diferencia numérica</strong>.</p>
@@ -307,7 +318,7 @@ DESCRIBIR → COMPARAR → INFERIR
 <p>¿Aporta evidencia de una diferencia entre las <strong>medias poblacionales</strong>?</p>
 </div>
 <aside class="notes">
-<p>Valores ilustrativos independientes de las dos aplicaciones. Dos medias muestrales pueden coincidir exactamente. En este ejemplo difieren numéricamente; una diferencia observada puede explicarse por variación de muestreo.</p>
+<p>Medias del ejemplo simulado de novillitos: Heno + soja y Heno + maíz, en kg/día. Dos medias muestrales pueden coincidir exactamente. En este ejemplo difieren numéricamente; una diferencia observada puede explicarse por variación de muestreo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -320,20 +331,23 @@ DESCRIBIR → COMPARAR → INFERIR
           display:block!important;
       }</style></aside>
 </section>
-<section id="seguimos-haciendo-inferencia" class="slide level2 s13 center">
+<section id="seguimos-haciendo-inferencia" class="slide level2 s13 s13-inferencia-flujo center">
 <h2>Seguimos haciendo inferencia</h2>
-<div class="center">
-<strong>MUESTRA</strong>
-</div>
+<div class="s13-etapa">
+<p><strong>MUESTRA</strong></p>
 <p><span class="math display">\[\bar Y_i-\bar Y_j\ne 0\]</span></p>
-<div class="center">
-Observamos una diferencia
+<p>Observamos una diferencia entre medias muestrales.</p>
 </div>
 <div class="fragment">
-<div class="center">
-↓ INFERENCIA ↓<br><strong>POBLACIÓN</strong>
+<div class="s13-paso">
+↓ INFERENCIA ↓
 </div>
-<p><span class="math display">\[\text{¿}\mu_i-\mu_j=0\text{?}\]</span></p>
+<div class="s13-etapa">
+<strong>POBLACIÓN</strong>
+<p class="s13-pregunta-math">
+<span class="s13-signo">¿</span><span><span class="math inline">\(\mu_i-\mu_j=0\)</span></span><span class="s13-signo">?</span>
+</p>
+</div>
 </div>
 <aside class="notes">
 <p>Retomar estimación y pruebas de hipótesis: información muestral para inferir sobre parámetros poblacionales. La desigualdad describe este caso observado, no una condición necesaria para definir el procedimiento.</p>
@@ -351,7 +365,7 @@ Observamos una diferencia
 </section>
 <section id="tukey-todas-las-comparaciones-de-a-pares" class="slide level2 s13 center">
 <h2>Tukey: todas las comparaciones de a pares</h2>
-<p>Para cada par de tratamientos:</p>
+<p>Para cada par de niveles del factor:</p>
 <p><span class="math display">\[H_0:\ \mu_i=\mu_j\qquad H_1:\ \mu_i\ne\mu_j\]</span></p>
 <div class="idea">
 <p><span class="math inline">\(\mu_i\)</span> y <span class="math inline">\(\mu_j\)</span> son <strong>medias poblacionales</strong>.</p>
@@ -384,13 +398,19 @@ Diferencia observada entre <strong>medias muestrales</strong>
 </div>
 </div>
 <div class="fragment">
-<p><span class="math display">\[|\bar Y_i-\bar Y_j|&gt;\mathrm{DMS}\ \Rightarrow\ \text{rechazo }H_0\]</span></p>
+<p><span class="math display">\[d_i=|\bar Y_i-\bar Y_j|&gt;\mathrm{DMS}\ \Rightarrow\ \text{rechazo }H_0\]</span></p>
 <div class="center">
 ↓<br>Inferencia sobre las <strong>medias poblacionales</strong>
 </div>
 </div>
+<p class="small muted">
+En nuestros ejemplos, con igual número de réplicas, usamos una DMS común.<br>La DMS tiene las mismas unidades que la variable respuesta.
+</p>
+<p class="small">
+En novillitos, DMS ≈ 0,196 kg/día: las medias muestrales deben superar esa diferencia para aportar evidencia sobre las medias poblacionales.
+</p>
 <aside class="notes">
-<p>DMS: diferencia mínima requerida entre dos medias muestrales para detectar una diferencia entre las medias poblacionales. Si la diferencia no supera la DMS, no rechazamos Ho; no demostramos igualdad. Ejemplos balanceados: una DMS común. Decidir sin redondear. No desarrollar la fórmula de Tukey ni valores críticos.</p>
+<p>DMS: diferencia mínima requerida entre dos medias muestrales para detectar una diferencia entre las medias poblacionales. Si la diferencia no supera la DMS, no rechazamos Ho; no demostramos igualdad. Ejemplos balanceados: una DMS común. Decidir sin redondear. La fórmula balanceada se muestra a continuación para interpretar CMEE y n; no calcular valores críticos.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -405,17 +425,21 @@ Diferencia observada entre <strong>medias muestrales</strong>
 </section>
 <section id="no-alcanza-con-observar-la-separación" class="slide level2 s13 center">
 <h2>No alcanza con observar la separación</h2>
-<div class="pregunta">
-¿De qué depende nuestra capacidad de detectar diferencias?
-</div>
+<p><span class="math display">\[\mathrm{DMS}=q_{\alpha;\,t;\,gl_E}\sqrt{\frac{\color{#8a5a3b}{CMEE}}{\color{#2d6a4f}{n}}}\]</span></p>
+<p class="small center">
+CMEE: numerador · n: réplicas independientes, denominador.
+</p>
 <div class="fragment">
 <p>Mayor <strong>variabilidad residual (CMEE)</strong> → DMS mayor → más difícil detectar diferencias.</p>
 </div>
 <div class="fragment">
-<p>Más <strong>réplicas independientes</strong> → mayor precisión → mayor capacidad para detectar diferencias.</p>
+<p>Mayor <strong>n de réplicas independientes</strong> → DMS menor → mayor capacidad para detectar diferencias.</p>
 </div>
+<p class="small muted">
+Más mediciones de una misma unidad experimental no equivalen a más réplicas.
+</p>
 <aside class="notes">
-<p>Comparaciones a igualdad de las demás condiciones, especialmente α, tratamientos y diseño. DMS también depende de esos elementos y de los gl. Más mediciones de la misma UE no equivalen a más réplicas. Vincular con diseño y potencia sin álgebra.</p>
+<p>Comparaciones a igualdad de las demás condiciones, especialmente α, tratamientos y diseño. DMS también depende de esos elementos y de los gl. Más mediciones de la misma UE no equivalen a más réplicas. q es el valor crítico del rango estudentizado para α, t niveles y gl del error. Mostrar la estructura de la fórmula, no enseñar cálculo manual.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -428,28 +452,30 @@ Diferencia observada entre <strong>medias muestrales</strong>
           display:block!important;
       }</style></aside>
 </section>
-<section id="una-salida-de-infostat" class="slide level2 s13 center">
-<h2>Una salida de InfoStat</h2>
-<pre class="infostat">Test:Tukey Alfa=0,05 DMS=4,50683
-Error: 5,4100 gl: 16
+<section id="tukey-en-novillitos-salida-tipo-infostat" class="slide level2 s13 center">
+<h2>Tukey en novillitos: salida tipo InfoStat</h2>
+<pre class="infostat">Test:Tukey Alfa=0,05 DMS=0,19554 kg/día
+Error: 0,01591 gl: 30
 
-TRATAMIENTO   Medias   n   E.E.
-T              89,20   5   1,04     A
-B              91,80   5   1,04     A B
-C              93,40   5   1,04     A B
-A              93,80   5   1,04       B
-D              94,20   5   1,04       B
+TIPO DE DIETA     Medias   n   E.E.
+Heno + soja         0,50   7   0,05     A
+Heno + maíz         0,65   7   0,05     AB
+Heno + sorgo        0,69   7   0,05     AB
+Silaje + soja       0,79   7   0,05     B
+Mixta               0,79   7   0,05     B
 
 Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</pre>
 <div class="fragment">
-<p><strong>Tukey</strong>: todos los pares · <strong>Alfa</strong>: 0,05 · <strong>DMS</strong>: umbral.</p>
+<p><strong>Experimento simulado:</strong> 35 novillitos asignados al azar; 7 por dieta.</p>
+<p><strong>Animal = UE independiente</strong>, con alimentación individual. Ganancia en kg/día.</p>
 </div>
 <div class="fragment">
 <p><strong>Error = CMEE</strong> · <strong>gl</strong> del error · <strong>n</strong>: réplicas · <strong>E.E.</strong> de la media.</p>
 </div>
 <aside class="notes">
-<p>Transcripción exacta del ejemplo incluido por el docente en el encargo. DMS calculada = 4,506828…, E.E. = sqrt(5,4100/5) = 1,040192…. No se dispone de los datos crudos ni del modelo original. gl=16 no corresponde a un DCA simple con 25 observaciones y 5 grupos (gl=20); es compatible, por ejemplo, con cinco bloques completos en un modelo aditivo. No atribuir un diseño sin evidencia. Se conservan los gl del modelo original y no se reconstruye su ANOVA.</p>
-<p>Reconocer columnas Medias y letras, que se interpretan en la siguiente diapositiva. E.E. es error estándar de la media, no desvío de las observaciones. Fuente: ejemplo aportado del material de Silvia Sühring.</p>
+<p>Experimento hipotético de recría de novillitos Brangus (unos 200 kg iniciales), plausible para sistemas del NOA; no es un ensayo publicado ni una recomendación de alimentación. Cinco formulaciones nominales: Heno + soja (heno de gramínea y expeller de soja), Heno + maíz, Heno + sorgo (grano), Silaje + soja (silaje de sorgo y expeller de soja) y Mixta (heno, silaje, maíz y soja). Las etiquetas identifican los ingredientes distintivos; todas incluyen la corrección proteica y mineral adecuada. No son dosis sucesivas del mismo suplemento. Dietas suministradas individualmente, con animales asignados aleatoriamente; no confundir varios animales en un único corral por dieta con réplicas independientes. Tras adaptación, ganancia diaria durante 70 días.</p>
+<p>Plausibilidad de recursos y escala contrastada con INTA: https://www.argentina.gob.ar/noticias/el-sorgo-gana-protagonismo-en-las-dietas-ganaderas y https://www.argentina.gob.ar/noticias/heno-un-recurso-forrajero-alternativo-de-calidad-y-facil-suministro. Esas fuentes respaldan el uso de heno/silajes/concentrados en recría; no son el origen de estos datos simulados ni validan estas formulaciones específicas.</p>
+<p>Semilla 20261302; datos generados una sola vez con generar_dietas.R y guardados en datos_dietas_simulados.csv. El render sólo lee ese archivo mediante analisis_dietas.R. Medias, CMEE, gl, Tukey, DMS y letras derivados del mismo modelo; los diez pares se verifican automáticamente. ANOVA: F = 6,213, p = 9,133e-04, gl = 4 y 30. Tabla completa en anova_dietas.csv. E.E. es error estándar de la media, no desvío de las observaciones. La salida es formato didáctico tipo InfoStat, calculada con R.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -464,22 +490,22 @@ Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</
 </section>
 <section id="medias-muestrales-inferencia-poblacional" class="slide level2 s13 center">
 <h2>Medias muestrales, inferencia poblacional</h2>
-<pre class="infostat">Test:Tukey Alfa=0,05 DMS=4,50683
-Error: 5,4100 gl: 16
+<pre class="infostat">Test:Tukey Alfa=0,05 DMS=0,19554 kg/día
+Error: 0,01591 gl: 30
 
-TRATAMIENTO   <strong>Medias</strong>   n   E.E.
-T              <strong>89,20</strong>   5   1,04     <strong>A</strong>
-B              <strong>91,80</strong>   5   1,04     <strong>A B</strong>
-C              <strong>93,40</strong>   5   1,04     <strong>A B</strong>
-A              <strong>93,80</strong>   5   1,04       <strong>B</strong>
-D              <strong>94,20</strong>   5   1,04       <strong>B</strong>
+TIPO DE DIETA     <strong class="s13-muestra">Medias</strong>   n   E.E.
+Heno + soja       <strong class="s13-muestra">  0,50</strong>   7   0,05     <strong class="s13-inferencia">A</strong>
+Heno + maíz       <strong class="s13-muestra">  0,65</strong>   7   0,05     <strong class="s13-inferencia">AB</strong>
+Heno + sorgo      <strong class="s13-muestra">  0,69</strong>   7   0,05     <strong class="s13-inferencia">AB</strong>
+Silaje + soja     <strong class="s13-muestra">  0,79</strong>   7   0,05     <strong class="s13-inferencia">B</strong>
+Mixta             <strong class="s13-muestra">  0,79</strong>   7   0,05     <strong class="s13-inferencia">B</strong>
 
 Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</pre>
 <div class="fragment">
-<p><strong>MEDIAS → medias muestrales observadas.</strong></p>
+<p><strong class="s13-muestra">MEDIAS → medias muestrales observadas.</strong></p>
 </div>
 <div class="fragment">
-<p><strong>LETRAS → pruebas sobre medias poblacionales.</strong></p>
+<p><strong class="s13-inferencia">LETRAS → pruebas sobre medias poblacionales.</strong></p>
 </div>
 </section>
 <section id="qué-significa-compartir-una-letra" class="slide level2 s13 center">
@@ -507,41 +533,49 @@ Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</
           display:block!important;
       }</style></aside>
 </section>
-<section id="t-y-b-diferencia-significativa" class="slide level2 s13 center">
-<h2>T y B: ¿diferencia significativa?</h2>
-<div class="comparacion">
+<section id="heno-con-soja-o-maíz-diferencia-significativa" class="slide level2 s13 center">
+<h2>Heno con soja o maíz: ¿diferencia significativa?</h2>
+<div class="cell">
+<div class="cell-output-display">
 <div>
-T<br><strong>89,20</strong><br>A
+<figure>
+<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%"></p>
+</figure>
 </div>
-<div>
-B<br><strong>91,80</strong><br>A B
 </div>
 </div>
+<p class="small muted">
+Ganancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.
+</p>
 <div class="fragment">
 <p><strong>No: comparten A.</strong> No se detectaron diferencias significativas entre sus medias poblacionales.</p>
 </div>
 <div class="fragment">
-<p>Las medias muestrales <strong>sí son numéricamente distintas</strong>: 89,20 ≠ 91,80.</p>
+<p><strong>dᵢ = 0,151 kg/día &lt; DMS = 0,196 kg/día.</strong></p>
 </div>
 </section>
-<section id="t-y-d-diferencia-significativa" class="slide level2 s13 center">
-<h2>T y D: ¿diferencia significativa?</h2>
-<div class="comparacion">
+<section id="heno-soja-y-mixta-diferencia-significativa" class="slide level2 s13 center">
+<h2>Heno + soja y Mixta: ¿diferencia significativa?</h2>
+<div class="cell">
+<div class="cell-output-display">
 <div>
-T<br><strong>89,20</strong><br>A
+<figure>
+<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:100.0%"></p>
+</figure>
 </div>
-<div>
-D<br><strong>94,20</strong><br>B
 </div>
 </div>
+<p class="small muted">
+Ganancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.
+</p>
 <div class="fragment">
 <p><strong>Sí: no comparten letras.</strong> Hay evidencia de que sus medias poblacionales difieren.</p>
 </div>
 <div class="fragment">
-<p>La diferencia observada es <strong>5,00</strong>, mayor que la <strong>DMS = 4,50683</strong>.</p>
+<p><strong>dᵢ = 0,286 kg/día &gt; DMS = 0,196 kg/día.</strong></p>
 </div>
 <aside class="notes">
-<p>Éste es un ejemplo de lectura del umbral, no cálculo manual de Tukey. Las medias poblacionales no se conocen: no atribuirles exactamente una diferencia de 5.</p>
+<p>Éste es un ejemplo de lectura del umbral, no cálculo manual de Tukey. Las medias poblacionales no se conocen: no atribuirles exactamente la diferencia muestral observada.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -554,30 +588,25 @@ D<br><strong>94,20</strong><br>B
           display:block!important;
       }</style></aside>
 </section>
-<section id="compartir-letras-no-genera-grupos-separados" class="slide level2 s13 center">
+<section id="compartir-letras-no-genera-grupos-separados" class="slide level2 s13 s13-letras center">
 <h2>Compartir letras no genera grupos separados</h2>
-<div class="comparacion">
+<div class="cell">
+<div class="cell-output-display">
 <div>
-T<br><strong>A</strong>
+<figure>
+<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-8-1.png" style="width:100.0%"></p>
+</figure>
 </div>
-<div>
-B<br><strong>AB</strong>
-</div>
-<div>
-D<br><strong>B</strong>
 </div>
 </div>
 <div class="fragment">
-<p>B comparte <strong>A con T</strong> y <strong>B con D</strong>: no se detectan diferencias significativas en esos pares.</p>
-</div>
-<div class="fragment">
-<p><strong>T y D no comparten letras</strong>: sí se detecta una diferencia significativa.</p>
+<p>Heno + maíz comparte <strong>A con Heno + soja</strong> y <strong>B con Mixta</strong>. Heno + soja y Mixta <strong>no comparten letras</strong>.</p>
 </div>
 <div class="idea">
 <p><strong>AB no constituye un tercer grupo.</strong> Las letras no son un ranking.</p>
 </div>
 <aside class="notes">
-<p>Las decisiones se refieren a medias poblacionales. La ausencia de significación no es transitiva. No formar grupos cerrados ni categorías de calidad. Recuperar oralmente C=AB: comparte A con T y B con D, sin diferencias significativas en esos dos pares.</p>
+<p>La no significación no es transitiva: Heno + soja–Heno + maíz y Heno + maíz–Mixta no son significativos, pero Heno + soja–Mixta sí. Cada decisión corresponde a su comparación. No formar grupos cerrados. Heno + sorgo también comparte A con Heno + soja y B con Mixta.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -593,14 +622,14 @@ D<br><strong>B</strong>
 <section id="cómo-lo-escribiríamos" class="slide level2 s13 center">
 <h2>¿Cómo lo escribiríamos?</h2>
 <p class="muted">
-T y B comparten la letra A.
+Heno + soja y Heno + maíz comparten la letra A.
 </p>
 <div class="alerta">
 <p><strong>INCORRECTO:</strong> “Las medias son iguales”.</p>
 </div>
 <div class="fragment">
 <div class="idea">
-<strong>CORRECTO:</strong><br>“No se detectaron diferencias significativas entre las medias poblacionales de T y B (Tukey, α = 0,05)”.
+<strong>CORRECTO:</strong><br>“No se detectaron diferencias significativas entre las medias poblacionales de Heno + soja y Heno + maíz (Tukey, α = 0,05)”.
 </div>
 </div>
 <aside class="notes">
@@ -623,7 +652,7 @@ T y B comparten la letra A.
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%"></p>
+<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -641,7 +670,7 @@ Puntos: medias muestrales. Barras: ± 1 E.E. Letras: Tukey, α = 0,05.
 <p>La superposición de barras <strong>no determina la significación</strong>.</p>
 </div>
 <aside class="notes">
-<p>Mismas medias y letras: T=A, B=AB, C=AB, A=B, D=B. Las barras ±1 E.E. no son intervalos de comparación. No decidir significación por superposición. Se conserva la escala, geometrías, paleta y datos.</p>
+<p>Mismas medias y letras: Heno + soja=A, Heno + maíz=AB, Heno + sorgo=AB, Silaje + soja=B, Mixta=B. Las barras ±1 E.E. no son intervalos de comparación. No decidir significación por superposición. Se conserva la escala, geometrías, paleta y datos.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -691,7 +720,7 @@ Dosis alta
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:100.0%"></p>
+<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -709,7 +738,46 @@ Datos simulados · medias muestrales ± 1 E.E. · n = 7 por tratamiento.
 maíz · datos simulados
 </p>
 <p><span class="math display">\[H_0:\ \mu_{\text{sin N}}=\mu_{\text{intermedia}}=\mu_{\text{alta}}\]</span></p>
-<p><strong>F = 39,84 · gl = 2 y 18 · p = 2,45e-07</strong></p>
+<div class="s13-anova">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">F.V.</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">CM</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p-valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Tratamientos</td>
+<td style="text-align: right;">30,99</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">15,49</td>
+<td style="text-align: right;"><strong>39,84</strong></td>
+<td style="text-align: right;"><strong>2,45e-07</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Error</td>
+<td style="text-align: right;">7,00</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">0,3889</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">37,99</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="fragment">
 <p>Rechazamos Ho: por lo menos una <strong>media poblacional</strong> difiere.</p>
 </div>
@@ -735,7 +803,7 @@ maíz · datos simulados
 <p class="muted small">
 Datos simulados · salida con formato de InfoStat · rendimiento en t/ha
 </p>
-<pre class="infostat">Test:Tukey Alfa=0,05 DMS=0,85076
+<pre class="infostat">Test:Tukey Alfa=0,05 DMS=0,85076 t/ha
 Error: 0,3889 gl: 18
 
 TRATAMIENTO      Medias   n   E.E.
@@ -746,6 +814,7 @@ Dosis alta         7,94   7   0,24     B
 Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</pre>
 <div class="fragment">
 <p>¿Qué pares presentan diferencias significativas?</p>
+<p>Las <strong>medias muestrales</strong> deben diferir en más de <strong>0,85076 t/ha</strong> para que, mediante Tukey, tengamos evidencia de una diferencia entre las <strong>medias poblacionales</strong>, en este análisis.</p>
 </div>
 <aside class="notes">
 <p>Resultados calculados con R y presentados como salida tipo InfoStat, no captura de una ejecución de InfoStat. Las cifras se redondean sólo para mostrar; letras verificadas contra TukeyHSD. El CSV conserva todos los valores.</p>
@@ -767,7 +836,7 @@ Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%"></p>
+<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>

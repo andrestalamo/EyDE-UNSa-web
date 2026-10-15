@@ -242,7 +242,7 @@ La pregunta que dejamos abierta en la Clase 11
 </div>
 </div>
 <div class="fragment">
-<p>¿Error de registro, de medición o <strong>variación biológica real</strong>?</p>
+<p>¿Error de registro o medición? ¿Es <strong>biológicamente plausible</strong>? ¿Revela algo relevante del proceso?</p>
 <p><strong>DESCRIBIR antes de INFERIR. No eliminar automáticamente.</strong></p>
 </div>
 <aside class="notes">
@@ -386,6 +386,7 @@ Variabilidad aproximadamente similar entre grupos.
 <div class="fragment">
 <p><strong>Parcela = UE / réplica independiente</strong></p>
 <p>Planta medida dentro de la parcela = <strong>submuestra</strong>.</p>
+<p><strong>9 UE independientes · 108 mediciones.</strong></p>
 </div>
 <aside class="notes">
 <p>Tres tratamientos de sustrato aplicados a parcelas de cultivo de tomate, con tres parcelas independientes por tratamiento. En cada parcela se miden 12 plantas. Son nueve UE y 108 mediciones; existe replicación verdadera. La cantidad de parcelas es ilustrativa, no un cálculo de potencia. El esquema no representa bloques. Preguntar antes de revelar la respuesta.</p>
@@ -548,9 +549,9 @@ Considerar <strong>espacio, tiempo e influencias</strong> entre UE
 <section id="shapiro-wilk-una-evidencia-complementaria" class="slide level2 s12 center">
 <h2>Shapiro-Wilk: una evidencia complementaria</h2>
 <div class="idea">
-<p><span class="math inline">\(H_0\)</span>: los residuos provienen de una distribución normal.</p>
+<p><span class="math inline">\(H_0\)</span>: los residuos son compatibles con una distribución normal.</p>
 </div>
-<p>Si <strong>p &gt; 0,05</strong>, no encontramos evidencia suficiente para rechazar <span class="math inline">\(H_0\)</span>.</p>
+<p>Si <strong>p &gt; 0,05</strong>, no encontramos evidencia suficiente para rechazar la normalidad.</p>
 <div class="fragment">
 <p><strong>No rechazar <span class="math inline">\(H_0\)</span> no demuestra normalidad.</strong></p>
 </div>
@@ -660,7 +661,7 @@ La sensibilidad depende del tamaño muestral.
 <div class="idea">
 <p><span class="math inline">\(H_0\)</span>: las varianzas de los grupos son iguales.</p>
 </div>
-<p>Si <strong>p &gt; 0,05</strong>, no encontramos evidencia suficiente para rechazar <span class="math inline">\(H_0\)</span>.</p>
+<p>Si <strong>p &gt; 0,05</strong>, no detectamos evidencia suficiente de heterogeneidad.</p>
 <div class="fragment">
 <p><strong>No rechazar <span class="math inline">\(H_0\)</span> no demuestra igualdad.</strong></p>
 </div>
@@ -826,6 +827,32 @@ Diseño + gráficos + contexto + interpretación
           display:block!important;
       }</style></aside>
 </section>
+<section id="dos-valores-p-favorables-qué-falta" class="slide level2 s12 center">
+<h2>Dos valores-p favorables… ¿qué falta?</h2>
+<p class="center">
+Shapiro-Wilk: <strong>p &gt; 0,05</strong>　·　Levene: <strong>p &gt; 0,05</strong>
+</p>
+<div class="pregunta">
+3 parcelas por tratamiento · 12 plantas por parcela<br>Se analizaron las 108 plantas como réplicas independientes.<br>¿Es correcto?
+</div>
+<div class="fragment">
+<p><strong>Hay 9 réplicas independientes: 3 por tratamiento.</strong></p>
+<p>Las 108 plantas son mediciones agrupadas en parcelas.</p>
+</div>
+<aside class="notes">
+<p>Situación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de la diapositiva 8: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="si-aparece-un-problema-primero-entenderlo" class="slide level2 s12 center">
 <h2>Si aparece un problema, primero entenderlo</h2>
 <div class="s12-defs">
@@ -866,6 +893,9 @@ Diseño + gráficos + contexto + interpretación
 <strong>6.</strong> Volver a evaluar el modelo.
 </div>
 </div>
+<p class="s12-note">
+La respuesta depende del problema detectado.
+</p>
 <aside class="notes">
 <p>No enseñar Shapiro significativo → transformar. Sólo como ejemplo oral: log(Y) puede considerarse si Y &gt; 0 y tiene sentido para el problema. El logaritmo cambia la escala de interpretación y no arregla la falta de independencia ni convierte plantas en parcelas. Si resumimos plantas por parcela, la respuesta pasa a ser media por parcela. No desarrollar un catálogo de transformaciones ni métodos avanzados.</p>
 <style type="text/css">
@@ -880,20 +910,37 @@ Diseño + gráficos + contexto + interpretación
           display:block!important;
       }</style></aside>
 </section>
-<section id="dos-valores-p-favorables-qué-falta" class="slide level2 s12 center">
-<h2>Dos valores-p favorables… ¿qué falta?</h2>
-<p class="center">
-Shapiro-Wilk: <strong>p &gt; 0,05</strong>　·　Levene: <strong>p &gt; 0,05</strong>
+<section id="y-si-los-supuestos-no-se-cumplen" class="slide level2 s12 center">
+<h2>¿Y si los supuestos no se cumplen?</h2>
+<div class="s12-defs">
+<div>
+<strong>TRANSFORMAR LA RESPUESTA</strong>
+<p>
+<span class="math inline">\(\log(Y)\)</span> o <span class="math inline">\(\sqrt{Y}\)</span>: opciones ante asimetría o heterogeneidad.
 </p>
-<div class="pregunta">
-3 parcelas por tratamiento · 12 plantas por parcela<br>Se analizaron las 108 plantas como réplicas independientes.<br>¿Es correcto?
 </div>
-<div class="fragment">
-<p><strong>Hay 9 réplicas independientes: 3 por tratamiento.</strong></p>
-<p>Las 108 plantas son mediciones agrupadas en parcelas.</p>
+<div>
+<strong>OTRO PROCEDIMIENTO</strong>
+<p>
+No paramétricos (p.&nbsp;ej., Kruskal–Wallis), según pregunta y diseño.
+</p>
 </div>
+<div>
+<strong>OTRO MODELO</strong>
+<p>
+Modelos lineales generalizados (GLM), por ejemplo:<br>conteos → Poisson · binaria/proporciones de éxitos → binomial.
+</p>
+</div>
+</div>
+<div class="idea">
+<p><strong>La alternativa depende del problema.</strong></p>
+</div>
+<p class="s12-note">
+Transformar no soluciona la falta de independencia ni convierte submuestras en réplicas.
+</p>
 <aside class="notes">
-<p>Situación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de la diapositiva 8: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis.</p>
+<p>Es un mapa de alternativas después de revisar datos, diseño, magnitud del problema y adecuación del modelo; no una receta. Una transformación puede ayudar frente a asimetría, relación media–variabilidad o heterogeneidad de varianzas, pero no lo garantiza. Log(Y) exige Y positivo y sqrt(Y) Y no negativo: son ejemplos posibles, no correcciones obligatorias. Transformar cambia la escala del análisis y de la interpretación. Kruskal–Wallis no es automáticamente “el ANOVA cuando no hay normalidad”: plantea otro enfoque y requiere considerar su hipótesis, el diseño y la independencia.</p>
+<p>Que la respuesta sea un conteo NO implica automáticamente que ANOVA sea inválido. Si Y es el número de frutos por planta, podemos ajustar el modelo y examinar sus residuos. Evaluamos supuestos del MODELO y usamos RESIDUOS como evidencia. Si el comportamiento residual es razonablemente compatible con el modelo normal, ser un conteo no invalida por sí solo ese análisis. Si la estructura residual muestra que el modelo normal no representa bien los datos, puede ser más natural considerar, por ejemplo, un GLM Poisson. Binomial se refiere aquí a respuestas binarias o a números/proporciones de éxitos con un total de ensayos conocido, no a cualquier proporción continua. No desarrollar GLM ni los procedimientos: sólo anticipar que el modelo debe atender a la naturaleza de la respuesta. Ninguna transformación repara la dependencia ni convierte submuestras en UE independientes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

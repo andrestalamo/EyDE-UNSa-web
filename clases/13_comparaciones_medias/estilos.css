@@ -12,3 +12,16 @@
 .reveal .s13 table th,.reveal .s13 table td {padding:15px;}
 
 .s13 pre.infostat strong {font-weight:700;}
+
+/* Dos capas de información con colores del tema compartido. */
+.reveal .s13 .s13-muestra {color:var(--verde);}
+.reveal .s13 .s13-inferencia {color:var(--tierra);}
+.reveal .s13 .s13-anova table {font-size:.78em;margin:16px 0;}
+.reveal .s13 .s13-anova td,.reveal .s13 .s13-anova th {padding:9px 12px;}
+
+/* Espaciado de la inferencia y ancho del gráfico de letras, sólo Clase 13. */
+.s13-inferencia-flujo .s13-etapa {text-align:center;margin:22px 0;}
+.s13-inferencia-flujo .s13-paso {text-align:center;margin:32px 0;}
+.s13-inferencia-flujo .s13-pregunta-math {display:flex;justify-content:center;align-items:baseline;gap:8px;margin-top:22px;}
+.s13-inferencia-flujo .s13-signo {font-size:1em;font-weight:400;font-style:normal;}
+.reveal .s13-letras .cell-output-display img {width:78%;margin:0 auto;}

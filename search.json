@@ -67,7 +67,7 @@
     "href": "clases/13_comparaciones_medias/index.html#qué-nos-dijo-el-anova",
     "title": "Comparaciones múltiples de medias",
     "section": "¿Qué nos dijo el ANOVA?",
-    "text": "¿Qué nos dijo el ANOVA?\n\nUn factor de efectos fijos · varios tratamientos\n\n\\[H_0:\\ \\mu_1=\\mu_2=\\cdots=\\mu_t\\]\nRechazamos \\(H_0\\) con el nivel de significación \\(\\alpha\\) elegido.\n\nHay evidencia de que por lo menos una media poblacional es diferente.\n\n\nH1: no todas las medias poblacionales son iguales. Retomar Clase 11, sin sugerir que todas difieren. En la secuencia de hoy partimos de ANOVA significativo y condiciones del modelo razonables, revisadas en Clase 12. No presentar ese paso como requisito matemático universal de Tukey."
+    "text": "¿Qué nos dijo el ANOVA?\n\nUn factor de efectos fijos · varios niveles\n\n\\[H_0:\\ \\mu_1=\\mu_2=\\cdots=\\mu_t\\]\nRechazamos \\(H_0\\) con el nivel de significación \\(\\alpha\\) elegido.\n\nHay evidencia de que por lo menos una media poblacional es diferente.\n\n\nH1: no todas las medias poblacionales son iguales. Retomar Clase 11, sin sugerir que todas difieren. En la secuencia de hoy partimos de ANOVA significativo y condiciones del modelo razonables, revisadas en Clase 12. No presentar ese paso como requisito matemático universal de Tukey."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#dónde-están-localizadas-las-diferencias",
@@ -81,7 +81,7 @@
     "href": "clases/13_comparaciones_medias/index.html#muchas-medias-muchas-comparaciones",
     "title": "Comparaciones múltiples de medias",
     "section": "Muchas medias, muchas comparaciones",
-    "text": "Muchas medias, muchas comparaciones\n\n\n\n\n\n\n\n\n\n\n3 tratamientos → 3 pares　 ·　4 → 6　 ·　6 → 15\n\n\n\n\\(m=t(t-1)/2\\) comparaciones de a pares\n\n\n\nCinco medias del ejemplo aportado: diez pares posibles. El gráfico muestra únicamente medias muestrales, sin inferencia. No pedir calcular m. Las escalas de los gráficos de puntos no necesitan comenzar en cero."
+    "text": "Muchas medias, muchas comparaciones\n\nNovillitos Brangus · factor: tipo de dieta · cinco niveles nominales. Datos simulados.\n\n\n\n\n\n\n\n\n\n\n\n3 niveles → 3 pares · 4 niveles → 6 pares · 6 niveles → 15 pares\n\n\n\n\\(m=t(t-1)/2\\) · \\(t\\): número de niveles del factor\n\n\n\nCinco medias del experimento simulado de dietas: diez pares posibles. 35 novillitos de unos 200 kg asignados aleatoriamente a cinco dietas, siete por dieta, con alimentación individual; animal = UE independiente. Tras adaptación, se mide la ganancia media diaria durante 70 días. Las dietas son categorías, no dosis crecientes. El gráfico muestra únicamente medias muestrales, sin inferencia. No pedir calcular m. Las escalas de los gráficos de puntos no necesitan comenzar en cero."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#por-qué-no-hacer-muchas-pruebas-t",
@@ -102,49 +102,49 @@
     "href": "clases/13_comparaciones_medias/index.html#que-las-medias-muestrales-difieran-no-alcanza",
     "title": "Comparaciones múltiples de medias",
     "section": "Que las medias muestrales difieran no alcanza",
-    "text": "Que las medias muestrales difieran no alcanza\n\\[\\bar Y_A=42{,}3\\qquad \\bar Y_B=43{,}1\\]\n\n42,3 ≠ 43,1\n\n\nNo necesitamos una prueba para comprobar esa diferencia numérica.\n\n\n¿Aporta evidencia de una diferencia entre las medias poblacionales?\n\n\nValores ilustrativos independientes de las dos aplicaciones. Dos medias muestrales pueden coincidir exactamente. En este ejemplo difieren numéricamente; una diferencia observada puede explicarse por variación de muestreo."
+    "text": "Que las medias muestrales difieran no alcanza\n\n\n\n\n\n\n\n\n\n\n0,50 ≠ 0,65 kg/día\n\n\nNo necesitamos una prueba para comprobar esa diferencia numérica.\n\n\n¿Aporta evidencia de una diferencia entre las medias poblacionales?\n\n\nMedias del ejemplo simulado de novillitos: Heno + soja y Heno + maíz, en kg/día. Dos medias muestrales pueden coincidir exactamente. En este ejemplo difieren numéricamente; una diferencia observada puede explicarse por variación de muestreo."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#seguimos-haciendo-inferencia",
     "href": "clases/13_comparaciones_medias/index.html#seguimos-haciendo-inferencia",
     "title": "Comparaciones múltiples de medias",
     "section": "Seguimos haciendo inferencia",
-    "text": "Seguimos haciendo inferencia\n\nMUESTRA\n\n\\[\\bar Y_i-\\bar Y_j\\ne 0\\]\n\nObservamos una diferencia\n\n\n\n↓ INFERENCIA ↓POBLACIÓN\n\n\\[\\text{¿}\\mu_i-\\mu_j=0\\text{?}\\]\n\n\nRetomar estimación y pruebas de hipótesis: información muestral para inferir sobre parámetros poblacionales. La desigualdad describe este caso observado, no una condición necesaria para definir el procedimiento."
+    "text": "Seguimos haciendo inferencia\n\nMUESTRA\n\\[\\bar Y_i-\\bar Y_j\\ne 0\\]\nObservamos una diferencia entre medias muestrales.\n\n\n\n↓ INFERENCIA ↓\n\n\nPOBLACIÓN\n\n¿\\(\\mu_i-\\mu_j=0\\)?\n\n\n\n\nRetomar estimación y pruebas de hipótesis: información muestral para inferir sobre parámetros poblacionales. La desigualdad describe este caso observado, no una condición necesaria para definir el procedimiento."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#tukey-todas-las-comparaciones-de-a-pares",
     "href": "clases/13_comparaciones_medias/index.html#tukey-todas-las-comparaciones-de-a-pares",
     "title": "Comparaciones múltiples de medias",
     "section": "Tukey: todas las comparaciones de a pares",
-    "text": "Tukey: todas las comparaciones de a pares\nPara cada par de tratamientos:\n\\[H_0:\\ \\mu_i=\\mu_j\\qquad H_1:\\ \\mu_i\\ne\\mu_j\\]\n\n\\(\\mu_i\\) y \\(\\mu_j\\) son medias poblacionales.\n\n\nLa prueba usa diferencias entre medias muestrales para poner a prueba esas hipótesis.\n\n\nFuente conceptual: Silvia Sühring, diapositivas 10–11 y documento Word incrustado. Verificación técnica: https://stat.ethz.ch/R-manual/R-devel/library/stats/help/TukeyHSD.html. Mantener condiciones del ANOVA clásico y familia de todos los pares."
+    "text": "Tukey: todas las comparaciones de a pares\nPara cada par de niveles del factor:\n\\[H_0:\\ \\mu_i=\\mu_j\\qquad H_1:\\ \\mu_i\\ne\\mu_j\\]\n\n\\(\\mu_i\\) y \\(\\mu_j\\) son medias poblacionales.\n\n\nLa prueba usa diferencias entre medias muestrales para poner a prueba esas hipótesis.\n\n\nFuente conceptual: Silvia Sühring, diapositivas 10–11 y documento Word incrustado. Verificación técnica: https://stat.ethz.ch/R-manual/R-devel/library/stats/help/TukeyHSD.html. Mantener condiciones del ANOVA clásico y familia de todos los pares."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#dms-diferencia-mínima-significativa",
     "href": "clases/13_comparaciones_medias/index.html#dms-diferencia-mínima-significativa",
     "title": "Comparaciones múltiples de medias",
     "section": "DMS: diferencia mínima significativa",
-    "text": "DMS: diferencia mínima significativa\n\nDiferencia observada entre medias muestrales\n\n\n\n↓ Consideramos la variabilidadDMS: umbral para detectar una diferencia\n\n\n\n\\[|\\bar Y_i-\\bar Y_j|&gt;\\mathrm{DMS}\\ \\Rightarrow\\ \\text{rechazo }H_0\\]\n\n↓Inferencia sobre las medias poblacionales\n\n\n\nDMS: diferencia mínima requerida entre dos medias muestrales para detectar una diferencia entre las medias poblacionales. Si la diferencia no supera la DMS, no rechazamos Ho; no demostramos igualdad. Ejemplos balanceados: una DMS común. Decidir sin redondear. No desarrollar la fórmula de Tukey ni valores críticos."
+    "text": "DMS: diferencia mínima significativa\n\nDiferencia observada entre medias muestrales\n\n\n\n↓ Consideramos la variabilidadDMS: umbral para detectar una diferencia\n\n\n\n\\[d_i=|\\bar Y_i-\\bar Y_j|&gt;\\mathrm{DMS}\\ \\Rightarrow\\ \\text{rechazo }H_0\\]\n\n↓Inferencia sobre las medias poblacionales\n\n\n\nEn nuestros ejemplos, con igual número de réplicas, usamos una DMS común.La DMS tiene las mismas unidades que la variable respuesta.\n\n\nEn novillitos, DMS ≈ 0,196 kg/día: las medias muestrales deben superar esa diferencia para aportar evidencia sobre las medias poblacionales.\n\n\nDMS: diferencia mínima requerida entre dos medias muestrales para detectar una diferencia entre las medias poblacionales. Si la diferencia no supera la DMS, no rechazamos Ho; no demostramos igualdad. Ejemplos balanceados: una DMS común. Decidir sin redondear. La fórmula balanceada se muestra a continuación para interpretar CMEE y n; no calcular valores críticos."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#no-alcanza-con-observar-la-separación",
     "href": "clases/13_comparaciones_medias/index.html#no-alcanza-con-observar-la-separación",
     "title": "Comparaciones múltiples de medias",
     "section": "No alcanza con observar la separación",
-    "text": "No alcanza con observar la separación\n\n¿De qué depende nuestra capacidad de detectar diferencias?\n\n\nMayor variabilidad residual (CMEE) → DMS mayor → más difícil detectar diferencias.\n\n\nMás réplicas independientes → mayor precisión → mayor capacidad para detectar diferencias.\n\n\nComparaciones a igualdad de las demás condiciones, especialmente α, tratamientos y diseño. DMS también depende de esos elementos y de los gl. Más mediciones de la misma UE no equivalen a más réplicas. Vincular con diseño y potencia sin álgebra."
+    "text": "No alcanza con observar la separación\n\\[\\mathrm{DMS}=q_{\\alpha;\\,t;\\,gl_E}\\sqrt{\\frac{\\color{#8a5a3b}{CMEE}}{\\color{#2d6a4f}{n}}}\\]\n\nCMEE: numerador · n: réplicas independientes, denominador.\n\n\nMayor variabilidad residual (CMEE) → DMS mayor → más difícil detectar diferencias.\n\n\nMayor n de réplicas independientes → DMS menor → mayor capacidad para detectar diferencias.\n\n\nMás mediciones de una misma unidad experimental no equivalen a más réplicas.\n\n\nComparaciones a igualdad de las demás condiciones, especialmente α, tratamientos y diseño. DMS también depende de esos elementos y de los gl. Más mediciones de la misma UE no equivalen a más réplicas. q es el valor crítico del rango estudentizado para α, t niveles y gl del error. Mostrar la estructura de la fórmula, no enseñar cálculo manual."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#una-salida-de-infostat",
-    "href": "clases/13_comparaciones_medias/index.html#una-salida-de-infostat",
+    "objectID": "clases/13_comparaciones_medias/index.html#tukey-en-novillitos-salida-tipo-infostat",
+    "href": "clases/13_comparaciones_medias/index.html#tukey-en-novillitos-salida-tipo-infostat",
     "title": "Comparaciones múltiples de medias",
-    "section": "Una salida de InfoStat",
-    "text": "Una salida de InfoStat\nTest:Tukey Alfa=0,05 DMS=4,50683\nError: 5,4100 gl: 16\n\nTRATAMIENTO   Medias   n   E.E.\nT              89,20   5   1,04     A\nB              91,80   5   1,04     A B\nC              93,40   5   1,04     A B\nA              93,80   5   1,04       B\nD              94,20   5   1,04       B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\nTukey: todos los pares · Alfa: 0,05 · DMS: umbral.\n\n\nError = CMEE · gl del error · n: réplicas · E.E. de la media.\n\n\nTranscripción exacta del ejemplo incluido por el docente en el encargo. DMS calculada = 4,506828…, E.E. = sqrt(5,4100/5) = 1,040192…. No se dispone de los datos crudos ni del modelo original. gl=16 no corresponde a un DCA simple con 25 observaciones y 5 grupos (gl=20); es compatible, por ejemplo, con cinco bloques completos en un modelo aditivo. No atribuir un diseño sin evidencia. Se conservan los gl del modelo original y no se reconstruye su ANOVA.\nReconocer columnas Medias y letras, que se interpretan en la siguiente diapositiva. E.E. es error estándar de la media, no desvío de las observaciones. Fuente: ejemplo aportado del material de Silvia Sühring."
+    "section": "Tukey en novillitos: salida tipo InfoStat",
+    "text": "Tukey en novillitos: salida tipo InfoStat\nTest:Tukey Alfa=0,05 DMS=0,19554 kg/día\nError: 0,01591 gl: 30\n\nTIPO DE DIETA     Medias   n   E.E.\nHeno + soja         0,50   7   0,05     A\nHeno + maíz         0,65   7   0,05     AB\nHeno + sorgo        0,69   7   0,05     AB\nSilaje + soja       0,79   7   0,05     B\nMixta               0,79   7   0,05     B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\nExperimento simulado: 35 novillitos asignados al azar; 7 por dieta.\nAnimal = UE independiente, con alimentación individual. Ganancia en kg/día.\n\n\nError = CMEE · gl del error · n: réplicas · E.E. de la media.\n\n\nExperimento hipotético de recría de novillitos Brangus (unos 200 kg iniciales), plausible para sistemas del NOA; no es un ensayo publicado ni una recomendación de alimentación. Cinco formulaciones nominales: Heno + soja (heno de gramínea y expeller de soja), Heno + maíz, Heno + sorgo (grano), Silaje + soja (silaje de sorgo y expeller de soja) y Mixta (heno, silaje, maíz y soja). Las etiquetas identifican los ingredientes distintivos; todas incluyen la corrección proteica y mineral adecuada. No son dosis sucesivas del mismo suplemento. Dietas suministradas individualmente, con animales asignados aleatoriamente; no confundir varios animales en un único corral por dieta con réplicas independientes. Tras adaptación, ganancia diaria durante 70 días.\nPlausibilidad de recursos y escala contrastada con INTA: https://www.argentina.gob.ar/noticias/el-sorgo-gana-protagonismo-en-las-dietas-ganaderas y https://www.argentina.gob.ar/noticias/heno-un-recurso-forrajero-alternativo-de-calidad-y-facil-suministro. Esas fuentes respaldan el uso de heno/silajes/concentrados en recría; no son el origen de estos datos simulados ni validan estas formulaciones específicas.\nSemilla 20261302; datos generados una sola vez con generar_dietas.R y guardados en datos_dietas_simulados.csv. El render sólo lee ese archivo mediante analisis_dietas.R. Medias, CMEE, gl, Tukey, DMS y letras derivados del mismo modelo; los diez pares se verifican automáticamente. ANOVA: F = 6,213, p = 9,133e-04, gl = 4 y 30. Tabla completa en anova_dietas.csv. E.E. es error estándar de la media, no desvío de las observaciones. La salida es formato didáctico tipo InfoStat, calculada con R."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#medias-muestrales-inferencia-poblacional",
     "href": "clases/13_comparaciones_medias/index.html#medias-muestrales-inferencia-poblacional",
     "title": "Comparaciones múltiples de medias",
     "section": "Medias muestrales, inferencia poblacional",
-    "text": "Medias muestrales, inferencia poblacional\nTest:Tukey Alfa=0,05 DMS=4,50683\nError: 5,4100 gl: 16\n\nTRATAMIENTO   Medias   n   E.E.\nT              89,20   5   1,04     A\nB              91,80   5   1,04     A B\nC              93,40   5   1,04     A B\nA              93,80   5   1,04       B\nD              94,20   5   1,04       B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\nMEDIAS → medias muestrales observadas.\n\n\nLETRAS → pruebas sobre medias poblacionales."
+    "text": "Medias muestrales, inferencia poblacional\nTest:Tukey Alfa=0,05 DMS=0,19554 kg/día\nError: 0,01591 gl: 30\n\nTIPO DE DIETA     Medias   n   E.E.\nHeno + soja         0,50   7   0,05     A\nHeno + maíz         0,65   7   0,05     AB\nHeno + sorgo        0,69   7   0,05     AB\nSilaje + soja       0,79   7   0,05     B\nMixta               0,79   7   0,05     B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\nMEDIAS → medias muestrales observadas.\n\n\nLETRAS → pruebas sobre medias poblacionales."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#qué-significa-compartir-una-letra",
@@ -154,39 +154,39 @@
     "text": "¿Qué significa compartir una letra?\n\n“Medias con una letra común no son significativamente diferentes (p &gt; 0,05)”.\n\n\nNo hay evidencia suficiente para afirmar que las medias poblacionales difieren.\n\n\nEso no demuestra igualdad entre las medias poblacionales.\n\n\nFrase literal del pie de InfoStat solicitado. p se refiere a la comparación ajustada. La igualdad exacta con α se resuelve según el criterio de decisión y precisión del programa; no discutirla a partir de valores redondeados."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#t-y-b-diferencia-significativa",
-    "href": "clases/13_comparaciones_medias/index.html#t-y-b-diferencia-significativa",
+    "objectID": "clases/13_comparaciones_medias/index.html#heno-con-soja-o-maíz-diferencia-significativa",
+    "href": "clases/13_comparaciones_medias/index.html#heno-con-soja-o-maíz-diferencia-significativa",
     "title": "Comparaciones múltiples de medias",
-    "section": "T y B: ¿diferencia significativa?",
-    "text": "T y B: ¿diferencia significativa?\n\n\nT89,20A\n\n\nB91,80A B\n\n\n\nNo: comparten A. No se detectaron diferencias significativas entre sus medias poblacionales.\n\n\nLas medias muestrales sí son numéricamente distintas: 89,20 ≠ 91,80."
+    "section": "Heno con soja o maíz: ¿diferencia significativa?",
+    "text": "Heno con soja o maíz: ¿diferencia significativa?\n\n\n\n\n\n\n\n\n\n\nGanancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.\n\n\nNo: comparten A. No se detectaron diferencias significativas entre sus medias poblacionales.\n\n\ndᵢ = 0,151 kg/día &lt; DMS = 0,196 kg/día."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#t-y-d-diferencia-significativa",
-    "href": "clases/13_comparaciones_medias/index.html#t-y-d-diferencia-significativa",
+    "objectID": "clases/13_comparaciones_medias/index.html#heno-soja-y-mixta-diferencia-significativa",
+    "href": "clases/13_comparaciones_medias/index.html#heno-soja-y-mixta-diferencia-significativa",
     "title": "Comparaciones múltiples de medias",
-    "section": "T y D: ¿diferencia significativa?",
-    "text": "T y D: ¿diferencia significativa?\n\n\nT89,20A\n\n\nD94,20B\n\n\n\nSí: no comparten letras. Hay evidencia de que sus medias poblacionales difieren.\n\n\nLa diferencia observada es 5,00, mayor que la DMS = 4,50683.\n\n\nÉste es un ejemplo de lectura del umbral, no cálculo manual de Tukey. Las medias poblacionales no se conocen: no atribuirles exactamente una diferencia de 5."
+    "section": "Heno + soja y Mixta: ¿diferencia significativa?",
+    "text": "Heno + soja y Mixta: ¿diferencia significativa?\n\n\n\n\n\n\n\n\n\n\nGanancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.\n\n\nSí: no comparten letras. Hay evidencia de que sus medias poblacionales difieren.\n\n\ndᵢ = 0,286 kg/día &gt; DMS = 0,196 kg/día.\n\n\nÉste es un ejemplo de lectura del umbral, no cálculo manual de Tukey. Las medias poblacionales no se conocen: no atribuirles exactamente la diferencia muestral observada."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#compartir-letras-no-genera-grupos-separados",
     "href": "clases/13_comparaciones_medias/index.html#compartir-letras-no-genera-grupos-separados",
     "title": "Comparaciones múltiples de medias",
     "section": "Compartir letras no genera grupos separados",
-    "text": "Compartir letras no genera grupos separados\n\n\nTA\n\n\nBAB\n\n\nDB\n\n\n\nB comparte A con T y B con D: no se detectan diferencias significativas en esos pares.\n\n\nT y D no comparten letras: sí se detecta una diferencia significativa.\n\n\nAB no constituye un tercer grupo. Las letras no son un ranking.\n\n\nLas decisiones se refieren a medias poblacionales. La ausencia de significación no es transitiva. No formar grupos cerrados ni categorías de calidad. Recuperar oralmente C=AB: comparte A con T y B con D, sin diferencias significativas en esos dos pares."
+    "text": "Compartir letras no genera grupos separados\n\n\n\n\n\n\n\n\n\n\nHeno + maíz comparte A con Heno + soja y B con Mixta. Heno + soja y Mixta no comparten letras.\n\n\nAB no constituye un tercer grupo. Las letras no son un ranking.\n\n\nLa no significación no es transitiva: Heno + soja–Heno + maíz y Heno + maíz–Mixta no son significativos, pero Heno + soja–Mixta sí. Cada decisión corresponde a su comparación. No formar grupos cerrados. Heno + sorgo también comparte A con Heno + soja y B con Mixta."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#cómo-lo-escribiríamos",
     "href": "clases/13_comparaciones_medias/index.html#cómo-lo-escribiríamos",
     "title": "Comparaciones múltiples de medias",
     "section": "¿Cómo lo escribiríamos?",
-    "text": "¿Cómo lo escribiríamos?\n\nT y B comparten la letra A.\n\n\nINCORRECTO: “Las medias son iguales”.\n\n\n\nCORRECTO:“No se detectaron diferencias significativas entre las medias poblacionales de T y B (Tukey, α = 0,05)”.\n\n\n\nNo significación no demuestra igualdad. Las medias muestrales observadas son numéricamente diferentes. Pedir una redacción antes de revelar la correcta."
+    "text": "¿Cómo lo escribiríamos?\n\nHeno + soja y Heno + maíz comparten la letra A.\n\n\nINCORRECTO: “Las medias son iguales”.\n\n\n\nCORRECTO:“No se detectaron diferencias significativas entre las medias poblacionales de Heno + soja y Heno + maíz (Tukey, α = 0,05)”.\n\n\n\nNo significación no demuestra igualdad. Las medias muestrales observadas son numéricamente diferentes. Pedir una redacción antes de revelar la correcta."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#tabla-y-gráfico-comunican-el-mismo-resultado",
     "href": "clases/13_comparaciones_medias/index.html#tabla-y-gráfico-comunican-el-mismo-resultado",
     "title": "Comparaciones múltiples de medias",
     "section": "Tabla y gráfico comunican el mismo resultado",
-    "text": "Tabla y gráfico comunican el mismo resultado\n\n\n\n\n\n\n\n\n\n\nPuntos: medias muestrales. Barras: ± 1 E.E. Letras: Tukey, α = 0,05.\n\n\nPosición del punto → media muestral observada.\n\n\nLetras → inferencia sobre medias poblacionales.\n\n\nLa superposición de barras no determina la significación.\n\n\nMismas medias y letras: T=A, B=AB, C=AB, A=B, D=B. Las barras ±1 E.E. no son intervalos de comparación. No decidir significación por superposición. Se conserva la escala, geometrías, paleta y datos."
+    "text": "Tabla y gráfico comunican el mismo resultado\n\n\n\n\n\n\n\n\n\n\nPuntos: medias muestrales. Barras: ± 1 E.E. Letras: Tukey, α = 0,05.\n\n\nPosición del punto → media muestral observada.\n\n\nLetras → inferencia sobre medias poblacionales.\n\n\nLa superposición de barras no determina la significación.\n\n\nMismas medias y letras: Heno + soja=A, Heno + maíz=AB, Heno + sorgo=AB, Silaje + soja=B, Mixta=B. Las barras ±1 E.E. no son intervalos de comparación. No decidir significación por superposición. Se conserva la escala, geometrías, paleta y datos."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#fertilización-nitrogenada-en-maíz",
@@ -207,14 +207,14 @@
     "href": "clases/13_comparaciones_medias/index.html#el-anova-detecta-una-diferencia-global",
     "title": "Comparaciones múltiples de medias",
     "section": "El ANOVA detecta una diferencia global",
-    "text": "El ANOVA detecta una diferencia global\n\nmaíz · datos simulados\n\n\\[H_0:\\ \\mu_{\\text{sin N}}=\\mu_{\\text{intermedia}}=\\mu_{\\text{alta}}\\]\nF = 39,84 · gl = 2 y 18 · p = 2,45e-07\n\nRechazamos Ho: por lo menos una media poblacional difiere.\n\n\n¿Dónde están localizadas las diferencias?\n\n\nModelo DCA de un factor, α=0,05. F y p calculados con aov sobre el CSV simulado. Errores generados con distribución normal y varianza común. Suponer independencia se apoya en el escenario experimental planteado; no se “demuestra” con una prueba sobre residuos."
+    "text": "El ANOVA detecta una diferencia global\n\nmaíz · datos simulados\n\n\\[H_0:\\ \\mu_{\\text{sin N}}=\\mu_{\\text{intermedia}}=\\mu_{\\text{alta}}\\]\n\n\n\n\nF.V.\nSC\ngl\nCM\nF\np-valor\n\n\n\n\nTratamientos\n30,99\n2\n15,49\n39,84\n2,45e-07\n\n\nError\n7,00\n18\n0,3889\n\n\n\n\nTotal\n37,99\n20\n\n\n\n\n\n\n\n\nRechazamos Ho: por lo menos una media poblacional difiere.\n\n\n¿Dónde están localizadas las diferencias?\n\n\nModelo DCA de un factor, α=0,05. F y p calculados con aov sobre el CSV simulado. Errores generados con distribución normal y varianza común. Suponer independencia se apoya en el escenario experimental planteado; no se “demuestra” con una prueba sobre residuos."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#tukey-en-maíz",
     "href": "clases/13_comparaciones_medias/index.html#tukey-en-maíz",
     "title": "Comparaciones múltiples de medias",
     "section": "Tukey en maíz",
-    "text": "Tukey en maíz\n\nDatos simulados · salida con formato de InfoStat · rendimiento en t/ha\n\nTest:Tukey Alfa=0,05 DMS=0,85076\nError: 0,3889 gl: 18\n\nTRATAMIENTO      Medias   n   E.E.\nSin N              5,09   7   0,24     A\nDosis intermedia   7,25   7   0,24     B\nDosis alta         7,94   7   0,24     B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\n¿Qué pares presentan diferencias significativas?\n\n\nResultados calculados con R y presentados como salida tipo InfoStat, no captura de una ejecución de InfoStat. Las cifras se redondean sólo para mostrar; letras verificadas contra TukeyHSD. El CSV conserva todos los valores."
+    "text": "Tukey en maíz\n\nDatos simulados · salida con formato de InfoStat · rendimiento en t/ha\n\nTest:Tukey Alfa=0,05 DMS=0,85076 t/ha\nError: 0,3889 gl: 18\n\nTRATAMIENTO      Medias   n   E.E.\nSin N              5,09   7   0,24     A\nDosis intermedia   7,25   7   0,24     B\nDosis alta         7,94   7   0,24     B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\n¿Qué pares presentan diferencias significativas?\nLas medias muestrales deben diferir en más de 0,85076 t/ha para que, mediante Tukey, tengamos evidencia de una diferencia entre las medias poblacionales, en este análisis.\n\n\nResultados calculados con R y presentados como salida tipo InfoStat, no captura de una ejecución de InfoStat. Las cifras se redondean sólo para mostrar; letras verificadas contra TukeyHSD. El CSV conserva todos los valores."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#comunicar-el-resultado-de-maíz",
@@ -4253,7 +4253,7 @@
     "href": "clases/12_supuestos_anova/index.html#un-dato-extraño-merece-una-pregunta",
     "title": "Supuestos del ANOVA",
     "section": "Un dato extraño merece una pregunta",
-    "text": "Un dato extraño merece una pregunta\n\n\n\n\n\n\n\n\n\n\n¿Error de registro, de medición o variación biológica real?\nDESCRIBIR antes de INFERIR. No eliminar automáticamente.\n\n\nSituación hipotética: se cambió una medición sólo en una copia en memoria para discutir un registro llamativo; no pertenece al CSV original de Clase 11. Pedir explicaciones antes de revelar. Consultar registros y contexto; corregir un error comprobado es distinto de excluir un dato por su efecto sobre p."
+    "text": "Un dato extraño merece una pregunta\n\n\n\n\n\n\n\n\n\n\n¿Error de registro o medición? ¿Es biológicamente plausible? ¿Revela algo relevante del proceso?\nDESCRIBIR antes de INFERIR. No eliminar automáticamente.\n\n\nSituación hipotética: se cambió una medición sólo en una copia en memoria para discutir un registro llamativo; no pertenece al CSV original de Clase 11. Pedir explicaciones antes de revelar. Consultar registros y contexto; corregir un error comprobado es distinto de excluir un dato por su efecto sobre p."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#qué-predice-el-modelo-para-una-maceta",
@@ -4281,7 +4281,7 @@
     "href": "clases/12_supuestos_anova/index.html#plantas-son-12-réplicas",
     "title": "Supuestos del ANOVA",
     "section": "¿12 plantas son 12 réplicas?",
-    "text": "¿12 plantas son 12 réplicas?\n\n\n\n\n\n\n\n\n\n\nParcela = UE / réplica independiente\nPlanta medida dentro de la parcela = submuestra.\n\n\nTres tratamientos de sustrato aplicados a parcelas de cultivo de tomate, con tres parcelas independientes por tratamiento. En cada parcela se miden 12 plantas. Son nueve UE y 108 mediciones; existe replicación verdadera. La cantidad de parcelas es ilustrativa, no un cálculo de potencia. El esquema no representa bloques. Preguntar antes de revelar la respuesta."
+    "text": "¿12 plantas son 12 réplicas?\n\n\n\n\n\n\n\n\n\n\nParcela = UE / réplica independiente\nPlanta medida dentro de la parcela = submuestra.\n9 UE independientes · 108 mediciones.\n\n\nTres tratamientos de sustrato aplicados a parcelas de cultivo de tomate, con tres parcelas independientes por tratamiento. En cada parcela se miden 12 plantas. Son nueve UE y 108 mediciones; existe replicación verdadera. La cantidad de parcelas es ilustrativa, no un cálculo de potencia. El esquema no representa bloques. Preguntar antes de revelar la respuesta."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#la-independencia-se-construye-con-el-diseño",
@@ -4323,7 +4323,7 @@
     "href": "clases/12_supuestos_anova/index.html#shapiro-wilk-una-evidencia-complementaria",
     "title": "Supuestos del ANOVA",
     "section": "Shapiro-Wilk: una evidencia complementaria",
-    "text": "Shapiro-Wilk: una evidencia complementaria\n\n\\(H_0\\): los residuos provienen de una distribución normal.\n\nSi p &gt; 0,05, no encontramos evidencia suficiente para rechazar \\(H_0\\).\n\nNo rechazar \\(H_0\\) no demuestra normalidad.\n\n\nLa sensibilidad depende del tamaño muestral.\n\n\nLa hipótesis solicitada se presenta como formulación operativa de la prueba aplicada a residuos. Técnicamente el supuesto es sobre los errores y los residuos estimados tienen restricciones por el ajuste; usarla como diagnóstico complementario, no como garantía exacta. Con muestras pequeñas cuesta detectar desviaciones; con muy grandes se detectan diferencias pequeñas de escasa importancia práctica. p no mide gravedad. Mantener gráfico + contexto + prueba. No se muestran valores calculados que puedan confundirse con un requisito de aprobación."
+    "text": "Shapiro-Wilk: una evidencia complementaria\n\n\\(H_0\\): los residuos son compatibles con una distribución normal.\n\nSi p &gt; 0,05, no encontramos evidencia suficiente para rechazar la normalidad.\n\nNo rechazar \\(H_0\\) no demuestra normalidad.\n\n\nLa sensibilidad depende del tamaño muestral.\n\n\nLa hipótesis solicitada se presenta como formulación operativa de la prueba aplicada a residuos. Técnicamente el supuesto es sobre los errores y los residuos estimados tienen restricciones por el ajuste; usarla como diagnóstico complementario, no como garantía exacta. Con muestras pequeñas cuesta detectar desviaciones; con muy grandes se detectan diferencias pequeñas de escasa importancia práctica. p no mide gravedad. Mantener gráfico + contexto + prueba. No se muestran valores calculados que puedan confundirse con un requisito de aprobación."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#todos-los-tratamientos-deben-tener-la-misma-variabilidad",
@@ -4351,7 +4351,7 @@
     "href": "clases/12_supuestos_anova/index.html#levene-complementar-el-gráfico",
     "title": "Supuestos del ANOVA",
     "section": "Levene: complementar el gráfico",
-    "text": "Levene: complementar el gráfico\n\n\\(H_0\\): las varianzas de los grupos son iguales.\n\nSi p &gt; 0,05, no encontramos evidencia suficiente para rechazar \\(H_0\\).\n\nNo rechazar \\(H_0\\) no demuestra igualdad.\n\n\nImportan la magnitud del problema y las características del diseño.\n\n\nPrueba complementaria de homogeneidad entre grupos, no autorización para aplicar ANOVA. Importan la magnitud de heterogeneidad y el equilibrio de tamaños muestrales. No llamar inviolable al supuesto. No desarrollar variantes de Levene ni teoría de robustez. No se agrega un paquete para una prueba que aquí se enseña conceptualmente."
+    "text": "Levene: complementar el gráfico\n\n\\(H_0\\): las varianzas de los grupos son iguales.\n\nSi p &gt; 0,05, no detectamos evidencia suficiente de heterogeneidad.\n\nNo rechazar \\(H_0\\) no demuestra igualdad.\n\n\nImportan la magnitud del problema y las características del diseño.\n\n\nPrueba complementaria de homogeneidad entre grupos, no autorización para aplicar ANOVA. Importan la magnitud de heterogeneidad y el equilibrio de tamaños muestrales. No llamar inviolable al supuesto. No desarrollar variantes de Levene ni teoría de robustez. No se agrega un paquete para una prueba que aquí se enseña conceptualmente."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#es-razonable-una-descripción-aditiva",
@@ -4389,6 +4389,13 @@
     "text": "No buscamos “aprobar” supuestos\n\nBuscamos problemas que puedancomprometer nuestra inferencia.\n\n\n\nDiseño + gráficos + contexto + interpretación\n\n\n\nHacer una pausa. Preguntar qué problemas podrían permanecer ocultos si sólo miráramos dos valores-p. Recuperar unidad experimental, errores de registro y patrones de residuos."
   },
   {
+    "objectID": "clases/12_supuestos_anova/index.html#dos-valores-p-favorables-qué-falta",
+    "href": "clases/12_supuestos_anova/index.html#dos-valores-p-favorables-qué-falta",
+    "title": "Supuestos del ANOVA",
+    "section": "Dos valores-p favorables… ¿qué falta?",
+    "text": "Dos valores-p favorables… ¿qué falta?\n\nShapiro-Wilk: p &gt; 0,05　·　Levene: p &gt; 0,05\n\n\n3 parcelas por tratamiento · 12 plantas por parcelaSe analizaron las 108 plantas como réplicas independientes.¿Es correcto?\n\n\nHay 9 réplicas independientes: 3 por tratamiento.\nLas 108 plantas son mediciones agrupadas en parcelas.\n\n\nSituación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de la diapositiva 8: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis."
+  },
+  {
     "objectID": "clases/12_supuestos_anova/index.html#si-aparece-un-problema-primero-entenderlo",
     "href": "clases/12_supuestos_anova/index.html#si-aparece-un-problema-primero-entenderlo",
     "title": "Supuestos del ANOVA",
@@ -4400,14 +4407,14 @@
     "href": "clases/12_supuestos_anova/index.html#revisar-el-modelo-y-volver-a-evaluar",
     "title": "Supuestos del ANOVA",
     "section": "Revisar el modelo y volver a evaluar",
-    "text": "Revisar el modelo y volver a evaluar\n\n\n4. ¿El modelo representa el problema?\n\n\n5. Considerar una transformación, otro procedimiento u otro modelo.\n\n\n6. Volver a evaluar el modelo.\n\n\n\nNo enseñar Shapiro significativo → transformar. Sólo como ejemplo oral: log(Y) puede considerarse si Y &gt; 0 y tiene sentido para el problema. El logaritmo cambia la escala de interpretación y no arregla la falta de independencia ni convierte plantas en parcelas. Si resumimos plantas por parcela, la respuesta pasa a ser media por parcela. No desarrollar un catálogo de transformaciones ni métodos avanzados."
+    "text": "Revisar el modelo y volver a evaluar\n\n\n4. ¿El modelo representa el problema?\n\n\n5. Considerar una transformación, otro procedimiento u otro modelo.\n\n\n6. Volver a evaluar el modelo.\n\n\n\nLa respuesta depende del problema detectado.\n\n\nNo enseñar Shapiro significativo → transformar. Sólo como ejemplo oral: log(Y) puede considerarse si Y &gt; 0 y tiene sentido para el problema. El logaritmo cambia la escala de interpretación y no arregla la falta de independencia ni convierte plantas en parcelas. Si resumimos plantas por parcela, la respuesta pasa a ser media por parcela. No desarrollar un catálogo de transformaciones ni métodos avanzados."
   },
   {
-    "objectID": "clases/12_supuestos_anova/index.html#dos-valores-p-favorables-qué-falta",
-    "href": "clases/12_supuestos_anova/index.html#dos-valores-p-favorables-qué-falta",
+    "objectID": "clases/12_supuestos_anova/index.html#y-si-los-supuestos-no-se-cumplen",
+    "href": "clases/12_supuestos_anova/index.html#y-si-los-supuestos-no-se-cumplen",
     "title": "Supuestos del ANOVA",
-    "section": "Dos valores-p favorables… ¿qué falta?",
-    "text": "Dos valores-p favorables… ¿qué falta?\n\nShapiro-Wilk: p &gt; 0,05　·　Levene: p &gt; 0,05\n\n\n3 parcelas por tratamiento · 12 plantas por parcelaSe analizaron las 108 plantas como réplicas independientes.¿Es correcto?\n\n\nHay 9 réplicas independientes: 3 por tratamiento.\nLas 108 plantas son mediciones agrupadas en parcelas.\n\n\nSituación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de la diapositiva 8: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis."
+    "section": "¿Y si los supuestos no se cumplen?",
+    "text": "¿Y si los supuestos no se cumplen?\n\n\nTRANSFORMAR LA RESPUESTA\n\n\\(\\log(Y)\\) o \\(\\sqrt{Y}\\): opciones ante asimetría o heterogeneidad.\n\n\n\nOTRO PROCEDIMIENTO\n\nNo paramétricos (p. ej., Kruskal–Wallis), según pregunta y diseño.\n\n\n\nOTRO MODELO\n\nModelos lineales generalizados (GLM), por ejemplo:conteos → Poisson · binaria/proporciones de éxitos → binomial.\n\n\n\n\nLa alternativa depende del problema.\n\n\nTransformar no soluciona la falta de independencia ni convierte submuestras en réplicas.\n\n\nEs un mapa de alternativas después de revisar datos, diseño, magnitud del problema y adecuación del modelo; no una receta. Una transformación puede ayudar frente a asimetría, relación media–variabilidad o heterogeneidad de varianzas, pero no lo garantiza. Log(Y) exige Y positivo y sqrt(Y) Y no negativo: son ejemplos posibles, no correcciones obligatorias. Transformar cambia la escala del análisis y de la interpretación. Kruskal–Wallis no es automáticamente “el ANOVA cuando no hay normalidad”: plantea otro enfoque y requiere considerar su hipótesis, el diseño y la independencia.\nQue la respuesta sea un conteo NO implica automáticamente que ANOVA sea inválido. Si Y es el número de frutos por planta, podemos ajustar el modelo y examinar sus residuos. Evaluamos supuestos del MODELO y usamos RESIDUOS como evidencia. Si el comportamiento residual es razonablemente compatible con el modelo normal, ser un conteo no invalida por sí solo ese análisis. Si la estructura residual muestra que el modelo normal no representa bien los datos, puede ser más natural considerar, por ejemplo, un GLM Poisson. Binomial se refiere aquí a respuestas binarias o a números/proporciones de éxitos con un total de ensayos conocido, no a cualquier proporción continua. No desarrollar GLM ni los procedimientos: sólo anticipar que el modelo debe atender a la naturaleza de la respuesta. Ninguna transformación repara la dependencia ni convierte submuestras en UE independientes."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#los-supuestos-se-evalúan-no-se-aprueban",
