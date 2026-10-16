@@ -175,20 +175,44 @@ Andrés Tálamo
 </div>
 </div>
 
-  <p class="date">15 de octubre de 2026</p>
+  <p class="date">16 de octubre de 2026</p>
 </section>
-<section id="qué-nos-dijo-el-anova" class="slide level2 s13 center">
-<h2>¿Qué nos dijo el ANOVA?</h2>
-<p class="muted">
-Un factor de efectos fijos · varios niveles
-</p>
-<p><span class="math display">\[H_0:\ \mu_1=\mu_2=\cdots=\mu_t\]</span></p>
-<p>Rechazamos <span class="math inline">\(H_0\)</span> con el nivel de significación <span class="math inline">\(\alpha\)</span> elegido.</p>
-<div class="fragment">
-<p>Hay evidencia de que <strong>por lo menos una media poblacional es diferente</strong>.</p>
+<section id="partamos-de-una-pregunta-agronómica" class="slide level2 s13 center">
+<h2>Partamos de una pregunta agronómica</h2>
+<div class="pregunta">
+<p>¿El tipo de dieta afecta la <strong>ganancia diaria de peso de novillitos Brangus</strong>?</p>
 </div>
+<p><strong>FACTOR: tipo de dieta</strong></p>
+<p><strong>NIVELES DEL FACTOR: 5 formulaciones</strong></p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+<ol style="margin:0 0 0 1.4em;">
+<li>
+Heno + soja
+</li>
+<li>
+Heno + maíz
+</li>
+<li>
+Heno + sorgo
+</li>
+</ol>
+<ol start="4" style="margin:0 0 0 1.4em;">
+<li>
+Silaje + soja
+</li>
+<li>
+Mixta
+</li>
+</ol>
+</div>
+<div class="idea">
+<p><strong>VARIABLE RESPUESTA</strong><br>Ganancia diaria de peso (kg/día).</p>
+</div>
+<p class="small muted">
+Datos simulados con fines didácticos.
+</p>
 <aside class="notes">
-<p>H1: no todas las medias poblacionales son iguales. Retomar Clase 11, sin sugerir que todas difieren. En la secuencia de hoy partimos de ANOVA significativo y condiciones del modelo razonables, revisadas en Clase 12. No presentar ese paso como requisito matemático universal de Tukey.</p>
+<p>Mismo experimento ya usado en esta clase; no son dosis crecientes ni recomendaciones nutricionales. Heno + soja = heno de gramíneas + expeller de soja; Heno + maíz; Heno + sorgo (grano); Silaje + soja = silaje de sorgo + expeller de soja; Mixta = heno + silaje + maíz + soja. Las etiquetas destacan ingredientes de formulaciones nominales; se supone la corrección proteica y mineral apropiada. Se conservan las observaciones originales. No mostrar resultados todavía.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -201,22 +225,356 @@ Un factor de efectos fijos · varios niveles
           display:block!important;
       }</style></aside>
 </section>
-<section id="dónde-están-localizadas-las-diferencias" class="slide level2 s13 center">
-<h2>¿Dónde están localizadas las diferencias?</h2>
-<div class="pregunta">
-<p>El ANOVA responde una pregunta global.</p>
+<section id="diseño-del-experimento" class="slide level2 s13 center">
+<h2>Diseño del experimento</h2>
+<p class="center">
+<strong>DISEÑO COMPLETAMENTE ALEATORIZADO (DCA)</strong><br><span class="small">Novillitos de características iniciales relativamente homogéneas.</span>
+</p>
+<div style="display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:start;">
+<div><svg viewbox="0 0 740 360" role="img" aria-label="Grilla esquemática de 35 animales con dietas entremezcladas: siete animales por dieta. Las posiciones no representan ubicaciones reales." style="display:block;width:100%;height:auto;"><g fill="#173c2b" text-anchor="middle"><text x="370" y="23" font-size="25" font-weight="700">35 novillitos Brangus</text><text x="370" y="50" font-size="22">↓ ASIGNACIÓN ALEATORIA DE LAS DIETAS ↓</text><text x="370" y="77" font-size="22" font-weight="700">5 dietas · 7 animales por dieta</text></g><circle class="dca-animal" data-dieta="3" cx="36" cy="110" r="13" fill="#0072b2"></circle><circle class="dca-animal" data-dieta="1" cx="89" cy="110" r="13" fill="#2d6a4f"></circle><circle class="dca-animal" data-dieta="5" cx="142" cy="110" r="13" fill="#a65d8a"></circle><circle class="dca-animal" data-dieta="2" cx="195" cy="110" r="13" fill="#8a5a3b"></circle><circle class="dca-animal" data-dieta="4" cx="248" cy="110" r="13" fill="#ab8010"></circle><circle class="dca-animal" data-dieta="1" cx="301" cy="110" r="13" fill="#2d6a4f"></circle><circle class="dca-animal" data-dieta="3" cx="354" cy="110" r="13" fill="#0072b2"></circle><circle class="dca-animal" data-dieta="2" cx="36" cy="153" r="13" fill="#8a5a3b"></circle><circle class="dca-animal" data-dieta="4" cx="89" cy="153" r="13" fill="#ab8010"></circle><circle class="dca-animal" data-dieta="3" cx="142" cy="153" r="13" fill="#0072b2"></circle><circle class="dca-animal" data-dieta="5" cx="195" cy="153" r="13" fill="#a65d8a"></circle><circle class="dca-animal" data-dieta="2" cx="248" cy="153" r="13" fill="#8a5a3b"></circle><circle class="dca-animal" data-dieta="5" cx="301" cy="153" r="13" fill="#a65d8a"></circle><circle class="dca-animal" data-dieta="1" cx="354" cy="153" r="13" fill="#2d6a4f"></circle><circle class="dca-animal" data-dieta="5" cx="36" cy="196" r="13" fill="#a65d8a"></circle><circle class="dca-animal" data-dieta="2" cx="89" cy="196" r="13" fill="#8a5a3b"></circle><circle class="dca-animal" data-dieta="1" cx="142" cy="196" r="13" fill="#2d6a4f"></circle><circle class="dca-animal" data-dieta="4" cx="195" cy="196" r="13" fill="#ab8010"></circle><circle class="dca-animal" data-dieta="3" cx="248" cy="196" r="13" fill="#0072b2"></circle><circle class="dca-animal" data-dieta="4" cx="301" cy="196" r="13" fill="#ab8010"></circle><circle class="dca-animal" data-dieta="2" cx="354" cy="196" r="13" fill="#8a5a3b"></circle><circle class="dca-animal" data-dieta="1" cx="36" cy="239" r="13" fill="#2d6a4f"></circle><circle class="dca-animal" data-dieta="3" cx="89" cy="239" r="13" fill="#0072b2"></circle><circle class="dca-animal" data-dieta="4" cx="142" cy="239" r="13" fill="#ab8010"></circle><circle class="dca-animal" data-dieta="1" cx="195" cy="239" r="13" fill="#2d6a4f"></circle><circle class="dca-animal" data-dieta="5" cx="248" cy="239" r="13" fill="#a65d8a"></circle><circle class="dca-animal" data-dieta="2" cx="301" cy="239" r="13" fill="#8a5a3b"></circle><circle class="dca-animal" data-dieta="4" cx="354" cy="239" r="13" fill="#ab8010"></circle><circle class="dca-animal" data-dieta="4" cx="36" cy="282" r="13" fill="#ab8010"></circle><circle class="dca-animal" data-dieta="5" cx="89" cy="282" r="13" fill="#a65d8a"></circle><circle class="dca-animal" data-dieta="2" cx="142" cy="282" r="13" fill="#8a5a3b"></circle><circle class="dca-animal" data-dieta="3" cx="195" cy="282" r="13" fill="#0072b2"></circle><circle class="dca-animal" data-dieta="1" cx="248" cy="282" r="13" fill="#2d6a4f"></circle><circle class="dca-animal" data-dieta="3" cx="301" cy="282" r="13" fill="#0072b2"></circle><circle class="dca-animal" data-dieta="5" cx="354" cy="282" r="13" fill="#a65d8a"></circle><circle class="dca-leyenda" cx="440" cy="113" r="10" fill="#2d6a4f"></circle><text x="461" y="120" fill="#173c2b" font-size="23">Heno + soja</text><circle class="dca-leyenda" cx="440" cy="153" r="10" fill="#8a5a3b"></circle><text x="461" y="160" fill="#173c2b" font-size="23">Heno + maíz</text><circle class="dca-leyenda" cx="440" cy="193" r="10" fill="#0072b2"></circle><text x="461" y="200" fill="#173c2b" font-size="23">Heno + sorgo</text><circle class="dca-leyenda" cx="440" cy="233" r="10" fill="#ab8010"></circle><text x="461" y="240" fill="#173c2b" font-size="23">Silaje + soja</text><circle class="dca-leyenda" cx="440" cy="273" r="10" fill="#a65d8a"></circle><text x="461" y="280" fill="#173c2b" font-size="23">Mixta</text><g text-anchor="middle"><text x="370" y="322" fill="#66736d" font-size="19">Las posiciones son esquemáticas; el color indica la dieta asignada.</text><text x="370" y="353" fill="#173c2b" font-size="21">Cada círculo = un animal = una UE</text></g></svg></div>
+<div style="text-align:center;">
+<img src="img/alimentacion_individual_bovinos.png" alt="Fotografía ilustrativa de bovinos frente a recipientes individuales de alimentación" style="display:block;width:100%;height:220px;object-fit:contain;margin:0 auto;">
+<p class="small muted" style="margin:6px 0;">Ejemplo de sistema de alimentación individual</p>
+<p class="small"><strong>Alimentación individual controlada.</strong><br>Cada animal recibe individualmente la dieta que le fue asignada.</p>
+</div>
+</div>
+<p class="center">
+<strong>ANIMAL = UNIDAD EXPERIMENTAL</strong>
+</p>
+<aside class="notes">
+<p>Novillitos Brangus de aproximadamente 200 kg iniciales; período de adaptación y 70 días de evaluación. La homogeneidad relativa se refiere a características relevantes al inicio, como peso/estado y condiciones de manejo; no significa animales idénticos. El DCA resulta razonable cuando no se identifica una fuente sistemática de heterogeneidad que requiera bloqueo.</p>
+<p>Cada círculo representa una UE: cinco dietas con siete animales cada una, 35 en total. La grilla tiene una disposición fija de colores entremezclados: exactamente siete unidades por dieta. Las posiciones son esquemáticas, no espaciales; las filas y columnas no representan corrales ni bloques. Esta distribución gráfica no se vuelve a sortear durante el render ni modifica la asignación o los datos guardados. La asignación de cada animal a una dieta es aleatoria. Se supone alimentación individual controlada, sin exigir un corral separado por animal. El tratamiento se aplica individualmente. No describir un único corral por dieta cuyos animales se traten como réplicas independientes.</p>
+<p>Fotografía proporcionada por el docente, copiada a img/alimentacion_individual_bovinos.png. Es ilustrativa de un posible sistema de alimentación individual: no corresponde al experimento simulado ni implica que se utilizó ese dispositivo. No se cambia la semilla ni se ejecuta el generador.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="de-la-hipótesis-agronómica-a-las-estadísticas" class="slide level2 s13 center">
+<h2>De la hipótesis agronómica a las estadísticas</h2>
+<div class="idea">
+<p><strong>HIPÓTESIS AGRONÓMICA</strong><br>El tipo de dieta afecta la ganancia diaria de peso de los novillitos.</p>
+</div>
+<p><strong>HIPÓTESIS ESTADÍSTICAS</strong></p>
+<p><span class="math display">\[H_0:\ \mu_1=\mu_2=\mu_3=\mu_4=\mu_5\]</span></p>
+<p>Cada <span class="math inline">\(\mu_i\)</span> representa la <strong>media poblacional</strong> de ganancia diaria para la dieta <span class="math inline">\(i\)</span>.</p>
+<p><span class="math display">\[H_1:\ \text{no todas las medias poblacionales son iguales.}\]</span></p>
+<aside class="notes">
+<p>Índices 1 a 5: Heno + soja, Heno + maíz, Heno + sorgo, Silaje + soja y Mixta. La alternativa implica que al menos una media poblacional difiere; no que todas sean diferentes. Separar la afirmación agronómica de las hipótesis sobre parámetros poblacionales.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="el-modelo-anova-de-un-factor" class="slide level2 s13 center">
+<h2>El modelo ANOVA de un factor</h2>
+<p><span class="math display">\[Y_{ij}=\mu+\tau_i+\varepsilon_{ij}\]</span></p>
+<ul>
+<li><span class="math inline">\(Y_{ij}\)</span>: ganancia diaria del animal <span class="math inline">\(j\)</span> que recibe la dieta <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(\mu\)</span>: media general.</li>
+<li><span class="math inline">\(\tau_i\)</span>: efecto de la dieta <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(\varepsilon_{ij}\)</span>: error aleatorio.</li>
+</ul>
+<div class="idea">
+<p>El ANOVA no es solamente una tabla: <strong>estamos ajustando un modelo</strong>.</p>
+</div>
+<aside class="notes">
+<p>i = 1,…,5; j = 1,…,7 dentro de cada dieta. Efectos fijos, con la restricción habitual de suma de efectos igual a cero. Y se expresa en kg/día. En Clase 11 hicimos ANOVA; en Clase 12 vimos qué condiciones evaluar para confiar en la inferencia. Aquí partimos de que esas condiciones resultan razonables y avanzamos a comparar medias. No repetir pruebas ni diagnósticos. El ANOVA global significativo organiza este ejemplo, sin presentarlo como requisito matemático universal de Tukey.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="datos-observados-35-animales" class="slide level2 s13 center">
+<h2>Datos observados: 35 animales</h2>
+<p class="center">
+Ganancia diaria de peso (kg/día) · <strong>datos simulados</strong>
+</p>
+<div class="s13-anova">
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Heno + soja
+</th>
+<th style="text-align:center;">
+Heno + maíz
+</th>
+<th style="text-align:center;">
+Heno + sorgo
+</th>
+<th style="text-align:center;">
+Silaje + soja
+</th>
+<th style="text-align:center;">
+Mixta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0,616
+</td>
+<td style="text-align:center;">
+0,657
+</td>
+<td style="text-align:center;">
+0,782
+</td>
+<td style="text-align:center;">
+0,779
+</td>
+<td style="text-align:center;">
+0,616
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,454
+</td>
+<td style="text-align:center;">
+0,537
+</td>
+<td style="text-align:center;">
+0,472
+</td>
+<td style="text-align:center;">
+0,795
+</td>
+<td style="text-align:center;">
+0,881
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,440
+</td>
+<td style="text-align:center;">
+0,784
+</td>
+<td style="text-align:center;">
+0,781
+</td>
+<td style="text-align:center;">
+0,695
+</td>
+<td style="text-align:center;">
+0,882
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,490
+</td>
+<td style="text-align:center;">
+0,603
+</td>
+<td style="text-align:center;">
+0,621
+</td>
+<td style="text-align:center;">
+1,098
+</td>
+<td style="text-align:center;">
+0,906
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,327
+</td>
+<td style="text-align:center;">
+0,623
+</td>
+<td style="text-align:center;">
+0,653
+</td>
+<td style="text-align:center;">
+0,925
+</td>
+<td style="text-align:center;">
+0,634
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,483
+</td>
+<td style="text-align:center;">
+0,654
+</td>
+<td style="text-align:center;">
+0,719
+</td>
+<td style="text-align:center;">
+0,548
+</td>
+<td style="text-align:center;">
+0,780
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0,692
+</td>
+<td style="text-align:center;">
+0,702
+</td>
+<td style="text-align:center;">
+0,775
+</td>
+<td style="text-align:center;">
+0,689
+</td>
+<td style="text-align:center;">
+0,805
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="center">
+Cada valor corresponde a un animal distinto.<br><strong>5 dietas × 7 animales</strong>
+</p>
+<aside class="notes">
+<p>Las 35 observaciones se leen de datos_dietas_simulados.csv. Tres decimales: la precisión original guardada. Las filas no representan bloques, parejas ni medidas repetidas. Cada columna reúne siete animales distintos; los identificadores siguen en el CSV. No se regeneran datos ni se muestran solamente cinco medias.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anova-del-experimento-de-dietas" class="slide level2 s13 center">
+<h2>ANOVA del experimento de dietas</h2>
+<div class="s13-anova">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fuente de variación</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">CM</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Dieta</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0,39534</td>
+<td style="text-align: right;">0,09884</td>
+<td style="text-align: right;"><strong>6,21348</strong></td>
+<td style="text-align: right;"><strong>0,00091327</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Error</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">0,47720</td>
+<td style="text-align: right;">0,01590661</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">0,87254</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="fragment">
-<p>No identifica por sí solo <strong>qué medias poblacionales difieren entre sí</strong>.</p>
+<p><strong>p &lt; 0,05 → rechazamos <span class="math inline">\(H_0\)</span></strong>, con α = 0,05.</p>
+<div class="center">
+<strong>MUESTRA → INFERENCIA → POBLACIÓN</strong>
 </div>
-<div class="method-flow">
-DESCRIBIR → COMPARAR → INFERIR
+<p>Hay evidencia estadística de que el tipo de dieta afecta la ganancia diaria de peso: <strong>no todas las medias poblacionales son iguales</strong>.</p>
+<p class="small">
+La conclusión se refiere a las poblaciones representadas por el experimento, no solamente a los 35 animales observados.
+</p>
+<p><strong>El ANOVA todavía no indica entre qué dietas se encuentran las diferencias.</strong></p>
 </div>
+<aside class="notes">
+<p>Tabla guardada en anova_dietas.csv, sin nuevos cálculos ni simulaciones: SC dieta = 0,395341314285714; SC error = 0,477198285714286; gl = 4 y 30; total = 34. CM dieta = 0,0988353285714286; CMEE = 0,0159066095238095; F = 6,21347550045084; p = 0,000913270650891598. El redondeo sólo se aplica al mostrar. Todavía no identificar qué dietas difieren.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-necesitamos-saber-ahora" class="slide level2 s13 center">
+<h2>¿Qué necesitamos saber ahora?</h2>
+<p class="center">
+<strong>ANOVA · p = 0,0009</strong>
+</p>
+<p>Hay evidencia de diferencias entre las <strong>medias poblacionales</strong>.</p>
+<div class="pregunta">
+<p><strong>¿Con qué dieta me conviene alimentar a los novillitos?</strong></p>
+</div>
+<div class="fragment">
+<p>El ANOVA <strong>no permite responder todavía cuál dieta conviene</strong>.</p>
+</div>
+<div class="fragment">
+<p>Primero: <strong>¿entre qué dietas hay evidencia de diferencias en la ganancia diaria de peso?</strong></p>
+</div>
+<div class="fragment">
+<p><strong>Necesitamos comparar las medias.</strong></p>
+</div>
+<aside class="notes">
+<p>“Qué dieta conviene” es una pregunta aplicada más amplia que una comparación estadística. Una recomendación real también requiere costos, composición de las dietas, disponibilidad de insumos, sanidad, eficiencia de conversión y condiciones de producción. Los datos son simulados y no justifican una recomendación productiva. La pregunta motiva localizar diferencias en la respuesta estudiada; la dieta con mayor media muestral no es automáticamente la mejor. No volver a desarrollar los supuestos, que se consideran razonables para esta secuencia.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="muchas-medias-muchas-comparaciones" class="slide level2 s13 center">
 <h2>Muchas medias, muchas comparaciones</h2>
 <p class="small muted">
-Novillitos Brangus · factor: tipo de dieta · cinco niveles nominales. Datos simulados.
+Cinco medias muestrales observadas · datos simulados.
 </p>
 <div class="cell">
 <div class="cell-output-display">
@@ -228,11 +586,11 @@ Novillitos Brangus · factor: tipo de dieta · cinco niveles nominales. Datos si
 </div>
 </div>
 <div class="center">
-3 niveles → <strong>3 pares</strong> · 4 niveles → <strong>6 pares</strong> · 6 niveles → <strong>15 pares</strong>
+<span class="math inline">\(m=\frac{t(t-1)}{2}\)</span> · <span class="math inline">\(t\)</span>: número de niveles del factor
 </div>
 <div class="fragment">
 <div class="center">
-<span class="math inline">\(m=t(t-1)/2\)</span> · <span class="math inline">\(t\)</span>: número de niveles del factor
+Cinco dietas → <span class="math inline">\(m=\frac{5(5-1)}{2}=10\)</span> comparaciones por pares
 </div>
 </div>
 <aside class="notes">
@@ -365,6 +723,7 @@ Novillitos Brangus · factor: tipo de dieta · cinco niveles nominales. Datos si
 </section>
 <section id="tukey-todas-las-comparaciones-de-a-pares" class="slide level2 s13 center">
 <h2>Tukey: todas las comparaciones de a pares</h2>
+<p>Comparamos <strong>todos los pares</strong>, controlando el <strong>error familiar</strong>.</p>
 <p>Para cada par de niveles del factor:</p>
 <p><span class="math display">\[H_0:\ \mu_i=\mu_j\qquad H_1:\ \mu_i\ne\mu_j\]</span></p>
 <div class="idea">
@@ -475,7 +834,7 @@ Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</
 <aside class="notes">
 <p>Experimento hipotético de recría de novillitos Brangus (unos 200 kg iniciales), plausible para sistemas del NOA; no es un ensayo publicado ni una recomendación de alimentación. Cinco formulaciones nominales: Heno + soja (heno de gramínea y expeller de soja), Heno + maíz, Heno + sorgo (grano), Silaje + soja (silaje de sorgo y expeller de soja) y Mixta (heno, silaje, maíz y soja). Las etiquetas identifican los ingredientes distintivos; todas incluyen la corrección proteica y mineral adecuada. No son dosis sucesivas del mismo suplemento. Dietas suministradas individualmente, con animales asignados aleatoriamente; no confundir varios animales en un único corral por dieta con réplicas independientes. Tras adaptación, ganancia diaria durante 70 días.</p>
 <p>Plausibilidad de recursos y escala contrastada con INTA: https://www.argentina.gob.ar/noticias/el-sorgo-gana-protagonismo-en-las-dietas-ganaderas y https://www.argentina.gob.ar/noticias/heno-un-recurso-forrajero-alternativo-de-calidad-y-facil-suministro. Esas fuentes respaldan el uso de heno/silajes/concentrados en recría; no son el origen de estos datos simulados ni validan estas formulaciones específicas.</p>
-<p>Semilla 20261302; datos generados una sola vez con generar_dietas.R y guardados en datos_dietas_simulados.csv. El render sólo lee ese archivo mediante analisis_dietas.R. Medias, CMEE, gl, Tukey, DMS y letras derivados del mismo modelo; los diez pares se verifican automáticamente. ANOVA: F = 6,213, p = 9,133e-04, gl = 4 y 30. Tabla completa en anova_dietas.csv. E.E. es error estándar de la media, no desvío de las observaciones. La salida es formato didáctico tipo InfoStat, calculada con R.</p>
+<p>Semilla 20261302; datos generados una sola vez con generar_dietas.R y guardados en datos_dietas_simulados.csv. El análisis original se conserva en analisis_dietas.R. El render lee las observaciones y los resultados guardados en los CSV, sin recalcular ANOVA ni Tukey. Medias, CMEE, gl, Tukey, DMS y letras derivados del mismo modelo; los diez pares se verifican automáticamente. ANOVA: F = 6,213, p = 9,133e-04, gl = 4 y 30. Tabla completa en anova_dietas.csv. E.E. es error estándar de la media, no desvío de las observaciones. La salida es formato didáctico tipo InfoStat, calculada con R.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -545,13 +904,13 @@ Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</
 </div>
 </div>
 <p class="small muted">
-Ganancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.
+<span class="math inline">\(d_i\)</span>: segmento verde · DMS: segmento marrón · misma escala (kg/día), barras desde cero.
 </p>
 <div class="fragment">
 <p><strong>No: comparten A.</strong> No se detectaron diferencias significativas entre sus medias poblacionales.</p>
 </div>
 <div class="fragment">
-<p><strong>dᵢ = 0,151 kg/día &lt; DMS = 0,196 kg/día.</strong></p>
+<p><strong><span class="math inline">\(d_i\)</span> = 0,15114 kg/día &lt; DMS = 0,19554 kg/día.</strong></p>
 </div>
 </section>
 <section id="heno-soja-y-mixta-diferencia-significativa" class="slide level2 s13 center">
@@ -566,13 +925,13 @@ Ganancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma 
 </div>
 </div>
 <p class="small muted">
-Ganancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.
+<span class="math inline">\(d_i\)</span>: segmento verde · DMS: segmento marrón · misma escala (kg/día), barras desde cero.
 </p>
 <div class="fragment">
 <p><strong>Sí: no comparten letras.</strong> Hay evidencia de que sus medias poblacionales difieren.</p>
 </div>
 <div class="fragment">
-<p><strong>dᵢ = 0,286 kg/día &gt; DMS = 0,196 kg/día.</strong></p>
+<p><strong><span class="math inline">\(d_i\)</span> = 0,28600 kg/día &gt; DMS = 0,19554 kg/día.</strong></p>
 </div>
 <aside class="notes">
 <p>Éste es un ejemplo de lectura del umbral, no cálculo manual de Tukey. Las medias poblacionales no se conocen: no atribuirles exactamente la diferencia muestral observada.</p>
@@ -683,25 +1042,25 @@ Puntos: medias muestrales. Barras: ± 1 E.E. Letras: Tukey, α = 0,05.
           display:block!important;
       }</style></aside>
 </section>
-<section id="fertilización-nitrogenada-en-maíz" class="slide level2 s13 center">
-<h2>Fertilización nitrogenada en maíz</h2>
-<p>¿La dosis de nitrógeno afecta el <strong>rendimiento medio del maíz</strong>?</p>
-<div class="comparacion">
-<div>
-Sin N
+<section id="ahora-un-experimento-real" class="slide level2 s13 center">
+<h2>Ahora, un experimento real</h2>
+<p style="margin:4px 0;font-size:.9em;">
+Hasta aquí construimos e interpretamos las comparaciones múltiples con un <strong>ejemplo didáctico</strong>.
+</p>
+<img src="img/okra_2015_encabezado.png" alt="Cabecera original: título, autores, filiaciones y fechas de recepción y aceptación" style="display:block;width:100%;height:360px;object-fit:contain;margin:auto;">
+<p class="small muted" style="margin:4px 0;">
+Lozano et al.&nbsp;(2015). Horticultura Argentina 34(84): 18–24.
+</p>
+<div class="fragment">
+<p style="font-size:.9em;margin:6px 0;">
+Ahora vamos a interpretar resultados de un experimento realizado en <strong>nuestra Facultad</strong>.
+</p>
 </div>
-<div>
-Dosis intermedia
-</div>
-<div>
-Dosis alta
-</div>
-</div>
-<div class="idea">
-<p><strong>Datos simulados con fines didácticos</strong><br>DCA: 21 parcelas asignadas aleatoriamente, 7 por tratamiento.<br><strong>Unidad experimental: parcela independiente.</strong><br>Rendimiento de grano (t/ha).</p>
+<div class="fragment pregunta" style="font-size:.9em;margin:8px 0;padding:10px 16px;">
+<p>¿Podemos transferir lo aprendido a un problema agronómico real?</p>
 </div>
 <aside class="notes">
-<p>Experimento hipotético de fertilización nitrogenada en maíz. Un factor con tres tratamientos. DCA con 21 parcelas, asignación aleatoria a los tratamientos y siete parcelas independientes por tratamiento. La respuesta es el rendimiento de grano por parcela expresado en t/ha. Las plantas dentro de una parcela no son réplicas independientes. Los valores simulados no son resultados empíricos ni una recomendación de dosis. Se mantiene la semilla 202613, con medias de generación 5,13, 7,34 y 7,82 t/ha y desvío común 0,65 t/ha; valores redondeados a 0,01 t/ha.</p>
+<p>Objetivo: transferencia e interpretación, no volver a enseñar el procedimiento desde cero. Fuente exclusiva: Lozano, L.; Tálamo, A.; Galarce, M. y Ruiz de los Llanos, R. (2015). Efecto de la densidad de siembra sobre el rendimiento de la okra (Abelmoschus esculentus (L.) Moench), en el valle de Lerma, Salta, Argentina. Horticultura Argentina 34(84): 18–24. El ensayo se desarrolló en 2011–2012; el artículo es el de 2015, no el de raleo de 2011.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -714,78 +1073,51 @@ Dosis alta
           display:block!important;
       }</style></aside>
 </section>
-<section id="qué-observamos-en-la-muestra" class="slide level2 s13 center">
-<h2>¿Qué observamos en la muestra?</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-10-1.png" style="width:100.0%"></p>
-</figure>
+<section id="cuántas-plantas-de-okra-conviene-sembrar" class="slide level2 s13 center">
+<h2>¿Cuántas plantas de okra conviene sembrar?</h2>
+<p><strong>Okra</strong> · <em>Abelmoschus esculentus</em> · variedad Blue Sky</p>
+<div style="display:flex;gap:24px;justify-content:center;">
+<img src="img/planta_okra.jpg" alt="Planta de okra con frutos; fotografía ilustrativa" style="height:270px;max-width:40%;object-fit:contain;"><img src="img/frutos_okra.jpg" alt="Frutos de okra; fotografía ilustrativa" style="height:270px;max-width:56%;object-fit:contain;">
 </div>
+<p class="small muted">
+Imágenes ilustrativas: no corresponden al ensayo.
+</p>
+<div class="pregunta">
+<p>¿Cómo afectan cuatro densidades de siembra a los <strong>componentes del rendimiento</strong> en el valle de Lerma?</p>
+</div>
+<p class="small muted">
+Campo experimental de la FCN–UNSa, Salta · Lozano et al.&nbsp;(2015).
+</p>
+</section>
+<section id="diseño-del-experimento-1" class="slide level2 s13 center">
+<h2>Diseño del experimento</h2>
+<p><strong>DBCA · 12 bloques · 4 tratamientos · 12 réplicas por tratamiento</strong></p>
+<div style="display:grid;grid-template-columns:53% 45%;gap:2%;align-items:center;">
+<div>
+<svg viewbox="0 0 600 390" role="img" aria-label="Doce bloques esquemáticos con una parcela de cada tratamiento por bloque" style="width:100%;height:335px;">
+<text x="0" y="42" fill="#173c2b" font-size="18">B1</text><rect x="43" y="20" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="68" y="45" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="102" y="20" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="127" y="45" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="161" y="20" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="186" y="45" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="220" y="20" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="245" y="45" fill="white" text-anchor="middle" font-size="20">T2</text><text x="0" y="101" fill="#173c2b" font-size="18">B2</text><rect x="43" y="79" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="68" y="104" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="102" y="79" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="127" y="104" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="161" y="79" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="186" y="104" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="220" y="79" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="245" y="104" fill="white" text-anchor="middle" font-size="20">T3</text><text x="0" y="160" fill="#173c2b" font-size="18">B3</text><rect x="43" y="138" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="68" y="163" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="102" y="138" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="127" y="163" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="161" y="138" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="186" y="163" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="220" y="138" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="245" y="163" fill="white" text-anchor="middle" font-size="20">T1</text><text x="0" y="219" fill="#173c2b" font-size="18">B4</text><rect x="43" y="197" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="68" y="222" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="102" y="197" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="127" y="222" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="161" y="197" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="186" y="222" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="220" y="197" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="245" y="222" fill="white" text-anchor="middle" font-size="20">T4</text><text x="0" y="278" fill="#173c2b" font-size="18">B5</text><rect x="43" y="256" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="68" y="281" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="102" y="256" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="127" y="281" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="161" y="256" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="186" y="281" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="220" y="256" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="245" y="281" fill="white" text-anchor="middle" font-size="20">T3</text><text x="0" y="337" fill="#173c2b" font-size="18">B6</text><rect x="43" y="315" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="68" y="340" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="102" y="315" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="127" y="340" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="161" y="315" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="186" y="340" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="220" y="315" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="245" y="340" fill="white" text-anchor="middle" font-size="20">T1</text><text x="305" y="42" fill="#173c2b" font-size="18">B7</text><rect x="348" y="20" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="373" y="45" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="407" y="20" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="432" y="45" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="466" y="20" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="491" y="45" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="525" y="20" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="550" y="45" fill="white" text-anchor="middle" font-size="20">T2</text><text x="305" y="101" fill="#173c2b" font-size="18">B8</text><rect x="348" y="79" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="373" y="104" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="407" y="79" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="432" y="104" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="466" y="79" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="491" y="104" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="525" y="79" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="550" y="104" fill="white" text-anchor="middle" font-size="20">T4</text><text x="305" y="160" fill="#173c2b" font-size="18">B9</text><rect x="348" y="138" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="373" y="163" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="407" y="138" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="432" y="163" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="466" y="138" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="491" y="163" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="525" y="138" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="550" y="163" fill="white" text-anchor="middle" font-size="20">T4</text><text x="305" y="219" fill="#173c2b" font-size="18">B10</text><rect x="348" y="197" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="373" y="222" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="407" y="197" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="432" y="222" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="466" y="197" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="491" y="222" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="525" y="197" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="550" y="222" fill="white" text-anchor="middle" font-size="20">T1</text><text x="305" y="278" fill="#173c2b" font-size="18">B11</text><rect x="348" y="256" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="373" y="281" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="407" y="256" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="432" y="281" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="466" y="256" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="491" y="281" fill="white" text-anchor="middle" font-size="20">T2</text><rect x="525" y="256" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="550" y="281" fill="white" text-anchor="middle" font-size="20">T3</text><text x="305" y="337" fill="#173c2b" font-size="18">B12</text><rect x="348" y="315" width="51" height="37" rx="4" fill="#a65d8a"></rect><text x="373" y="340" fill="white" text-anchor="middle" font-size="20">T4</text><rect x="407" y="315" width="51" height="37" rx="4" fill="#0072b2"></rect><text x="432" y="340" fill="white" text-anchor="middle" font-size="20">T3</text><rect x="466" y="315" width="51" height="37" rx="4" fill="#2d6a4f"></rect><text x="491" y="340" fill="white" text-anchor="middle" font-size="20">T1</text><rect x="525" y="315" width="51" height="37" rx="4" fill="#8a5a3b"></rect><text x="550" y="340" fill="white" text-anchor="middle" font-size="20">T2</text>
+</svg>
+</div>
+<div style="font-size:.85em;line-height:1.4;">
+<p>
+<strong>T1:</strong> 1 planta por pozo<br><strong>T2:</strong> 2 plantas por pozo<br><strong>T3:</strong> 3 plantas por pozo<br><strong>T4:</strong> 4 plantas por pozo
+</p>
+<p>
+<strong>Parcela = UE</strong><br>4,2 m² (6 m × 0,7 m)<br>48 parcelas en total.
+</p>
+<p>
+Una parcela de cada tratamiento en cada bloque.
+</p>
 </div>
 </div>
 <p class="small muted">
-Datos simulados · medias muestrales ± 1 E.E. · n = 7 por tratamiento.
+Orden esquemático; los tratamientos se aleatorizan dentro de cada bloque.
 </p>
-<div class="fragment">
-<p>¿Hay evidencia de diferencias entre las <strong>medias poblacionales</strong>?</p>
-</div>
-</section>
-<section id="el-anova-detecta-una-diferencia-global" class="slide level2 s13 center">
-<h2>El ANOVA detecta una diferencia global</h2>
-<p class="muted">
-maíz · datos simulados
+<p class="small">
+Dietas → DCA · Okra → DBCA. Fuente: Lozano et al.&nbsp;(2015), métodos.
 </p>
-<p><span class="math display">\[H_0:\ \mu_{\text{sin N}}=\mu_{\text{intermedia}}=\mu_{\text{alta}}\]</span></p>
-<div class="s13-anova">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">F.V.</th>
-<th style="text-align: right;">SC</th>
-<th style="text-align: right;">gl</th>
-<th style="text-align: right;">CM</th>
-<th style="text-align: right;">F</th>
-<th style="text-align: right;">p-valor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Tratamientos</td>
-<td style="text-align: right;">30,99</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">15,49</td>
-<td style="text-align: right;"><strong>39,84</strong></td>
-<td style="text-align: right;"><strong>2,45e-07</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Error</td>
-<td style="text-align: right;">7,00</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">0,3889</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Total</td>
-<td style="text-align: right;">37,99</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<p>Rechazamos Ho: por lo menos una <strong>media poblacional</strong> difiere.</p>
-</div>
-<div class="fragment">
-<p><strong>¿Dónde están localizadas las diferencias?</strong></p>
-</div>
 <aside class="notes">
-<p>Modelo DCA de un factor, α=0,05. F y p calculados con aov sobre el CSV simulado. Errores generados con distribución normal y varianza común. Suponer independencia se apoya en el escenario experimental planteado; no se “demuestra” con una prueba sobre residuos.</p>
+<p>Métodos, pp.&nbsp;20–21: DBCA con 12 repeticiones; cuatro tratamientos por bloque. Hileras a 0,70 m y pozos a 0,30 m. Parcela de 6 × 0,7 m = 4,2 m². Tratamientos definidos por 1, 2, 3 o 4 plantas por pozo; se sembró ese número de semillas por pozo. La discusión publica T1=4,16; T2=8,3; T3=12,5; T4=16,6 plantas/m². Estas equivalencias no coinciden exactamente con el cálculo a partir de 0,70 × 0,30 m; no reconstruir ni corregir los valores publicados. Se omiten del croquis y se atribuye explícitamente al artículo la densidad recomendada. El orden de parcelas es ilustrativo, fijo y no reproduce la disposición espacial del ensayo. Cada color identifica siempre el mismo tratamiento. Variables: número y peso total de frutos por parcela en todo el ciclo y por fecha de cosecha.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -798,63 +1130,99 @@ maíz · datos simulados
           display:block!important;
       }</style></aside>
 </section>
-<section id="tukey-en-maíz" class="slide level2 s13 center">
-<h2>Tukey en maíz</h2>
-<p class="muted small">
-Datos simulados · salida con formato de InfoStat · rendimiento en t/ha
-</p>
-<pre class="infostat">Test:Tukey Alfa=0,05 DMS=0,85076 t/ha
-Error: 0,3889 gl: 18
-
-TRATAMIENTO      Medias   n   E.E.
-Sin N              5,09   7   0,24     A
-Dosis intermedia   7,25   7   0,24     B
-Dosis alta         7,94   7   0,24     B
-
-Medias con una letra común no son significativamente diferentes (p &gt; 0,05)</pre>
-<div class="fragment">
-<p>¿Qué pares presentan diferencias significativas?</p>
-<p>Las <strong>medias muestrales</strong> deben diferir en más de <strong>0,85076 t/ha</strong> para que, mediante Tukey, tengamos evidencia de una diferencia entre las <strong>medias poblacionales</strong>, en este análisis.</p>
-</div>
-<aside class="notes">
-<p>Resultados calculados con R y presentados como salida tipo InfoStat, no captura de una ejecución de InfoStat. Las cifras se redondean sólo para mostrar; letras verificadas contra TukeyHSD. El CSV conserva todos los valores.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="comunicar-el-resultado-de-maíz" class="slide level2 s13 center">
-<h2>Comunicar el resultado de maíz</h2>
-<div class="cell">
-<div class="cell-output-display">
+<section id="interpretemos-el-resultado" class="slide level2 s13 center">
+<h2>Interpretemos el resultado</h2>
+<div style="display:grid;grid-template-columns:48% 49%;gap:3%;align-items:center;">
 <div>
-<figure>
-<p><img data-src="Clase_13_Comparaciones_Medias_2026_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:100.0%"></p>
-</figure>
+<img src="img/okra_2015_figura5.png" alt="Figura 5 original: peso total de frutos por parcela, T1 A y T2, T3, T4 B" style="width:100%;height:390px;object-fit:contain;">
 </div>
+<div style="font-size:.9em;">
+<p>
+<strong>¿Qué nos dicen las letras?</strong>
+</p>
+<p class="fragment">
+¿Qué tratamientos difieren?
+</p>
+<p class="fragment">
+<strong>T1 vs.&nbsp;T2, T3 y T4:</strong><br>se detectaron diferencias significativas.
+</p>
+<p class="fragment">
+<strong>Entre T2, T3 y T4:</strong><br>no se detectaron diferencias significativas. Esto no demuestra igualdad.
+</p>
 </div>
 </div>
 <p class="small muted">
-DATOS SIMULADOS · medias ± 1 E.E. · n = 7 · Tukey, α = 0,05.
+Lozano et al.&nbsp;(2015), fig.&nbsp;5, p.&nbsp;22. Diagrama de cajas: la línea interior indica la mediana.
 </p>
-<div class="fragment">
-<p><strong>Sin N vs.&nbsp;cada dosis de N:</strong> diferencias significativas.</p>
-</div>
-<div class="fragment">
-<p><strong>Dosis intermedia vs.&nbsp;dosis alta:</strong> no se detectó diferencia significativa.</p>
-</div>
-<div class="fragment">
-<p><strong>7,25 ≠ 7,94</strong> en la muestra; ambas medias reciben <strong>B</strong>.</p>
-</div>
+<p class="small">
+ANOVA a dos criterios (α = 0,05). El artículo no especifica la prueba de comparación múltiple.
+</p>
 <aside class="notes">
-<p>Sin N difiere significativamente de Dosis intermedia y Dosis alta. La decisión se refiere a medias poblacionales. Las dos dosis tienen medias muestrales distintas, pero no hay evidencia suficiente de una diferencia entre sus medias poblacionales; no afirmar igualdad ni equivalencia. Resultado exclusivamente simulado. Letras calculadas a partir de TukeyHSD y compartidas por la salida y el gráfico.</p>
+<p>Recorte del original, sin redibujar. Variable: peso total de frutos (g) por parcela en todo el período de cosecha. Figura 5: T1 A; T2, T3 y T4 B. El gráfico es un diagrama de cajas, con línea interior de mediana; no es media ± error estándar. Incluye puntos interiores, pero el pie no explica sus símbolos ni define bigotes; no asignarles una definición no documentada. El texto informa valores promedio de 2559,41; 3679,66; 4304,14 y 4411,77 g para T1–T4. No confundir esos promedios con las líneas de mediana. Métodos: ANOVA a dos criterios de clasificación con InfoStat, nivel 5 %. No identifica el procedimiento post hoc: no atribuir Tukey, Duncan ni otro. La interpretación de las letras se verifica además contra el apartado 3.3, p.&nbsp;21. Métodos define parcela de 4,2 m²; resultados menciona 4 m². Se conserva el eje original «por parcela» sin convertir unidades.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="entonces-conviene-sembrar-cuatro-plantas-por-pozo" class="slide level2 s13 center">
+<h2>Entonces… ¿conviene sembrar cuatro plantas por pozo?</h2>
+<div style="display:grid;grid-template-columns:40% 57%;gap:3%;align-items:center;">
+<div>
+<img src="img/okra_2015_figura5.png" alt="Figura 5 del artículo, repetida para discutir la decisión agronómica" style="width:100%;height:340px;object-fit:contain;">
+</div>
+<div>
+<p>
+Si un tratamiento tiene el mayor valor observado…
+</p>
+<p class="fragment">
+<strong>¿Significa que necesariamente es la mejor recomendación?</strong>
+</p>
+<p class="fragment">
+T2, T3 y T4 <strong>comparten letra</strong>.
+</p>
+</div>
+</div>
+<div class="fragment pregunta">
+<p>Si no detectamos diferencias entre T2, T3 y T4,<br>¿qué otra información necesitamos para decidir?</p>
+</div>
+<p class="small muted">
+Lozano et al.&nbsp;(2015), figura 5. Discutamos antes de conocer la recomendación.
+</p>
+</section>
+<section id="de-la-comparación-estadística-a-la-decisión-agronómica" class="slide level2 s13 center">
+<h2>De la comparación estadística a la decisión agronómica</h2>
+<div style="display:grid;grid-template-columns:49% 49%;gap:2%;align-items:start;">
+<div>
+<p style="font-size:.8em;margin:8px 0;">
+<strong>RESULTADO PUBLICADO</strong> · p.&nbsp;21, § 3.3
+</p>
+<p><img src="img/okra_2015_resultados.png" alt="Párrafo original del apartado 3.3 sobre peso total de frutos por parcela" style="width:100%;height:285px;object-fit:contain;object-position:top;"></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p style="font-size:.8em;margin:8px 0;">
+<strong>RECOMENDACIÓN PUBLICADA</strong> · p.&nbsp;22, § 5
+</p>
+<p><img src="img/okra_2015_conclusion.png" alt="Párrafo original de conclusiones: costo de semillas y recomendación de dos semillas por pozo" style="width:100%;height:285px;object-fit:contain;object-position:top;"></p>
+</div>
+</div>
+<div class="fragment" data-fragment-index="0" style="text-align:center;font-size:.85em;margin:8px 0;">
+↓ <strong>INTERPRETACIÓN / DECISIÓN</strong> →<br>Evidencia estadística + costo y disponibilidad de semillas
+</div>
+<div class="fragment idea" data-fragment-index="2" style="margin:12px 0;padding:12px 20px;">
+<strong>La estadística aporta evidencia para decidir;<br>no toma la decisión por nosotros.</strong>
+</div>
+<p class="small muted" style="margin:5px 0;">
+Lozano et al.&nbsp;(2015). Recortes originales de Resultados y Conclusiones.
+</p>
+<aside class="notes">
+<p>Se muestran los párrafos originales completos: sección 3.3, p.&nbsp;21, desde «El peso total de frutos cosechados» hasta «para cada uno de los tratamientos»; sección 5, p.&nbsp;22, desde «Considerando que las semillas de okra» hasta «la mejor relación rendimiento/costo». Leer primero el resultado, luego discutir el criterio de decisión y finalmente revelar la conclusión. No detectar diferencias no demuestra igualdad; el artículo no identifica la prueba post hoc. La mención de 4 m² en Resultados se conserva tal como está publicada; métodos define 4,2 m². Síntesis para el presentador: las semillas eran caras y no se producían en Argentina; considerando que T2, T3 y T4 no difirieron significativamente, recomiendan dos semillas por pozo (8,3 plantas/m²). No es una recomendación agronómica nueva ni una evaluación actual de disponibilidad. La densidad es la publicada, con la discrepancia entre distancias y equivalencias registrada en notas de diseño. Los autores aconsejan repetir en otros años e incluir híbridos. Conectar con «¿Con qué dieta me conviene alimentar a los novillitos?»: las comparaciones informan sobre diferencias de respuesta, pero una decisión real puede requerir costos, disponibilidad, factibilidad y relevancia agronómica. Fuente: Lozano, L.; Tálamo, A.; Galarce, M. y Ruiz de los Llanos, R. (2015). Efecto de la densidad de siembra sobre el rendimiento de la okra (Abelmoschus esculentus (L.) Moench), en el valle de Lerma, Salta, Argentina. Horticultura Argentina 34(84): 18–24.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

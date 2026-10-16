@@ -175,24 +175,118 @@ Andrés Tálamo
 </div>
 </div>
 
-  <p class="date">15 de octubre de 2026</p>
+  <p class="date">16 de octubre de 2026</p>
 </section>
-<section id="qué-debe-cumplirse-para-confiar-en-este-modelo" class="slide level2 s12 center">
-<h2>¿Qué debe cumplirse para confiar en este modelo?</h2>
-<p class="muted">
-La pregunta que dejamos abierta en la Clase 11
-</p>
+<section id="retomemos-el-experimento-de-la-clase-11" class="slide level2 s12 center">
+<h2>Retomemos el experimento de la Clase 11</h2>
+<div class="pregunta">
+<p>¿El tipo de <strong>sustrato</strong> afecta la <strong>biomasa seca media</strong> de los plantines de tomate?</p>
+</div>
+<p><strong>Factor:</strong> Sustrato — Suelo + arena, Suelo + compost y Sustrato comercial.</p>
+<p><strong>Respuesta:</strong> biomasa seca a los 42 días (g).<br><strong>Unidad experimental:</strong> cada maceta con un plantín.</p>
 <div class="idea">
-<p><strong>Concordancia entre los datos y el modelo</strong></p>
-</div>
-<div class="fragment">
-<p>Valores-p, intervalos y riesgos de error dependen de las <strong>condiciones del análisis</strong>.</p>
-</div>
-<div class="method-flow">
-<span>DISEÑAR</span><span class="arrow">→</span><span>DESCRIBIR</span><span class="arrow">→</span><span>COMPARAR</span><span class="arrow">→</span><span>INFERIR</span>
+<p><strong>DBCA: diseño en bloques completos aleatorizados.</strong><br>7 mesadas · una UE de cada sustrato por mesada · 21 UE.<br>Asignación aleatoria de los tres niveles <strong>dentro de cada mesada</strong>.</p>
 </div>
 <aside class="notes">
-<p>Retomar literalmente la última pregunta de Clase 11. No volver a explicar ANOVA. Recordar oralmente α, error tipo I, error tipo II y potencia: su comportamiento esperado depende del modelo y del diseño. Hoy vamos a evaluar esas condiciones.</p>
+<p>Retomar el experimento del cierre de Clase 11, no la variante DCA de su primera parte. Son los datos docentes simulados conservados en datos_dbca.csv. Sustrato tiene tres niveles fijos; Mesada es la fuente aleatoria de heterogeneidad reconocida antes de observar los datos. Modelo presentado allí: <span class="math inline">\(Y_{ij}=\mu+\alpha_i+B_j+\varepsilon_{ij}\)</span>, con i = Sustrato y j = Mesada. No volver a enseñar ANOVA. La respuesta se mide una vez por UE a los 42 días.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="con-estos-datos-obtuvimos-este-resultado" class="slide level2 s12 center">
+<h2>Con estos datos obtuvimos este resultado</h2>
+<p class="muted">
+ANOVA del DBCA · resultado de la Clase 11
+</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fuente</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">CM</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sustrato</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">45,62</td>
+<td style="text-align: right;">22,81</td>
+<td style="text-align: right;"><strong>30,70</strong></td>
+<td style="text-align: right;"><strong>0,0000191</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mesada</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">44,98</td>
+<td style="text-align: right;">7,50</td>
+<td style="text-align: right;">10,09</td>
+<td style="text-align: right;">0,0004</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Error</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">8,92</td>
+<td style="text-align: right;">0,74</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">99,51</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Con <strong>α = 0,05</strong>, existe evidencia de un <strong>efecto del tipo de sustrato sobre la biomasa seca media</strong> de los plantines de tomate, en las condiciones definidas por este experimento.</p>
+</div>
+<aside class="notes">
+<p>Lectura de resultados_dbca.csv, sin recalcular ni generar datos. Se conserva el redondeo de la tabla de Clase 11: F Sustrato = 30,70 y p = 0,0000191; F Mesada = 10,09 y p = 0,0004. Valores guardados sin redondeo: F Sustrato = 30,7012071359897 y p = 1,90908563306394e-05; p Mesada = 0,000422799185353543. Rechazamos la igualdad de medias de Sustrato. El resultado es global, no identifica pares. Como se concluyó en Clase 11, también hay evidencia de un componente de variación asociado a Mesada; no es una comparación de sus siete medias ni una decisión retrospectiva de bloquear.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="es-suficiente-con-obtener-este-resultado" class="slide level2 s12 center">
+<h2>¿Es suficiente con obtener este resultado?</h2>
+<div class="pregunta">
+<p>¿Alcanza con obtener un <strong>valor-p del ANOVA</strong> para confiar en la conclusión?</p>
+</div>
+<div class="fragment">
+<div class="idea">
+<p><strong>NO necesariamente.</strong><br>Debemos preguntarnos si el modelo representa razonablemente:</p>
+<ul>
+<li>los datos;</li>
+<li>el diseño;</li>
+<li>el comportamiento de los errores.</li>
+</ul>
+</div>
+<p><strong>Antes de confiar en la inferencia, revisemos los supuestos del modelo.</strong></p>
+</div>
+<aside class="notes">
+<p>Continuación directa de la pregunta final de Clase 11: ¿qué debe cumplirse para confiar en este modelo? Mantener el bloqueo al interpretar el DBCA y recuperar más adelante la aditividad. Las diapositivas aprobadas que siguen utilizan también la variante DCA de macetas de Clase 11 para explicar predicción y residuo con un modelo sencillo. Son dos diseños y dos archivos distintos: no se eliminan las mesadas del DBCA ni se usan residuos del DCA para validar el DBCA.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -246,7 +340,7 @@ La pregunta que dejamos abierta en la Clase 11
 <p><strong>DESCRIBIR antes de INFERIR. No eliminar automáticamente.</strong></p>
 </div>
 <aside class="notes">
-<p>Situación hipotética: se cambió una medición sólo en una copia en memoria para discutir un registro llamativo; no pertenece al CSV original de Clase 11. Pedir explicaciones antes de revelar. Consultar registros y contexto; corregir un error comprobado es distinto de excluir un dato por su efecto sobre p.</p>
+<p>Retomamos aquí la variante DCA de macetas de Clase 11 como ejemplo sencillo de revisión de datos, distinta del DBCA recordado al comienzo. Situación hipotética: se cambió una medición sólo en una copia en memoria para discutir un registro llamativo; no pertenece al CSV original de Clase 11. Pedir explicaciones antes de revelar. Consultar registros y contexto; corregir un error comprobado es distinto de excluir un dato por su efecto sobre p.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -840,7 +934,7 @@ Shapiro-Wilk: <strong>p &gt; 0,05</strong>　·　Levene: <strong>p &gt; 0,05</s
 <p>Las 108 plantas son mediciones agrupadas en parcelas.</p>
 </div>
 <aside class="notes">
-<p>Situación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de la diapositiva 8: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis.</p>
+<p>Situación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de «¿12 plantas son 12 réplicas?»: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

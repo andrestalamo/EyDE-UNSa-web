@@ -63,25 +63,60 @@
     "text": "Alcance\nSólo archivos nuevos en clases/13_comparaciones_medias/ y artefactos generados del render. No se modificaron clases previas, índices ni archivos globales. Datos, script, resultados y fuentes quedan junto al QMD. No se publicó ni se realizó commit/push."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#qué-nos-dijo-el-anova",
-    "href": "clases/13_comparaciones_medias/index.html#qué-nos-dijo-el-anova",
+    "objectID": "clases/13_comparaciones_medias/index.html#partamos-de-una-pregunta-agronómica",
+    "href": "clases/13_comparaciones_medias/index.html#partamos-de-una-pregunta-agronómica",
     "title": "Comparaciones múltiples de medias",
-    "section": "¿Qué nos dijo el ANOVA?",
-    "text": "¿Qué nos dijo el ANOVA?\n\nUn factor de efectos fijos · varios niveles\n\n\\[H_0:\\ \\mu_1=\\mu_2=\\cdots=\\mu_t\\]\nRechazamos \\(H_0\\) con el nivel de significación \\(\\alpha\\) elegido.\n\nHay evidencia de que por lo menos una media poblacional es diferente.\n\n\nH1: no todas las medias poblacionales son iguales. Retomar Clase 11, sin sugerir que todas difieren. En la secuencia de hoy partimos de ANOVA significativo y condiciones del modelo razonables, revisadas en Clase 12. No presentar ese paso como requisito matemático universal de Tukey."
+    "section": "Partamos de una pregunta agronómica",
+    "text": "Partamos de una pregunta agronómica\n\n¿El tipo de dieta afecta la ganancia diaria de peso de novillitos Brangus?\n\nFACTOR: tipo de dieta\nNIVELES DEL FACTOR: 5 formulaciones\n\n\n\nHeno + soja\n\n\nHeno + maíz\n\n\nHeno + sorgo\n\n\n\n\nSilaje + soja\n\n\nMixta\n\n\n\n\nVARIABLE RESPUESTAGanancia diaria de peso (kg/día).\n\n\nDatos simulados con fines didácticos.\n\n\nMismo experimento ya usado en esta clase; no son dosis crecientes ni recomendaciones nutricionales. Heno + soja = heno de gramíneas + expeller de soja; Heno + maíz; Heno + sorgo (grano); Silaje + soja = silaje de sorgo + expeller de soja; Mixta = heno + silaje + maíz + soja. Las etiquetas destacan ingredientes de formulaciones nominales; se supone la corrección proteica y mineral apropiada. Se conservan las observaciones originales. No mostrar resultados todavía."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#dónde-están-localizadas-las-diferencias",
-    "href": "clases/13_comparaciones_medias/index.html#dónde-están-localizadas-las-diferencias",
+    "objectID": "clases/13_comparaciones_medias/index.html#diseño-del-experimento",
+    "href": "clases/13_comparaciones_medias/index.html#diseño-del-experimento",
     "title": "Comparaciones múltiples de medias",
-    "section": "¿Dónde están localizadas las diferencias?",
-    "text": "¿Dónde están localizadas las diferencias?\n\nEl ANOVA responde una pregunta global.\n\n\nNo identifica por sí solo qué medias poblacionales difieren entre sí.\n\n\nDESCRIBIR → COMPARAR → INFERIR"
+    "section": "Diseño del experimento",
+    "text": "Diseño del experimento\n\nDISEÑO COMPLETAMENTE ALEATORIZADO (DCA)Novillitos de características iniciales relativamente homogéneas.\n\n\n35 novillitos Brangus↓ ASIGNACIÓN ALEATORIA DE LAS DIETAS ↓5 dietas · 7 animales por dietaHeno + sojaHeno + maízHeno + sorgoSilaje + sojaMixtaLas posiciones son esquemáticas; el color indica la dieta asignada.Cada círculo = un animal = una UE\n\n\nEjemplo de sistema de alimentación individual\nAlimentación individual controlada.Cada animal recibe individualmente la dieta que le fue asignada.\n\n\n\nANIMAL = UNIDAD EXPERIMENTAL\n\n\nNovillitos Brangus de aproximadamente 200 kg iniciales; período de adaptación y 70 días de evaluación. La homogeneidad relativa se refiere a características relevantes al inicio, como peso/estado y condiciones de manejo; no significa animales idénticos. El DCA resulta razonable cuando no se identifica una fuente sistemática de heterogeneidad que requiera bloqueo.\nCada círculo representa una UE: cinco dietas con siete animales cada una, 35 en total. La grilla tiene una disposición fija de colores entremezclados: exactamente siete unidades por dieta. Las posiciones son esquemáticas, no espaciales; las filas y columnas no representan corrales ni bloques. Esta distribución gráfica no se vuelve a sortear durante el render ni modifica la asignación o los datos guardados. La asignación de cada animal a una dieta es aleatoria. Se supone alimentación individual controlada, sin exigir un corral separado por animal. El tratamiento se aplica individualmente. No describir un único corral por dieta cuyos animales se traten como réplicas independientes.\nFotografía proporcionada por el docente, copiada a img/alimentacion_individual_bovinos.png. Es ilustrativa de un posible sistema de alimentación individual: no corresponde al experimento simulado ni implica que se utilizó ese dispositivo. No se cambia la semilla ni se ejecuta el generador."
+  },
+  {
+    "objectID": "clases/13_comparaciones_medias/index.html#de-la-hipótesis-agronómica-a-las-estadísticas",
+    "href": "clases/13_comparaciones_medias/index.html#de-la-hipótesis-agronómica-a-las-estadísticas",
+    "title": "Comparaciones múltiples de medias",
+    "section": "De la hipótesis agronómica a las estadísticas",
+    "text": "De la hipótesis agronómica a las estadísticas\n\nHIPÓTESIS AGRONÓMICAEl tipo de dieta afecta la ganancia diaria de peso de los novillitos.\n\nHIPÓTESIS ESTADÍSTICAS\n\\[H_0:\\ \\mu_1=\\mu_2=\\mu_3=\\mu_4=\\mu_5\\]\nCada \\(\\mu_i\\) representa la media poblacional de ganancia diaria para la dieta \\(i\\).\n\\[H_1:\\ \\text{no todas las medias poblacionales son iguales.}\\]\n\nÍndices 1 a 5: Heno + soja, Heno + maíz, Heno + sorgo, Silaje + soja y Mixta. La alternativa implica que al menos una media poblacional difiere; no que todas sean diferentes. Separar la afirmación agronómica de las hipótesis sobre parámetros poblacionales."
+  },
+  {
+    "objectID": "clases/13_comparaciones_medias/index.html#el-modelo-anova-de-un-factor",
+    "href": "clases/13_comparaciones_medias/index.html#el-modelo-anova-de-un-factor",
+    "title": "Comparaciones múltiples de medias",
+    "section": "El modelo ANOVA de un factor",
+    "text": "El modelo ANOVA de un factor\n\\[Y_{ij}=\\mu+\\tau_i+\\varepsilon_{ij}\\]\n\n\\(Y_{ij}\\): ganancia diaria del animal \\(j\\) que recibe la dieta \\(i\\).\n\\(\\mu\\): media general.\n\\(\\tau_i\\): efecto de la dieta \\(i\\).\n\\(\\varepsilon_{ij}\\): error aleatorio.\n\n\nEl ANOVA no es solamente una tabla: estamos ajustando un modelo.\n\n\ni = 1,…,5; j = 1,…,7 dentro de cada dieta. Efectos fijos, con la restricción habitual de suma de efectos igual a cero. Y se expresa en kg/día. En Clase 11 hicimos ANOVA; en Clase 12 vimos qué condiciones evaluar para confiar en la inferencia. Aquí partimos de que esas condiciones resultan razonables y avanzamos a comparar medias. No repetir pruebas ni diagnósticos. El ANOVA global significativo organiza este ejemplo, sin presentarlo como requisito matemático universal de Tukey."
+  },
+  {
+    "objectID": "clases/13_comparaciones_medias/index.html#datos-observados-35-animales",
+    "href": "clases/13_comparaciones_medias/index.html#datos-observados-35-animales",
+    "title": "Comparaciones múltiples de medias",
+    "section": "Datos observados: 35 animales",
+    "text": "Datos observados: 35 animales\n\nGanancia diaria de peso (kg/día) · datos simulados\n\n\n\n\n\n\nHeno + soja\n\n\nHeno + maíz\n\n\nHeno + sorgo\n\n\nSilaje + soja\n\n\nMixta\n\n\n\n\n\n\n0,616\n\n\n0,657\n\n\n0,782\n\n\n0,779\n\n\n0,616\n\n\n\n\n0,454\n\n\n0,537\n\n\n0,472\n\n\n0,795\n\n\n0,881\n\n\n\n\n0,440\n\n\n0,784\n\n\n0,781\n\n\n0,695\n\n\n0,882\n\n\n\n\n0,490\n\n\n0,603\n\n\n0,621\n\n\n1,098\n\n\n0,906\n\n\n\n\n0,327\n\n\n0,623\n\n\n0,653\n\n\n0,925\n\n\n0,634\n\n\n\n\n0,483\n\n\n0,654\n\n\n0,719\n\n\n0,548\n\n\n0,780\n\n\n\n\n0,692\n\n\n0,702\n\n\n0,775\n\n\n0,689\n\n\n0,805\n\n\n\n\n\n\nCada valor corresponde a un animal distinto.5 dietas × 7 animales\n\n\nLas 35 observaciones se leen de datos_dietas_simulados.csv. Tres decimales: la precisión original guardada. Las filas no representan bloques, parejas ni medidas repetidas. Cada columna reúne siete animales distintos; los identificadores siguen en el CSV. No se regeneran datos ni se muestran solamente cinco medias."
+  },
+  {
+    "objectID": "clases/13_comparaciones_medias/index.html#anova-del-experimento-de-dietas",
+    "href": "clases/13_comparaciones_medias/index.html#anova-del-experimento-de-dietas",
+    "title": "Comparaciones múltiples de medias",
+    "section": "ANOVA del experimento de dietas",
+    "text": "ANOVA del experimento de dietas\n\n\n\n\nFuente de variación\ngl\nSC\nCM\nF\np\n\n\n\n\nDieta\n4\n0,39534\n0,09884\n6,21348\n0,00091327\n\n\nError\n30\n0,47720\n0,01590661\n\n\n\n\nTotal\n34\n0,87254\n\n\n\n\n\n\n\n\np &lt; 0,05 → rechazamos \\(H_0\\), con α = 0,05.\n\nMUESTRA → INFERENCIA → POBLACIÓN\n\nHay evidencia estadística de que el tipo de dieta afecta la ganancia diaria de peso: no todas las medias poblacionales son iguales.\n\nLa conclusión se refiere a las poblaciones representadas por el experimento, no solamente a los 35 animales observados.\n\nEl ANOVA todavía no indica entre qué dietas se encuentran las diferencias.\n\n\nTabla guardada en anova_dietas.csv, sin nuevos cálculos ni simulaciones: SC dieta = 0,395341314285714; SC error = 0,477198285714286; gl = 4 y 30; total = 34. CM dieta = 0,0988353285714286; CMEE = 0,0159066095238095; F = 6,21347550045084; p = 0,000913270650891598. El redondeo sólo se aplica al mostrar. Todavía no identificar qué dietas difieren."
+  },
+  {
+    "objectID": "clases/13_comparaciones_medias/index.html#qué-necesitamos-saber-ahora",
+    "href": "clases/13_comparaciones_medias/index.html#qué-necesitamos-saber-ahora",
+    "title": "Comparaciones múltiples de medias",
+    "section": "¿Qué necesitamos saber ahora?",
+    "text": "¿Qué necesitamos saber ahora?\n\nANOVA · p = 0,0009\n\nHay evidencia de diferencias entre las medias poblacionales.\n\n¿Con qué dieta me conviene alimentar a los novillitos?\n\n\nEl ANOVA no permite responder todavía cuál dieta conviene.\n\n\nPrimero: ¿entre qué dietas hay evidencia de diferencias en la ganancia diaria de peso?\n\n\nNecesitamos comparar las medias.\n\n\n“Qué dieta conviene” es una pregunta aplicada más amplia que una comparación estadística. Una recomendación real también requiere costos, composición de las dietas, disponibilidad de insumos, sanidad, eficiencia de conversión y condiciones de producción. Los datos son simulados y no justifican una recomendación productiva. La pregunta motiva localizar diferencias en la respuesta estudiada; la dieta con mayor media muestral no es automáticamente la mejor. No volver a desarrollar los supuestos, que se consideran razonables para esta secuencia."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#muchas-medias-muchas-comparaciones",
     "href": "clases/13_comparaciones_medias/index.html#muchas-medias-muchas-comparaciones",
     "title": "Comparaciones múltiples de medias",
     "section": "Muchas medias, muchas comparaciones",
-    "text": "Muchas medias, muchas comparaciones\n\nNovillitos Brangus · factor: tipo de dieta · cinco niveles nominales. Datos simulados.\n\n\n\n\n\n\n\n\n\n\n\n3 niveles → 3 pares · 4 niveles → 6 pares · 6 niveles → 15 pares\n\n\n\n\\(m=t(t-1)/2\\) · \\(t\\): número de niveles del factor\n\n\n\nCinco medias del experimento simulado de dietas: diez pares posibles. 35 novillitos de unos 200 kg asignados aleatoriamente a cinco dietas, siete por dieta, con alimentación individual; animal = UE independiente. Tras adaptación, se mide la ganancia media diaria durante 70 días. Las dietas son categorías, no dosis crecientes. El gráfico muestra únicamente medias muestrales, sin inferencia. No pedir calcular m. Las escalas de los gráficos de puntos no necesitan comenzar en cero."
+    "text": "Muchas medias, muchas comparaciones\n\nCinco medias muestrales observadas · datos simulados.\n\n\n\n\n\n\n\n\n\n\n\n\\(m=\\frac{t(t-1)}{2}\\) · \\(t\\): número de niveles del factor\n\n\n\nCinco dietas → \\(m=\\frac{5(5-1)}{2}=10\\) comparaciones por pares\n\n\n\nCinco medias del experimento simulado de dietas: diez pares posibles. 35 novillitos de unos 200 kg asignados aleatoriamente a cinco dietas, siete por dieta, con alimentación individual; animal = UE independiente. Tras adaptación, se mide la ganancia media diaria durante 70 días. Las dietas son categorías, no dosis crecientes. El gráfico muestra únicamente medias muestrales, sin inferencia. No pedir calcular m. Las escalas de los gráficos de puntos no necesitan comenzar en cero."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#por-qué-no-hacer-muchas-pruebas-t",
@@ -116,7 +151,7 @@
     "href": "clases/13_comparaciones_medias/index.html#tukey-todas-las-comparaciones-de-a-pares",
     "title": "Comparaciones múltiples de medias",
     "section": "Tukey: todas las comparaciones de a pares",
-    "text": "Tukey: todas las comparaciones de a pares\nPara cada par de niveles del factor:\n\\[H_0:\\ \\mu_i=\\mu_j\\qquad H_1:\\ \\mu_i\\ne\\mu_j\\]\n\n\\(\\mu_i\\) y \\(\\mu_j\\) son medias poblacionales.\n\n\nLa prueba usa diferencias entre medias muestrales para poner a prueba esas hipótesis.\n\n\nFuente conceptual: Silvia Sühring, diapositivas 10–11 y documento Word incrustado. Verificación técnica: https://stat.ethz.ch/R-manual/R-devel/library/stats/help/TukeyHSD.html. Mantener condiciones del ANOVA clásico y familia de todos los pares."
+    "text": "Tukey: todas las comparaciones de a pares\nComparamos todos los pares, controlando el error familiar.\nPara cada par de niveles del factor:\n\\[H_0:\\ \\mu_i=\\mu_j\\qquad H_1:\\ \\mu_i\\ne\\mu_j\\]\n\n\\(\\mu_i\\) y \\(\\mu_j\\) son medias poblacionales.\n\n\nLa prueba usa diferencias entre medias muestrales para poner a prueba esas hipótesis.\n\n\nFuente conceptual: Silvia Sühring, diapositivas 10–11 y documento Word incrustado. Verificación técnica: https://stat.ethz.ch/R-manual/R-devel/library/stats/help/TukeyHSD.html. Mantener condiciones del ANOVA clásico y familia de todos los pares."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#dms-diferencia-mínima-significativa",
@@ -137,7 +172,7 @@
     "href": "clases/13_comparaciones_medias/index.html#tukey-en-novillitos-salida-tipo-infostat",
     "title": "Comparaciones múltiples de medias",
     "section": "Tukey en novillitos: salida tipo InfoStat",
-    "text": "Tukey en novillitos: salida tipo InfoStat\nTest:Tukey Alfa=0,05 DMS=0,19554 kg/día\nError: 0,01591 gl: 30\n\nTIPO DE DIETA     Medias   n   E.E.\nHeno + soja         0,50   7   0,05     A\nHeno + maíz         0,65   7   0,05     AB\nHeno + sorgo        0,69   7   0,05     AB\nSilaje + soja       0,79   7   0,05     B\nMixta               0,79   7   0,05     B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\nExperimento simulado: 35 novillitos asignados al azar; 7 por dieta.\nAnimal = UE independiente, con alimentación individual. Ganancia en kg/día.\n\n\nError = CMEE · gl del error · n: réplicas · E.E. de la media.\n\n\nExperimento hipotético de recría de novillitos Brangus (unos 200 kg iniciales), plausible para sistemas del NOA; no es un ensayo publicado ni una recomendación de alimentación. Cinco formulaciones nominales: Heno + soja (heno de gramínea y expeller de soja), Heno + maíz, Heno + sorgo (grano), Silaje + soja (silaje de sorgo y expeller de soja) y Mixta (heno, silaje, maíz y soja). Las etiquetas identifican los ingredientes distintivos; todas incluyen la corrección proteica y mineral adecuada. No son dosis sucesivas del mismo suplemento. Dietas suministradas individualmente, con animales asignados aleatoriamente; no confundir varios animales en un único corral por dieta con réplicas independientes. Tras adaptación, ganancia diaria durante 70 días.\nPlausibilidad de recursos y escala contrastada con INTA: https://www.argentina.gob.ar/noticias/el-sorgo-gana-protagonismo-en-las-dietas-ganaderas y https://www.argentina.gob.ar/noticias/heno-un-recurso-forrajero-alternativo-de-calidad-y-facil-suministro. Esas fuentes respaldan el uso de heno/silajes/concentrados en recría; no son el origen de estos datos simulados ni validan estas formulaciones específicas.\nSemilla 20261302; datos generados una sola vez con generar_dietas.R y guardados en datos_dietas_simulados.csv. El render sólo lee ese archivo mediante analisis_dietas.R. Medias, CMEE, gl, Tukey, DMS y letras derivados del mismo modelo; los diez pares se verifican automáticamente. ANOVA: F = 6,213, p = 9,133e-04, gl = 4 y 30. Tabla completa en anova_dietas.csv. E.E. es error estándar de la media, no desvío de las observaciones. La salida es formato didáctico tipo InfoStat, calculada con R."
+    "text": "Tukey en novillitos: salida tipo InfoStat\nTest:Tukey Alfa=0,05 DMS=0,19554 kg/día\nError: 0,01591 gl: 30\n\nTIPO DE DIETA     Medias   n   E.E.\nHeno + soja         0,50   7   0,05     A\nHeno + maíz         0,65   7   0,05     AB\nHeno + sorgo        0,69   7   0,05     AB\nSilaje + soja       0,79   7   0,05     B\nMixta               0,79   7   0,05     B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\nExperimento simulado: 35 novillitos asignados al azar; 7 por dieta.\nAnimal = UE independiente, con alimentación individual. Ganancia en kg/día.\n\n\nError = CMEE · gl del error · n: réplicas · E.E. de la media.\n\n\nExperimento hipotético de recría de novillitos Brangus (unos 200 kg iniciales), plausible para sistemas del NOA; no es un ensayo publicado ni una recomendación de alimentación. Cinco formulaciones nominales: Heno + soja (heno de gramínea y expeller de soja), Heno + maíz, Heno + sorgo (grano), Silaje + soja (silaje de sorgo y expeller de soja) y Mixta (heno, silaje, maíz y soja). Las etiquetas identifican los ingredientes distintivos; todas incluyen la corrección proteica y mineral adecuada. No son dosis sucesivas del mismo suplemento. Dietas suministradas individualmente, con animales asignados aleatoriamente; no confundir varios animales en un único corral por dieta con réplicas independientes. Tras adaptación, ganancia diaria durante 70 días.\nPlausibilidad de recursos y escala contrastada con INTA: https://www.argentina.gob.ar/noticias/el-sorgo-gana-protagonismo-en-las-dietas-ganaderas y https://www.argentina.gob.ar/noticias/heno-un-recurso-forrajero-alternativo-de-calidad-y-facil-suministro. Esas fuentes respaldan el uso de heno/silajes/concentrados en recría; no son el origen de estos datos simulados ni validan estas formulaciones específicas.\nSemilla 20261302; datos generados una sola vez con generar_dietas.R y guardados en datos_dietas_simulados.csv. El análisis original se conserva en analisis_dietas.R. El render lee las observaciones y los resultados guardados en los CSV, sin recalcular ANOVA ni Tukey. Medias, CMEE, gl, Tukey, DMS y letras derivados del mismo modelo; los diez pares se verifican automáticamente. ANOVA: F = 6,213, p = 9,133e-04, gl = 4 y 30. Tabla completa en anova_dietas.csv. E.E. es error estándar de la media, no desvío de las observaciones. La salida es formato didáctico tipo InfoStat, calculada con R."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#medias-muestrales-inferencia-poblacional",
@@ -158,14 +193,14 @@
     "href": "clases/13_comparaciones_medias/index.html#heno-con-soja-o-maíz-diferencia-significativa",
     "title": "Comparaciones múltiples de medias",
     "section": "Heno con soja o maíz: ¿diferencia significativa?",
-    "text": "Heno con soja o maíz: ¿diferencia significativa?\n\n\n\n\n\n\n\n\n\n\nGanancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.\n\n\nNo: comparten A. No se detectaron diferencias significativas entre sus medias poblacionales.\n\n\ndᵢ = 0,151 kg/día &lt; DMS = 0,196 kg/día."
+    "text": "Heno con soja o maíz: ¿diferencia significativa?\n\n\n\n\n\n\n\n\n\n\n\\(d_i\\): segmento verde · DMS: segmento marrón · misma escala (kg/día), barras desde cero.\n\n\nNo: comparten A. No se detectaron diferencias significativas entre sus medias poblacionales.\n\n\n\\(d_i\\) = 0,15114 kg/día &lt; DMS = 0,19554 kg/día."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#heno-soja-y-mixta-diferencia-significativa",
     "href": "clases/13_comparaciones_medias/index.html#heno-soja-y-mixta-diferencia-significativa",
     "title": "Comparaciones múltiples de medias",
     "section": "Heno + soja y Mixta: ¿diferencia significativa?",
-    "text": "Heno + soja y Mixta: ¿diferencia significativa?\n\n\n\n\n\n\n\n\n\n\nGanancia diaria de peso (kg/día) · barras desde cero · segmentos en la misma escala.\n\n\nSí: no comparten letras. Hay evidencia de que sus medias poblacionales difieren.\n\n\ndᵢ = 0,286 kg/día &gt; DMS = 0,196 kg/día.\n\n\nÉste es un ejemplo de lectura del umbral, no cálculo manual de Tukey. Las medias poblacionales no se conocen: no atribuirles exactamente la diferencia muestral observada."
+    "text": "Heno + soja y Mixta: ¿diferencia significativa?\n\n\n\n\n\n\n\n\n\n\n\\(d_i\\): segmento verde · DMS: segmento marrón · misma escala (kg/día), barras desde cero.\n\n\nSí: no comparten letras. Hay evidencia de que sus medias poblacionales difieren.\n\n\n\\(d_i\\) = 0,28600 kg/día &gt; DMS = 0,19554 kg/día.\n\n\nÉste es un ejemplo de lectura del umbral, no cálculo manual de Tukey. Las medias poblacionales no se conocen: no atribuirles exactamente la diferencia muestral observada."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#compartir-letras-no-genera-grupos-separados",
@@ -189,39 +224,46 @@
     "text": "Tabla y gráfico comunican el mismo resultado\n\n\n\n\n\n\n\n\n\n\nPuntos: medias muestrales. Barras: ± 1 E.E. Letras: Tukey, α = 0,05.\n\n\nPosición del punto → media muestral observada.\n\n\nLetras → inferencia sobre medias poblacionales.\n\n\nLa superposición de barras no determina la significación.\n\n\nMismas medias y letras: Heno + soja=A, Heno + maíz=AB, Heno + sorgo=AB, Silaje + soja=B, Mixta=B. Las barras ±1 E.E. no son intervalos de comparación. No decidir significación por superposición. Se conserva la escala, geometrías, paleta y datos."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#fertilización-nitrogenada-en-maíz",
-    "href": "clases/13_comparaciones_medias/index.html#fertilización-nitrogenada-en-maíz",
+    "objectID": "clases/13_comparaciones_medias/index.html#ahora-un-experimento-real",
+    "href": "clases/13_comparaciones_medias/index.html#ahora-un-experimento-real",
     "title": "Comparaciones múltiples de medias",
-    "section": "Fertilización nitrogenada en maíz",
-    "text": "Fertilización nitrogenada en maíz\n¿La dosis de nitrógeno afecta el rendimiento medio del maíz?\n\n\nSin N\n\n\nDosis intermedia\n\n\nDosis alta\n\n\n\nDatos simulados con fines didácticosDCA: 21 parcelas asignadas aleatoriamente, 7 por tratamiento.Unidad experimental: parcela independiente.Rendimiento de grano (t/ha).\n\n\nExperimento hipotético de fertilización nitrogenada en maíz. Un factor con tres tratamientos. DCA con 21 parcelas, asignación aleatoria a los tratamientos y siete parcelas independientes por tratamiento. La respuesta es el rendimiento de grano por parcela expresado en t/ha. Las plantas dentro de una parcela no son réplicas independientes. Los valores simulados no son resultados empíricos ni una recomendación de dosis. Se mantiene la semilla 202613, con medias de generación 5,13, 7,34 y 7,82 t/ha y desvío común 0,65 t/ha; valores redondeados a 0,01 t/ha."
+    "section": "Ahora, un experimento real",
+    "text": "Ahora, un experimento real\n\nHasta aquí construimos e interpretamos las comparaciones múltiples con un ejemplo didáctico.\n\n\n\nLozano et al. (2015). Horticultura Argentina 34(84): 18–24.\n\n\n\nAhora vamos a interpretar resultados de un experimento realizado en nuestra Facultad.\n\n\n\n¿Podemos transferir lo aprendido a un problema agronómico real?\n\n\nObjetivo: transferencia e interpretación, no volver a enseñar el procedimiento desde cero. Fuente exclusiva: Lozano, L.; Tálamo, A.; Galarce, M. y Ruiz de los Llanos, R. (2015). Efecto de la densidad de siembra sobre el rendimiento de la okra (Abelmoschus esculentus (L.) Moench), en el valle de Lerma, Salta, Argentina. Horticultura Argentina 34(84): 18–24. El ensayo se desarrolló en 2011–2012; el artículo es el de 2015, no el de raleo de 2011."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#qué-observamos-en-la-muestra",
-    "href": "clases/13_comparaciones_medias/index.html#qué-observamos-en-la-muestra",
+    "objectID": "clases/13_comparaciones_medias/index.html#cuántas-plantas-de-okra-conviene-sembrar",
+    "href": "clases/13_comparaciones_medias/index.html#cuántas-plantas-de-okra-conviene-sembrar",
     "title": "Comparaciones múltiples de medias",
-    "section": "¿Qué observamos en la muestra?",
-    "text": "¿Qué observamos en la muestra?\n\n\n\n\n\n\n\n\n\n\nDatos simulados · medias muestrales ± 1 E.E. · n = 7 por tratamiento.\n\n\n¿Hay evidencia de diferencias entre las medias poblacionales?"
+    "section": "¿Cuántas plantas de okra conviene sembrar?",
+    "text": "¿Cuántas plantas de okra conviene sembrar?\nOkra · Abelmoschus esculentus · variedad Blue Sky\n\n\n\n\nImágenes ilustrativas: no corresponden al ensayo.\n\n\n¿Cómo afectan cuatro densidades de siembra a los componentes del rendimiento en el valle de Lerma?\n\n\nCampo experimental de la FCN–UNSa, Salta · Lozano et al. (2015)."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#el-anova-detecta-una-diferencia-global",
-    "href": "clases/13_comparaciones_medias/index.html#el-anova-detecta-una-diferencia-global",
+    "objectID": "clases/13_comparaciones_medias/index.html#diseño-del-experimento-1",
+    "href": "clases/13_comparaciones_medias/index.html#diseño-del-experimento-1",
     "title": "Comparaciones múltiples de medias",
-    "section": "El ANOVA detecta una diferencia global",
-    "text": "El ANOVA detecta una diferencia global\n\nmaíz · datos simulados\n\n\\[H_0:\\ \\mu_{\\text{sin N}}=\\mu_{\\text{intermedia}}=\\mu_{\\text{alta}}\\]\n\n\n\n\nF.V.\nSC\ngl\nCM\nF\np-valor\n\n\n\n\nTratamientos\n30,99\n2\n15,49\n39,84\n2,45e-07\n\n\nError\n7,00\n18\n0,3889\n\n\n\n\nTotal\n37,99\n20\n\n\n\n\n\n\n\n\nRechazamos Ho: por lo menos una media poblacional difiere.\n\n\n¿Dónde están localizadas las diferencias?\n\n\nModelo DCA de un factor, α=0,05. F y p calculados con aov sobre el CSV simulado. Errores generados con distribución normal y varianza común. Suponer independencia se apoya en el escenario experimental planteado; no se “demuestra” con una prueba sobre residuos."
+    "section": "Diseño del experimento",
+    "text": "Diseño del experimento\nDBCA · 12 bloques · 4 tratamientos · 12 réplicas por tratamiento\n\n\n\nB1T3T1T4T2B2T2T4T1T3B3T4T2T3T1B4T1T3T2T4B5T2T1T4T3B6T3T4T2T1B7T4T1T3T2B8T1T2T3T4B9T3T2T1T4B10T2T3T4T1B11T1T4T2T3B12T4T3T1T2\n\n\n\n\nT1: 1 planta por pozoT2: 2 plantas por pozoT3: 3 plantas por pozoT4: 4 plantas por pozo\n\n\nParcela = UE4,2 m² (6 m × 0,7 m)48 parcelas en total.\n\n\nUna parcela de cada tratamiento en cada bloque.\n\n\n\n\nOrden esquemático; los tratamientos se aleatorizan dentro de cada bloque.\n\n\nDietas → DCA · Okra → DBCA. Fuente: Lozano et al. (2015), métodos.\n\n\nMétodos, pp. 20–21: DBCA con 12 repeticiones; cuatro tratamientos por bloque. Hileras a 0,70 m y pozos a 0,30 m. Parcela de 6 × 0,7 m = 4,2 m². Tratamientos definidos por 1, 2, 3 o 4 plantas por pozo; se sembró ese número de semillas por pozo. La discusión publica T1=4,16; T2=8,3; T3=12,5; T4=16,6 plantas/m². Estas equivalencias no coinciden exactamente con el cálculo a partir de 0,70 × 0,30 m; no reconstruir ni corregir los valores publicados. Se omiten del croquis y se atribuye explícitamente al artículo la densidad recomendada. El orden de parcelas es ilustrativo, fijo y no reproduce la disposición espacial del ensayo. Cada color identifica siempre el mismo tratamiento. Variables: número y peso total de frutos por parcela en todo el ciclo y por fecha de cosecha."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#tukey-en-maíz",
-    "href": "clases/13_comparaciones_medias/index.html#tukey-en-maíz",
+    "objectID": "clases/13_comparaciones_medias/index.html#interpretemos-el-resultado",
+    "href": "clases/13_comparaciones_medias/index.html#interpretemos-el-resultado",
     "title": "Comparaciones múltiples de medias",
-    "section": "Tukey en maíz",
-    "text": "Tukey en maíz\n\nDatos simulados · salida con formato de InfoStat · rendimiento en t/ha\n\nTest:Tukey Alfa=0,05 DMS=0,85076 t/ha\nError: 0,3889 gl: 18\n\nTRATAMIENTO      Medias   n   E.E.\nSin N              5,09   7   0,24     A\nDosis intermedia   7,25   7   0,24     B\nDosis alta         7,94   7   0,24     B\n\nMedias con una letra común no son significativamente diferentes (p &gt; 0,05)\n\n¿Qué pares presentan diferencias significativas?\nLas medias muestrales deben diferir en más de 0,85076 t/ha para que, mediante Tukey, tengamos evidencia de una diferencia entre las medias poblacionales, en este análisis.\n\n\nResultados calculados con R y presentados como salida tipo InfoStat, no captura de una ejecución de InfoStat. Las cifras se redondean sólo para mostrar; letras verificadas contra TukeyHSD. El CSV conserva todos los valores."
+    "section": "Interpretemos el resultado",
+    "text": "Interpretemos el resultado\n\n\n\n\n\n\n¿Qué nos dicen las letras?\n\n\n¿Qué tratamientos difieren?\n\n\nT1 vs. T2, T3 y T4:se detectaron diferencias significativas.\n\n\nEntre T2, T3 y T4:no se detectaron diferencias significativas. Esto no demuestra igualdad.\n\n\n\n\nLozano et al. (2015), fig. 5, p. 22. Diagrama de cajas: la línea interior indica la mediana.\n\n\nANOVA a dos criterios (α = 0,05). El artículo no especifica la prueba de comparación múltiple.\n\n\nRecorte del original, sin redibujar. Variable: peso total de frutos (g) por parcela en todo el período de cosecha. Figura 5: T1 A; T2, T3 y T4 B. El gráfico es un diagrama de cajas, con línea interior de mediana; no es media ± error estándar. Incluye puntos interiores, pero el pie no explica sus símbolos ni define bigotes; no asignarles una definición no documentada. El texto informa valores promedio de 2559,41; 3679,66; 4304,14 y 4411,77 g para T1–T4. No confundir esos promedios con las líneas de mediana. Métodos: ANOVA a dos criterios de clasificación con InfoStat, nivel 5 %. No identifica el procedimiento post hoc: no atribuir Tukey, Duncan ni otro. La interpretación de las letras se verifica además contra el apartado 3.3, p. 21. Métodos define parcela de 4,2 m²; resultados menciona 4 m². Se conserva el eje original «por parcela» sin convertir unidades."
   },
   {
-    "objectID": "clases/13_comparaciones_medias/index.html#comunicar-el-resultado-de-maíz",
-    "href": "clases/13_comparaciones_medias/index.html#comunicar-el-resultado-de-maíz",
+    "objectID": "clases/13_comparaciones_medias/index.html#entonces-conviene-sembrar-cuatro-plantas-por-pozo",
+    "href": "clases/13_comparaciones_medias/index.html#entonces-conviene-sembrar-cuatro-plantas-por-pozo",
     "title": "Comparaciones múltiples de medias",
-    "section": "Comunicar el resultado de maíz",
-    "text": "Comunicar el resultado de maíz\n\n\n\n\n\n\n\n\n\n\nDATOS SIMULADOS · medias ± 1 E.E. · n = 7 · Tukey, α = 0,05.\n\n\nSin N vs. cada dosis de N: diferencias significativas.\n\n\nDosis intermedia vs. dosis alta: no se detectó diferencia significativa.\n\n\n7,25 ≠ 7,94 en la muestra; ambas medias reciben B.\n\n\nSin N difiere significativamente de Dosis intermedia y Dosis alta. La decisión se refiere a medias poblacionales. Las dos dosis tienen medias muestrales distintas, pero no hay evidencia suficiente de una diferencia entre sus medias poblacionales; no afirmar igualdad ni equivalencia. Resultado exclusivamente simulado. Letras calculadas a partir de TukeyHSD y compartidas por la salida y el gráfico."
+    "section": "Entonces… ¿conviene sembrar cuatro plantas por pozo?",
+    "text": "Entonces… ¿conviene sembrar cuatro plantas por pozo?\n\n\n\n\n\n\nSi un tratamiento tiene el mayor valor observado…\n\n\n¿Significa que necesariamente es la mejor recomendación?\n\n\nT2, T3 y T4 comparten letra.\n\n\n\n\nSi no detectamos diferencias entre T2, T3 y T4,¿qué otra información necesitamos para decidir?\n\n\nLozano et al. (2015), figura 5. Discutamos antes de conocer la recomendación."
+  },
+  {
+    "objectID": "clases/13_comparaciones_medias/index.html#de-la-comparación-estadística-a-la-decisión-agronómica",
+    "href": "clases/13_comparaciones_medias/index.html#de-la-comparación-estadística-a-la-decisión-agronómica",
+    "title": "Comparaciones múltiples de medias",
+    "section": "De la comparación estadística a la decisión agronómica",
+    "text": "De la comparación estadística a la decisión agronómica\n\n\n\nRESULTADO PUBLICADO · p. 21, § 3.3\n\n\n\n\n\nRECOMENDACIÓN PUBLICADA · p. 22, § 5\n\n\n\n\n\n↓ INTERPRETACIÓN / DECISIÓN →Evidencia estadística + costo y disponibilidad de semillas\n\n\nLa estadística aporta evidencia para decidir;no toma la decisión por nosotros.\n\n\nLozano et al. (2015). Recortes originales de Resultados y Conclusiones.\n\n\nSe muestran los párrafos originales completos: sección 3.3, p. 21, desde «El peso total de frutos cosechados» hasta «para cada uno de los tratamientos»; sección 5, p. 22, desde «Considerando que las semillas de okra» hasta «la mejor relación rendimiento/costo». Leer primero el resultado, luego discutir el criterio de decisión y finalmente revelar la conclusión. No detectar diferencias no demuestra igualdad; el artículo no identifica la prueba post hoc. La mención de 4 m² en Resultados se conserva tal como está publicada; métodos define 4,2 m². Síntesis para el presentador: las semillas eran caras y no se producían en Argentina; considerando que T2, T3 y T4 no difirieron significativamente, recomiendan dos semillas por pozo (8,3 plantas/m²). No es una recomendación agronómica nueva ni una evaluación actual de disponibilidad. La densidad es la publicada, con la discrepancia entre distancias y equivalencias registrada en notas de diseño. Los autores aconsejan repetir en otros años e incluir híbridos. Conectar con «¿Con qué dieta me conviene alimentar a los novillitos?»: las comparaciones informan sobre diferencias de respuesta, pero una decisión real puede requerir costos, disponibilidad, factibilidad y relevancia agronómica. Fuente: Lozano, L.; Tálamo, A.; Galarce, M. y Ruiz de los Llanos, R. (2015). Efecto de la densidad de siembra sobre el rendimiento de la okra (Abelmoschus esculentus (L.) Moench), en el valle de Lerma, Salta, Argentina. Horticultura Argentina 34(84): 18–24."
   },
   {
     "objectID": "clases/13_comparaciones_medias/index.html#siempre-tukey",
@@ -4235,11 +4277,25 @@
     "text": "No se detectaron problemas técnicos o visuales pendientes en la revisión. No se incorporaron las fotografías introductorias. Se conservaron las secciones y decisiones pedagógicas no incluidas en el pedido, incluyendo el material auténtico del artículo y sus valores. La validación offline se refiere a las actividades locales una vez cargada la presentación; los enlaces externos del artículo requieren conexión."
   },
   {
-    "objectID": "clases/12_supuestos_anova/index.html#qué-debe-cumplirse-para-confiar-en-este-modelo",
-    "href": "clases/12_supuestos_anova/index.html#qué-debe-cumplirse-para-confiar-en-este-modelo",
+    "objectID": "clases/12_supuestos_anova/index.html#retomemos-el-experimento-de-la-clase-11",
+    "href": "clases/12_supuestos_anova/index.html#retomemos-el-experimento-de-la-clase-11",
     "title": "Supuestos del ANOVA",
-    "section": "¿Qué debe cumplirse para confiar en este modelo?",
-    "text": "¿Qué debe cumplirse para confiar en este modelo?\n\nLa pregunta que dejamos abierta en la Clase 11\n\n\nConcordancia entre los datos y el modelo\n\n\nValores-p, intervalos y riesgos de error dependen de las condiciones del análisis.\n\n\nDISEÑAR→DESCRIBIR→COMPARAR→INFERIR\n\n\nRetomar literalmente la última pregunta de Clase 11. No volver a explicar ANOVA. Recordar oralmente α, error tipo I, error tipo II y potencia: su comportamiento esperado depende del modelo y del diseño. Hoy vamos a evaluar esas condiciones."
+    "section": "Retomemos el experimento de la Clase 11",
+    "text": "Retomemos el experimento de la Clase 11\n\n¿El tipo de sustrato afecta la biomasa seca media de los plantines de tomate?\n\nFactor: Sustrato — Suelo + arena, Suelo + compost y Sustrato comercial.\nRespuesta: biomasa seca a los 42 días (g).Unidad experimental: cada maceta con un plantín.\n\nDBCA: diseño en bloques completos aleatorizados.7 mesadas · una UE de cada sustrato por mesada · 21 UE.Asignación aleatoria de los tres niveles dentro de cada mesada.\n\n\nRetomar el experimento del cierre de Clase 11, no la variante DCA de su primera parte. Son los datos docentes simulados conservados en datos_dbca.csv. Sustrato tiene tres niveles fijos; Mesada es la fuente aleatoria de heterogeneidad reconocida antes de observar los datos. Modelo presentado allí: \\(Y_{ij}=\\mu+\\alpha_i+B_j+\\varepsilon_{ij}\\), con i = Sustrato y j = Mesada. No volver a enseñar ANOVA. La respuesta se mide una vez por UE a los 42 días."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#con-estos-datos-obtuvimos-este-resultado",
+    "href": "clases/12_supuestos_anova/index.html#con-estos-datos-obtuvimos-este-resultado",
+    "title": "Supuestos del ANOVA",
+    "section": "Con estos datos obtuvimos este resultado",
+    "text": "Con estos datos obtuvimos este resultado\n\nANOVA del DBCA · resultado de la Clase 11\n\n\n\n\nFuente\ngl\nSC\nCM\nF\np\n\n\n\n\nSustrato\n2\n45,62\n22,81\n30,70\n0,0000191\n\n\nMesada\n6\n44,98\n7,50\n10,09\n0,0004\n\n\nError\n12\n8,92\n0,74\n—\n—\n\n\nTotal\n20\n99,51\n—\n—\n—\n\n\n\n\nCon α = 0,05, existe evidencia de un efecto del tipo de sustrato sobre la biomasa seca media de los plantines de tomate, en las condiciones definidas por este experimento.\n\n\nLectura de resultados_dbca.csv, sin recalcular ni generar datos. Se conserva el redondeo de la tabla de Clase 11: F Sustrato = 30,70 y p = 0,0000191; F Mesada = 10,09 y p = 0,0004. Valores guardados sin redondeo: F Sustrato = 30,7012071359897 y p = 1,90908563306394e-05; p Mesada = 0,000422799185353543. Rechazamos la igualdad de medias de Sustrato. El resultado es global, no identifica pares. Como se concluyó en Clase 11, también hay evidencia de un componente de variación asociado a Mesada; no es una comparación de sus siete medias ni una decisión retrospectiva de bloquear."
+  },
+  {
+    "objectID": "clases/12_supuestos_anova/index.html#es-suficiente-con-obtener-este-resultado",
+    "href": "clases/12_supuestos_anova/index.html#es-suficiente-con-obtener-este-resultado",
+    "title": "Supuestos del ANOVA",
+    "section": "¿Es suficiente con obtener este resultado?",
+    "text": "¿Es suficiente con obtener este resultado?\n\n¿Alcanza con obtener un valor-p del ANOVA para confiar en la conclusión?\n\n\n\nNO necesariamente.Debemos preguntarnos si el modelo representa razonablemente:\n\nlos datos;\nel diseño;\nel comportamiento de los errores.\n\n\nAntes de confiar en la inferencia, revisemos los supuestos del modelo.\n\n\nContinuación directa de la pregunta final de Clase 11: ¿qué debe cumplirse para confiar en este modelo? Mantener el bloqueo al interpretar el DBCA y recuperar más adelante la aditividad. Las diapositivas aprobadas que siguen utilizan también la variante DCA de macetas de Clase 11 para explicar predicción y residuo con un modelo sencillo. Son dos diseños y dos archivos distintos: no se eliminan las mesadas del DBCA ni se usan residuos del DCA para validar el DBCA."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#antes-de-revisar-los-supuestos",
@@ -4253,7 +4309,7 @@
     "href": "clases/12_supuestos_anova/index.html#un-dato-extraño-merece-una-pregunta",
     "title": "Supuestos del ANOVA",
     "section": "Un dato extraño merece una pregunta",
-    "text": "Un dato extraño merece una pregunta\n\n\n\n\n\n\n\n\n\n\n¿Error de registro o medición? ¿Es biológicamente plausible? ¿Revela algo relevante del proceso?\nDESCRIBIR antes de INFERIR. No eliminar automáticamente.\n\n\nSituación hipotética: se cambió una medición sólo en una copia en memoria para discutir un registro llamativo; no pertenece al CSV original de Clase 11. Pedir explicaciones antes de revelar. Consultar registros y contexto; corregir un error comprobado es distinto de excluir un dato por su efecto sobre p."
+    "text": "Un dato extraño merece una pregunta\n\n\n\n\n\n\n\n\n\n\n¿Error de registro o medición? ¿Es biológicamente plausible? ¿Revela algo relevante del proceso?\nDESCRIBIR antes de INFERIR. No eliminar automáticamente.\n\n\nRetomamos aquí la variante DCA de macetas de Clase 11 como ejemplo sencillo de revisión de datos, distinta del DBCA recordado al comienzo. Situación hipotética: se cambió una medición sólo en una copia en memoria para discutir un registro llamativo; no pertenece al CSV original de Clase 11. Pedir explicaciones antes de revelar. Consultar registros y contexto; corregir un error comprobado es distinto de excluir un dato por su efecto sobre p."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#qué-predice-el-modelo-para-una-maceta",
@@ -4393,7 +4449,7 @@
     "href": "clases/12_supuestos_anova/index.html#dos-valores-p-favorables-qué-falta",
     "title": "Supuestos del ANOVA",
     "section": "Dos valores-p favorables… ¿qué falta?",
-    "text": "Dos valores-p favorables… ¿qué falta?\n\nShapiro-Wilk: p &gt; 0,05　·　Levene: p &gt; 0,05\n\n\n3 parcelas por tratamiento · 12 plantas por parcelaSe analizaron las 108 plantas como réplicas independientes.¿Es correcto?\n\n\nHay 9 réplicas independientes: 3 por tratamiento.\nLas 108 plantas son mediciones agrupadas en parcelas.\n\n\nSituación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de la diapositiva 8: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis."
+    "text": "Dos valores-p favorables… ¿qué falta?\n\nShapiro-Wilk: p &gt; 0,05　·　Levene: p &gt; 0,05\n\n\n3 parcelas por tratamiento · 12 plantas por parcelaSe analizaron las 108 plantas como réplicas independientes.¿Es correcto?\n\n\nHay 9 réplicas independientes: 3 por tratamiento.\nLas 108 plantas son mediciones agrupadas en parcelas.\n\n\nSituación conceptual hipotética: los valores-p no son cálculos sobre la simulación gráfica. Mismo diseño replicado de «¿12 plantas son 12 réplicas?»: tres tratamientos × tres parcelas × doce plantas. El problema no es ausencia de replicación; es tratar submuestras dependientes como réplicas independientes. Pedir justificación antes de mostrar la respuesta. Resumir por parcela puede ser adecuado si esa es la respuesta de interés; conservar las plantas exige contemplar su agrupación. Dos pruebas no detectan ni reparan este error de análisis."
   },
   {
     "objectID": "clases/12_supuestos_anova/index.html#si-aparece-un-problema-primero-entenderlo",
