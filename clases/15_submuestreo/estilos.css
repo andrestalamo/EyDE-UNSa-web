@@ -1,0 +1,88 @@
+/* Clase 15: geometría local; identidad y tipografía del tema EyDE. */
+.reveal .slides section.s15 {font-size:29px;text-align:left;}
+.reveal .slides section.s15 h2 {font-size:1.43em;line-height:1.13;margin-bottom:18px;}
+.s15 p {margin:12px 0;}
+.s15 .idea,.s15 .pregunta,.s15 .alerta {padding:12px 18px;margin:16px 0;font-size:1em;}
+.s15 .pares {display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+.s15 .tres {display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.s15 .pares>*,.s15 .tres>* {min-width:0;}
+.s15 .cuatro {display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.s15 .caso {border-top:4px solid var(--verde);padding:12px 14px;background:#ffffff55;}
+.s15 .caso h3 {font-size:1.06em;margin:0 0 10px;}
+.s15 .caso p {font-size:.86em;}
+.s15 .campo {display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:18px 0;}
+.s15 .campo svg {width:100%;display:block;}
+.s15 .campo.tres-parcelas {grid-template-columns:repeat(3,1fr);}
+.s15 .campo.una {grid-template-columns:1fr;max-width:480px;margin:15px auto;}
+.s15 .leyenda,.s15 .credito {font-size:.55em;color:var(--gris);line-height:1.3;}
+.s15 .leyenda .sin {background:#eee2cf;padding:4px 8px;}.s15 .leyenda .con {background:#dce8d6;padding:4px 8px;}
+.s15 .numeros {display:flex;justify-content:space-between;gap:16px;margin:18px 0;}
+.s15 .numero {font-size:1.7em;color:var(--verde-oscuro);font-weight:700;display:block;}
+.s15 .numeros>div {flex:1;font-size:.77em;}
+.s15 .foto {width:100%;height:310px;object-fit:contain;display:block;margin:0;}
+.s15 .portada-foto {height:290px;object-fit:cover;}
+.s15 .foto-variacion {height:350px;object-fit:contain;}
+.s15 .sobre-foto {position:relative;}.s15 .marca {position:absolute;color:#fff;background:#173c2b;border:2px solid #fff;border-radius:50%;width:30px;height:30px;text-align:center;font-size:20px;line-height:28px;}
+.s15 .m1 {left:35%;top:17%;}.s15 .m2 {left:54%;top:55%;}
+.s15 .compacto {font-size:.8em;line-height:1.3;}
+.s15 .modelo {font-size:1.3em;text-align:center;margin:20px 0;}
+.s15 .terminos {display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.s15 .terminos>div {border-top:4px solid currentColor;padding:10px 12px;}
+.s15 .terminos p {font-size:.82em;}
+.s15 .trat {color:#2d6a4f;}.s15 .par {color:#8a5a3b;}.s15 .pl {color:#536a89;}
+.s15 .MathJax_SVG_Display {margin:.35em 0!important;}
+.s15 .cell-output-display img {display:block;max-height:365px;object-fit:contain;margin:0 auto;}
+.s15 .flujo {display:flex;align-items:center;justify-content:space-around;gap:20px;text-align:center;margin:20px 0;}
+.s15 .flecha {font-size:1.6em;color:var(--maiz);}
+.s15 .medias {display:grid;grid-template-columns:repeat(6,1fr);gap:10px;font-size:.75em;}
+.s15 .media {border-left:4px solid var(--verde);padding:8px;background:#fff8;}
+.reveal .s15 table.anova {font-size:.79em;width:100%;margin:15px 0;}
+.reveal .s15 .anova td,.reveal .s15 .anova th {padding:10px 12px;}
+.s15 .anova .tratamiento {background:#dce8d6;font-weight:650;}
+.s15 .anova .denominador {background:#fff0c0;}
+.s15 .tres .anova {font-size:.66em;}.reveal .s15 .tres .anova td,.reveal .s15 .tres .anova th {padding:9px 7px;}
+.s15 .tres h3 {font-size:.95em;min-height:2.3em;margin:12px 0;}
+.s15 .incorrecto {border-top:5px solid #a33d2f;}.s15 .correcto {border-top:5px solid var(--verde);}
+.s15 .incorrecto .anova .tratamiento {background:#f0d9cf;}
+.s15 .diseno {font-size:.73em;}.s15 .bloque {display:flex;gap:8px;border:2px dashed #66736d;margin:9px 0;padding:7px;}
+.s15 .ue {flex:1;padding:12px 6px;border:2px solid #2d6a4f;background:#dce8d6;text-align:center;}.s15 .ue.b {background:#eee2cf;border-color:#8a5a3b;}
+.s15 .subs {font-size:22px;letter-spacing:5px;color:#173c2b;}
+.s15 .principal {border:3px solid #8a5a3b;padding:8px;margin:10px 0;background:#eee2cf;}
+.s15 .presupuesto {display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}.s15 .mini {border:2px solid var(--verde);background:#dce8d6;padding:6px;text-align:center;font-size:.6em;}
+.s15 .lista li {margin:16px 0;}
+.s15 .respuesta {font-weight:650;color:var(--verde-oscuro);}
+
+/* Mantener el contenido y los dos experimentos completos dentro del lienzo. */
+#entre img {height:425px;width:100%;object-fit:contain;}
+#entre figure {margin:0;}
+#mas-plantas .campo {grid-template-columns:repeat(4,1fr);gap:7px;}
+#mas-plantas h3 {font-size:1.05em;}
+.s15 .dca-fila {display:flex;gap:8px;margin:9px 0;padding:7px 0;}
+/* Revisión didáctica: etapas excluyentes y gráficos jerárquicos. */
+.s15 .preguntas-turnos {min-height:265px;align-items:start;margin-top:32px;}
+.s15 .preguntas-turnos>div,.s15 .tablas-turnos>div {width:100%;}
+.s15 .tablas-turnos {min-height:370px;align-items:start;}
+.s15 .tablas-turnos h3 {font-size:1.05em;margin:10px 0;}
+.reveal .s15 .tablas-turnos table.anova {font-size:.76em;}
+.s15 .tablas-turnos .anova th:not(:first-child),.s15 .tablas-turnos .anova td:not(:first-child) {white-space:nowrap;}
+.s15 .grafico-etapas {height:380px;}
+.s15 .grafico-etapas>div {width:100%;background:var(--papel);}
+.s15 .grafico-etapas .cell-output-display img {height:370px;max-height:370px;width:100%;object-fit:contain;}
+#entre .grafico-etapas img {height:370px;}
+.s15 .origen {text-align:center;font-size:1.25em;font-weight:700;margin:24px auto 0;color:var(--verde-oscuro);}
+.s15 .bifurcacion {display:flex;justify-content:space-around;font-size:2em;color:var(--maiz);}
+#precision .cell-output-display img {height:265px;}
+#porcentajes .cell-output-display img {height:170px;}
+#dos-fuentes h3 {font-size:1.1em;}
+#title-slide .quarto-title-authors {margin-top:0;}
+#title-slide .subtitle {margin-bottom:1.1em;}
+/* Sustitución inmediata: no cruzar textos de dos etapas durante el avance. */
+.reveal .preguntas-turnos>.fragment,
+.reveal .tablas-turnos>.fragment,
+.reveal .grafico-etapas>.fragment {transition:none!important;}
+
+/* Dos etapas con idénticos ejes; retroceso sin mostrar la línea antes de tiempo. */
+#precision .precision-etapas {height:285px;}
+#precision .precision-etapas>div {width:100%;background:var(--papel);transition:none!important;}
+#precision .precision-etapas img {height:280px;}
+#prueba-errores h3 {font-size:1.1em;}

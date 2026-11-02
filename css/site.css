@@ -247,3 +247,15 @@ a.class-card[href]:focus-visible {
   letter-spacing: 0.04em;
   line-height: 1.3;
 }
+
+/* Título y estado reutilizables: se acomodan en varias líneas en móvil. */
+.class-card .class-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.class-card .class-title .class-status {
+  white-space: nowrap;
+}
