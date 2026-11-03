@@ -178,7 +178,7 @@ Andrés Tálamo
     </div>
 </div>
 
-  <p class="date">2 de noviembre de 2026</p>
+  <p class="date">3 de noviembre de 2026</p>
 </section>
 <section id="inicio" class="slide level2 s15 center">
 <h2>Una pregunta agronómica</h2>
@@ -1172,6 +1172,151 @@ La fila ámbar es el denominador correcto. <strong>No se usa el CM del EMu</stro
           display:block!important;
       }</style></aside>
 </section>
+<section id="infostat" class="slide level2 s15 center">
+<h2>¿Cómo leemos estas etiquetas en InfoStat?</h2>
+<p class="credito">
+Adaptación didáctica del formato de InfoStat; resultados del ejemplo simulado
+</p>
+<div class="salida-infostat">
+<strong>Cuadro de Análisis de la Varianza</strong>
+<table>
+<thead>
+<tr>
+<th>
+F.V.
+</th>
+<th>
+SC
+</th>
+<th>
+gl
+</th>
+<th>
+CM
+</th>
+<th>
+F
+</th>
+<th>
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Tratamiento
+</td>
+<td>
+1283,401
+</td>
+<td>
+1
+</td>
+<td>
+1283,401
+</td>
+<td>
+2,104
+</td>
+<td>
+0,1775
+</td>
+</tr>
+<tr>
+<td>
+Tratamiento&gt;parcela
+</td>
+<td>
+6098,843
+</td>
+<td>
+10
+</td>
+<td>
+609,884
+</td>
+<td>
+11,879
+</td>
+<td>
+&lt; 0,001
+</td>
+</tr>
+<tr>
+<td>
+Error
+</td>
+<td>
+1848,255
+</td>
+<td>
+36
+</td>
+<td>
+51,340
+</td>
+<td>
+—
+</td>
+<td>
+—
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+9230,499
+</td>
+<td>
+47
+</td>
+<td>
+—
+</td>
+<td>
+—
+</td>
+<td>
+—
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pares compacto">
+<div class="fragment" data-fragment-index="0">
+<strong>Tratamiento&gt;parcela → CMEE</strong><br>Error experimental: <strong>609,884</strong>.
+</div>
+<div class="fragment" data-fragment-index="1">
+<strong>Error → CMEMu</strong><br>Error de muestreo: <strong>51,340</strong>.
+</div>
+</div>
+<div class="pregunta fragment" data-fragment-index="2">
+<p>¿Qué cuadrado medio usamos como denominador para comparar tratamientos?</p>
+</div>
+<div class="idea compacto fragment" data-fragment-index="3">
+<p><strong>Tratamientos:</strong> F = CM tratamientos / CMEE = <strong>2,104</strong>.<br> <strong>Comparación de errores:</strong> F = CMEE / CMEMu = <strong>11,879</strong>.</p>
+</div>
+<p class="credito">
+Referencia: Silvia Sühring, ANOVA con submuestreo (2021), p.&nbsp;8. No es una captura del programa. SC y CM en cm².
+</p>
+<aside class="notes">
+<p>Adaptación de etiquetas para interpretación, sin instrucciones de operación. Se omite la fila Modelo para centrar la lectura en los dos errores. Todos los valores se leen de tab_sub, ya verificado por recursos_clase.R. La prueba de tratamientos utiliza gl 1 y 10; la de errores, 10 y 36. El p de esta última se presenta como &lt; 0,001. La salida del apunte usa el CM del EMu para el F de fertilizante; aquí se utiliza correctamente CMEE. Revelar las identificaciones, preguntar y mostrar los cocientes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="tres-anovas" class="slide level2 s15 center">
 <h2>Tres ANOVA de los mismos datos</h2>
 <div class="r-stack tablas-turnos">
@@ -1547,7 +1692,7 @@ Para estimar el componente entre parcelas, restamos ambos cuadrados medios y div
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Clase_15_Submuestreo_2026_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:100.0%" alt="Barra apilada de los componentes estimados de variación residual: entre UE y dentro de UE"></p>
+<p><img data-src="Clase_15_Submuestreo_2026_files/figure-revealjs/unnamed-chunk-19-1.png" style="width:100.0%" alt="Barra apilada de los componentes estimados de variación residual: entre UE y dentro de UE"></p>
 </figure>
 </div>
 </div>
@@ -1874,7 +2019,7 @@ Al medir más plantas, estimamos mejor la media de cada parcela.
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Clase_15_Submuestreo_2026_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%" alt="Curva verde: la variabilidad de las medias de las parcelas disminuye al medir más plantas"></p>
+<p><img data-src="Clase_15_Submuestreo_2026_files/figure-revealjs/unnamed-chunk-22-1.png" style="width:100.0%" alt="Curva verde: la variabilidad de las medias de las parcelas disminuye al medir más plantas"></p>
 </figure>
 </div>
 </div>
@@ -1885,7 +2030,7 @@ Al medir más plantas, estimamos mejor la media de cada parcela.
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Clase_15_Submuestreo_2026_files/figure-revealjs/unnamed-chunk-22-1.png" style="width:100.0%" alt="La misma curva verde con una línea discontinua que representa la variabilidad entre parcelas"></p>
+<p><img data-src="Clase_15_Submuestreo_2026_files/figure-revealjs/unnamed-chunk-23-1.png" style="width:100.0%" alt="La misma curva verde con una línea discontinua que representa la variabilidad entre parcelas"></p>
 </figure>
 </div>
 </div>

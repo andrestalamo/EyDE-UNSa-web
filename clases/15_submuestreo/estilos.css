@@ -86,3 +86,12 @@
 #precision .precision-etapas>div {width:100%;background:var(--papel);transition:none!important;}
 #precision .precision-etapas img {height:280px;}
 #prueba-errores h3 {font-size:1.1em;}
+
+/* Salida didáctica de InfoStat; sólo esta diapositiva. */
+#infostat .salida-infostat {font-family:monospace;font-size:.72em;background:#fff;padding:14px 18px;margin:14px 0;}
+#infostat .salida-infostat table {width:100%;font-size:1em;margin:10px 0 0;}
+#infostat .salida-infostat th,#infostat .salida-infostat td {padding:7px 8px;text-align:right;white-space:nowrap;}
+#infostat .salida-infostat th:first-child,#infostat .salida-infostat td:first-child {text-align:left;}
+
+#infostat .pregunta {font-size:.88em;padding:10px 16px;margin:12px 0;}
+#infostat .idea {padding:10px 16px;margin:12px 0;}
