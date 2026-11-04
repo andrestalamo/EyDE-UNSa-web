@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Experimentos factoriales (convencionales y en parcelas divididas) – Estadística y Diseño Experimental — EyDE</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6e710ff4efb01f53c96ef69e881517bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Estadística y Diseño Experimental — EyDE</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../clases/index.html"> 
+<span class="menu-text">Clases</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quinta-revisión-3-de-noviembre-de-2026" id="toc-quinta-revisión-3-de-noviembre-de-2026" class="nav-link active" data-scroll-target="#quinta-revisión-3-de-noviembre-de-2026">Quinta revisión — 3 de noviembre de 2026</a></li>
+  <li><a href="#cuarta-revisión-3-de-noviembre-de-2026" id="toc-cuarta-revisión-3-de-noviembre-de-2026" class="nav-link" data-scroll-target="#cuarta-revisión-3-de-noviembre-de-2026">Cuarta revisión — 3 de noviembre de 2026</a></li>
+  <li><a href="#tercera-revisión-3-de-noviembre-de-2026" id="toc-tercera-revisión-3-de-noviembre-de-2026" class="nav-link" data-scroll-target="#tercera-revisión-3-de-noviembre-de-2026">Tercera revisión — 3 de noviembre de 2026</a></li>
+  <li><a href="#validación-segunda-revisión-de-clase-14" id="toc-validación-segunda-revisión-de-clase-14" class="nav-link" data-scroll-target="#validación-segunda-revisión-de-clase-14">Validación — segunda revisión de Clase 14</a>
+  <ul class="collapse">
+  <li><a href="#cambios-y-numeración" id="toc-cambios-y-numeración" class="nav-link" data-scroll-target="#cambios-y-numeración">Cambios y numeración</a></li>
+  <li><a href="#resultados-reproducibles-en-r" id="toc-resultados-reproducibles-en-r" class="nav-link" data-scroll-target="#resultados-reproducibles-en-r">Resultados reproducibles en R</a></li>
+  <li><a href="#grados-de-libertad-y-denominadores" id="toc-grados-de-libertad-y-denominadores" class="nav-link" data-scroll-target="#grados-de-libertad-y-denominadores">Grados de libertad y denominadores</a></li>
+  <li><a href="#render-visualización-e-interacción" id="toc-render-visualización-e-interacción" class="nav-link" data-scroll-target="#render-visualización-e-interacción">Render, visualización e interacción</a></li>
+  <li><a href="#integridad-y-archivos" id="toc-integridad-y-archivos" class="nav-link" data-scroll-target="#integridad-y-archivos">Integridad y archivos</a></li>
+  <li><a href="#pendiente" id="toc-pendiente" class="nav-link" data-scroll-target="#pendiente">Pendiente</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Experimentos factoriales (convencionales y en parcelas divididas)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="quinta-revisión-3-de-noviembre-de-2026" class="level1">
+<h1>Quinta revisión — 3 de noviembre de 2026</h1>
+<p>Se conservan 38 diapositivas y su numeración. Diapositiva 23: hipótesis en términos αi, βj y (αβ)ij bajo restricciones de suma cero. Diapositiva 27: perfil de las cuatro medias del mismo DBCA junto al contraste e IC. Diapositiva 30: «¿Y si cada nivel de riego debe aplicarse a una parcela mayor?». Diapositiva 35: se agrega la prueba de bloques aleatorios, CM_Bloques / CM_ErrorPM = 3,171164, con gl 3,3 y p = 0,184268; se actualizó la fila correspondiente del CSV de ANOVA. Diapositiva 36: denominador en negrita sin asteriscos de formato ni salto interno.</p>
+<p>Los datos y pruebas de tratamientos no cambian. La prueba de bloques se deriva del modelo explícito: bajo H₀ σ²_bloque=0, los CM de bloques y error PM tienen esperanza σ²_SP+bσ²_PM. El manual de InfoStat conserva una prueba automática de Bloque con otro denominador; se advierte en notas que no debe trasladarse al modelo aleatorio de la clase. Consulta de apoyo sobre esperanzas de cuadrados medios y estratos: Philip Dixon, Stat 471/571, Split plot designs and their analysis: part 2, https://pdixon.stat.iastate.edu/stat571/handouts/split%20plot%202.pdf (la prueba concreta de bloques se deriva aquí, no se atribuye a esa tabla, que la omite).</p>
+<p>Validación final de esta revisión: renderización correcta; las cinco diapositivas se inspeccionaron visualmente y caben en el área disponible (alturas 652, 691, 657, 645 y 621 px sobre 720). Sin errores de navegador. La celda de error tiene peso tipográfico 700 y no permite salto interno. Se ejecutaron las comprobaciones numéricas de analisis.R y se confirmó que ambos archivos de datos son idénticos a los de la revisión anterior.</p>
+<hr>
+</section>
+<section id="cuarta-revisión-3-de-noviembre-de-2026" class="level1">
+<h1>Cuarta revisión — 3 de noviembre de 2026</h1>
+<p>La clase tiene ahora 38 diapositivas. Se atendieron las observaciones acumuladas sobre la numeración de la tercera revisión: árboles 2×2 y 3×2×2, columna de UE, subíndices, bloques delimitados, hipótesis con niveles nominales, efectos simples simétricos y escenarios con ejes intercambiados, simulador ampliado y retitulado, modelos I/II/III, definiciones completas, caminos después del ANOVA, transición a parcelas divididas, replicación por factor y definición de Uik. Se renombró el cierre como «Apliquemos lo aprendido».</p>
+<p>Se retiró institute de la portada y se añadió FCN al pie local de las clases 14 y 15. No se modificó el tema compartido. La bibliografía se conserva en bibliografia_reservada.md, fuera de la secuencia visible.</p>
+<p>InfoStat: se transcribió la tabla 28, p.&nbsp;100 (página PDF 100), del Manual del Usuario 2008 de Balzarini y colaboradores, disponible en https://www.academia.utp.ac.pa/sites/default/files/docente/51/manual_infostat_esp.pdf . Se identifica expresamente como otro ejemplo (trigo, 3 bloques), no como ejecución local del ejemplo de maíz. La columna (Error) permite reconocer Parc*Bloque como denominador de Parc. No se trasladó a la clase la selección de términos por p que discute el manual.</p>
+<p>Precisión conceptual: no rechazar interacción no demuestra aditividad; los efectos marginales siguen siendo pertinentes si responden a la pregunta. Tukey sobre combinaciones se presenta para el DBCA convencional, con advertencia sobre los distintos errores de parcelas divididas. Hay 4 UE mayores por nivel de riego, 8 subparcelas por nivel de B (4 en cada riego) y 4 réplicas por combinación. La dependencia se debe a compartir parcela mayor/error, no meramente al mismo nivel de tratamiento.</p>
+<p>Verificación: ambas clases renderizaron correctamente. La revisión integral de 37 diapositivas y 71 estados de fragmentos no encontró desbordes ni errores de navegador; se revisaron visualmente los cambios. Después se añadió la vista simétrica de escenarios y se completó Yijk/μ, con comprobación visual dirigida. El simulador responde y restablece los cinco resultados (simples A/B, principales A/B e interacción). Los datos y resultados numéricos originales permanecen iguales.</p>
+<hr>
+</section>
+<section id="tercera-revisión-3-de-noviembre-de-2026" class="level1">
+<h1>Tercera revisión — 3 de noviembre de 2026</h1>
+<p>Título vigente: <strong>Experimentos factoriales (convencionales y en parcelas divididas)</strong>. El paréntesis aparece en una segunda línea; se retiró la pregunta de la portada. La clase tiene <strong>33 diapositivas</strong> (31 de contenido, portada y bibliografía), cinco más que la revisión anterior.</p>
+<p>La apertura sitúa ambos factores al mismo nivel de interés. Tratamiento se define como combinación de niveles. Se distingue convencional/parcelas divididas de DCA/DBCA/DCL y se presentan esquemas de asignación DCA y DBCA antes de las medias. Se muestran primero los efectos principales y después los simples y la interacción simétrica. Se agregan modelos fijos/aleatorios/mixtos, modelos aditivos/con interacción y la partición SC Tratamientos = SCA + SCB + SCA×B. Los cuatro F del DBCA aparecen como cocientes, con advertencia del redondeo.</p>
+<p>Para añadir réplicas sin inventar observaciones, el desarrollo descriptivo usa las 16 observaciones ya guardadas en datos_dbca.csv. Medias: 3,733603; 4,566481; 5,236997; 7,140248 t/ha (bajo/sin, bajo/con, alto/sin, alto/con). Efectos simples de fertilización: 0,832877 y 1,903251; de riego: 1,503394 y 2,573767. Ambas diferencias de diferencias valen 1,070374 t/ha. No se cambiaron los datos ni los resultados del ANOVA. Los valores hipotéticos originales se conservan en el simulador, rotulado como escenario independiente, y como parámetros generadores en analisis.R.</p>
+<p>Las réplicas se dibujan con opacidad 0,30; las flechas unen las medias de riego bajo y alto dentro de cada fertilización. La figura de interacción se explica en tres pasos. Las leyendas recuperan sus colores: una regla CSS general estaba sobrescribiendo los atributos fill de SVG.</p>
+<p>Precisiones: sin réplicas no significa ausencia de interacción; el modelo convencional completo no replicado no deja error residual independiente para probarla. Las tres hipótesis se presentan para dos factores con interacción contrastable; con más factores hay más interacciones. El término de error se define como error aleatorio de la parcela, no varianza ni residuo; se aclaran i=1,…,a, j=1,…,b, k=1,…,r. Interacción se describe como efecto adicional de la combinación, que puede sumar o restar.</p>
+<p>Numeración visible actual: título 1; apertura 2; asignación DCA/DBCA 7–8; medias 10; efectos principales 11; simples 12; perfiles con réplicas 13; interacción 14; simulador 16; clasificación de modelos 17–18; modelo DBCA 19; hipótesis 20; SC 21; ANOVA DBCA 22. El resto mantiene la revisión anterior, con desplazamiento de números.</p>
+<p>Validación final: renderización Reveal.js exitosa; 33 diapositivas y 65 estados de diapositivas/fragmentos revisados, sin desbordes. Se inspeccionaron visualmente las figuras, las flechas finales y los cuatro cocientes F. El simulador responde y restablece sus valores. La comprobación final de la clase no registró errores de navegador. Se verificó por huellas de archivos que no se modificaron archivos ajenos a esta clase (excluyendo las salidas de renderización).</p>
+<hr>
+<blockquote class="blockquote">
+<p>Registro previo: la tercera revisión documentada al inicio reemplaza la secuencia y las cifras descriptivas anteriores. Los resultados inferenciales no cambian.</p>
+</blockquote>
+</section>
+<section id="validación-segunda-revisión-de-clase-14" class="level1">
+<h1>Validación — segunda revisión de Clase 14</h1>
+<section id="cambios-y-numeración" class="level2">
+<h2 class="anchored" data-anchor-id="cambios-y-numeración">Cambios y numeración</h2>
+<p>Se trabajó sobre los archivos existentes, sin reconstruir la clase. Hay 26 diapositivas de contenido más portada y bibliografía: <strong>28 en total</strong>, antes 26. No se eliminó ninguna. La numeración de contenido excluye portada; el contador Reveal la incluye.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cambio</th>
+<th style="text-align: right;">Contenido actual</th>
+<th style="text-align: right;">Contador Reveal</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Modificada: interacción</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">18/28</td>
+<td>Estimación e IC individual 95% del mismo modelo del ANOVA; Bonferroni sólo en notas</td>
+</tr>
+<tr class="even">
+<td>Nueva: decisión agronómica</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">19/28</td>
+<td>Dos efectos simples con IC individuales, costos/beneficios, incertidumbre y alcance</td>
+</tr>
+<tr class="odd">
+<td>Modificada: dos estratos</td>
+<td style="text-align: right;">23 (antes 22)</td>
+<td style="text-align: right;">24/28</td>
+<td>Asignación de A y B, variabilidad compartida y falta de independencia para riego</td>
+</tr>
+<tr class="even">
+<td>Modificada: ANOVA parcelas divididas</td>
+<td style="text-align: right;">24 (antes 23)</td>
+<td style="text-align: right;">25/28</td>
+<td>Denominadores identificados por nombre de factor; advertencia sobre IC del otro diseño</td>
+</tr>
+<tr class="odd">
+<td>Nueva: comparación de diseños</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">26/28</td>
+<td>Dos tablas pequeñas: aleatorización y denominadores F, sin comparar p entre simulaciones</td>
+</tr>
+</tbody>
+</table>
+<p>Se ajustaron referencias de numeración/tiempos en notas de inicio de los bloques. Se conservaron portada/título, ejemplo conductor, secuencia inicial, perfiles, simulador, esquemas de aleatorización, notas existentes pertinentes y recursos compartidos.</p>
+</section>
+<section id="resultados-reproducibles-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="resultados-reproducibles-en-r">Resultados reproducibles en R</h2>
+<p>Se ejecutó <code>Rscript --vanilla analisis.R --export</code>. Se mantuvo semilla 202614 y los dos conjuntos simulados originales. <code>contrastes_individuales_dbca.csv</code> es la nueva salida; <code>contrastes_dbca.csv</code> conserva el material opcional simultáneo.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contraste DBCA</th>
+<th style="text-align: right;">Estimación (t/ha)</th>
+<th>IC individual 95% (t/ha)</th>
+<th style="text-align: right;">Error estándar (t/ha)</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">p bilateral</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fertilización con riego bajo</td>
+<td style="text-align: right;">0,8328773</td>
+<td>[0,1603328; 1,5054218]</td>
+<td style="text-align: right;">0,2973023</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0,0206637</td>
+</tr>
+<tr class="even">
+<td>Fertilización con riego alto</td>
+<td style="text-align: right;">1,9032509</td>
+<td>[1,2307063; 2,5757954]</td>
+<td style="text-align: right;">0,2973023</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0,0001250</td>
+</tr>
+<tr class="odd">
+<td>Interacción: alto − bajo</td>
+<td style="text-align: right;">1,0703735</td>
+<td>[0,1192519; 2,0214952]</td>
+<td style="text-align: right;">0,4204490</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0,0314111</td>
+</tr>
+</tbody>
+</table>
+<p>Los IC se calculan con estimación ± t0,975;9 × error estándar, mediante la matriz de covarianza del mismo modelo <code>lm(y ~ bloque + A*B)</code>. Se comprobó:</p>
+<ul>
+<li>F_AB = 6,48103134 = t² del contraste individual, a tolerancia 1e-10.</li>
+<li>p del t bilateral = p del F de interacción, a tolerancia 1e-12.</li>
+<li>Límites del IC directo iguales a <code>confint(fit, 'AAlto:BCon')</code>, a tolerancia 1e-12.</li>
+<li>IC individual de interacción excluye cero y la prueba individual rechaza al 5%.</li>
+<li>La presentación inserta los valores directamente desde los objetos R, sin transcribir cifras de resultados en pantalla.</li>
+</ul>
+<p>Bonferroni no se presenta como requisito automático. Los tres contrastes con cobertura simultánea se mantienen como opción docente, con su definición de familia y advertencia sobre multiplicidad. Las notas explican que comparar pruebas de efectos simples no prueba su diferencia, que en 2×2 F=t² y que en factoriales mayores el F es global.</p>
+</section>
+<section id="grados-de-libertad-y-denominadores" class="level2">
+<h2 class="anchored" data-anchor-id="grados-de-libertad-y-denominadores">Grados de libertad y denominadores</h2>
+<p>DBCA convencional: gl de bloques, A, B, A×B y error = 3,1,1,1,9; total 15. A, B y A×B usan CM Error = 0,176777341. La referencia de cada una es F1,9.</p>
+<p>Parcelas divididas: gl de bloques, A, error parcela mayor, B, A×B y error subparcela = 3,1,3,1,1,6; total 15. A usa CM Error parcela mayor = 0,60245969 (F1,3); B y A×B usan CM Error subparcela = 0,08525605 (F1,6). F_A = 36,35949; F_B = 90,74083; F_AB = 45,63756. Verificación contra <code>aov(y ~ A*B + Error(bloque/A))</code> y SC ortogonales, a tolerancia 1e-10.</p>
+<p>Los dos ANOVA originales no cambiaron. No se comparan sus p-valores como evidencia de eficiencia: provienen de datos diferentes. Las notas advierten que los efectos simples de riego dentro de fertilización pueden involucrar componentes de parcela mayor y subparcela, a diferencia de las comparaciones de fertilización dentro de riego.</p>
+</section>
+<section id="render-visualización-e-interacción" class="level2">
+<h2 class="anchored" data-anchor-id="render-visualización-e-interacción">Render, visualización e interacción</h2>
+<ul>
+<li>Quarto/revealjs completó correctamente; salida <code>_site/clases/14_factoriales_parcelas_divididas/index.html</code> desde la raíz del repositorio.</li>
+<li>Se usó R_PROFILE_USER=/dev/null para evitar activación automática de renv y acceso autorizado a la caché de estilos, sin cambiar configuración global.</li>
+<li>Chrome: 28 diapositivas y 58 estados contando fragmentos. No se detectaron alturas fuera del lienzo de 720 unidades ni desbordes en los elementos inspeccionados.</li>
+<li>Revisión de capturas de todas las diapositivas y ampliaciones de las cinco modificadas/nuevas: tablas, textos, gráficos y fórmulas completos.</li>
+<li>MathJax: 17 contenedores SVG; cero MathJax_Error.</li>
+<li>Comprobado que Bonferroni y p=0,094 no aparecen en el contenido visible del contraste; permanecen sólo en notas.</li>
+<li>Simulador: con Bajo/Con=6, interacción 0,20 t/ha y principal B 2,00. Con Bajo/Sin=5, interacción 2,60 y principal B 0,80. Restablecer recupera las cuatro medias y los efectos originales. Se conserva factorial.js idéntico.</li>
+<li>Navegación: clic en Home lleva a index.html del sitio. Al abrir por file://, dos módulos de la portada global fueron bloqueados por Chrome; se comprobó luego a través de un servidor temporal limitado a 127.0.0.1 y no hubo errores JavaScript ni solicitudes fallidas. La presentación misma cargó sus recursos locales correctamente en ambas modalidades. No se alteró la portada global.</li>
+</ul>
+</section>
+<section id="integridad-y-archivos" class="level2">
+<h2 class="anchored" data-anchor-id="integridad-y-archivos">Integridad y archivos</h2>
+<p>Se compararon hashes de archivos de otras clases y recursos compartidos contra un registro anterior a esta revisión: sin cambios. También se conservaron idénticos byte a byte los dos CSV de datos, los dos ANOVA, el CSV Bonferroni y factorial.js. La portada y la secuencia anterior al contraste sólo reciben el ajuste de referencia temporal en notas del bloque 3.</p>
+<p>Archivos de autoría modificados en esta revisión: QMD, analisis.R, estilos.css, FUENTES.md, README.md y VALIDACION.md. Nuevo: contrastes_individuales_dbca.csv. sesion_R.txt se regeneró al ejecutar el script. HTML y recursos de salida se regeneraron bajo <code>_site/</code>. No se modificaron otras clases, ni configuraciones globales, ni el estado construction. Sin commit ni push.</p>
+</section>
+<section id="pendiente" class="level2">
+<h2 class="anchored" data-anchor-id="pendiente">Pendiente</h2>
+<p>No se encontró en el repositorio una Guía de estudio de experimentos factoriales identificable. No se afirma haberla revisado ni se reconstruye su contenido. Se conservan las referencias solicitadas, distinguiendo las consultadas previamente de las lecturas propuestas. No hay verificaciones numéricas o de render pendientes.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

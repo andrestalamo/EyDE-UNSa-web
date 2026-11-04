@@ -1,0 +1,2906 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <meta name="author" content="Andrés Tálamo">
+  <title>Estadística y Diseño Experimental — EyDE – Experimentos factoriales</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-edb892b9678fa0e66886f2d9c0410fcc.css">
+  <link rel="stylesheet" href="../../css/components/inference-shared.css">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="../../css/components/home-link.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["TeX"],
+      webFont: "TeX"
+    }
+  });
+  </script>
+  <script>
+  (function useMathJaxSvg() {
+    function switchRenderer() {
+      if (!window.MathJax || !MathJax.Hub || !MathJax.Ajax) {
+        window.setTimeout(switchRenderer, 50);
+        return;
+      }
+      MathJax.Hub.Queue(
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/config.js"],
+        ["Require", MathJax.Ajax, "[MathJax]/jax/output/SVG/jax.js"],
+        ["setRenderer", MathJax.Hub, "SVG"],
+        ["Rerender", MathJax.Hub]
+      );
+    }
+    switchRenderer();
+  })();
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Experimentos factoriales</h1>
+  <p class="subtitle">(convencionales y en parcelas divididas)</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Andrés Tálamo 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:andrestalamo@gmail.com">andrestalamo@gmail.com</a>
+</div>
+</div>
+</div>
+
+  <p class="date">4 de noviembre de 2026</p>
+</section>
+<section id="inicio" class="slide level2 f14 center">
+<h2>¿Y si queremos estudiar dos o más factores?</h2>
+<p>Hasta aquí estudiamos experimentos cuya pregunta se centraba en <strong>un factor de interés</strong>.</p>
+<div class="pregunta fragment">
+<p>¿Y si nuestra pregunta de investigación apunta a evaluar dos o más factores simultáneamente sobre la variable de respuesta?</p>
+</div>
+<div class="fragment idea">
+<p>En maíz: ¿qué efectos tienen <strong>el riego y la fertilización</strong> sobre el rendimiento?</p>
+</div>
+<aside class="notes">
+<p>Los bloques vistos anteriormente son factores de control, no un segundo factor de tratamiento de interés. El paso a factoriales amplía la pregunta de investigación. Ambos factores del ejemplo tienen igual interés; no asignar prioridad al fertilizante. Plan orientativo de 3 horas: 35 minutos preguntas/diseño, 45 efectos y exploración, pausa 10, 40 modelos/inferencia, 35 parcelas divididas y 15 cierre. Los niveles y dosis deben precisarse en un protocolo real; aquí son etiquetas didácticas. Población objetivo: parcelas de maíz en condiciones agronómicas comparables; no extrapolar a cualquier ambiente.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="factores-niveles-y-respuesta" class="slide level2 f14 center">
+<h2>Factores, niveles y respuesta</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>En nuestro experimento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Factor A: riego</td>
+<td>A₁: bajo · A₂: alto</td>
+</tr>
+<tr class="even">
+<td>Factor B: fertilización</td>
+<td>B₁: sin · B₂: con fertilizante</td>
+</tr>
+<tr class="odd">
+<td>Variable de respuesta</td>
+<td>Rendimiento de maíz (t/ha)</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>¿El efecto del riego cambia según la fertilización? ¿Y el de la fertilización según el riego?</p>
+</div>
+<div class="fragment idea">
+<p>Un <strong>factor</strong> es una condición que estudiamos; sus <strong>niveles</strong> son los valores o categorías que comparamos.</p>
+</div>
+<aside class="notes">
+<p>A y B son factores fijos: interesan estos niveles definidos por el investigador. No confundir el rendimiento con un factor. Discutir qué condiciones de suelo, manejo y cosecha se deben controlar. No asignar aún un número de réplicas: primero definir tratamientos y unidades experimentales.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cuatro-tratamientos-combinaciones-de-niveles" class="slide level2 f14 center">
+<h2>Cuatro tratamientos: combinaciones de niveles</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Riego × fertilización</th>
+<th style="text-align: center;">Sin fertilizante (B₁)</th>
+<th style="text-align: center;">Con fertilizante (B₂)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bajo (A₁)</td>
+<td style="text-align: center;"><strong>A₁B₁</strong></td>
+<td style="text-align: center;"><strong>A₁B₂</strong></td>
+</tr>
+<tr class="even">
+<td>Alto (A₂)</td>
+<td style="text-align: center;"><strong>A₂B₁</strong></td>
+<td style="text-align: center;"><strong>A₂B₂</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="ecuacion">
+2 niveles × 2 niveles = <strong>4 tratamientos</strong>
+</div>
+<div class="fragment">
+<p>En un factorial, <strong>cada tratamiento es una combinación de niveles de los factores</strong>. El factorial completo incluye todas las combinaciones.</p>
+</div>
+<aside class="notes">
+<p>Hacer nombrar cada tratamiento en palabras. Pedir qué ocurriría con tres niveles de fertilización: seis combinaciones. No confundir cantidad de tratamientos con tamaño de muestra ni con cantidad de factores.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="construir-las-combinaciones-dos-factores" class="slide level2 f14 center">
+<h2>Construir las combinaciones: dos factores</h2>
+<p>
+De cada nivel de riego salen <strong>todos</strong> los niveles de fertilización.
+</p>
+<svg class="arbol-factorial" viewbox="0 0 1160 400" role="img" aria-label="Árbol de combinaciones de niveles; cada hoja corresponde a un tratamiento">
+<text x="90" y="203" text-anchor="middle">Riego</text><path d="M135 195 H202.5 V100 H270" fill="none" stroke="#809084" stroke-width="2"></path><text x="330" y="107" text-anchor="middle">Bajo</text><path d="M390 100 H480 V60 H570" fill="none" stroke="#809084" stroke-width="2"></path><text x="680" y="67" text-anchor="middle">Sin fertilizante</text><text x="930" y="67" text-anchor="middle">Bajo × Sin</text><path d="M390 100 H480 V140 H570" fill="none" stroke="#809084" stroke-width="2"></path><text x="680" y="147" text-anchor="middle">Con fertilizante</text><text x="930" y="147" text-anchor="middle">Bajo × Con</text><path d="M135 195 H202.5 V290 H270" fill="none" stroke="#809084" stroke-width="2"></path><text x="330" y="297" text-anchor="middle">Alto</text><path d="M390 290 H480 V250 H570" fill="none" stroke="#809084" stroke-width="2"></path><text x="680" y="257" text-anchor="middle">Sin fertilizante</text><text x="930" y="257" text-anchor="middle">Alto × Sin</text><path d="M390 290 H480 V330 H570" fill="none" stroke="#809084" stroke-width="2"></path><text x="680" y="337" text-anchor="middle">Con fertilizante</text><text x="930" y="337" text-anchor="middle">Alto × Con</text>
+</svg>
+<div class="idea">
+<p>Cada recorrido completo es un tratamiento: 2 × 2 = <strong>4 combinaciones</strong>.</p>
+</div>
+</section>
+<section id="construir-las-combinaciones-tres-factores" class="slide level2 f14 center">
+<h2>Construir las combinaciones: tres factores</h2>
+<p>
+A: variedad (3 niveles) · B: riego (2) · C: fertilización (2).
+</p>
+<svg class="arbol-factorial" viewbox="0 0 1160 400" role="img" aria-label="Árbol de combinaciones de niveles; cada hoja corresponde a un tratamiento">
+<text x="110" y="200" text-anchor="middle">Variedad</text><path d="M170 195 H200 V70 H230" fill="none" stroke="#809084" stroke-width="2"></path><text x="265" y="77" text-anchor="middle">V₁</text><path d="M295 70 H345 V41 H395" fill="none" stroke="#809084" stroke-width="2"></path><text x="455" y="48" text-anchor="middle">Bajo</text><path d="M510 41 H570 V27 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="34" text-anchor="middle">Sin</text><text x="930" y="34" text-anchor="middle">V₁ × Bajo × Sin</text><path d="M510 41 H570 V55 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="62" text-anchor="middle">Con</text><text x="930" y="62" text-anchor="middle">V₁ × Bajo × Con</text><path d="M295 70 H345 V99 H395" fill="none" stroke="#809084" stroke-width="2"></path><text x="455" y="106" text-anchor="middle">Alto</text><path d="M510 99 H570 V85 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="92" text-anchor="middle">Sin</text><text x="930" y="92" text-anchor="middle">V₁ × Alto × Sin</text><path d="M510 99 H570 V113 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="120" text-anchor="middle">Con</text><text x="930" y="120" text-anchor="middle">V₁ × Alto × Con</text><path d="M170 195 H200 V200 H230" fill="none" stroke="#809084" stroke-width="2"></path><text x="265" y="207" text-anchor="middle">V₂</text><path d="M295 200 H345 V171 H395" fill="none" stroke="#809084" stroke-width="2"></path><text x="455" y="178" text-anchor="middle">Bajo</text><path d="M510 171 H570 V157 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="164" text-anchor="middle">Sin</text><text x="930" y="164" text-anchor="middle">V₂ × Bajo × Sin</text><path d="M510 171 H570 V185 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="192" text-anchor="middle">Con</text><text x="930" y="192" text-anchor="middle">V₂ × Bajo × Con</text><path d="M295 200 H345 V229 H395" fill="none" stroke="#809084" stroke-width="2"></path><text x="455" y="236" text-anchor="middle">Alto</text><path d="M510 229 H570 V215 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="222" text-anchor="middle">Sin</text><text x="930" y="222" text-anchor="middle">V₂ × Alto × Sin</text><path d="M510 229 H570 V243 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="250" text-anchor="middle">Con</text><text x="930" y="250" text-anchor="middle">V₂ × Alto × Con</text><path d="M170 195 H200 V330 H230" fill="none" stroke="#809084" stroke-width="2"></path><text x="265" y="337" text-anchor="middle">V₃</text><path d="M295 330 H345 V301 H395" fill="none" stroke="#809084" stroke-width="2"></path><text x="455" y="308" text-anchor="middle">Bajo</text><path d="M510 301 H570 V287 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="294" text-anchor="middle">Sin</text><text x="930" y="294" text-anchor="middle">V₃ × Bajo × Sin</text><path d="M510 301 H570 V315 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="322" text-anchor="middle">Con</text><text x="930" y="322" text-anchor="middle">V₃ × Bajo × Con</text><path d="M295 330 H345 V359 H395" fill="none" stroke="#809084" stroke-width="2"></path><text x="455" y="366" text-anchor="middle">Alto</text><path d="M510 359 H570 V345 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="352" text-anchor="middle">Sin</text><text x="930" y="352" text-anchor="middle">V₃ × Alto × Sin</text><path d="M510 359 H570 V373 H630" fill="none" stroke="#809084" stroke-width="2"></path><text x="690" y="380" text-anchor="middle">Con</text><text x="930" y="380" text-anchor="middle">V₃ × Alto × Con</text>
+</svg>
+<div class="idea">
+<p>Por cada variedad: 2 × 2 = 4 combinaciones. En total: 3 × 2 × 2 = <strong>12 tratamientos</strong>.</p>
+</div>
+<aside class="notes">
+<p>Seguir una rama: V₂ → riego alto → con fertilizante. Una hoja es una combinación, no una réplica. El árbol enumera tratamientos; no representa la aleatorización ni implica parcelas divididas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-aportan-las-combinaciones" class="slide level2 f14 center">
+<h2>¿Qué aportan las combinaciones?</h2>
+<div class="dos">
+<div>
+<h3>
+Dos ensayos unifactoriales
+</h3>
+<p>
+Estudiar fertilización a <strong>un riego fijado</strong> y riego a <strong>una fertilización fijada</strong>.
+</p>
+<p class="nota">
+Podemos elegir otros niveles de referencia. Por ejemplo: riego alto y con fertilizante.
+</p>
+</div>
+<div class="fragment">
+<h3>
+Un factorial completo
+</h3>
+<p>
+Estudiar ambos factores cruzando <strong>todos sus niveles</strong> en un mismo experimento.
+</p>
+<p class="idea">
+Podemos evaluar si el efecto de uno cambia según el otro <span class="nota">(con réplicas de las combinaciones para estimar el error y contrastar la interacción en este análisis)</span>.
+</p>
+</div>
+</div>
+<aside class="notes">
+<p>La propuesta anterior era sólo un ejemplo, no una restricción. Dos ensayos que varían un factor dejando el otro fijo pueden elegir cualquiera de los niveles de referencia: en el 2×2 así planteado cubren tres combinaciones diferentes y comparten una, cualquiera sea la elección. Otra colección de ensayos podría cubrir las cuatro, pero habría que controlar los efectos de ensayo/ambiente y justificar la comparación conjunta. No afirmar que cualquier par de ensayos unifactoriales omite necesariamente una combinación. Con cuatro medias se puede describir una diferencia de diferencias; las réplicas permiten estimar el error y contrastarla en el modelo convencional desarrollado. El factorial no es universalmente más económico o preciso: depende de las preguntas, variabilidad y costos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="factoriales-convencionales-y-en-parcelas-divididas" class="slide level2 f14 center">
+<h2>Factoriales convencionales y en parcelas divididas</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Forma de asignación</th>
+<th>Unidad experimental</th>
+<th>¿Qué recibe cada UE?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Convencional</strong></td>
+<td><strong>1 solo tipo de UE</strong></td>
+<td>La combinación completa de niveles</td>
+</tr>
+<tr class="even">
+<td><strong>Parcelas divididas</strong></td>
+<td><strong>2 tipos de UE:</strong> parcela mayor y subparcela</td>
+<td>Un factor en parcelas mayores; otro en subparcelas</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment idea">
+<p>Esto es distinto de organizar el experimento bajo <strong>DCA, DBCA o DCL</strong>. En parcelas divididas, las parcelas mayores también pueden organizarse bajo esos diseños.</p>
+</div>
+<p class="nota">
+Primero desarrollaremos el factorial convencional. Después, la aleatorización restringida en dos tipos de UE.
+</p>
+<aside class="notes">
+<p>Factorial describe tratamientos; convencional/parcelas divididas describe su asignación a las UE. DCA, DBCA y DCL describen la organización y el control de heterogeneidad. No son tres alternativas del mismo nivel que parcelas divididas. Aquí trabajaremos con A y B fijos y parcelas mayores en bloques cuando lleguemos al segundo arreglo. DCL se menciona como posibilidad; no se desarrolla su ANOVA. Tener dos factores o dos tamaños físicos de parcela no basta para identificar un arreglo: examinar combinaciones y aleatorización.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="factorial-convencional-asignación-bajo-dca" class="slide level2 f14 center">
+<h2>Factorial convencional: asignación bajo DCA</h2>
+<p>
+Las cuatro combinaciones se asignan al azar entre <strong>todas las parcelas disponibles</strong>.
+</p>
+<div class="dca-grid" aria-label="16 parcelas aleatorizadas sin bloques">
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub>
+</div>
+</div>
+<p class="nota">
+A₁: riego bajo · A₂: alto · B₁: sin fertilizante · B₂: con.
+</p>
+<p class="nota">
+16 parcelas: 4 réplicas por combinación. Las filas del dibujo son posiciones espaciales, no bloques.
+</p>
+<aside class="notes">
+<p>Esquema didáctico de asignación, sin nuevo conjunto de respuestas. Las cuatro réplicas se conservan por continuidad con la actividad; no son recomendación universal ni cálculo de potencia. Bajo DCA las parcelas se consideran suficientemente homogéneas para no bloquear. Cada parcela recibe el tratamiento completo y hay un solo tipo de UE para A y B. La asignación se genera con semilla local preservando el estado aleatorio del análisis original.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="factorial-convencional-asignación-bajo-dbca" class="slide level2 f14 center">
+<h2>Factorial convencional: asignación bajo DBCA</h2>
+<p>
+<strong>Factorial 2 × 2 bajo DBCA:</strong> sortear las cuatro combinaciones dentro de cada bloque.
+</p>
+<div class="campo" aria-label="Asignación aleatoria ilustrativa a cuatro bloques">
+<div class="bloque">
+<strong>Bloque 1</strong>
+<div class="fila-campo">
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub><small>Bajo · Sin</small>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub><small>Alto · Con</small>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub><small>Bajo · Con</small>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub><small>Alto · Sin</small>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 2</strong>
+<div class="fila-campo">
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub><small>Alto · Sin</small>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub><small>Bajo · Sin</small>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub><small>Alto · Con</small>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub><small>Bajo · Con</small>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 3</strong>
+<div class="fila-campo">
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub><small>Alto · Sin</small>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub><small>Bajo · Sin</small>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub><small>Bajo · Con</small>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub><small>Alto · Con</small>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 4</strong>
+<div class="fila-campo">
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>1</sub><small>Bajo · Sin</small>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>1</sub><small>Alto · Sin</small>
+</div>
+<div class="parcela bajo">
+A<sub>1</sub>B<sub>2</sub><small>Bajo · Con</small>
+</div>
+<div class="parcela alto">
+A<sub>2</sub>B<sub>2</sub><small>Alto · Con</small>
+</div>
+</div>
+</div>
+</div>
+<p class="nota">
+A₁ = bajo · A₂ = alto · B₁ = sin · B₂ = con. Cuatro bloques ilustrativos: 16 parcelas y 4 réplicas por combinación.
+</p>
+<aside class="notes">
+<p>Los bloques agrupan parcelas relativamente homogéneas y controlan una fuente conocida de heterogeneidad. Cada parcela recibe de forma independiente su combinación dentro de las restricciones del bloque. No llamar independientes a los 16 valores marginalmente si comparten un efecto aleatorio de bloque: las réplicas de una combinación están en bloques distintos. Una observación de rendimiento por parcela. Cuatro bloques fijados por esta actividad, no recomendación de tamaño muestral; un ensayo real se planifica por precisión/potencia, variabilidad y restricciones. La asignación mostrada procede de la semilla del script.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-efectos-podremos-evaluar" class="slide level2 f14 center">
+<h2>¿Qué efectos podremos evaluar?</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Efecto</th>
+<th>Comparación</th>
+<th>Hipótesis nula en este 2 × 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Principal de riego</td>
+<td>Promediando fertilización</td>
+<td><span class="math inline">\(\mu_{\mathrm{bajo}}=\mu_{\mathrm{alto}}\)</span></td>
+</tr>
+<tr class="even">
+<td>Principal de fertilización</td>
+<td>Promediando riego</td>
+<td><span class="math inline">\(\mu_{\mathrm{sin}}=\mu_{\mathrm{con}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Interacción A × B</td>
+<td>Igualdad de efectos simples</td>
+<td><span class="math inline">\(\mu_{\mathrm{alto,con}}-\mu_{\mathrm{alto,sin}}=\mu_{\mathrm{bajo,con}}-\mu_{\mathrm{bajo,sin}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment idea">
+<p>Con réplicas de las combinaciones podemos estimar el error y <strong>contrastar la interacción</strong> en el modelo que desarrollaremos.</p>
+</div>
+<div class="fragment alerta">
+<p>Sin réplicas, el modelo completo no deja un error independiente para probar la interacción. <strong>No significa que la interacción sea nula</strong>.</p>
+</div>
+<p class="nota">
+Medias poblacionales marginales para los efectos principales; medias de combinaciones para la interacción.
+</p>
+<aside class="notes">
+<p>Primero se anuncian los efectos principales; después se construyen los efectos simples para entender la interacción. En factoriales de más de dos factores pueden aparecer interacciones de orden superior. Sin réplicas, un modelo aditivo puede permitir pruebas de efectos principales bajo el supuesto adicional de ausencia de interacción; no permite verificar ese mismo supuesto con un error puro independiente. No confundir falta de replicación con inexistencia biológica de interacción.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="de-las-parcelas-a-las-cuatro-medias" class="slide level2 f14 center">
+<h2>De las parcelas a las cuatro medias</h2>
+<p>
+En el DBCA anterior medimos rendimiento en cada parcela: <strong>16 observaciones, 4 por tratamiento</strong>.
+</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Riego
+</th>
+<th style="text-align:left;">
+Sin
+</th>
+<th style="text-align:left;">
+Con
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bajo
+</td>
+<td style="text-align:left;">
+3,73
+</td>
+<td style="text-align:left;">
+4,57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alto
+</td>
+<td style="text-align:left;">
+5,24
+</td>
+<td style="text-align:left;">
+7,14
+</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment pregunta">
+<p>¿Qué diferencias encontramos entre niveles de cada factor y entre sus combinaciones?</p>
+</div>
+<p class="nota">
+Datos simulados ya utilizados en el ANOVA. Cada celda es la media de cuatro parcelas de bloques distintos; rendimiento en t/ha.
+</p>
+<aside class="notes">
+<p>Se reemplaza la tabla de cuatro medias hipotéticas por medias de las observaciones simuladas guardadas, para que los puntos de réplicas, medias, efectos y ANOVA pertenezcan al mismo conjunto. No se cambian los datos ni la semilla. Las medias generadoras hipotéticas 4,1; 4,5; 5,2; 7,3 siguen en analisis.R y en el explorador, claramente separado como otro escenario. Las medias observadas no bastan por sí solas para inferencia: hay que usar también replicación y dispersión.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="efectos-principales-promediar-sobre-el-otro-factor" class="slide level2 f14 center">
+<h2>Efectos principales: promediar sobre el otro factor</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Riego
+</th>
+<th style="text-align:left;">
+Sin
+</th>
+<th style="text-align:left;">
+Con
+</th>
+<th style="text-align:left;">
+Media del riego
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bajo
+</td>
+<td style="text-align:left;">
+3,73
+</td>
+<td style="text-align:left;">
+4,57
+</td>
+<td style="text-align:left;">
+4,15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alto
+</td>
+<td style="text-align:left;">
+5,24
+</td>
+<td style="text-align:left;">
+7,14
+</td>
+<td style="text-align:left;">
+6,19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Media de fertilización
+</td>
+<td style="text-align:left;">
+4,49
+</td>
+<td style="text-align:left;">
+5,85
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<p class="fragment">
+<strong>Riego (alto − bajo):</strong> 6,19 − 4,15 = <strong>2,04 t/ha</strong>.
+</p>
+<p class="fragment">
+<strong>Fertilización (con − sin):</strong> 5,85 − 4,49 = <strong>1,37 t/ha</strong>.
+</p>
+<p class="nota">
+Medias muestrales de datos simulados. Promedios con igual peso para cada nivel; cálculos con valores sin redondear.
+</p>
+<aside class="notes">
+<p>Son estimaciones de diferencias entre medias marginales poblacionales. La pregunta principal de cada factor promedia sobre los niveles del otro; ambos tienen el mismo estatus. El efecto principal de fertilización también es el promedio de sus dos efectos simples, pero ese promedio no define interacción. En datos desbalanceados o para otra población objetivo hay que explicitar ponderaciones.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="efectos-simples-de-ambos-factores" class="slide level2 f14 center">
+<h2>Efectos simples de ambos factores</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Factor que comparamos</th>
+<th>Condición fijada</th>
+<th style="text-align: right;">Diferencia estimada (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fertilización: con − sin</td>
+<td>Riego bajo</td>
+<td style="text-align: right;">0,83</td>
+</tr>
+<tr class="even">
+<td>Fertilización: con − sin</td>
+<td>Riego alto</td>
+<td style="text-align: right;">1,90</td>
+</tr>
+<tr class="odd">
+<td>Riego: alto − bajo</td>
+<td>Sin fertilizante</td>
+<td style="text-align: right;">1,50</td>
+</tr>
+<tr class="even">
+<td>Riego: alto − bajo</td>
+<td>Con fertilizante</td>
+<td style="text-align: right;">2,57</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment idea">
+<p>Un efecto simple compara niveles de un factor <strong>dentro de un nivel del otro</strong>.</p>
+</div>
+<aside class="notes">
+<p>Usar siempre la dirección indicada en la tabla y las mismas observaciones del DBCA. Todavía se describen estimaciones; la evidencia estadística se discutirá con el error del modelo. La pregunta sobre interacción puede formularse comparando los dos efectos simples de B o los dos de A.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="perfiles-replicas" class="slide level2 f14 center">
+<h2>Perfiles de medias y réplicas</h2>
+<svg class="perfil-datos" viewbox="0 0 1000 440" role="img" aria-label="Réplicas simuladas, medias y efectos simples de riego en cada fertilización">
+<defs><marker id="flecha-riego" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="7" markerheight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#173c2b"></path></marker></defs><line x1="100" x2="860" y1="345" y2="345" stroke="#d4d8cd"></line><text x="85" y="352" text-anchor="end">0</text><line x1="100" x2="860" y1="287" y2="287" stroke="#d4d8cd"></line><text x="85" y="294" text-anchor="end">2</text><line x1="100" x2="860" y1="229" y2="229" stroke="#d4d8cd"></line><text x="85" y="236" text-anchor="end">4</text><line x1="100" x2="860" y1="171" y2="171" stroke="#d4d8cd"></line><text x="85" y="178" text-anchor="end">6</text><line x1="100" x2="860" y1="113" y2="113" stroke="#d4d8cd"></line><text x="85" y="120" text-anchor="end">8</text><line x1="100" x2="860" y1="55" y2="55" stroke="#d4d8cd"></line><text x="85" y="62" text-anchor="end">10</text><path d="M100 55 V345 H860" fill="none" stroke="#173c2b"></path><text x="30" y="220" transform="rotate(-90 30 220)" text-anchor="middle">Rendimiento (t/ha)</text><text x="240" y="385" text-anchor="middle">Sin fertilizante</text><text x="720" y="385" text-anchor="middle">Con fertilizante</text><text x="490" y="425" text-anchor="middle">Fertilización</text><line x1="240" x2="720" y1="236.725502545135" y2="212.572059621225" stroke="#2d6a4f" stroke-width="4"></line><circle class="replica" cx="219" cy="231.472277943906" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="replica" cx="233" cy="248.291135470948" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="replica" cx="247" cy="207.215218216662" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="replica" cx="261" cy="259.923378549025" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="media" cx="240" cy="236.725502545135" r="9" fill="#2d6a4f" stroke="white" stroke-width="2"></circle><text x="168" y="241.725502545135" style="fill:#2d6a4f">3,73</text><circle class="replica" cx="699" cy="238.726628282656" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="replica" cx="713" cy="220.069224124802" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="replica" cx="727" cy="178.546445348281" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="replica" cx="741" cy="212.94594072916" r="7" fill="#2d6a4f" opacity="0.30"></circle><circle class="media" cx="720" cy="212.572059621225" r="9" fill="#2d6a4f" stroke="white" stroke-width="2"></circle><text x="648" y="217.572059621225" style="fill:#2d6a4f">4,57</text><line x1="240" x2="720" y1="193.127083498992" y2="137.932808291083" stroke="#8a5a3b" stroke-width="4" stroke-dasharray="10 6"></line><circle class="replica" cx="219" cy="198.222859003133" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="replica" cx="233" cy="188.227483409715" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="replica" cx="247" cy="171.605693569541" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="replica" cx="261" cy="214.452298013576" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="media" cx="240" cy="193.127083498992" r="9" fill="#8a5a3b" stroke="white" stroke-width="2"></circle><text x="168" y="198.127083498992" style="fill:#8a5a3b">5,24</text><circle class="replica" cx="699" cy="157.377846980514" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="replica" cx="713" cy="150.695289113677" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="replica" cx="727" cy="97.7512226523914" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="replica" cx="741" cy="145.90687441775" r="7" fill="#8a5a3b" opacity="0.30"></circle><circle class="media" cx="720" cy="137.932808291083" r="9" fill="#8a5a3b" stroke="white" stroke-width="2"></circle><text x="648" y="142.932808291083" style="fill:#8a5a3b">7,14</text><line class="efecto-riego" x1="240" x2="240" y1="236.725502545135" y2="193.127083498992" stroke="#173c2b" stroke-width="3" marker-end="url(#flecha-riego)"></line><text x="252" y="214.926293022063">+1,50 t/ha</text><line class="efecto-riego" x1="720" x2="720" y1="212.572059621225" y2="137.932808291083" stroke="#173c2b" stroke-width="3" marker-end="url(#flecha-riego)"></line><text x="732" y="175.252433956154">+2,57 t/ha</text><line x1="280" x2="325" y1="25" y2="25" stroke="#2d6a4f" stroke-width="5"></line><text x="335" y="32" style="fill:#2d6a4f">Riego bajo</text><line x1="535" x2="580" y1="25" y2="25" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></line><text x="590" y="32" style="fill:#8a5a3b">Riego alto</text>
+</svg>
+<p class="nota">
+Puntos transparentes: parcelas simuladas. Puntos grandes: medias. Segmentos inclinados: efectos simples de fertilización. Flechas verticales: efectos simples de riego (alto − bajo).
+</p>
+<aside class="notes">
+<p>Las 16 observaciones son exactamente las de datos_dbca.csv. La separación horizontal de puntos es sólo para hacerlos visibles; no representa niveles intermedios de fertilización. Cada media resume cuatro bloques; al estar balanceado, las diferencias entre medias de celdas coinciden con los contrastes ajustados por bloque. Las flechas van desde la media de riego bajo a la de alto en cada fertilización. No deducir significación de la dispersión o del solapamiento: se requiere el modelo con bloques.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="diferencia-diferencias" class="slide level2 f14 center">
+<h2>Interacción: comparar dos efectos simples</h2>
+<p>
+La misma interacción puede leerse desde cualquiera de los dos factores.
+</p>
+<div class="dos graficos-simples">
+<svg viewbox="0 0 560 260" role="img" aria-label="Efectos simples de Fertilización: con − sin">
+<text x="280" y="28" text-anchor="middle">Fertilización: con − sin (t/ha)</text><text x="125" y="85" text-anchor="end">Riego bajo</text><rect x="140" y="64" width="91.6165076424199" height="28" fill="#2d6a4f"></rect><text x="239.61650764242" y="85">0,83</text><text x="125" y="150" text-anchor="end">Riego alto</text><rect x="140" y="129" width="209.357595616204" height="28" fill="#8a5a3b"></rect><text x="357.357595616204" y="150">1,90</text><path d="M140 180 H470" stroke="#173c2b"></path><text x="140" y="205" text-anchor="middle">0</text><text x="250" y="205" text-anchor="middle">1</text><text x="360" y="205" text-anchor="middle">2</text><text x="470" y="205" text-anchor="middle">3</text><text x="280" y="247" text-anchor="middle">Diferencia: 1,90 − 0,83 = 1,07</text>
+</svg>
+<svg viewbox="0 0 560 260" role="img" aria-label="Efectos simples de Riego: alto − bajo">
+<text x="280" y="28" text-anchor="middle">Riego: alto − bajo (t/ha)</text><text x="125" y="85" text-anchor="end">Sin fert.</text><rect x="140" y="64" width="165.373313623304" height="28" fill="#2d6a4f"></rect><text x="313.373313623304" y="85">1,50</text><text x="125" y="150" text-anchor="end">Con fert.</text><rect x="140" y="129" width="283.114401597089" height="28" fill="#8a5a3b"></rect><text x="431.114401597089" y="150">2,57</text><path d="M140 180 H470" stroke="#173c2b"></path><text x="140" y="205" text-anchor="middle">0</text><text x="250" y="205" text-anchor="middle">1</text><text x="360" y="205" text-anchor="middle">2</text><text x="470" y="205" text-anchor="middle">3</text><text x="280" y="247" text-anchor="middle">Diferencia: 2,57 − 1,50 = 1,07</text>
+</svg>
+</div>
+<p class="fragment">
+<strong>Fertilización (con − sin), según riego:</strong> 1,90 − 0,83 = <strong>1,07 t/ha</strong>.
+</p>
+<p class="fragment">
+<strong>Riego (alto − bajo), según fertilización:</strong> 2,57 − 1,50 = <strong>1,07 t/ha</strong>.
+</p>
+<p class="nota">
+Las barras muestran diferencias de rendimiento, no rendimientos totales. Cálculos sin redondear; misma interacción vista desde cualquiera de los factores.
+</p>
+<aside class="notes">
+<p>Primero leer el origen cero y la longitud de cada barra. La llave va desde el extremo del primer aumento al del segundo: representa cuánto más grande es uno que el otro, no la altura de una media de tratamiento. El contraste poblacional es ΔAB=(μ22−μ21)−(μ12−μ11)=(μ22−μ12)−(μ21−μ11). Con restricciones de suma cero (αβ)22=ΔAB/4; distinguir el término del modelo del contraste completo. El efecto agregado por interacción puede ser positivo o negativo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="las-líneas-tienen-que-cruzarse" class="slide level2 f14 center">
+<h2>¿Las líneas tienen que cruzarse?</h2>
+<div class="tres">
+<div>
+<h3>
+Sin interacción
+</h3>
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="sin-interaccion">
+<title id="sin-interaccion">
+Sin interacción. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Sin</text><text x="460" y="332" text-anchor="middle">Con</text><text x="300" y="365" text-anchor="middle">Fertilización</text><path d="M145 224 L460 186" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="224" r="7" fill="#2d6a4f"></circle><text x="150" y="211" fill="#2d6a4f">4,0</text><circle cx="460" cy="186" r="7" fill="#2d6a4f"></circle><text x="465" y="173" fill="#2d6a4f">5,0</text><path d="M145 148 L460 110" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="148" r="7" fill="#8a5a3b"></circle><text x="150" y="135" fill="#8a5a3b">6,0</text><circle cx="460" cy="110" r="7" fill="#8a5a3b"></circle><text x="465" y="97" fill="#8a5a3b">7,0</text><text x="130" y="28" fill="#2d6a4f">● Bajo ━</text><text x="330" y="28" fill="#8a5a3b">● Alto ┄</text>
+</svg>
+<p>
+<b>Fert. por riego:</b> 1 − 1 = <strong>0</strong><br><b>Riego por fert.:</b> 2 − 2 = <strong>0</strong>
+</p>
+</div>
+<div>
+<h3>
+Interacción sin cruce
+</h3>
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="sin-cruce">
+<title id="sin-cruce">
+Interacción sin cruce. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Sin</text><text x="460" y="332" text-anchor="middle">Con</text><text x="300" y="365" text-anchor="middle">Fertilización</text><path d="M145 220.2 L460 205" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="220.2" r="7" fill="#2d6a4f"></circle><text x="150" y="207.2" fill="#2d6a4f">4,1</text><circle cx="460" cy="205" r="7" fill="#2d6a4f"></circle><text x="465" y="192" fill="#2d6a4f">4,5</text><path d="M145 178.4 L460 98.6" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="178.4" r="7" fill="#8a5a3b"></circle><text x="150" y="165.4" fill="#8a5a3b">5,2</text><circle cx="460" cy="98.6" r="7" fill="#8a5a3b"></circle><text x="465" y="85.6" fill="#8a5a3b">7,3</text><text x="130" y="28" fill="#2d6a4f">● Bajo ━</text><text x="330" y="28" fill="#8a5a3b">● Alto ┄</text>
+</svg>
+<p>
+<b>Fert. por riego:</b> 2,1 − 0,4 = <strong>1,7</strong><br><b>Riego por fert.:</b> 2,8 − 1,1 = <strong>1,7</strong>
+</p>
+</div>
+<div>
+<h3>
+Interacción con cruce
+</h3>
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="con-cruce">
+<title id="con-cruce">
+Interacción con cruce. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Sin</text><text x="460" y="332" text-anchor="middle">Con</text><text x="300" y="365" text-anchor="middle">Fertilización</text><path d="M145 224 L460 110" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="224" r="7" fill="#2d6a4f"></circle><text x="150" y="211" fill="#2d6a4f">4,0</text><circle cx="460" cy="110" r="7" fill="#2d6a4f"></circle><text x="465" y="97" fill="#2d6a4f">7,0</text><path d="M145 110 L460 224" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="110" r="7" fill="#8a5a3b"></circle><text x="150" y="97" fill="#8a5a3b">7,0</text><circle cx="460" cy="224" r="7" fill="#8a5a3b"></circle><text x="465" y="211" fill="#8a5a3b">4,0</text><text x="130" y="28" fill="#2d6a4f">● Bajo ━</text><text x="330" y="28" fill="#8a5a3b">● Alto ┄</text>
+</svg>
+<p>
+<b>Fert. por riego:</b> −3 − 3 = <strong>−6</strong><br><b>Riego por fert.:</b> −3 − 3 = <strong>−6</strong>
+</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>El paralelismo caracteriza ausencia de interacción en la escala analizada. <strong>No es necesario que las líneas se crucen</strong>.</p>
+</div>
+<aside class="notes">
+<p>Son tres escenarios hipotéticos diferentes con ejes comunes. En datos muestrales, pequeñas desviaciones del paralelismo pueden deberse a variación aleatoria. Una transformación de escala puede alterar la aditividad; no implica necesariamente un mecanismo biológico distinto.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="los-mismos-escenarios-mirando-el-riego" class="slide level2 f14 center">
+<h2>Los mismos escenarios, mirando el riego</h2>
+<div class="tres">
+<div>
+<h3>
+Sin interacción
+</h3>
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="sin-interaccion-riego">
+<title id="sin-interaccion-riego">
+Sin interacción. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Bajo</text><text x="460" y="332" text-anchor="middle">Alto</text><text x="300" y="365" text-anchor="middle">Riego</text><path d="M145 224 L460 148" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="224" r="7" fill="#2d6a4f"></circle><text x="150" y="211" fill="#2d6a4f">4,0</text><circle cx="460" cy="148" r="7" fill="#2d6a4f"></circle><text x="465" y="135" fill="#2d6a4f">6,0</text><path d="M145 186 L460 110" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="186" r="7" fill="#8a5a3b"></circle><text x="150" y="173" fill="#8a5a3b">5,0</text><circle cx="460" cy="110" r="7" fill="#8a5a3b"></circle><text x="465" y="97" fill="#8a5a3b">7,0</text><text x="130" y="28" fill="#2d6a4f">● Sin ━</text><text x="330" y="28" fill="#8a5a3b">● Con ┄</text>
+</svg>
+<p>
+<b>Fert. por riego:</b> 1 − 1 = <strong>0</strong><br><b>Riego por fert.:</b> 2 − 2 = <strong>0</strong>
+</p>
+</div>
+<div>
+<h3>
+Interacción sin cruce
+</h3>
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="sin-cruce-riego">
+<title id="sin-cruce-riego">
+Interacción sin cruce. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Bajo</text><text x="460" y="332" text-anchor="middle">Alto</text><text x="300" y="365" text-anchor="middle">Riego</text><path d="M145 220.2 L460 178.4" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="220.2" r="7" fill="#2d6a4f"></circle><text x="150" y="207.2" fill="#2d6a4f">4,1</text><circle cx="460" cy="178.4" r="7" fill="#2d6a4f"></circle><text x="465" y="165.4" fill="#2d6a4f">5,2</text><path d="M145 205 L460 98.6" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="205" r="7" fill="#8a5a3b"></circle><text x="150" y="192" fill="#8a5a3b">4,5</text><circle cx="460" cy="98.6" r="7" fill="#8a5a3b"></circle><text x="465" y="85.6" fill="#8a5a3b">7,3</text><text x="130" y="28" fill="#2d6a4f">● Sin ━</text><text x="330" y="28" fill="#8a5a3b">● Con ┄</text>
+</svg>
+<p>
+<b>Fert. por riego:</b> 2,1 − 0,4 = <strong>1,7</strong><br><b>Riego por fert.:</b> 2,8 − 1,1 = <strong>1,7</strong>
+</p>
+</div>
+<div>
+<h3>
+Interacción con cruce
+</h3>
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="con-cruce-riego">
+<title id="con-cruce-riego">
+Interacción con cruce. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Bajo</text><text x="460" y="332" text-anchor="middle">Alto</text><text x="300" y="365" text-anchor="middle">Riego</text><path d="M145 224 L460 110" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="224" r="7" fill="#2d6a4f"></circle><text x="150" y="211" fill="#2d6a4f">4,0</text><circle cx="460" cy="110" r="7" fill="#2d6a4f"></circle><text x="465" y="97" fill="#2d6a4f">7,0</text><path d="M145 110 L460 224" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="110" r="7" fill="#8a5a3b"></circle><text x="150" y="97" fill="#8a5a3b">7,0</text><circle cx="460" cy="224" r="7" fill="#8a5a3b"></circle><text x="465" y="211" fill="#8a5a3b">4,0</text><text x="130" y="28" fill="#2d6a4f">● Sin ━</text><text x="330" y="28" fill="#8a5a3b">● Con ┄</text>
+</svg>
+<p>
+<b>Fert. por riego:</b> −3 − 3 = <strong>−6</strong><br><b>Riego por fert.:</b> −3 − 3 = <strong>−6</strong>
+</p>
+</div>
+</div>
+<div class="idea fragment">
+<p>Ahora las líneas representan fertilización y el eje horizontal es riego. <strong>La interacción es la misma</strong>.</p>
+</div>
+<aside class="notes">
+<p>Son tres escenarios hipotéticos diferentes con ejes comunes. En datos muestrales, pequeñas desviaciones del paralelismo pueden deberse a variación aleatoria. Una transformación de escala puede alterar la aditividad; no implica necesariamente un mecanismo biológico distinto.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="explorar" class="slide level2 f14 center">
+<h2>Explorar efectos simples, principales e interacción</h2>
+<div id="laboratorio" class="dos">
+<div>
+<div class="controles">
+<label>Bajo · Sin <input aria-label="Media riego bajo sin fertilizante" type="range" min="2" max="8" step="0.1" value="4.1">
+<output>
+4,1
+</output>
+</label> <label>Bajo · Con <input aria-label="Media riego bajo con fertilizante" type="range" min="2" max="8" step="0.1" value="4.5">
+<output>
+4,5
+</output>
+</label> <label>Alto · Sin <input aria-label="Media riego alto sin fertilizante" type="range" min="2" max="8" step="0.1" value="5.2">
+<output>
+5,2
+</output>
+</label> <label>Alto · Con <input aria-label="Media riego alto con fertilizante" type="range" min="2" max="8" step="0.1" value="7.3">
+<output>
+7,3
+</output>
+<p></p>
+</label></div>
+<p>
+<button type="button" id="restablecer">
+Restablecer
+</button>
+</p>
+<div id="efectos" class="resultado" aria-live="polite">
+
+</div>
+</div>
+<div id="perfil-vivo">
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="perfil-interactivo">
+<title id="perfil-interactivo">
+Medias hipotéticas. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Sin</text><text x="460" y="332" text-anchor="middle">Con</text><text x="300" y="365" text-anchor="middle">Fertilización</text><path d="M145 220.2 L460 205" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="220.2" r="7" fill="#2d6a4f"></circle><text x="150" y="207.2" fill="#2d6a4f">4,1</text><circle cx="460" cy="205" r="7" fill="#2d6a4f"></circle><text x="465" y="192" fill="#2d6a4f">4,5</text><path d="M145 178.4 L460 98.6" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="178.4" r="7" fill="#8a5a3b"></circle><text x="150" y="165.4" fill="#8a5a3b">5,2</text><circle cx="460" cy="98.6" r="7" fill="#8a5a3b"></circle><text x="465" y="85.6" fill="#8a5a3b">7,3</text><text x="130" y="28" fill="#2d6a4f">● Bajo ━</text><text x="330" y="28" fill="#8a5a3b">● Alto ┄</text>
+</svg>
+</div>
+</div>
+<p class="nota">
+Escenario hipotético independiente del DBCA (t/ha). Modificá las medias y observá qué cambia en los efectos simples, principales y en la interacción.
+</p>
+<aside class="notes">
+<p>Los controles no generan observaciones ni p-valores. Una solución: cambiar medias a 3,6; 5,0; 5,7; 6,8: efectos simples 1,4 y 1,1, mismo principal de B=1,25, interacción −0,3. El efecto principal sigue siendo pertinente si la pregunta es el promedio equiponderado; no resume adecuadamente una recomendación específica de fertilización para cada riego. Pedir una recomendación diferenciada y discutir costos. Pausa de 10 minutos al terminar.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modelos-según-el-tipo-de-efecto" class="slide level2 f14 center">
+<h2>Modelos según el tipo de efecto</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Factor A</th>
+<th>Factor B</th>
+<th>Interés</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>I: efectos fijos</strong></td>
+<td>Fijos</td>
+<td>Fijos</td>
+<td>Comparar los niveles elegidos</td>
+</tr>
+<tr class="even">
+<td><strong>II: efectos aleatorios</strong></td>
+<td>Aleatorios</td>
+<td>Aleatorios</td>
+<td>Variabilidad entre niveles de una población</td>
+</tr>
+<tr class="odd">
+<td><strong>III: efectos mixtos</strong></td>
+<td>Fijos</td>
+<td>Aleatorios</td>
+<td>Combinar ambos alcances</td>
+</tr>
+<tr class="even">
+<td><strong>III: efectos mixtos</strong></td>
+<td>Aleatorios</td>
+<td>Fijos</td>
+<td>Combinar ambos alcances</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment idea">
+<p>Aquí, riego y fertilización son <strong>fijos</strong>. Al incluir bloques aleatorios, el modelo completo del DBCA es <strong>mixto</strong>.</p>
+</div>
+<aside class="notes">
+<p>En la clasificación usual de factoriales, Modelo I/II/III suele referirse a los factores de tratamiento: ambos fijos, ambos aleatorios o combinación. Precisar si se habla sólo de tratamientos o del modelo completo, que también incluye bloques. Los niveles de un factor aleatorio deben tener una población de referencia justificable; no basta con que se hayan asignado aleatoriamente. La aleatorización de tratamientos no los convierte en efectos aleatorios. Denominadores y alcance de inferencia pueden cambiar con el tipo de efecto; no trasladar las pruebas del ejemplo fijo a todos los modelos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modelos-según-su-alcance-aditivo-o-con-interacción" class="slide level2 f14 center">
+<h2>Modelos según su alcance: aditivo o con interacción</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Qué representa</th>
+<th>Replicación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Aditivo</strong></td>
+<td>Efectos principales; supone ausencia de interacción</td>
+<td>Puede ajustarse sin réplicas de combinaciones, bajo ese supuesto</td>
+</tr>
+<tr class="even">
+<td><strong>Con interacción</strong></td>
+<td>Efectos principales + A × B</td>
+<td>Aquí usamos réplicas para estimar el error y probar la interacción</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment alerta">
+<p><strong>Sin réplicas no significa sin interacción.</strong> En el factorial convencional no replicado, el modelo completo no deja un error residual independiente para contrastarla.</p>
+</div>
+<aside class="notes">
+<p>Se vincula con la clasificación usada en TPs, evitando convertir una restricción de datos en una propiedad del fenómeno. En un DCA a×b con una observación por combinación, el modelo completo tiene ab parámetros independientes y cero gl residuales. Al omitir interacción, sus (a−1)(b−1) gl quedan como residual y se usan bajo supuesto aditivo: la interacción no puede contrastarse separadamente. Con réplicas también se puede plantear un modelo aditivo, si es científicamente justificable; no hay correspondencia obligatoria entre presencia de réplicas y elección del modelo. Existen otras estrategias y supuestos para diseños no replicados, fuera del alcance de esta clase.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="un-modelo-para-el-factorial-en-bloques" class="slide level2 f14 center">
+<h2>Un modelo para el factorial en bloques</h2>
+<div class="ecuacion">
+<span class="math inline">\(Y_{ijk}=\mu+\alpha_i+\beta_j+(\alpha\beta)_{ij}+\rho_k+\varepsilon_{ijk}\)</span>
+</div>
+<p class="nota">
+<span class="math inline">\(Y_{ijk}\)</span>: rendimiento con riego i y fertilización j en el bloque k. <span class="math inline">\(\mu\)</span>: media general poblacional.
+</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th>Qué representa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\alpha_i\)</span></td>
+<td>Efecto del i-ésimo nivel de riego</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta_j\)</span></td>
+<td>Efecto del j-ésimo nivel de fertilización</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((\alpha\beta)_{ij}\)</span></td>
+<td>Efecto adicional de combinar el riego i con la fertilización j, debido a la interacción</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\rho_k\)</span></td>
+<td>Efecto del k-ésimo bloque</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\varepsilon_{ijk}\)</span></td>
+<td>Error aleatorio de la parcela, no explicado por los términos del modelo</td>
+</tr>
+</tbody>
+</table>
+<p class="nota">
+<span class="math inline">\(i=1,\ldots,a\)</span>: a niveles de A · <span class="math inline">\(j=1,\ldots,b\)</span>: b niveles de B.<br><span class="math inline">\(k=1,\ldots,r\)</span>: r bloques. Aquí: a = 2, b = 2, r = 4.
+</p>
+<aside class="notes">
+<p>εijk es un error aleatorio no observado asociado a esa parcela; no es una varianza ni el residuo ajustado. Su variación representa fuentes no explicadas por los términos incluidos (además de medición); no sólo una equivocación. El efecto de interacción es adicional a la suma de efectos principales y puede sumar o restar. Errores normales, independientes condicionados al bloque y de varianza común. Se conserva ρk del guion y se lo declara aleatorio (en Clase 11 se usó Bj para el efecto aleatorio de bloque). ρk~N(0,σ²_bloque), εijk~N(0,σ²), independientes entre sí. Restricciones: suma α=0, suma β=0 y sumas por filas y columnas de αβ=0. μ es el promedio equiponderado de medias poblacionales. El ajuste lm con bloque como término de control reproduce las pruebas de tratamientos del DBCA balanceado con bloque aleatorio y modelo aditivo; no interpreta bloques como tratamientos de interés. No se estiman interacciones tratamiento×bloque separadas del residual con una observación por celda. Revisar residuos y condiciones del diseño como en Clase 12. Aleatorización y ausencia de interferencia sustentan interpretación causal dentro del alcance del ensayo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-hipótesis-responde-cada-prueba" class="slide level2 f14 center">
+<h2>¿Qué hipótesis responde cada prueba?</h2>
+<p>
+En un factorial de <strong>dos factores con interacción estimable y contrastable</strong>, evaluamos A, B y A × B.
+</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th>H₀: medias poblacionales</th>
+<th>H₀: términos del modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Riego (A)</td>
+<td><span class="math inline">\(\mu_{\mathrm{bajo}}=\mu_{\mathrm{alto}}\)</span></td>
+<td><span class="math inline">\(\alpha_i=0\)</span> para todo i</td>
+</tr>
+<tr class="even">
+<td>Fertilización (B)</td>
+<td><span class="math inline">\(\mu_{\mathrm{sin}}=\mu_{\mathrm{con}}\)</span></td>
+<td><span class="math inline">\(\beta_j=0\)</span> para todo j</td>
+</tr>
+<tr class="odd">
+<td>A × B</td>
+<td><span class="math inline">\(\mu_{\mathrm{alto,con}}-\mu_{\mathrm{alto,sin}}\)</span><br><span class="math inline">\(=\mu_{\mathrm{bajo,con}}-\mu_{\mathrm{bajo,sin}}\)</span></td>
+<td><span class="math inline">\((\alpha\beta)_{ij}=0\)</span> para todo i, j</td>
+</tr>
+</tbody>
+</table>
+<p class="nota">
+Equivalencias con las restricciones de suma cero del modelo.
+</p>
+<div class="fragment idea">
+<p>Sin interacción: <strong>el efecto simple de fertilización es igual en ambos riegos</strong>. Las cuatro medias pueden ser diferentes.</p>
+</div>
+<p class="nota">
+Se agregan, cuando corresponda, hipótesis del diseño (por ejemplo, bloques). α = 0,05 para cada prueba individual.
+</p>
+<aside class="notes">
+<p>No decir que todo factorial permite necesariamente estas tres pruebas: sin error estimable no podemos probar interacción con el ANOVA clásico. Con más de dos factores hay más efectos principales e interacciones. Las hipótesis de factores aleatorios se formulan sobre componentes de varianza. En el factorial fijo aquí desarrollado, alternativas: diferencia distinta de cero. En un factorial general la hipótesis de interacción es que todos los términos (αβ)ij sean cero; aquí tiene un solo grado de libertad y equivale a ΔAB=0. Los subíndices bajo/alto y sin/con denotan medias marginales equiponderadas sobre el otro factor; los subíndices dobles denotan combinaciones. El efecto aleatorio de bloque tiene media cero. Mostrar el caso sin interacción de los tres perfiles comparativos como contraejemplo de igualdad de todas las medias. Las pruebas globales a 0,05 son individuales; no se afirma control familiar para todas las fuentes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cómo-se-descompone-la-variación-de-tratamientos" class="slide level2 f14 center">
+<h2>¿Cómo se descompone la variación de tratamientos?</h2>
+<div class="ecuacion">
+<span class="math inline">\(SC_{Tratamientos}=SC_A+SC_B+SC_{A\times B}\)</span>
+</div>
+<p>
+Los cuatro tratamientos aportan <strong>3 grados de libertad</strong>:
+</p>
+<div class="ecuacion">
+<span class="math inline">\(3=1\ (A)+1\ (B)+1\ (A\times B)\)</span>
+</div>
+<div class="fragment idea">
+<p>En este DBCA balanceado:<br><span class="math inline">\(SC_{Total}=SC_{Bloques}+SC_A+SC_B+SC_{A\times B}+SC_{Error}\)</span>.</p>
+</div>
+<aside class="notes">
+<p>La descomposición ortogonal se aplica al factorial completo balanceado del ejemplo. Con a y b niveles: ab−1=(a−1)+(b−1)+(a−1)(b−1). No sumar una fila SC Tratamientos como fuente adicional a A, B y AB en la misma partición. En diseños desbalanceados hay que precisar tipo de SC y hipótesis; no prometer aditividad de cualquier tabla tipo III. La suma se coteja en recursos.R contra un modelo de cuatro tratamientos completos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anova-del-dbca-datos-simulados-con-réplicas" class="slide level2 f14 center">
+<h2>ANOVA del DBCA: datos simulados con réplicas</h2>
+<div class="tabla-anova">
+<table>
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Fuente
+</th>
+<th style="text-align:right;">
+gl
+</th>
+<th style="text-align:left;">
+SC
+</th>
+<th style="text-align:left;">
+CM
+</th>
+<th style="text-align:left;">
+F
+</th>
+<th style="text-align:left;">
+p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bloques
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+6,323
+</td>
+<td style="text-align:left;">
+2,108
+</td>
+<td style="text-align:left;">
+11,922
+</td>
+<td style="text-align:left;">
+0,002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Riego (A)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+16,623
+</td>
+<td style="text-align:left;">
+16,623
+</td>
+<td style="text-align:left;">
+94,035
+</td>
+<td style="text-align:left;">
+&lt;0,001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fertilización (B)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+7,486
+</td>
+<td style="text-align:left;">
+7,486
+</td>
+<td style="text-align:left;">
+42,349
+</td>
+<td style="text-align:left;">
+&lt;0,001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A × B
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+1,146
+</td>
+<td style="text-align:left;">
+1,146
+</td>
+<td style="text-align:left;">
+6,481
+</td>
+<td style="text-align:left;">
+0,031
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Error
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1,591
+</td>
+<td style="text-align:left;">
+0,177
+</td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+33,169
+</td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="calculos-f">
+<p>
+<strong>Bloques:</strong> F ≈ 2,108 / 0,177 ≈ <strong>11,922</strong>
+</p>
+<p>
+<strong>Riego (A):</strong> F ≈ 16,623 / 0,177 ≈ <strong>94,035</strong>
+</p>
+<p>
+<strong>Fertilización (B):</strong> F ≈ 7,486 / 0,177 ≈ <strong>42,349</strong>
+</p>
+<p>
+<strong>A × B:</strong> F ≈ 1,146 / 0,177 ≈ <strong>6,481</strong>
+</p>
+</div>
+<p class="nota">
+Cocientes calculados sin redondear; se muestran CM redondeados. Interacción: p = 0,031; cuantifiquemos su magnitud e incertidumbre.
+</p>
+<aside class="notes">
+<p>SC y CM se expresan en (t/ha)²; F no tiene unidades. gl: bloques 3; A 1; B 1; A×B 1; error (4−1)(4−1)=9; total 15. SC se separan ortogonalmente en este diseño balanceado. Para bloques, si se interpreta su prueba bajo el modelo aleatorio, referencia F3,9; no decide retrospectivamente si bloquear. Riego y fertilización tienen evidencia de efectos marginales, pero la interacción exige contextualizarlos. El ANOVA no mide importancia agronómica. Un p no significativo no demostraría ausencia: examinar intervalos y precisión. Datos simulados con semilla 202614 y parámetros declarados en analisis.R, sin selección entre realizaciones.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="después-del-anova-qué-medias-comparar" class="slide level2 f14 center">
+<h2>Después del ANOVA: ¿qué medias comparar?</h2>
+<div class="dos comparacion-disenos">
+<div>
+<h3>
+No rechazamos H₀ de interacción
+</h3>
+<p>
+Podemos interpretar los <strong>efectos principales</strong>, considerando la precisión y la magnitud de la interacción compatible con los datos.
+</p>
+<p class="nota">
+No rechazar no demuestra ausencia de interacción.
+</p>
+</div>
+<div>
+<h3>
+Rechazamos H₀ de interacción
+</h3>
+<p>
+Priorizamos los <strong>efectos simples</strong>: comparar un factor dentro de cada nivel del otro.
+</p>
+<p class="nota">
+El promedio marginal puede ocultar respuestas distintas; sigue siendo válido si esa es la pregunta.
+</p>
+</div>
+</div>
+<div class="fragment idea">
+<p>Podemos usar <strong>contrastes</strong> de interés o <strong>Tukey sobre las combinaciones</strong>, mirando especialmente las comparaciones que representan efectos simples.</p>
+</div>
+<aside class="notes">
+<p>En el DBCA convencional del ejemplo, Tukey sobre los cuatro tratamientos usa el mismo residual y controla la familia de sus seis comparaciones por pares. Cuatro comparaciones son efectos simples; las dos diagonales cambian ambos factores. Una diferencia de diferencias requiere su propio contraste: comparar significación de efectos simples no prueba interacción. Con más niveles, separar prueba global del efecto simple y comparaciones por pares. Definir familias y ajuste de multiplicidad según las preguntas. En parcelas divididas no trasladar un Tukey de residual único: los errores dependen del contraste y de la estructura de parcelas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="contraste-interaccion" class="slide level2 f14 center">
+<h2>Interacción: dirección, magnitud e incertidumbre</h2>
+<p>
+El ANOVA aporta evidencia de interacción: <strong>p = 0,031</strong>.
+</p>
+<div class="fragment">
+<p>En un 2 × 2, la cuantificamos como <strong>efecto del fertilizante con riego alto − efecto con riego bajo</strong>.</p>
+</div>
+<div class="dos contraste-perfil">
+<div>
+<svg class="perfil" viewbox="0 0 600 390" role="img" aria-labelledby="perfil-contraste">
+<title id="perfil-contraste">
+Medias del DBCA: interacción riego por fertilización. Rendimiento en toneladas por hectárea; fertilización sin y con; líneas para riego bajo y alto.
+</title>
+<line x1="85" x2="510" y1="300" y2="300" stroke="#d4d8cd"></line><text x="66" y="307" text-anchor="end">2</text><line x1="85" x2="510" y1="262" y2="262" stroke="#d4d8cd"></line><text x="66" y="269" text-anchor="end">3</text><line x1="85" x2="510" y1="224" y2="224" stroke="#d4d8cd"></line><text x="66" y="231" text-anchor="end">4</text><line x1="85" x2="510" y1="186" y2="186" stroke="#d4d8cd"></line><text x="66" y="193" text-anchor="end">5</text><line x1="85" x2="510" y1="148" y2="148" stroke="#d4d8cd"></line><text x="66" y="155" text-anchor="end">6</text><line x1="85" x2="510" y1="110" y2="110" stroke="#d4d8cd"></line><text x="66" y="117" text-anchor="end">7</text><line x1="85" x2="510" y1="72" y2="72" stroke="#d4d8cd"></line><text x="66" y="79" text-anchor="end">8</text><path d="M85 60 V300 H510" fill="none" stroke="#173c2b" stroke-width="2"></path><text x="24" y="185" transform="rotate(-90 24 185)" text-anchor="middle">Rendimiento (t/ha)</text><text x="145" y="332" text-anchor="middle">Sin</text><text x="460" y="332" text-anchor="middle">Con</text><text x="300" y="365" text-anchor="middle">Fertilización</text><path d="M145 234.123072300522 L460 202.473733296777" stroke="#2d6a4f" stroke-width="5"></path><circle cx="145" cy="234.123072300522" r="7" fill="#2d6a4f"></circle><text x="150" y="221.123072300522" fill="#2d6a4f">3,7</text><circle cx="460" cy="202.473733296777" r="7" fill="#2d6a4f"></circle><text x="465" y="189.473733296777" fill="#2d6a4f">4,6</text><path d="M145 176.994109412472 L460 104.670576381419" stroke="#8a5a3b" stroke-width="5" stroke-dasharray="10 6"></path><circle cx="145" cy="176.994109412472" r="7" fill="#8a5a3b"></circle><text x="150" y="163.994109412472" fill="#8a5a3b">5,2</text><circle cx="460" cy="104.670576381419" r="7" fill="#8a5a3b"></circle><text x="465" y="91.6705763814193" fill="#8a5a3b">7,1</text><text x="130" y="28" fill="#2d6a4f">● Bajo ━</text><text x="330" y="28" fill="#8a5a3b">● Alto ┄</text>
+</svg>
+</div>
+<div>
+<p>
+<strong>Efecto con − sin:</strong><br>Riego bajo: 0,83 t/ha<br>Riego alto: 1,90 t/ha
+</p>
+<p class="fragment">
+<strong>Diferencia entre efectos:</strong><br>1,07 t/ha
+</p>
+<p class="fragment">
+<strong>IC individual del 95%:</strong><br>[0,12; 2,02] t/ha
+</p>
+</div>
+</div>
+<div class="fragment idea">
+<p>El efecto de fertilizar se estima mayor con riego alto: el IC de la diferencia excluye cero.</p>
+</div>
+<p class="nota">
+Medias, contraste e intervalo del mismo DBCA simulado, con 9 gl para el error. El perfil describe las medias; la prueba y el IC sustentan la inferencia.
+</p>
+<aside class="notes">
+<p>Secuencia: recordar la evidencia global; identificar el contraste; leer dirección y magnitud; examinar la incertidumbre; pasar a la decisión agronómica. La estimación es 1,070374 t/ha y su error estándar 0,420449 t/ha. IC individual = estimación ± t0,975;9 × error estándar; límites 0,119252 y 2,021495 t/ha. Es el mismo modelo y la misma varianza residual que el ANOVA, no una nueva simulación. Se verificó también contra confint del coeficiente de interacción en la parametrización de referencia de R.</p>
+<p>En 2×2 hay un único grado de libertad de interacción: F_AB = t² del contraste directo, con el mismo p bilateral. Probar por separado los dos efectos simples, o comparar sus p-valores, no sustituye contrastar su diferencia. En factoriales con más niveles, el F de interacción es global; pueden necesitarse contrastes específicos definidos según las preguntas de investigación. No interpretar el IC frecuentista como probabilidad del 95% para este parámetro una vez observado el intervalo.</p>
+<p>Material opcional de multiplicidad: si se pretende hacer inferencia simultánea sobre una familia de tres contrastes planificados (dos efectos simples y su diferencia), puede usarse Bonferroni con cuantíl t de probabilidad 1−0,05/(2×3) y p ajustada=min(1,3p). La salida original se conserva en contrastes_dbca.csv: IC simultáneo de interacción [-0,16; 2,30] y p ajustada 0,094. La cobertura conjunta es al menos 95%; no es el mismo criterio que el IC individual. Bonferroni no es un requisito automático después de cualquier interacción significativa. Elegir la familia y el método según las preguntas, no retrospectivamente para cambiar una conclusión.</p>
+<p>Kitsche y Schaarschmidt (2015), resumen consultado previamente en https://research.uni-hannover.de/en/publications/analysis-of-statistical-interactions-in-factorial-experiments/ : contrastes orientados por la pregunta e inferencia simultánea. No se atribuye al artículo el procedimiento concreto empleado aquí.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="decision-agronomica" class="slide level2 f14 center">
+<h2>¿Recomendaríamos la misma fertilización?</h2>
+<p>
+Comparemos el aumento estimado por fertilizar bajo <strong>cada nivel de riego</strong>.
+</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Riego
+</th>
+<th style="text-align:left;">
+Efecto con − sin (t/ha)
+</th>
+<th style="text-align:left;">
+IC individual del 95% (t/ha)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bajo
+</td>
+<td style="text-align:left;">
+0,83
+</td>
+<td style="text-align:left;">
+[0,16; 1,51]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alto
+</td>
+<td style="text-align:left;">
+1,90
+</td>
+<td style="text-align:left;">
+[1,23; 2,58]
+</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>El aumento estimado es mayor con riego alto; los intervalos muestran <strong>incertidumbre en ambos efectos</strong>.</p>
+</div>
+<div class="fragment pregunta">
+<p>¿Ese rendimiento adicional compensa el costo del fertilizante y su aplicación? ¿Qué magnitud justificaría cambiar la recomendación?</p>
+</div>
+<p class="nota">
+Significación estadística no equivale a beneficio agronómico o económico. Datos simulados; IC individuales, sin cobertura simultánea garantizada del 95%.
+</p>
+<aside class="notes">
+<p>Usar los últimos minutos del bloque de inferencia para discutir en parejas. En riego bajo se estima un aumento de 0,83 t/ha (IC individual 0,16 a 1,51) y en alto 1,90 t/ha (1,23 a 2,58). Los intervalos son estimaciones del mismo DBCA y se calculan en R, no son los 0,4 y 2,1 del escenario hipotético del simulador. Aunque ambos IC individuales excluyen cero, el tamaño del beneficio sigue siendo incierto. Su solapamiento tampoco reemplaza la prueba del contraste de interacción; no tratar estos estimadores como independientes al comparar los intervalos visualmente.</p>
+<p>Respuesta esperada: no emitir una recomendación universal sólo por p&lt;0,05. Hay una respuesta estimada diferente al fertilizante según riego y conviene evaluar cada condición. Bajo riego bajo, un aumento pequeño podría no cubrir costos; bajo alto, un aumento mayor tampoco garantiza rentabilidad a cualquier precio. Para comparar fertilizar/no fertilizar a riego dado se necesitan precio del grano, costo y dosis del fertilizante, costo de aplicación y riesgos; si se cambia además el riego, incluir su costo y disponibilidad de agua. No se asignan precios ni umbrales arbitrarios. Contrastar los efectos y su incertidumbre con un umbral agronómico/económico definido antes de decidir, y delimitar ambiente y alcance. Los datos son simulados y no sustentan una recomendación real de manejo.</p>
+<p>Los dos IC mostrados son individuales del 95%. Si se exige una conclusión conjunta con control del error familiar, definir la familia y usar un método apropiado; el material opcional está en las notas de la diapositiva anterior. No se usa una secuencia automática de pruebas por haber rechazado la interacción.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="volvamos-a-las-dos-formas-de-asignación" class="slide level2 f14 center">
+<h2>Volvamos a las dos formas de asignación</h2>
+<div class="dos comparacion-disenos">
+<div>
+<h3>
+Factorial convencional ✓
+</h3>
+<p>
+Una UE recibe la <strong>combinación completa</strong>.
+</p>
+<p>
+Ya vimos la asignación, los efectos y el ANOVA bajo DBCA.
+</p>
+</div>
+<div>
+<h3>
+Parcelas divididas →
+</h3>
+<p>
+Un factor en <strong>parcelas mayores</strong>; otro en <strong>subparcelas</strong>.
+</p>
+<p>
+Ahora veremos la aleatorización restringida y sus dos estratos de error.
+</p>
+</div>
+</div>
+<div class="idea">
+<p>Se conservan los tratamientos factoriales. Cambia cómo se asignan a las unidades experimentales.</p>
+</div>
+</section>
+<section id="y-si-cada-nivel-de-riego-debe-aplicarse-a-una-parcela-mayor" class="slide level2 f14 center">
+<h2>¿Y si cada nivel de riego debe aplicarse a una parcela mayor?</h2>
+<div class="pregunta">
+<p>A veces un factor <strong>sólo puede, o conviene</strong>, aplicarse a una UE mayor. Dentro de ella se asignan los niveles del segundo factor a subparcelas.</p>
+<p>Por ejemplo: riego en franjas grandes y fertilización en sectores pequeños.</p>
+</div>
+<div class="dos fragment">
+<div>
+<h3>
+Parcela mayor
+</h3>
+<p>
+Unidad que recibe un nivel de <strong>riego</strong>.
+</p>
+</div>
+<div>
+<h3>
+Subparcela
+</h3>
+<p>
+Sector que recibe un nivel de <strong>fertilización</strong> dentro de la parcela mayor.
+</p>
+</div>
+</div>
+<div class="fragment idea">
+<p>Se mantiene el factorial 2 × 2, pero cambia la <strong>unidad de asignación de cada factor</strong>.</p>
+</div>
+<aside class="notes">
+<p>La razón es operativa: dificultad para cambiar riego, necesidad de separación y control del movimiento de agua. Delimitar parcelas mayores y subparcelas antes de sortear; considerar borduras e interferencia. Las dos subparcelas comparten instalación y condiciones de su parcela mayor. No son submuestras del mismo tratamiento completo: reciben niveles distintos de fertilización.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="primera-etapa-sortear-el-riego" class="slide level2 f14 center">
+<h2>Primera etapa: sortear el riego</h2>
+<p>
+Dentro de cada bloque, asignar bajo y alto a las <strong>dos parcelas mayores</strong>.
+</p>
+<div class="campo" aria-label="Asignación aleatoria ilustrativa a cuatro bloques">
+<div class="bloque">
+<strong>Bloque 1</strong>
+<div class="fila-campo">
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 2</strong>
+<div class="fila-campo">
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 3</strong>
+<div class="fila-campo">
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 4</strong>
+<div class="fila-campo">
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="espacio-sub">
+Parcela mayor
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="nota">
+Un sorteo por bloque. Esta restricción no permite asignar libremente el riego a las 16 subparcelas.
+</p>
+<aside class="notes">
+<p>El esquema conserva las posiciones de la siguiente diapositiva. Son cuatro sorteos de los dos niveles de A, independientes entre bloques. La semilla guarda posiciones de ambas etapas. Pedir al alumnado indicar qué unidades son intercambiables en este primer sorteo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="segunda-etapa-sortear-la-fertilización" class="slide level2 f14 center">
+<h2>Segunda etapa: sortear la fertilización</h2>
+<p>
+Dentro de <strong>cada parcela mayor</strong>, asignar sin y con fertilizante a las dos subparcelas.
+</p>
+<div class="campo" aria-label="Asignación aleatoria ilustrativa a cuatro bloques">
+<div class="bloque">
+<strong>Bloque 1</strong>
+<div class="fila-campo">
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="subs">
+<span>Con fertilizante</span><span>Sin fertilizante</span>
+</div>
+</div>
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="subs">
+<span>Sin fertilizante</span><span>Con fertilizante</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 2</strong>
+<div class="fila-campo">
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="subs">
+<span>Sin fertilizante</span><span>Con fertilizante</span>
+</div>
+</div>
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="subs">
+<span>Con fertilizante</span><span>Sin fertilizante</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 3</strong>
+<div class="fila-campo">
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="subs">
+<span>Sin fertilizante</span><span>Con fertilizante</span>
+</div>
+</div>
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="subs">
+<span>Con fertilizante</span><span>Sin fertilizante</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bloque">
+<strong>Bloque 4</strong>
+<div class="fila-campo">
+<div class="mayor alto">
+<b>Riego alto</b>
+<div class="subs">
+<span>Sin fertilizante</span><span>Con fertilizante</span>
+</div>
+</div>
+<div class="mayor bajo">
+<b>Riego bajo</b>
+<div class="subs">
+<span>Con fertilizante</span><span>Sin fertilizante</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="nota">
+Ocho sorteos de fertilización, uno por parcela mayor. El riego permanece asignado como en la primera etapa.
+</p>
+<aside class="notes">
+<p>Comparar con el DBCA factorial de la diapositiva «Factorial convencional: asignación bajo DBCA»: allí se sortean las cuatro combinaciones entre cuatro parcelas por bloque; aquí se sortea A entre dos parcelas mayores y B dentro de cada una. La disposición vecina no basta para definir parcelas divididas: la estructura de aleatorización es decisiva. Señalar bordes continuos de parcela mayor y discontinuos de subparcela.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cuántas-unidades-y-réplicas-tenemos" class="slide level2 f14 center">
+<h2>¿Cuántas unidades y réplicas tenemos?</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Cantidad en este esquema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Parcelas mayores: UE de riego</td>
+<td>4 bloques × 2 = <strong>8</strong></td>
+</tr>
+<tr class="even">
+<td>Subparcelas: UE de fertilización</td>
+<td>8 parcelas mayores × 2 = <strong>16</strong></td>
+</tr>
+<tr class="odd">
+<td>Réplicas por nivel de riego</td>
+<td><strong>4 parcelas mayores</strong>, una por bloque</td>
+</tr>
+<tr class="even">
+<td>Réplicas por nivel de fertilización</td>
+<td><strong>8 subparcelas</strong>, una por parcela mayor (4 en cada riego)</td>
+</tr>
+<tr class="odd">
+<td>Réplicas por combinación</td>
+<td><strong>4 subparcelas</strong>, en bloques diferentes</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment alerta">
+<p>El riego se sortea a <strong>8 parcelas mayores: 4 por nivel</strong>. Las dos subparcelas de cada una comparten esa asignación y su error; no duplican las réplicas del riego.</p>
+</div>
+<p class="nota">
+Compartir el mismo nivel no basta para generar dependencia: aquí comparten la misma parcela mayor. Para B, comparamos subparcelas dentro de ella.
+</p>
+<aside class="notes">
+<p>Cada nivel de fertilización se aplica en ocho subparcelas, pero las comparaciones se organizan dentro de parcelas mayores y no equivalen a 16 observaciones intercambiables. Las dos subparcelas de una parcela mayor comparten un error; las cuatro réplicas de una combinación están en bloques distintos. Si se mide rendimiento de plantas, resumir por subparcela o modelar otro nivel de muestreo. Conectar con la próxima clase de submuestreo. Cuatro bloques es ilustrativo y no un tamaño muestral recomendado.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dos-escalas-de-variación-dos-estratos-de-error" class="slide level2 f14 center">
+<h2>Dos escalas de variación, dos estratos de error</h2>
+<div class="ecuacion">
+<span class="math inline">\(Y_{ijk}=\mu+\alpha_i+\beta_j+(\alpha\beta)_{ij}+\rho_k+U_{ik}+\varepsilon_{ijk}\)</span>
+</div>
+<p class="nota">
+<strong>Uᵢₖ:</strong> error aleatorio de la parcela mayor que recibe el riego i en el bloque k; es compartido por sus dos subparcelas.
+</p>
+<div class="estrato">
+<strong>Riego A → parcelas mayores</strong><br>Se sortea entre parcelas mayores dentro de cada bloque.<br><span class="nota">Las dos subparcelas de una parcela mayor comparten Uᵢₖ: parte de su variabilidad.</span>
+</div>
+<div class="estrato sub fragment">
+<strong>Fertilización B → subparcelas</strong><br>Se sortea dentro de cada parcela mayor.<br><span class="nota">Al restar «con − sin» dentro de ella, el Uᵢₖ compartido se cancela.</span>
+</div>
+<p class="fragment nota">
+<strong>Compartir Uᵢₖ impide contar todas las subparcelas como información independiente para el riego.</strong>
+</p>
+<aside class="notes">
+<p>ρk~N(0,σ²_bloque), Uik~N(0,σ²_PM), εijk~N(0,σ²_SP), mutuamente independientes, con variancias homogéneas dentro de cada estrato. Condicionado al bloque, dos observaciones de una parcela mayor tienen covarianza σ²_PM. Uik no es una interacción fija de interés; su SC se obtiene mediante bloque×A en el caso balanceado. E(CM_ErrorPM)=σ²_SP+bσ²_PM y E(CM_ErrorSP)=σ²_SP. No identificar CM_ErrorPM directamente con σ²_PM. Con a=b=2 y r bloques, varianza del estimador del efecto principal de A=2σ²_PM/r+σ²_SP/r; para B=σ²_SP/r; para ΔAB=4σ²_SP/r. En este modelo equilibrado, una σ²_PM positiva aumenta la varianza de A frente a B; si es cero no hay esa diferencia de varianza, y siguen distintos gl para estimarla. No generalizar a todos los tamaños/diseños. Las comparaciones de fertilización dentro de cada nivel de riego y las comparaciones de riego dentro de cada nivel de fertilización no necesariamente tienen la misma estructura de incertidumbre. En las primeras se aprovechan diferencias dentro de parcelas mayores; en las segundas se comparan parcelas mayores distintas y pueden intervenir componentes de variación de parcela mayor y subparcela. No trasladar automáticamente el error de una comparación a la otra: las comparaciones deben respetar el diseño. La precisión depende de componentes de variación y réplicas, no sólo del tamaño físico de la parcela. Fuente local Parcelas divididas 2021, secciones de modelo, errores y comparaciones.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anova-respetando-las-parcelas-divididas" class="slide level2 f14 center">
+<h2>ANOVA respetando las parcelas divididas</h2>
+<div class="tabla-anova">
+<table>
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Fuente
+</th>
+<th style="text-align:right;">
+gl
+</th>
+<th style="text-align:left;">
+SC
+</th>
+<th style="text-align:left;">
+CM
+</th>
+<th style="text-align:left;">
+F
+</th>
+<th style="text-align:left;">
+p
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bloques
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+5,731
+</td>
+<td style="text-align:left;">
+1,910
+</td>
+<td style="text-align:left;">
+3,171
+</td>
+<td style="text-align:left;">
+0,184
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Riego (A)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+21,905
+</td>
+<td style="text-align:left;">
+21,905
+</td>
+<td style="text-align:left;">
+36,359
+</td>
+<td style="text-align:left;">
+0,009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Error parcela mayor
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1,807
+</td>
+<td style="text-align:left;">
+0,602
+</td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fertilización (B)
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+7,736
+</td>
+<td style="text-align:left;">
+7,736
+</td>
+<td style="text-align:left;">
+90,741
+</td>
+<td style="text-align:left;">
+&lt;0,001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A × B
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+3,891
+</td>
+<td style="text-align:left;">
+3,891
+</td>
+<td style="text-align:left;">
+45,638
+</td>
+<td style="text-align:left;">
+&lt;0,001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Error subparcela
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+0,512
+</td>
+<td style="text-align:left;">
+0,085
+</td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+41,583
+</td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+—
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<strong>Bloques:</strong> <span class="math inline">\(F=CM_{Bloques}/CM_{Error\,PM}\)</span> → <span class="math inline">\(F_{3,3}\)</span>.<br><strong>Riego A:</strong> <span class="math inline">\(F_A=CM_A/CM_{Error\,PM}\)</span> → <span class="math inline">\(F_{1,3}\)</span>.
+</p>
+<p>
+<strong>Fertilización B y A × B:</strong> usan <span class="math inline">\(CM_{Error\,SP}\)</span> → <span class="math inline">\(F_{1,6}\)</span>.
+</p>
+<p class="nota">
+Nuevo conjunto simulado con errores compartidos por parcela mayor. PM: parcela mayor; SP: subparcela.
+</p>
+<aside class="notes">
+<p>Grados de libertad generales: bloque r−1; A a−1; error PM (r−1)(a−1); B b−1; AB (a−1)(b−1); error SP a(r−1)(b−1); total rab−1. Con 4×2×2: 3+1+3+1+1+6=15. Modelado reproducible con aov(y ~ A*B + Error(bloque/A)); no ANOVA convencional con único residual. La tabla se verifica con las SC ortogonales del modelo que incluye bloque:A y denominadores correctos, no con las pruebas F automáticas de un lm de residual único. Se agrega la prueba de bloques aleatorios H₀: σ²_bloque=0. Bajo este modelo, E(CM_Bloques)=σ²_SP+bσ²_PM+abσ²_bloque y E(CM_ErrorPM)=σ²_SP+bσ²_PM. Por eso F_Bloques usa error de parcela mayor y gl 3,3. Antes se había omitido para concentrarse en tratamientos; la omisión no significaba que fuera imposible calcularla. Esta prueba no decide retrospectivamente si se debe bloquear. Datos distintos a DBCA: no comparar sus p como evaluación de eficiencia. Aquí los tres p aportan evidencia, pero recomendaciones requieren efectos, intervalos, costos y alcance. Los IC de las diapositivas de contraste y decisión agronómica pertenecen exclusivamente al DBCA convencional, y no pueden trasladarse a este conjunto de parcelas divididas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="salida-infostat" class="slide level2 f14 center">
+<h2>Cómo leer una salida de InfoStat</h2>
+<p class="nota">
+Ejemplo del manual: riego («Parc») × variedad de trigo, 3 bloques. Son otros datos.
+</p>
+<div class="infostat-salida">
+<p>
+Análisis de la Varianza · Cuadro de Análisis de la Varianza (SC tipo III)
+</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>F.V.</th>
+<th style="text-align: right;">SC</th>
+<th style="text-align: right;">gl</th>
+<th style="text-align: right;">CM</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p-valor</th>
+<th>(Error)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Modelo</td>
+<td style="text-align: right;">379169,31</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">34469,94</td>
+<td style="text-align: right;">12,92</td>
+<td style="text-align: right;">0,0001</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Parc</td>
+<td style="text-align: right;">276233,13</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">276233,13</td>
+<td style="text-align: right;"><strong>55,24</strong></td>
+<td style="text-align: right;"><strong>0,0176</strong></td>
+<td><strong class="error-infostat">(Parc×Bloque)</strong></td>
+</tr>
+<tr class="odd">
+<td>Bloque</td>
+<td style="text-align: right;">22912,97</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">11456,48</td>
+<td style="text-align: right;">4,29</td>
+<td style="text-align: right;">0,0392</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Parc*Bloque</td>
+<td style="text-align: right;">10001,49</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"><strong>5000,74</strong></td>
+<td style="text-align: right;">1,87</td>
+<td style="text-align: right;">0,1957</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Variedad</td>
+<td style="text-align: right;">51095,57</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">17031,86</td>
+<td style="text-align: right;">6,38</td>
+<td style="text-align: right;">0,0078</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Parc*Variedad</td>
+<td style="text-align: right;">18926,16</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">6308,72</td>
+<td style="text-align: right;">2,36</td>
+<td style="text-align: right;">0,1223</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Error</td>
+<td style="text-align: right;">32014,75</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;"><strong>2667,90</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td style="text-align: right;">411184,06</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+<strong>Parc:</strong> 276233,13 / 5000,74 = 55,24.<br><strong>Variedad y Parc*Variedad:</strong> usan CM Error = 2667,90.
+</p>
+<p class="nota">
+Transcripción de la tabla 28, p.&nbsp;100 del <a href="https://www.academia.utp.ac.pa/sites/default/files/docente/51/manual_infostat_esp.pdf#page=100">Manual de InfoStat (2008)</a>. No es una ejecución del ejemplo de maíz.
+</p>
+<aside class="notes">
+<p>La columna (Error) identifica el denominador especial para Parc; cuando está vacía se usa el residual de esa salida. Parc<em>Bloque representa el error de parcela mayor y Error el de subparcela. No interpretar la prueba automática de Parc</em>Bloque como una interacción fija de interés. Esta transcripción conserva las filas del manual para reconocer la salida de los TP. El modelo del manual ya fue especificado por sus autores; aquí no se recomienda seleccionar términos por sus p-valores. La salida original usa el residual para la fila Bloque. Esa prueba automática no corresponde al contraste de bloques aleatorios de nuestro modelo, que usa error de parcela mayor; no trasladar su denominador. La apariencia puede variar con la versión. No se dispone de una ejecución local de InfoStat.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="comparar-disenos" class="slide level2 f14 center">
+<h2>Mismo factorial, distinta aleatorización y error</h2>
+<div class="dos comparacion-disenos">
+<div>
+<h3>
+DBCA convencional
+</h3>
+<p>
+Sortear las <strong>4 combinaciones completas</strong> entre parcelas de cada bloque.
+</p>
+<table>
+<thead>
+<tr>
+<th>
+Prueba
+</th>
+<th>
+Denominador F
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+A, B y A × B
+</td>
+<td>
+CM Error<br><strong>9 gl</strong>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="nota">
+Un único estrato residual para las tres pruebas.
+</p>
+</div>
+<div class="fragment">
+<h3>
+DBCA en parcelas divididas
+</h3>
+<p>
+Sortear <strong>A entre parcelas mayores</strong> de cada bloque y <strong>B dentro de cada parcela mayor</strong>.
+</p>
+<table>
+<thead>
+<tr>
+<th>
+Prueba
+</th>
+<th>
+Denominador F
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+A
+</td>
+<td>
+CM Error parcela mayor · <strong>3 gl</strong>
+</td>
+</tr>
+<tr>
+<td>
+B y A × B
+</td>
+<td>
+CM Error subparcela · <strong>6 gl</strong>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment idea">
+<p>La estructura de aleatorización determina qué variación usar como referencia para cada prueba.</p>
+</div>
+<p class="nota">
+A: riego · B: fertilización. Modelo balanceado con 4 bloques. Las dos simulaciones son diferentes: sus p-valores no comparan eficiencia.
+</p>
+<aside class="notes">
+<p>Esta comparación organiza las reglas ya vistas, sin agregar otro ANOVA numérico. En el DBCA convencional la UE es cada parcela que recibe una combinación; el modelo controla bloques y usa un residual común. En parcelas divididas la asignación ocurre en dos etapas y las subparcelas de una parcela mayor comparten variabilidad: A usa error de parcela mayor, B y A×B error de subparcela en el modelo balanceado desarrollado. Los gl son 9 frente a 3 y 6, respectivamente; su suma no autoriza reunir los errores de parcelas divididas en un único denominador. Volver a los esquemas de campo si hace falta. No inferir mayor o menor eficiencia por los F o p de los dos ejemplos: proceden de datos simulados diferentes. Una comparación de eficiencia requiere especificar los contrastes, componentes de varianza, replicación y restricciones/costos de cada diseño.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="apliquemos-lo-aprendido-variedades-de-poroto-y-riego" class="slide level2 f14 center">
+<h2>Apliquemos lo aprendido: variedades de poroto y riego</h2>
+<p>
+Queremos comparar <strong>3 variedades</strong> bajo <strong>2 niveles de riego</strong>. El riego se aplica a franjas grandes.
+</p>
+<ol type="1">
+<li>¿Cuáles son los factores y las <strong>6 combinaciones</strong>?</li>
+<li>¿Qué asignarías a parcelas mayores y a subparcelas?</li>
+<li>Dibujá los dos sorteos dentro de un bloque.</li>
+<li>Con 4 bloques ilustrativos, ¿cuántas UE hay de cada tipo?</li>
+<li>¿Medir 5 plantas por subparcela aumenta las réplicas de riego?</li>
+</ol>
+<div class="fragment idea">
+<p>La estructura factorial define <strong>qué comparar</strong>; la aleatorización define <strong>qué error usar</strong>.</p>
+</div>
+<aside class="notes">
+<p>Cierre y actividad: 15 minutos en parejas, con puesta en común. Respuesta: A=riego (2 niveles), B=variedad (3); seis combinaciones. En cada uno de los cuatro bloques sortear dos riegos entre dos parcelas mayores; dentro de cada una sortear tres variedades entre tres subparcelas. Ocho parcelas mayores y 24 subparcelas; cuatro parcelas mayores por nivel de riego y cuatro réplicas por combinación. Cinco plantas por subparcela serían 120 mediciones, no 120 UE para riego ni 120 réplicas independientes. Si se conservara una respuesta por subparcela, gl: bloques 3, A 1, error PM 3, B 2, AB 2, error SP 12, total 23. Pedir que expliquen qué respuesta de variedad podría cambiar con riego. El número de bloques sigue fijado por la actividad, no elegido mediante potencia.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../assets/branding/eyde-logo.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Andrés Tálamo - Estadística y Diseño Experimental - FCN - UNSa</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        math: {
+          mathjax: '../07_errores_potencia/vendor/mathjax/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <a class="eyde-home-link" href="../../index.html" target="_self" aria-label="Volver al inicio" title="Volver al inicio" data-preview-link="false">⌂</a>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiado");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiado");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    <script src="factorial.js"></script>
+    
+
+</body></html>
