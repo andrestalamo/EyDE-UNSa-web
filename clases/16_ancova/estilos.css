@@ -1,0 +1,29 @@
+.reveal .slides section.s16 {font-size:28px;text-align:left;}
+.reveal .slides section.s16 h2 {font-size:1.4em;line-height:1.15;margin-bottom:20px;}
+.s16 p {margin:15px 0;}
+.s16 li {margin:15px 0;}
+.s16 .idea,.s16 .pregunta {padding:14px 18px;margin:18px 0;}
+.reveal .s16 table {font-size:.76em;width:100%;margin:18px 0;}
+.reveal .s16 td,.reveal .s16 th {padding:7px 12px;}
+.s16 pre {font-size:.62em;}
+.s16 .cell-output-display img {display:block;max-height:355px;object-fit:contain;margin:0 auto;}
+.s16 .MathJax_SVG_Display {margin:.45em 0!important;}
+.s16 .tres{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.s16 .grupo{border-top:4px solid var(--verde);padding:12px;background:#ffffff55;}
+.s16 .grupo h3{font-size:1.05em;margin:8px 0 20px;}
+.s16 .grupo p{font-size:.75em;}
+.s16 .animales{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.s16 .animales span{display:block;border:2px solid #648574;border-radius:50%;padding:10px 4px;text-align:center;font-size:.7em;background:#e1e9df;}
+.s16 .credito{font-size:.56em;color:var(--gris);}
+.s16 .cell-output-display+.cell-output-display{margin-top:12px;}
+.s16 .ganado {display:block;width:100%;height:310px;}
+.s16 .infostat{font-family:"Courier New",monospace;font-size:.72em;}
+.s16 .infostat h3{font-size:1.1em;margin:8px 0;}
+.s16 .infostat p{margin:10px 0;}
+.reveal .s16 .infostat table{font-size:.95em;margin:10px 0;}
+.reveal .s16 .infostat th{background:transparent;color:#173c2b;border-top:1px solid;border-bottom:1px solid;}
+.reveal .s16 .infostat td,.reveal .s16 .infostat th{padding:6px 8px;}
+.s16.medias-previas .cell-output-display img{max-height:260px;}
+.reveal .s16.medias-previas table{margin:8px 0;font-size:.68em;}
+.reveal .s16.medias-previas td,.reveal .s16.medias-previas th{padding:5px 9px;}
+.s16.medias-previas .pregunta{font-size:.9em;margin:10px 0;}
