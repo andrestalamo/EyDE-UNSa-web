@@ -648,7 +648,7 @@ Ejemplo simulado con fines didácticos; no corresponde a un ensayo real.
 </section>
 <section id="expresamos-el-ajuste" class="slide level2 s16 center">
 <h2>Expresamos el ajuste</h2>
-<p><span class="math display">\[\bar Y'_i=\bar Y_i-\hat\beta(\bar X_i-\bar X_{..})\]</span></p>
+<p><span class="math display">\[\bar Y'_i=\bar Y_i-b(\bar X_i-\bar X_{..})\]</span></p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -666,10 +666,14 @@ Ejemplo simulado con fines didácticos; no corresponde a un ensayo real.
 <td>Ganancia media observada de la dieta i</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\hat\beta\)</span></td>
-<td>Pendiente estimada</td>
+<td><span class="math inline">\(\bar Y'_i\)</span></td>
+<td>Ganancia media ajustada de la dieta i, a un mismo peso inicial</td>
 </tr>
 <tr class="odd">
+<td><span class="math inline">\(b\)</span></td>
+<td>Pendiente estimada</td>
+</tr>
+<tr class="even">
 <td><span class="math inline">\(\bar X_i-\bar X_{..}\)</span></td>
 <td>Diferencia entre su peso inicial medio y la referencia</td>
 </tr>
@@ -734,6 +738,29 @@ Ejemplo simulado con fines didácticos; no corresponde a un ensayo real.
 </div>
 <aside class="notes">
 <p>i=1,2,3; j=1,…,6. Con restricciones suma cero, mu refiere al promedio de las medias ajustadas (balanceado); no identificar cualquier intercepto de software con media marginal. En la terminología de Silvia, este es el efecto de la covariable para la observación: pendiente por desviación de su X respecto de la referencia. Efecto del modelo no implica causalidad demostrada. El nuevo término se interpreta después del gráfico; no derivar mínimos cuadrados. 18 observaciones, cuatro parámetros, 14 GL residuales.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ancova-puede-acompañar-distintos-diseños" class="slide level2 s16 center">
+<h2>ANCOVA puede acompañar distintos diseños</h2>
+<p>Podemos incorporar covariables en <strong>cualquier diseño básico</strong>, con tratamientos <strong>factoriales o no</strong>, y <strong>con o sin submuestreo</strong>.</p>
+<div class="fragment">
+<p>El análisis debe conservar la estructura del experimento: bloques, factores, unidades experimentales y dependencias entre observaciones.</p>
+</div>
+<div class="idea fragment">
+<p>La covariable agrega información al modelo; no reemplaza el diseño ni convierte submuestras en réplicas independientes.</p>
+</div>
+<aside class="notes">
+<p>Referencia: manual de InfoStat, sección Análisis de covarianza, que indica independencia de la estructura de parcelas/tratamientos. En DCA o DBCA se incorpora a sus términos; un factorial puede mantener interacciones entre factores. Submuestreo y parcelas divididas requieren respetar estratos y dependencias, posiblemente modelos jerárquicos/mixtos. No aplicar por rutina el ANCOVA simple a observaciones dependientes. Recordar pertinencia agronómica y supuestos; no desarrollar nuevas técnicas.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -905,49 +932,183 @@ Ejemplo simulado con fines didácticos; no corresponde a un ensayo real.
           display:block!important;
       }</style></aside>
 </section>
-<section id="la-covariable-difiere-entre-tratamientos" class="slide level2 s16 center">
-<h2>1. ¿La covariable difiere entre tratamientos?</h2>
-<p><strong>ANOVA para X: peso inicial.</strong></p>
+<section id="orden-de-las-hipótesis-a-probar" class="slide level2 s16 center">
+<h2>Orden de las hipótesis a probar</h2>
+<ol type="1">
+<li><strong>Covariable X:</strong> ¿difiere su media entre tratamientos?<br>ANOVA separado para X.</li>
+<li><strong>Pendiente:</strong> ¿hay relación lineal de Y con X, considerando tratamientos?<br>Prueba de β = 0 en el ANCOVA de Y.</li>
+<li><strong>Tratamientos:</strong> ¿difieren las medias de Y ajustadas a un mismo X?<br>Prueba de tratamientos en ese ANCOVA.</li>
+</ol>
+<div class="idea fragment">
+<p>Dos salidas: primero el <strong>ANOVA para X</strong>; después el <strong>ANCOVA para Y</strong>, donde leemos pendiente y tratamientos.</p>
+</div>
+<aside class="notes">
+<p>Pantallazo de la secuencia de Silvia antes de detallar las hipótesis. Las pruebas 2 y 3 aparecen en una misma tabla; no son tres análisis de respuesta independientes. Conservar advertencias en las diapositivas siguientes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anova-para-x-peso-inicial" class="slide level2 s16 prueba-x center">
+<h2>1. ANOVA para X: peso inicial</h2>
 <p><span class="math display">\[H_0:\mu_{X,A}=\mu_{X,B}=\mu_{X,C}\]</span></p>
 <p><span class="math inline">\(H_1\)</span>: al menos una media poblacional de X difiere.</p>
-<table class="caption-top">
+<div class="infostat">
+<h3>
+Análisis de la varianza
+</h3>
+<table>
 <thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">F.V.</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">SC</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">gl</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">CM</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">F</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p-valor</th>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+R²
+</th>
+<th style="text-align:right;">
+R² Aj
+</th>
+<th style="text-align:right;">
+CV
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">Dieta</td>
-<td style="text-align: right;">199,5811</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">99,7906</td>
-<td style="text-align: right;">0,0953</td>
-<td style="text-align: right;">0,9097</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Error</td>
-<td style="text-align: right;">15710,6483</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">1047,3766</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Total</td>
-<td style="text-align: right;">15910,2294</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<tr>
+<td style="text-align:left;">
+Peso inicial
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0,01
+</td>
+<td style="text-align:right;">
+-0,12
+</td>
+<td style="text-align:right;">
+14,39
+</td>
 </tr>
 </tbody>
 </table>
+<p>
+Cuadro de Análisis de la Varianza (SC tipo III)
+</p>
+<table>
+<thead>
+<tr>
+<th>
+F.V.
+</th>
+<th>
+SC
+</th>
+<th>
+gl
+</th>
+<th>
+CM
+</th>
+<th>
+F
+</th>
+<th>
+p-valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Modelo
+</td>
+<td>
+199,58
+</td>
+<td>
+2
+</td>
+<td>
+99,79
+</td>
+<td>
+0,10
+</td>
+<td>
+0,9097
+</td>
+</tr>
+<tr>
+<td>
+Dieta
+</td>
+<td>
+199,58
+</td>
+<td>
+2
+</td>
+<td>
+99,79
+</td>
+<td>
+0,10
+</td>
+<td>
+0,9097
+</td>
+</tr>
+<tr>
+<td>
+Error
+</td>
+<td>
+15710,65
+</td>
+<td>
+15
+</td>
+<td>
+1047,38
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+15910,23
+</td>
+<td>
+17
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="fragment">
 <p>p = 0,9097: al 5 %, no encontramos evidencia de diferencias en el peso inicial medio entre dietas.</p>
 </div>
@@ -1063,8 +1224,8 @@ No rechazar β = 0 no demuestra que la pendiente sea cero ni obliga siempre a re
           display:block!important;
       }</style></aside>
 </section>
-<section id="leemos-la-salida-de-infostat" class="slide level2 s16 center">
-<h2>Leemos la salida de InfoStat</h2>
+<section id="y-3.-ancova-para-y-ganancia-de-peso" class="slide level2 s16 center">
+<h2>2 y 3. ANCOVA para Y: ganancia de peso</h2>
 <div class="infostat">
 <h3>
 Análisis de la varianza
@@ -1248,11 +1409,8 @@ Total
 </tbody>
 </table>
 </div>
-<p class="credito">
-Recreación del formato de InfoStat con los datos simulados del ejemplo.
-</p>
 <div class="pregunta fragment">
-<p>¿Qué fila responde la pregunta sobre dietas? ¿Qué indica el coeficiente de Peso inicial?</p>
+<p>Primero, ¿qué indica la fila Peso inicial sobre la pendiente? Después, ¿qué indica la fila Dieta sobre las medias ajustadas?</p>
 </div>
 <aside class="notes">
 <p>Recreación de la estructura de salida de InfoStat del apunte de Silvia, ANCOVA 2021 p.8, con los resultados del ejemplo de dietas; no es una captura ni una ejecución de InfoStat. Incluye encabezado N, R², R² ajustado, CV, Modelo, SC tipo III, F.V., gl, CM, F, p-valor y Coef, Error y Total. Las SC parciales de dieta y covariable no suman necesariamente SC Modelo; no sumarlas como partición. Modelo se compara globalmente con intercepto. GL error 14. Los valores se verifican con el modelo lineal y pruebas parciales.</p>
@@ -1268,8 +1426,8 @@ Recreación del formato de InfoStat con los datos simulados del ejemplo.
           display:block!important;
       }</style></aside>
 </section>
-<section id="qué-ganamos-al-incorporar-el-peso-inicial" class="slide level2 s16 center">
-<h2>¿Qué ganamos al incorporar el peso inicial?</h2>
+<section id="qué-cambia-al-incorporar-el-peso-inicial" class="slide level2 s16 cambios-modelo center">
+<h2>¿Qué cambia al incorporar el peso inicial?</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1299,7 +1457,7 @@ Recreación del formato de InfoStat con los datos simulados del ejemplo.
 <p>¿La información adicional ayudó a estimar con mayor precisión la diferencia entre C y A?</p>
 </div>
 <div class="fragment">
-<p>En este ejemplo, sí. Incorporar la pendiente también consume un grado de libertad.</p>
+<p>En este ejemplo disminuyen el CM del error y el error estándar de la diferencia: <strong>mejora la precisión</strong>. Estimar la pendiente <strong>consume un grado de libertad</strong>: ese es el costo.</p>
 </div>
 <aside class="notes">
 <p>La comparación mantiene datos y contraste C-A. Se usa S de la diferencia entre medias de ganancia (Y), para no confundir X, covariable peso inicial, con la respuesta. En ANCOVA se trata de las medias ajustadas. Mostrar error estándar evita equiparar menor p con mayor precisión. La SC residual necesariamente no aumenta en modelo anidado sobre mismos datos, pero CM y varianza de contrastes no tienen mejora universal. No poner el foco en cambio de significación global.</p>
@@ -1393,20 +1551,35 @@ Recreación del formato de InfoStat con los datos simulados del ejemplo.
           display:block!important;
       }</style></aside>
 </section>
-<section id="respondemos-la-pregunta-agronómica" class="slide level2 s16 center">
+<section id="respondemos-la-pregunta-agronómica" class="slide level2 s16 conclusion-final center">
 <h2>Respondemos la pregunta agronómica</h2>
-<p><strong>Población de referencia:</strong> novillitos de características y pesos iniciales comparables, bajo las condiciones de alimentación y manejo del ensayo.</p>
-<div class="fragment">
-<p>Al nivel de significación del 5 %, hay evidencia de diferencias entre las <strong>ganancias medias poblacionales ajustadas</strong> de las dietas (F₂,₁₄ = 4,21; p = 0,037).</p>
+<div class="conclusion-columnas">
+<div class="conclusion-texto">
+<p><strong>Población:</strong> novillitos de características y pesos comparables, bajo las condiciones de alimentación y manejo del ensayo.</p>
+<p>Al 5 %, hay evidencia de diferencias entre las <strong>ganancias medias poblacionales ajustadas a un mismo valor de peso inicial</strong> (p = 0,037).</p>
+<p>Para esa población y a <strong>224,9 kg iniciales</strong>, estimamos que la <strong>dieta C provocó un aumento de 8,52 kg en la ganancia media de peso respecto de A</strong>, durante los 60 días del ensayo.</p>
+<p>No encontramos evidencia suficiente de diferencias <strong>entre A y B ni entre B y C</strong> (Tukey, α = 0,05). Esto no demuestra igualdad de sus ganancias medias.</p>
 </div>
-<div class="fragment">
-<p>A 224,9 kg de peso inicial, estimamos que C supera a A en <strong>8,52 kg de ganancia en 60 días</strong>, con IC simultáneo del 95 % de <strong>0,81 a 16,23 kg</strong> (Tukey).</p>
+<div class="conclusion-figura">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Clase_16_ANCOVA_2026_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 <p class="credito">
-Ejemplo simulado: estas conclusiones ilustran la inferencia; no son evidencia para recomendar dietas reales.
+Puntos transparentes: animales observados.<br>Círculos blancos: medias ajustadas al peso común.<br>Letras compartidas: diferencia no significativa (Tukey).
+</p>
+</div>
+</div>
+<p class="credito">
+Ejemplo simulado: ilustra la inferencia y no aporta evidencia para recomendar dietas reales.
 </p>
 <aside class="notes">
-<p>Conclusión completa con población, variable, referencia común, significación, estimación e intervalo simultáneo del 95% para C−A que controla familia de tres pares. No interpretar confianza como probabilidad de que el parámetro fijo caiga dentro de este intervalo particular. Alcance condicionado al diseño y similitud de animales/condiciones; no se supone muestreo aleatorio de todos los novillitos de una región. Se retira la pregunta sobre conveniencia, que abría una decisión para la que faltan costos y consumo; conservar como nota oral opcional: mayor ganancia no garantiza mayor rentabilidad.</p>
+<p>La asignación aleatoria de dietas respalda la interpretación causal del contraste en el escenario hipotético; la generalización depende de similitud de animales y condiciones, no de un supuesto muestreo aleatorio regional. No se informa IC de diferencia: antes solo se mostraron IC individuales de medias. Conservar población, referencia común y 60 días; interpretación de Tukey: solo C-A significativa, no igualdad para otros pares. Puntos crudos en sus pesos observados con transparencia; las medias y letras están en la vertical x0, no se desplazan ni se transforman los datos. Letras a, ab, b verificadas contra p de las tres comparaciones.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

@@ -27,3 +27,19 @@
 .reveal .s16.medias-previas table{margin:8px 0;font-size:.68em;}
 .reveal .s16.medias-previas td,.reveal .s16.medias-previas th{padding:5px 9px;}
 .s16.medias-previas .pregunta{font-size:.9em;margin:10px 0;}
+/* Revisión: conclusión en texto y figura, sin reducir todos los gráficos de la clase. */
+.s16 .conclusion-columnas{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:start;}
+.s16 .conclusion-columnas>*{min-width:0;}
+.s16 .conclusion-texto{font-size:.81em;line-height:1.26;}
+.s16 .conclusion-texto p{margin:0 0 14px;}
+.s16.conclusion-final .conclusion-figura img{width:100%;max-height:430px;object-fit:contain;}
+.s16 .conclusion-figura .credito{font-size:.49em;line-height:1.25;margin:7px 0;}
+.s16.prueba-x .infostat{font-size:.62em;}
+.reveal .s16.prueba-x .infostat td,.reveal .s16.prueba-x .infostat th{padding:4px 7px;}
+.s16.prueba-x .infostat p{margin:5px 0;}
+.s16.cambios-modelo .fragment{font-size:.92em;}
+.reveal .s16.cambios-modelo table{table-layout:fixed;}
+.reveal .s16.cambios-modelo th:nth-child(1){width:30%;}
+.reveal .s16.cambios-modelo th:nth-child(2){width:20%;}
+.reveal .s16.cambios-modelo th:nth-child(3){width:15%;}
+.reveal .s16.cambios-modelo th:nth-child(4){width:35%;}
